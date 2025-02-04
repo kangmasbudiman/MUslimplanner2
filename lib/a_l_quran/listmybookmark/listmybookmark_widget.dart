@@ -23,6 +23,8 @@ class _ListmybookmarkWidgetState extends State<ListmybookmarkWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => ListmybookmarkModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

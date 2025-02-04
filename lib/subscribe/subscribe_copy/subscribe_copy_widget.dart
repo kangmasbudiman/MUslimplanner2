@@ -26,6 +26,8 @@ class _SubscribeCopyWidgetState extends State<SubscribeCopyWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => SubscribeCopyModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

@@ -42,6 +42,8 @@ class _LanjutAlquranWidgetState extends State<LanjutAlquranWidget> {
 
     _model.txtStringTextController ??= TextEditingController();
     _model.txtStringFocusNode ??= FocusNode();
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

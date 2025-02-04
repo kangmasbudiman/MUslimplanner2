@@ -27,6 +27,8 @@ class _WebviewPembayaranWidgetState extends State<WebviewPembayaranWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => WebviewPembayaranModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

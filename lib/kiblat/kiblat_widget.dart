@@ -21,6 +21,8 @@ class _KiblatWidgetState extends State<KiblatWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => KiblatModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

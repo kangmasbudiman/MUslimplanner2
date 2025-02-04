@@ -37,6 +37,8 @@ class _MyeditProfilWidgetState extends State<MyeditProfilWidget> {
     _model.textemailFocusNode ??= FocusNode();
 
     _model.textieldTelpFocusNode ??= FocusNode();
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

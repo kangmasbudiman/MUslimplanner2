@@ -35,6 +35,8 @@ class _DetailDoaWidgetState extends State<DetailDoaWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => DetailDoaModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

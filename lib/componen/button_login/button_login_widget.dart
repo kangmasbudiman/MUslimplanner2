@@ -25,6 +25,8 @@ class _ButtonLoginWidgetState extends State<ButtonLoginWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => ButtonLoginModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

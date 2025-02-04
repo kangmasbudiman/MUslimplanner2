@@ -22,6 +22,8 @@ class _DetailTaskSunahWidgetState extends State<DetailTaskSunahWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => DetailTaskSunahModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

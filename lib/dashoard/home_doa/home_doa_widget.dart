@@ -29,6 +29,8 @@ class _HomeDoaWidgetState extends State<HomeDoaWidget> {
     _model = createModel(context, () => HomeDoaModel());
 
     _model.textFieldSearch1TextController ??= TextEditingController();
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

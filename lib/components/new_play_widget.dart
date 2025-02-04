@@ -33,6 +33,8 @@ class _NewPlayWidgetState extends State<NewPlayWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => NewPlayModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

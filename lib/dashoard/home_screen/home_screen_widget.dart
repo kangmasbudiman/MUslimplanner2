@@ -50,6 +50,8 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
         ));
       }
     });
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -690,6 +692,41 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                                                                     .String,
                                                               ),
                                                             }.withoutNulls,
+                                                          );
+                                                        },
+                                                        onLongPress: () async {
+                                                          ScaffoldMessenger.of(
+                                                                  context)
+                                                              .showSnackBar(
+                                                            SnackBar(
+                                                              content: Text(
+                                                                valueOrDefault<
+                                                                    String>(
+                                                                  (SunahGroup
+                                                                          .getsunahtigabaruCall
+                                                                          .id(
+                                                                            columnQiyamullailGetsunahtigabaruResponse.jsonBody,
+                                                                          )
+                                                                          ?.elementAtOrNull(
+                                                                              res1Index))
+                                                                      ?.toString(),
+                                                                  '-',
+                                                                ),
+                                                                style:
+                                                                    TextStyle(
+                                                                  color: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .primaryText,
+                                                                ),
+                                                              ),
+                                                              duration: const Duration(
+                                                                  milliseconds:
+                                                                      4000),
+                                                              backgroundColor:
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .secondary,
+                                                            ),
                                                           );
                                                         },
                                                         child: Row(

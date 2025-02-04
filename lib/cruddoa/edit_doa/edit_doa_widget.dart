@@ -65,6 +65,8 @@ class _EditDoaWidgetState extends State<EditDoaWidget> {
     _model.textFieldHadisTextController ??=
         TextEditingController(text: widget.hadis);
     _model.textFieldHadisFocusNode ??= FocusNode();
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

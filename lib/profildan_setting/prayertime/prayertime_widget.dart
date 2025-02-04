@@ -24,6 +24,7 @@ class _PrayertimeWidgetState extends State<PrayertimeWidget> {
 
     _model.switchValue1 = true;
     _model.switchValue2 = true;
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

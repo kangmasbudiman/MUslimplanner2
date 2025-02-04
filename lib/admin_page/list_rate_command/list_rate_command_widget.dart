@@ -22,6 +22,8 @@ class _ListRateCommandWidgetState extends State<ListRateCommandWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => ListRateCommandModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

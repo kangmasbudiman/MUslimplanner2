@@ -40,6 +40,8 @@ class _VerivicationscreenWidgetState extends State<VerivicationscreenWidget> {
         await authManager.sendEmailVerification();
       }
     });
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

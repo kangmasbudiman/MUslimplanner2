@@ -36,6 +36,8 @@ class _DetailAlquranWidgetState extends State<DetailAlquranWidget> {
 
     _model.txtStringTextController ??= TextEditingController();
     _model.txtStringFocusNode ??= FocusNode();
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

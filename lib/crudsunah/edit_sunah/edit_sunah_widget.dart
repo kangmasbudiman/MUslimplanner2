@@ -65,6 +65,8 @@ class _EditSunahWidgetState extends State<EditSunahWidget> {
     _model.textFieldHadisTextController ??=
         TextEditingController(text: widget.hadis);
     _model.textFieldHadisFocusNode ??= FocusNode();
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

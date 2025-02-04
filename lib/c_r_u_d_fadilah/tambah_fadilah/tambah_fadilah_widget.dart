@@ -37,6 +37,8 @@ class _TambahFadilahWidgetState extends State<TambahFadilahWidget> {
 
     _model.textFielPenjelasanTextController ??= TextEditingController();
     _model.textFielPenjelasanFocusNode ??= FocusNode();
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

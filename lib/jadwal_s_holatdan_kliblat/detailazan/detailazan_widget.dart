@@ -24,6 +24,7 @@ class _DetailazanWidgetState extends State<DetailazanWidget> {
     _model = createModel(context, () => DetailazanModel());
 
     _model.switchValue = true;
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

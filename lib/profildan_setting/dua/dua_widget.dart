@@ -20,6 +20,8 @@ class _DuaWidgetState extends State<DuaWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => DuaModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

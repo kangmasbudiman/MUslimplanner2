@@ -22,6 +22,8 @@ class _AcknowledgementsIOSWidgetState extends State<AcknowledgementsIOSWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => AcknowledgementsIOSModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

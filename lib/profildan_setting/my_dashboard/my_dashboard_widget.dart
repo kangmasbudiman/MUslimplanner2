@@ -25,6 +25,8 @@ class _MyDashboardWidgetState extends State<MyDashboardWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => MyDashboardModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

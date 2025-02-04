@@ -27,6 +27,8 @@ class _DetailJadwalSholatWidgetState extends State<DetailJadwalSholatWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => DetailJadwalSholatModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

@@ -31,6 +31,8 @@ class _TambahSunahWidgetState extends State<TambahSunahWidget> {
 
     _model.textFieldSunahTextController ??= TextEditingController();
     _model.textFieldSunahFocusNode ??= FocusNode();
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -235,6 +237,7 @@ class _TambahSunahWidgetState extends State<TambahSunahWidget> {
 
                   if ((_model.apiResultnvo?.succeeded ?? true)) {
                     Navigator.pop(context);
+                    FFAppState().clearQiyamulLailChaceCache();
                     ScaffoldMessenger.of(context).showSnackBar(
                       SnackBar(
                         content: Text(

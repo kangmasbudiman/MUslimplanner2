@@ -23,6 +23,8 @@ class _ListUserHelpSupportWidgetState extends State<ListUserHelpSupportWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => ListUserHelpSupportModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

@@ -26,6 +26,8 @@ class _PesanPremiumVersionWidgetState extends State<PesanPremiumVersionWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => PesanPremiumVersionModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

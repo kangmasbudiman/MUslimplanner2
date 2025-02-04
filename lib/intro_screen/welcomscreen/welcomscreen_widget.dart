@@ -20,6 +20,8 @@ class _WelcomscreenWidgetState extends State<WelcomscreenWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => WelcomscreenModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

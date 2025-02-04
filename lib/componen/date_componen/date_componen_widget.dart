@@ -25,6 +25,8 @@ class _DateComponenWidgetState extends State<DateComponenWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => DateComponenModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

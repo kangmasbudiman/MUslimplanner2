@@ -24,6 +24,8 @@ class _List10OrderHistoryWidgetState extends State<List10OrderHistoryWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => List10OrderHistoryModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

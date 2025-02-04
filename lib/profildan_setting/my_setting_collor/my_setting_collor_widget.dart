@@ -24,6 +24,8 @@ class _MySettingCollorWidgetState extends State<MySettingCollorWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => MySettingCollorModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

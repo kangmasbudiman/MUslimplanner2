@@ -26,6 +26,8 @@ class _KalenderHijriahWidgetState extends State<KalenderHijriahWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => KalenderHijriahModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

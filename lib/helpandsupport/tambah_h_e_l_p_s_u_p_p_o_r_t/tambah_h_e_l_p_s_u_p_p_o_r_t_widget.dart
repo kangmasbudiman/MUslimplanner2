@@ -31,6 +31,8 @@ class _TambahHELPSUPPORTWidgetState extends State<TambahHELPSUPPORTWidget> {
 
     _model.textFieldHelpTextController ??= TextEditingController();
     _model.textFieldHelpFocusNode ??= FocusNode();
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

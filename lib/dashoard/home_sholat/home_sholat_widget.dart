@@ -28,6 +28,8 @@ class _HomeSholatWidgetState extends State<HomeSholatWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => HomeSholatModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

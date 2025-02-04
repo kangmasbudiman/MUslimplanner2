@@ -39,6 +39,8 @@ class _RegisterWidgetState extends State<RegisterWidget> {
 
     _model.textFieldConfirmpasswordTextController ??= TextEditingController();
     _model.textFieldConfirmpasswordFocusNode ??= FocusNode();
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

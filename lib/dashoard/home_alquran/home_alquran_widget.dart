@@ -31,6 +31,8 @@ class _HomeAlquranWidgetState extends State<HomeAlquranWidget> {
     _model = createModel(context, () => HomeAlquranModel());
 
     _model.textFieldSearchTextController ??= TextEditingController();
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

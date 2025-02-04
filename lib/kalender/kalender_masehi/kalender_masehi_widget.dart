@@ -24,6 +24,8 @@ class _KalenderMasehiWidgetState extends State<KalenderMasehiWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => KalenderMasehiModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

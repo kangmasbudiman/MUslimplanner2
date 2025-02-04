@@ -10,8 +10,8 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'newkiblat_model.dart';
 export 'newkiblat_model.dart';
 
+/// ini halaman terbaru kiblat
 class NewkiblatWidget extends StatefulWidget {
-  /// ini halaman terbaru kiblat
   const NewkiblatWidget({super.key});
 
   @override
@@ -31,6 +31,7 @@ class _NewkiblatWidgetState extends State<NewkiblatWidget> {
 
     getCurrentUserLocation(defaultLocation: const LatLng(0.0, 0.0), cached: true)
         .then((loc) => safeSetState(() => currentUserLocationValue = loc));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

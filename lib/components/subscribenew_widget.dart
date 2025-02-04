@@ -6,8 +6,8 @@ import 'package:flutter/material.dart';
 import 'subscribenew_model.dart';
 export 'subscribenew_model.dart';
 
+/// halaman baru untuk subscrib
 class SubscribenewWidget extends StatefulWidget {
-  /// halaman baru untuk subscrib
   const SubscribenewWidget({super.key});
 
   @override
@@ -27,6 +27,8 @@ class _SubscribenewWidgetState extends State<SubscribenewWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => SubscribenewModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

@@ -35,6 +35,8 @@ class _SubDetailTaskSunahWidgetState extends State<SubDetailTaskSunahWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => SubDetailTaskSunahModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

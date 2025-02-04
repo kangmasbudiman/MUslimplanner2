@@ -35,6 +35,8 @@ class _DoadoaByKategorinewWidgetState extends State<DoadoaByKategorinewWidget> {
     _model = createModel(context, () => DoadoaByKategorinewModel());
 
     _model.textFieldSearch1TextController ??= TextEditingController();
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

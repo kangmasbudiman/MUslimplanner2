@@ -22,6 +22,8 @@ class _LanguageWidgetState extends State<LanguageWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => LanguageModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

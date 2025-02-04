@@ -1,6 +1,7 @@
 import '/auth/firebase_auth/auth_util.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'admin_menu_model.dart';
 export 'admin_menu_model.dart';
@@ -25,6 +26,8 @@ class _AdminMenuWidgetState extends State<AdminMenuWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => AdminMenuModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -209,6 +212,53 @@ class _AdminMenuWidgetState extends State<AdminMenuWidget> {
                               Text(
                                 'Review & Command',
                                 textAlign: TextAlign.center,
+                                style: FlutterFlowTheme.of(context)
+                                    .bodyMedium
+                                    .override(
+                                      fontFamily: 'Inter',
+                                      color: FlutterFlowTheme.of(context).info,
+                                      fontSize: 14.0,
+                                      letterSpacing: 0.0,
+                                    ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+                    AuthUserStreamWidget(
+                      builder: (context) => InkWell(
+                        splashColor: Colors.transparent,
+                        focusColor: Colors.transparent,
+                        hoverColor: Colors.transparent,
+                        highlightColor: Colors.transparent,
+                        onTap: () async {
+                          context.pushNamed('daftaradminsunnah');
+                        },
+                        child: Container(
+                          width: 11.0,
+                          height: 50.0,
+                          decoration: BoxDecoration(
+                            color: currentUserDocument?.colorThemes,
+                            borderRadius: const BorderRadius.only(
+                              bottomLeft: Radius.circular(20.0),
+                              bottomRight: Radius.circular(20.0),
+                              topLeft: Radius.circular(20.0),
+                              topRight: Radius.circular(20.0),
+                            ),
+                            border: Border.all(
+                              color: FlutterFlowTheme.of(context).accent2,
+                            ),
+                          ),
+                          child: Column(
+                            mainAxisSize: MainAxisSize.max,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              AutoSizeText(
+                                'List Sunnah Harian',
+                                textAlign: TextAlign.center,
+                                maxLines: 2,
+                                minFontSize: 12.0,
                                 style: FlutterFlowTheme.of(context)
                                     .bodyMedium
                                     .override(

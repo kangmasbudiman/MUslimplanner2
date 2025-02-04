@@ -22,6 +22,8 @@ class _TermCOnditionWidgetState extends State<TermCOnditionWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => TermCOnditionModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

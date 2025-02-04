@@ -21,6 +21,8 @@ class _DuaTranslationWidgetState extends State<DuaTranslationWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => DuaTranslationModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

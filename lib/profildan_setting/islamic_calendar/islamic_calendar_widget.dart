@@ -20,6 +20,8 @@ class _IslamicCalendarWidgetState extends State<IslamicCalendarWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => IslamicCalendarModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

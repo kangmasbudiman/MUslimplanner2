@@ -22,6 +22,8 @@ class _LegalWidgetState extends State<LegalWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => LegalModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

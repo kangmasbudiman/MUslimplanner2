@@ -26,6 +26,8 @@ class _KonfirmasiWidgetState extends State<KonfirmasiWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => KonfirmasiModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

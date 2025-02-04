@@ -20,6 +20,8 @@ class _PrayerNamesWidgetState extends State<PrayerNamesWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => PrayerNamesModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

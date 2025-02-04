@@ -30,6 +30,8 @@ class _HomeAlquranCopyWidgetState extends State<HomeAlquranCopyWidget> {
 
     _model.textController ??= TextEditingController();
     _model.textFieldFocusNode ??= FocusNode();
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

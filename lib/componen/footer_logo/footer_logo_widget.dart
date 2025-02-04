@@ -23,6 +23,8 @@ class _FooterLogoWidgetState extends State<FooterLogoWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => FooterLogoModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

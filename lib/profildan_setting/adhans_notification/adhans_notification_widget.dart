@@ -25,6 +25,7 @@ class _AdhansNotificationWidgetState extends State<AdhansNotificationWidget> {
     _model = createModel(context, () => AdhansNotificationModel());
 
     _model.switchValue = true;
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

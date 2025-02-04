@@ -43,6 +43,8 @@ class _TambahDoWidgetState extends State<TambahDoWidget> {
 
     _model.textFieldHadisTextController ??= TextEditingController();
     _model.textFieldHadisFocusNode ??= FocusNode();
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

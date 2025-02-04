@@ -28,6 +28,8 @@ class _RateandcomandWidgetState extends State<RateandcomandWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => RateandcomandModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

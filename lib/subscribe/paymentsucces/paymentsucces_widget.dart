@@ -25,6 +25,8 @@ class _PaymentsuccesWidgetState extends State<PaymentsuccesWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => PaymentsuccesModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

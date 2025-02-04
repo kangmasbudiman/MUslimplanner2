@@ -563,6 +563,16 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'newkiblat',
           path: '/newkiblat',
           builder: (context, params) => const NewkiblatWidget(),
+        ),
+        FFRoute(
+          name: 'Listsunnah',
+          path: '/listsunnah',
+          builder: (context, params) => const ListsunnahWidget(),
+        ),
+        FFRoute(
+          name: 'daftaradminsunnah',
+          path: '/daftaradminsunnah',
+          builder: (context, params) => const DaftaradminsunnahWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
       observers: [routeObserver],

@@ -26,6 +26,8 @@ class _LanguageAppWidgetState extends State<LanguageAppWidget> {
     SchedulerBinding.instance.addPostFrameCallback((_) async {
       context.safePop();
     });
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

@@ -21,6 +21,8 @@ class _DuaRecitationWidgetState extends State<DuaRecitationWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => DuaRecitationModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

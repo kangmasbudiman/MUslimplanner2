@@ -25,6 +25,8 @@ class _AlqurancobaWidgetState extends State<AlqurancobaWidget> {
     _model = createModel(context, () => AlqurancobaModel());
 
     _model.textController ??= TextEditingController();
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

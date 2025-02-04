@@ -107,3 +107,6 @@ export '/a_l_quran/detail_alquran/detail_alquran_widget.dart'
 export '/subscribe/subscribe_copy/subscribe_copy_widget.dart'
     show SubscribeCopyWidget;
 export '/newkiblat/newkiblat_widget.dart' show NewkiblatWidget;
+export '/listsunnah/listsunnah_widget.dart' show ListsunnahWidget;
+export '/daftaradminsunnah/daftaradminsunnah_widget.dart'
+    show DaftaradminsunnahWidget;

@@ -28,6 +28,8 @@ class _MyProfileWidgetState extends State<MyProfileWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => MyProfileModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

@@ -25,6 +25,8 @@ class _SubscribeWidgetState extends State<SubscribeWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => SubscribeModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

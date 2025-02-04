@@ -21,6 +21,8 @@ class _SubstatistikWidgetState extends State<SubstatistikWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => SubstatistikModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

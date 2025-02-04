@@ -1951,6 +1951,7 @@ class SunahGroup {
   static String getBaseUrl() => 'https://al-quran.indata.id/api/';
   static Map<String, String> headers = {};
   static GetsunahCall getsunahCall = GetsunahCall();
+  static GetsunahforadminCall getsunahforadminCall = GetsunahforadminCall();
   static KategorisunahCall kategorisunahCall = KategorisunahCall();
   static TambahfadilahCall tambahfadilahCall = TambahfadilahCall();
   static TambahsunahCall tambahsunahCall = TambahsunahCall();
@@ -1969,6 +1970,7 @@ class SunahGroup {
   static GetmysummaryCall getmysummaryCall = GetmysummaryCall();
   static GetsunahtigabaruCall getsunahtigabaruCall = GetsunahtigabaruCall();
   static DeleteMysunnahCall deleteMysunnahCall = DeleteMysunnahCall();
+  static DeletesunnahCall deletesunnahCall = DeletesunnahCall();
   static CoountsunahCall coountsunahCall = CoountsunahCall();
 }
 
@@ -1978,6 +1980,59 @@ class GetsunahCall {
 
     return ApiManager.instance.makeApiCall(
       callName: 'getsunah',
+      apiUrl: '${baseUrl}getsunah',
+      callType: ApiCallType.GET,
+      headers: {},
+      params: {},
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      isStreamingApi: false,
+      alwaysAllowBody: false,
+    );
+  }
+
+  List? data(dynamic response) => getJsonField(
+        response,
+        r'''$.data''',
+        true,
+      ) as List?;
+  List<int>? id(dynamic response) => (getJsonField(
+        response,
+        r'''$.data[:].id''',
+        true,
+      ) as List?)
+          ?.withoutNulls
+          .map((x) => castToType<int>(x))
+          .withoutNulls
+          .toList();
+  List<int>? idkategorisunah(dynamic response) => (getJsonField(
+        response,
+        r'''$.data[:].idkategorisunah''',
+        true,
+      ) as List?)
+          ?.withoutNulls
+          .map((x) => castToType<int>(x))
+          .withoutNulls
+          .toList();
+  List<String>? namasunah(dynamic response) => (getJsonField(
+        response,
+        r'''$.data[:].namaSunah''',
+        true,
+      ) as List?)
+          ?.withoutNulls
+          .map((x) => castToType<String>(x))
+          .withoutNulls
+          .toList();
+}
+
+class GetsunahforadminCall {
+  Future<ApiCallResponse> call() async {
+    final baseUrl = SunahGroup.getBaseUrl();
+
+    return ApiManager.instance.makeApiCall(
+      callName: 'getsunahforadmin',
       apiUrl: '${baseUrl}getsunah',
       callType: ApiCallType.GET,
       headers: {},
@@ -2985,6 +3040,36 @@ class DeleteMysunnahCall {
     return ApiManager.instance.makeApiCall(
       callName: 'deleteMysunnah',
       apiUrl: '${baseUrl}deletemysunah',
+      callType: ApiCallType.POST,
+      headers: {},
+      params: {
+        'id': id,
+      },
+      bodyType: BodyType.X_WWW_FORM_URL_ENCODED,
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      isStreamingApi: false,
+      alwaysAllowBody: false,
+    );
+  }
+
+  dynamic data(dynamic response) => getJsonField(
+        response,
+        r'''$.data''',
+      );
+}
+
+class DeletesunnahCall {
+  Future<ApiCallResponse> call({
+    String? id = '',
+  }) async {
+    final baseUrl = SunahGroup.getBaseUrl();
+
+    return ApiManager.instance.makeApiCall(
+      callName: 'deletesunnah',
+      apiUrl: '${baseUrl}deletesunah',
       callType: ApiCallType.POST,
       headers: {},
       params: {

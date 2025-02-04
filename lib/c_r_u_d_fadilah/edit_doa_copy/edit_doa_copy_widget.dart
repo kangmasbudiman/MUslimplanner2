@@ -43,6 +43,8 @@ class _EditDoaCopyWidgetState extends State<EditDoaCopyWidget> {
     _model.textFieldpenjelasanTextController ??=
         TextEditingController(text: widget.pejelasan);
     _model.textFieldpenjelasanFocusNode ??= FocusNode();
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
