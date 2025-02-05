@@ -1,3 +1,4 @@
+import '/auth/firebase_auth/auth_util.dart';
 import '/backend/api_requests/api_calls.dart';
 import '/crudsunah/tambah_sunah/tambah_sunah_widget.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
@@ -78,7 +79,7 @@ class _DaftaradminsunnahWidgetState extends State<DaftaradminsunnahWidget> {
           ),
         ),
         appBar: AppBar(
-          backgroundColor: FlutterFlowTheme.of(context).primary,
+          backgroundColor: currentUserDocument?.colorThemes,
           automaticallyImplyLeading: false,
           leading: FlutterFlowIconButton(
             borderColor: Colors.transparent,
@@ -146,48 +147,122 @@ class _DaftaradminsunnahWidgetState extends State<DaftaradminsunnahWidget> {
                             color: FlutterFlowTheme.of(context)
                                 .secondaryBackground,
                           ),
-                          child: Card(
-                            clipBehavior: Clip.antiAliasWithSaveLayer,
-                            color: FlutterFlowTheme.of(context).secondary,
-                            elevation: 0.0,
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(8.0),
-                            ),
-                            child: Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 0.0, 20.0, 0.0),
-                              child: Row(
-                                mainAxisSize: MainAxisSize.max,
-                                children: [
-                                  Expanded(
-                                    child: Padding(
-                                      padding: const EdgeInsets.all(20.0),
-                                      child: Column(
-                                        mainAxisSize: MainAxisSize.max,
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.start,
-                                        children: [
-                                          Text(
-                                            valueOrDefault<String>(
-                                              SunahGroup.getsunahforadminCall
-                                                  .namasunah(
-                                                    columnGetsunahforadminResponse
-                                                        .jsonBody,
-                                                  )
-                                                  ?.elementAtOrNull(restIndex),
-                                              '-',
+                          child: AuthUserStreamWidget(
+                            builder: (context) => Card(
+                              clipBehavior: Clip.antiAliasWithSaveLayer,
+                              color: currentUserDocument?.colorThemes,
+                              elevation: 0.0,
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(8.0),
+                              ),
+                              child: Padding(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                    0.0, 0.0, 20.0, 0.0),
+                                child: Row(
+                                  mainAxisSize: MainAxisSize.max,
+                                  children: [
+                                    Expanded(
+                                      child: Padding(
+                                        padding: const EdgeInsets.all(20.0),
+                                        child: Column(
+                                          mainAxisSize: MainAxisSize.max,
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          children: [
+                                            Text(
+                                              valueOrDefault<String>(
+                                                SunahGroup.getsunahforadminCall
+                                                    .namasunah(
+                                                      columnGetsunahforadminResponse
+                                                          .jsonBody,
+                                                    )
+                                                    ?.elementAtOrNull(
+                                                        restIndex),
+                                                '-',
+                                              ),
+                                              style:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily: 'Inter',
+                                                        fontSize: 20.0,
+                                                        letterSpacing: 0.0,
+                                                        fontWeight:
+                                                            FontWeight.bold,
+                                                      ),
                                             ),
-                                            style: FlutterFlowTheme.of(context)
-                                                .bodyMedium
-                                                .override(
-                                                  fontFamily: 'Inter',
-                                                  fontSize: 20.0,
-                                                  letterSpacing: 0.0,
-                                                  fontWeight: FontWeight.bold,
+                                            Text(
+                                              valueOrDefault<String>(
+                                                SunahGroup.getsunahforadminCall
+                                                    .namakategori(
+                                                  columnGetsunahforadminResponse
+                                                      .jsonBody,
                                                 ),
-                                          ),
-                                          Text(
-                                            valueOrDefault<String>(
+                                                'kategorisunah',
+                                              ),
+                                              style:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily: 'Inter',
+                                                        letterSpacing: 0.0,
+                                                      ),
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                    ),
+                                    FlutterFlowIconButton(
+                                      borderRadius: 8.0,
+                                      buttonSize: 40.0,
+                                      fillColor:
+                                          FlutterFlowTheme.of(context).primary,
+                                      icon: Icon(
+                                        Icons.delete_forever,
+                                        color:
+                                            FlutterFlowTheme.of(context).info,
+                                        size: 24.0,
+                                      ),
+                                      onPressed: () async {
+                                        var confirmDialogResponse =
+                                            await showDialog<bool>(
+                                                  context: context,
+                                                  builder:
+                                                      (alertDialogContext) {
+                                                    return WebViewAware(
+                                                      child: AlertDialog(
+                                                        title: const Text(
+                                                            'Confirmation'),
+                                                        content: const Text(
+                                                            'Are You Sure To Delete This Data??'),
+                                                        actions: [
+                                                          TextButton(
+                                                            onPressed: () =>
+                                                                Navigator.pop(
+                                                                    alertDialogContext,
+                                                                    false),
+                                                            child:
+                                                                const Text('Cancel'),
+                                                          ),
+                                                          TextButton(
+                                                            onPressed: () =>
+                                                                Navigator.pop(
+                                                                    alertDialogContext,
+                                                                    true),
+                                                            child:
+                                                                const Text('Confirm'),
+                                                          ),
+                                                        ],
+                                                      ),
+                                                    );
+                                                  },
+                                                ) ??
+                                                false;
+                                        if (confirmDialogResponse) {
+                                          _model.apiResult8vu = await SunahGroup
+                                              .deletesunnahCall
+                                              .call(
+                                            id: valueOrDefault<String>(
                                               (SunahGroup.getsunahforadminCall
                                                       .id(
                                                         columnGetsunahforadminResponse
@@ -198,126 +273,59 @@ class _DaftaradminsunnahWidgetState extends State<DaftaradminsunnahWidget> {
                                                   ?.toString(),
                                               '-',
                                             ),
-                                            style: FlutterFlowTheme.of(context)
-                                                .bodyMedium
-                                                .override(
-                                                  fontFamily: 'Inter',
-                                                  letterSpacing: 0.0,
-                                                ),
-                                          ),
-                                        ],
-                                      ),
-                                    ),
-                                  ),
-                                  FlutterFlowIconButton(
-                                    borderRadius: 8.0,
-                                    buttonSize: 40.0,
-                                    fillColor:
-                                        FlutterFlowTheme.of(context).primary,
-                                    icon: Icon(
-                                      Icons.delete_forever,
-                                      color: FlutterFlowTheme.of(context).info,
-                                      size: 24.0,
-                                    ),
-                                    onPressed: () async {
-                                      var confirmDialogResponse =
-                                          await showDialog<bool>(
-                                                context: context,
-                                                builder: (alertDialogContext) {
-                                                  return WebViewAware(
-                                                    child: AlertDialog(
-                                                      title:
-                                                          const Text('Confirmation'),
-                                                      content: const Text(
-                                                          'Are You Sure To Delete This Data??'),
-                                                      actions: [
-                                                        TextButton(
-                                                          onPressed: () =>
-                                                              Navigator.pop(
-                                                                  alertDialogContext,
-                                                                  false),
-                                                          child: const Text('Cancel'),
-                                                        ),
-                                                        TextButton(
-                                                          onPressed: () =>
-                                                              Navigator.pop(
-                                                                  alertDialogContext,
-                                                                  true),
-                                                          child:
-                                                              const Text('Confirm'),
-                                                        ),
-                                                      ],
-                                                    ),
-                                                  );
-                                                },
-                                              ) ??
-                                              false;
-                                      if (confirmDialogResponse) {
-                                        _model.apiResult8vu = await SunahGroup
-                                            .deletesunnahCall
-                                            .call(
-                                          id: valueOrDefault<String>(
-                                            (SunahGroup.getsunahforadminCall
-                                                    .id(
-                                                      columnGetsunahforadminResponse
-                                                          .jsonBody,
-                                                    )
-                                                    ?.elementAtOrNull(
-                                                        restIndex))
-                                                ?.toString(),
-                                            '-',
-                                          ),
-                                        );
+                                          );
 
-                                        if ((_model.apiResult8vu?.succeeded ??
-                                            true)) {
-                                          await showDialog(
-                                            context: context,
-                                            builder: (alertDialogContext) {
-                                              return WebViewAware(
-                                                child: AlertDialog(
-                                                  title: const Text('Information'),
-                                                  content:
-                                                      const Text('Delete Succeses'),
-                                                  actions: [
-                                                    TextButton(
-                                                      onPressed: () =>
-                                                          Navigator.pop(
-                                                              alertDialogContext),
-                                                      child: const Text('Ok'),
-                                                    ),
-                                                  ],
-                                                ),
-                                              );
-                                            },
-                                          );
-                                        } else {
-                                          await showDialog(
-                                            context: context,
-                                            builder: (alertDialogContext) {
-                                              return WebViewAware(
-                                                child: AlertDialog(
-                                                  title: const Text('Information'),
-                                                  content: const Text('Delete Fail'),
-                                                  actions: [
-                                                    TextButton(
-                                                      onPressed: () =>
-                                                          Navigator.pop(
-                                                              alertDialogContext),
-                                                      child: const Text('Ok'),
-                                                    ),
-                                                  ],
-                                                ),
-                                              );
-                                            },
-                                          );
+                                          if ((_model.apiResult8vu?.succeeded ??
+                                              true)) {
+                                            await showDialog(
+                                              context: context,
+                                              builder: (alertDialogContext) {
+                                                return WebViewAware(
+                                                  child: AlertDialog(
+                                                    title: const Text('Information'),
+                                                    content:
+                                                        const Text('Delete Succeses'),
+                                                    actions: [
+                                                      TextButton(
+                                                        onPressed: () =>
+                                                            Navigator.pop(
+                                                                alertDialogContext),
+                                                        child: const Text('Ok'),
+                                                      ),
+                                                    ],
+                                                  ),
+                                                );
+                                              },
+                                            );
+                                          } else {
+                                            await showDialog(
+                                              context: context,
+                                              builder: (alertDialogContext) {
+                                                return WebViewAware(
+                                                  child: AlertDialog(
+                                                    title: const Text('Information'),
+                                                    content:
+                                                        const Text('Delete Fail'),
+                                                    actions: [
+                                                      TextButton(
+                                                        onPressed: () =>
+                                                            Navigator.pop(
+                                                                alertDialogContext),
+                                                        child: const Text('Ok'),
+                                                      ),
+                                                    ],
+                                                  ),
+                                                );
+                                              },
+                                            );
+                                          }
                                         }
-                                      }
 
-                                      safeSetState(() {});
-                                    },
-                                  ),
-                                ],
+                                        safeSetState(() {});
+                                      },
+                                    ),
+                                  ],
+                                ),
                               ),
                             ),
                           ),

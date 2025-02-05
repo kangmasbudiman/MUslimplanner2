@@ -2025,6 +2025,10 @@ class GetsunahCall {
           .map((x) => castToType<String>(x))
           .withoutNulls
           .toList();
+  String? kategori(dynamic response) => castToType<String>(getJsonField(
+        response,
+        r'''$.data[:].nama_kategori''',
+      ));
 }
 
 class GetsunahforadminCall {
@@ -2078,6 +2082,10 @@ class GetsunahforadminCall {
           .map((x) => castToType<String>(x))
           .withoutNulls
           .toList();
+  String? namakategori(dynamic response) => castToType<String>(getJsonField(
+        response,
+        r'''$.data[:].nama_kategori''',
+      ));
 }
 
 class KategorisunahCall {
