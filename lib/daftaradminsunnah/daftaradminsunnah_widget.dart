@@ -1,5 +1,6 @@
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/api_requests/api_calls.dart';
+import '/backend/schema/structs/index.dart';
 import '/crudsunah/tambah_sunah/tambah_sunah_widget.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -131,206 +132,208 @@ class _DaftaradminsunnahWidgetState extends State<DaftaradminsunnahWidget> {
 
                 return Builder(
                   builder: (context) {
-                    final rest = getJsonField(
-                      columnGetsunahforadminResponse.jsonBody,
-                      r'''$.data''',
-                    ).toList();
+                    final respon = (columnGetsunahforadminResponse.jsonBody
+                                .toList()
+                                .map<GetsunahbaruStruct?>(
+                                    GetsunahbaruStruct.maybeFromMap)
+                                .toList() as Iterable<GetsunahbaruStruct?>)
+                            .withoutNulls
+                            .toList() ??
+                        [];
 
-                    return Column(
-                      mainAxisSize: MainAxisSize.max,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: List.generate(rest.length, (restIndex) {
-                        final restItem = rest[restIndex];
-                        return Container(
-                          width: double.infinity,
-                          decoration: BoxDecoration(
-                            color: FlutterFlowTheme.of(context)
-                                .secondaryBackground,
-                          ),
-                          child: AuthUserStreamWidget(
-                            builder: (context) => Card(
-                              clipBehavior: Clip.antiAliasWithSaveLayer,
-                              color: currentUserDocument?.colorThemes,
-                              elevation: 0.0,
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(8.0),
-                              ),
-                              child: Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 0.0, 20.0, 0.0),
-                                child: Row(
-                                  mainAxisSize: MainAxisSize.max,
-                                  children: [
-                                    Expanded(
-                                      child: Padding(
-                                        padding: const EdgeInsets.all(20.0),
-                                        child: Column(
-                                          mainAxisSize: MainAxisSize.max,
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.start,
-                                          children: [
-                                            Text(
-                                              valueOrDefault<String>(
-                                                SunahGroup.getsunahforadminCall
-                                                    .namasunah(
-                                                      columnGetsunahforadminResponse
-                                                          .jsonBody,
-                                                    )
-                                                    ?.elementAtOrNull(
-                                                        restIndex),
-                                                '-',
+                    return SingleChildScrollView(
+                      child: Column(
+                        mainAxisSize: MainAxisSize.max,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: List.generate(respon.length, (responIndex) {
+                          final responItem = respon[responIndex];
+                          return Container(
+                            width: double.infinity,
+                            decoration: BoxDecoration(
+                              color: FlutterFlowTheme.of(context)
+                                  .secondaryBackground,
+                            ),
+                            child: AuthUserStreamWidget(
+                              builder: (context) => Card(
+                                clipBehavior: Clip.antiAliasWithSaveLayer,
+                                color: currentUserDocument?.colorThemes,
+                                elevation: 0.0,
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(8.0),
+                                ),
+                                child: Padding(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                      0.0, 0.0, 20.0, 0.0),
+                                  child: Row(
+                                    mainAxisSize: MainAxisSize.max,
+                                    children: [
+                                      Expanded(
+                                        child: Padding(
+                                          padding: const EdgeInsets.all(20.0),
+                                          child: Column(
+                                            mainAxisSize: MainAxisSize.max,
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start,
+                                            children: [
+                                              Row(
+                                                mainAxisSize: MainAxisSize.max,
+                                                children: [
+                                                  Text(
+                                                    valueOrDefault<String>(
+                                                      responItem.namaSunah,
+                                                      'namasunah',
+                                                    ).maybeHandleOverflow(
+                                                      maxChars: 25,
+                                                      replacement: '…',
+                                                    ),
+                                                    maxLines: 1,
+                                                    style: FlutterFlowTheme.of(
+                                                            context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily: 'Inter',
+                                                          fontSize: 20.0,
+                                                          letterSpacing: 0.0,
+                                                          fontWeight:
+                                                              FontWeight.bold,
+                                                        ),
+                                                  ),
+                                                ],
                                               ),
-                                              style:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .override(
-                                                        fontFamily: 'Inter',
-                                                        fontSize: 20.0,
-                                                        letterSpacing: 0.0,
-                                                        fontWeight:
-                                                            FontWeight.bold,
-                                                      ),
-                                            ),
-                                            Text(
-                                              valueOrDefault<String>(
-                                                SunahGroup.getsunahforadminCall
-                                                    .namakategori(
-                                                  columnGetsunahforadminResponse
-                                                      .jsonBody,
+                                              Text(
+                                                valueOrDefault<String>(
+                                                  responItem.kategori,
+                                                  'kategori',
                                                 ),
-                                                'kategorisunah',
+                                                style:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily: 'Inter',
+                                                          letterSpacing: 0.0,
+                                                        ),
                                               ),
-                                              style:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .override(
-                                                        fontFamily: 'Inter',
-                                                        letterSpacing: 0.0,
-                                                      ),
-                                            ),
-                                          ],
+                                            ],
+                                          ),
                                         ),
                                       ),
-                                    ),
-                                    FlutterFlowIconButton(
-                                      borderRadius: 8.0,
-                                      buttonSize: 40.0,
-                                      fillColor:
-                                          FlutterFlowTheme.of(context).primary,
-                                      icon: Icon(
-                                        Icons.delete_forever,
-                                        color:
-                                            FlutterFlowTheme.of(context).info,
-                                        size: 24.0,
-                                      ),
-                                      onPressed: () async {
-                                        var confirmDialogResponse =
-                                            await showDialog<bool>(
-                                                  context: context,
-                                                  builder:
-                                                      (alertDialogContext) {
-                                                    return WebViewAware(
-                                                      child: AlertDialog(
-                                                        title: const Text(
-                                                            'Confirmation'),
-                                                        content: const Text(
-                                                            'Are You Sure To Delete This Data??'),
-                                                        actions: [
-                                                          TextButton(
-                                                            onPressed: () =>
-                                                                Navigator.pop(
-                                                                    alertDialogContext,
-                                                                    false),
-                                                            child:
-                                                                const Text('Cancel'),
-                                                          ),
-                                                          TextButton(
-                                                            onPressed: () =>
-                                                                Navigator.pop(
-                                                                    alertDialogContext,
-                                                                    true),
-                                                            child:
-                                                                const Text('Confirm'),
-                                                          ),
-                                                        ],
-                                                      ),
-                                                    );
-                                                  },
-                                                ) ??
-                                                false;
-                                        if (confirmDialogResponse) {
-                                          _model.apiResult8vu = await SunahGroup
-                                              .deletesunnahCall
-                                              .call(
-                                            id: valueOrDefault<String>(
-                                              (SunahGroup.getsunahforadminCall
-                                                      .id(
-                                                        columnGetsunahforadminResponse
-                                                            .jsonBody,
-                                                      )
-                                                      ?.elementAtOrNull(
-                                                          restIndex))
-                                                  ?.toString(),
-                                              '-',
-                                            ),
-                                          );
+                                      FlutterFlowIconButton(
+                                        borderRadius: 8.0,
+                                        buttonSize: 40.0,
+                                        fillColor: FlutterFlowTheme.of(context)
+                                            .primary,
+                                        icon: Icon(
+                                          Icons.delete_forever,
+                                          color:
+                                              FlutterFlowTheme.of(context).info,
+                                          size: 24.0,
+                                        ),
+                                        onPressed: () async {
+                                          var confirmDialogResponse =
+                                              await showDialog<bool>(
+                                                    context: context,
+                                                    builder:
+                                                        (alertDialogContext) {
+                                                      return WebViewAware(
+                                                        child: AlertDialog(
+                                                          title: const Text(
+                                                              'Confirmation'),
+                                                          content: const Text(
+                                                              'Are You Sure To Delete This Data??'),
+                                                          actions: [
+                                                            TextButton(
+                                                              onPressed: () =>
+                                                                  Navigator.pop(
+                                                                      alertDialogContext,
+                                                                      false),
+                                                              child: const Text(
+                                                                  'Cancel'),
+                                                            ),
+                                                            TextButton(
+                                                              onPressed: () =>
+                                                                  Navigator.pop(
+                                                                      alertDialogContext,
+                                                                      true),
+                                                              child: const Text(
+                                                                  'Confirm'),
+                                                            ),
+                                                          ],
+                                                        ),
+                                                      );
+                                                    },
+                                                  ) ??
+                                                  false;
+                                          if (confirmDialogResponse) {
+                                            _model.apiResult8vu =
+                                                await SunahGroup
+                                                    .deletesunnahCall
+                                                    .call(
+                                              id: valueOrDefault<String>(
+                                                responItem.id.toString(),
+                                                '0',
+                                              ),
+                                            );
 
-                                          if ((_model.apiResult8vu?.succeeded ??
-                                              true)) {
-                                            await showDialog(
-                                              context: context,
-                                              builder: (alertDialogContext) {
-                                                return WebViewAware(
-                                                  child: AlertDialog(
-                                                    title: const Text('Information'),
-                                                    content:
-                                                        const Text('Delete Succeses'),
-                                                    actions: [
-                                                      TextButton(
-                                                        onPressed: () =>
-                                                            Navigator.pop(
-                                                                alertDialogContext),
-                                                        child: const Text('Ok'),
-                                                      ),
-                                                    ],
-                                                  ),
-                                                );
-                                              },
-                                            );
-                                          } else {
-                                            await showDialog(
-                                              context: context,
-                                              builder: (alertDialogContext) {
-                                                return WebViewAware(
-                                                  child: AlertDialog(
-                                                    title: const Text('Information'),
-                                                    content:
-                                                        const Text('Delete Fail'),
-                                                    actions: [
-                                                      TextButton(
-                                                        onPressed: () =>
-                                                            Navigator.pop(
-                                                                alertDialogContext),
-                                                        child: const Text('Ok'),
-                                                      ),
-                                                    ],
-                                                  ),
-                                                );
-                                              },
-                                            );
+                                            if ((_model
+                                                    .apiResult8vu?.succeeded ??
+                                                true)) {
+                                              await showDialog(
+                                                context: context,
+                                                builder: (alertDialogContext) {
+                                                  return WebViewAware(
+                                                    child: AlertDialog(
+                                                      title:
+                                                          const Text('Information'),
+                                                      content: const Text(
+                                                          'Delete Succeses'),
+                                                      actions: [
+                                                        TextButton(
+                                                          onPressed: () =>
+                                                              Navigator.pop(
+                                                                  alertDialogContext),
+                                                          child: const Text('Ok'),
+                                                        ),
+                                                      ],
+                                                    ),
+                                                  );
+                                                },
+                                              );
+                                            } else {
+                                              await showDialog(
+                                                context: context,
+                                                builder: (alertDialogContext) {
+                                                  return WebViewAware(
+                                                    child: AlertDialog(
+                                                      title:
+                                                          const Text('Information'),
+                                                      content:
+                                                          const Text('Delete Fail'),
+                                                      actions: [
+                                                        TextButton(
+                                                          onPressed: () =>
+                                                              Navigator.pop(
+                                                                  alertDialogContext),
+                                                          child: const Text('Ok'),
+                                                        ),
+                                                      ],
+                                                    ),
+                                                  );
+                                                },
+                                              );
+                                            }
                                           }
-                                        }
 
-                                        safeSetState(() {});
-                                      },
-                                    ),
-                                  ],
+                                          safeSetState(() {});
+                                        },
+                                      ),
+                                    ],
+                                  ),
                                 ),
                               ),
                             ),
-                          ),
-                        );
-                      }),
+                          );
+                        }),
+                      ),
                     );
                   },
                 );

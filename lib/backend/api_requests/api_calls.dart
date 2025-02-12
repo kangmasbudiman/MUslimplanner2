@@ -2037,7 +2037,7 @@ class GetsunahforadminCall {
 
     return ApiManager.instance.makeApiCall(
       callName: 'getsunahforadmin',
-      apiUrl: '${baseUrl}getsunah',
+      apiUrl: '${baseUrl}getsunahadmin',
       callType: ApiCallType.GET,
       headers: {},
       params: {},
@@ -2049,43 +2049,6 @@ class GetsunahforadminCall {
       alwaysAllowBody: false,
     );
   }
-
-  List? data(dynamic response) => getJsonField(
-        response,
-        r'''$.data''',
-        true,
-      ) as List?;
-  List<int>? id(dynamic response) => (getJsonField(
-        response,
-        r'''$.data[:].id''',
-        true,
-      ) as List?)
-          ?.withoutNulls
-          .map((x) => castToType<int>(x))
-          .withoutNulls
-          .toList();
-  List<int>? idkategorisunah(dynamic response) => (getJsonField(
-        response,
-        r'''$.data[:].idkategorisunah''',
-        true,
-      ) as List?)
-          ?.withoutNulls
-          .map((x) => castToType<int>(x))
-          .withoutNulls
-          .toList();
-  List<String>? namasunah(dynamic response) => (getJsonField(
-        response,
-        r'''$.data[:].namaSunah''',
-        true,
-      ) as List?)
-          ?.withoutNulls
-          .map((x) => castToType<String>(x))
-          .withoutNulls
-          .toList();
-  String? namakategori(dynamic response) => castToType<String>(getJsonField(
-        response,
-        r'''$.data[:].nama_kategori''',
-      ));
 }
 
 class KategorisunahCall {

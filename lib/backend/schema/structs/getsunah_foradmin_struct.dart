@@ -6,19 +6,21 @@ import '/backend/schema/util/firestore_util.dart';
 
 import '/flutter_flow/flutter_flow_util.dart';
 
-class DatasunahadminStruct extends FFFirebaseStruct {
-  DatasunahadminStruct({
+class GetsunahForadminStruct extends FFFirebaseStruct {
+  GetsunahForadminStruct({
     int? id,
     int? idkategorisunah,
     String? namaSunah,
     String? createdAt,
     String? updatedAt,
+    String? namaKategori,
     FirestoreUtilData firestoreUtilData = const FirestoreUtilData(),
   })  : _id = id,
         _idkategorisunah = idkategorisunah,
         _namaSunah = namaSunah,
         _createdAt = createdAt,
         _updatedAt = updatedAt,
+        _namaKategori = namaKategori,
         super(firestoreUtilData);
 
   // "id" field.
@@ -61,17 +63,25 @@ class DatasunahadminStruct extends FFFirebaseStruct {
 
   bool hasUpdatedAt() => _updatedAt != null;
 
-  static DatasunahadminStruct fromMap(Map<String, dynamic> data) =>
-      DatasunahadminStruct(
+  // "nama_kategori" field.
+  String? _namaKategori;
+  String get namaKategori => _namaKategori ?? '';
+  set namaKategori(String? val) => _namaKategori = val;
+
+  bool hasNamaKategori() => _namaKategori != null;
+
+  static GetsunahForadminStruct fromMap(Map<String, dynamic> data) =>
+      GetsunahForadminStruct(
         id: castToType<int>(data['id']),
         idkategorisunah: castToType<int>(data['idkategorisunah']),
         namaSunah: data['namaSunah'] as String?,
         createdAt: data['created_at'] as String?,
         updatedAt: data['updated_at'] as String?,
+        namaKategori: data['nama_kategori'] as String?,
       );
 
-  static DatasunahadminStruct? maybeFromMap(dynamic data) => data is Map
-      ? DatasunahadminStruct.fromMap(data.cast<String, dynamic>())
+  static GetsunahForadminStruct? maybeFromMap(dynamic data) => data is Map
+      ? GetsunahForadminStruct.fromMap(data.cast<String, dynamic>())
       : null;
 
   Map<String, dynamic> toMap() => {
@@ -80,6 +90,7 @@ class DatasunahadminStruct extends FFFirebaseStruct {
         'namaSunah': _namaSunah,
         'created_at': _createdAt,
         'updated_at': _updatedAt,
+        'nama_kategori': _namaKategori,
       }.withoutNulls;
 
   @override
@@ -104,10 +115,15 @@ class DatasunahadminStruct extends FFFirebaseStruct {
           _updatedAt,
           ParamType.String,
         ),
+        'nama_kategori': serializeParam(
+          _namaKategori,
+          ParamType.String,
+        ),
       }.withoutNulls;
 
-  static DatasunahadminStruct fromSerializableMap(Map<String, dynamic> data) =>
-      DatasunahadminStruct(
+  static GetsunahForadminStruct fromSerializableMap(
+          Map<String, dynamic> data) =>
+      GetsunahForadminStruct(
         id: deserializeParam(
           data['id'],
           ParamType.int,
@@ -133,43 +149,51 @@ class DatasunahadminStruct extends FFFirebaseStruct {
           ParamType.String,
           false,
         ),
+        namaKategori: deserializeParam(
+          data['nama_kategori'],
+          ParamType.String,
+          false,
+        ),
       );
 
   @override
-  String toString() => 'DatasunahadminStruct(${toMap()})';
+  String toString() => 'GetsunahForadminStruct(${toMap()})';
 
   @override
   bool operator ==(Object other) {
-    return other is DatasunahadminStruct &&
+    return other is GetsunahForadminStruct &&
         id == other.id &&
         idkategorisunah == other.idkategorisunah &&
         namaSunah == other.namaSunah &&
         createdAt == other.createdAt &&
-        updatedAt == other.updatedAt;
+        updatedAt == other.updatedAt &&
+        namaKategori == other.namaKategori;
   }
 
   @override
-  int get hashCode => const ListEquality()
-      .hash([id, idkategorisunah, namaSunah, createdAt, updatedAt]);
+  int get hashCode => const ListEquality().hash(
+      [id, idkategorisunah, namaSunah, createdAt, updatedAt, namaKategori]);
 }
 
-DatasunahadminStruct createDatasunahadminStruct({
+GetsunahForadminStruct createGetsunahForadminStruct({
   int? id,
   int? idkategorisunah,
   String? namaSunah,
   String? createdAt,
   String? updatedAt,
+  String? namaKategori,
   Map<String, dynamic> fieldValues = const {},
   bool clearUnsetFields = true,
   bool create = false,
   bool delete = false,
 }) =>
-    DatasunahadminStruct(
+    GetsunahForadminStruct(
       id: id,
       idkategorisunah: idkategorisunah,
       namaSunah: namaSunah,
       createdAt: createdAt,
       updatedAt: updatedAt,
+      namaKategori: namaKategori,
       firestoreUtilData: FirestoreUtilData(
         clearUnsetFields: clearUnsetFields,
         create: create,
@@ -178,66 +202,66 @@ DatasunahadminStruct createDatasunahadminStruct({
       ),
     );
 
-DatasunahadminStruct? updateDatasunahadminStruct(
-  DatasunahadminStruct? datasunahadmin, {
+GetsunahForadminStruct? updateGetsunahForadminStruct(
+  GetsunahForadminStruct? getsunahForadmin, {
   bool clearUnsetFields = true,
   bool create = false,
 }) =>
-    datasunahadmin
+    getsunahForadmin
       ?..firestoreUtilData = FirestoreUtilData(
         clearUnsetFields: clearUnsetFields,
         create: create,
       );
 
-void addDatasunahadminStructData(
+void addGetsunahForadminStructData(
   Map<String, dynamic> firestoreData,
-  DatasunahadminStruct? datasunahadmin,
+  GetsunahForadminStruct? getsunahForadmin,
   String fieldName, [
   bool forFieldValue = false,
 ]) {
   firestoreData.remove(fieldName);
-  if (datasunahadmin == null) {
+  if (getsunahForadmin == null) {
     return;
   }
-  if (datasunahadmin.firestoreUtilData.delete) {
+  if (getsunahForadmin.firestoreUtilData.delete) {
     firestoreData[fieldName] = FieldValue.delete();
     return;
   }
   final clearFields =
-      !forFieldValue && datasunahadmin.firestoreUtilData.clearUnsetFields;
+      !forFieldValue && getsunahForadmin.firestoreUtilData.clearUnsetFields;
   if (clearFields) {
     firestoreData[fieldName] = <String, dynamic>{};
   }
-  final datasunahadminData =
-      getDatasunahadminFirestoreData(datasunahadmin, forFieldValue);
+  final getsunahForadminData =
+      getGetsunahForadminFirestoreData(getsunahForadmin, forFieldValue);
   final nestedData =
-      datasunahadminData.map((k, v) => MapEntry('$fieldName.$k', v));
+      getsunahForadminData.map((k, v) => MapEntry('$fieldName.$k', v));
 
-  final mergeFields = datasunahadmin.firestoreUtilData.create || clearFields;
+  final mergeFields = getsunahForadmin.firestoreUtilData.create || clearFields;
   firestoreData
       .addAll(mergeFields ? mergeNestedFields(nestedData) : nestedData);
 }
 
-Map<String, dynamic> getDatasunahadminFirestoreData(
-  DatasunahadminStruct? datasunahadmin, [
+Map<String, dynamic> getGetsunahForadminFirestoreData(
+  GetsunahForadminStruct? getsunahForadmin, [
   bool forFieldValue = false,
 ]) {
-  if (datasunahadmin == null) {
+  if (getsunahForadmin == null) {
     return {};
   }
-  final firestoreData = mapToFirestore(datasunahadmin.toMap());
+  final firestoreData = mapToFirestore(getsunahForadmin.toMap());
 
   // Add any Firestore field values
-  datasunahadmin.firestoreUtilData.fieldValues
+  getsunahForadmin.firestoreUtilData.fieldValues
       .forEach((k, v) => firestoreData[k] = v);
 
   return forFieldValue ? mergeNestedFields(firestoreData) : firestoreData;
 }
 
-List<Map<String, dynamic>> getDatasunahadminListFirestoreData(
-  List<DatasunahadminStruct>? datasunahadmins,
+List<Map<String, dynamic>> getGetsunahForadminListFirestoreData(
+  List<GetsunahForadminStruct>? getsunahForadmins,
 ) =>
-    datasunahadmins
-        ?.map((e) => getDatasunahadminFirestoreData(e, true))
+    getsunahForadmins
+        ?.map((e) => getGetsunahForadminFirestoreData(e, true))
         .toList() ??
     [];
