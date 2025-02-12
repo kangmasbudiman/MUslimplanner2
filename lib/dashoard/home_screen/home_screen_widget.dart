@@ -1236,12 +1236,18 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                                                                     size: 24.0,
                                                                   ),
                                                                 ),
-                                                                if (functions.intToString(SunahGroup
-                                                                        .getsunahempatCall
-                                                                        .isComplate(
-                                                                      columnFajarGetsunahempatResponse
-                                                                          .jsonBody,
-                                                                    )!) ==
+                                                                if (functions.intToString(
+                                                                        valueOrDefault<
+                                                                            int>(
+                                                                      SunahGroup
+                                                                          .getsunahempatCall
+                                                                          .isComplate(
+                                                                            columnFajarGetsunahempatResponse.jsonBody,
+                                                                          )
+                                                                          ?.elementAtOrNull(
+                                                                              res4Index),
+                                                                      0,
+                                                                    )) ==
                                                                     '1')
                                                                   InkWell(
                                                                     splashColor:

@@ -2436,10 +2436,15 @@ class GetsunahempatCall {
           .map((x) => castToType<String>(x))
           .withoutNulls
           .toList();
-  int? isComplate(dynamic response) => castToType<int>(getJsonField(
+  List<int>? isComplate(dynamic response) => (getJsonField(
         response,
         r'''$.data[:].isCompleted''',
-      ));
+        true,
+      ) as List?)
+          ?.withoutNulls
+          .map((x) => castToType<int>(x))
+          .withoutNulls
+          .toList();
   int? summaryId(dynamic response) => castToType<int>(getJsonField(
         response,
         r'''$.data[:].summaryId''',
@@ -2447,15 +2452,22 @@ class GetsunahempatCall {
 }
 
 class GetsunahtigaCall {
-  Future<ApiCallResponse> call() async {
+  Future<ApiCallResponse> call({
+    String? iduser = '',
+    String? tanggal = '',
+  }) async {
     final baseUrl = SunahGroup.getBaseUrl();
 
     return ApiManager.instance.makeApiCall(
       callName: 'getsunahtiga',
       apiUrl: '${baseUrl}getsunah3',
-      callType: ApiCallType.GET,
+      callType: ApiCallType.POST,
       headers: {},
-      params: {},
+      params: {
+        'iduser': iduser,
+        'tanggal': tanggal,
+      },
+      bodyType: BodyType.X_WWW_FORM_URL_ENCODED,
       returnBody: true,
       encodeBodyUtf8: false,
       decodeUtf8: false,
