@@ -2,6 +2,7 @@ import '/auth/firebase_auth/auth_util.dart';
 import '/backend/api_requests/api_calls.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'listmybookmark_model.dart';
@@ -9,6 +10,9 @@ export 'listmybookmark_model.dart';
 
 class ListmybookmarkWidget extends StatefulWidget {
   const ListmybookmarkWidget({super.key});
+
+  static String routeName = 'Listmybookmark';
+  static String routePath = '/listmybookmark';
 
   @override
   State<ListmybookmarkWidget> createState() => _ListmybookmarkWidgetState();
@@ -47,25 +51,25 @@ class _ListmybookmarkWidgetState extends State<ListmybookmarkWidget> {
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
         appBar: PreferredSize(
-          preferredSize: const Size.fromHeight(70.0),
+          preferredSize: Size.fromHeight(70.0),
           child: AppBar(
             backgroundColor: Colors.white,
             automaticallyImplyLeading: false,
             title: Padding(
-              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 20.0),
+              padding: EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 20.0),
               child: Row(
                 mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Align(
-                    alignment: const AlignmentDirectional(-1.0, 0.0),
+                    alignment: AlignmentDirectional(-1.0, 0.0),
                     child: InkWell(
                       splashColor: Colors.transparent,
                       focusColor: Colors.transparent,
                       hoverColor: Colors.transparent,
                       highlightColor: Colors.transparent,
                       onTap: () async {
-                        context.pushNamed('HomeScreen');
+                        context.pushNamed(HomeScreenWidget.routeName);
                       },
                       child: Icon(
                         Icons.arrow_back_ios_new,
@@ -91,7 +95,7 @@ class _ListmybookmarkWidgetState extends State<ListmybookmarkWidget> {
                 ],
               ),
             ),
-            actions: const [],
+            actions: [],
             centerTitle: false,
             elevation: 2.0,
           ),
@@ -99,7 +103,7 @@ class _ListmybookmarkWidgetState extends State<ListmybookmarkWidget> {
         body: SafeArea(
           top: true,
           child: Padding(
-            padding: const EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 0.0),
+            padding: EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 0.0),
             child: FutureBuilder<ApiCallResponse>(
               future: MybookmarkGroup.mybookmarkCall.call(
                 iduser: currentUserUid,
@@ -136,7 +140,7 @@ class _ListmybookmarkWidgetState extends State<ListmybookmarkWidget> {
                       children: List.generate(respon.length, (responIndex) {
                         final responItem = respon[responIndex];
                         return Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 10.0, 0.0, 0.0),
                           child: AuthUserStreamWidget(
                             builder: (context) => InkWell(
@@ -146,7 +150,7 @@ class _ListmybookmarkWidgetState extends State<ListmybookmarkWidget> {
                               highlightColor: Colors.transparent,
                               onTap: () async {
                                 context.pushNamed(
-                                  'LanjutAlquran',
+                                  LanjutAlquranWidget.routeName,
                                   queryParameters: {
                                     'nomorSurat': serializeParam(
                                       getJsonField(
@@ -196,7 +200,7 @@ class _ListmybookmarkWidgetState extends State<ListmybookmarkWidget> {
                               child: Container(
                                 decoration: BoxDecoration(
                                   color: currentUserDocument?.colorThemes,
-                                  boxShadow: const [
+                                  boxShadow: [
                                     BoxShadow(
                                       blurRadius: 2.0,
                                       color: Color(0x33000000),
@@ -206,7 +210,7 @@ class _ListmybookmarkWidgetState extends State<ListmybookmarkWidget> {
                                       ),
                                     )
                                   ],
-                                  borderRadius: const BorderRadius.only(
+                                  borderRadius: BorderRadius.only(
                                     bottomLeft: Radius.circular(20.0),
                                     bottomRight: Radius.circular(20.0),
                                     topLeft: Radius.circular(20.0),
@@ -214,7 +218,7 @@ class _ListmybookmarkWidgetState extends State<ListmybookmarkWidget> {
                                   ),
                                 ),
                                 child: Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       10.0, 10.0, 10.0, 10.0),
                                   child: Column(
                                     mainAxisSize: MainAxisSize.max,
@@ -249,7 +253,7 @@ class _ListmybookmarkWidgetState extends State<ListmybookmarkWidget> {
                                           ),
                                           Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 0.0, 10.0, 0.0),
                                             child: Text(
                                               valueOrDefault<String>(
@@ -304,7 +308,7 @@ class _ListmybookmarkWidgetState extends State<ListmybookmarkWidget> {
                                                                 .primaryText,
                                                       ),
                                                     ),
-                                                    duration: const Duration(
+                                                    duration: Duration(
                                                         milliseconds: 4000),
                                                     backgroundColor:
                                                         FlutterFlowTheme.of(
@@ -330,7 +334,7 @@ class _ListmybookmarkWidgetState extends State<ListmybookmarkWidget> {
                                         children: [
                                           Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 15.0, 0.0, 0.0),
                                             child: Text(
                                               'Ayat Terahir : ',
@@ -347,7 +351,7 @@ class _ListmybookmarkWidgetState extends State<ListmybookmarkWidget> {
                                           ),
                                           Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 15.0, 0.0, 0.0),
                                             child: Text(
                                               getJsonField(

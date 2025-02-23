@@ -1,5 +1,6 @@
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'paymentsucces_model.dart';
 export 'paymentsucces_model.dart';
@@ -11,6 +12,9 @@ class PaymentsuccesWidget extends StatefulWidget {
   });
 
   final String? linkUrl;
+
+  static String routeName = 'paymentsucces';
+  static String routePath = '/paymentsucces';
 
   @override
   State<PaymentsuccesWidget> createState() => _PaymentsuccesWidgetState();
@@ -49,7 +53,7 @@ class _PaymentsuccesWidgetState extends State<PaymentsuccesWidget> {
         body: SafeArea(
           top: true,
           child: Padding(
-            padding: const EdgeInsetsDirectional.fromSTEB(20.0, 40.0, 20.0, 20.0),
+            padding: EdgeInsetsDirectional.fromSTEB(20.0, 40.0, 20.0, 20.0),
             child: Column(
               mainAxisSize: MainAxisSize.max,
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -59,7 +63,7 @@ class _PaymentsuccesWidgetState extends State<PaymentsuccesWidget> {
                   height: 170.0,
                   decoration: BoxDecoration(
                     color: FlutterFlowTheme.of(context).primary,
-                    boxShadow: const [
+                    boxShadow: [
                       BoxShadow(
                         blurRadius: 2.0,
                         color: Color(0x33000000),
@@ -75,7 +79,7 @@ class _PaymentsuccesWidgetState extends State<PaymentsuccesWidget> {
                     width: 90.0,
                     height: 90.0,
                     clipBehavior: Clip.antiAlias,
-                    decoration: const BoxDecoration(
+                    decoration: BoxDecoration(
                       shape: BoxShape.circle,
                     ),
                     child: Image.asset(
@@ -91,7 +95,7 @@ class _PaymentsuccesWidgetState extends State<PaymentsuccesWidget> {
                   children: [
                     Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 60.0, 0.0, 0.0),
+                          EdgeInsetsDirectional.fromSTEB(0.0, 60.0, 0.0, 0.0),
                       child: Text(
                         'Payment Completed\nSuccessful!',
                         textAlign: TextAlign.center,
@@ -106,7 +110,7 @@ class _PaymentsuccesWidgetState extends State<PaymentsuccesWidget> {
                   ],
                 ),
                 Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 60.0, 0.0, 0.0),
+                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 60.0, 0.0, 0.0),
                   child: Row(
                     mainAxisSize: MainAxisSize.max,
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -118,7 +122,7 @@ class _PaymentsuccesWidgetState extends State<PaymentsuccesWidget> {
                         highlightColor: Colors.transparent,
                         onTap: () async {
                           context.pushNamed(
-                            'webviewPembayaran',
+                            WebviewPembayaranWidget.routeName,
                             queryParameters: {
                               'linkUlr': serializeParam(
                                 widget.linkUrl,
@@ -131,7 +135,7 @@ class _PaymentsuccesWidgetState extends State<PaymentsuccesWidget> {
                           width: 260.0,
                           decoration: BoxDecoration(
                             color: FlutterFlowTheme.of(context).primary,
-                            boxShadow: const [
+                            boxShadow: [
                               BoxShadow(
                                 blurRadius: 2.0,
                                 color: Color(0x33000000),
@@ -141,7 +145,7 @@ class _PaymentsuccesWidgetState extends State<PaymentsuccesWidget> {
                                 ),
                               )
                             ],
-                            borderRadius: const BorderRadius.only(
+                            borderRadius: BorderRadius.only(
                               bottomLeft: Radius.circular(20.0),
                               bottomRight: Radius.circular(20.0),
                               topLeft: Radius.circular(20.0),
@@ -149,9 +153,9 @@ class _PaymentsuccesWidgetState extends State<PaymentsuccesWidget> {
                             ),
                           ),
                           child: Align(
-                            alignment: const AlignmentDirectional(0.0, 0.0),
+                            alignment: AlignmentDirectional(0.0, 0.0),
                             child: Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 5.0, 0.0, 5.0),
                               child: Text(
                                 'Done',
@@ -174,7 +178,7 @@ class _PaymentsuccesWidgetState extends State<PaymentsuccesWidget> {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 50.0, 0.0, 0.0),
+                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 50.0, 0.0, 0.0),
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(8.0),
                     child: Image.asset(

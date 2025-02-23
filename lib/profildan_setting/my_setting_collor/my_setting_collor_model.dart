@@ -1,5 +1,6 @@
 import '/componen/footer_logo/footer_logo_widget.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/index.dart';
 import 'my_setting_collor_widget.dart' show MySettingCollorWidget;
 import 'package:flutter/material.dart';
 

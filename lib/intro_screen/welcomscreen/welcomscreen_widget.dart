@@ -1,11 +1,15 @@
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'welcomscreen_model.dart';
 export 'welcomscreen_model.dart';
 
 class WelcomscreenWidget extends StatefulWidget {
   const WelcomscreenWidget({super.key});
+
+  static String routeName = 'welcomscreen';
+  static String routePath = '/welcomscreen';
 
   @override
   State<WelcomscreenWidget> createState() => _WelcomscreenWidgetState();
@@ -42,13 +46,13 @@ class _WelcomscreenWidgetState extends State<WelcomscreenWidget> {
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
         body: Padding(
-          padding: const EdgeInsetsDirectional.fromSTEB(20.0, 20.0, 20.0, 20.0),
+          padding: EdgeInsetsDirectional.fromSTEB(20.0, 20.0, 20.0, 20.0),
           child: Column(
             mainAxisSize: MainAxisSize.max,
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 40.0, 0.0, 0.0),
+                padding: EdgeInsetsDirectional.fromSTEB(0.0, 40.0, 0.0, 0.0),
                 child: Text(
                   'Bismillah,\nAssalamualaikum!',
                   textAlign: TextAlign.center,
@@ -70,7 +74,7 @@ class _WelcomscreenWidgetState extends State<WelcomscreenWidget> {
                 ),
               ),
               Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 70.0, 0.0, 0.0),
+                padding: EdgeInsetsDirectional.fromSTEB(0.0, 70.0, 0.0, 0.0),
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -81,12 +85,12 @@ class _WelcomscreenWidgetState extends State<WelcomscreenWidget> {
                       hoverColor: Colors.transparent,
                       highlightColor: Colors.transparent,
                       onTap: () async {
-                        context.pushNamed('login');
+                        context.pushNamed(LoginWidget.routeName);
                       },
                       child: Container(
                         decoration: BoxDecoration(
                           color: FlutterFlowTheme.of(context).primary,
-                          boxShadow: const [
+                          boxShadow: [
                             BoxShadow(
                               blurRadius: 2.0,
                               color: Color(0x33000000),
@@ -96,7 +100,7 @@ class _WelcomscreenWidgetState extends State<WelcomscreenWidget> {
                               ),
                             )
                           ],
-                          borderRadius: const BorderRadius.only(
+                          borderRadius: BorderRadius.only(
                             bottomLeft: Radius.circular(50.0),
                             bottomRight: Radius.circular(50.0),
                             topLeft: Radius.circular(50.0),
@@ -104,7 +108,7 @@ class _WelcomscreenWidgetState extends State<WelcomscreenWidget> {
                           ),
                         ),
                         child: Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               50.0, 10.0, 50.0, 10.0),
                           child: Text(
                             'Login',
@@ -127,12 +131,12 @@ class _WelcomscreenWidgetState extends State<WelcomscreenWidget> {
                       hoverColor: Colors.transparent,
                       highlightColor: Colors.transparent,
                       onTap: () async {
-                        context.pushNamed('register');
+                        context.pushNamed(RegisterWidget.routeName);
                       },
                       child: Container(
                         decoration: BoxDecoration(
                           color: FlutterFlowTheme.of(context).primary,
-                          boxShadow: const [
+                          boxShadow: [
                             BoxShadow(
                               blurRadius: 2.0,
                               color: Color(0x33000000),
@@ -142,7 +146,7 @@ class _WelcomscreenWidgetState extends State<WelcomscreenWidget> {
                               ),
                             )
                           ],
-                          borderRadius: const BorderRadius.only(
+                          borderRadius: BorderRadius.only(
                             bottomLeft: Radius.circular(50.0),
                             bottomRight: Radius.circular(50.0),
                             topLeft: Radius.circular(50.0),
@@ -150,7 +154,7 @@ class _WelcomscreenWidgetState extends State<WelcomscreenWidget> {
                           ),
                         ),
                         child: Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               40.0, 10.0, 40.0, 10.0),
                           child: Text(
                             'Register',
@@ -171,7 +175,7 @@ class _WelcomscreenWidgetState extends State<WelcomscreenWidget> {
                 ),
               ),
               Align(
-                alignment: const AlignmentDirectional(0.0, 1.0),
+                alignment: AlignmentDirectional(0.0, 1.0),
                 child: RichText(
                   textScaler: MediaQuery.of(context).textScaler,
                   text: TextSpan(
@@ -186,7 +190,7 @@ class _WelcomscreenWidgetState extends State<WelcomscreenWidget> {
                               fontWeight: FontWeight.bold,
                             ),
                       ),
-                      const TextSpan(
+                      TextSpan(
                         text: ' Privacy Policy  ',
                         style: TextStyle(),
                       ),
@@ -196,7 +200,7 @@ class _WelcomscreenWidgetState extends State<WelcomscreenWidget> {
                           color: FlutterFlowTheme.of(context).primary,
                         ),
                       ),
-                      const TextSpan(
+                      TextSpan(
                         text: ' Term of Use.',
                         style: TextStyle(),
                       )

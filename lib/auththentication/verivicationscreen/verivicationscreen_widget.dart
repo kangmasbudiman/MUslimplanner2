@@ -2,6 +2,7 @@ import '/auth/firebase_auth/auth_util.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:provider/provider.dart';
@@ -10,6 +11,9 @@ export 'verivicationscreen_model.dart';
 
 class VerivicationscreenWidget extends StatefulWidget {
   const VerivicationscreenWidget({super.key});
+
+  static String routeName = 'verivicationscreen';
+  static String routePath = '/verivicationscreen';
 
   @override
   State<VerivicationscreenWidget> createState() =>
@@ -35,7 +39,7 @@ class _VerivicationscreenWidgetState extends State<VerivicationscreenWidget> {
 
       safeSetState(() {});
       if (currentUserEmailVerified) {
-        context.pushNamed('HomePage');
+        context.pushNamed(HomePageWidget.routeName);
       } else {
         await authManager.sendEmailVerification();
       }
@@ -66,19 +70,19 @@ class _VerivicationscreenWidgetState extends State<VerivicationscreenWidget> {
         body: SafeArea(
           top: true,
           child: Padding(
-            padding: const EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 20.0),
+            padding: EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 20.0),
             child: Column(
               mainAxisSize: MainAxisSize.max,
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
                 Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
+                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
                   child: Container(
                     width: 170.0,
                     height: 170.0,
                     decoration: BoxDecoration(
                       color: FlutterFlowTheme.of(context).primary,
-                      boxShadow: const [
+                      boxShadow: [
                         BoxShadow(
                           blurRadius: 2.0,
                           color: Color(0x33000000),
@@ -108,7 +112,7 @@ class _VerivicationscreenWidgetState extends State<VerivicationscreenWidget> {
                   children: [
                     Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 60.0, 0.0, 0.0),
+                          EdgeInsetsDirectional.fromSTEB(0.0, 60.0, 0.0, 0.0),
                       child: Text(
                         'Verify your email',
                         style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -121,7 +125,7 @@ class _VerivicationscreenWidgetState extends State<VerivicationscreenWidget> {
                     ),
                     Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 0.0),
+                          EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 0.0),
                       child: Text(
                         'Check your inbox & Click the link below to activate your account.',
                         textAlign: TextAlign.center,
@@ -138,7 +142,7 @@ class _VerivicationscreenWidgetState extends State<VerivicationscreenWidget> {
                 Expanded(
                   child: Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 60.0, 0.0, 0.0),
+                        EdgeInsetsDirectional.fromSTEB(0.0, 60.0, 0.0, 0.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -155,7 +159,7 @@ class _VerivicationscreenWidgetState extends State<VerivicationscreenWidget> {
                                         .primaryText,
                                   ),
                                 ),
-                                duration: const Duration(milliseconds: 4000),
+                                duration: Duration(milliseconds: 4000),
                                 backgroundColor:
                                     FlutterFlowTheme.of(context).secondary,
                               ),
@@ -164,9 +168,9 @@ class _VerivicationscreenWidgetState extends State<VerivicationscreenWidget> {
                           text: 'Resend Email  ',
                           options: FFButtonOptions(
                             height: 40.0,
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 24.0, 0.0, 24.0, 0.0),
-                            iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                            iconPadding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 0.0),
                             color: FlutterFlowTheme.of(context).primary,
                             textStyle: FlutterFlowTheme.of(context)
@@ -178,7 +182,7 @@ class _VerivicationscreenWidgetState extends State<VerivicationscreenWidget> {
                                   letterSpacing: 0.0,
                                 ),
                             elevation: 3.0,
-                            borderSide: const BorderSide(
+                            borderSide: BorderSide(
                               color: Colors.transparent,
                               width: 1.0,
                             ),
@@ -192,9 +196,9 @@ class _VerivicationscreenWidgetState extends State<VerivicationscreenWidget> {
                           text: 'Enter New Email',
                           options: FFButtonOptions(
                             height: 40.0,
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 24.0, 0.0, 24.0, 0.0),
-                            iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                            iconPadding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 0.0),
                             color: FlutterFlowTheme.of(context).primary,
                             textStyle: FlutterFlowTheme.of(context)
@@ -206,14 +210,14 @@ class _VerivicationscreenWidgetState extends State<VerivicationscreenWidget> {
                                   letterSpacing: 0.0,
                                 ),
                             elevation: 3.0,
-                            borderSide: const BorderSide(
+                            borderSide: BorderSide(
                               color: Colors.transparent,
                               width: 1.0,
                             ),
                             borderRadius: BorderRadius.circular(20.0),
                           ),
                         ),
-                      ].divide(const SizedBox(width: 4.0)),
+                      ].divide(SizedBox(width: 4.0)),
                     ),
                   ),
                 ),
@@ -224,7 +228,7 @@ class _VerivicationscreenWidgetState extends State<VerivicationscreenWidget> {
 
                     safeSetState(() {});
                     if (currentUserEmailVerified) {
-                      context.pushNamed('verivicationSuccess');
+                      context.pushNamed(VerivicationSuccessWidget.routeName);
                     } else {
                       await authManager.sendEmailVerification();
                     }
@@ -233,9 +237,9 @@ class _VerivicationscreenWidgetState extends State<VerivicationscreenWidget> {
                   options: FFButtonOptions(
                     height: 40.0,
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+                        EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
                     iconPadding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                        EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                     color: FlutterFlowTheme.of(context).primary,
                     textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                           fontFamily: 'Inter',
@@ -244,7 +248,7 @@ class _VerivicationscreenWidgetState extends State<VerivicationscreenWidget> {
                           letterSpacing: 0.0,
                         ),
                     elevation: 3.0,
-                    borderSide: const BorderSide(
+                    borderSide: BorderSide(
                       color: Colors.transparent,
                       width: 1.0,
                     ),
@@ -252,7 +256,7 @@ class _VerivicationscreenWidgetState extends State<VerivicationscreenWidget> {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
+                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
                   child: Text(
                     'Need help?Please Contact Support',
                     style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -273,10 +277,10 @@ class _VerivicationscreenWidgetState extends State<VerivicationscreenWidget> {
                   ),
                 ),
                 Align(
-                  alignment: const AlignmentDirectional(0.0, 1.0),
+                  alignment: AlignmentDirectional(0.0, 1.0),
                   child: Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 50.0, 0.0, 0.0),
+                        EdgeInsetsDirectional.fromSTEB(0.0, 50.0, 0.0, 0.0),
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(8.0),
                       child: Image.asset(

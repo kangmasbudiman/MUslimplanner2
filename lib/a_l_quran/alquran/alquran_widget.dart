@@ -22,6 +22,9 @@ class AlquranWidget extends StatefulWidget {
   final String? revelationid;
   final int? idsurah;
 
+  static String routeName = 'Alquran';
+  static String routePath = '/alquran';
+
   @override
   State<AlquranWidget> createState() => _AlquranWidgetState();
 }
@@ -65,13 +68,13 @@ class _AlquranWidgetState extends State<AlquranWidget> {
           backgroundColor: Colors.white,
           automaticallyImplyLeading: false,
           title: Padding(
-            padding: const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 10.0),
+            padding: EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 10.0),
             child: Row(
               mainAxisSize: MainAxisSize.max,
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Align(
-                  alignment: const AlignmentDirectional(-1.0, 0.0),
+                  alignment: AlignmentDirectional(-1.0, 0.0),
                   child: InkWell(
                     splashColor: Colors.transparent,
                     focusColor: Colors.transparent,
@@ -117,7 +120,7 @@ class _AlquranWidgetState extends State<AlquranWidget> {
               ],
             ),
           ),
-          actions: const [],
+          actions: [],
           centerTitle: false,
           elevation: 2.0,
         ),
@@ -136,12 +139,12 @@ class _AlquranWidgetState extends State<AlquranWidget> {
                 children: [
                   Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(20.0, 20.0, 20.0, 0.0),
+                        EdgeInsetsDirectional.fromSTEB(20.0, 20.0, 20.0, 0.0),
                     child: Container(
                       width: double.infinity,
                       decoration: BoxDecoration(
                         color: FFAppState().colorFontThemes,
-                        boxShadow: const [
+                        boxShadow: [
                           BoxShadow(
                             blurRadius: 2.0,
                             color: Color(0x33000000),
@@ -151,7 +154,7 @@ class _AlquranWidgetState extends State<AlquranWidget> {
                             ),
                           )
                         ],
-                        borderRadius: const BorderRadius.only(
+                        borderRadius: BorderRadius.only(
                           bottomLeft: Radius.circular(20.0),
                           bottomRight: Radius.circular(20.0),
                           topLeft: Radius.circular(20.0),
@@ -159,14 +162,14 @@ class _AlquranWidgetState extends State<AlquranWidget> {
                         ),
                       ),
                       child: Padding(
-                        padding: const EdgeInsetsDirectional.fromSTEB(
+                        padding: EdgeInsetsDirectional.fromSTEB(
                             10.0, 0.0, 10.0, 0.0),
                         child: TextFormField(
                           controller: _model.textController,
                           focusNode: _model.textFieldFocusNode,
                           onChanged: (_) => EasyDebounce.debounce(
                             '_model.textController',
-                            const Duration(milliseconds: 2000),
+                            Duration(milliseconds: 2000),
                             () async {
                               FFAppState().setAyat = '';
                               safeSetState(() {});
@@ -214,13 +217,13 @@ class _AlquranWidgetState extends State<AlquranWidget> {
                   ),
                   Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
+                        EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
                     child: Container(
                       width: double.infinity,
                       height: MediaQuery.sizeOf(context).height * 0.9,
                       decoration: BoxDecoration(
                         color: currentUserDocument?.colorThemes,
-                        borderRadius: const BorderRadius.only(
+                        borderRadius: BorderRadius.only(
                           bottomLeft: Radius.circular(20.0),
                           bottomRight: Radius.circular(20.0),
                           topLeft: Radius.circular(20.0),
@@ -228,7 +231,7 @@ class _AlquranWidgetState extends State<AlquranWidget> {
                         ),
                       ),
                       child: Padding(
-                        padding: const EdgeInsetsDirectional.fromSTEB(
+                        padding: EdgeInsetsDirectional.fromSTEB(
                             20.0, 20.0, 20.0, 0.0),
                         child: FutureBuilder<ApiCallResponse>(
                           future: IsisuratalquranCall.call(
@@ -266,7 +269,7 @@ class _AlquranWidgetState extends State<AlquranWidget> {
                                   itemBuilder: (context, responIndex) {
                                     final responItem = respon[responIndex];
                                     return Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 0.0, 0.0, 25.0),
                                       child: Container(
                                         width: double.infinity,
@@ -276,7 +279,7 @@ class _AlquranWidgetState extends State<AlquranWidget> {
                                         ),
                                         child: Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   10.0, 0.0, 10.0, 0.0),
                                           child: Column(
                                             mainAxisSize: MainAxisSize.max,
@@ -284,7 +287,7 @@ class _AlquranWidgetState extends State<AlquranWidget> {
                                                 CrossAxisAlignment.start,
                                             children: [
                                               Align(
-                                                alignment: const AlignmentDirectional(
+                                                alignment: AlignmentDirectional(
                                                     1.0, 0.0),
                                                 child: Text(
                                                   valueOrDefault<String>(
@@ -310,7 +313,7 @@ class _AlquranWidgetState extends State<AlquranWidget> {
                                                 ),
                                               ),
                                               Align(
-                                                alignment: const AlignmentDirectional(
+                                                alignment: AlignmentDirectional(
                                                     1.0, 0.0),
                                                 child: Text(
                                                   valueOrDefault<String>(
@@ -335,7 +338,7 @@ class _AlquranWidgetState extends State<AlquranWidget> {
                                                 ),
                                               ),
                                               Padding(
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         0.0, 10.0, 0.0, 0.0),
                                                 child: Text(
@@ -363,7 +366,7 @@ class _AlquranWidgetState extends State<AlquranWidget> {
                                                 ),
                                               ),
                                               Padding(
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         0.0, 5.0, 0.0, 0.0),
                                                 child: Text(
@@ -390,7 +393,7 @@ class _AlquranWidgetState extends State<AlquranWidget> {
                                                 ),
                                               ),
                                               Padding(
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         0.0, 10.0, 0.0, 0.0),
                                                 child: Text(
@@ -423,7 +426,7 @@ class _AlquranWidgetState extends State<AlquranWidget> {
                                                   Flexible(
                                                     child: Align(
                                                       alignment:
-                                                          const AlignmentDirectional(
+                                                          AlignmentDirectional(
                                                               -1.0, 0.0),
                                                       child: Text(
                                                         '...',
@@ -482,7 +485,7 @@ class _AlquranWidgetState extends State<AlquranWidget> {
                                                                     .primaryText,
                                                               ),
                                                             ),
-                                                            duration: const Duration(
+                                                            duration: Duration(
                                                                 milliseconds:
                                                                     4000),
                                                             backgroundColor:
@@ -504,7 +507,7 @@ class _AlquranWidgetState extends State<AlquranWidget> {
                                                                     .primaryText,
                                                               ),
                                                             ),
-                                                            duration: const Duration(
+                                                            duration: Duration(
                                                                 milliseconds:
                                                                     4000),
                                                             backgroundColor:
@@ -526,11 +529,11 @@ class _AlquranWidgetState extends State<AlquranWidget> {
                                                   ),
                                                 ],
                                               ),
-                                              const Divider(
+                                              Divider(
                                                 thickness: 1.0,
                                                 color: Colors.white,
                                               ),
-                                            ].divide(const SizedBox(height: 8.0)),
+                                            ].divide(SizedBox(height: 8.0)),
                                           ),
                                         ),
                                       ),

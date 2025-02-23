@@ -8,6 +8,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
+import '/index.dart';
 import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -17,6 +18,9 @@ export 'myedit_profil_model.dart';
 
 class MyeditProfilWidget extends StatefulWidget {
   const MyeditProfilWidget({super.key});
+
+  static String routeName = 'MyeditProfil';
+  static String routePath = '/myeditProfil';
 
   @override
   State<MyeditProfilWidget> createState() => _MyeditProfilWidgetState();
@@ -65,7 +69,7 @@ class _MyeditProfilWidgetState extends State<MyeditProfilWidget> {
           child: Container(
             width: double.infinity,
             height: double.infinity,
-            decoration: const BoxDecoration(),
+            decoration: BoxDecoration(),
             child: Column(
               mainAxisSize: MainAxisSize.max,
               children: [
@@ -77,7 +81,7 @@ class _MyeditProfilWidgetState extends State<MyeditProfilWidget> {
                         height: 160.0,
                         decoration: BoxDecoration(
                           color: currentUserDocument?.colorThemes,
-                          boxShadow: const [
+                          boxShadow: [
                             BoxShadow(
                               blurRadius: 2.0,
                               color: Color(0x33000000),
@@ -87,7 +91,7 @@ class _MyeditProfilWidgetState extends State<MyeditProfilWidget> {
                               ),
                             )
                           ],
-                          borderRadius: const BorderRadius.only(
+                          borderRadius: BorderRadius.only(
                             bottomLeft: Radius.circular(20.0),
                             bottomRight: Radius.circular(20.0),
                             topLeft: Radius.circular(0.0),
@@ -98,7 +102,7 @@ class _MyeditProfilWidgetState extends State<MyeditProfilWidget> {
                           mainAxisSize: MainAxisSize.max,
                           children: [
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   20.0, 20.0, 20.0, 20.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -106,7 +110,7 @@ class _MyeditProfilWidgetState extends State<MyeditProfilWidget> {
                                     MainAxisAlignment.spaceBetween,
                                 children: [
                                   Align(
-                                    alignment: const AlignmentDirectional(-1.0, 0.0),
+                                    alignment: AlignmentDirectional(-1.0, 0.0),
                                     child: InkWell(
                                       splashColor: Colors.transparent,
                                       focusColor: Colors.transparent,
@@ -115,7 +119,7 @@ class _MyeditProfilWidgetState extends State<MyeditProfilWidget> {
                                       onTap: () async {
                                         context.safePop();
                                       },
-                                      child: const Icon(
+                                      child: Icon(
                                         Icons.arrow_back_ios_new,
                                         color: Colors.white,
                                         size: 25.0,
@@ -128,9 +132,10 @@ class _MyeditProfilWidgetState extends State<MyeditProfilWidget> {
                                     hoverColor: Colors.transparent,
                                     highlightColor: Colors.transparent,
                                     onTap: () async {
-                                      context.pushNamed('MySetting');
+                                      context
+                                          .pushNamed(MySettingWidget.routeName);
                                     },
-                                    child: const Icon(
+                                    child: Icon(
                                       Icons.settings_sharp,
                                       color: Colors.white,
                                       size: 24.0,
@@ -157,9 +162,9 @@ class _MyeditProfilWidgetState extends State<MyeditProfilWidget> {
                       ),
                     ),
                     Align(
-                      alignment: const AlignmentDirectional(0.0, 0.0),
+                      alignment: AlignmentDirectional(0.0, 0.0),
                       child: Padding(
-                        padding: const EdgeInsetsDirectional.fromSTEB(
+                        padding: EdgeInsetsDirectional.fromSTEB(
                             0.0, 115.0, 0.0, 0.0),
                         child: Container(
                           width: 100.0,
@@ -167,7 +172,7 @@ class _MyeditProfilWidgetState extends State<MyeditProfilWidget> {
                           decoration: BoxDecoration(
                             color: FlutterFlowTheme.of(context)
                                 .secondaryBackground,
-                            boxShadow: const [
+                            boxShadow: [
                               BoxShadow(
                                 color: Color(0x3173767A),
                                 offset: Offset(
@@ -179,12 +184,12 @@ class _MyeditProfilWidgetState extends State<MyeditProfilWidget> {
                             shape: BoxShape.circle,
                           ),
                           child: Align(
-                            alignment: const AlignmentDirectional(0.0, 0.0),
+                            alignment: AlignmentDirectional(0.0, 0.0),
                             child: Stack(
                               children: [
                                 if (currentUserPhoto == '')
                                   Align(
-                                    alignment: const AlignmentDirectional(0.0, 0.0),
+                                    alignment: AlignmentDirectional(0.0, 0.0),
                                     child: AuthUserStreamWidget(
                                       builder: (context) => ClipRRect(
                                         borderRadius:
@@ -200,7 +205,7 @@ class _MyeditProfilWidgetState extends State<MyeditProfilWidget> {
                                   ),
                                 if (currentUserPhoto != '')
                                   Align(
-                                    alignment: const AlignmentDirectional(0.0, 0.0),
+                                    alignment: AlignmentDirectional(0.0, 0.0),
                                     child: AuthUserStreamWidget(
                                       builder: (context) => ClipRRect(
                                         borderRadius:
@@ -215,14 +220,14 @@ class _MyeditProfilWidgetState extends State<MyeditProfilWidget> {
                                     ),
                                   ),
                                 Align(
-                                  alignment: const AlignmentDirectional(1.0, -1.0),
+                                  alignment: AlignmentDirectional(1.0, -1.0),
                                   child: FlutterFlowIconButton(
                                     borderRadius: 20.0,
                                     borderWidth: 1.0,
                                     buttonSize: 30.0,
                                     fillColor:
                                         FlutterFlowTheme.of(context).tertiary,
-                                    icon: const Icon(
+                                    icon: Icon(
                                       Icons.edit,
                                       size: 20.0,
                                     ),
@@ -246,7 +251,7 @@ class _MyeditProfilWidgetState extends State<MyeditProfilWidget> {
                                                 padding:
                                                     MediaQuery.viewInsetsOf(
                                                         context),
-                                                child: const UploadImageWidget(),
+                                                child: UploadImageWidget(),
                                               ),
                                             ),
                                           );
@@ -265,7 +270,7 @@ class _MyeditProfilWidgetState extends State<MyeditProfilWidget> {
                 ),
                 Padding(
                   padding:
-                      const EdgeInsetsDirectional.fromSTEB(20.0, 20.0, 20.0, 0.0),
+                      EdgeInsetsDirectional.fromSTEB(20.0, 20.0, 20.0, 0.0),
                   child: Column(
                     mainAxisSize: MainAxisSize.max,
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -308,9 +313,9 @@ class _MyeditProfilWidgetState extends State<MyeditProfilWidget> {
                             autovalidateMode: AutovalidateMode.disabled,
                             child: Container(
                               width: double.infinity,
-                              decoration: const BoxDecoration(),
+                              decoration: BoxDecoration(),
                               child: Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     20.0, 0.0, 20.0, 0.0),
                                 child: Column(
                                   mainAxisSize: MainAxisSize.max,
@@ -323,7 +328,7 @@ class _MyeditProfilWidgetState extends State<MyeditProfilWidget> {
                                       children: [
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   20.0, 0.0, 0.0, 10.0),
                                           child: Text(
                                             'Username',
@@ -350,7 +355,7 @@ class _MyeditProfilWidgetState extends State<MyeditProfilWidget> {
                                           child: Opacity(
                                             opacity: 0.8,
                                             child: Padding(
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       0.0, 10.0, 0.0, 0.0),
                                               child: TextFormField(
@@ -365,7 +370,7 @@ class _MyeditProfilWidgetState extends State<MyeditProfilWidget> {
                                                 onChanged: (_) =>
                                                     EasyDebounce.debounce(
                                                   '_model.textusernameTextController',
-                                                  const Duration(milliseconds: 2000),
+                                                  Duration(milliseconds: 2000),
                                                   () => safeSetState(() {}),
                                                 ),
                                                 autofocus: false,
@@ -396,7 +401,7 @@ class _MyeditProfilWidgetState extends State<MyeditProfilWidget> {
                                                   focusedErrorBorder:
                                                       InputBorder.none,
                                                   contentPadding:
-                                                      const EdgeInsetsDirectional
+                                                      EdgeInsetsDirectional
                                                           .fromSTEB(20.0, 0.0,
                                                               20.0, 0.0),
                                                   suffixIcon: _model
@@ -410,7 +415,7 @@ class _MyeditProfilWidgetState extends State<MyeditProfilWidget> {
                                                                 ?.clear();
                                                             safeSetState(() {});
                                                           },
-                                                          child: const Icon(
+                                                          child: Icon(
                                                             Icons.clear,
                                                             size: 22,
                                                           ),
@@ -440,7 +445,7 @@ class _MyeditProfilWidgetState extends State<MyeditProfilWidget> {
                                       children: [
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   20.0, 0.0, 0.0, 10.0),
                                           child: Text(
                                             'Email',
@@ -466,7 +471,7 @@ class _MyeditProfilWidgetState extends State<MyeditProfilWidget> {
                                           ),
                                           child: Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 10.0, 0.0, 0.0),
                                             child: TextFormField(
                                               controller: _model
@@ -479,7 +484,7 @@ class _MyeditProfilWidgetState extends State<MyeditProfilWidget> {
                                               onChanged: (_) =>
                                                   EasyDebounce.debounce(
                                                 '_model.textemailTextController',
-                                                const Duration(milliseconds: 2000),
+                                                Duration(milliseconds: 2000),
                                                 () => safeSetState(() {}),
                                               ),
                                               autofocus: false,
@@ -506,7 +511,7 @@ class _MyeditProfilWidgetState extends State<MyeditProfilWidget> {
                                                 focusedErrorBorder:
                                                     InputBorder.none,
                                                 contentPadding:
-                                                    const EdgeInsetsDirectional
+                                                    EdgeInsetsDirectional
                                                         .fromSTEB(20.0, 0.0,
                                                             20.0, 0.0),
                                                 suffixIcon: _model
@@ -520,7 +525,7 @@ class _MyeditProfilWidgetState extends State<MyeditProfilWidget> {
                                                               ?.clear();
                                                           safeSetState(() {});
                                                         },
-                                                        child: const Icon(
+                                                        child: Icon(
                                                           Icons.clear,
                                                           size: 22,
                                                         ),
@@ -551,7 +556,7 @@ class _MyeditProfilWidgetState extends State<MyeditProfilWidget> {
                                       children: [
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   20.0, 0.0, 0.0, 10.0),
                                           child: Text(
                                             'Telp/WA',
@@ -588,7 +593,7 @@ class _MyeditProfilWidgetState extends State<MyeditProfilWidget> {
                                                   Expanded(
                                                     child: Padding(
                                                       padding:
-                                                          const EdgeInsetsDirectional
+                                                          EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   20.0,
                                                                   0.0,
@@ -661,7 +666,7 @@ class _MyeditProfilWidgetState extends State<MyeditProfilWidget> {
                                       ],
                                     ),
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 20.0, 0.0, 0.0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
@@ -670,7 +675,7 @@ class _MyeditProfilWidgetState extends State<MyeditProfilWidget> {
                                         children: [
                                           Align(
                                             alignment:
-                                                const AlignmentDirectional(0.0, 2.0),
+                                                AlignmentDirectional(0.0, 2.0),
                                             child: FlutterFlowRadioButton(
                                               options:
                                                   ['Male', 'Female'].toList(),
@@ -720,7 +725,7 @@ class _MyeditProfilWidgetState extends State<MyeditProfilWidget> {
                                       ),
                                     ),
                                     Align(
-                                      alignment: const AlignmentDirectional(0.0, 1.0),
+                                      alignment: AlignmentDirectional(0.0, 1.0),
                                       child: AuthUserStreamWidget(
                                         builder: (context) => FFButtonWidget(
                                           onPressed: () async {
@@ -747,7 +752,7 @@ class _MyeditProfilWidgetState extends State<MyeditProfilWidget> {
                                                         .primaryText,
                                                   ),
                                                 ),
-                                                duration: const Duration(
+                                                duration: Duration(
                                                     milliseconds: 4000),
                                                 backgroundColor:
                                                     FlutterFlowTheme.of(context)
@@ -760,10 +765,10 @@ class _MyeditProfilWidgetState extends State<MyeditProfilWidget> {
                                             width: 250.0,
                                             height: 40.0,
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     24.0, 0.0, 24.0, 0.0),
                                             iconPadding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 0.0, 0.0, 0.0),
                                             color: currentUserDocument
                                                 ?.colorThemes,
@@ -777,7 +782,7 @@ class _MyeditProfilWidgetState extends State<MyeditProfilWidget> {
                                                       letterSpacing: 0.0,
                                                     ),
                                             elevation: 3.0,
-                                            borderSide: const BorderSide(
+                                            borderSide: BorderSide(
                                               color: Colors.transparent,
                                               width: 1.0,
                                             ),
@@ -788,27 +793,27 @@ class _MyeditProfilWidgetState extends State<MyeditProfilWidget> {
                                       ),
                                     ),
                                   ]
-                                      .divide(const SizedBox(height: 15.0))
-                                      .around(const SizedBox(height: 15.0)),
+                                      .divide(SizedBox(height: 15.0))
+                                      .around(SizedBox(height: 15.0)),
                                 ),
                               ),
                             ),
                           );
                         },
                       ),
-                    ].divide(const SizedBox(height: 16.0)),
+                    ].divide(SizedBox(height: 16.0)),
                   ),
                 ),
                 Flexible(
                   child: Align(
-                    alignment: const AlignmentDirectional(0.0, 1.0),
+                    alignment: AlignmentDirectional(0.0, 1.0),
                     child: Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 20.0),
+                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 20.0),
                       child: wrapWithModel(
                         model: _model.footerLogoModel,
                         updateCallback: () => safeSetState(() {}),
-                        child: const FooterLogoWidget(),
+                        child: FooterLogoWidget(),
                       ),
                     ),
                   ),

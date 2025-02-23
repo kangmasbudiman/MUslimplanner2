@@ -5,6 +5,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/revenue_cat_util.dart' as revenue_cat;
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'subscribe_copy_model.dart';
@@ -12,6 +13,9 @@ export 'subscribe_copy_model.dart';
 
 class SubscribeCopyWidget extends StatefulWidget {
   const SubscribeCopyWidget({super.key});
+
+  static String routeName = 'subscribeCopy';
+  static String routePath = '/subscribeCopy';
 
   @override
   State<SubscribeCopyWidget> createState() => _SubscribeCopyWidgetState();
@@ -77,9 +81,9 @@ class _SubscribeCopyWidgetState extends State<SubscribeCopyWidget> {
               child: Container(
                 width: double.infinity,
                 height: double.infinity,
-                decoration: const BoxDecoration(),
+                decoration: BoxDecoration(),
                 child: Align(
-                  alignment: const AlignmentDirectional(0.0, 1.0),
+                  alignment: AlignmentDirectional(0.0, 1.0),
                   child: Stack(
                     children: [
                       Column(
@@ -89,7 +93,7 @@ class _SubscribeCopyWidgetState extends State<SubscribeCopyWidget> {
                             width: double.infinity,
                             decoration: BoxDecoration(
                               color: FlutterFlowTheme.of(context).primary,
-                              boxShadow: const [
+                              boxShadow: [
                                 BoxShadow(
                                   blurRadius: 2.0,
                                   color: Color(0x33000000),
@@ -99,7 +103,7 @@ class _SubscribeCopyWidgetState extends State<SubscribeCopyWidget> {
                                   ),
                                 )
                               ],
-                              borderRadius: const BorderRadius.only(
+                              borderRadius: BorderRadius.only(
                                 bottomLeft: Radius.circular(20.0),
                                 bottomRight: Radius.circular(20.0),
                                 topLeft: Radius.circular(0.0),
@@ -107,15 +111,15 @@ class _SubscribeCopyWidgetState extends State<SubscribeCopyWidget> {
                               ),
                             ),
                             child: Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   20.0, 0.0, 20.0, 0.0),
                               child: Column(
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
                                   Align(
-                                    alignment: const AlignmentDirectional(-1.0, 0.0),
+                                    alignment: AlignmentDirectional(-1.0, 0.0),
                                     child: Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 40.0, 0.0, 0.0),
                                       child: InkWell(
                                         splashColor: Colors.transparent,
@@ -123,9 +127,10 @@ class _SubscribeCopyWidgetState extends State<SubscribeCopyWidget> {
                                         hoverColor: Colors.transparent,
                                         highlightColor: Colors.transparent,
                                         onTap: () async {
-                                          context.pushNamed('HomeScreen');
+                                          context.pushNamed(
+                                              HomeScreenWidget.routeName);
                                         },
-                                        child: const Icon(
+                                        child: Icon(
                                           Icons.arrow_back_ios_sharp,
                                           color: Colors.white,
                                           size: 24.0,
@@ -134,7 +139,7 @@ class _SubscribeCopyWidgetState extends State<SubscribeCopyWidget> {
                                     ),
                                   ),
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 40.0, 0.0, 30.0),
                                     child: Text(
                                       'Unlock All Theme',
@@ -155,12 +160,12 @@ class _SubscribeCopyWidgetState extends State<SubscribeCopyWidget> {
                           ),
                           Expanded(
                             child: Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   20.0, 30.0, 20.0, 0.0),
                               child: Container(
                                 width: double.infinity,
                                 height: double.infinity,
-                                decoration: const BoxDecoration(),
+                                decoration: BoxDecoration(),
                                 child: SingleChildScrollView(
                                   child: Column(
                                     mainAxisSize: MainAxisSize.max,
@@ -168,7 +173,7 @@ class _SubscribeCopyWidgetState extends State<SubscribeCopyWidget> {
                                         CrossAxisAlignment.start,
                                     children: [
                                       Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             0.0, 10.0, 0.0, 0.0),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
@@ -181,7 +186,7 @@ class _SubscribeCopyWidgetState extends State<SubscribeCopyWidget> {
                                               size: 24.0,
                                             ),
                                             Padding(
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       10.0, 0.0, 0.0, 0.0),
                                               child: Text(
@@ -201,7 +206,7 @@ class _SubscribeCopyWidgetState extends State<SubscribeCopyWidget> {
                                         ),
                                       ),
                                       Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             0.0, 10.0, 0.0, 0.0),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
@@ -214,7 +219,7 @@ class _SubscribeCopyWidgetState extends State<SubscribeCopyWidget> {
                                               size: 24.0,
                                             ),
                                             Padding(
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       10.0, 0.0, 0.0, 0.0),
                                               child: Text(
@@ -234,7 +239,7 @@ class _SubscribeCopyWidgetState extends State<SubscribeCopyWidget> {
                                         ),
                                       ),
                                       Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             0.0, 10.0, 0.0, 0.0),
                                         child: Text(
                                           'Subscribe Muslim Planner! May Allah reward you for your kindness and grant you paradise.',
@@ -247,7 +252,7 @@ class _SubscribeCopyWidgetState extends State<SubscribeCopyWidget> {
                                         ),
                                       ),
                                       Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             0.0, 20.0, 0.0, 0.0),
                                         child: Text(
                                           'Most Popular',
@@ -262,7 +267,7 @@ class _SubscribeCopyWidgetState extends State<SubscribeCopyWidget> {
                                         ),
                                       ),
                                       Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             5.0, 20.0, 5.0, 0.0),
                                         child: ListView(
                                           padding: EdgeInsets.zero,
@@ -276,7 +281,7 @@ class _SubscribeCopyWidgetState extends State<SubscribeCopyWidget> {
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .secondaryBackground,
-                                                boxShadow: const [
+                                                boxShadow: [
                                                   BoxShadow(
                                                     blurRadius: 4.0,
                                                     color: Color(0x33000000),
@@ -286,7 +291,7 @@ class _SubscribeCopyWidgetState extends State<SubscribeCopyWidget> {
                                                     ),
                                                   )
                                                 ],
-                                                borderRadius: const BorderRadius.only(
+                                                borderRadius: BorderRadius.only(
                                                   bottomLeft:
                                                       Radius.circular(20.0),
                                                   bottomRight:
@@ -298,7 +303,7 @@ class _SubscribeCopyWidgetState extends State<SubscribeCopyWidget> {
                                                 ),
                                               ),
                                               child: Padding(
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         20.0, 0.0, 20.0, 0.0),
                                                 child: InkWell(
@@ -345,7 +350,7 @@ class _SubscribeCopyWidgetState extends State<SubscribeCopyWidget> {
                                                       ),
                                                       Padding(
                                                         padding:
-                                                            const EdgeInsetsDirectional
+                                                            EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     10.0,
                                                                     0.0,
@@ -395,7 +400,7 @@ class _SubscribeCopyWidgetState extends State<SubscribeCopyWidget> {
                                                                       '0',
                                                                     ),
                                                                     style:
-                                                                        const TextStyle(),
+                                                                        TextStyle(),
                                                                   )
                                                                 ],
                                                                 style: FlutterFlowTheme.of(
@@ -439,7 +444,7 @@ class _SubscribeCopyWidgetState extends State<SubscribeCopyWidget> {
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .secondaryBackground,
-                                                boxShadow: const [
+                                                boxShadow: [
                                                   BoxShadow(
                                                     blurRadius: 4.0,
                                                     color: Color(0x33000000),
@@ -449,7 +454,7 @@ class _SubscribeCopyWidgetState extends State<SubscribeCopyWidget> {
                                                     ),
                                                   )
                                                 ],
-                                                borderRadius: const BorderRadius.only(
+                                                borderRadius: BorderRadius.only(
                                                   bottomLeft:
                                                       Radius.circular(20.0),
                                                   bottomRight:
@@ -461,7 +466,7 @@ class _SubscribeCopyWidgetState extends State<SubscribeCopyWidget> {
                                                 ),
                                               ),
                                               child: Padding(
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         20.0, 0.0, 20.0, 0.0),
                                                 child: InkWell(
@@ -509,7 +514,7 @@ class _SubscribeCopyWidgetState extends State<SubscribeCopyWidget> {
                                                       ),
                                                       Padding(
                                                         padding:
-                                                            const EdgeInsetsDirectional
+                                                            EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     10.0,
                                                                     0.0,
@@ -559,7 +564,7 @@ class _SubscribeCopyWidgetState extends State<SubscribeCopyWidget> {
                                                                       '0',
                                                                     ),
                                                                     style:
-                                                                        const TextStyle(),
+                                                                        TextStyle(),
                                                                   )
                                                                 ],
                                                                 style: FlutterFlowTheme.of(
@@ -596,7 +601,7 @@ class _SubscribeCopyWidgetState extends State<SubscribeCopyWidget> {
                                                 ),
                                               ),
                                             ),
-                                          ].divide(const SizedBox(height: 12.0)),
+                                          ].divide(SizedBox(height: 12.0)),
                                         ),
                                       ),
                                     ],
@@ -609,9 +614,9 @@ class _SubscribeCopyWidgetState extends State<SubscribeCopyWidget> {
                       ),
                       if (subscribeCopyUsersRecord.statusPremium == 0)
                         Align(
-                          alignment: const AlignmentDirectional(0.0, 1.0),
+                          alignment: AlignmentDirectional(0.0, 1.0),
                           child: Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 20.0, 16.0, 20.0, 20.0),
                             child: FFButtonWidget(
                               onPressed: () async {
@@ -634,7 +639,7 @@ class _SubscribeCopyWidgetState extends State<SubscribeCopyWidget> {
                                   ));
 
                                   context.pushNamed(
-                                    'webviewPembayaran',
+                                    WebviewPembayaranWidget.routeName,
                                     queryParameters: {
                                       'linkUlr': serializeParam(
                                         getJsonField(
@@ -646,7 +651,8 @@ class _SubscribeCopyWidgetState extends State<SubscribeCopyWidget> {
                                     }.withoutNulls,
                                   );
                                 } else {
-                                  context.pushNamed('paymentfailed');
+                                  context
+                                      .pushNamed(PaymentfailedWidget.routeName);
                                 }
 
                                 safeSetState(() {});
@@ -655,9 +661,9 @@ class _SubscribeCopyWidgetState extends State<SubscribeCopyWidget> {
                               options: FFButtonOptions(
                                 width: double.infinity,
                                 height: 40.0,
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     24.0, 0.0, 24.0, 0.0),
-                                iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                iconPadding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 0.0),
                                 color: FlutterFlowTheme.of(context).primary,
                                 textStyle: FlutterFlowTheme.of(context)
@@ -668,7 +674,7 @@ class _SubscribeCopyWidgetState extends State<SubscribeCopyWidget> {
                                       letterSpacing: 0.0,
                                     ),
                                 elevation: 3.0,
-                                borderSide: const BorderSide(
+                                borderSide: BorderSide(
                                   color: Colors.transparent,
                                   width: 1.0,
                                 ),

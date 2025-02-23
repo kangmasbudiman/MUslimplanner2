@@ -9,6 +9,9 @@ export 'list_user_help_support_model.dart';
 class ListUserHelpSupportWidget extends StatefulWidget {
   const ListUserHelpSupportWidget({super.key});
 
+  static String routeName = 'listUserHelpSupport';
+  static String routePath = '/listUserHelpSupport';
+
   @override
   State<ListUserHelpSupportWidget> createState() =>
       _ListUserHelpSupportWidgetState();
@@ -47,18 +50,18 @@ class _ListUserHelpSupportWidgetState extends State<ListUserHelpSupportWidget> {
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
         appBar: PreferredSize(
-          preferredSize: const Size.fromHeight(70.0),
+          preferredSize: Size.fromHeight(70.0),
           child: AppBar(
             backgroundColor: Colors.white,
             automaticallyImplyLeading: false,
             title: Padding(
-              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 20.0),
+              padding: EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 20.0),
               child: Row(
                 mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Align(
-                    alignment: const AlignmentDirectional(-1.0, 0.0),
+                    alignment: AlignmentDirectional(-1.0, 0.0),
                     child: InkWell(
                       splashColor: Colors.transparent,
                       focusColor: Colors.transparent,
@@ -91,7 +94,7 @@ class _ListUserHelpSupportWidgetState extends State<ListUserHelpSupportWidget> {
                 ],
               ),
             ),
-            actions: const [],
+            actions: [],
             centerTitle: false,
             elevation: 2.0,
           ),
@@ -99,7 +102,7 @@ class _ListUserHelpSupportWidgetState extends State<ListUserHelpSupportWidget> {
         body: SafeArea(
           top: true,
           child: Padding(
-            padding: const EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 0.0),
+            padding: EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 0.0),
             child: FutureBuilder<ApiCallResponse>(
               future: HelpandSupportGroup.gethelpCall.call(),
               builder: (context, snapshot) {
@@ -133,12 +136,12 @@ class _ListUserHelpSupportWidgetState extends State<ListUserHelpSupportWidget> {
                           List.generate(responhelp.length, (responhelpIndex) {
                         final responhelpItem = responhelp[responhelpIndex];
                         return Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 10.0, 0.0, 0.0),
                           child: Container(
                             decoration: BoxDecoration(
                               color: FFAppState().colorThemes,
-                              boxShadow: const [
+                              boxShadow: [
                                 BoxShadow(
                                   blurRadius: 2.0,
                                   color: Color(0x33000000),
@@ -148,7 +151,7 @@ class _ListUserHelpSupportWidgetState extends State<ListUserHelpSupportWidget> {
                                   ),
                                 )
                               ],
-                              borderRadius: const BorderRadius.only(
+                              borderRadius: BorderRadius.only(
                                 bottomLeft: Radius.circular(20.0),
                                 bottomRight: Radius.circular(20.0),
                                 topLeft: Radius.circular(20.0),
@@ -156,7 +159,7 @@ class _ListUserHelpSupportWidgetState extends State<ListUserHelpSupportWidget> {
                               ),
                             ),
                             child: Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   10.0, 10.0, 10.0, 10.0),
                               child: Column(
                                 mainAxisSize: MainAxisSize.max,
@@ -223,7 +226,7 @@ class _ListUserHelpSupportWidgetState extends State<ListUserHelpSupportWidget> {
                                                         .primaryText,
                                                   ),
                                                 ),
-                                                duration: const Duration(
+                                                duration: Duration(
                                                     milliseconds: 4000),
                                                 backgroundColor:
                                                     FlutterFlowTheme.of(context)
@@ -243,7 +246,7 @@ class _ListUserHelpSupportWidgetState extends State<ListUserHelpSupportWidget> {
                                     ],
                                   ),
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 15.0, 0.0, 0.0),
                                     child: Text(
                                       valueOrDefault<String>(

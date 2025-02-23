@@ -7,6 +7,9 @@ export 'privacy_police_model.dart';
 class PrivacyPoliceWidget extends StatefulWidget {
   const PrivacyPoliceWidget({super.key});
 
+  static String routeName = 'PrivacyPolice';
+  static String routePath = '/privacyPolice';
+
   @override
   State<PrivacyPoliceWidget> createState() => _PrivacyPoliceWidgetState();
 }
@@ -42,20 +45,20 @@ class _PrivacyPoliceWidgetState extends State<PrivacyPoliceWidget> {
         key: scaffoldKey,
         backgroundColor: Colors.white,
         appBar: PreferredSize(
-          preferredSize: const Size.fromHeight(80.0),
+          preferredSize: Size.fromHeight(80.0),
           child: AppBar(
             backgroundColor: Colors.white,
             automaticallyImplyLeading: false,
             title: Stack(
               children: [
                 Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 10.0),
+                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 10.0),
                   child: Row(
                     mainAxisSize: MainAxisSize.max,
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
                       Align(
-                        alignment: const AlignmentDirectional(-1.0, 0.0),
+                        alignment: AlignmentDirectional(-1.0, 0.0),
                         child: InkWell(
                           splashColor: Colors.transparent,
                           focusColor: Colors.transparent,
@@ -75,10 +78,10 @@ class _PrivacyPoliceWidgetState extends State<PrivacyPoliceWidget> {
                   ),
                 ),
                 Align(
-                  alignment: const AlignmentDirectional(0.0, 0.0),
+                  alignment: AlignmentDirectional(0.0, 0.0),
                   child: Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 0.0),
+                        EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 0.0),
                     child: Text(
                       'Privacy Policy',
                       style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -92,7 +95,7 @@ class _PrivacyPoliceWidgetState extends State<PrivacyPoliceWidget> {
                 ),
               ],
             ),
-            actions: const [],
+            actions: [],
             centerTitle: false,
             elevation: 2.0,
           ),
@@ -100,7 +103,7 @@ class _PrivacyPoliceWidgetState extends State<PrivacyPoliceWidget> {
         body: SafeArea(
           top: true,
           child: Padding(
-            padding: const EdgeInsetsDirectional.fromSTEB(20.0, 30.0, 20.0, 30.0),
+            padding: EdgeInsetsDirectional.fromSTEB(20.0, 30.0, 20.0, 30.0),
             child: SingleChildScrollView(
               child: Column(
                 mainAxisSize: MainAxisSize.max,
@@ -119,58 +122,58 @@ class _PrivacyPoliceWidgetState extends State<PrivacyPoliceWidget> {
                                     letterSpacing: 0.0,
                                   ),
                         ),
-                        const TextSpan(
+                        TextSpan(
                           text:
                               '\nHubungi Kami\n\nJika Anda memiliki pertanyaan atau saran tentang Kebijakan Privasi kami, jangan ragu untuk menghubungi kami.\n',
                           style: TextStyle(),
                         ),
-                        const TextSpan(
+                        TextSpan(
                           text:
                               '\nInformasi yang kami kumpulkan dan gunakan:\n',
                           style: TextStyle(),
                         ),
-                        const TextSpan(
+                        TextSpan(
                           text:
                               '\n1. ⁠ ⁠Webview/Recording/Read Storage Permissions\n',
                           style: TextStyle(),
                         ),
-                        const TextSpan(
+                        TextSpan(
                           text:
                               '\nAplikasi ini juga memerlukan izin akses lainnya seperti webview, perekaman, dan penyimpanan data untuk mendukung fungsi-fungsi tertentu di dalam aplikasi. Semua data yang disimpan bersifat sementara dan tidak diakses oleh pihak ketiga tanpa persetujuan.\n',
                           style: TextStyle(),
                         ),
-                        const TextSpan(
+                        TextSpan(
                           text: '\n\n2. Penggunaan Data',
                           style: TextStyle(),
                         ),
-                        const TextSpan(
+                        TextSpan(
                           text:
                               '\n\nData yang dikumpulkan digunakan untuk memberikan pengalaman pengguna yang optimal dan memastikan fungsionalitas aplikasi bekerja dengan baik. Kami tidak membagikan data pribadi Anda kecuali diperlukan secara hukum atau untuk menjaga keamanan dan fungsi aplikasi.\n',
                           style: TextStyle(),
                         ),
-                        const TextSpan(
+                        TextSpan(
                           text: '\n3. Keamanan',
                           style: TextStyle(),
                         ),
-                        const TextSpan(
+                        TextSpan(
                           text:
                               '\n\nKami menghargai kepercayaan Anda dalam memberikan informasi pribadi Anda kepada kami. Kami berupaya menggunakan metode yang dapat diterima secara komersial untuk melindungi data Anda. Namun, perlu diingat bahwa tidak ada metode transmisi melalui internet atau metode penyimpanan elektronik yang 100% aman dan dapat diandalkan, dan kami tidak dapat menjamin keamanan mutlaknya.\n\n',
                           style: TextStyle(),
                         ),
-                        const TextSpan(
+                        TextSpan(
                           text: '4. Lokasi',
                           style: TextStyle(),
                         ),
-                        const TextSpan(
+                        TextSpan(
                           text:
                               '\n\nAplikasi ini membutuhkan lokasi dari anda agar dapat menentukan jadwal shalat yang sesuai dengan lokasi anda.\n',
                           style: TextStyle(),
                         ),
-                        const TextSpan(
+                        TextSpan(
                           text: '\n5.⁠ ⁠Perubahan pada kebijakan privasi ini\n',
                           style: TextStyle(),
                         ),
-                        const TextSpan(
+                        TextSpan(
                           text:
                               '\nKami dapat memperbarui Kebijakan Privasi ini dari waktu ke waktu. Oleh karena itu, Anda disarankan untuk meninjau halaman ini secara berkala untuk setiap perubahan. Kami akan memberitahu Anda tentang setiap perubahan dengan memposting Kebijakan Privasi baru di halaman ini.',
                           style: TextStyle(),

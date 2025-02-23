@@ -6,6 +6,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/helpandsupport/tambah_h_e_l_p_s_u_p_p_o_r_t/tambah_h_e_l_p_s_u_p_p_o_r_t_widget.dart';
 import '/flutter_flow/revenue_cat_util.dart' as revenue_cat;
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:webviewx_plus/webviewx_plus.dart';
@@ -14,6 +15,9 @@ export 'my_profile_model.dart';
 
 class MyProfileWidget extends StatefulWidget {
   const MyProfileWidget({super.key});
+
+  static String routeName = 'MyProfile';
+  static String routePath = '/myProfile';
 
   @override
   State<MyProfileWidget> createState() => _MyProfileWidgetState();
@@ -56,7 +60,7 @@ class _MyProfileWidgetState extends State<MyProfileWidget> {
           child: Container(
             width: double.infinity,
             height: double.infinity,
-            decoration: const BoxDecoration(),
+            decoration: BoxDecoration(),
             child: Stack(
               children: [
                 Column(
@@ -70,7 +74,7 @@ class _MyProfileWidgetState extends State<MyProfileWidget> {
                             height: 160.0,
                             decoration: BoxDecoration(
                               color: currentUserDocument?.colorThemes,
-                              boxShadow: const [
+                              boxShadow: [
                                 BoxShadow(
                                   blurRadius: 2.0,
                                   color: Color(0x33000000),
@@ -80,7 +84,7 @@ class _MyProfileWidgetState extends State<MyProfileWidget> {
                                   ),
                                 )
                               ],
-                              borderRadius: const BorderRadius.only(
+                              borderRadius: BorderRadius.only(
                                 bottomLeft: Radius.circular(20.0),
                                 bottomRight: Radius.circular(20.0),
                                 topLeft: Radius.circular(0.0),
@@ -91,7 +95,7 @@ class _MyProfileWidgetState extends State<MyProfileWidget> {
                               mainAxisSize: MainAxisSize.max,
                               children: [
                                 Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       20.0, 20.0, 20.0, 20.0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
@@ -100,14 +104,15 @@ class _MyProfileWidgetState extends State<MyProfileWidget> {
                                     children: [
                                       Align(
                                         alignment:
-                                            const AlignmentDirectional(-1.0, 0.0),
+                                            AlignmentDirectional(-1.0, 0.0),
                                         child: InkWell(
                                           splashColor: Colors.transparent,
                                           focusColor: Colors.transparent,
                                           hoverColor: Colors.transparent,
                                           highlightColor: Colors.transparent,
                                           onTap: () async {
-                                            context.pushNamed('HomeScreen');
+                                            context.pushNamed(
+                                                HomeScreenWidget.routeName);
                                           },
                                           child: Icon(
                                             Icons.arrow_back_ios_new,
@@ -138,9 +143,9 @@ class _MyProfileWidgetState extends State<MyProfileWidget> {
                         ),
                         if (FFAppState().serachSurataktif == true)
                           Align(
-                            alignment: const AlignmentDirectional(0.0, 0.0),
+                            alignment: AlignmentDirectional(0.0, 0.0),
                             child: Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 115.0, 0.0, 0.0),
                               child: Container(
                                 width: 100.0,
@@ -148,7 +153,7 @@ class _MyProfileWidgetState extends State<MyProfileWidget> {
                                 decoration: BoxDecoration(
                                   color: FlutterFlowTheme.of(context)
                                       .secondaryBackground,
-                                  boxShadow: const [
+                                  boxShadow: [
                                     BoxShadow(
                                       color: Color(0x3173767A),
                                       offset: Offset(
@@ -162,13 +167,13 @@ class _MyProfileWidgetState extends State<MyProfileWidget> {
                                 child: Visibility(
                                   visible: FFAppState().interval == 'mantap',
                                   child: Align(
-                                    alignment: const AlignmentDirectional(0.0, 0.0),
+                                    alignment: AlignmentDirectional(0.0, 0.0),
                                     child: Stack(
                                       children: [
                                         if (currentUserPhoto == '')
                                           Align(
                                             alignment:
-                                                const AlignmentDirectional(0.0, 0.0),
+                                                AlignmentDirectional(0.0, 0.0),
                                             child: AuthUserStreamWidget(
                                               builder: (context) => ClipRRect(
                                                 borderRadius:
@@ -185,7 +190,7 @@ class _MyProfileWidgetState extends State<MyProfileWidget> {
                                         if (currentUserPhoto != '')
                                           Align(
                                             alignment:
-                                                const AlignmentDirectional(0.0, 0.0),
+                                                AlignmentDirectional(0.0, 0.0),
                                             child: AuthUserStreamWidget(
                                               builder: (context) => ClipRRect(
                                                 borderRadius:
@@ -201,7 +206,7 @@ class _MyProfileWidgetState extends State<MyProfileWidget> {
                                           ),
                                         Align(
                                           alignment:
-                                              const AlignmentDirectional(1.0, -1.0),
+                                              AlignmentDirectional(1.0, -1.0),
                                           child: InkWell(
                                             splashColor: Colors.transparent,
                                             focusColor: Colors.transparent,
@@ -229,7 +234,7 @@ class _MyProfileWidgetState extends State<MyProfileWidget> {
                                                             .viewInsetsOf(
                                                                 context),
                                                         child:
-                                                            const UploadImageWidget(),
+                                                            UploadImageWidget(),
                                                       ),
                                                     ),
                                                   );
@@ -267,7 +272,7 @@ class _MyProfileWidgetState extends State<MyProfileWidget> {
                     ),
                     Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(20.0, 20.0, 20.0, 0.0),
+                          EdgeInsetsDirectional.fromSTEB(20.0, 20.0, 20.0, 0.0),
                       child: Column(
                         mainAxisSize: MainAxisSize.max,
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -297,7 +302,7 @@ class _MyProfileWidgetState extends State<MyProfileWidget> {
                                           child: Padding(
                                             padding: MediaQuery.viewInsetsOf(
                                                 context),
-                                            child: const AdminMenuWidget(),
+                                            child: AdminMenuWidget(),
                                           ),
                                         ),
                                       );
@@ -308,7 +313,7 @@ class _MyProfileWidgetState extends State<MyProfileWidget> {
                                   width: double.infinity,
                                   decoration: BoxDecoration(
                                     color: currentUserDocument?.colorThemes,
-                                    boxShadow: const [
+                                    boxShadow: [
                                       BoxShadow(
                                         blurRadius: 2.0,
                                         color: Color(0x33000000),
@@ -318,7 +323,7 @@ class _MyProfileWidgetState extends State<MyProfileWidget> {
                                         ),
                                       )
                                     ],
-                                    borderRadius: const BorderRadius.only(
+                                    borderRadius: BorderRadius.only(
                                       bottomLeft: Radius.circular(20.0),
                                       bottomRight: Radius.circular(20.0),
                                       topLeft: Radius.circular(20.0),
@@ -326,7 +331,7 @@ class _MyProfileWidgetState extends State<MyProfileWidget> {
                                     ),
                                   ),
                                   child: Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         30.0, 5.0, 10.0, 5.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
@@ -384,21 +389,22 @@ class _MyProfileWidgetState extends State<MyProfileWidget> {
                                                 .primaryText,
                                           ),
                                         ),
-                                        duration: const Duration(milliseconds: 4000),
+                                        duration: Duration(milliseconds: 4000),
                                         backgroundColor:
                                             FlutterFlowTheme.of(context)
                                                 .secondary,
                                       ),
                                     );
                                   } else {
-                                    context.pushNamed('subscribe');
+                                    context
+                                        .pushNamed(SubscribeWidget.routeName);
                                   }
                                 },
                                 child: Container(
                                   width: double.infinity,
                                   decoration: BoxDecoration(
                                     color: currentUserDocument?.colorThemes,
-                                    boxShadow: const [
+                                    boxShadow: [
                                       BoxShadow(
                                         blurRadius: 2.0,
                                         color: Color(0x33000000),
@@ -408,7 +414,7 @@ class _MyProfileWidgetState extends State<MyProfileWidget> {
                                         ),
                                       )
                                     ],
-                                    borderRadius: const BorderRadius.only(
+                                    borderRadius: BorderRadius.only(
                                       bottomLeft: Radius.circular(20.0),
                                       bottomRight: Radius.circular(20.0),
                                       topLeft: Radius.circular(20.0),
@@ -416,7 +422,7 @@ class _MyProfileWidgetState extends State<MyProfileWidget> {
                                     ),
                                   ),
                                   child: Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         30.0, 5.0, 10.0, 5.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
@@ -454,13 +460,13 @@ class _MyProfileWidgetState extends State<MyProfileWidget> {
                               hoverColor: Colors.transparent,
                               highlightColor: Colors.transparent,
                               onTap: () async {
-                                context.pushNamed('statistik');
+                                context.pushNamed(StatistikWidget.routeName);
                               },
                               child: Container(
                                 width: double.infinity,
                                 decoration: BoxDecoration(
                                   color: currentUserDocument?.colorThemes,
-                                  boxShadow: const [
+                                  boxShadow: [
                                     BoxShadow(
                                       blurRadius: 2.0,
                                       color: Color(0x33000000),
@@ -470,7 +476,7 @@ class _MyProfileWidgetState extends State<MyProfileWidget> {
                                       ),
                                     )
                                   ],
-                                  borderRadius: const BorderRadius.only(
+                                  borderRadius: BorderRadius.only(
                                     bottomLeft: Radius.circular(20.0),
                                     bottomRight: Radius.circular(20.0),
                                     topLeft: Radius.circular(20.0),
@@ -478,7 +484,7 @@ class _MyProfileWidgetState extends State<MyProfileWidget> {
                                   ),
                                 ),
                                 child: Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       30.0, 5.0, 10.0, 5.0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
@@ -516,9 +522,9 @@ class _MyProfileWidgetState extends State<MyProfileWidget> {
                               highlightColor: Colors.transparent,
                               onTap: () async {
                                 context.pushNamed(
-                                  'List10OrderHistory',
+                                  List10OrderHistoryWidget.routeName,
                                   extra: <String, dynamic>{
-                                    kTransitionInfoKey: const TransitionInfo(
+                                    kTransitionInfoKey: TransitionInfo(
                                       hasTransition: true,
                                       transitionType: PageTransitionType.fade,
                                       duration: Duration(milliseconds: 0),
@@ -530,7 +536,7 @@ class _MyProfileWidgetState extends State<MyProfileWidget> {
                                 width: double.infinity,
                                 decoration: BoxDecoration(
                                   color: currentUserDocument?.colorThemes,
-                                  boxShadow: const [
+                                  boxShadow: [
                                     BoxShadow(
                                       blurRadius: 2.0,
                                       color: Color(0x33000000),
@@ -540,7 +546,7 @@ class _MyProfileWidgetState extends State<MyProfileWidget> {
                                       ),
                                     )
                                   ],
-                                  borderRadius: const BorderRadius.only(
+                                  borderRadius: BorderRadius.only(
                                     bottomLeft: Radius.circular(20.0),
                                     bottomRight: Radius.circular(20.0),
                                     topLeft: Radius.circular(20.0),
@@ -548,7 +554,7 @@ class _MyProfileWidgetState extends State<MyProfileWidget> {
                                   ),
                                 ),
                                 child: Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       30.0, 5.0, 10.0, 5.0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
@@ -585,13 +591,13 @@ class _MyProfileWidgetState extends State<MyProfileWidget> {
                               hoverColor: Colors.transparent,
                               highlightColor: Colors.transparent,
                               onTap: () async {
-                                context.pushNamed('MySetting');
+                                context.pushNamed(MySettingWidget.routeName);
                               },
                               child: Container(
                                 width: double.infinity,
                                 decoration: BoxDecoration(
                                   color: currentUserDocument?.colorThemes,
-                                  boxShadow: const [
+                                  boxShadow: [
                                     BoxShadow(
                                       blurRadius: 2.0,
                                       color: Color(0x33000000),
@@ -601,7 +607,7 @@ class _MyProfileWidgetState extends State<MyProfileWidget> {
                                       ),
                                     )
                                   ],
-                                  borderRadius: const BorderRadius.only(
+                                  borderRadius: BorderRadius.only(
                                     bottomLeft: Radius.circular(20.0),
                                     bottomRight: Radius.circular(20.0),
                                     topLeft: Radius.circular(20.0),
@@ -609,7 +615,7 @@ class _MyProfileWidgetState extends State<MyProfileWidget> {
                                   ),
                                 ),
                                 child: Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       30.0, 5.0, 10.0, 5.0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
@@ -662,7 +668,7 @@ class _MyProfileWidgetState extends State<MyProfileWidget> {
                                         child: Padding(
                                           padding:
                                               MediaQuery.viewInsetsOf(context),
-                                          child: const TambahHELPSUPPORTWidget(),
+                                          child: TambahHELPSUPPORTWidget(),
                                         ),
                                       ),
                                     );
@@ -673,7 +679,7 @@ class _MyProfileWidgetState extends State<MyProfileWidget> {
                                 width: double.infinity,
                                 decoration: BoxDecoration(
                                   color: currentUserDocument?.colorThemes,
-                                  boxShadow: const [
+                                  boxShadow: [
                                     BoxShadow(
                                       blurRadius: 2.0,
                                       color: Color(0x33000000),
@@ -683,7 +689,7 @@ class _MyProfileWidgetState extends State<MyProfileWidget> {
                                       ),
                                     )
                                   ],
-                                  borderRadius: const BorderRadius.only(
+                                  borderRadius: BorderRadius.only(
                                     bottomLeft: Radius.circular(20.0),
                                     bottomRight: Radius.circular(20.0),
                                     topLeft: Radius.circular(20.0),
@@ -691,7 +697,7 @@ class _MyProfileWidgetState extends State<MyProfileWidget> {
                                   ),
                                 ),
                                 child: Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       30.0, 5.0, 10.0, 5.0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
@@ -728,13 +734,13 @@ class _MyProfileWidgetState extends State<MyProfileWidget> {
                               hoverColor: Colors.transparent,
                               highlightColor: Colors.transparent,
                               onTap: () async {
-                                context.pushNamed('COmand');
+                                context.pushNamed(COmandWidget.routeName);
                               },
                               child: Container(
                                 width: double.infinity,
                                 decoration: BoxDecoration(
                                   color: currentUserDocument?.colorThemes,
-                                  boxShadow: const [
+                                  boxShadow: [
                                     BoxShadow(
                                       blurRadius: 2.0,
                                       color: Color(0x33000000),
@@ -744,7 +750,7 @@ class _MyProfileWidgetState extends State<MyProfileWidget> {
                                       ),
                                     )
                                   ],
-                                  borderRadius: const BorderRadius.only(
+                                  borderRadius: BorderRadius.only(
                                     bottomLeft: Radius.circular(20.0),
                                     bottomRight: Radius.circular(20.0),
                                     topLeft: Radius.circular(20.0),
@@ -752,7 +758,7 @@ class _MyProfileWidgetState extends State<MyProfileWidget> {
                                   ),
                                 ),
                                 child: Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       30.0, 5.0, 10.0, 5.0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
@@ -787,7 +793,7 @@ class _MyProfileWidgetState extends State<MyProfileWidget> {
                               width: double.infinity,
                               decoration: BoxDecoration(
                                 color: currentUserDocument?.colorThemes,
-                                boxShadow: const [
+                                boxShadow: [
                                   BoxShadow(
                                     blurRadius: 2.0,
                                     color: Color(0x33000000),
@@ -797,7 +803,7 @@ class _MyProfileWidgetState extends State<MyProfileWidget> {
                                     ),
                                   )
                                 ],
-                                borderRadius: const BorderRadius.only(
+                                borderRadius: BorderRadius.only(
                                   bottomLeft: Radius.circular(20.0),
                                   bottomRight: Radius.circular(20.0),
                                   topLeft: Radius.circular(20.0),
@@ -805,7 +811,7 @@ class _MyProfileWidgetState extends State<MyProfileWidget> {
                                 ),
                               ),
                               child: Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     30.0, 5.0, 10.0, 5.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
@@ -834,16 +840,16 @@ class _MyProfileWidgetState extends State<MyProfileWidget> {
                               ),
                             ),
                           ),
-                        ].divide(const SizedBox(height: 16.0)),
+                        ].divide(SizedBox(height: 16.0)),
                       ),
                     ),
                   ],
                 ),
                 Align(
-                  alignment: const AlignmentDirectional(0.0, 1.0),
+                  alignment: AlignmentDirectional(0.0, 1.0),
                   child: Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(20.0, 16.0, 20.0, 30.0),
+                        EdgeInsetsDirectional.fromSTEB(20.0, 16.0, 20.0, 30.0),
                     child: AuthUserStreamWidget(
                       builder: (context) => InkWell(
                         splashColor: Colors.transparent,
@@ -866,20 +872,20 @@ class _MyProfileWidgetState extends State<MyProfileWidget> {
                                   },
                                   child: Padding(
                                     padding: MediaQuery.viewInsetsOf(context),
-                                    child: const KonfirmasiWidget(),
+                                    child: KonfirmasiWidget(),
                                   ),
                                 ),
                               );
                             },
                           ).then((value) => safeSetState(() {}));
 
-                          context.pushNamed('welcomscreen');
+                          context.pushNamed(WelcomscreenWidget.routeName);
                         },
                         child: Container(
                           width: double.infinity,
                           decoration: BoxDecoration(
                             color: currentUserDocument?.colorThemes,
-                            boxShadow: const [
+                            boxShadow: [
                               BoxShadow(
                                 blurRadius: 2.0,
                                 color: Color(0x33000000),
@@ -889,7 +895,7 @@ class _MyProfileWidgetState extends State<MyProfileWidget> {
                                 ),
                               )
                             ],
-                            borderRadius: const BorderRadius.only(
+                            borderRadius: BorderRadius.only(
                               bottomLeft: Radius.circular(20.0),
                               bottomRight: Radius.circular(20.0),
                               topLeft: Radius.circular(20.0),
@@ -897,7 +903,7 @@ class _MyProfileWidgetState extends State<MyProfileWidget> {
                             ),
                           ),
                           child: Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 5.0, 0.0, 5.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,

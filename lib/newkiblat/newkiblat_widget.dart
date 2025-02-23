@@ -14,6 +14,9 @@ export 'newkiblat_model.dart';
 class NewkiblatWidget extends StatefulWidget {
   const NewkiblatWidget({super.key});
 
+  static String routeName = 'newkiblat';
+  static String routePath = '/newkiblat';
+
   @override
   State<NewkiblatWidget> createState() => _NewkiblatWidgetState();
 }
@@ -29,7 +32,7 @@ class _NewkiblatWidgetState extends State<NewkiblatWidget> {
     super.initState();
     _model = createModel(context, () => NewkiblatModel());
 
-    getCurrentUserLocation(defaultLocation: const LatLng(0.0, 0.0), cached: true)
+    getCurrentUserLocation(defaultLocation: LatLng(0.0, 0.0), cached: true)
         .then((loc) => safeSetState(() => currentUserLocationValue = loc));
     WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
@@ -76,7 +79,7 @@ class _NewkiblatWidgetState extends State<NewkiblatWidget> {
             borderRadius: 30.0,
             borderWidth: 1.0,
             buttonSize: 60.0,
-            icon: const Icon(
+            icon: Icon(
               Icons.arrow_back_rounded,
               color: Colors.white,
               size: 30.0,
@@ -94,7 +97,7 @@ class _NewkiblatWidgetState extends State<NewkiblatWidget> {
                   letterSpacing: 0.0,
                 ),
           ),
-          actions: const [],
+          actions: [],
           centerTitle: true,
           elevation: 2.0,
         ),
@@ -102,17 +105,17 @@ class _NewkiblatWidgetState extends State<NewkiblatWidget> {
           top: true,
           child: Container(
             width: double.infinity,
-            decoration: const BoxDecoration(),
+            decoration: BoxDecoration(),
             child: Column(
               mainAxisSize: MainAxisSize.max,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
+                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
                   child: wrapWithModel(
                     model: _model.dateComponenModel,
                     updateCallback: () => safeSetState(() {}),
-                    child: const DateComponenWidget(),
+                    child: DateComponenWidget(),
                   ),
                 ),
                 Expanded(
@@ -140,9 +143,9 @@ class _NewkiblatWidgetState extends State<NewkiblatWidget> {
                                   ),
                         ),
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 20.0, 0.0, 0.0),
-                          child: SizedBox(
+                          child: Container(
                             width: 300.0,
                             height: 300.0,
                             child: Stack(
@@ -160,7 +163,7 @@ class _NewkiblatWidgetState extends State<NewkiblatWidget> {
                                   ),
                                 ),
                                 Align(
-                                  alignment: const AlignmentDirectional(0.0, 0.0),
+                                  alignment: AlignmentDirectional(0.0, 0.0),
                                   child: Container(
                                     width: 280.0,
                                     height: 280.0,
@@ -209,16 +212,16 @@ class _NewkiblatWidgetState extends State<NewkiblatWidget> {
                                         mainAxisAlignment:
                                             MainAxisAlignment.center,
                                         children: [
-                                          const FaIcon(
+                                          FaIcon(
                                             FontAwesomeIcons.kaaba,
                                             color: Colors.black,
                                             size: 40.0,
                                           ),
                                           Align(
                                             alignment:
-                                                const AlignmentDirectional(0.0, 0.0),
+                                                AlignmentDirectional(0.0, 0.0),
                                             child: Padding(
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       0.0, 0.0, 0.0, 100.0),
                                               child: Container(
@@ -242,8 +245,8 @@ class _NewkiblatWidgetState extends State<NewkiblatWidget> {
                           ),
                         ),
                       ]
-                          .addToStart(const SizedBox(height: 20.0))
-                          .addToEnd(const SizedBox(height: 40.0)),
+                          .addToStart(SizedBox(height: 20.0))
+                          .addToEnd(SizedBox(height: 40.0)),
                     ),
                   ),
                 ),

@@ -17,7 +17,7 @@ class LanjutAlquranWidget extends StatefulWidget {
     this.idsurah,
     required this.ayatterahir,
     String? idbookmark,
-  }) : idbookmark = idbookmark ?? '-';
+  }) : this.idbookmark = idbookmark ?? '-';
 
   final String? nomorSurat;
   final String? namaID;
@@ -25,6 +25,9 @@ class LanjutAlquranWidget extends StatefulWidget {
   final int? idsurah;
   final int? ayatterahir;
   final String idbookmark;
+
+  static String routeName = 'LanjutAlquran';
+  static String routePath = '/lanjutAlquran';
 
   @override
   State<LanjutAlquranWidget> createState() => _LanjutAlquranWidgetState();
@@ -69,13 +72,13 @@ class _LanjutAlquranWidgetState extends State<LanjutAlquranWidget> {
           backgroundColor: Colors.white,
           automaticallyImplyLeading: false,
           title: Padding(
-            padding: const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 10.0),
+            padding: EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 10.0),
             child: Row(
               mainAxisSize: MainAxisSize.max,
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Align(
-                  alignment: const AlignmentDirectional(-1.0, 0.0),
+                  alignment: AlignmentDirectional(-1.0, 0.0),
                   child: InkWell(
                     splashColor: Colors.transparent,
                     focusColor: Colors.transparent,
@@ -135,7 +138,7 @@ class _LanjutAlquranWidgetState extends State<LanjutAlquranWidget> {
               ],
             ),
           ),
-          actions: const [],
+          actions: [],
           centerTitle: false,
           elevation: 2.0,
         ),
@@ -155,12 +158,12 @@ class _LanjutAlquranWidgetState extends State<LanjutAlquranWidget> {
                   children: [
                     Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(20.0, 20.0, 20.0, 0.0),
+                          EdgeInsetsDirectional.fromSTEB(20.0, 20.0, 20.0, 0.0),
                       child: Container(
                         width: double.infinity,
                         decoration: BoxDecoration(
                           color: FFAppState().colorFontThemes,
-                          boxShadow: const [
+                          boxShadow: [
                             BoxShadow(
                               blurRadius: 2.0,
                               color: Color(0x33000000),
@@ -170,7 +173,7 @@ class _LanjutAlquranWidgetState extends State<LanjutAlquranWidget> {
                               ),
                             )
                           ],
-                          borderRadius: const BorderRadius.only(
+                          borderRadius: BorderRadius.only(
                             bottomLeft: Radius.circular(20.0),
                             bottomRight: Radius.circular(20.0),
                             topLeft: Radius.circular(20.0),
@@ -178,14 +181,14 @@ class _LanjutAlquranWidgetState extends State<LanjutAlquranWidget> {
                           ),
                         ),
                         child: Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               10.0, 0.0, 10.0, 0.0),
                           child: TextFormField(
                             controller: _model.txtStringTextController,
                             focusNode: _model.txtStringFocusNode,
                             onChanged: (_) => EasyDebounce.debounce(
                               '_model.txtStringTextController',
-                              const Duration(milliseconds: 200),
+                              Duration(milliseconds: 200),
                               () async {
                                 FFAppState().setAyat = '';
                                 safeSetState(() {});
@@ -234,13 +237,13 @@ class _LanjutAlquranWidgetState extends State<LanjutAlquranWidget> {
                     ),
                     Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 20.0),
+                          EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 20.0),
                       child: Container(
                         width: double.infinity,
                         height: MediaQuery.sizeOf(context).height * 0.9,
                         decoration: BoxDecoration(
                           color: currentUserDocument?.colorThemes,
-                          borderRadius: const BorderRadius.only(
+                          borderRadius: BorderRadius.only(
                             bottomLeft: Radius.circular(20.0),
                             bottomRight: Radius.circular(20.0),
                             topLeft: Radius.circular(20.0),
@@ -248,7 +251,7 @@ class _LanjutAlquranWidgetState extends State<LanjutAlquranWidget> {
                           ),
                         ),
                         child: Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               20.0, 20.0, 20.0, 20.0),
                           child: FutureBuilder<ApiCallResponse>(
                             future: LanjutayatCall.call(
@@ -287,7 +290,7 @@ class _LanjutAlquranWidgetState extends State<LanjutAlquranWidget> {
                                     itemBuilder: (context, responIndex) {
                                       final responItem = respon[responIndex];
                                       return Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             0.0, 0.0, 0.0, 30.0),
                                         child: Container(
                                           width: double.infinity,
@@ -297,7 +300,7 @@ class _LanjutAlquranWidgetState extends State<LanjutAlquranWidget> {
                                           ),
                                           child: Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     10.0, 0.0, 10.0, 0.0),
                                             child: Column(
                                               mainAxisSize: MainAxisSize.max,
@@ -306,7 +309,7 @@ class _LanjutAlquranWidgetState extends State<LanjutAlquranWidget> {
                                               children: [
                                                 Align(
                                                   alignment:
-                                                      const AlignmentDirectional(
+                                                      AlignmentDirectional(
                                                           1.0, 0.0),
                                                   child: Text(
                                                     valueOrDefault<String>(
@@ -334,7 +337,7 @@ class _LanjutAlquranWidgetState extends State<LanjutAlquranWidget> {
                                                 ),
                                                 Align(
                                                   alignment:
-                                                      const AlignmentDirectional(
+                                                      AlignmentDirectional(
                                                           1.0, 0.0),
                                                   child: Text(
                                                     valueOrDefault<String>(
@@ -360,7 +363,7 @@ class _LanjutAlquranWidgetState extends State<LanjutAlquranWidget> {
                                                 ),
                                                 Align(
                                                   alignment:
-                                                      const AlignmentDirectional(
+                                                      AlignmentDirectional(
                                                           1.0, 0.0),
                                                   child: Text(
                                                     valueOrDefault<String>(
@@ -394,7 +397,7 @@ class _LanjutAlquranWidgetState extends State<LanjutAlquranWidget> {
                                                     Flexible(
                                                       child: Align(
                                                         alignment:
-                                                            const AlignmentDirectional(
+                                                            AlignmentDirectional(
                                                                 -1.0, 0.0),
                                                         child: Text(
                                                           '...',
@@ -453,7 +456,7 @@ class _LanjutAlquranWidgetState extends State<LanjutAlquranWidget> {
                                                                       .primaryText,
                                                                 ),
                                                               ),
-                                                              duration: const Duration(
+                                                              duration: Duration(
                                                                   milliseconds:
                                                                       4000),
                                                               backgroundColor:
@@ -476,7 +479,7 @@ class _LanjutAlquranWidgetState extends State<LanjutAlquranWidget> {
                                                                       .primaryText,
                                                                 ),
                                                               ),
-                                                              duration: const Duration(
+                                                              duration: Duration(
                                                                   milliseconds:
                                                                       4000),
                                                               backgroundColor:
@@ -498,11 +501,11 @@ class _LanjutAlquranWidgetState extends State<LanjutAlquranWidget> {
                                                     ),
                                                   ],
                                                 ),
-                                                const Divider(
+                                                Divider(
                                                   thickness: 1.0,
                                                   color: Colors.white,
                                                 ),
-                                              ].divide(const SizedBox(height: 8.0)),
+                                              ].divide(SizedBox(height: 8.0)),
                                             ),
                                           ),
                                         ),

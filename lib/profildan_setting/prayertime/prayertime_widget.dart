@@ -8,6 +8,9 @@ export 'prayertime_model.dart';
 class PrayertimeWidget extends StatefulWidget {
   const PrayertimeWidget({super.key});
 
+  static String routeName = 'Prayertime';
+  static String routePath = '/prayertime';
+
   @override
   State<PrayertimeWidget> createState() => _PrayertimeWidgetState();
 }
@@ -45,20 +48,20 @@ class _PrayertimeWidgetState extends State<PrayertimeWidget> {
         key: scaffoldKey,
         backgroundColor: Colors.white,
         appBar: PreferredSize(
-          preferredSize: const Size.fromHeight(80.0),
+          preferredSize: Size.fromHeight(80.0),
           child: AppBar(
             backgroundColor: Colors.white,
             automaticallyImplyLeading: false,
             title: Stack(
               children: [
                 Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
+                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
                   child: Row(
                     mainAxisSize: MainAxisSize.max,
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
                       Align(
-                        alignment: const AlignmentDirectional(-1.0, 0.0),
+                        alignment: AlignmentDirectional(-1.0, 0.0),
                         child: InkWell(
                           splashColor: Colors.transparent,
                           focusColor: Colors.transparent,
@@ -78,10 +81,10 @@ class _PrayertimeWidgetState extends State<PrayertimeWidget> {
                   ),
                 ),
                 Align(
-                  alignment: const AlignmentDirectional(0.0, 0.0),
+                  alignment: AlignmentDirectional(0.0, 0.0),
                   child: Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
+                        EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
                     child: Text(
                       'Prayer Time',
                       style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -95,7 +98,7 @@ class _PrayertimeWidgetState extends State<PrayertimeWidget> {
                 ),
               ],
             ),
-            actions: const [],
+            actions: [],
             centerTitle: false,
             elevation: 2.0,
           ),
@@ -109,7 +112,7 @@ class _PrayertimeWidgetState extends State<PrayertimeWidget> {
                 children: [
                   Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(20.0, 30.0, 20.0, 0.0),
+                        EdgeInsetsDirectional.fromSTEB(20.0, 30.0, 20.0, 0.0),
                     child: Container(
                       width: double.infinity,
                       decoration: BoxDecoration(
@@ -122,17 +125,17 @@ class _PrayertimeWidgetState extends State<PrayertimeWidget> {
                         ),
                       ),
                       child: Padding(
-                        padding: const EdgeInsetsDirectional.fromSTEB(
+                        padding: EdgeInsetsDirectional.fromSTEB(
                             0.0, 20.0, 0.0, 20.0),
                         child: Column(
                           mainAxisSize: MainAxisSize.max,
                           children: [
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   5.0, 0.0, 5.0, 0.0),
                               child: Container(
                                 width: double.infinity,
-                                decoration: const BoxDecoration(
+                                decoration: BoxDecoration(
                                   color: Colors.white,
                                   borderRadius: BorderRadius.only(
                                     bottomLeft: Radius.circular(0.0),
@@ -142,7 +145,7 @@ class _PrayertimeWidgetState extends State<PrayertimeWidget> {
                                   ),
                                 ),
                                 child: Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       10.0, 0.0, 10.0, 0.0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
@@ -150,7 +153,7 @@ class _PrayertimeWidgetState extends State<PrayertimeWidget> {
                                       Expanded(
                                         child: Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   35.0, 0.0, 0.0, 0.0),
                                           child: Column(
                                             mainAxisSize: MainAxisSize.max,
@@ -194,16 +197,16 @@ class _PrayertimeWidgetState extends State<PrayertimeWidget> {
                                 ),
                               ),
                             ),
-                            const Divider(
+                            Divider(
                               thickness: 1.0,
                               color: Color(0xFFE5E5E5),
                             ),
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   5.0, 0.0, 5.0, 0.0),
                               child: Container(
                                 width: double.infinity,
-                                decoration: const BoxDecoration(
+                                decoration: BoxDecoration(
                                   color: Colors.white,
                                   borderRadius: BorderRadius.only(
                                     bottomLeft: Radius.circular(0.0),
@@ -213,7 +216,7 @@ class _PrayertimeWidgetState extends State<PrayertimeWidget> {
                                   ),
                                 ),
                                 child: Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       10.0, 0.0, 10.0, 0.0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
@@ -228,7 +231,7 @@ class _PrayertimeWidgetState extends State<PrayertimeWidget> {
                                               mainAxisSize: MainAxisSize.max,
                                               children: [
                                                 Padding(
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           35.0, 0.0, 0.0, 0.0),
                                                   child: Text(
@@ -273,16 +276,16 @@ class _PrayertimeWidgetState extends State<PrayertimeWidget> {
                                 ),
                               ),
                             ),
-                            const Divider(
+                            Divider(
                               thickness: 1.0,
                               color: Color(0xFFE5E5E5),
                             ),
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   5.0, 0.0, 5.0, 0.0),
                               child: Container(
                                 width: double.infinity,
-                                decoration: const BoxDecoration(
+                                decoration: BoxDecoration(
                                   color: Colors.white,
                                   borderRadius: BorderRadius.only(
                                     bottomLeft: Radius.circular(0.0),
@@ -292,13 +295,13 @@ class _PrayertimeWidgetState extends State<PrayertimeWidget> {
                                   ),
                                 ),
                                 child: Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       10.0, 0.0, 10.0, 0.0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
                                     children: [
                                       Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             0.0, 0.0, 10.0, 0.0),
                                         child: Icon(
                                           Icons.check_circle,
@@ -367,7 +370,7 @@ class _PrayertimeWidgetState extends State<PrayertimeWidget> {
                                 ),
                               ),
                             ),
-                            const Divider(
+                            Divider(
                               thickness: 1.0,
                               color: Color(0xFFE5E5E5),
                             ),
@@ -388,13 +391,13 @@ class _PrayertimeWidgetState extends State<PrayertimeWidget> {
                 ],
               ),
               Align(
-                alignment: const AlignmentDirectional(0.0, 1.0),
+                alignment: AlignmentDirectional(0.0, 1.0),
                 child: Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 20.0),
+                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 20.0),
                   child: wrapWithModel(
                     model: _model.footerLogoModel,
                     updateCallback: () => safeSetState(() {}),
-                    child: const FooterLogoWidget(),
+                    child: FooterLogoWidget(),
                   ),
                 ),
               ),

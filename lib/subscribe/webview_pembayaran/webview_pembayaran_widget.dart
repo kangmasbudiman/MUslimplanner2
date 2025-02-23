@@ -1,6 +1,7 @@
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_web_view.dart';
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'webview_pembayaran_model.dart';
 export 'webview_pembayaran_model.dart';
@@ -12,6 +13,9 @@ class WebviewPembayaranWidget extends StatefulWidget {
   });
 
   final String? linkUlr;
+
+  static String routeName = 'webviewPembayaran';
+  static String routePath = '/webviewPembayaran';
 
   @override
   State<WebviewPembayaranWidget> createState() =>
@@ -49,7 +53,7 @@ class _WebviewPembayaranWidgetState extends State<WebviewPembayaranWidget> {
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
         appBar: PreferredSize(
-          preferredSize: const Size.fromHeight(80.0),
+          preferredSize: Size.fromHeight(80.0),
           child: AppBar(
             backgroundColor: FlutterFlowTheme.of(context).primary,
             automaticallyImplyLeading: false,
@@ -64,7 +68,7 @@ class _WebviewPembayaranWidgetState extends State<WebviewPembayaranWidget> {
                       hoverColor: Colors.transparent,
                       highlightColor: Colors.transparent,
                       onTap: () async {
-                        context.pushNamed('HomeScreen');
+                        context.pushNamed(HomeScreenWidget.routeName);
                       },
                       child: Icon(
                         Icons.chevron_left,
@@ -75,7 +79,7 @@ class _WebviewPembayaranWidgetState extends State<WebviewPembayaranWidget> {
                   ],
                 ),
                 Align(
-                  alignment: const AlignmentDirectional(0.0, 0.0),
+                  alignment: AlignmentDirectional(0.0, 0.0),
                   child: Text(
                     'PLEASE COMPLATE',
                     style: FlutterFlowTheme.of(context).headlineMedium.override(
@@ -88,7 +92,7 @@ class _WebviewPembayaranWidgetState extends State<WebviewPembayaranWidget> {
                 ),
               ],
             ),
-            actions: const [],
+            actions: [],
             centerTitle: false,
             elevation: 2.0,
           ),
@@ -96,7 +100,7 @@ class _WebviewPembayaranWidgetState extends State<WebviewPembayaranWidget> {
         body: SafeArea(
           top: true,
           child: Container(
-            decoration: const BoxDecoration(),
+            decoration: BoxDecoration(),
             child: FlutterFlowWebView(
               content: widget.linkUlr!,
               bypass: false,

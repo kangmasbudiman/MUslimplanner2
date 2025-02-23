@@ -6,6 +6,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/custom_code/actions/index.dart' as actions;
 import '/flutter_flow/custom_functions.dart' as functions;
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:provider/provider.dart';
@@ -14,6 +15,9 @@ export 'home_sholat_model.dart';
 
 class HomeSholatWidget extends StatefulWidget {
   const HomeSholatWidget({super.key});
+
+  static String routeName = 'HomeSholat';
+  static String routePath = '/homeSholat';
 
   @override
   State<HomeSholatWidget> createState() => _HomeSholatWidgetState();
@@ -56,7 +60,7 @@ class _HomeSholatWidgetState extends State<HomeSholatWidget> {
           child: Stack(
             children: [
               Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(20.0, 20.0, 20.0, 0.0),
+                padding: EdgeInsetsDirectional.fromSTEB(20.0, 20.0, 20.0, 0.0),
                 child: AuthUserStreamWidget(
                   builder: (context) => FutureBuilder<ApiCallResponse>(
                     future: _model
@@ -220,8 +224,9 @@ class _HomeSholatWidgetState extends State<HomeSholatWidget> {
                                           hoverColor: Colors.transparent,
                                           highlightColor: Colors.transparent,
                                           onTap: () async {
-                                            context
-                                                .pushNamed('kalenderHijriah');
+                                            context.pushNamed(
+                                                KalenderHijriahWidget
+                                                    .routeName);
                                           },
                                           child: ClipRRect(
                                             borderRadius:
@@ -341,8 +346,9 @@ class _HomeSholatWidgetState extends State<HomeSholatWidget> {
                                           hoverColor: Colors.transparent,
                                           highlightColor: Colors.transparent,
                                           onTap: () async {
-                                            context
-                                                .pushNamed('kalenderHijriah');
+                                            context.pushNamed(
+                                                KalenderHijriahWidget
+                                                    .routeName);
                                           },
                                           child: ClipRRect(
                                             borderRadius:
@@ -462,8 +468,9 @@ class _HomeSholatWidgetState extends State<HomeSholatWidget> {
                                           hoverColor: Colors.transparent,
                                           highlightColor: Colors.transparent,
                                           onTap: () async {
-                                            context
-                                                .pushNamed('kalenderHijriah');
+                                            context.pushNamed(
+                                                KalenderHijriahWidget
+                                                    .routeName);
                                           },
                                           child: ClipRRect(
                                             borderRadius:
@@ -583,8 +590,9 @@ class _HomeSholatWidgetState extends State<HomeSholatWidget> {
                                           hoverColor: Colors.transparent,
                                           highlightColor: Colors.transparent,
                                           onTap: () async {
-                                            context
-                                                .pushNamed('kalenderHijriah');
+                                            context.pushNamed(
+                                                KalenderHijriahWidget
+                                                    .routeName);
                                           },
                                           child: ClipRRect(
                                             borderRadius:
@@ -703,8 +711,9 @@ class _HomeSholatWidgetState extends State<HomeSholatWidget> {
                                           hoverColor: Colors.transparent,
                                           highlightColor: Colors.transparent,
                                           onTap: () async {
-                                            context
-                                                .pushNamed('kalenderHijriah');
+                                            context.pushNamed(
+                                                KalenderHijriahWidget
+                                                    .routeName);
                                           },
                                           child: ClipRRect(
                                             borderRadius:
@@ -796,8 +805,9 @@ class _HomeSholatWidgetState extends State<HomeSholatWidget> {
                                           hoverColor: Colors.transparent,
                                           highlightColor: Colors.transparent,
                                           onTap: () async {
-                                            context
-                                                .pushNamed('kalenderHijriah');
+                                            context.pushNamed(
+                                                KalenderHijriahWidget
+                                                    .routeName);
                                           },
                                           child: ClipRRect(
                                             borderRadius:
@@ -881,7 +891,7 @@ class _HomeSholatWidgetState extends State<HomeSholatWidget> {
                                                 fontWeight: FontWeight.w600,
                                               ),
                                         ),
-                                        const TextSpan(
+                                        TextSpan(
                                           text: ' ',
                                           style: TextStyle(),
                                         ),
@@ -893,9 +903,9 @@ class _HomeSholatWidgetState extends State<HomeSholatWidget> {
                                             ),
                                             '--',
                                           ),
-                                          style: const TextStyle(),
+                                          style: TextStyle(),
                                         ),
-                                        const TextSpan(
+                                        TextSpan(
                                           text: ', ',
                                           style: TextStyle(),
                                         ),
@@ -907,9 +917,9 @@ class _HomeSholatWidgetState extends State<HomeSholatWidget> {
                                             ),
                                             '--',
                                           ),
-                                          style: const TextStyle(),
+                                          style: TextStyle(),
                                         ),
-                                        const TextSpan(
+                                        TextSpan(
                                           text: ' H',
                                           style: TextStyle(),
                                         )
@@ -929,14 +939,14 @@ class _HomeSholatWidgetState extends State<HomeSholatWidget> {
                                 },
                               ),
                               Align(
-                                alignment: const AlignmentDirectional(0.0, 0.0),
+                                alignment: AlignmentDirectional(0.0, 0.0),
                                 child: Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 12.0, 0.0, 0.0),
                                   child: wrapWithModel(
                                     model: _model.dateComponenModel,
                                     updateCallback: () => safeSetState(() {}),
-                                    child: const DateComponenWidget(),
+                                    child: DateComponenWidget(),
                                   ),
                                 ),
                               ),
@@ -952,7 +962,7 @@ class _HomeSholatWidgetState extends State<HomeSholatWidget> {
                                 ),
                               ),
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 20.0, 0.0, 0.0),
                                 child: InkWell(
                                   splashColor: Colors.transparent,
@@ -960,13 +970,13 @@ class _HomeSholatWidgetState extends State<HomeSholatWidget> {
                                   hoverColor: Colors.transparent,
                                   highlightColor: Colors.transparent,
                                   onTap: () async {
-                                    context.pushNamed('location');
+                                    context.pushNamed(LocationWidget.routeName);
                                   },
                                   child: Container(
                                     width: double.infinity,
                                     decoration: BoxDecoration(
                                       color: currentUserDocument?.colorThemes,
-                                      boxShadow: const [
+                                      boxShadow: [
                                         BoxShadow(
                                           blurRadius: 2.0,
                                           color: Color(0x33000000),
@@ -976,7 +986,7 @@ class _HomeSholatWidgetState extends State<HomeSholatWidget> {
                                           ),
                                         )
                                       ],
-                                      borderRadius: const BorderRadius.only(
+                                      borderRadius: BorderRadius.only(
                                         bottomLeft: Radius.circular(20.0),
                                         bottomRight: Radius.circular(20.0),
                                         topLeft: Radius.circular(20.0),
@@ -984,14 +994,14 @@ class _HomeSholatWidgetState extends State<HomeSholatWidget> {
                                       ),
                                     ),
                                     child: Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           10.0, 10.0, 10.0, 10.0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
                                         children: [
                                           Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 0.0, 10.0, 0.0),
                                             child: Icon(
                                               Icons.location_on,
@@ -1027,7 +1037,7 @@ class _HomeSholatWidgetState extends State<HomeSholatWidget> {
                                                             FontWeight.bold,
                                                       ),
                                                 ),
-                                                const TextSpan(
+                                                TextSpan(
                                                   text: ', ',
                                                   style: TextStyle(),
                                                 ),
@@ -1039,7 +1049,7 @@ class _HomeSholatWidgetState extends State<HomeSholatWidget> {
                                                         ''),
                                                     'Indonesia',
                                                   ),
-                                                  style: const TextStyle(),
+                                                  style: TextStyle(),
                                                 )
                                               ],
                                               style: FlutterFlowTheme.of(
@@ -1062,7 +1072,7 @@ class _HomeSholatWidgetState extends State<HomeSholatWidget> {
                                 ),
                               ),
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 20.0, 0.0, 0.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
@@ -1074,14 +1084,15 @@ class _HomeSholatWidgetState extends State<HomeSholatWidget> {
                                         hoverColor: Colors.transparent,
                                         highlightColor: Colors.transparent,
                                         onTap: () async {
-                                          context.pushNamed('newkiblat');
+                                          context.pushNamed(
+                                              NewkiblatWidget.routeName);
                                         },
                                         child: Container(
                                           width: double.infinity,
                                           decoration: BoxDecoration(
                                             color: currentUserDocument
                                                 ?.colorThemes,
-                                            boxShadow: const [
+                                            boxShadow: [
                                               BoxShadow(
                                                 blurRadius: 2.0,
                                                 color: Color(0x33000000),
@@ -1091,7 +1102,7 @@ class _HomeSholatWidgetState extends State<HomeSholatWidget> {
                                                 ),
                                               )
                                             ],
-                                            borderRadius: const BorderRadius.only(
+                                            borderRadius: BorderRadius.only(
                                               bottomLeft: Radius.circular(20.0),
                                               bottomRight:
                                                   Radius.circular(20.0),
@@ -1101,13 +1112,13 @@ class _HomeSholatWidgetState extends State<HomeSholatWidget> {
                                           ),
                                           child: Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     10.0, 10.0, 10.0, 10.0),
                                             child: Row(
                                               mainAxisSize: MainAxisSize.max,
                                               children: [
                                                 Padding(
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           0.0, 0.0, 10.0, 0.0),
                                                   child: FaIcon(
@@ -1147,15 +1158,16 @@ class _HomeSholatWidgetState extends State<HomeSholatWidget> {
                                         hoverColor: Colors.transparent,
                                         highlightColor: Colors.transparent,
                                         onTap: () async {
-                                          context
-                                              .pushNamed('detailJadwalSholat');
+                                          context.pushNamed(
+                                              DetailJadwalSholatWidget
+                                                  .routeName);
                                         },
                                         child: Container(
                                           width: double.infinity,
                                           decoration: BoxDecoration(
                                             color: currentUserDocument
                                                 ?.colorThemes,
-                                            boxShadow: const [
+                                            boxShadow: [
                                               BoxShadow(
                                                 blurRadius: 2.0,
                                                 color: Color(0x33000000),
@@ -1165,7 +1177,7 @@ class _HomeSholatWidgetState extends State<HomeSholatWidget> {
                                                 ),
                                               )
                                             ],
-                                            borderRadius: const BorderRadius.only(
+                                            borderRadius: BorderRadius.only(
                                               bottomLeft: Radius.circular(20.0),
                                               bottomRight:
                                                   Radius.circular(20.0),
@@ -1175,13 +1187,13 @@ class _HomeSholatWidgetState extends State<HomeSholatWidget> {
                                           ),
                                           child: Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     10.0, 10.0, 10.0, 10.0),
                                             child: Row(
                                               mainAxisSize: MainAxisSize.max,
                                               children: [
                                                 Padding(
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           0.0, 0.0, 10.0, 0.0),
                                                   child: Icon(
@@ -1213,11 +1225,11 @@ class _HomeSholatWidgetState extends State<HomeSholatWidget> {
                                         ),
                                       ),
                                     ),
-                                  ].divide(const SizedBox(width: 20.0)),
+                                  ].divide(SizedBox(width: 20.0)),
                                 ),
                               ),
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 30.0, 0.0, 0.0),
                                 child: Container(
                                   width: double.infinity,
@@ -1235,10 +1247,10 @@ class _HomeSholatWidgetState extends State<HomeSholatWidget> {
                                     children: [
                                       Align(
                                         alignment:
-                                            const AlignmentDirectional(0.0, 0.0),
+                                            AlignmentDirectional(0.0, 0.0),
                                         child: Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 20.0, 0.0, 0.0),
                                           child: Text(
                                             'Waktu Sholat',
@@ -1253,14 +1265,14 @@ class _HomeSholatWidgetState extends State<HomeSholatWidget> {
                                         ),
                                       ),
                                       Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             25.0, 20.0, 25.0, 0.0),
                                         child: Container(
                                           width: double.infinity,
                                           decoration: BoxDecoration(
                                             color: FlutterFlowTheme.of(context)
                                                 .secondaryBackground,
-                                            boxShadow: const [
+                                            boxShadow: [
                                               BoxShadow(
                                                 blurRadius: 2.0,
                                                 color: Color(0x33000000),
@@ -1270,7 +1282,7 @@ class _HomeSholatWidgetState extends State<HomeSholatWidget> {
                                                 ),
                                               )
                                             ],
-                                            borderRadius: const BorderRadius.only(
+                                            borderRadius: BorderRadius.only(
                                               bottomLeft: Radius.circular(20.0),
                                               bottomRight:
                                                   Radius.circular(20.0),
@@ -1286,7 +1298,7 @@ class _HomeSholatWidgetState extends State<HomeSholatWidget> {
                                           ),
                                           child: Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     10.0, 10.0, 10.0, 10.0),
                                             child: Row(
                                               mainAxisSize: MainAxisSize.max,
@@ -1353,7 +1365,7 @@ class _HomeSholatWidgetState extends State<HomeSholatWidget> {
                                                         false)
                                                       Padding(
                                                         padding:
-                                                            const EdgeInsetsDirectional
+                                                            EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     15.0,
                                                                     0.0,
@@ -1391,7 +1403,7 @@ class _HomeSholatWidgetState extends State<HomeSholatWidget> {
                                                         true)
                                                       Padding(
                                                         padding:
-                                                            const EdgeInsetsDirectional
+                                                            EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     15.0,
                                                                     0.0,
@@ -1431,14 +1443,14 @@ class _HomeSholatWidgetState extends State<HomeSholatWidget> {
                                         ),
                                       ),
                                       Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             25.0, 20.0, 25.0, 0.0),
                                         child: Container(
                                           width: double.infinity,
                                           decoration: BoxDecoration(
                                             color: FlutterFlowTheme.of(context)
                                                 .secondaryBackground,
-                                            boxShadow: const [
+                                            boxShadow: [
                                               BoxShadow(
                                                 blurRadius: 2.0,
                                                 color: Color(0x33000000),
@@ -1448,7 +1460,7 @@ class _HomeSholatWidgetState extends State<HomeSholatWidget> {
                                                 ),
                                               )
                                             ],
-                                            borderRadius: const BorderRadius.only(
+                                            borderRadius: BorderRadius.only(
                                               bottomLeft: Radius.circular(20.0),
                                               bottomRight:
                                                   Radius.circular(20.0),
@@ -1464,7 +1476,7 @@ class _HomeSholatWidgetState extends State<HomeSholatWidget> {
                                           ),
                                           child: Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     10.0, 10.0, 10.0, 10.0),
                                             child: Row(
                                               mainAxisSize: MainAxisSize.max,
@@ -1531,7 +1543,7 @@ class _HomeSholatWidgetState extends State<HomeSholatWidget> {
                                                         false)
                                                       Padding(
                                                         padding:
-                                                            const EdgeInsetsDirectional
+                                                            EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     15.0,
                                                                     0.0,
@@ -1569,7 +1581,7 @@ class _HomeSholatWidgetState extends State<HomeSholatWidget> {
                                                         true)
                                                       Padding(
                                                         padding:
-                                                            const EdgeInsetsDirectional
+                                                            EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     15.0,
                                                                     0.0,
@@ -1609,14 +1621,14 @@ class _HomeSholatWidgetState extends State<HomeSholatWidget> {
                                         ),
                                       ),
                                       Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             25.0, 20.0, 25.0, 0.0),
                                         child: Container(
                                           width: double.infinity,
                                           decoration: BoxDecoration(
                                             color: FlutterFlowTheme.of(context)
                                                 .secondaryBackground,
-                                            boxShadow: const [
+                                            boxShadow: [
                                               BoxShadow(
                                                 blurRadius: 2.0,
                                                 color: Color(0x33000000),
@@ -1626,7 +1638,7 @@ class _HomeSholatWidgetState extends State<HomeSholatWidget> {
                                                 ),
                                               )
                                             ],
-                                            borderRadius: const BorderRadius.only(
+                                            borderRadius: BorderRadius.only(
                                               bottomLeft: Radius.circular(20.0),
                                               bottomRight:
                                                   Radius.circular(20.0),
@@ -1642,7 +1654,7 @@ class _HomeSholatWidgetState extends State<HomeSholatWidget> {
                                           ),
                                           child: Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     10.0, 10.0, 10.0, 10.0),
                                             child: Row(
                                               mainAxisSize: MainAxisSize.max,
@@ -1709,7 +1721,7 @@ class _HomeSholatWidgetState extends State<HomeSholatWidget> {
                                                         false)
                                                       Padding(
                                                         padding:
-                                                            const EdgeInsetsDirectional
+                                                            EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     15.0,
                                                                     0.0,
@@ -1747,7 +1759,7 @@ class _HomeSholatWidgetState extends State<HomeSholatWidget> {
                                                         true)
                                                       Padding(
                                                         padding:
-                                                            const EdgeInsetsDirectional
+                                                            EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     15.0,
                                                                     0.0,
@@ -1787,14 +1799,14 @@ class _HomeSholatWidgetState extends State<HomeSholatWidget> {
                                         ),
                                       ),
                                       Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             25.0, 20.0, 25.0, 0.0),
                                         child: Container(
                                           width: double.infinity,
                                           decoration: BoxDecoration(
                                             color: FlutterFlowTheme.of(context)
                                                 .secondaryBackground,
-                                            boxShadow: const [
+                                            boxShadow: [
                                               BoxShadow(
                                                 blurRadius: 2.0,
                                                 color: Color(0x33000000),
@@ -1804,7 +1816,7 @@ class _HomeSholatWidgetState extends State<HomeSholatWidget> {
                                                 ),
                                               )
                                             ],
-                                            borderRadius: const BorderRadius.only(
+                                            borderRadius: BorderRadius.only(
                                               bottomLeft: Radius.circular(20.0),
                                               bottomRight:
                                                   Radius.circular(20.0),
@@ -1820,7 +1832,7 @@ class _HomeSholatWidgetState extends State<HomeSholatWidget> {
                                           ),
                                           child: Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     10.0, 10.0, 10.0, 10.0),
                                             child: Row(
                                               mainAxisSize: MainAxisSize.max,
@@ -1887,7 +1899,7 @@ class _HomeSholatWidgetState extends State<HomeSholatWidget> {
                                                         false)
                                                       Padding(
                                                         padding:
-                                                            const EdgeInsetsDirectional
+                                                            EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     15.0,
                                                                     0.0,
@@ -1925,7 +1937,7 @@ class _HomeSholatWidgetState extends State<HomeSholatWidget> {
                                                         true)
                                                       Padding(
                                                         padding:
-                                                            const EdgeInsetsDirectional
+                                                            EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     15.0,
                                                                     0.0,
@@ -1965,14 +1977,14 @@ class _HomeSholatWidgetState extends State<HomeSholatWidget> {
                                         ),
                                       ),
                                       Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             25.0, 20.0, 25.0, 0.0),
                                         child: Container(
                                           width: double.infinity,
                                           decoration: BoxDecoration(
                                             color: FlutterFlowTheme.of(context)
                                                 .secondaryBackground,
-                                            boxShadow: const [
+                                            boxShadow: [
                                               BoxShadow(
                                                 blurRadius: 2.0,
                                                 color: Color(0x33000000),
@@ -1982,7 +1994,7 @@ class _HomeSholatWidgetState extends State<HomeSholatWidget> {
                                                 ),
                                               )
                                             ],
-                                            borderRadius: const BorderRadius.only(
+                                            borderRadius: BorderRadius.only(
                                               bottomLeft: Radius.circular(20.0),
                                               bottomRight:
                                                   Radius.circular(20.0),
@@ -1998,7 +2010,7 @@ class _HomeSholatWidgetState extends State<HomeSholatWidget> {
                                           ),
                                           child: Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     10.0, 10.0, 10.0, 10.0),
                                             child: Row(
                                               mainAxisSize: MainAxisSize.max,
@@ -2065,7 +2077,7 @@ class _HomeSholatWidgetState extends State<HomeSholatWidget> {
                                                         false)
                                                       Padding(
                                                         padding:
-                                                            const EdgeInsetsDirectional
+                                                            EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     15.0,
                                                                     0.0,
@@ -2103,7 +2115,7 @@ class _HomeSholatWidgetState extends State<HomeSholatWidget> {
                                                         true)
                                                       Padding(
                                                         padding:
-                                                            const EdgeInsetsDirectional
+                                                            EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     15.0,
                                                                     0.0,
@@ -2146,7 +2158,7 @@ class _HomeSholatWidgetState extends State<HomeSholatWidget> {
                                   ),
                                 ),
                               ),
-                            ].addToEnd(const SizedBox(height: 100.0)),
+                            ].addToEnd(SizedBox(height: 100.0)),
                           ),
                         ),
                       );
@@ -2155,11 +2167,11 @@ class _HomeSholatWidgetState extends State<HomeSholatWidget> {
                 ),
               ),
               Align(
-                alignment: const AlignmentDirectional(0.0, 1.0),
+                alignment: AlignmentDirectional(0.0, 1.0),
                 child: wrapWithModel(
                   model: _model.navbarModel,
                   updateCallback: () => safeSetState(() {}),
-                  child: const NavbarWidget(),
+                  child: NavbarWidget(),
                 ),
               ),
             ],

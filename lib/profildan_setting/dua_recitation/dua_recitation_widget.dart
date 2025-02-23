@@ -8,6 +8,9 @@ export 'dua_recitation_model.dart';
 class DuaRecitationWidget extends StatefulWidget {
   const DuaRecitationWidget({super.key});
 
+  static String routeName = 'DuaRecitation';
+  static String routePath = '/duaRecitation';
+
   @override
   State<DuaRecitationWidget> createState() => _DuaRecitationWidgetState();
 }
@@ -43,24 +46,24 @@ class _DuaRecitationWidgetState extends State<DuaRecitationWidget> {
         key: scaffoldKey,
         backgroundColor: Colors.white,
         appBar: PreferredSize(
-          preferredSize: const Size.fromHeight(80.0),
+          preferredSize: Size.fromHeight(80.0),
           child: AppBar(
             backgroundColor: Colors.white,
             automaticallyImplyLeading: false,
             title: Align(
-              alignment: const AlignmentDirectional(0.0, 0.0),
+              alignment: AlignmentDirectional(0.0, 0.0),
               child: Stack(
-                alignment: const AlignmentDirectional(0.0, 0.0),
+                alignment: AlignmentDirectional(0.0, 0.0),
                 children: [
                   Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 10.0),
+                        EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 10.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
                         Align(
-                          alignment: const AlignmentDirectional(-1.0, 0.0),
+                          alignment: AlignmentDirectional(-1.0, 0.0),
                           child: AuthUserStreamWidget(
                             builder: (context) => InkWell(
                               splashColor: Colors.transparent,
@@ -82,10 +85,10 @@ class _DuaRecitationWidgetState extends State<DuaRecitationWidget> {
                     ),
                   ),
                   Align(
-                    alignment: const AlignmentDirectional(0.0, 0.0),
+                    alignment: AlignmentDirectional(0.0, 0.0),
                     child: Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 10.0),
+                          EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 10.0),
                       child: AuthUserStreamWidget(
                         builder: (context) => Text(
                           'Duas Recitation',
@@ -104,7 +107,7 @@ class _DuaRecitationWidgetState extends State<DuaRecitationWidget> {
                 ],
               ),
             ),
-            actions: const [],
+            actions: [],
             centerTitle: false,
             elevation: 2.0,
           ),
@@ -112,13 +115,13 @@ class _DuaRecitationWidgetState extends State<DuaRecitationWidget> {
         body: SafeArea(
           top: true,
           child: Padding(
-            padding: const EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 0.0),
+            padding: EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 0.0),
             child: Column(
               mainAxisSize: MainAxisSize.max,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(20.0, 30.0, 0.0, 0.0),
+                  padding: EdgeInsetsDirectional.fromSTEB(20.0, 30.0, 0.0, 0.0),
                   child: Text(
                     'Reading',
                     style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -132,13 +135,13 @@ class _DuaRecitationWidgetState extends State<DuaRecitationWidget> {
                 Flexible(
                   child: Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
+                        EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
                     child: AuthUserStreamWidget(
                       builder: (context) => Container(
                         width: double.infinity,
                         decoration: BoxDecoration(
                           color: currentUserDocument?.colorThemes,
-                          borderRadius: const BorderRadius.only(
+                          borderRadius: BorderRadius.only(
                             bottomLeft: Radius.circular(20.0),
                             bottomRight: Radius.circular(20.0),
                             topLeft: Radius.circular(20.0),
@@ -146,7 +149,7 @@ class _DuaRecitationWidgetState extends State<DuaRecitationWidget> {
                           ),
                         ),
                         child: Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               20.0, 5.0, 20.0, 5.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.min,
@@ -173,14 +176,14 @@ class _DuaRecitationWidgetState extends State<DuaRecitationWidget> {
                                           .bodyMedium
                                           .override(
                                             fontFamily: 'Inter',
-                                            color: const Color(0xFFA4A4A4),
+                                            color: Color(0xFFA4A4A4),
                                             letterSpacing: 0.0,
                                           ),
                                     ),
                                   ],
                                 ),
                               ),
-                              const Icon(
+                              Icon(
                                 Icons.play_circle_outline_sharp,
                                 color: Color(0xFFA4A4A4),
                                 size: 24.0,

@@ -1,6 +1,7 @@
 import '/backend/api_requests/api_calls.dart';
 import '/componen/navbar/navbar_widget.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/index.dart';
 import 'home_alquran_widget.dart' show HomeAlquranWidget;
 import 'package:flutter/material.dart';
 

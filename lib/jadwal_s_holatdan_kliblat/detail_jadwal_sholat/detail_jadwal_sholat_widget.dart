@@ -13,6 +13,9 @@ export 'detail_jadwal_sholat_model.dart';
 class DetailJadwalSholatWidget extends StatefulWidget {
   const DetailJadwalSholatWidget({super.key});
 
+  static String routeName = 'detailJadwalSholat';
+  static String routePath = '/detailJadwalSholat';
+
   @override
   State<DetailJadwalSholatWidget> createState() =>
       _DetailJadwalSholatWidgetState();
@@ -51,17 +54,17 @@ class _DetailJadwalSholatWidgetState extends State<DetailJadwalSholatWidget> {
         key: scaffoldKey,
         backgroundColor: Colors.white,
         appBar: PreferredSize(
-          preferredSize: const Size.fromHeight(80.0),
+          preferredSize: Size.fromHeight(80.0),
           child: AppBar(
             backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
             automaticallyImplyLeading: false,
             title: Padding(
-              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 10.0),
+              padding: EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 10.0),
               child: Row(
                 mainAxisSize: MainAxisSize.max,
                 children: [
                   Align(
-                    alignment: const AlignmentDirectional(-1.0, 0.0),
+                    alignment: AlignmentDirectional(-1.0, 0.0),
                     child: InkWell(
                       splashColor: Colors.transparent,
                       focusColor: Colors.transparent,
@@ -83,7 +86,7 @@ class _DetailJadwalSholatWidgetState extends State<DetailJadwalSholatWidget> {
                         width: double.infinity,
                         decoration: BoxDecoration(
                           color: currentUserDocument?.colorThemes,
-                          borderRadius: const BorderRadius.only(
+                          borderRadius: BorderRadius.only(
                             bottomLeft: Radius.circular(20.0),
                             bottomRight: Radius.circular(20.0),
                             topLeft: Radius.circular(20.0),
@@ -91,7 +94,7 @@ class _DetailJadwalSholatWidgetState extends State<DetailJadwalSholatWidget> {
                           ),
                         ),
                         child: Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               4.0, 4.0, 4.0, 4.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
@@ -118,7 +121,7 @@ class _DetailJadwalSholatWidgetState extends State<DetailJadwalSholatWidget> {
                                             fontWeight: FontWeight.bold,
                                           ),
                                     ),
-                                    const TextSpan(
+                                    TextSpan(
                                       text: ' ',
                                       style: TextStyle(),
                                     ),
@@ -128,7 +131,7 @@ class _DetailJadwalSholatWidgetState extends State<DetailJadwalSholatWidget> {
                                             currentUserDocument?.country, ''),
                                         'Indonesia',
                                       ),
-                                      style: const TextStyle(),
+                                      style: TextStyle(),
                                     )
                                   ],
                                   style: FlutterFlowTheme.of(context)
@@ -151,7 +154,7 @@ class _DetailJadwalSholatWidgetState extends State<DetailJadwalSholatWidget> {
                 ],
               ),
             ),
-            actions: const [],
+            actions: [],
             centerTitle: false,
             elevation: 2.0,
           ),
@@ -159,20 +162,20 @@ class _DetailJadwalSholatWidgetState extends State<DetailJadwalSholatWidget> {
         body: SafeArea(
           top: true,
           child: Padding(
-            padding: const EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 0.0),
+            padding: EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 0.0),
             child: Column(
               mainAxisSize: MainAxisSize.max,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
+                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
                   child: wrapWithModel(
                     model: _model.dateComponenModel,
                     updateCallback: () => safeSetState(() {}),
-                    child: const DateComponenWidget(),
+                    child: DateComponenWidget(),
                   ),
                 ),
-                const Divider(
+                Divider(
                   thickness: 1.0,
                   color: Color(0xFFE5E5E5),
                 ),
@@ -185,7 +188,7 @@ class _DetailJadwalSholatWidgetState extends State<DetailJadwalSholatWidget> {
                       ),
                     ),
                     child: Padding(
-                      padding: const EdgeInsets.all(8.0),
+                      padding: EdgeInsets.all(8.0),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -257,7 +260,7 @@ class _DetailJadwalSholatWidgetState extends State<DetailJadwalSholatWidget> {
                                 ),
                           ),
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 12.0, 0.0),
                             child: Text(
                               'Isya',
@@ -352,7 +355,7 @@ class _DetailJadwalSholatWidgetState extends State<DetailJadwalSholatWidget> {
                                       ),
                                     ),
                                     child: Padding(
-                                      padding: const EdgeInsets.all(8.0),
+                                      padding: EdgeInsets.all(8.0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
                                         mainAxisAlignment:
@@ -484,11 +487,11 @@ class _DetailJadwalSholatWidgetState extends State<DetailJadwalSholatWidget> {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 10.0),
+                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 10.0),
                   child: wrapWithModel(
                     model: _model.footerLogoModel,
                     updateCallback: () => safeSetState(() {}),
-                    child: const FooterLogoWidget(),
+                    child: FooterLogoWidget(),
                   ),
                 ),
               ],

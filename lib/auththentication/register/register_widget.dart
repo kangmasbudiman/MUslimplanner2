@@ -5,6 +5,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
+import '/index.dart';
 import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
@@ -13,6 +14,9 @@ export 'register_model.dart';
 
 class RegisterWidget extends StatefulWidget {
   const RegisterWidget({super.key});
+
+  static String routeName = 'register';
+  static String routePath = '/register';
 
   @override
   State<RegisterWidget> createState() => _RegisterWidgetState();
@@ -65,9 +69,9 @@ class _RegisterWidgetState extends State<RegisterWidget> {
           child: Container(
             width: double.infinity,
             height: double.infinity,
-            decoration: const BoxDecoration(),
+            decoration: BoxDecoration(),
             child: Padding(
-              padding: const EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 20.0),
+              padding: EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 20.0),
               child: SingleChildScrollView(
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
@@ -75,7 +79,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                   children: [
                     Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 0.0),
+                          EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 0.0),
                       child: Text(
                         'Registration',
                         style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -92,9 +96,9 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                       autovalidateMode: AutovalidateMode.disabled,
                       child: Container(
                         width: double.infinity,
-                        decoration: const BoxDecoration(),
+                        decoration: BoxDecoration(),
                         child: Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               20.0, 0.0, 20.0, 0.0),
                           child: Column(
                             mainAxisSize: MainAxisSize.max,
@@ -105,7 +109,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         20.0, 0.0, 0.0, 10.0),
                                     child: Text(
                                       'Username',
@@ -132,7 +136,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                                     child: Opacity(
                                       opacity: 0.8,
                                       child: Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             25.0, 0.0, 25.0, 0.0),
                                         child: TextFormField(
                                           controller:
@@ -142,7 +146,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                                           onChanged: (_) =>
                                               EasyDebounce.debounce(
                                             '_model.textusernameTextController',
-                                            const Duration(milliseconds: 2000),
+                                            Duration(milliseconds: 2000),
                                             () => safeSetState(() {}),
                                           ),
                                           autofocus: false,
@@ -179,7 +183,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                                                           ?.clear();
                                                       safeSetState(() {});
                                                     },
-                                                    child: const Icon(
+                                                    child: Icon(
                                                       Icons.clear,
                                                       size: 22,
                                                     ),
@@ -207,7 +211,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         20.0, 0.0, 0.0, 10.0),
                                     child: Text(
                                       'Email',
@@ -232,7 +236,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                                       ),
                                     ),
                                     child: Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           25.0, 0.0, 25.0, 0.0),
                                       child: TextFormField(
                                         controller:
@@ -240,7 +244,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                                         focusNode: _model.textemailFocusNode,
                                         onChanged: (_) => EasyDebounce.debounce(
                                           '_model.textemailTextController',
-                                          const Duration(milliseconds: 2000),
+                                          Duration(milliseconds: 2000),
                                           () => safeSetState(() {}),
                                         ),
                                         autofocus: false,
@@ -276,7 +280,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                                                         ?.clear();
                                                     safeSetState(() {});
                                                   },
-                                                  child: const Icon(
+                                                  child: Icon(
                                                     Icons.clear,
                                                     size: 22,
                                                   ),
@@ -304,7 +308,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         20.0, 0.0, 0.0, 10.0),
                                     child: Text(
                                       'Password',
@@ -340,7 +344,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                                           children: [
                                             Expanded(
                                               child: Padding(
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         25.0, 0.0, 25.0, 0.0),
                                                 child: TextFormField(
@@ -419,7 +423,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         20.0, 0.0, 0.0, 10.0),
                                     child: Text(
                                       'Confirm Password',
@@ -455,7 +459,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                                           children: [
                                             Expanded(
                                               child: Padding(
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         25.0, 0.0, 25.0, 0.0),
                                                 child: TextFormField(
@@ -529,7 +533,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                                 ],
                               ),
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 20.0, 0.0, 0.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
@@ -537,7 +541,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                                       MainAxisAlignment.spaceAround,
                                   children: [
                                     Align(
-                                      alignment: const AlignmentDirectional(0.0, 2.0),
+                                      alignment: AlignmentDirectional(0.0, 2.0),
                                       child: FlutterFlowRadioButton(
                                         options: ['Male', 'Female'].toList(),
                                         onChanged: (val) async {
@@ -583,7 +587,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                                 ),
                               ),
                               Align(
-                                alignment: const AlignmentDirectional(0.0, 1.0),
+                                alignment: AlignmentDirectional(0.0, 1.0),
                                 child: FFButtonWidget(
                                   onPressed: () async {
                                     GoRouter.of(context).prepareAuthEvent();
@@ -615,15 +619,16 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                                         ));
 
                                     context.pushNamedAuth(
-                                        'verivicationscreen', context.mounted);
+                                        VerivicationscreenWidget.routeName,
+                                        context.mounted);
                                   },
                                   text: 'Register',
                                   options: FFButtonOptions(
                                     width: 250.0,
                                     height: 40.0,
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         24.0, 0.0, 24.0, 0.0),
-                                    iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                    iconPadding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 0.0),
                                     color: FlutterFlowTheme.of(context).primary,
                                     textStyle: FlutterFlowTheme.of(context)
@@ -634,7 +639,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                                           letterSpacing: 0.0,
                                         ),
                                     elevation: 3.0,
-                                    borderSide: const BorderSide(
+                                    borderSide: BorderSide(
                                       color: Colors.transparent,
                                       width: 1.0,
                                     ),
@@ -643,15 +648,15 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                                 ),
                               ),
                             ]
-                                .divide(const SizedBox(height: 15.0))
-                                .around(const SizedBox(height: 15.0)),
+                                .divide(SizedBox(height: 15.0))
+                                .around(SizedBox(height: 15.0)),
                           ),
                         ),
                       ),
                     ),
                     Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 0.0),
+                          EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 0.0),
                       child: RichText(
                         textScaler: MediaQuery.of(context).textScaler,
                         text: TextSpan(
@@ -669,13 +674,13 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                             ),
                             TextSpan(
                               text: 'Sign in.',
-                              style: const TextStyle(
+                              style: TextStyle(
                                 fontWeight: FontWeight.bold,
                               ),
                               mouseCursor: SystemMouseCursors.click,
                               recognizer: TapGestureRecognizer()
                                 ..onTap = () async {
-                                  context.pushNamed('login');
+                                  context.pushNamed(LoginWidget.routeName);
                                 },
                             )
                           ],
@@ -688,7 +693,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                       ),
                     ),
                     Align(
-                      alignment: const AlignmentDirectional(0.0, 1.0),
+                      alignment: AlignmentDirectional(0.0, 1.0),
                       child: ClipRRect(
                         borderRadius: BorderRadius.circular(8.0),
                         child: Image.asset(
@@ -699,7 +704,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                         ),
                       ),
                     ),
-                  ].divide(const SizedBox(height: 20.0)),
+                  ].divide(SizedBox(height: 20.0)),
                 ),
               ),
             ),

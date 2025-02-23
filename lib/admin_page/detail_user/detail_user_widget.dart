@@ -22,12 +22,12 @@ class DetailUserWidget extends StatefulWidget {
     this.enddate,
     this.statusPremium,
     this.referenUser,
-  })  : userid = userid ?? '-',
-        email = email ?? '-',
-        photo = photo ?? '-',
-        gender = gender ?? '-',
-        userStatus = userStatus ?? 0,
-        displayname = displayname ?? '-';
+  })  : this.userid = userid ?? '-',
+        this.email = email ?? '-',
+        this.photo = photo ?? '-',
+        this.gender = gender ?? '-',
+        this.userStatus = userStatus ?? 0,
+        this.displayname = displayname ?? '-';
 
   final String userid;
   final String email;
@@ -39,6 +39,9 @@ class DetailUserWidget extends StatefulWidget {
   final DateTime? enddate;
   final String? statusPremium;
   final DocumentReference? referenUser;
+
+  static String routeName = 'detailUser';
+  static String routePath = '/detailUser';
 
   @override
   State<DetailUserWidget> createState() => _DetailUserWidgetState();
@@ -72,15 +75,15 @@ class _DetailUserWidgetState extends State<DetailUserWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: const Offset(0.0, 40.0),
-            end: const Offset(0.0, 0.0),
+            begin: Offset(0.0, 40.0),
+            end: Offset(0.0, 0.0),
           ),
           ScaleEffect(
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: const Offset(0.6, 0.6),
-            end: const Offset(1.0, 1.0),
+            begin: Offset(0.6, 0.6),
+            end: Offset(1.0, 1.0),
           ),
         ],
       ),
@@ -98,8 +101,8 @@ class _DetailUserWidgetState extends State<DetailUserWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: const Offset(50.0, 0.0),
-            end: const Offset(0.0, 0.0),
+            begin: Offset(50.0, 0.0),
+            end: Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -117,8 +120,8 @@ class _DetailUserWidgetState extends State<DetailUserWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: const Offset(50.0, 0.0),
-            end: const Offset(0.0, 0.0),
+            begin: Offset(50.0, 0.0),
+            end: Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -137,8 +140,8 @@ class _DetailUserWidgetState extends State<DetailUserWidget>
             curve: Curves.easeInOut,
             delay: 100.0.ms,
             duration: 600.0.ms,
-            begin: const Offset(60.0, 0.0),
-            end: const Offset(0.0, 0.0),
+            begin: Offset(60.0, 0.0),
+            end: Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -157,8 +160,8 @@ class _DetailUserWidgetState extends State<DetailUserWidget>
             curve: Curves.easeInOut,
             delay: 100.0.ms,
             duration: 600.0.ms,
-            begin: const Offset(60.0, 0.0),
-            end: const Offset(0.0, 0.0),
+            begin: Offset(60.0, 0.0),
+            end: Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -177,8 +180,8 @@ class _DetailUserWidgetState extends State<DetailUserWidget>
             curve: Curves.easeInOut,
             delay: 100.0.ms,
             duration: 600.0.ms,
-            begin: const Offset(60.0, 0.0),
-            end: const Offset(0.0, 0.0),
+            begin: Offset(60.0, 0.0),
+            end: Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -196,8 +199,8 @@ class _DetailUserWidgetState extends State<DetailUserWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: const Offset(50.0, 0.0),
-            end: const Offset(0.0, 0.0),
+            begin: Offset(50.0, 0.0),
+            end: Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -215,8 +218,8 @@ class _DetailUserWidgetState extends State<DetailUserWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: const Offset(0.0, 80.0),
-            end: const Offset(0.0, 0.0),
+            begin: Offset(0.0, 80.0),
+            end: Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -234,8 +237,8 @@ class _DetailUserWidgetState extends State<DetailUserWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: const Offset(0.0, 100.0),
-            end: const Offset(0.0, 0.0),
+            begin: Offset(0.0, 100.0),
+            end: Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -283,7 +286,7 @@ class _DetailUserWidgetState extends State<DetailUserWidget>
               ),
             ],
           ),
-          actions: const [],
+          actions: [],
           centerTitle: false,
           elevation: 0.0,
         ),
@@ -294,7 +297,7 @@ class _DetailUserWidgetState extends State<DetailUserWidget>
             children: [
               Expanded(
                 child: Padding(
-                  padding: const EdgeInsets.all(12.0),
+                  padding: EdgeInsets.all(12.0),
                   child: SingleChildScrollView(
                     child: Column(
                       mainAxisSize: MainAxisSize.max,
@@ -321,7 +324,7 @@ class _DetailUserWidgetState extends State<DetailUserWidget>
                         ).animateOnPageLoad(
                             animationsMap['imageOnPageLoadAnimation']!),
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 16.0, 0.0, 0.0),
                           child: Text(
                             widget.displayname,
@@ -335,7 +338,7 @@ class _DetailUserWidgetState extends State<DetailUserWidget>
                               animationsMap['textOnPageLoadAnimation1']!),
                         ),
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 4.0, 0.0, 0.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
@@ -369,7 +372,7 @@ class _DetailUserWidgetState extends State<DetailUserWidget>
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   4.0, 4.0, 0.0, 0.0),
                               child: Text(
                                 valueOrDefault<String>(
@@ -404,7 +407,7 @@ class _DetailUserWidgetState extends State<DetailUserWidget>
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   4.0, 4.0, 0.0, 0.0),
                               child: Text(
                                 widget.gender,
@@ -436,7 +439,7 @@ class _DetailUserWidgetState extends State<DetailUserWidget>
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   4.0, 4.0, 0.0, 0.0),
                               child: Text(
                                 widget.statusPremium == '1'
@@ -460,7 +463,7 @@ class _DetailUserWidgetState extends State<DetailUserWidget>
                           color: FlutterFlowTheme.of(context).alternate,
                         ).animateOnPageLoad(
                             animationsMap['dividerOnPageLoadAnimation']!),
-                        const Row(
+                        Row(
                           mainAxisSize: MainAxisSize.max,
                           mainAxisAlignment: MainAxisAlignment.spaceAround,
                           children: [
@@ -488,12 +491,12 @@ class _DetailUserWidgetState extends State<DetailUserWidget>
                 ),
               ),
               Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 12.0),
+                padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 12.0),
                 child: Container(
                   width: MediaQuery.sizeOf(context).width * 1.0,
                   decoration: BoxDecoration(
                     color: FlutterFlowTheme.of(context).secondaryBackground,
-                    boxShadow: const [
+                    boxShadow: [
                       BoxShadow(
                         blurRadius: 4.0,
                         color: Color(0x55000000),
@@ -511,14 +514,14 @@ class _DetailUserWidgetState extends State<DetailUserWidget>
                   ),
                   child: Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(10.0, 16.0, 10.0, 16.0),
+                        EdgeInsetsDirectional.fromSTEB(10.0, 16.0, 10.0, 16.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         FFButtonWidget(
                           onPressed: () async {
-                            final datePickedDate = await showDatePicker(
+                            final _datePickedDate = await showDatePicker(
                               context: context,
                               initialDate: getCurrentTimestamp,
                               firstDate: getCurrentTimestamp,
@@ -555,13 +558,17 @@ class _DetailUserWidgetState extends State<DetailUserWidget>
                               },
                             );
 
-                            if (datePickedDate != null) {
+                            if (_datePickedDate != null) {
                               safeSetState(() {
                                 _model.datePicked = DateTime(
-                                  datePickedDate.year,
-                                  datePickedDate.month,
-                                  datePickedDate.day,
+                                  _datePickedDate.year,
+                                  _datePickedDate.month,
+                                  _datePickedDate.day,
                                 );
+                              });
+                            } else if (_model.datePicked != null) {
+                              safeSetState(() {
+                                _model.datePicked = getCurrentTimestamp;
                               });
                             }
 
@@ -580,7 +587,7 @@ class _DetailUserWidgetState extends State<DetailUserWidget>
                                         .primaryText,
                                   ),
                                 ),
-                                duration: const Duration(milliseconds: 4000),
+                                duration: Duration(milliseconds: 4000),
                                 backgroundColor:
                                     FlutterFlowTheme.of(context).secondary,
                               ),
@@ -591,9 +598,9 @@ class _DetailUserWidgetState extends State<DetailUserWidget>
                           options: FFButtonOptions(
                             width: 130.0,
                             height: 50.0,
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 0.0),
-                            iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                            iconPadding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 0.0),
                             color: FlutterFlowTheme.of(context).primary,
                             textStyle: FlutterFlowTheme.of(context)
@@ -603,7 +610,7 @@ class _DetailUserWidgetState extends State<DetailUserWidget>
                                   letterSpacing: 0.0,
                                 ),
                             elevation: 3.0,
-                            borderSide: const BorderSide(
+                            borderSide: BorderSide(
                               color: Colors.transparent,
                               width: 1.0,
                             ),

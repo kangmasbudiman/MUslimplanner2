@@ -4,6 +4,7 @@ import '/componen/navbar/navbar_widget.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/request_manager.dart';
 
+import '/index.dart';
 import 'dart:async';
 import 'home_screen_widget.dart' show HomeScreenWidget;
 import 'package:flutter/material.dart';
@@ -104,7 +105,7 @@ class HomeScreenModel extends FlutterFlowModel<HomeScreenWidget> {
   }) async {
     final stopwatch = Stopwatch()..start();
     while (true) {
-      await Future.delayed(const Duration(milliseconds: 50));
+      await Future.delayed(Duration(milliseconds: 50));
       final timeElapsed = stopwatch.elapsedMilliseconds;
       final requestComplete = apiRequestCompleted6;
       if (timeElapsed > maxWait || (requestComplete && timeElapsed > minWait)) {
@@ -119,7 +120,7 @@ class HomeScreenModel extends FlutterFlowModel<HomeScreenWidget> {
   }) async {
     final stopwatch = Stopwatch()..start();
     while (true) {
-      await Future.delayed(const Duration(milliseconds: 50));
+      await Future.delayed(Duration(milliseconds: 50));
       final timeElapsed = stopwatch.elapsedMilliseconds;
       final requestComplete = apiRequestCompleted7;
       if (timeElapsed > maxWait || (requestComplete && timeElapsed > minWait)) {
@@ -134,7 +135,7 @@ class HomeScreenModel extends FlutterFlowModel<HomeScreenWidget> {
   }) async {
     final stopwatch = Stopwatch()..start();
     while (true) {
-      await Future.delayed(const Duration(milliseconds: 50));
+      await Future.delayed(Duration(milliseconds: 50));
       final timeElapsed = stopwatch.elapsedMilliseconds;
       final requestComplete = apiRequestCompleted4;
       if (timeElapsed > maxWait || (requestComplete && timeElapsed > minWait)) {
@@ -149,7 +150,7 @@ class HomeScreenModel extends FlutterFlowModel<HomeScreenWidget> {
   }) async {
     final stopwatch = Stopwatch()..start();
     while (true) {
-      await Future.delayed(const Duration(milliseconds: 50));
+      await Future.delayed(Duration(milliseconds: 50));
       final timeElapsed = stopwatch.elapsedMilliseconds;
       final requestComplete = apiRequestCompleted3;
       if (timeElapsed > maxWait || (requestComplete && timeElapsed > minWait)) {
@@ -164,7 +165,7 @@ class HomeScreenModel extends FlutterFlowModel<HomeScreenWidget> {
   }) async {
     final stopwatch = Stopwatch()..start();
     while (true) {
-      await Future.delayed(const Duration(milliseconds: 50));
+      await Future.delayed(Duration(milliseconds: 50));
       final timeElapsed = stopwatch.elapsedMilliseconds;
       final requestComplete = apiRequestCompleted5;
       if (timeElapsed > maxWait || (requestComplete && timeElapsed > minWait)) {
@@ -179,7 +180,7 @@ class HomeScreenModel extends FlutterFlowModel<HomeScreenWidget> {
   }) async {
     final stopwatch = Stopwatch()..start();
     while (true) {
-      await Future.delayed(const Duration(milliseconds: 50));
+      await Future.delayed(Duration(milliseconds: 50));
       final timeElapsed = stopwatch.elapsedMilliseconds;
       final requestComplete = apiRequestCompleted2;
       if (timeElapsed > maxWait || (requestComplete && timeElapsed > minWait)) {
@@ -194,7 +195,7 @@ class HomeScreenModel extends FlutterFlowModel<HomeScreenWidget> {
   }) async {
     final stopwatch = Stopwatch()..start();
     while (true) {
-      await Future.delayed(const Duration(milliseconds: 50));
+      await Future.delayed(Duration(milliseconds: 50));
       final timeElapsed = stopwatch.elapsedMilliseconds;
       final requestComplete = apiRequestCompleted1;
       if (timeElapsed > maxWait || (requestComplete && timeElapsed > minWait)) {

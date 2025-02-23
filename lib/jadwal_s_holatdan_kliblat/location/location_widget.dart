@@ -15,6 +15,9 @@ export 'location_model.dart';
 class LocationWidget extends StatefulWidget {
   const LocationWidget({super.key});
 
+  static String routeName = 'location';
+  static String routePath = '/location';
+
   @override
   State<LocationWidget> createState() => _LocationWidgetState();
 }
@@ -62,7 +65,7 @@ class _LocationWidgetState extends State<LocationWidget> {
                   width: double.infinity,
                   decoration: BoxDecoration(
                     color: FlutterFlowTheme.of(context).secondaryBackground,
-                    borderRadius: const BorderRadius.only(
+                    borderRadius: BorderRadius.only(
                       bottomLeft: Radius.circular(0.0),
                       bottomRight: Radius.circular(0.0),
                       topLeft: Radius.circular(20.0),
@@ -74,22 +77,22 @@ class _LocationWidgetState extends State<LocationWidget> {
                   ),
                   child: Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 0.0),
+                        EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 0.0),
                     child: SingleChildScrollView(
                       child: Column(
                         mainAxisSize: MainAxisSize.max,
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Align(
-                            alignment: const AlignmentDirectional(0.0, 0.0),
+                            alignment: AlignmentDirectional(0.0, 0.0),
                             child: Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 0.0, 20.0),
                               child: Stack(
-                                alignment: const AlignmentDirectional(1.0, 0.0),
+                                alignment: AlignmentDirectional(1.0, 0.0),
                                 children: [
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         10.0, 10.0, 10.0, 10.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
@@ -111,7 +114,7 @@ class _LocationWidgetState extends State<LocationWidget> {
                                     ),
                                   ),
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 20.0, 0.0),
                                     child: AuthUserStreamWidget(
                                       builder: (context) => Container(
@@ -130,7 +133,7 @@ class _LocationWidgetState extends State<LocationWidget> {
                                           onTap: () async {
                                             context.safePop();
                                           },
-                                          child: const Icon(
+                                          child: Icon(
                                             Icons.close,
                                             color: Colors.white,
                                             size: 20.0,
@@ -144,7 +147,7 @@ class _LocationWidgetState extends State<LocationWidget> {
                             ),
                           ),
                           ClipRRect(
-                            borderRadius: const BorderRadius.only(
+                            borderRadius: BorderRadius.only(
                               bottomLeft: Radius.circular(0.0),
                               bottomRight: Radius.circular(0.0),
                               topLeft: Radius.circular(8.0),
@@ -153,7 +156,7 @@ class _LocationWidgetState extends State<LocationWidget> {
                             child: Container(
                               height: 40.0,
                               decoration: BoxDecoration(
-                                borderRadius: const BorderRadius.only(
+                                borderRadius: BorderRadius.only(
                                   bottomLeft: Radius.circular(0.0),
                                   bottomRight: Radius.circular(0.0),
                                   topLeft: Radius.circular(8.0),
@@ -166,14 +169,14 @@ class _LocationWidgetState extends State<LocationWidget> {
                                 ),
                               ),
                               child: Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     8.0, 0.0, 8.0, 0.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
                                   children: [
                                     Expanded(
                                       child: Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             50.0, 0.0, 0.0, 0.0),
                                         child: FlutterFlowPlacePicker(
                                           iOSGoogleMapsApiKey:
@@ -210,7 +213,7 @@ class _LocationWidgetState extends State<LocationWidget> {
                                                       letterSpacing: 0.0,
                                                     ),
                                             elevation: 0.0,
-                                            borderRadius: const BorderRadius.only(
+                                            borderRadius: BorderRadius.only(
                                               bottomLeft: Radius.circular(0.0),
                                               bottomRight: Radius.circular(0.0),
                                               topLeft: Radius.circular(0.0),
@@ -240,10 +243,10 @@ class _LocationWidgetState extends State<LocationWidget> {
                                           width: 50.0,
                                           height: 28.0,
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 0.0, 0.0),
                                           iconPadding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 0.0, 0.0),
                                           color:
                                               currentUserDocument?.colorThemes,
@@ -259,7 +262,7 @@ class _LocationWidgetState extends State<LocationWidget> {
                                                         FontWeight.normal,
                                                   ),
                                           elevation: 3.0,
-                                          borderSide: const BorderSide(
+                                          borderSide: BorderSide(
                                             color: Colors.transparent,
                                             width: 1.0,
                                           ),
@@ -274,7 +277,7 @@ class _LocationWidgetState extends State<LocationWidget> {
                             ),
                           ),
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 20.0),
                             child: InkWell(
                               splashColor: Colors.transparent,
@@ -284,7 +287,7 @@ class _LocationWidgetState extends State<LocationWidget> {
                               onTap: () async {
                                 currentUserLocationValue =
                                     await getCurrentUserLocation(
-                                        defaultLocation: const LatLng(0.0, 0.0));
+                                        defaultLocation: LatLng(0.0, 0.0));
                                 _model.nameCountry =
                                     await actions.locationToCountry(
                                   currentUserLocationValue!,
@@ -302,7 +305,7 @@ class _LocationWidgetState extends State<LocationWidget> {
                               child: Material(
                                 color: Colors.transparent,
                                 elevation: 3.0,
-                                shape: const RoundedRectangleBorder(
+                                shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.only(
                                     bottomLeft: Radius.circular(8.0),
                                     bottomRight: Radius.circular(8.0),
@@ -316,7 +319,7 @@ class _LocationWidgetState extends State<LocationWidget> {
                                   decoration: BoxDecoration(
                                     color: FlutterFlowTheme.of(context)
                                         .secondaryBackground,
-                                    borderRadius: const BorderRadius.only(
+                                    borderRadius: BorderRadius.only(
                                       bottomLeft: Radius.circular(8.0),
                                       bottomRight: Radius.circular(8.0),
                                       topLeft: Radius.circular(0.0),
@@ -329,7 +332,7 @@ class _LocationWidgetState extends State<LocationWidget> {
                                     ),
                                   ),
                                   child: Padding(
-                                    padding: const EdgeInsets.all(4.0),
+                                    padding: EdgeInsets.all(4.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
                                       mainAxisAlignment:
@@ -343,7 +346,7 @@ class _LocationWidgetState extends State<LocationWidget> {
                                         ),
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   12.0, 0.0, 0.0, 0.0),
                                           child: Text(
                                             'Locate Me',
@@ -365,7 +368,7 @@ class _LocationWidgetState extends State<LocationWidget> {
                             ),
                           ),
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 8.0, 0.0, 0.0, 8.0),
                             child: RichText(
                               textScaler: MediaQuery.of(context).textScaler,
@@ -388,7 +391,7 @@ class _LocationWidgetState extends State<LocationWidget> {
                                               currentUserDocument?.city, ''),
                                       'N/A',
                                     ),
-                                    style: const TextStyle(
+                                    style: TextStyle(
                                       fontWeight: FontWeight.w600,
                                     ),
                                   )
@@ -403,7 +406,7 @@ class _LocationWidgetState extends State<LocationWidget> {
                             ),
                           ),
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 8.0, 0.0, 0.0, 0.0),
                             child: RichText(
                               textScaler: MediaQuery.of(context).textScaler,
@@ -427,7 +430,7 @@ class _LocationWidgetState extends State<LocationWidget> {
                                               currentUserDocument?.country, ''),
                                       'N/A',
                                     ),
-                                    style: const TextStyle(
+                                    style: TextStyle(
                                       fontWeight: FontWeight.w600,
                                     ),
                                   )
@@ -442,9 +445,9 @@ class _LocationWidgetState extends State<LocationWidget> {
                             ),
                           ),
                           Align(
-                            alignment: const AlignmentDirectional(0.0, 0.0),
+                            alignment: AlignmentDirectional(0.0, 0.0),
                             child: Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 20.0, 0.0, 0.0),
                               child: AuthUserStreamWidget(
                                 builder: (context) => FFButtonWidget(
@@ -475,7 +478,7 @@ class _LocationWidgetState extends State<LocationWidget> {
                                             ),
                                           ),
                                           duration:
-                                              const Duration(milliseconds: 4000),
+                                              Duration(milliseconds: 4000),
                                           backgroundColor:
                                               FlutterFlowTheme.of(context)
                                                   .secondaryBackground,
@@ -488,14 +491,14 @@ class _LocationWidgetState extends State<LocationWidget> {
                                         builder: (alertDialogContext) {
                                           return WebViewAware(
                                             child: AlertDialog(
-                                              content: const Text(
+                                              content: Text(
                                                   'City and Country name is not valid.'),
                                               actions: [
                                                 TextButton(
                                                   onPressed: () =>
                                                       Navigator.pop(
                                                           alertDialogContext),
-                                                  child: const Text('Ok'),
+                                                  child: Text('Ok'),
                                                 ),
                                               ],
                                             ),
@@ -507,9 +510,9 @@ class _LocationWidgetState extends State<LocationWidget> {
                                   text: 'Confirm Location',
                                   options: FFButtonOptions(
                                     height: 40.0,
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         24.0, 0.0, 24.0, 0.0),
-                                    iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                    iconPadding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 0.0),
                                     color: currentUserDocument?.colorThemes,
                                     textStyle: FlutterFlowTheme.of(context)
@@ -521,7 +524,7 @@ class _LocationWidgetState extends State<LocationWidget> {
                                           letterSpacing: 0.0,
                                         ),
                                     elevation: 3.0,
-                                    borderSide: const BorderSide(
+                                    borderSide: BorderSide(
                                       color: Colors.transparent,
                                       width: 1.0,
                                     ),
@@ -532,7 +535,7 @@ class _LocationWidgetState extends State<LocationWidget> {
                             ),
                           ),
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 10.0, 30.0, 10.0, 10.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
@@ -549,7 +552,7 @@ class _LocationWidgetState extends State<LocationWidget> {
                                         fontWeight: FontWeight.bold,
                                       ),
                                 ),
-                                if (FFAppState().listRecentCity.isNotEmpty)
+                                if (FFAppState().listRecentCity.length > 0)
                                   FFButtonWidget(
                                     onPressed: () async {
                                       var confirmDialogResponse =
@@ -558,7 +561,7 @@ class _LocationWidgetState extends State<LocationWidget> {
                                                 builder: (alertDialogContext) {
                                                   return WebViewAware(
                                                     child: AlertDialog(
-                                                      content: const Text(
+                                                      content: Text(
                                                           'Clear recent location?'),
                                                       actions: [
                                                         TextButton(
@@ -566,7 +569,7 @@ class _LocationWidgetState extends State<LocationWidget> {
                                                               Navigator.pop(
                                                                   alertDialogContext,
                                                                   false),
-                                                          child: const Text('Cancel'),
+                                                          child: Text('Cancel'),
                                                         ),
                                                         TextButton(
                                                           onPressed: () =>
@@ -574,7 +577,7 @@ class _LocationWidgetState extends State<LocationWidget> {
                                                                   alertDialogContext,
                                                                   true),
                                                           child:
-                                                              const Text('Confirm'),
+                                                              Text('Confirm'),
                                                         ),
                                                       ],
                                                     ),
@@ -598,7 +601,7 @@ class _LocationWidgetState extends State<LocationWidget> {
                                               ),
                                             ),
                                             duration:
-                                                const Duration(milliseconds: 4000),
+                                                Duration(milliseconds: 4000),
                                             backgroundColor:
                                                 FlutterFlowTheme.of(context)
                                                     .secondaryBackground,
@@ -611,10 +614,10 @@ class _LocationWidgetState extends State<LocationWidget> {
                                     text: 'Clear',
                                     options: FFButtonOptions(
                                       height: 24.0,
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           12.0, 0.0, 12.0, 0.0),
                                       iconPadding:
-                                          const EdgeInsetsDirectional.fromSTEB(
+                                          EdgeInsetsDirectional.fromSTEB(
                                               0.0, 0.0, 0.0, 0.0),
                                       color: FlutterFlowTheme.of(context)
                                           .secondaryBackground,
@@ -646,7 +649,7 @@ class _LocationWidgetState extends State<LocationWidget> {
                               Expanded(
                                 child: Container(
                                   width: 200.0,
-                                  decoration: const BoxDecoration(),
+                                  decoration: BoxDecoration(),
                                   child: Builder(
                                     builder: (context) {
                                       final recentCity =
@@ -659,7 +662,7 @@ class _LocationWidgetState extends State<LocationWidget> {
                                         scrollDirection: Axis.vertical,
                                         itemCount: recentCity.length,
                                         separatorBuilder: (_, __) =>
-                                            const SizedBox(height: 8.0),
+                                            SizedBox(height: 8.0),
                                         itemBuilder:
                                             (context, recentCityIndex) {
                                           final recentCityItem =
@@ -670,7 +673,7 @@ class _LocationWidgetState extends State<LocationWidget> {
                                               decoration: BoxDecoration(
                                                 color: currentUserDocument
                                                     ?.colorThemes,
-                                                borderRadius: const BorderRadius.only(
+                                                borderRadius: BorderRadius.only(
                                                   bottomLeft:
                                                       Radius.circular(10.0),
                                                   bottomRight:
@@ -682,7 +685,7 @@ class _LocationWidgetState extends State<LocationWidget> {
                                                 ),
                                               ),
                                               child: Padding(
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         20.0, 10.0, 20.0, 10.0),
                                                 child: Row(
@@ -722,7 +725,7 @@ class _LocationWidgetState extends State<LocationWidget> {
                               Expanded(
                                 child: Container(
                                   width: 200.0,
-                                  decoration: const BoxDecoration(),
+                                  decoration: BoxDecoration(),
                                   child: Builder(
                                     builder: (context) {
                                       final recentCountry = FFAppState()
@@ -736,7 +739,7 @@ class _LocationWidgetState extends State<LocationWidget> {
                                         scrollDirection: Axis.vertical,
                                         itemCount: recentCountry.length,
                                         separatorBuilder: (_, __) =>
-                                            const SizedBox(height: 8.0),
+                                            SizedBox(height: 8.0),
                                         itemBuilder:
                                             (context, recentCountryIndex) {
                                           final recentCountryItem =
@@ -747,7 +750,7 @@ class _LocationWidgetState extends State<LocationWidget> {
                                               decoration: BoxDecoration(
                                                 color: currentUserDocument
                                                     ?.colorThemes,
-                                                borderRadius: const BorderRadius.only(
+                                                borderRadius: BorderRadius.only(
                                                   bottomLeft:
                                                       Radius.circular(0.0),
                                                   bottomRight:
@@ -758,7 +761,7 @@ class _LocationWidgetState extends State<LocationWidget> {
                                                 ),
                                               ),
                                               child: Padding(
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         20.0, 10.0, 20.0, 10.0),
                                                 child: Row(

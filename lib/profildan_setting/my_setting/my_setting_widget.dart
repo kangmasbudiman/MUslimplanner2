@@ -3,6 +3,7 @@ import '/backend/backend.dart';
 import '/componen/footer_logo/footer_logo_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:webviewx_plus/webviewx_plus.dart';
@@ -11,6 +12,9 @@ export 'my_setting_model.dart';
 
 class MySettingWidget extends StatefulWidget {
   const MySettingWidget({super.key});
+
+  static String routeName = 'MySetting';
+  static String routePath = '/mySetting';
 
   @override
   State<MySettingWidget> createState() => _MySettingWidgetState();
@@ -49,18 +53,18 @@ class _MySettingWidgetState extends State<MySettingWidget> {
         key: scaffoldKey,
         backgroundColor: Colors.white,
         appBar: PreferredSize(
-          preferredSize: const Size.fromHeight(80.0),
+          preferredSize: Size.fromHeight(80.0),
           child: AppBar(
             backgroundColor: Colors.white,
             automaticallyImplyLeading: false,
             title: Padding(
-              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 10.0),
+              padding: EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 10.0),
               child: Row(
                 mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
                   Align(
-                    alignment: const AlignmentDirectional(-1.0, 0.0),
+                    alignment: AlignmentDirectional(-1.0, 0.0),
                     child: AuthUserStreamWidget(
                       builder: (context) => InkWell(
                         splashColor: Colors.transparent,
@@ -68,7 +72,7 @@ class _MySettingWidgetState extends State<MySettingWidget> {
                         hoverColor: Colors.transparent,
                         highlightColor: Colors.transparent,
                         onTap: () async {
-                          context.pushNamed('MyProfile');
+                          context.pushNamed(MyProfileWidget.routeName);
                         },
                         child: Icon(
                           Icons.arrow_back_ios_new,
@@ -80,7 +84,7 @@ class _MySettingWidgetState extends State<MySettingWidget> {
                   ),
                   Flexible(
                     child: Align(
-                      alignment: const AlignmentDirectional(0.0, 0.0),
+                      alignment: AlignmentDirectional(0.0, 0.0),
                       child: Text(
                         'Settings',
                         style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -95,7 +99,7 @@ class _MySettingWidgetState extends State<MySettingWidget> {
                 ],
               ),
             ),
-            actions: const [],
+            actions: [],
             centerTitle: false,
             elevation: 2.0,
           ),
@@ -103,22 +107,22 @@ class _MySettingWidgetState extends State<MySettingWidget> {
         body: SafeArea(
           top: true,
           child: Align(
-            alignment: const AlignmentDirectional(0.0, 1.0),
+            alignment: AlignmentDirectional(0.0, 1.0),
             child: Stack(
               children: [
                 Container(
                   width: double.infinity,
                   height: double.infinity,
-                  decoration: const BoxDecoration(),
+                  decoration: BoxDecoration(),
                   child: Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 0.0),
+                        EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 0.0),
                     child: Column(
                       mainAxisSize: MainAxisSize.max,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 20.0, 0.0, 0.0),
                           child: Text(
                             'Profile',
@@ -133,7 +137,7 @@ class _MySettingWidgetState extends State<MySettingWidget> {
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 10.0, 0.0, 0.0),
                           child: AuthUserStreamWidget(
                             builder: (context) => InkWell(
@@ -142,13 +146,14 @@ class _MySettingWidgetState extends State<MySettingWidget> {
                               hoverColor: Colors.transparent,
                               highlightColor: Colors.transparent,
                               onTap: () async {
-                                context.pushNamed('MySettingCollor');
+                                context
+                                    .pushNamed(MySettingCollorWidget.routeName);
                               },
                               child: Container(
                                 width: double.infinity,
                                 decoration: BoxDecoration(
                                   color: currentUserDocument?.colorThemes,
-                                  boxShadow: const [
+                                  boxShadow: [
                                     BoxShadow(
                                       blurRadius: 2.0,
                                       color: Color(0x33000000),
@@ -158,7 +163,7 @@ class _MySettingWidgetState extends State<MySettingWidget> {
                                       ),
                                     )
                                   ],
-                                  borderRadius: const BorderRadius.only(
+                                  borderRadius: BorderRadius.only(
                                     bottomLeft: Radius.circular(20.0),
                                     bottomRight: Radius.circular(20.0),
                                     topLeft: Radius.circular(20.0),
@@ -166,7 +171,7 @@ class _MySettingWidgetState extends State<MySettingWidget> {
                                   ),
                                 ),
                                 child: Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       30.0, 5.0, 10.0, 5.0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
@@ -185,7 +190,7 @@ class _MySettingWidgetState extends State<MySettingWidget> {
                                               ),
                                         ),
                                       ),
-                                      const Icon(
+                                      Icon(
                                         Icons.circle,
                                         color: Colors.white,
                                         size: 20.0,
@@ -198,7 +203,7 @@ class _MySettingWidgetState extends State<MySettingWidget> {
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 20.0, 0.0, 0.0),
                           child: Text(
                             'Legal',
@@ -213,7 +218,7 @@ class _MySettingWidgetState extends State<MySettingWidget> {
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 10.0, 0.0, 0.0),
                           child: AuthUserStreamWidget(
                             builder: (context) => InkWell(
@@ -222,13 +227,13 @@ class _MySettingWidgetState extends State<MySettingWidget> {
                               hoverColor: Colors.transparent,
                               highlightColor: Colors.transparent,
                               onTap: () async {
-                                context.pushNamed('Legal');
+                                context.pushNamed(LegalWidget.routeName);
                               },
                               child: Container(
                                 width: double.infinity,
                                 decoration: BoxDecoration(
                                   color: currentUserDocument?.colorThemes,
-                                  boxShadow: const [
+                                  boxShadow: [
                                     BoxShadow(
                                       blurRadius: 2.0,
                                       color: Color(0x33000000),
@@ -238,7 +243,7 @@ class _MySettingWidgetState extends State<MySettingWidget> {
                                       ),
                                     )
                                   ],
-                                  borderRadius: const BorderRadius.only(
+                                  borderRadius: BorderRadius.only(
                                     bottomLeft: Radius.circular(20.0),
                                     bottomRight: Radius.circular(20.0),
                                     topLeft: Radius.circular(20.0),
@@ -246,7 +251,7 @@ class _MySettingWidgetState extends State<MySettingWidget> {
                                   ),
                                 ),
                                 child: Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       30.0, 5.0, 10.0, 5.0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
@@ -278,7 +283,7 @@ class _MySettingWidgetState extends State<MySettingWidget> {
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 20.0, 0.0, 0.0),
                           child: Text(
                             'Remove Account',
@@ -293,7 +298,7 @@ class _MySettingWidgetState extends State<MySettingWidget> {
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 10.0, 0.0, 0.0),
                           child: AuthUserStreamWidget(
                             builder: (context) =>
@@ -346,8 +351,8 @@ class _MySettingWidgetState extends State<MySettingWidget> {
                                               builder: (alertDialogContext) {
                                                 return WebViewAware(
                                                   child: AlertDialog(
-                                                    title: const Text('Confirmation'),
-                                                    content: const Text(
+                                                    title: Text('Confirmation'),
+                                                    content: Text(
                                                         'Are You Sure to Delete This account'),
                                                     actions: [
                                                       TextButton(
@@ -355,14 +360,14 @@ class _MySettingWidgetState extends State<MySettingWidget> {
                                                             Navigator.pop(
                                                                 alertDialogContext,
                                                                 false),
-                                                        child: const Text('Cancel'),
+                                                        child: Text('Cancel'),
                                                       ),
                                                       TextButton(
                                                         onPressed: () =>
                                                             Navigator.pop(
                                                                 alertDialogContext,
                                                                 true),
-                                                        child: const Text('Confirm'),
+                                                        child: Text('Confirm'),
                                                       ),
                                                     ],
                                                   ),
@@ -377,16 +382,16 @@ class _MySettingWidgetState extends State<MySettingWidget> {
                                         builder: (alertDialogContext) {
                                           return WebViewAware(
                                             child: AlertDialog(
-                                              title: const Text(
+                                              title: Text(
                                                   'Muslim Planner Information'),
-                                              content: const Text(
+                                              content: Text(
                                                   'Your account has been successfully deleted'),
                                               actions: [
                                                 TextButton(
                                                   onPressed: () =>
                                                       Navigator.pop(
                                                           alertDialogContext),
-                                                  child: const Text('Ok'),
+                                                  child: Text('Ok'),
                                                 ),
                                               ],
                                             ),
@@ -395,9 +400,9 @@ class _MySettingWidgetState extends State<MySettingWidget> {
                                       );
 
                                       context.goNamed(
-                                        'login',
+                                        LoginWidget.routeName,
                                         extra: <String, dynamic>{
-                                          kTransitionInfoKey: const TransitionInfo(
+                                          kTransitionInfoKey: TransitionInfo(
                                             hasTransition: true,
                                             transitionType:
                                                 PageTransitionType.topToBottom,
@@ -410,7 +415,7 @@ class _MySettingWidgetState extends State<MySettingWidget> {
                                     width: double.infinity,
                                     decoration: BoxDecoration(
                                       color: currentUserDocument?.colorThemes,
-                                      boxShadow: const [
+                                      boxShadow: [
                                         BoxShadow(
                                           blurRadius: 2.0,
                                           color: Color(0x33000000),
@@ -420,7 +425,7 @@ class _MySettingWidgetState extends State<MySettingWidget> {
                                           ),
                                         )
                                       ],
-                                      borderRadius: const BorderRadius.only(
+                                      borderRadius: BorderRadius.only(
                                         bottomLeft: Radius.circular(20.0),
                                         bottomRight: Radius.circular(20.0),
                                         topLeft: Radius.circular(20.0),
@@ -428,7 +433,7 @@ class _MySettingWidgetState extends State<MySettingWidget> {
                                       ),
                                     ),
                                     child: Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           30.0, 5.0, 10.0, 5.0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
@@ -465,11 +470,11 @@ class _MySettingWidgetState extends State<MySettingWidget> {
                         ),
                         Expanded(
                           child: Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 10.0, 0.0, 0.0),
                             child: Container(
                               width: double.infinity,
-                              decoration: const BoxDecoration(
+                              decoration: BoxDecoration(
                                 borderRadius: BorderRadius.only(
                                   bottomLeft: Radius.circular(20.0),
                                   bottomRight: Radius.circular(20.0),
@@ -485,14 +490,14 @@ class _MySettingWidgetState extends State<MySettingWidget> {
                   ),
                 ),
                 Align(
-                  alignment: const AlignmentDirectional(0.0, 1.0),
+                  alignment: AlignmentDirectional(0.0, 1.0),
                   child: Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 30.0),
+                        EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 30.0),
                     child: wrapWithModel(
                       model: _model.footerLogoModel,
                       updateCallback: () => safeSetState(() {}),
-                      child: const FooterLogoWidget(),
+                      child: FooterLogoWidget(),
                     ),
                   ),
                 ),

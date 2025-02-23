@@ -22,6 +22,9 @@ class DetailDoaWidget extends StatefulWidget {
   final String? terjemahan;
   final String? hadis;
 
+  static String routeName = 'DetailDoa';
+  static String routePath = '/detailDoa';
+
   @override
   State<DetailDoaWidget> createState() => _DetailDoaWidgetState();
 }
@@ -59,18 +62,18 @@ class _DetailDoaWidgetState extends State<DetailDoaWidget> {
         key: scaffoldKey,
         backgroundColor: Colors.white,
         appBar: PreferredSize(
-          preferredSize: const Size.fromHeight(80.0),
+          preferredSize: Size.fromHeight(80.0),
           child: AppBar(
             backgroundColor: Colors.white,
             automaticallyImplyLeading: false,
             title: Padding(
-              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 20.0),
+              padding: EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 20.0),
               child: Row(
                 mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
                   Align(
-                    alignment: const AlignmentDirectional(-1.0, 0.0),
+                    alignment: AlignmentDirectional(-1.0, 0.0),
                     child: InkWell(
                       splashColor: Colors.transparent,
                       focusColor: Colors.transparent,
@@ -88,7 +91,7 @@ class _DetailDoaWidgetState extends State<DetailDoaWidget> {
                   ),
                   Flexible(
                     child: Align(
-                      alignment: const AlignmentDirectional(0.0, 0.0),
+                      alignment: AlignmentDirectional(0.0, 0.0),
                       child: Text(
                         valueOrDefault<String>(
                           widget.judul,
@@ -106,7 +109,7 @@ class _DetailDoaWidgetState extends State<DetailDoaWidget> {
                 ],
               ),
             ),
-            actions: const [],
+            actions: [],
             centerTitle: false,
             elevation: 2.0,
           ),
@@ -115,9 +118,9 @@ class _DetailDoaWidgetState extends State<DetailDoaWidget> {
           top: true,
           child: Container(
             width: double.infinity,
-            decoration: const BoxDecoration(),
+            decoration: BoxDecoration(),
             child: Padding(
-              padding: const EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 0.0),
+              padding: EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 0.0),
               child: Column(
                 mainAxisSize: MainAxisSize.max,
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -125,7 +128,7 @@ class _DetailDoaWidgetState extends State<DetailDoaWidget> {
                   Container(
                     width: double.infinity,
                     height: MediaQuery.sizeOf(context).height * 0.7,
-                    decoration: const BoxDecoration(
+                    decoration: BoxDecoration(
                       borderRadius: BorderRadius.only(
                         bottomLeft: Radius.circular(20.0),
                         bottomRight: Radius.circular(20.0),
@@ -135,7 +138,7 @@ class _DetailDoaWidgetState extends State<DetailDoaWidget> {
                     ),
                     child: Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
+                          EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
                       child: ListView(
                         padding: EdgeInsets.zero,
                         scrollDirection: Axis.vertical,
@@ -145,7 +148,7 @@ class _DetailDoaWidgetState extends State<DetailDoaWidget> {
                               width: double.infinity,
                               decoration: BoxDecoration(
                                 color: currentUserDocument?.colorThemes,
-                                boxShadow: const [
+                                boxShadow: [
                                   BoxShadow(
                                     blurRadius: 2.0,
                                     color: Color(0x33000000),
@@ -155,7 +158,7 @@ class _DetailDoaWidgetState extends State<DetailDoaWidget> {
                                     ),
                                   )
                                 ],
-                                borderRadius: const BorderRadius.only(
+                                borderRadius: BorderRadius.only(
                                   bottomLeft: Radius.circular(20.0),
                                   bottomRight: Radius.circular(20.0),
                                   topLeft: Radius.circular(20.0),
@@ -163,7 +166,7 @@ class _DetailDoaWidgetState extends State<DetailDoaWidget> {
                                 ),
                               ),
                               child: Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     10.0, 10.0, 10.0, 10.0),
                                 child: Column(
                                   mainAxisSize: MainAxisSize.max,
@@ -185,7 +188,7 @@ class _DetailDoaWidgetState extends State<DetailDoaWidget> {
                                           ),
                                     ),
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 10.0, 0.0, 0.0),
                                       child: Text(
                                         valueOrDefault<String>(
@@ -203,7 +206,7 @@ class _DetailDoaWidgetState extends State<DetailDoaWidget> {
                                       ),
                                     ),
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 10.0, 0.0, 0.0),
                                       child: Text(
                                         valueOrDefault<String>(
@@ -253,7 +256,7 @@ class _DetailDoaWidgetState extends State<DetailDoaWidget> {
                                               .bodyMedium
                                               .override(
                                                 fontFamily: 'Inter',
-                                                color: const Color(0xFFA4A4A4),
+                                                color: Color(0xFFA4A4A4),
                                                 fontSize: 10.0,
                                                 letterSpacing: 0.0,
                                                 fontWeight: FontWeight.bold,

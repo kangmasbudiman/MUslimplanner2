@@ -3,6 +3,7 @@ import '/componen/navbar/navbar_widget.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/request_manager.dart';
 
+import '/index.dart';
 import 'home_doa_widget.dart' show HomeDoaWidget;
 import 'package:flutter/material.dart';
 

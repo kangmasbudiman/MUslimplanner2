@@ -7,6 +7,9 @@ export 'prayer_names_model.dart';
 class PrayerNamesWidget extends StatefulWidget {
   const PrayerNamesWidget({super.key});
 
+  static String routeName = 'PrayerNames';
+  static String routePath = '/prayerNames';
+
   @override
   State<PrayerNamesWidget> createState() => _PrayerNamesWidgetState();
 }
@@ -42,22 +45,22 @@ class _PrayerNamesWidgetState extends State<PrayerNamesWidget> {
         key: scaffoldKey,
         backgroundColor: Colors.white,
         appBar: PreferredSize(
-          preferredSize: const Size.fromHeight(80.0),
+          preferredSize: Size.fromHeight(80.0),
           child: AppBar(
             backgroundColor: Colors.white,
             automaticallyImplyLeading: false,
             title: Stack(
               children: [
                 Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 10.0),
+                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 10.0),
                   child: Row(
                     mainAxisSize: MainAxisSize.max,
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
                       Align(
-                        alignment: const AlignmentDirectional(-1.0, 0.0),
+                        alignment: AlignmentDirectional(-1.0, 0.0),
                         child: Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 30.0, 0.0, 0.0),
                           child: InkWell(
                             splashColor: Colors.transparent,
@@ -79,10 +82,10 @@ class _PrayerNamesWidgetState extends State<PrayerNamesWidget> {
                   ),
                 ),
                 Align(
-                  alignment: const AlignmentDirectional(0.0, 0.0),
+                  alignment: AlignmentDirectional(0.0, 0.0),
                   child: Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 0.0),
+                        EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 0.0),
                     child: Text(
                       'Prayer Names',
                       style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -96,7 +99,7 @@ class _PrayerNamesWidgetState extends State<PrayerNamesWidget> {
                 ),
               ],
             ),
-            actions: const [],
+            actions: [],
             centerTitle: false,
             elevation: 2.0,
           ),
@@ -107,7 +110,7 @@ class _PrayerNamesWidgetState extends State<PrayerNamesWidget> {
             mainAxisSize: MainAxisSize.max,
             children: [
               Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(20.0, 30.0, 20.0, 0.0),
+                padding: EdgeInsetsDirectional.fromSTEB(20.0, 30.0, 20.0, 0.0),
                 child: Container(
                   width: double.infinity,
                   decoration: BoxDecoration(
@@ -121,16 +124,16 @@ class _PrayerNamesWidgetState extends State<PrayerNamesWidget> {
                   ),
                   child: Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 20.0),
+                        EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 20.0),
                     child: Column(
                       mainAxisSize: MainAxisSize.max,
                       children: [
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               5.0, 0.0, 5.0, 0.0),
                           child: Container(
                             width: double.infinity,
-                            decoration: const BoxDecoration(
+                            decoration: BoxDecoration(
                               color: Colors.white,
                               borderRadius: BorderRadius.only(
                                 bottomLeft: Radius.circular(0.0),
@@ -140,14 +143,14 @@ class _PrayerNamesWidgetState extends State<PrayerNamesWidget> {
                               ),
                             ),
                             child: Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   10.0, 0.0, 10.0, 0.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
                                   Expanded(
                                     child: Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           35.0, 0.0, 0.0, 0.0),
                                       child: Column(
                                         mainAxisSize: MainAxisSize.max,
@@ -182,16 +185,16 @@ class _PrayerNamesWidgetState extends State<PrayerNamesWidget> {
                             ),
                           ),
                         ),
-                        const Divider(
+                        Divider(
                           thickness: 1.0,
                           color: Color(0xFFE5E5E5),
                         ),
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               5.0, 0.0, 5.0, 0.0),
                           child: Container(
                             width: double.infinity,
-                            decoration: const BoxDecoration(
+                            decoration: BoxDecoration(
                               color: Colors.white,
                               borderRadius: BorderRadius.only(
                                 bottomLeft: Radius.circular(0.0),
@@ -201,7 +204,7 @@ class _PrayerNamesWidgetState extends State<PrayerNamesWidget> {
                               ),
                             ),
                             child: Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   10.0, 0.0, 10.0, 0.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -216,7 +219,7 @@ class _PrayerNamesWidgetState extends State<PrayerNamesWidget> {
                                           mainAxisSize: MainAxisSize.max,
                                           children: [
                                             Padding(
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       35.0, 0.0, 0.0, 0.0),
                                               child: Text(
@@ -236,7 +239,7 @@ class _PrayerNamesWidgetState extends State<PrayerNamesWidget> {
                                         ),
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   35.0, 0.0, 0.0, 0.0),
                                           child: Text(
                                             'Fajr, Zohor, Asar, Maghrib, Isya',
@@ -256,16 +259,16 @@ class _PrayerNamesWidgetState extends State<PrayerNamesWidget> {
                             ),
                           ),
                         ),
-                        const Divider(
+                        Divider(
                           thickness: 1.0,
                           color: Color(0xFFE5E5E5),
                         ),
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               5.0, 0.0, 5.0, 0.0),
                           child: Container(
                             width: double.infinity,
-                            decoration: const BoxDecoration(
+                            decoration: BoxDecoration(
                               color: Colors.white,
                               borderRadius: BorderRadius.only(
                                 bottomLeft: Radius.circular(0.0),
@@ -275,7 +278,7 @@ class _PrayerNamesWidgetState extends State<PrayerNamesWidget> {
                               ),
                             ),
                             child: Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   10.0, 0.0, 10.0, 0.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -290,7 +293,7 @@ class _PrayerNamesWidgetState extends State<PrayerNamesWidget> {
                                           mainAxisSize: MainAxisSize.max,
                                           children: [
                                             Padding(
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       35.0, 0.0, 0.0, 0.0),
                                               child: Text(
@@ -310,7 +313,7 @@ class _PrayerNamesWidgetState extends State<PrayerNamesWidget> {
                                         ),
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   35.0, 0.0, 0.0, 0.0),
                                           child: Text(
                                             'Sobh (Fajr), Dohr, Asr, Maghreb, Isya',
@@ -330,16 +333,16 @@ class _PrayerNamesWidgetState extends State<PrayerNamesWidget> {
                             ),
                           ),
                         ),
-                        const Divider(
+                        Divider(
                           thickness: 1.0,
                           color: Color(0xFFE5E5E5),
                         ),
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               5.0, 0.0, 5.0, 0.0),
                           child: Container(
                             width: double.infinity,
-                            decoration: const BoxDecoration(
+                            decoration: BoxDecoration(
                               color: Colors.white,
                               borderRadius: BorderRadius.only(
                                 bottomLeft: Radius.circular(0.0),
@@ -349,7 +352,7 @@ class _PrayerNamesWidgetState extends State<PrayerNamesWidget> {
                               ),
                             ),
                             child: Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   10.0, 0.0, 10.0, 0.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -364,7 +367,7 @@ class _PrayerNamesWidgetState extends State<PrayerNamesWidget> {
                                           mainAxisSize: MainAxisSize.max,
                                           children: [
                                             Padding(
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       35.0, 0.0, 0.0, 0.0),
                                               child: Text(
@@ -384,7 +387,7 @@ class _PrayerNamesWidgetState extends State<PrayerNamesWidget> {
                                         ),
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   35.0, 0.0, 0.0, 0.0),
                                           child: Text(
                                             'Fajr, Dzuhr, Asr, Maghrib, isya',
@@ -404,18 +407,18 @@ class _PrayerNamesWidgetState extends State<PrayerNamesWidget> {
                             ),
                           ),
                         ),
-                        const Divider(
+                        Divider(
                           thickness: 1.0,
                           color: Color(0xFFE5E5E5),
                         ),
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               5.0, 0.0, 5.0, 0.0),
                           child: Container(
                             width: double.infinity,
                             decoration: BoxDecoration(
                               color: FlutterFlowTheme.of(context).primary,
-                              borderRadius: const BorderRadius.only(
+                              borderRadius: BorderRadius.only(
                                 bottomLeft: Radius.circular(10.0),
                                 bottomRight: Radius.circular(10.0),
                                 topLeft: Radius.circular(10.0),
@@ -423,7 +426,7 @@ class _PrayerNamesWidgetState extends State<PrayerNamesWidget> {
                               ),
                             ),
                             child: Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   10.0, 0.0, 10.0, 0.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -438,7 +441,7 @@ class _PrayerNamesWidgetState extends State<PrayerNamesWidget> {
                                           mainAxisSize: MainAxisSize.max,
                                           children: [
                                             Padding(
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       35.0, 0.0, 0.0, 0.0),
                                               child: Text(
@@ -459,7 +462,7 @@ class _PrayerNamesWidgetState extends State<PrayerNamesWidget> {
                                         ),
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   35.0, 0.0, 0.0, 0.0),
                                           child: Text(
                                             'Fajr, Dhuhr, Asr, Maghrib, Isya',
@@ -475,7 +478,7 @@ class _PrayerNamesWidgetState extends State<PrayerNamesWidget> {
                                       ],
                                     ),
                                   ),
-                                  const Icon(
+                                  Icon(
                                     Icons.check_circle,
                                     color: Colors.white,
                                     size: 24.0,
@@ -485,7 +488,7 @@ class _PrayerNamesWidgetState extends State<PrayerNamesWidget> {
                             ),
                           ),
                         ),
-                        const Divider(
+                        Divider(
                           thickness: 1.0,
                           color: Color(0xFFE5E5E5),
                         ),

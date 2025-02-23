@@ -14,6 +14,9 @@ export 'home_alquran_copy_model.dart';
 class HomeAlquranCopyWidget extends StatefulWidget {
   const HomeAlquranCopyWidget({super.key});
 
+  static String routeName = 'HomeAlquranCopy';
+  static String routePath = '/homeAlquranCopy';
+
   @override
   State<HomeAlquranCopyWidget> createState() => _HomeAlquranCopyWidgetState();
 }
@@ -57,13 +60,13 @@ class _HomeAlquranCopyWidgetState extends State<HomeAlquranCopyWidget> {
           backgroundColor: Colors.white,
           automaticallyImplyLeading: false,
           title: Padding(
-            padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 10.0),
+            padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 10.0),
             child: Row(
               mainAxisSize: MainAxisSize.max,
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Align(
-                  alignment: const AlignmentDirectional(-1.0, 0.0),
+                  alignment: AlignmentDirectional(-1.0, 0.0),
                   child: InkWell(
                     splashColor: Colors.transparent,
                     focusColor: Colors.transparent,
@@ -96,36 +99,36 @@ class _HomeAlquranCopyWidgetState extends State<HomeAlquranCopyWidget> {
               ],
             ),
           ),
-          actions: const [],
+          actions: [],
           centerTitle: false,
           elevation: 2.0,
         ),
         body: SafeArea(
           top: true,
           child: Align(
-            alignment: const AlignmentDirectional(0.0, 1.0),
+            alignment: AlignmentDirectional(0.0, 1.0),
             child: Stack(
               children: [
                 Container(
                   width: double.infinity,
                   height: double.infinity,
-                  decoration: const BoxDecoration(),
+                  decoration: BoxDecoration(),
                   child: Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 0.0),
+                        EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 0.0),
                     child: Column(
                       mainAxisSize: MainAxisSize.max,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 20.0, 0.0, 0.0),
                           child: AuthUserStreamWidget(
                             builder: (context) => Container(
                               width: double.infinity,
                               decoration: BoxDecoration(
                                 color: currentUserDocument?.colorThemes,
-                                boxShadow: const [
+                                boxShadow: [
                                   BoxShadow(
                                     blurRadius: 2.0,
                                     color: Color(0x33000000),
@@ -135,7 +138,7 @@ class _HomeAlquranCopyWidgetState extends State<HomeAlquranCopyWidget> {
                                     ),
                                   )
                                 ],
-                                borderRadius: const BorderRadius.only(
+                                borderRadius: BorderRadius.only(
                                   bottomLeft: Radius.circular(20.0),
                                   bottomRight: Radius.circular(20.0),
                                   topLeft: Radius.circular(20.0),
@@ -143,14 +146,14 @@ class _HomeAlquranCopyWidgetState extends State<HomeAlquranCopyWidget> {
                                 ),
                               ),
                               child: Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     10.0, 0.0, 10.0, 0.0),
                                 child: TextFormField(
                                   controller: _model.textController,
                                   focusNode: _model.textFieldFocusNode,
                                   onChanged: (_) => EasyDebounce.debounce(
                                     '_model.textController',
-                                    const Duration(milliseconds: 2000),
+                                    Duration(milliseconds: 2000),
                                     () async {
                                       FFAppState().pencariansurah =
                                           _model.textController.text;
@@ -178,7 +181,7 @@ class _HomeAlquranCopyWidgetState extends State<HomeAlquranCopyWidget> {
                                     focusedBorder: InputBorder.none,
                                     errorBorder: InputBorder.none,
                                     focusedErrorBorder: InputBorder.none,
-                                    prefixIcon: const Icon(
+                                    prefixIcon: Icon(
                                       Icons.search_sharp,
                                       color: Colors.white,
                                       size: 13.0,
@@ -200,7 +203,7 @@ class _HomeAlquranCopyWidgetState extends State<HomeAlquranCopyWidget> {
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 20.0, 0.0, 10.0),
                           child: Text(
                             'Continue Reading',
@@ -219,7 +222,7 @@ class _HomeAlquranCopyWidgetState extends State<HomeAlquranCopyWidget> {
                             width: double.infinity,
                             decoration: BoxDecoration(
                               color: currentUserDocument?.colorThemes,
-                              borderRadius: const BorderRadius.only(
+                              borderRadius: BorderRadius.only(
                                 bottomLeft: Radius.circular(20.0),
                                 bottomRight: Radius.circular(20.0),
                                 topLeft: Radius.circular(20.0),
@@ -230,7 +233,7 @@ class _HomeAlquranCopyWidgetState extends State<HomeAlquranCopyWidget> {
                               mainAxisSize: MainAxisSize.max,
                               children: [
                                 Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       20.0, 12.0, 20.0, 0.0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
@@ -260,7 +263,7 @@ class _HomeAlquranCopyWidgetState extends State<HomeAlquranCopyWidget> {
                                                       .override(
                                                         fontFamily: 'Inter',
                                                         color:
-                                                            const Color(0xFFA4A4A4),
+                                                            Color(0xFFA4A4A4),
                                                         letterSpacing: 0.0,
                                                       ),
                                             ),
@@ -281,12 +284,12 @@ class _HomeAlquranCopyWidgetState extends State<HomeAlquranCopyWidget> {
                                     ],
                                   ),
                                 ),
-                                const Divider(
+                                Divider(
                                   thickness: 1.0,
                                   color: Colors.white,
                                 ),
                                 Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       20.0, 0.0, 20.0, 10.0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
@@ -305,7 +308,7 @@ class _HomeAlquranCopyWidgetState extends State<HomeAlquranCopyWidget> {
                                               fontWeight: FontWeight.w600,
                                             ),
                                       ),
-                                      const Icon(
+                                      Icon(
                                         Icons.arrow_forward_ios,
                                         color: Colors.white,
                                         size: 15.0,
@@ -318,7 +321,7 @@ class _HomeAlquranCopyWidgetState extends State<HomeAlquranCopyWidget> {
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 20.0, 0.0, 10.0),
                           child: InkWell(
                             splashColor: Colors.transparent,
@@ -342,7 +345,7 @@ class _HomeAlquranCopyWidgetState extends State<HomeAlquranCopyWidget> {
                                       child: Padding(
                                         padding:
                                             MediaQuery.viewInsetsOf(context),
-                                        child: const PlayWidget(),
+                                        child: PlayWidget(),
                                       ),
                                     ),
                                   );
@@ -368,7 +371,7 @@ class _HomeAlquranCopyWidgetState extends State<HomeAlquranCopyWidget> {
                             height: MediaQuery.sizeOf(context).height * 0.7,
                             decoration: BoxDecoration(
                               color: currentUserDocument?.colorThemes,
-                              borderRadius: const BorderRadius.only(
+                              borderRadius: BorderRadius.only(
                                 bottomLeft: Radius.circular(20.0),
                                 bottomRight: Radius.circular(20.0),
                                 topLeft: Radius.circular(20.0),
@@ -376,7 +379,7 @@ class _HomeAlquranCopyWidgetState extends State<HomeAlquranCopyWidget> {
                               ),
                             ),
                             child: Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 20.0, 0.0, 0.0),
                               child: FutureBuilder<ApiCallResponse>(
                                 future: NewSurahCall.call(),
@@ -423,7 +426,7 @@ class _HomeAlquranCopyWidgetState extends State<HomeAlquranCopyWidget> {
                                               mainAxisSize: MainAxisSize.max,
                                               children: [
                                                 Padding(
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           20.0, 0.0, 20.0, 0.0),
                                                   child: Row(
@@ -486,7 +489,7 @@ class _HomeAlquranCopyWidgetState extends State<HomeAlquranCopyWidget> {
                                                                   .override(
                                                                     fontFamily:
                                                                         'Inter',
-                                                                    color: const Color(
+                                                                    color: Color(
                                                                         0xFFA4A4A4),
                                                                     fontSize:
                                                                         11.0,
@@ -507,7 +510,7 @@ class _HomeAlquranCopyWidgetState extends State<HomeAlquranCopyWidget> {
                                                                       .override(
                                                                         fontFamily:
                                                                             'Inter',
-                                                                        color: const Color(
+                                                                        color: Color(
                                                                             0xFFA4A4A4),
                                                                         fontSize:
                                                                             12.0,
@@ -519,7 +522,7 @@ class _HomeAlquranCopyWidgetState extends State<HomeAlquranCopyWidget> {
                                                             ),
                                                             Padding(
                                                               padding:
-                                                                  const EdgeInsetsDirectional
+                                                                  EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           20.0,
@@ -622,7 +625,7 @@ class _HomeAlquranCopyWidgetState extends State<HomeAlquranCopyWidget> {
                                                     ],
                                                   ),
                                                 ),
-                                                const Divider(
+                                                Divider(
                                                   thickness: 1.0,
                                                   color: Colors.white,
                                                 ),
@@ -643,11 +646,11 @@ class _HomeAlquranCopyWidgetState extends State<HomeAlquranCopyWidget> {
                   ),
                 ),
                 Align(
-                  alignment: const AlignmentDirectional(0.0, 1.0),
+                  alignment: AlignmentDirectional(0.0, 1.0),
                   child: wrapWithModel(
                     model: _model.navbarModel,
                     updateCallback: () => safeSetState(() {}),
-                    child: const NavbarWidget(),
+                    child: NavbarWidget(),
                   ),
                 ),
               ],

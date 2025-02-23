@@ -9,6 +9,9 @@ export 'detail_task_sunah_model.dart';
 class DetailTaskSunahWidget extends StatefulWidget {
   const DetailTaskSunahWidget({super.key});
 
+  static String routeName = 'DetailTaskSunah';
+  static String routePath = '/detailTaskSunah';
+
   @override
   State<DetailTaskSunahWidget> createState() => _DetailTaskSunahWidgetState();
 }
@@ -46,25 +49,25 @@ class _DetailTaskSunahWidgetState extends State<DetailTaskSunahWidget> {
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
         appBar: PreferredSize(
-          preferredSize: const Size.fromHeight(80.0),
+          preferredSize: Size.fromHeight(80.0),
           child: AppBar(
             backgroundColor: Colors.white,
             automaticallyImplyLeading: false,
             title: Align(
-              alignment: const AlignmentDirectional(0.0, 0.0),
+              alignment: AlignmentDirectional(0.0, 0.0),
               child: Stack(
-                alignment: const AlignmentDirectional(0.0, 0.0),
+                alignment: AlignmentDirectional(0.0, 0.0),
                 children: [
                   Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 10.0),
+                        EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 10.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       children: [
                         Align(
-                          alignment: const AlignmentDirectional(-1.0, 0.0),
+                          alignment: AlignmentDirectional(-1.0, 0.0),
                           child: Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 40.0, 0.0),
                             child: InkWell(
                               splashColor: Colors.transparent,
@@ -87,7 +90,7 @@ class _DetailTaskSunahWidgetState extends State<DetailTaskSunahWidget> {
                   ),
                   Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
+                        EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
                     child: Text(
                       'Fadilah',
                       style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -101,7 +104,7 @@ class _DetailTaskSunahWidgetState extends State<DetailTaskSunahWidget> {
                 ],
               ),
             ),
-            actions: const [],
+            actions: [],
             centerTitle: false,
             elevation: 2.0,
           ),
@@ -109,7 +112,7 @@ class _DetailTaskSunahWidgetState extends State<DetailTaskSunahWidget> {
         body: SafeArea(
           top: true,
           child: Padding(
-            padding: const EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 0.0),
+            padding: EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 0.0),
             child: Column(
               mainAxisSize: MainAxisSize.max,
               children: [
@@ -122,13 +125,13 @@ class _DetailTaskSunahWidgetState extends State<DetailTaskSunahWidget> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 10.0, 0.0, 0.0),
                             child: AuthUserStreamWidget(
                               builder: (context) => Container(
                                 decoration: BoxDecoration(
                                   color: currentUserDocument?.colorThemes,
-                                  boxShadow: const [
+                                  boxShadow: [
                                     BoxShadow(
                                       blurRadius: 2.0,
                                       color: Color(0x33000000),
@@ -138,7 +141,7 @@ class _DetailTaskSunahWidgetState extends State<DetailTaskSunahWidget> {
                                       ),
                                     )
                                   ],
-                                  borderRadius: const BorderRadius.only(
+                                  borderRadius: BorderRadius.only(
                                     bottomLeft: Radius.circular(20.0),
                                     bottomRight: Radius.circular(20.0),
                                     topLeft: Radius.circular(20.0),
@@ -146,7 +149,7 @@ class _DetailTaskSunahWidgetState extends State<DetailTaskSunahWidget> {
                                   ),
                                 ),
                                 child: Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       16.0, 16.0, 16.0, 16.0),
                                   child: Column(
                                     mainAxisSize: MainAxisSize.max,
@@ -181,7 +184,7 @@ class _DetailTaskSunahWidgetState extends State<DetailTaskSunahWidget> {
                                         ],
                                       ),
                                       Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             0.0, 10.0, 0.0, 0.0),
                                         child: Text(
                                           'Tidaklah seorang muslim yang menjenguk saudaranya muslim di pagi hari melainkan dirinya akan didoa’kan oleh 70.000 malaikat hingga petang. Dan jika dirinya menjenguk di sore hari maka dirinya akan didoa’kan oleh 70.000 malaikat hingga pagi. Dan baginya kebun di tengah surga. ',
@@ -199,7 +202,7 @@ class _DetailTaskSunahWidgetState extends State<DetailTaskSunahWidget> {
                                         ),
                                       ),
                                       Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             0.0, 15.0, 0.0, 0.0),
                                         child: Text(
                                           'HR. at-Tirmidzi no: 969, Hadits hasan gharib, dinyatakan shahih oleh Ibnu Hiban dan al-Albani dalam shahih sunan at-Tirmidzi 1/286 no: 775',

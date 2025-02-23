@@ -1,6 +1,7 @@
 import '/auth/firebase_auth/auth_util.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/index.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'admin_menu_model.dart';
@@ -43,7 +44,7 @@ class _AdminMenuWidgetState extends State<AdminMenuWidget> {
       height: 300.0,
       decoration: BoxDecoration(
         color: FlutterFlowTheme.of(context).secondaryBackground,
-        borderRadius: const BorderRadius.only(
+        borderRadius: BorderRadius.only(
           bottomLeft: Radius.circular(0.0),
           bottomRight: Radius.circular(0.0),
           topLeft: Radius.circular(16.0),
@@ -51,13 +52,13 @@ class _AdminMenuWidgetState extends State<AdminMenuWidget> {
         ),
       ),
       child: Padding(
-        padding: const EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 20.0),
+        padding: EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 20.0),
         child: Column(
           mainAxisSize: MainAxisSize.min,
           mainAxisAlignment: MainAxisAlignment.end,
           children: [
             Padding(
-              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
+              padding: EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
               child: Container(
                 width: 50.0,
                 height: 4.0,
@@ -68,7 +69,7 @@ class _AdminMenuWidgetState extends State<AdminMenuWidget> {
               ),
             ),
             Padding(
-              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
+              padding: EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
               child: Text(
                 'Admin Menu',
                 style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -80,10 +81,10 @@ class _AdminMenuWidgetState extends State<AdminMenuWidget> {
             ),
             Expanded(
               child: Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
+                padding: EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
                 child: GridView(
                   padding: EdgeInsets.zero,
-                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 4,
                     crossAxisSpacing: 10.0,
                     mainAxisSpacing: 10.0,
@@ -98,14 +99,14 @@ class _AdminMenuWidgetState extends State<AdminMenuWidget> {
                         hoverColor: Colors.transparent,
                         highlightColor: Colors.transparent,
                         onTap: () async {
-                          context.pushNamed('ListUser');
+                          context.pushNamed(ListUserWidget.routeName);
                         },
                         child: Container(
                           width: 11.0,
                           height: 50.0,
                           decoration: BoxDecoration(
                             color: currentUserDocument?.colorThemes,
-                            borderRadius: const BorderRadius.only(
+                            borderRadius: BorderRadius.only(
                               bottomLeft: Radius.circular(20.0),
                               bottomRight: Radius.circular(20.0),
                               topLeft: Radius.circular(20.0),
@@ -143,14 +144,15 @@ class _AdminMenuWidgetState extends State<AdminMenuWidget> {
                         hoverColor: Colors.transparent,
                         highlightColor: Colors.transparent,
                         onTap: () async {
-                          context.pushNamed('listUserHelpSupport');
+                          context
+                              .pushNamed(ListUserHelpSupportWidget.routeName);
                         },
                         child: Container(
                           width: 11.0,
                           height: 50.0,
                           decoration: BoxDecoration(
                             color: currentUserDocument?.colorThemes,
-                            borderRadius: const BorderRadius.only(
+                            borderRadius: BorderRadius.only(
                               bottomLeft: Radius.circular(20.0),
                               bottomRight: Radius.circular(20.0),
                               topLeft: Radius.circular(20.0),
@@ -188,14 +190,14 @@ class _AdminMenuWidgetState extends State<AdminMenuWidget> {
                         hoverColor: Colors.transparent,
                         highlightColor: Colors.transparent,
                         onTap: () async {
-                          context.pushNamed('listRateCommand');
+                          context.pushNamed(ListRateCommandWidget.routeName);
                         },
                         child: Container(
                           width: 11.0,
                           height: 50.0,
                           decoration: BoxDecoration(
                             color: currentUserDocument?.colorThemes,
-                            borderRadius: const BorderRadius.only(
+                            borderRadius: BorderRadius.only(
                               bottomLeft: Radius.circular(20.0),
                               bottomRight: Radius.circular(20.0),
                               topLeft: Radius.circular(20.0),
@@ -233,14 +235,14 @@ class _AdminMenuWidgetState extends State<AdminMenuWidget> {
                         hoverColor: Colors.transparent,
                         highlightColor: Colors.transparent,
                         onTap: () async {
-                          context.pushNamed('daftaradminsunnah');
+                          context.pushNamed(DaftaradminsunnahWidget.routeName);
                         },
                         child: Container(
                           width: 11.0,
                           height: 50.0,
                           decoration: BoxDecoration(
                             color: currentUserDocument?.colorThemes,
-                            borderRadius: const BorderRadius.only(
+                            borderRadius: BorderRadius.only(
                               bottomLeft: Radius.circular(20.0),
                               bottomRight: Radius.circular(20.0),
                               topLeft: Radius.circular(20.0),

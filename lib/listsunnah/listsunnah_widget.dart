@@ -7,6 +7,9 @@ export 'listsunnah_model.dart';
 class ListsunnahWidget extends StatefulWidget {
   const ListsunnahWidget({super.key});
 
+  static String routeName = 'Listsunnah';
+  static String routePath = '/listsunnah';
+
   @override
   State<ListsunnahWidget> createState() => _ListsunnahWidgetState();
 }
@@ -40,21 +43,21 @@ class _ListsunnahWidgetState extends State<ListsunnahWidget> {
       },
       child: Scaffold(
         key: scaffoldKey,
-        backgroundColor: const Color(0xFFF1F4F8),
+        backgroundColor: Color(0xFFF1F4F8),
         appBar: AppBar(
-          backgroundColor: const Color(0xFFF1F4F8),
+          backgroundColor: Color(0xFFF1F4F8),
           automaticallyImplyLeading: false,
           title: Text(
             'My Users',
             style: FlutterFlowTheme.of(context).headlineLarge.override(
                   fontFamily: 'Outfit',
-                  color: const Color(0xFF15161E),
+                  color: Color(0xFF15161E),
                   fontSize: 32.0,
                   letterSpacing: 0.0,
                   fontWeight: FontWeight.normal,
                 ),
           ),
-          actions: const [],
+          actions: [],
           centerTitle: false,
           elevation: 0.0,
         ),

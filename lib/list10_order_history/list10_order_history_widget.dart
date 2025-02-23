@@ -3,12 +3,16 @@ import '/backend/api_requests/api_calls.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/custom_functions.dart' as functions;
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'list10_order_history_model.dart';
 export 'list10_order_history_model.dart';
 
 class List10OrderHistoryWidget extends StatefulWidget {
   const List10OrderHistoryWidget({super.key});
+
+  static String routeName = 'List10OrderHistory';
+  static String routePath = '/list10OrderHistory';
 
   @override
   State<List10OrderHistoryWidget> createState() =>
@@ -62,12 +66,12 @@ class _List10OrderHistoryWidgetState extends State<List10OrderHistoryWidget> {
                     children: [
                       Padding(
                         padding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 25.0, 0.0, 0.0),
+                            EdgeInsetsDirectional.fromSTEB(0.0, 25.0, 0.0, 0.0),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
                           children: [
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   20.0, 0.0, 0.0, 0.0),
                               child: InkWell(
                                 splashColor: Colors.transparent,
@@ -88,7 +92,7 @@ class _List10OrderHistoryWidgetState extends State<List10OrderHistoryWidget> {
                         ),
                       ),
                       Align(
-                        alignment: const AlignmentDirectional(0.0, 0.0),
+                        alignment: AlignmentDirectional(0.0, 0.0),
                         child: Text(
                           'Purcase History',
                           textAlign: TextAlign.center,
@@ -105,7 +109,7 @@ class _List10OrderHistoryWidgetState extends State<List10OrderHistoryWidget> {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 24.0),
+                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 24.0),
                   child: FutureBuilder<ApiCallResponse>(
                     future: MypurcasehistoryCall.call(
                       iduser: currentUserUid,
@@ -140,17 +144,17 @@ class _List10OrderHistoryWidgetState extends State<List10OrderHistoryWidget> {
                               children: List.generate(list.length, (listIndex) {
                                 final listItem = list[listIndex];
                                 return Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       16.0, 0.0, 16.0, 0.0),
                                   child: Container(
                                     width: double.infinity,
-                                    constraints: const BoxConstraints(
+                                    constraints: BoxConstraints(
                                       maxWidth: 570.0,
                                     ),
                                     decoration: BoxDecoration(
                                       color: FlutterFlowTheme.of(context)
                                           .secondaryBackground,
-                                      boxShadow: const [
+                                      boxShadow: [
                                         BoxShadow(
                                           blurRadius: 4.0,
                                           color: Color(0x33000000),
@@ -168,7 +172,7 @@ class _List10OrderHistoryWidgetState extends State<List10OrderHistoryWidget> {
                                       ),
                                     ),
                                     child: Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           16.0, 12.0, 16.0, 12.0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
@@ -177,7 +181,7 @@ class _List10OrderHistoryWidgetState extends State<List10OrderHistoryWidget> {
                                         children: [
                                           Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 0.0, 12.0, 0.0),
                                             child: Column(
                                               mainAxisSize: MainAxisSize.max,
@@ -192,7 +196,7 @@ class _List10OrderHistoryWidgetState extends State<List10OrderHistoryWidget> {
                                                           .textScaler,
                                                   text: TextSpan(
                                                     children: [
-                                                      const TextSpan(
+                                                      TextSpan(
                                                         text: 'Order No: ',
                                                         style: TextStyle(),
                                                       ),
@@ -243,7 +247,7 @@ class _List10OrderHistoryWidgetState extends State<List10OrderHistoryWidget> {
                                                   ),
                                                 ),
                                                 Padding(
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           0.0, 4.0, 0.0, 0.0),
                                                   child: RichText(
@@ -269,7 +273,7 @@ class _List10OrderHistoryWidgetState extends State<List10OrderHistoryWidget> {
                                                             listItem,
                                                             r'''$.expired''',
                                                           ).toString(),
-                                                          style: const TextStyle(),
+                                                          style: TextStyle(),
                                                         )
                                                       ],
                                                       style:
@@ -306,7 +310,7 @@ class _List10OrderHistoryWidgetState extends State<List10OrderHistoryWidget> {
                                                   ),
                                                 ),
                                                 Padding(
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           0.0, 12.0, 0.0, 0.0),
                                                   child: InkWell(
@@ -320,7 +324,8 @@ class _List10OrderHistoryWidgetState extends State<List10OrderHistoryWidget> {
                                                         Colors.transparent,
                                                     onTap: () async {
                                                       context.pushNamed(
-                                                        'webviewPembayaran',
+                                                        WebviewPembayaranWidget
+                                                            .routeName,
                                                         queryParameters: {
                                                           'linkUlr':
                                                               serializeParam(
@@ -351,11 +356,11 @@ class _List10OrderHistoryWidgetState extends State<List10OrderHistoryWidget> {
                                                       ),
                                                       child: Align(
                                                         alignment:
-                                                            const AlignmentDirectional(
+                                                            AlignmentDirectional(
                                                                 0.0, 0.0),
                                                         child: Padding(
                                                           padding:
-                                                              const EdgeInsetsDirectional
+                                                              EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       7.0,
                                                                       0.0,
@@ -387,7 +392,7 @@ class _List10OrderHistoryWidgetState extends State<List10OrderHistoryWidget> {
                                                 CrossAxisAlignment.end,
                                             children: [
                                               Padding(
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         0.0, 0.0, 0.0, 15.0),
                                                 child: Text(
@@ -435,7 +440,7 @@ class _List10OrderHistoryWidgetState extends State<List10OrderHistoryWidget> {
                                                 children: [
                                                   Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 12.0,
                                                                 0.0, 0.0),
                                                     child: Container(
@@ -457,11 +462,11 @@ class _List10OrderHistoryWidgetState extends State<List10OrderHistoryWidget> {
                                                       ),
                                                       child: Align(
                                                         alignment:
-                                                            const AlignmentDirectional(
+                                                            AlignmentDirectional(
                                                                 0.0, 0.0),
                                                         child: Padding(
                                                           padding:
-                                                              const EdgeInsetsDirectional
+                                                              EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       12.0,
                                                                       0.0,
@@ -503,7 +508,7 @@ class _List10OrderHistoryWidgetState extends State<List10OrderHistoryWidget> {
                                     ),
                                   ),
                                 );
-                              }).divide(const SizedBox(height: 12.0)),
+                              }).divide(SizedBox(height: 12.0)),
                             ),
                           );
                         },

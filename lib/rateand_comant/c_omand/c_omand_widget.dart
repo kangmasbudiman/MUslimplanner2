@@ -3,6 +3,7 @@ import '/backend/api_requests/api_calls.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'c_omand_model.dart';
@@ -10,6 +11,9 @@ export 'c_omand_model.dart';
 
 class COmandWidget extends StatefulWidget {
   const COmandWidget({super.key});
+
+  static String routeName = 'COmand';
+  static String routePath = '/cOmand';
 
   @override
   State<COmandWidget> createState() => _COmandWidgetState();
@@ -51,24 +55,24 @@ class _COmandWidgetState extends State<COmandWidget> {
         key: scaffoldKey,
         backgroundColor: Colors.white,
         appBar: PreferredSize(
-          preferredSize: const Size.fromHeight(80.0),
+          preferredSize: Size.fromHeight(80.0),
           child: AppBar(
             backgroundColor: Colors.white,
             automaticallyImplyLeading: false,
             title: Align(
-              alignment: const AlignmentDirectional(0.0, 0.0),
+              alignment: AlignmentDirectional(0.0, 0.0),
               child: Stack(
-                alignment: const AlignmentDirectional(0.0, 0.0),
+                alignment: AlignmentDirectional(0.0, 0.0),
                 children: [
                   Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 10.0),
+                        EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 10.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
                         Align(
-                          alignment: const AlignmentDirectional(-1.0, 0.0),
+                          alignment: AlignmentDirectional(-1.0, 0.0),
                           child: AuthUserStreamWidget(
                             builder: (context) => InkWell(
                               splashColor: Colors.transparent,
@@ -76,7 +80,7 @@ class _COmandWidgetState extends State<COmandWidget> {
                               hoverColor: Colors.transparent,
                               highlightColor: Colors.transparent,
                               onTap: () async {
-                                context.pushNamed('MyProfile');
+                                context.pushNamed(MyProfileWidget.routeName);
                               },
                               child: Icon(
                                 Icons.arrow_back_ios_new,
@@ -90,10 +94,10 @@ class _COmandWidgetState extends State<COmandWidget> {
                     ),
                   ),
                   Align(
-                    alignment: const AlignmentDirectional(0.0, 0.0),
+                    alignment: AlignmentDirectional(0.0, 0.0),
                     child: Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 10.0),
+                          EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 10.0),
                       child: AuthUserStreamWidget(
                         builder: (context) => Text(
                           'Rate And Command',
@@ -112,7 +116,7 @@ class _COmandWidgetState extends State<COmandWidget> {
                 ],
               ),
             ),
-            actions: const [],
+            actions: [],
             centerTitle: false,
             elevation: 2.0,
           ),
@@ -120,14 +124,14 @@ class _COmandWidgetState extends State<COmandWidget> {
         body: SafeArea(
           top: true,
           child: Padding(
-            padding: const EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 0.0),
+            padding: EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 0.0),
             child: Column(
               mainAxisSize: MainAxisSize.max,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Padding(
                   padding:
-                      const EdgeInsetsDirectional.fromSTEB(20.0, 30.0, 0.0, 30.0),
+                      EdgeInsetsDirectional.fromSTEB(20.0, 30.0, 0.0, 30.0),
                   child: Text(
                     'Tells us what can be improved',
                     style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -141,7 +145,7 @@ class _COmandWidgetState extends State<COmandWidget> {
                 Flexible(
                   child: Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 20.0),
+                        EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 20.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -152,7 +156,7 @@ class _COmandWidgetState extends State<COmandWidget> {
                             safeSetState(() {});
 
                             context.pushNamed(
-                              'Rateandcomand',
+                              RateandcomandWidget.routeName,
                               queryParameters: {
                                 'rateName': serializeParam(
                                   FFAppState().yangDirate,
@@ -165,9 +169,9 @@ class _COmandWidgetState extends State<COmandWidget> {
                           options: FFButtonOptions(
                             width: 150.0,
                             height: 25.0,
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 0.0),
-                            iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                            iconPadding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 0.0),
                             color: FlutterFlowTheme.of(context).primary,
                             textStyle: FlutterFlowTheme.of(context)
@@ -187,14 +191,14 @@ class _COmandWidgetState extends State<COmandWidget> {
                                       return FlutterFlowTheme.of(context)
                                           .alternate;
                                     } else {
-                                      return const Color(0x00000000);
+                                      return Color(0x00000000);
                                     }
                                   }(),
                                   fontSize: 13.0,
                                   letterSpacing: 0.0,
                                 ),
                             elevation: 3.0,
-                            borderSide: const BorderSide(
+                            borderSide: BorderSide(
                               color: Colors.transparent,
                               width: 1.0,
                             ),
@@ -207,7 +211,7 @@ class _COmandWidgetState extends State<COmandWidget> {
                             safeSetState(() {});
 
                             context.pushNamed(
-                              'Rateandcomand',
+                              RateandcomandWidget.routeName,
                               queryParameters: {
                                 'rateName': serializeParam(
                                   FFAppState().yangDirate,
@@ -220,9 +224,9 @@ class _COmandWidgetState extends State<COmandWidget> {
                           options: FFButtonOptions(
                             width: 150.0,
                             height: 25.0,
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 0.0),
-                            iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                            iconPadding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 0.0),
                             color: FlutterFlowTheme.of(context).primary,
                             textStyle: FlutterFlowTheme.of(context)
@@ -241,14 +245,14 @@ class _COmandWidgetState extends State<COmandWidget> {
                                       return FlutterFlowTheme.of(context)
                                           .alternate;
                                     } else {
-                                      return const Color(0x00000000);
+                                      return Color(0x00000000);
                                     }
                                   }(),
                                   fontSize: 13.0,
                                   letterSpacing: 0.0,
                                 ),
                             elevation: 3.0,
-                            borderSide: const BorderSide(
+                            borderSide: BorderSide(
                               color: Colors.transparent,
                               width: 1.0,
                             ),
@@ -270,7 +274,7 @@ class _COmandWidgetState extends State<COmandWidget> {
                           safeSetState(() {});
 
                           context.pushNamed(
-                            'Rateandcomand',
+                            RateandcomandWidget.routeName,
                             queryParameters: {
                               'rateName': serializeParam(
                                 FFAppState().yangDirate,
@@ -283,9 +287,9 @@ class _COmandWidgetState extends State<COmandWidget> {
                         options: FFButtonOptions(
                           width: 150.0,
                           height: 25.0,
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 0.0),
-                          iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                          iconPadding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 0.0),
                           color: FlutterFlowTheme.of(context).primary,
                           textStyle: FlutterFlowTheme.of(context)
@@ -304,14 +308,14 @@ class _COmandWidgetState extends State<COmandWidget> {
                                     return FlutterFlowTheme.of(context)
                                         .alternate;
                                   } else {
-                                    return const Color(0x00000000);
+                                    return Color(0x00000000);
                                   }
                                 }(),
                                 fontSize: 13.0,
                                 letterSpacing: 0.0,
                               ),
                           elevation: 3.0,
-                          borderSide: const BorderSide(
+                          borderSide: BorderSide(
                             color: Colors.transparent,
                             width: 1.0,
                           ),
@@ -324,7 +328,7 @@ class _COmandWidgetState extends State<COmandWidget> {
                           safeSetState(() {});
 
                           context.pushNamed(
-                            'Rateandcomand',
+                            RateandcomandWidget.routeName,
                             queryParameters: {
                               'rateName': serializeParam(
                                 FFAppState().yangDirate,
@@ -337,9 +341,9 @@ class _COmandWidgetState extends State<COmandWidget> {
                         options: FFButtonOptions(
                           width: 150.0,
                           height: 25.0,
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 0.0),
-                          iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                          iconPadding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 0.0),
                           color: FlutterFlowTheme.of(context).primary,
                           textStyle: FlutterFlowTheme.of(context)
@@ -358,14 +362,14 @@ class _COmandWidgetState extends State<COmandWidget> {
                                     return FlutterFlowTheme.of(context)
                                         .alternate;
                                   } else {
-                                    return const Color(0x00000000);
+                                    return Color(0x00000000);
                                   }
                                 }(),
                                 fontSize: 13.0,
                                 letterSpacing: 0.0,
                               ),
                           elevation: 3.0,
-                          borderSide: const BorderSide(
+                          borderSide: BorderSide(
                             color: Colors.transparent,
                             width: 1.0,
                           ),
@@ -376,11 +380,11 @@ class _COmandWidgetState extends State<COmandWidget> {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
+                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
                   child: Container(
                     decoration: BoxDecoration(
                       color: Colors.white,
-                      boxShadow: const [
+                      boxShadow: [
                         BoxShadow(
                           blurRadius: 2.0,
                           color: Color(0x33000000),
@@ -390,18 +394,18 @@ class _COmandWidgetState extends State<COmandWidget> {
                           ),
                         )
                       ],
-                      borderRadius: const BorderRadius.only(
+                      borderRadius: BorderRadius.only(
                         bottomLeft: Radius.circular(20.0),
                         bottomRight: Radius.circular(20.0),
                         topLeft: Radius.circular(20.0),
                         topRight: Radius.circular(20.0),
                       ),
                       border: Border.all(
-                        color: const Color(0x24000000),
+                        color: Color(0x24000000),
                       ),
                     ),
                     child: Padding(
-                      padding: const EdgeInsetsDirectional.fromSTEB(
+                      padding: EdgeInsetsDirectional.fromSTEB(
                           10.0, 10.0, 10.0, 10.0),
                       child: TextFormField(
                         controller: _model.textController,
@@ -436,7 +440,7 @@ class _COmandWidgetState extends State<COmandWidget> {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 0.0),
+                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 0.0),
                   child: AuthUserStreamWidget(
                     builder: (context) => FFButtonWidget(
                       onPressed: () async {
@@ -462,7 +466,7 @@ class _COmandWidgetState extends State<COmandWidget> {
                                       FlutterFlowTheme.of(context).primaryText,
                                 ),
                               ),
-                              duration: const Duration(milliseconds: 4000),
+                              duration: Duration(milliseconds: 4000),
                               backgroundColor:
                                   FlutterFlowTheme.of(context).secondary,
                             ),
@@ -483,7 +487,7 @@ class _COmandWidgetState extends State<COmandWidget> {
                                       FlutterFlowTheme.of(context).primaryText,
                                 ),
                               ),
-                              duration: const Duration(milliseconds: 4000),
+                              duration: Duration(milliseconds: 4000),
                               backgroundColor:
                                   FlutterFlowTheme.of(context).secondary,
                             ),
@@ -496,10 +500,10 @@ class _COmandWidgetState extends State<COmandWidget> {
                       options: FFButtonOptions(
                         width: 380.0,
                         height: 40.0,
-                        padding: const EdgeInsetsDirectional.fromSTEB(
+                        padding: EdgeInsetsDirectional.fromSTEB(
                             24.0, 0.0, 24.0, 0.0),
                         iconPadding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                         color: currentUserDocument?.colorThemes,
                         textStyle:
                             FlutterFlowTheme.of(context).titleSmall.override(
@@ -508,7 +512,7 @@ class _COmandWidgetState extends State<COmandWidget> {
                                   letterSpacing: 0.0,
                                 ),
                         elevation: 3.0,
-                        borderSide: const BorderSide(
+                        borderSide: BorderSide(
                           color: Colors.transparent,
                           width: 1.0,
                         ),

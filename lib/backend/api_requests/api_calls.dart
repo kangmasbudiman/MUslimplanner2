@@ -27,7 +27,7 @@ class MybookmarkCall {
 
     return ApiManager.instance.makeApiCall(
       callName: 'mybookmark',
-      apiUrl: '${baseUrl}mybookmark/$iduser',
+      apiUrl: '${baseUrl}mybookmark/${iduser}',
       callType: ApiCallType.GET,
       headers: {},
       params: {},
@@ -127,7 +127,7 @@ class MybookmarkCopyCall {
 
     return ApiManager.instance.makeApiCall(
       callName: 'mybookmark Copy',
-      apiUrl: '${baseUrl}mybookmarkfirst/$iduser',
+      apiUrl: '${baseUrl}mybookmarkfirst/${iduser}',
       callType: ApiCallType.GET,
       headers: {},
       params: {},
@@ -231,7 +231,7 @@ class DeletemybookmarkCall {
 
     return ApiManager.instance.makeApiCall(
       callName: 'deletemybookmark',
-      apiUrl: '${baseUrl}deletemybookmark/$id',
+      apiUrl: '${baseUrl}deletemybookmark/${id}',
       callType: ApiCallType.GET,
       headers: {},
       params: {},
@@ -467,7 +467,7 @@ class GetDoaByKategoriCall {
 
     return ApiManager.instance.makeApiCall(
       callName: 'getDoaByKategori',
-      apiUrl: '${baseUrl}getdoaBykategori/$idkategori',
+      apiUrl: '${baseUrl}getdoaBykategori/${idkategori}',
       callType: ApiCallType.GET,
       headers: {},
       params: {},
@@ -1895,7 +1895,7 @@ class GetdoasearchbykategoriCall {
 
     return ApiManager.instance.makeApiCall(
       callName: 'getdoasearchbykategori',
-      apiUrl: '${baseUrl}getdoasearchbykategori/$keyword/$idkategori',
+      apiUrl: '${baseUrl}getdoasearchbykategori/${keyword}/${idkategori}',
       callType: ApiCallType.GET,
       headers: {},
       params: {},
@@ -1923,7 +1923,7 @@ class GetdoasearchCall {
 
     return ApiManager.instance.makeApiCall(
       callName: 'getdoasearch',
-      apiUrl: '${baseUrl}getdoasearch/$keyword',
+      apiUrl: '${baseUrl}getdoasearch/${keyword}',
       callType: ApiCallType.GET,
       headers: {},
       params: {},
@@ -2263,10 +2263,15 @@ class GetsunahlimaCall {
           .map((x) => castToType<String>(x))
           .withoutNulls
           .toList();
-  int? isComplate(dynamic response) => castToType<int>(getJsonField(
+  List<int>? isComplate(dynamic response) => (getJsonField(
         response,
         r'''$.data[:].isCompleted''',
-      ));
+        true,
+      ) as List?)
+          ?.withoutNulls
+          .map((x) => castToType<int>(x))
+          .withoutNulls
+          .toList();
   int? summaryId(dynamic response) => castToType<int>(getJsonField(
         response,
         r'''$.data[:].summaryId''',
@@ -2331,10 +2336,15 @@ class GetsunahenamCall {
           .map((x) => castToType<String>(x))
           .withoutNulls
           .toList();
-  int? isComplate(dynamic response) => castToType<int>(getJsonField(
+  List<int>? isComplate(dynamic response) => (getJsonField(
         response,
         r'''$.data[:].isCompleted''',
-      ));
+        true,
+      ) as List?)
+          ?.withoutNulls
+          .map((x) => castToType<int>(x))
+          .withoutNulls
+          .toList();
   int? summaryId(dynamic response) => castToType<int>(getJsonField(
         response,
         r'''$.data[:].summaryId''',
@@ -2532,10 +2542,15 @@ class GetsunahtujuhCall {
           .map((x) => castToType<String>(x))
           .withoutNulls
           .toList();
-  int? isComplate(dynamic response) => castToType<int>(getJsonField(
+  List<int>? isComplate(dynamic response) => (getJsonField(
         response,
         r'''$.data[:].isCompleted''',
-      ));
+        true,
+      ) as List?)
+          ?.withoutNulls
+          .map((x) => castToType<int>(x))
+          .withoutNulls
+          .toList();
   int? summaryId(dynamic response) => castToType<int>(getJsonField(
         response,
         r'''$.data[:].summaryId''',
@@ -2678,10 +2693,15 @@ class GetsunahsembilanCall {
           .map((x) => castToType<String>(x))
           .withoutNulls
           .toList();
-  int? isComplate(dynamic response) => castToType<int>(getJsonField(
+  List<int>? isComplate(dynamic response) => (getJsonField(
         response,
         r'''$.data[:].isCompleted''',
-      ));
+        true,
+      ) as List?)
+          ?.withoutNulls
+          .map((x) => castToType<int>(x))
+          .withoutNulls
+          .toList();
   int? summaryId(dynamic response) => castToType<int>(getJsonField(
         response,
         r'''$.data[:].summaryId''',
@@ -2746,10 +2766,15 @@ class GetsunahsepuluhCall {
           .map((x) => castToType<String>(x))
           .withoutNulls
           .toList();
-  int? isComplate(dynamic response) => castToType<int>(getJsonField(
+  List<int>? isComplate(dynamic response) => (getJsonField(
         response,
         r'''$.data[:].isCompleted''',
-      ));
+        true,
+      ) as List?)
+          ?.withoutNulls
+          .map((x) => castToType<int>(x))
+          .withoutNulls
+          .toList();
   int? summaryId(dynamic response) => castToType<int>(getJsonField(
         response,
         r'''$.data[:].summaryId''',
@@ -3080,7 +3105,7 @@ class CoountsunahCall {
 
     return ApiManager.instance.makeApiCall(
       callName: 'coountsunah',
-      apiUrl: '$baseUrl/countsunah',
+      apiUrl: '${baseUrl}/countsunah',
       callType: ApiCallType.GET,
       headers: {},
       params: {},
@@ -3121,7 +3146,7 @@ class TambahhelpsuportCall {
 
     return ApiManager.instance.makeApiCall(
       callName: 'tambahhelpsuport',
-      apiUrl: '$baseUrl/tambahhelp',
+      apiUrl: '${baseUrl}/tambahhelp',
       callType: ApiCallType.POST,
       headers: {},
       params: {
@@ -3148,7 +3173,7 @@ class DeletehelpsuportCall {
 
     return ApiManager.instance.makeApiCall(
       callName: 'deletehelpsuport',
-      apiUrl: '$baseUrl/deletehelp',
+      apiUrl: '${baseUrl}/deletehelp',
       callType: ApiCallType.POST,
       headers: {},
       params: {
@@ -3171,7 +3196,7 @@ class GethelpCall {
 
     return ApiManager.instance.makeApiCall(
       callName: 'gethelp',
-      apiUrl: '$baseUrl/gethelp',
+      apiUrl: '${baseUrl}/gethelp',
       callType: ApiCallType.GET,
       headers: {},
       params: {},
@@ -3345,7 +3370,7 @@ class IsisuratalquranCall {
   }) async {
     return ApiManager.instance.makeApiCall(
       callName: 'isisuratalquran',
-      apiUrl: 'https://api.dikiotang.com/quran/ayah/surah/$nomorSurat',
+      apiUrl: 'https://api.dikiotang.com/quran/ayah/surah/${nomorSurat}',
       callType: ApiCallType.GET,
       headers: {},
       params: {},
@@ -3590,7 +3615,7 @@ class NewDaftarSuratCall {
   }) async {
     return ApiManager.instance.makeApiCall(
       callName: 'newDaftarSurat',
-      apiUrl: 'https://al-quran.indata.id/api/surates/$keyword',
+      apiUrl: 'https://al-quran.indata.id/api/surates/${keyword}',
       callType: ApiCallType.GET,
       headers: {},
       params: {},
@@ -3688,7 +3713,7 @@ class NewDaftarSuratCopyCall {
   }) async {
     return ApiManager.instance.makeApiCall(
       callName: 'newDaftarSurat Copy',
-      apiUrl: 'https://al-quran.indata.id/api/surates/$keyword',
+      apiUrl: 'https://al-quran.indata.id/api/surates/${keyword}',
       callType: ApiCallType.GET,
       headers: {},
       params: {},
@@ -3875,7 +3900,7 @@ class ConvertMasehiKeHijriCall {
   }) async {
     return ApiManager.instance.makeApiCall(
       callName: 'convertMasehiKeHijri',
-      apiUrl: 'http://api.aladhan.com/v1/gToH/$date',
+      apiUrl: 'http://api.aladhan.com/v1/gToH/${date}',
       callType: ApiCallType.GET,
       headers: {},
       params: {},
@@ -3908,7 +3933,7 @@ class ConvertMasehiKeHijriCopyCall {
   }) async {
     return ApiManager.instance.makeApiCall(
       callName: 'convertMasehiKeHijri Copy',
-      apiUrl: 'http://api.aladhan.com/v1/gToH/$date',
+      apiUrl: 'http://api.aladhan.com/v1/gToH/${date}',
       callType: ApiCallType.GET,
       headers: {},
       params: {},
@@ -3944,7 +3969,7 @@ class JadwalSholatCall {
   }) async {
     return ApiManager.instance.makeApiCall(
       callName: 'jadwalSholat',
-      apiUrl: 'http://api.aladhan.com/v1/calendarByCity/$year/$month',
+      apiUrl: 'http://api.aladhan.com/v1/calendarByCity/${year}/${month}',
       callType: ApiCallType.GET,
       headers: {},
       params: {
@@ -4120,7 +4145,7 @@ class TestingcariJsonCall {
   }) async {
     return ApiManager.instance.makeApiCall(
       callName: 'testingcariJson',
-      apiUrl: 'https://dummyjson.com/products/search?q=$search',
+      apiUrl: 'https://dummyjson.com/products/search?q=${search}',
       callType: ApiCallType.GET,
       headers: {},
       params: {},
@@ -4367,7 +4392,7 @@ class KiblatCall {
   }) async {
     return ApiManager.instance.makeApiCall(
       callName: 'kiblat',
-      apiUrl: 'http://api.aladhan.com/v1/qibla/$lat/$long',
+      apiUrl: 'http://api.aladhan.com/v1/qibla/${lat}/${long}',
       callType: ApiCallType.GET,
       headers: {},
       params: {},

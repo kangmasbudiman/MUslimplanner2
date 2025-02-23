@@ -7,9 +7,10 @@ import '/backend/schema/structs/index.dart';
 
 import '/auth/base_auth_user_provider.dart';
 
-import '/index.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+
+import '/index.dart';
 
 export 'package:go_router/go_router.dart';
 export 'serialization_util.dart';
@@ -77,58 +78,58 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
       refreshListenable: appStateNotifier,
       navigatorKey: appNavigatorKey,
       errorBuilder: (context, state) =>
-          appStateNotifier.loggedIn ? const HomeScreenWidget() : const WelcomscreenWidget(),
+          appStateNotifier.loggedIn ? HomeScreenWidget() : WelcomscreenWidget(),
       routes: [
         FFRoute(
           name: '_initialize',
           path: '/',
           builder: (context, _) => appStateNotifier.loggedIn
-              ? const HomeScreenWidget()
-              : const WelcomscreenWidget(),
+              ? HomeScreenWidget()
+              : WelcomscreenWidget(),
         ),
         FFRoute(
-          name: 'HomePage',
-          path: '/homePage',
-          builder: (context, params) => const HomePageWidget(),
+          name: HomePageWidget.routeName,
+          path: HomePageWidget.routePath,
+          builder: (context, params) => HomePageWidget(),
         ),
         FFRoute(
-          name: 'welcomscreen',
-          path: '/welcomscreen',
-          builder: (context, params) => const WelcomscreenWidget(),
+          name: WelcomscreenWidget.routeName,
+          path: WelcomscreenWidget.routePath,
+          builder: (context, params) => WelcomscreenWidget(),
         ),
         FFRoute(
-          name: 'register',
-          path: '/register',
-          builder: (context, params) => const RegisterWidget(),
+          name: RegisterWidget.routeName,
+          path: RegisterWidget.routePath,
+          builder: (context, params) => RegisterWidget(),
         ),
         FFRoute(
-          name: 'verivicationscreen',
-          path: '/verivicationscreen',
-          builder: (context, params) => const VerivicationscreenWidget(),
+          name: VerivicationscreenWidget.routeName,
+          path: VerivicationscreenWidget.routePath,
+          builder: (context, params) => VerivicationscreenWidget(),
         ),
         FFRoute(
-          name: 'verivicationSuccess',
-          path: '/verivicationSuccess',
-          builder: (context, params) => const VerivicationSuccessWidget(),
+          name: VerivicationSuccessWidget.routeName,
+          path: VerivicationSuccessWidget.routePath,
+          builder: (context, params) => VerivicationSuccessWidget(),
         ),
         FFRoute(
-          name: 'verivicatiionFailed',
-          path: '/verivicatiionFailed',
-          builder: (context, params) => const VerivicatiionFailedWidget(),
+          name: VerivicatiionFailedWidget.routeName,
+          path: VerivicatiionFailedWidget.routePath,
+          builder: (context, params) => VerivicatiionFailedWidget(),
         ),
         FFRoute(
-          name: 'login',
-          path: '/login',
-          builder: (context, params) => const LoginWidget(),
+          name: LoginWidget.routeName,
+          path: LoginWidget.routePath,
+          builder: (context, params) => LoginWidget(),
         ),
         FFRoute(
-          name: 'HomeScreen',
-          path: '/homeScreen',
-          builder: (context, params) => const HomeScreenWidget(),
+          name: HomeScreenWidget.routeName,
+          path: HomeScreenWidget.routePath,
+          builder: (context, params) => HomeScreenWidget(),
         ),
         FFRoute(
-          name: 'subDetailTaskSunah',
-          path: '/subDetailTaskSunah',
+          name: SubDetailTaskSunahWidget.routeName,
+          path: SubDetailTaskSunahWidget.routePath,
           builder: (context, params) => SubDetailTaskSunahWidget(
             idsunah: params.getParam(
               'idsunah',
@@ -141,58 +142,58 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           ),
         ),
         FFRoute(
-          name: 'DetailTaskSunah',
-          path: '/detailTaskSunah',
-          builder: (context, params) => const DetailTaskSunahWidget(),
+          name: DetailTaskSunahWidget.routeName,
+          path: DetailTaskSunahWidget.routePath,
+          builder: (context, params) => DetailTaskSunahWidget(),
         ),
         FFRoute(
-          name: 'statistik',
-          path: '/statistik',
-          builder: (context, params) => const StatistikWidget(),
+          name: StatistikWidget.routeName,
+          path: StatistikWidget.routePath,
+          builder: (context, params) => StatistikWidget(),
         ),
         FFRoute(
-          name: 'Substatistik',
-          path: '/substatistik',
-          builder: (context, params) => const SubstatistikWidget(),
+          name: SubstatistikWidget.routeName,
+          path: SubstatistikWidget.routePath,
+          builder: (context, params) => SubstatistikWidget(),
         ),
         FFRoute(
-          name: 'HomeSholat',
-          path: '/homeSholat',
-          builder: (context, params) => const HomeSholatWidget(),
+          name: HomeSholatWidget.routeName,
+          path: HomeSholatWidget.routePath,
+          builder: (context, params) => HomeSholatWidget(),
         ),
         FFRoute(
-          name: 'detailKiblat',
-          path: '/detailKiblat',
-          builder: (context, params) => const DetailKiblatWidget(),
+          name: DetailKiblatWidget.routeName,
+          path: DetailKiblatWidget.routePath,
+          builder: (context, params) => DetailKiblatWidget(),
         ),
         FFRoute(
-          name: 'detailJadwalSholat',
-          path: '/detailJadwalSholat',
-          builder: (context, params) => const DetailJadwalSholatWidget(),
+          name: DetailJadwalSholatWidget.routeName,
+          path: DetailJadwalSholatWidget.routePath,
+          builder: (context, params) => DetailJadwalSholatWidget(),
         ),
         FFRoute(
-          name: 'kalenderMasehi',
-          path: '/kalenderMasehi',
-          builder: (context, params) => const KalenderMasehiWidget(),
+          name: KalenderMasehiWidget.routeName,
+          path: KalenderMasehiWidget.routePath,
+          builder: (context, params) => KalenderMasehiWidget(),
         ),
         FFRoute(
-          name: 'kalenderHijriah',
-          path: '/kalenderHijriah',
-          builder: (context, params) => const KalenderHijriahWidget(),
+          name: KalenderHijriahWidget.routeName,
+          path: KalenderHijriahWidget.routePath,
+          builder: (context, params) => KalenderHijriahWidget(),
         ),
         FFRoute(
-          name: 'detailazan',
-          path: '/detailazan',
-          builder: (context, params) => const DetailazanWidget(),
+          name: DetailazanWidget.routeName,
+          path: DetailazanWidget.routePath,
+          builder: (context, params) => DetailazanWidget(),
         ),
         FFRoute(
-          name: 'location',
-          path: '/location',
-          builder: (context, params) => const LocationWidget(),
+          name: LocationWidget.routeName,
+          path: LocationWidget.routePath,
+          builder: (context, params) => LocationWidget(),
         ),
         FFRoute(
-          name: 'Alquran',
-          path: '/alquran',
+          name: AlquranWidget.routeName,
+          path: AlquranWidget.routePath,
           builder: (context, params) => AlquranWidget(
             nomorSurat: params.getParam(
               'nomorSurat',
@@ -213,18 +214,18 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           ),
         ),
         FFRoute(
-          name: 'HomeDoa',
-          path: '/homeDoa',
-          builder: (context, params) => const HomeDoaWidget(),
+          name: HomeDoaWidget.routeName,
+          path: HomeDoaWidget.routePath,
+          builder: (context, params) => HomeDoaWidget(),
         ),
         FFRoute(
-          name: 'Doadoa',
-          path: '/doadoa',
-          builder: (context, params) => const DoadoaWidget(),
+          name: DoadoaWidget.routeName,
+          path: DoadoaWidget.routePath,
+          builder: (context, params) => DoadoaWidget(),
         ),
         FFRoute(
-          name: 'DetailDoa',
-          path: '/detailDoa',
+          name: DetailDoaWidget.routeName,
+          path: DetailDoaWidget.routePath,
           builder: (context, params) => DetailDoaWidget(
             judul: params.getParam(
               'judul',
@@ -249,108 +250,108 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           ),
         ),
         FFRoute(
-          name: 'MyMenu',
-          path: '/myMenu',
-          builder: (context, params) => const MyMenuWidget(),
+          name: MyMenuWidget.routeName,
+          path: MyMenuWidget.routePath,
+          builder: (context, params) => MyMenuWidget(),
         ),
         FFRoute(
-          name: 'MyProfile',
-          path: '/myProfile',
-          builder: (context, params) => const MyProfileWidget(),
+          name: MyProfileWidget.routeName,
+          path: MyProfileWidget.routePath,
+          builder: (context, params) => MyProfileWidget(),
         ),
         FFRoute(
-          name: 'MyDashboard',
-          path: '/myDashboard',
-          builder: (context, params) => const MyDashboardWidget(),
+          name: MyDashboardWidget.routeName,
+          path: MyDashboardWidget.routePath,
+          builder: (context, params) => MyDashboardWidget(),
         ),
         FFRoute(
-          name: 'MySetting',
-          path: '/mySetting',
-          builder: (context, params) => const MySettingWidget(),
+          name: MySettingWidget.routeName,
+          path: MySettingWidget.routePath,
+          builder: (context, params) => MySettingWidget(),
         ),
         FFRoute(
-          name: 'MySettingCollor',
-          path: '/mySettingCollor',
-          builder: (context, params) => const MySettingCollorWidget(),
+          name: MySettingCollorWidget.routeName,
+          path: MySettingCollorWidget.routePath,
+          builder: (context, params) => MySettingCollorWidget(),
         ),
         FFRoute(
-          name: 'MyNotifications',
-          path: '/myNotifications',
-          builder: (context, params) => const MyNotificationsWidget(),
+          name: MyNotificationsWidget.routeName,
+          path: MyNotificationsWidget.routePath,
+          builder: (context, params) => MyNotificationsWidget(),
         ),
         FFRoute(
-          name: 'AdhansNotification',
-          path: '/adhansNotification',
-          builder: (context, params) => const AdhansNotificationWidget(),
+          name: AdhansNotificationWidget.routeName,
+          path: AdhansNotificationWidget.routePath,
+          builder: (context, params) => AdhansNotificationWidget(),
         ),
         FFRoute(
-          name: 'Prayertime',
-          path: '/prayertime',
-          builder: (context, params) => const PrayertimeWidget(),
+          name: PrayertimeWidget.routeName,
+          path: PrayertimeWidget.routePath,
+          builder: (context, params) => PrayertimeWidget(),
         ),
         FFRoute(
-          name: 'IslamicCalendar',
-          path: '/islamicCalendar',
-          builder: (context, params) => const IslamicCalendarWidget(),
+          name: IslamicCalendarWidget.routeName,
+          path: IslamicCalendarWidget.routePath,
+          builder: (context, params) => IslamicCalendarWidget(),
         ),
         FFRoute(
-          name: 'Dua',
-          path: '/dua',
-          builder: (context, params) => const DuaWidget(),
+          name: DuaWidget.routeName,
+          path: DuaWidget.routePath,
+          builder: (context, params) => DuaWidget(),
         ),
         FFRoute(
-          name: 'DuaTranslation',
-          path: '/duaTranslation',
-          builder: (context, params) => const DuaTranslationWidget(),
+          name: DuaTranslationWidget.routeName,
+          path: DuaTranslationWidget.routePath,
+          builder: (context, params) => DuaTranslationWidget(),
         ),
         FFRoute(
-          name: 'DuaRecitation',
-          path: '/duaRecitation',
-          builder: (context, params) => const DuaRecitationWidget(),
+          name: DuaRecitationWidget.routeName,
+          path: DuaRecitationWidget.routePath,
+          builder: (context, params) => DuaRecitationWidget(),
         ),
         FFRoute(
-          name: 'Language',
-          path: '/language',
-          builder: (context, params) => const LanguageWidget(),
+          name: LanguageWidget.routeName,
+          path: LanguageWidget.routePath,
+          builder: (context, params) => LanguageWidget(),
         ),
         FFRoute(
-          name: 'LanguageApp',
-          path: '/languageApp',
-          builder: (context, params) => const LanguageAppWidget(),
+          name: LanguageAppWidget.routeName,
+          path: LanguageAppWidget.routePath,
+          builder: (context, params) => LanguageAppWidget(),
         ),
         FFRoute(
-          name: 'PrayerNames',
-          path: '/prayerNames',
-          builder: (context, params) => const PrayerNamesWidget(),
+          name: PrayerNamesWidget.routeName,
+          path: PrayerNamesWidget.routePath,
+          builder: (context, params) => PrayerNamesWidget(),
         ),
         FFRoute(
-          name: 'Legal',
-          path: '/legal',
-          builder: (context, params) => const LegalWidget(),
+          name: LegalWidget.routeName,
+          path: LegalWidget.routePath,
+          builder: (context, params) => LegalWidget(),
         ),
         FFRoute(
-          name: 'TermCOndition',
-          path: '/termCOndition',
-          builder: (context, params) => const TermCOnditionWidget(),
+          name: TermCOnditionWidget.routeName,
+          path: TermCOnditionWidget.routePath,
+          builder: (context, params) => TermCOnditionWidget(),
         ),
         FFRoute(
-          name: 'PrivacyPolice',
-          path: '/privacyPolice',
-          builder: (context, params) => const PrivacyPoliceWidget(),
+          name: PrivacyPoliceWidget.routeName,
+          path: PrivacyPoliceWidget.routePath,
+          builder: (context, params) => PrivacyPoliceWidget(),
         ),
         FFRoute(
-          name: 'AcknowledgementsIOS',
-          path: '/acknowledgementsIOS',
-          builder: (context, params) => const AcknowledgementsIOSWidget(),
+          name: AcknowledgementsIOSWidget.routeName,
+          path: AcknowledgementsIOSWidget.routePath,
+          builder: (context, params) => AcknowledgementsIOSWidget(),
         ),
         FFRoute(
-          name: 'subscribe',
-          path: '/subscribe',
-          builder: (context, params) => const SubscribeWidget(),
+          name: SubscribeWidget.routeName,
+          path: SubscribeWidget.routePath,
+          builder: (context, params) => SubscribeWidget(),
         ),
         FFRoute(
-          name: 'paymentsucces',
-          path: '/paymentsucces',
+          name: PaymentsuccesWidget.routeName,
+          path: PaymentsuccesWidget.routePath,
           builder: (context, params) => PaymentsuccesWidget(
             linkUrl: params.getParam(
               'linkUrl',
@@ -359,13 +360,13 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           ),
         ),
         FFRoute(
-          name: 'paymentfailed',
-          path: '/paymentfailed',
-          builder: (context, params) => const PaymentfailedWidget(),
+          name: PaymentfailedWidget.routeName,
+          path: PaymentfailedWidget.routePath,
+          builder: (context, params) => PaymentfailedWidget(),
         ),
         FFRoute(
-          name: 'Rateandcomand',
-          path: '/rateandcomand',
+          name: RateandcomandWidget.routeName,
+          path: RateandcomandWidget.routePath,
           builder: (context, params) => RateandcomandWidget(
             rateName: params.getParam(
               'rateName',
@@ -374,23 +375,23 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           ),
         ),
         FFRoute(
-          name: 'COmand',
-          path: '/cOmand',
-          builder: (context, params) => const COmandWidget(),
+          name: COmandWidget.routeName,
+          path: COmandWidget.routePath,
+          builder: (context, params) => COmandWidget(),
         ),
         FFRoute(
-          name: 'HomeAlquran',
-          path: '/homeAlquran',
-          builder: (context, params) => const HomeAlquranWidget(),
+          name: HomeAlquranWidget.routeName,
+          path: HomeAlquranWidget.routePath,
+          builder: (context, params) => HomeAlquranWidget(),
         ),
         FFRoute(
-          name: 'HomeAlquranCopy',
-          path: '/homeAlquranCopy',
-          builder: (context, params) => const HomeAlquranCopyWidget(),
+          name: HomeAlquranCopyWidget.routeName,
+          path: HomeAlquranCopyWidget.routePath,
+          builder: (context, params) => HomeAlquranCopyWidget(),
         ),
         FFRoute(
-          name: 'LanjutAlquran',
-          path: '/lanjutAlquran',
+          name: LanjutAlquranWidget.routeName,
+          path: LanjutAlquranWidget.routePath,
           builder: (context, params) => LanjutAlquranWidget(
             nomorSurat: params.getParam(
               'nomorSurat',
@@ -419,8 +420,8 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           ),
         ),
         FFRoute(
-          name: 'DoadoaByKategori',
-          path: '/doadoaByKategori',
+          name: DoadoaByKategoriWidget.routeName,
+          path: DoadoaByKategoriWidget.routePath,
           builder: (context, params) => DoadoaByKategoriWidget(
             idkategori: params.getParam(
               'idkategori',
@@ -429,28 +430,28 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           ),
         ),
         FFRoute(
-          name: 'MyeditProfil',
-          path: '/myeditProfil',
-          builder: (context, params) => const MyeditProfilWidget(),
+          name: MyeditProfilWidget.routeName,
+          path: MyeditProfilWidget.routePath,
+          builder: (context, params) => MyeditProfilWidget(),
         ),
         FFRoute(
-          name: 'kiblat',
-          path: '/kiblat',
-          builder: (context, params) => const KiblatWidget(),
+          name: KiblatWidget.routeName,
+          path: KiblatWidget.routePath,
+          builder: (context, params) => KiblatWidget(),
         ),
         FFRoute(
-          name: 'listUserHelpSupport',
-          path: '/listUserHelpSupport',
-          builder: (context, params) => const ListUserHelpSupportWidget(),
+          name: ListUserHelpSupportWidget.routeName,
+          path: ListUserHelpSupportWidget.routePath,
+          builder: (context, params) => ListUserHelpSupportWidget(),
         ),
         FFRoute(
-          name: 'ListUser',
-          path: '/listUser',
-          builder: (context, params) => const ListUserWidget(),
+          name: ListUserWidget.routeName,
+          path: ListUserWidget.routePath,
+          builder: (context, params) => ListUserWidget(),
         ),
         FFRoute(
-          name: 'detailUser',
-          path: '/detailUser',
+          name: DetailUserWidget.routeName,
+          path: DetailUserWidget.routePath,
           builder: (context, params) => DetailUserWidget(
             userid: params.getParam(
               'userid',
@@ -497,18 +498,18 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           ),
         ),
         FFRoute(
-          name: 'alqurancoba',
-          path: '/alqurancoba',
-          builder: (context, params) => const AlqurancobaWidget(),
+          name: AlqurancobaWidget.routeName,
+          path: AlqurancobaWidget.routePath,
+          builder: (context, params) => AlqurancobaWidget(),
         ),
         FFRoute(
-          name: 'Listmybookmark',
-          path: '/listmybookmark',
-          builder: (context, params) => const ListmybookmarkWidget(),
+          name: ListmybookmarkWidget.routeName,
+          path: ListmybookmarkWidget.routePath,
+          builder: (context, params) => ListmybookmarkWidget(),
         ),
         FFRoute(
-          name: 'DoadoaByKategorinew',
-          path: '/doadoaByKategorinew',
+          name: DoadoaByKategorinewWidget.routeName,
+          path: DoadoaByKategorinewWidget.routePath,
           builder: (context, params) => DoadoaByKategorinewWidget(
             idkategori: params.getParam(
               'idkategori',
@@ -517,13 +518,13 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           ),
         ),
         FFRoute(
-          name: 'listRateCommand',
-          path: '/listRateCommand',
-          builder: (context, params) => const ListRateCommandWidget(),
+          name: ListRateCommandWidget.routeName,
+          path: ListRateCommandWidget.routePath,
+          builder: (context, params) => ListRateCommandWidget(),
         ),
         FFRoute(
-          name: 'webviewPembayaran',
-          path: '/webviewPembayaran',
+          name: WebviewPembayaranWidget.routeName,
+          path: WebviewPembayaranWidget.routePath,
           builder: (context, params) => WebviewPembayaranWidget(
             linkUlr: params.getParam(
               'linkUlr',
@@ -532,13 +533,13 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           ),
         ),
         FFRoute(
-          name: 'List10OrderHistory',
-          path: '/list10OrderHistory',
-          builder: (context, params) => const List10OrderHistoryWidget(),
+          name: List10OrderHistoryWidget.routeName,
+          path: List10OrderHistoryWidget.routePath,
+          builder: (context, params) => List10OrderHistoryWidget(),
         ),
         FFRoute(
-          name: 'detailAlquran',
-          path: '/detailAlquran',
+          name: DetailAlquranWidget.routeName,
+          path: DetailAlquranWidget.routePath,
           builder: (context, params) => DetailAlquranWidget(
             nomorSurat: params.getParam(
               'nomorSurat',
@@ -555,24 +556,24 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           ),
         ),
         FFRoute(
-          name: 'subscribeCopy',
-          path: '/subscribeCopy',
-          builder: (context, params) => const SubscribeCopyWidget(),
+          name: SubscribeCopyWidget.routeName,
+          path: SubscribeCopyWidget.routePath,
+          builder: (context, params) => SubscribeCopyWidget(),
         ),
         FFRoute(
-          name: 'newkiblat',
-          path: '/newkiblat',
-          builder: (context, params) => const NewkiblatWidget(),
+          name: NewkiblatWidget.routeName,
+          path: NewkiblatWidget.routePath,
+          builder: (context, params) => NewkiblatWidget(),
         ),
         FFRoute(
-          name: 'Listsunnah',
-          path: '/listsunnah',
-          builder: (context, params) => const ListsunnahWidget(),
+          name: ListsunnahWidget.routeName,
+          path: ListsunnahWidget.routePath,
+          builder: (context, params) => ListsunnahWidget(),
         ),
         FFRoute(
-          name: 'daftaradminsunnah',
-          path: '/daftaradminsunnah',
-          builder: (context, params) => const DaftaradminsunnahWidget(),
+          name: DaftaradminsunnahWidget.routeName,
+          path: DaftaradminsunnahWidget.routePath,
+          builder: (context, params) => DaftaradminsunnahWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
       observers: [routeObserver],
@@ -813,7 +814,7 @@ class TransitionInfo {
   final Duration duration;
   final Alignment? alignment;
 
-  static TransitionInfo appDefault() => const TransitionInfo(hasTransition: false);
+  static TransitionInfo appDefault() => TransitionInfo(hasTransition: false);
 }
 
 class RootPageContext {

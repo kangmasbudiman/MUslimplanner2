@@ -3,6 +3,7 @@ import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_autocomplete_options_list.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/index.dart';
 import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
@@ -14,6 +15,9 @@ export 'list_user_model.dart';
 
 class ListUserWidget extends StatefulWidget {
   const ListUserWidget({super.key});
+
+  static String routeName = 'ListUser';
+  static String routePath = '/listUser';
 
   @override
   State<ListUserWidget> createState() => _ListUserWidgetState();
@@ -55,8 +59,8 @@ class _ListUserWidgetState extends State<ListUserWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: const Offset(0.0, 30.0),
-            end: const Offset(0.0, 0.0),
+            begin: Offset(0.0, 30.0),
+            end: Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -74,8 +78,8 @@ class _ListUserWidgetState extends State<ListUserWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: const Offset(0.0, 30.0),
-            end: const Offset(0.0, 0.0),
+            begin: Offset(0.0, 30.0),
+            end: Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -135,18 +139,18 @@ class _ListUserWidgetState extends State<ListUserWidget>
             key: scaffoldKey,
             backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
             appBar: PreferredSize(
-              preferredSize: const Size.fromHeight(70.0),
+              preferredSize: Size.fromHeight(70.0),
               child: AppBar(
                 backgroundColor: Colors.white,
                 automaticallyImplyLeading: false,
                 title: Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 20.0),
+                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 20.0),
                   child: Row(
                     mainAxisSize: MainAxisSize.max,
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Align(
-                        alignment: const AlignmentDirectional(-1.0, 0.0),
+                        alignment: AlignmentDirectional(-1.0, 0.0),
                         child: InkWell(
                           splashColor: Colors.transparent,
                           focusColor: Colors.transparent,
@@ -170,7 +174,7 @@ class _ListUserWidgetState extends State<ListUserWidget>
                     ],
                   ),
                 ),
-                actions: const [],
+                actions: [],
                 centerTitle: false,
                 elevation: 2.0,
               ),
@@ -178,26 +182,26 @@ class _ListUserWidgetState extends State<ListUserWidget>
             body: SafeArea(
               top: true,
               child: Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 30.0),
+                padding: EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 30.0),
                 child: SingleChildScrollView(
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
                       Container(
-                        decoration: const BoxDecoration(),
+                        decoration: BoxDecoration(),
                         child: Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 20.0, 0.0, 0.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
                             children: [
                               Expanded(
                                 child: Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       8.0, 0.0, 8.0, 0.0),
                                   child: Autocomplete<String>(
-                                    initialValue: const TextEditingValue(),
+                                    initialValue: TextEditingValue(),
                                     optionsBuilder: (textEditingValue) {
                                       if (textEditingValue.text == '') {
                                         return const Iterable<String>.empty();
@@ -227,7 +231,7 @@ class _ListUserWidgetState extends State<ListUserWidget>
                                               fontFamily: 'Inter',
                                               letterSpacing: 0.0,
                                             ),
-                                        textHighlightStyle: const TextStyle(),
+                                        textHighlightStyle: TextStyle(),
                                         elevation: 4.0,
                                         optionBackgroundColor:
                                             FlutterFlowTheme.of(context)
@@ -260,7 +264,7 @@ class _ListUserWidgetState extends State<ListUserWidget>
                                         onEditingComplete: onEditingComplete,
                                         onChanged: (_) => EasyDebounce.debounce(
                                           '_model.searchTexTextController',
-                                          const Duration(milliseconds: 500),
+                                          Duration(milliseconds: 500),
                                           () async {
                                             safeSetState(() {
                                               _model.simpleSearchResults =
@@ -281,6 +285,7 @@ class _ListUserWidgetState extends State<ListUserWidget>
                                                           .text)
                                                       .map((r) => r.object)
                                                       .toList();
+                                              ;
                                             });
                                             FFAppState().searchaktif = true;
                                             safeSetState(() {});
@@ -345,7 +350,7 @@ class _ListUserWidgetState extends State<ListUserWidget>
                                             borderRadius:
                                                 BorderRadius.circular(8.0),
                                           ),
-                                          prefixIcon: const Icon(
+                                          prefixIcon: Icon(
                                             Icons.search_sharp,
                                           ),
                                         ),
@@ -388,7 +393,7 @@ class _ListUserWidgetState extends State<ListUserWidget>
                       ),
                       Padding(
                         padding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
+                            EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
                         child: Text(
                           'Search Result',
                           style:
@@ -400,7 +405,7 @@ class _ListUserWidgetState extends State<ListUserWidget>
                       ),
                       if (!FFAppState().searchaktif)
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 20.0, 0.0, 0.0),
                           child: Builder(
                             builder: (context) {
@@ -416,7 +421,7 @@ class _ListUserWidgetState extends State<ListUserWidget>
                                   final userNoSearchItem =
                                       userNoSearch[userNoSearchIndex];
                                   return Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 1.0),
                                     child: InkWell(
                                       splashColor: Colors.transparent,
@@ -425,7 +430,7 @@ class _ListUserWidgetState extends State<ListUserWidget>
                                       highlightColor: Colors.transparent,
                                       onTap: () async {
                                         context.pushNamed(
-                                          'detailUser',
+                                          DetailUserWidget.routeName,
                                           queryParameters: {
                                             'userid': serializeParam(
                                               userNoSearchItem.reference.id,
@@ -478,8 +483,8 @@ class _ListUserWidgetState extends State<ListUserWidget>
                                                       1
                                                   ? FlutterFlowTheme.of(context)
                                                       .tertiary
-                                                  : const Color(0x00000000),
-                                          boxShadow: const [
+                                                  : Color(0x00000000),
+                                          boxShadow: [
                                             BoxShadow(
                                               color: Color(0xFFF1F4F8),
                                               offset: Offset(
@@ -497,7 +502,7 @@ class _ListUserWidgetState extends State<ListUserWidget>
                                         ),
                                         child: Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   12.0, 8.0, 12.0, 8.0),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
@@ -517,7 +522,7 @@ class _ListUserWidgetState extends State<ListUserWidget>
                                               ),
                                               Expanded(
                                                 child: Padding(
-                                                  padding: const EdgeInsets.all(12.0),
+                                                  padding: EdgeInsets.all(12.0),
                                                   child: Column(
                                                     mainAxisSize:
                                                         MainAxisSize.max,
@@ -534,7 +539,7 @@ class _ListUserWidgetState extends State<ListUserWidget>
                                                             .override(
                                                               fontFamily:
                                                                   'Outfit',
-                                                              color: const Color(
+                                                              color: Color(
                                                                   0xFF14181B),
                                                               fontSize: 24.0,
                                                               letterSpacing:
@@ -546,7 +551,7 @@ class _ListUserWidgetState extends State<ListUserWidget>
                                                       ),
                                                       Padding(
                                                         padding:
-                                                            const EdgeInsetsDirectional
+                                                            EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     0.0,
                                                                     4.0,
@@ -561,7 +566,7 @@ class _ListUserWidgetState extends State<ListUserWidget>
                                                               .override(
                                                                 fontFamily:
                                                                     'Plus Jakarta Sans',
-                                                                color: const Color(
+                                                                color: Color(
                                                                     0xFF4B39EF),
                                                                 fontSize: 12.0,
                                                                 letterSpacing:
@@ -574,7 +579,7 @@ class _ListUserWidgetState extends State<ListUserWidget>
                                                       ),
                                                       Padding(
                                                         padding:
-                                                            const EdgeInsetsDirectional
+                                                            EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     0.0,
                                                                     4.0,
@@ -586,7 +591,7 @@ class _ListUserWidgetState extends State<ListUserWidget>
                                                           children: [
                                                             Padding(
                                                               padding:
-                                                                  const EdgeInsetsDirectional
+                                                                  EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           4.0,
@@ -604,7 +609,7 @@ class _ListUserWidgetState extends State<ListUserWidget>
                                                                     .override(
                                                                       fontFamily:
                                                                           'Plus Jakarta Sans',
-                                                                      color: const Color(
+                                                                      color: Color(
                                                                           0xFF57636C),
                                                                       fontSize:
                                                                           14.0,
@@ -623,7 +628,7 @@ class _ListUserWidgetState extends State<ListUserWidget>
                                                   ),
                                                 ),
                                               ),
-                                              const Icon(
+                                              Icon(
                                                 Icons
                                                     .keyboard_arrow_right_rounded,
                                                 color: Color(0xFF57636C),
@@ -643,7 +648,7 @@ class _ListUserWidgetState extends State<ListUserWidget>
                         ),
                       if (FFAppState().searchaktif)
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 20.0, 0.0, 0.0),
                           child: Builder(
                             builder: (context) {
@@ -659,7 +664,7 @@ class _ListUserWidgetState extends State<ListUserWidget>
                                   final userNoSearchItem =
                                       userNoSearch[userNoSearchIndex];
                                   return Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 1.0),
                                     child: Container(
                                       width: double.infinity,
@@ -668,8 +673,8 @@ class _ListUserWidgetState extends State<ListUserWidget>
                                             userNoSearchItem.requestPremium == 1
                                                 ? FlutterFlowTheme.of(context)
                                                     .tertiary
-                                                : const Color(0x00000000),
-                                        boxShadow: const [
+                                                : Color(0x00000000),
+                                        boxShadow: [
                                           BoxShadow(
                                             color: Color(0xFFF1F4F8),
                                             offset: Offset(
@@ -686,7 +691,7 @@ class _ListUserWidgetState extends State<ListUserWidget>
                                         ),
                                       ),
                                       child: Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             12.0, 8.0, 12.0, 8.0),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
@@ -706,7 +711,7 @@ class _ListUserWidgetState extends State<ListUserWidget>
                                             ),
                                             Expanded(
                                               child: Padding(
-                                                padding: const EdgeInsets.all(12.0),
+                                                padding: EdgeInsets.all(12.0),
                                                 child: Column(
                                                   mainAxisSize:
                                                       MainAxisSize.max,
@@ -722,7 +727,7 @@ class _ListUserWidgetState extends State<ListUserWidget>
                                                           .override(
                                                             fontFamily:
                                                                 'Outfit',
-                                                            color: const Color(
+                                                            color: Color(
                                                                 0xFF14181B),
                                                             fontSize: 24.0,
                                                             letterSpacing: 0.0,
@@ -732,7 +737,7 @@ class _ListUserWidgetState extends State<ListUserWidget>
                                                     ),
                                                     Padding(
                                                       padding:
-                                                          const EdgeInsetsDirectional
+                                                          EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   0.0,
                                                                   4.0,
@@ -746,7 +751,7 @@ class _ListUserWidgetState extends State<ListUserWidget>
                                                             .override(
                                                               fontFamily:
                                                                   'Plus Jakarta Sans',
-                                                              color: const Color(
+                                                              color: Color(
                                                                   0xFF4B39EF),
                                                               fontSize: 12.0,
                                                               letterSpacing:
@@ -759,7 +764,7 @@ class _ListUserWidgetState extends State<ListUserWidget>
                                                     ),
                                                     Padding(
                                                       padding:
-                                                          const EdgeInsetsDirectional
+                                                          EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   0.0,
                                                                   4.0,
@@ -771,7 +776,7 @@ class _ListUserWidgetState extends State<ListUserWidget>
                                                         children: [
                                                           Padding(
                                                             padding:
-                                                                const EdgeInsetsDirectional
+                                                                EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         0.0,
                                                                         4.0,
@@ -789,7 +794,7 @@ class _ListUserWidgetState extends State<ListUserWidget>
                                                                   .override(
                                                                     fontFamily:
                                                                         'Plus Jakarta Sans',
-                                                                    color: const Color(
+                                                                    color: Color(
                                                                         0xFF57636C),
                                                                     fontSize:
                                                                         14.0,
@@ -808,7 +813,7 @@ class _ListUserWidgetState extends State<ListUserWidget>
                                                 ),
                                               ),
                                             ),
-                                            const Icon(
+                                            Icon(
                                               Icons
                                                   .keyboard_arrow_right_rounded,
                                               color: Color(0xFF57636C),

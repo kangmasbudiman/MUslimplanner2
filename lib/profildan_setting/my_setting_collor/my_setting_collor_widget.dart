@@ -3,6 +3,7 @@ import '/backend/backend.dart';
 import '/componen/footer_logo/footer_logo_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'my_setting_collor_model.dart';
@@ -10,6 +11,9 @@ export 'my_setting_collor_model.dart';
 
 class MySettingCollorWidget extends StatefulWidget {
   const MySettingCollorWidget({super.key});
+
+  static String routeName = 'MySettingCollor';
+  static String routePath = '/mySettingCollor';
 
   @override
   State<MySettingCollorWidget> createState() => _MySettingCollorWidgetState();
@@ -48,18 +52,18 @@ class _MySettingCollorWidgetState extends State<MySettingCollorWidget> {
         key: scaffoldKey,
         backgroundColor: Colors.white,
         appBar: PreferredSize(
-          preferredSize: const Size.fromHeight(80.0),
+          preferredSize: Size.fromHeight(80.0),
           child: AppBar(
             backgroundColor: Colors.white,
             automaticallyImplyLeading: false,
             title: Padding(
-              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 10.0),
+              padding: EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 10.0),
               child: Row(
                 mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Align(
-                    alignment: const AlignmentDirectional(-1.0, 0.0),
+                    alignment: AlignmentDirectional(-1.0, 0.0),
                     child: AuthUserStreamWidget(
                       builder: (context) => InkWell(
                         splashColor: Colors.transparent,
@@ -67,7 +71,7 @@ class _MySettingCollorWidgetState extends State<MySettingCollorWidget> {
                         hoverColor: Colors.transparent,
                         highlightColor: Colors.transparent,
                         onTap: () async {
-                          context.pushNamed('MySetting');
+                          context.pushNamed(MySettingWidget.routeName);
                         },
                         child: Icon(
                           Icons.arrow_back_ios_new,
@@ -96,7 +100,7 @@ class _MySettingCollorWidgetState extends State<MySettingCollorWidget> {
                 ],
               ),
             ),
-            actions: const [],
+            actions: [],
             centerTitle: false,
             elevation: 2.0,
           ),
@@ -108,10 +112,10 @@ class _MySettingCollorWidgetState extends State<MySettingCollorWidget> {
               Container(
                 width: double.infinity,
                 height: double.infinity,
-                decoration: const BoxDecoration(),
+                decoration: BoxDecoration(),
                 child: GridView(
                   padding: EdgeInsets.zero,
-                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 4,
                     crossAxisSpacing: 10.0,
                     mainAxisSpacing: 10.0,
@@ -119,11 +123,11 @@ class _MySettingCollorWidgetState extends State<MySettingCollorWidget> {
                   ),
                   scrollDirection: Axis.vertical,
                   children: [
-                    SizedBox(
+                    Container(
                       width: 40.0,
                       height: 40.0,
                       child: Stack(
-                        alignment: const AlignmentDirectional(0.0, 0.0),
+                        alignment: AlignmentDirectional(0.0, 0.0),
                         children: [
                           InkWell(
                             splashColor: Colors.transparent,
@@ -145,7 +149,7 @@ class _MySettingCollorWidgetState extends State<MySettingCollorWidget> {
                               height: 62.0,
                               decoration: BoxDecoration(
                                 color: FlutterFlowTheme.of(context).primary,
-                                boxShadow: const [
+                                boxShadow: [
                                   BoxShadow(
                                     blurRadius: 2.0,
                                     color: Color(0x8457636C),
@@ -162,12 +166,12 @@ class _MySettingCollorWidgetState extends State<MySettingCollorWidget> {
                           if (FFAppState().colorThemes ==
                               FlutterFlowTheme.of(context).primary)
                             Align(
-                              alignment: const AlignmentDirectional(0.0, 1.0),
+                              alignment: AlignmentDirectional(0.0, 1.0),
                               child: Container(
                                 width: 50.0,
                                 height: 3.0,
                                 decoration: BoxDecoration(
-                                  color: const Color(0xFFF4180A),
+                                  color: Color(0xFFF4180A),
                                   borderRadius: BorderRadius.circular(10.0),
                                 ),
                               ),
@@ -175,11 +179,11 @@ class _MySettingCollorWidgetState extends State<MySettingCollorWidget> {
                         ],
                       ),
                     ),
-                    SizedBox(
+                    Container(
                       width: 40.0,
                       height: 40.0,
                       child: Stack(
-                        alignment: const AlignmentDirectional(0.0, 0.0),
+                        alignment: AlignmentDirectional(0.0, 0.0),
                         children: [
                           InkWell(
                             splashColor: Colors.transparent,
@@ -187,7 +191,7 @@ class _MySettingCollorWidgetState extends State<MySettingCollorWidget> {
                             hoverColor: Colors.transparent,
                             highlightColor: Colors.transparent,
                             onTap: () async {
-                              FFAppState().colorThemes = const Color(0xFFAEB1B4);
+                              FFAppState().colorThemes = Color(0xFFAEB1B4);
                               FFAppState().update(() {});
 
                               await currentUserReference!
@@ -198,7 +202,7 @@ class _MySettingCollorWidgetState extends State<MySettingCollorWidget> {
                             child: Container(
                               width: 62.0,
                               height: 62.0,
-                              decoration: const BoxDecoration(
+                              decoration: BoxDecoration(
                                 color: Colors.white,
                                 boxShadow: [
                                   BoxShadow(
@@ -214,14 +218,14 @@ class _MySettingCollorWidgetState extends State<MySettingCollorWidget> {
                               ),
                             ),
                           ),
-                          if (FFAppState().colorThemes == const Color(0xFFAEB1B4))
+                          if (FFAppState().colorThemes == Color(0xFFAEB1B4))
                             Align(
-                              alignment: const AlignmentDirectional(0.0, 1.0),
+                              alignment: AlignmentDirectional(0.0, 1.0),
                               child: Container(
                                 width: 50.0,
                                 height: 3.0,
                                 decoration: BoxDecoration(
-                                  color: const Color(0xFFAEB1B4),
+                                  color: Color(0xFFAEB1B4),
                                   borderRadius: BorderRadius.circular(10.0),
                                 ),
                               ),
@@ -229,11 +233,11 @@ class _MySettingCollorWidgetState extends State<MySettingCollorWidget> {
                         ],
                       ),
                     ),
-                    SizedBox(
+                    Container(
                       width: 40.0,
                       height: 40.0,
                       child: Stack(
-                        alignment: const AlignmentDirectional(0.0, 0.0),
+                        alignment: AlignmentDirectional(0.0, 0.0),
                         children: [
                           InkWell(
                             splashColor: Colors.transparent,
@@ -244,7 +248,7 @@ class _MySettingCollorWidgetState extends State<MySettingCollorWidget> {
                               if (valueOrDefault(
                                       currentUserDocument?.statusPremium, 0) ==
                                   1) {
-                                FFAppState().colorThemes = const Color(0xFFFFBD00);
+                                FFAppState().colorThemes = Color(0xFFFFBD00);
                                 FFAppState().update(() {});
 
                                 await currentUserReference!
@@ -261,7 +265,7 @@ class _MySettingCollorWidgetState extends State<MySettingCollorWidget> {
                                             .primaryText,
                                       ),
                                     ),
-                                    duration: const Duration(milliseconds: 4000),
+                                    duration: Duration(milliseconds: 4000),
                                     backgroundColor:
                                         FlutterFlowTheme.of(context).secondary,
                                   ),
@@ -271,7 +275,7 @@ class _MySettingCollorWidgetState extends State<MySettingCollorWidget> {
                             child: Container(
                               width: 62.0,
                               height: 62.0,
-                              decoration: const BoxDecoration(
+                              decoration: BoxDecoration(
                                 color: Color(0xFFFFBD00),
                                 boxShadow: [
                                   BoxShadow(
@@ -291,9 +295,9 @@ class _MySettingCollorWidgetState extends State<MySettingCollorWidget> {
                                   currentUserDocument?.statusPremium, 0) ==
                               0)
                             Align(
-                              alignment: const AlignmentDirectional(1.0, -1.0),
+                              alignment: AlignmentDirectional(1.0, -1.0),
                               child: Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 7.0, 15.0, 0.0),
                                 child: AuthUserStreamWidget(
                                   builder: (context) => Container(
@@ -307,7 +311,7 @@ class _MySettingCollorWidgetState extends State<MySettingCollorWidget> {
                                           blurRadius: 2.0,
                                           color: FlutterFlowTheme.of(context)
                                               .secondaryText,
-                                          offset: const Offset(
+                                          offset: Offset(
                                             2.0,
                                             4.0,
                                           ),
@@ -319,9 +323,9 @@ class _MySettingCollorWidgetState extends State<MySettingCollorWidget> {
                                             .primary,
                                       ),
                                     ),
-                                    alignment: const AlignmentDirectional(1.0, -1.0),
+                                    alignment: AlignmentDirectional(1.0, -1.0),
                                     child: Align(
-                                      alignment: const AlignmentDirectional(0.0, 0.0),
+                                      alignment: AlignmentDirectional(0.0, 0.0),
                                       child: Icon(
                                         Icons.lock,
                                         color: FlutterFlowTheme.of(context)
@@ -333,13 +337,13 @@ class _MySettingCollorWidgetState extends State<MySettingCollorWidget> {
                                 ),
                               ),
                             ),
-                          if (FFAppState().colorThemes == const Color(0xFFFFBD00))
+                          if (FFAppState().colorThemes == Color(0xFFFFBD00))
                             Align(
-                              alignment: const AlignmentDirectional(0.0, 1.0),
+                              alignment: AlignmentDirectional(0.0, 1.0),
                               child: Container(
                                 width: 50.0,
                                 height: 3.0,
-                                decoration: const BoxDecoration(
+                                decoration: BoxDecoration(
                                   color: Color(0xFFFFBD00),
                                 ),
                               ),
@@ -347,11 +351,11 @@ class _MySettingCollorWidgetState extends State<MySettingCollorWidget> {
                         ],
                       ),
                     ),
-                    SizedBox(
+                    Container(
                       width: 40.0,
                       height: 40.0,
                       child: Stack(
-                        alignment: const AlignmentDirectional(0.0, 0.0),
+                        alignment: AlignmentDirectional(0.0, 0.0),
                         children: [
                           InkWell(
                             splashColor: Colors.transparent,
@@ -362,7 +366,7 @@ class _MySettingCollorWidgetState extends State<MySettingCollorWidget> {
                               if (valueOrDefault(
                                       currentUserDocument?.statusPremium, 0) ==
                                   1) {
-                                FFAppState().colorThemes = const Color(0xFFCFAA28);
+                                FFAppState().colorThemes = Color(0xFFCFAA28);
                                 FFAppState().update(() {});
 
                                 await currentUserReference!
@@ -379,7 +383,7 @@ class _MySettingCollorWidgetState extends State<MySettingCollorWidget> {
                                             .primaryText,
                                       ),
                                     ),
-                                    duration: const Duration(milliseconds: 4000),
+                                    duration: Duration(milliseconds: 4000),
                                     backgroundColor:
                                         FlutterFlowTheme.of(context).secondary,
                                   ),
@@ -389,7 +393,7 @@ class _MySettingCollorWidgetState extends State<MySettingCollorWidget> {
                             child: Container(
                               width: 62.0,
                               height: 62.0,
-                              decoration: const BoxDecoration(
+                              decoration: BoxDecoration(
                                 color: Color(0xFFCFAA28),
                                 boxShadow: [
                                   BoxShadow(
@@ -409,9 +413,9 @@ class _MySettingCollorWidgetState extends State<MySettingCollorWidget> {
                                   currentUserDocument?.statusPremium, 0) ==
                               0)
                             Align(
-                              alignment: const AlignmentDirectional(1.0, -1.0),
+                              alignment: AlignmentDirectional(1.0, -1.0),
                               child: Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 7.0, 15.0, 0.0),
                                 child: AuthUserStreamWidget(
                                   builder: (context) => Container(
@@ -425,7 +429,7 @@ class _MySettingCollorWidgetState extends State<MySettingCollorWidget> {
                                           blurRadius: 2.0,
                                           color: FlutterFlowTheme.of(context)
                                               .secondaryText,
-                                          offset: const Offset(
+                                          offset: Offset(
                                             2.0,
                                             4.0,
                                           ),
@@ -437,9 +441,9 @@ class _MySettingCollorWidgetState extends State<MySettingCollorWidget> {
                                             .primary,
                                       ),
                                     ),
-                                    alignment: const AlignmentDirectional(1.0, -1.0),
+                                    alignment: AlignmentDirectional(1.0, -1.0),
                                     child: Align(
-                                      alignment: const AlignmentDirectional(0.0, 0.0),
+                                      alignment: AlignmentDirectional(0.0, 0.0),
                                       child: Icon(
                                         Icons.lock,
                                         color: FlutterFlowTheme.of(context)
@@ -451,13 +455,13 @@ class _MySettingCollorWidgetState extends State<MySettingCollorWidget> {
                                 ),
                               ),
                             ),
-                          if (FFAppState().colorThemes == const Color(0xFFCFAA28))
+                          if (FFAppState().colorThemes == Color(0xFFCFAA28))
                             Align(
-                              alignment: const AlignmentDirectional(0.0, 1.0),
+                              alignment: AlignmentDirectional(0.0, 1.0),
                               child: Container(
                                 width: 50.0,
                                 height: 3.0,
-                                decoration: const BoxDecoration(
+                                decoration: BoxDecoration(
                                   color: Color(0xFFCFAA28),
                                 ),
                               ),
@@ -465,11 +469,11 @@ class _MySettingCollorWidgetState extends State<MySettingCollorWidget> {
                         ],
                       ),
                     ),
-                    SizedBox(
+                    Container(
                       width: 40.0,
                       height: 40.0,
                       child: Stack(
-                        alignment: const AlignmentDirectional(0.0, 0.0),
+                        alignment: AlignmentDirectional(0.0, 0.0),
                         children: [
                           InkWell(
                             splashColor: Colors.transparent,
@@ -480,7 +484,7 @@ class _MySettingCollorWidgetState extends State<MySettingCollorWidget> {
                               if (valueOrDefault(
                                       currentUserDocument?.statusPremium, 0) ==
                                   1) {
-                                FFAppState().colorThemes = const Color(0xFF906E3A);
+                                FFAppState().colorThemes = Color(0xFF906E3A);
                                 FFAppState().update(() {});
 
                                 await currentUserReference!
@@ -497,7 +501,7 @@ class _MySettingCollorWidgetState extends State<MySettingCollorWidget> {
                                             .primaryText,
                                       ),
                                     ),
-                                    duration: const Duration(milliseconds: 4000),
+                                    duration: Duration(milliseconds: 4000),
                                     backgroundColor:
                                         FlutterFlowTheme.of(context).secondary,
                                   ),
@@ -507,7 +511,7 @@ class _MySettingCollorWidgetState extends State<MySettingCollorWidget> {
                             child: Container(
                               width: 62.0,
                               height: 62.0,
-                              decoration: const BoxDecoration(
+                              decoration: BoxDecoration(
                                 color: Color(0xFF906E3A),
                                 boxShadow: [
                                   BoxShadow(
@@ -527,9 +531,9 @@ class _MySettingCollorWidgetState extends State<MySettingCollorWidget> {
                                   currentUserDocument?.statusPremium, 0) ==
                               0)
                             Align(
-                              alignment: const AlignmentDirectional(1.0, -1.0),
+                              alignment: AlignmentDirectional(1.0, -1.0),
                               child: Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 7.0, 15.0, 0.0),
                                 child: AuthUserStreamWidget(
                                   builder: (context) => Container(
@@ -543,7 +547,7 @@ class _MySettingCollorWidgetState extends State<MySettingCollorWidget> {
                                           blurRadius: 2.0,
                                           color: FlutterFlowTheme.of(context)
                                               .secondaryText,
-                                          offset: const Offset(
+                                          offset: Offset(
                                             2.0,
                                             4.0,
                                           ),
@@ -555,9 +559,9 @@ class _MySettingCollorWidgetState extends State<MySettingCollorWidget> {
                                             .primary,
                                       ),
                                     ),
-                                    alignment: const AlignmentDirectional(1.0, -1.0),
+                                    alignment: AlignmentDirectional(1.0, -1.0),
                                     child: Align(
-                                      alignment: const AlignmentDirectional(0.0, 0.0),
+                                      alignment: AlignmentDirectional(0.0, 0.0),
                                       child: Icon(
                                         Icons.lock,
                                         color: FlutterFlowTheme.of(context)
@@ -569,13 +573,13 @@ class _MySettingCollorWidgetState extends State<MySettingCollorWidget> {
                                 ),
                               ),
                             ),
-                          if (FFAppState().colorThemes == const Color(0xFF906E3A))
+                          if (FFAppState().colorThemes == Color(0xFF906E3A))
                             Align(
-                              alignment: const AlignmentDirectional(0.0, 1.0),
+                              alignment: AlignmentDirectional(0.0, 1.0),
                               child: Container(
                                 width: 50.0,
                                 height: 3.0,
-                                decoration: const BoxDecoration(
+                                decoration: BoxDecoration(
                                   color: Color(0xFF906E3A),
                                 ),
                               ),
@@ -583,11 +587,11 @@ class _MySettingCollorWidgetState extends State<MySettingCollorWidget> {
                         ],
                       ),
                     ),
-                    SizedBox(
+                    Container(
                       width: 40.0,
                       height: 40.0,
                       child: Stack(
-                        alignment: const AlignmentDirectional(0.0, 0.0),
+                        alignment: AlignmentDirectional(0.0, 0.0),
                         children: [
                           InkWell(
                             splashColor: Colors.transparent,
@@ -598,7 +602,7 @@ class _MySettingCollorWidgetState extends State<MySettingCollorWidget> {
                               if (valueOrDefault(
                                       currentUserDocument?.statusPremium, 0) ==
                                   1) {
-                                FFAppState().colorThemes = const Color(0xFF901E1E);
+                                FFAppState().colorThemes = Color(0xFF901E1E);
                                 FFAppState().update(() {});
 
                                 await currentUserReference!
@@ -615,7 +619,7 @@ class _MySettingCollorWidgetState extends State<MySettingCollorWidget> {
                                             .primaryText,
                                       ),
                                     ),
-                                    duration: const Duration(milliseconds: 4000),
+                                    duration: Duration(milliseconds: 4000),
                                     backgroundColor:
                                         FlutterFlowTheme.of(context).secondary,
                                   ),
@@ -625,7 +629,7 @@ class _MySettingCollorWidgetState extends State<MySettingCollorWidget> {
                             child: Container(
                               width: 62.0,
                               height: 62.0,
-                              decoration: const BoxDecoration(
+                              decoration: BoxDecoration(
                                 color: Color(0xFF901E1E),
                                 boxShadow: [
                                   BoxShadow(
@@ -645,9 +649,9 @@ class _MySettingCollorWidgetState extends State<MySettingCollorWidget> {
                                   currentUserDocument?.statusPremium, 0) ==
                               0)
                             Align(
-                              alignment: const AlignmentDirectional(1.0, -1.0),
+                              alignment: AlignmentDirectional(1.0, -1.0),
                               child: Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 7.0, 15.0, 0.0),
                                 child: AuthUserStreamWidget(
                                   builder: (context) => Container(
@@ -661,7 +665,7 @@ class _MySettingCollorWidgetState extends State<MySettingCollorWidget> {
                                           blurRadius: 2.0,
                                           color: FlutterFlowTheme.of(context)
                                               .secondaryText,
-                                          offset: const Offset(
+                                          offset: Offset(
                                             2.0,
                                             4.0,
                                           ),
@@ -673,9 +677,9 @@ class _MySettingCollorWidgetState extends State<MySettingCollorWidget> {
                                             .primary,
                                       ),
                                     ),
-                                    alignment: const AlignmentDirectional(1.0, -1.0),
+                                    alignment: AlignmentDirectional(1.0, -1.0),
                                     child: Align(
-                                      alignment: const AlignmentDirectional(0.0, 0.0),
+                                      alignment: AlignmentDirectional(0.0, 0.0),
                                       child: Icon(
                                         Icons.lock,
                                         color: FlutterFlowTheme.of(context)
@@ -687,13 +691,13 @@ class _MySettingCollorWidgetState extends State<MySettingCollorWidget> {
                                 ),
                               ),
                             ),
-                          if (FFAppState().colorThemes == const Color(0xFF901E1E))
+                          if (FFAppState().colorThemes == Color(0xFF901E1E))
                             Align(
-                              alignment: const AlignmentDirectional(0.0, 1.0),
+                              alignment: AlignmentDirectional(0.0, 1.0),
                               child: Container(
                                 width: 50.0,
                                 height: 3.0,
-                                decoration: const BoxDecoration(
+                                decoration: BoxDecoration(
                                   color: Color(0xFF901E1E),
                                 ),
                               ),
@@ -701,11 +705,11 @@ class _MySettingCollorWidgetState extends State<MySettingCollorWidget> {
                         ],
                       ),
                     ),
-                    SizedBox(
+                    Container(
                       width: 40.0,
                       height: 40.0,
                       child: Stack(
-                        alignment: const AlignmentDirectional(0.0, 0.0),
+                        alignment: AlignmentDirectional(0.0, 0.0),
                         children: [
                           InkWell(
                             splashColor: Colors.transparent,
@@ -716,7 +720,7 @@ class _MySettingCollorWidgetState extends State<MySettingCollorWidget> {
                               if (valueOrDefault(
                                       currentUserDocument?.statusPremium, 0) ==
                                   1) {
-                                FFAppState().colorThemes = const Color(0xFFEC2632);
+                                FFAppState().colorThemes = Color(0xFFEC2632);
                                 FFAppState().update(() {});
 
                                 await currentUserReference!
@@ -733,7 +737,7 @@ class _MySettingCollorWidgetState extends State<MySettingCollorWidget> {
                                             .primaryText,
                                       ),
                                     ),
-                                    duration: const Duration(milliseconds: 4000),
+                                    duration: Duration(milliseconds: 4000),
                                     backgroundColor:
                                         FlutterFlowTheme.of(context).secondary,
                                   ),
@@ -743,7 +747,7 @@ class _MySettingCollorWidgetState extends State<MySettingCollorWidget> {
                             child: Container(
                               width: 62.0,
                               height: 62.0,
-                              decoration: const BoxDecoration(
+                              decoration: BoxDecoration(
                                 color: Color(0xFFEC2632),
                                 boxShadow: [
                                   BoxShadow(
@@ -763,9 +767,9 @@ class _MySettingCollorWidgetState extends State<MySettingCollorWidget> {
                                   currentUserDocument?.statusPremium, 0) ==
                               0)
                             Align(
-                              alignment: const AlignmentDirectional(1.0, -1.0),
+                              alignment: AlignmentDirectional(1.0, -1.0),
                               child: Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 7.0, 15.0, 0.0),
                                 child: AuthUserStreamWidget(
                                   builder: (context) => Container(
@@ -779,7 +783,7 @@ class _MySettingCollorWidgetState extends State<MySettingCollorWidget> {
                                           blurRadius: 2.0,
                                           color: FlutterFlowTheme.of(context)
                                               .secondaryText,
-                                          offset: const Offset(
+                                          offset: Offset(
                                             2.0,
                                             4.0,
                                           ),
@@ -791,9 +795,9 @@ class _MySettingCollorWidgetState extends State<MySettingCollorWidget> {
                                             .primary,
                                       ),
                                     ),
-                                    alignment: const AlignmentDirectional(1.0, -1.0),
+                                    alignment: AlignmentDirectional(1.0, -1.0),
                                     child: Align(
-                                      alignment: const AlignmentDirectional(0.0, 0.0),
+                                      alignment: AlignmentDirectional(0.0, 0.0),
                                       child: Icon(
                                         Icons.lock,
                                         color: FlutterFlowTheme.of(context)
@@ -805,13 +809,13 @@ class _MySettingCollorWidgetState extends State<MySettingCollorWidget> {
                                 ),
                               ),
                             ),
-                          if (FFAppState().colorThemes == const Color(0xFFEC2632))
+                          if (FFAppState().colorThemes == Color(0xFFEC2632))
                             Align(
-                              alignment: const AlignmentDirectional(0.0, 1.0),
+                              alignment: AlignmentDirectional(0.0, 1.0),
                               child: Container(
                                 width: 50.0,
                                 height: 3.0,
-                                decoration: const BoxDecoration(
+                                decoration: BoxDecoration(
                                   color: Color(0xFFEC2632),
                                 ),
                               ),
@@ -819,11 +823,11 @@ class _MySettingCollorWidgetState extends State<MySettingCollorWidget> {
                         ],
                       ),
                     ),
-                    SizedBox(
+                    Container(
                       width: 40.0,
                       height: 40.0,
                       child: Stack(
-                        alignment: const AlignmentDirectional(0.0, 0.0),
+                        alignment: AlignmentDirectional(0.0, 0.0),
                         children: [
                           InkWell(
                             splashColor: Colors.transparent,
@@ -834,7 +838,7 @@ class _MySettingCollorWidgetState extends State<MySettingCollorWidget> {
                               if (valueOrDefault(
                                       currentUserDocument?.statusPremium, 0) ==
                                   1) {
-                                FFAppState().colorThemes = const Color(0xFFFF92FB);
+                                FFAppState().colorThemes = Color(0xFFFF92FB);
                                 FFAppState().update(() {});
 
                                 await currentUserReference!
@@ -851,7 +855,7 @@ class _MySettingCollorWidgetState extends State<MySettingCollorWidget> {
                                             .primaryText,
                                       ),
                                     ),
-                                    duration: const Duration(milliseconds: 4000),
+                                    duration: Duration(milliseconds: 4000),
                                     backgroundColor:
                                         FlutterFlowTheme.of(context).secondary,
                                   ),
@@ -861,7 +865,7 @@ class _MySettingCollorWidgetState extends State<MySettingCollorWidget> {
                             child: Container(
                               width: 62.0,
                               height: 62.0,
-                              decoration: const BoxDecoration(
+                              decoration: BoxDecoration(
                                 color: Color(0xFFFF92FB),
                                 boxShadow: [
                                   BoxShadow(
@@ -881,9 +885,9 @@ class _MySettingCollorWidgetState extends State<MySettingCollorWidget> {
                                   currentUserDocument?.statusPremium, 0) ==
                               0)
                             Align(
-                              alignment: const AlignmentDirectional(1.0, -1.0),
+                              alignment: AlignmentDirectional(1.0, -1.0),
                               child: Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 7.0, 15.0, 0.0),
                                 child: AuthUserStreamWidget(
                                   builder: (context) => Container(
@@ -897,7 +901,7 @@ class _MySettingCollorWidgetState extends State<MySettingCollorWidget> {
                                           blurRadius: 2.0,
                                           color: FlutterFlowTheme.of(context)
                                               .secondaryText,
-                                          offset: const Offset(
+                                          offset: Offset(
                                             2.0,
                                             4.0,
                                           ),
@@ -909,9 +913,9 @@ class _MySettingCollorWidgetState extends State<MySettingCollorWidget> {
                                             .primary,
                                       ),
                                     ),
-                                    alignment: const AlignmentDirectional(1.0, -1.0),
+                                    alignment: AlignmentDirectional(1.0, -1.0),
                                     child: Align(
-                                      alignment: const AlignmentDirectional(0.0, 0.0),
+                                      alignment: AlignmentDirectional(0.0, 0.0),
                                       child: Icon(
                                         Icons.lock,
                                         color: FlutterFlowTheme.of(context)
@@ -923,13 +927,13 @@ class _MySettingCollorWidgetState extends State<MySettingCollorWidget> {
                                 ),
                               ),
                             ),
-                          if (FFAppState().colorThemes == const Color(0xFFFF92FB))
+                          if (FFAppState().colorThemes == Color(0xFFFF92FB))
                             Align(
-                              alignment: const AlignmentDirectional(0.0, 1.0),
+                              alignment: AlignmentDirectional(0.0, 1.0),
                               child: Container(
                                 width: 50.0,
                                 height: 3.0,
-                                decoration: const BoxDecoration(
+                                decoration: BoxDecoration(
                                   color: Color(0xFFFF92FB),
                                 ),
                               ),
@@ -937,11 +941,11 @@ class _MySettingCollorWidgetState extends State<MySettingCollorWidget> {
                         ],
                       ),
                     ),
-                    SizedBox(
+                    Container(
                       width: 40.0,
                       height: 40.0,
                       child: Stack(
-                        alignment: const AlignmentDirectional(0.0, 0.0),
+                        alignment: AlignmentDirectional(0.0, 0.0),
                         children: [
                           InkWell(
                             splashColor: Colors.transparent,
@@ -952,7 +956,7 @@ class _MySettingCollorWidgetState extends State<MySettingCollorWidget> {
                               if (valueOrDefault(
                                       currentUserDocument?.statusPremium, 0) ==
                                   1) {
-                                FFAppState().colorThemes = const Color(0xFFFF00C7);
+                                FFAppState().colorThemes = Color(0xFFFF00C7);
                                 FFAppState().update(() {});
 
                                 await currentUserReference!
@@ -969,7 +973,7 @@ class _MySettingCollorWidgetState extends State<MySettingCollorWidget> {
                                             .primaryText,
                                       ),
                                     ),
-                                    duration: const Duration(milliseconds: 4000),
+                                    duration: Duration(milliseconds: 4000),
                                     backgroundColor:
                                         FlutterFlowTheme.of(context).secondary,
                                   ),
@@ -979,7 +983,7 @@ class _MySettingCollorWidgetState extends State<MySettingCollorWidget> {
                             child: Container(
                               width: 62.0,
                               height: 62.0,
-                              decoration: const BoxDecoration(
+                              decoration: BoxDecoration(
                                 color: Color(0xFFFF00C7),
                                 boxShadow: [
                                   BoxShadow(
@@ -999,9 +1003,9 @@ class _MySettingCollorWidgetState extends State<MySettingCollorWidget> {
                                   currentUserDocument?.statusPremium, 0) ==
                               0)
                             Align(
-                              alignment: const AlignmentDirectional(1.0, -1.0),
+                              alignment: AlignmentDirectional(1.0, -1.0),
                               child: Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 7.0, 15.0, 0.0),
                                 child: AuthUserStreamWidget(
                                   builder: (context) => Container(
@@ -1015,7 +1019,7 @@ class _MySettingCollorWidgetState extends State<MySettingCollorWidget> {
                                           blurRadius: 2.0,
                                           color: FlutterFlowTheme.of(context)
                                               .secondaryText,
-                                          offset: const Offset(
+                                          offset: Offset(
                                             2.0,
                                             4.0,
                                           ),
@@ -1027,9 +1031,9 @@ class _MySettingCollorWidgetState extends State<MySettingCollorWidget> {
                                             .primary,
                                       ),
                                     ),
-                                    alignment: const AlignmentDirectional(1.0, -1.0),
+                                    alignment: AlignmentDirectional(1.0, -1.0),
                                     child: Align(
-                                      alignment: const AlignmentDirectional(0.0, 0.0),
+                                      alignment: AlignmentDirectional(0.0, 0.0),
                                       child: Icon(
                                         Icons.lock,
                                         color: FlutterFlowTheme.of(context)
@@ -1041,13 +1045,13 @@ class _MySettingCollorWidgetState extends State<MySettingCollorWidget> {
                                 ),
                               ),
                             ),
-                          if (FFAppState().colorThemes == const Color(0xFFFF00C7))
+                          if (FFAppState().colorThemes == Color(0xFFFF00C7))
                             Align(
-                              alignment: const AlignmentDirectional(0.0, 1.0),
+                              alignment: AlignmentDirectional(0.0, 1.0),
                               child: Container(
                                 width: 50.0,
                                 height: 3.0,
-                                decoration: const BoxDecoration(
+                                decoration: BoxDecoration(
                                   color: Color(0xFFFF00C7),
                                 ),
                               ),
@@ -1055,11 +1059,11 @@ class _MySettingCollorWidgetState extends State<MySettingCollorWidget> {
                         ],
                       ),
                     ),
-                    SizedBox(
+                    Container(
                       width: 40.0,
                       height: 40.0,
                       child: Stack(
-                        alignment: const AlignmentDirectional(0.0, 0.0),
+                        alignment: AlignmentDirectional(0.0, 0.0),
                         children: [
                           InkWell(
                             splashColor: Colors.transparent,
@@ -1070,7 +1074,7 @@ class _MySettingCollorWidgetState extends State<MySettingCollorWidget> {
                               if (valueOrDefault(
                                       currentUserDocument?.statusPremium, 0) ==
                                   1) {
-                                FFAppState().colorThemes = const Color(0xFFF058E1);
+                                FFAppState().colorThemes = Color(0xFFF058E1);
                                 FFAppState().update(() {});
 
                                 await currentUserReference!
@@ -1087,7 +1091,7 @@ class _MySettingCollorWidgetState extends State<MySettingCollorWidget> {
                                             .primaryText,
                                       ),
                                     ),
-                                    duration: const Duration(milliseconds: 4000),
+                                    duration: Duration(milliseconds: 4000),
                                     backgroundColor:
                                         FlutterFlowTheme.of(context).secondary,
                                   ),
@@ -1097,7 +1101,7 @@ class _MySettingCollorWidgetState extends State<MySettingCollorWidget> {
                             child: Container(
                               width: 62.0,
                               height: 62.0,
-                              decoration: const BoxDecoration(
+                              decoration: BoxDecoration(
                                 color: Color(0xFFF058E1),
                                 boxShadow: [
                                   BoxShadow(
@@ -1117,9 +1121,9 @@ class _MySettingCollorWidgetState extends State<MySettingCollorWidget> {
                                   currentUserDocument?.statusPremium, 0) ==
                               0)
                             Align(
-                              alignment: const AlignmentDirectional(1.0, -1.0),
+                              alignment: AlignmentDirectional(1.0, -1.0),
                               child: Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 7.0, 15.0, 0.0),
                                 child: AuthUserStreamWidget(
                                   builder: (context) => Container(
@@ -1133,7 +1137,7 @@ class _MySettingCollorWidgetState extends State<MySettingCollorWidget> {
                                           blurRadius: 2.0,
                                           color: FlutterFlowTheme.of(context)
                                               .secondaryText,
-                                          offset: const Offset(
+                                          offset: Offset(
                                             2.0,
                                             4.0,
                                           ),
@@ -1145,9 +1149,9 @@ class _MySettingCollorWidgetState extends State<MySettingCollorWidget> {
                                             .primary,
                                       ),
                                     ),
-                                    alignment: const AlignmentDirectional(1.0, -1.0),
+                                    alignment: AlignmentDirectional(1.0, -1.0),
                                     child: Align(
-                                      alignment: const AlignmentDirectional(0.0, 0.0),
+                                      alignment: AlignmentDirectional(0.0, 0.0),
                                       child: Icon(
                                         Icons.lock,
                                         color: FlutterFlowTheme.of(context)
@@ -1159,14 +1163,14 @@ class _MySettingCollorWidgetState extends State<MySettingCollorWidget> {
                                 ),
                               ),
                             ),
-                          if (FFAppState().colorThemes == const Color(0xFFF058E1))
+                          if (FFAppState().colorThemes == Color(0xFFF058E1))
                             Align(
-                              alignment: const AlignmentDirectional(0.0, 1.0),
+                              alignment: AlignmentDirectional(0.0, 1.0),
                               child: Container(
                                 width: 50.0,
                                 height: 3.0,
                                 decoration: BoxDecoration(
-                                  color: const Color(0xFFF058E1),
+                                  color: Color(0xFFF058E1),
                                   borderRadius: BorderRadius.circular(10.0),
                                 ),
                               ),
@@ -1174,11 +1178,11 @@ class _MySettingCollorWidgetState extends State<MySettingCollorWidget> {
                         ],
                       ),
                     ),
-                    SizedBox(
+                    Container(
                       width: 40.0,
                       height: 40.0,
                       child: Stack(
-                        alignment: const AlignmentDirectional(0.0, 0.0),
+                        alignment: AlignmentDirectional(0.0, 0.0),
                         children: [
                           InkWell(
                             splashColor: Colors.transparent,
@@ -1189,7 +1193,7 @@ class _MySettingCollorWidgetState extends State<MySettingCollorWidget> {
                               if (valueOrDefault(
                                       currentUserDocument?.statusPremium, 0) ==
                                   1) {
-                                FFAppState().colorThemes = const Color(0xFFA240A4);
+                                FFAppState().colorThemes = Color(0xFFA240A4);
                                 FFAppState().update(() {});
 
                                 await currentUserReference!
@@ -1206,7 +1210,7 @@ class _MySettingCollorWidgetState extends State<MySettingCollorWidget> {
                                             .primaryText,
                                       ),
                                     ),
-                                    duration: const Duration(milliseconds: 4000),
+                                    duration: Duration(milliseconds: 4000),
                                     backgroundColor:
                                         FlutterFlowTheme.of(context).secondary,
                                   ),
@@ -1216,7 +1220,7 @@ class _MySettingCollorWidgetState extends State<MySettingCollorWidget> {
                             child: Container(
                               width: 62.0,
                               height: 62.0,
-                              decoration: const BoxDecoration(
+                              decoration: BoxDecoration(
                                 color: Color(0xFFA240A4),
                                 boxShadow: [
                                   BoxShadow(
@@ -1236,9 +1240,9 @@ class _MySettingCollorWidgetState extends State<MySettingCollorWidget> {
                                   currentUserDocument?.statusPremium, 0) ==
                               0)
                             Align(
-                              alignment: const AlignmentDirectional(1.0, -1.0),
+                              alignment: AlignmentDirectional(1.0, -1.0),
                               child: Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 7.0, 15.0, 0.0),
                                 child: AuthUserStreamWidget(
                                   builder: (context) => Container(
@@ -1252,7 +1256,7 @@ class _MySettingCollorWidgetState extends State<MySettingCollorWidget> {
                                           blurRadius: 2.0,
                                           color: FlutterFlowTheme.of(context)
                                               .secondaryText,
-                                          offset: const Offset(
+                                          offset: Offset(
                                             2.0,
                                             4.0,
                                           ),
@@ -1264,9 +1268,9 @@ class _MySettingCollorWidgetState extends State<MySettingCollorWidget> {
                                             .primary,
                                       ),
                                     ),
-                                    alignment: const AlignmentDirectional(1.0, -1.0),
+                                    alignment: AlignmentDirectional(1.0, -1.0),
                                     child: Align(
-                                      alignment: const AlignmentDirectional(0.0, 0.0),
+                                      alignment: AlignmentDirectional(0.0, 0.0),
                                       child: Icon(
                                         Icons.lock,
                                         color: FlutterFlowTheme.of(context)
@@ -1278,13 +1282,13 @@ class _MySettingCollorWidgetState extends State<MySettingCollorWidget> {
                                 ),
                               ),
                             ),
-                          if (FFAppState().colorThemes == const Color(0xFFA240A4))
+                          if (FFAppState().colorThemes == Color(0xFFA240A4))
                             Align(
-                              alignment: const AlignmentDirectional(0.0, 1.0),
+                              alignment: AlignmentDirectional(0.0, 1.0),
                               child: Container(
                                 width: 50.0,
                                 height: 3.0,
-                                decoration: const BoxDecoration(
+                                decoration: BoxDecoration(
                                   color: Color(0xFFA240A4),
                                 ),
                               ),
@@ -1292,11 +1296,11 @@ class _MySettingCollorWidgetState extends State<MySettingCollorWidget> {
                         ],
                       ),
                     ),
-                    SizedBox(
+                    Container(
                       width: 40.0,
                       height: 40.0,
                       child: Stack(
-                        alignment: const AlignmentDirectional(0.0, 0.0),
+                        alignment: AlignmentDirectional(0.0, 0.0),
                         children: [
                           InkWell(
                             splashColor: Colors.transparent,
@@ -1307,7 +1311,7 @@ class _MySettingCollorWidgetState extends State<MySettingCollorWidget> {
                               if (valueOrDefault(
                                       currentUserDocument?.statusPremium, 0) ==
                                   1) {
-                                FFAppState().colorThemes = const Color(0xFF001AFF);
+                                FFAppState().colorThemes = Color(0xFF001AFF);
                                 FFAppState().update(() {});
 
                                 await currentUserReference!
@@ -1324,7 +1328,7 @@ class _MySettingCollorWidgetState extends State<MySettingCollorWidget> {
                                             .primaryText,
                                       ),
                                     ),
-                                    duration: const Duration(milliseconds: 4000),
+                                    duration: Duration(milliseconds: 4000),
                                     backgroundColor:
                                         FlutterFlowTheme.of(context).secondary,
                                   ),
@@ -1334,7 +1338,7 @@ class _MySettingCollorWidgetState extends State<MySettingCollorWidget> {
                             child: Container(
                               width: 62.0,
                               height: 62.0,
-                              decoration: const BoxDecoration(
+                              decoration: BoxDecoration(
                                 color: Color(0xFF001AFF),
                                 boxShadow: [
                                   BoxShadow(
@@ -1354,9 +1358,9 @@ class _MySettingCollorWidgetState extends State<MySettingCollorWidget> {
                                   currentUserDocument?.statusPremium, 0) ==
                               0)
                             Align(
-                              alignment: const AlignmentDirectional(1.0, -1.0),
+                              alignment: AlignmentDirectional(1.0, -1.0),
                               child: Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 7.0, 15.0, 0.0),
                                 child: AuthUserStreamWidget(
                                   builder: (context) => Container(
@@ -1370,7 +1374,7 @@ class _MySettingCollorWidgetState extends State<MySettingCollorWidget> {
                                           blurRadius: 2.0,
                                           color: FlutterFlowTheme.of(context)
                                               .secondaryText,
-                                          offset: const Offset(
+                                          offset: Offset(
                                             2.0,
                                             4.0,
                                           ),
@@ -1382,9 +1386,9 @@ class _MySettingCollorWidgetState extends State<MySettingCollorWidget> {
                                             .primary,
                                       ),
                                     ),
-                                    alignment: const AlignmentDirectional(1.0, -1.0),
+                                    alignment: AlignmentDirectional(1.0, -1.0),
                                     child: Align(
-                                      alignment: const AlignmentDirectional(0.0, 0.0),
+                                      alignment: AlignmentDirectional(0.0, 0.0),
                                       child: Icon(
                                         Icons.lock,
                                         color: FlutterFlowTheme.of(context)
@@ -1396,13 +1400,13 @@ class _MySettingCollorWidgetState extends State<MySettingCollorWidget> {
                                 ),
                               ),
                             ),
-                          if (FFAppState().colorThemes == const Color(0xFF001AFF))
+                          if (FFAppState().colorThemes == Color(0xFF001AFF))
                             Align(
-                              alignment: const AlignmentDirectional(0.0, 1.0),
+                              alignment: AlignmentDirectional(0.0, 1.0),
                               child: Container(
                                 width: 50.0,
                                 height: 3.0,
-                                decoration: const BoxDecoration(
+                                decoration: BoxDecoration(
                                   color: Color(0xFF001AFF),
                                 ),
                               ),
@@ -1410,11 +1414,11 @@ class _MySettingCollorWidgetState extends State<MySettingCollorWidget> {
                         ],
                       ),
                     ),
-                    SizedBox(
+                    Container(
                       width: 40.0,
                       height: 40.0,
                       child: Stack(
-                        alignment: const AlignmentDirectional(0.0, 0.0),
+                        alignment: AlignmentDirectional(0.0, 0.0),
                         children: [
                           InkWell(
                             splashColor: Colors.transparent,
@@ -1425,7 +1429,7 @@ class _MySettingCollorWidgetState extends State<MySettingCollorWidget> {
                               if (valueOrDefault(
                                       currentUserDocument?.statusPremium, 0) ==
                                   1) {
-                                FFAppState().colorThemes = const Color(0xFF1D3D8D);
+                                FFAppState().colorThemes = Color(0xFF1D3D8D);
                                 FFAppState().update(() {});
 
                                 await currentUserReference!
@@ -1442,7 +1446,7 @@ class _MySettingCollorWidgetState extends State<MySettingCollorWidget> {
                                             .primaryText,
                                       ),
                                     ),
-                                    duration: const Duration(milliseconds: 4000),
+                                    duration: Duration(milliseconds: 4000),
                                     backgroundColor:
                                         FlutterFlowTheme.of(context).secondary,
                                   ),
@@ -1452,7 +1456,7 @@ class _MySettingCollorWidgetState extends State<MySettingCollorWidget> {
                             child: Container(
                               width: 62.0,
                               height: 62.0,
-                              decoration: const BoxDecoration(
+                              decoration: BoxDecoration(
                                 color: Color(0xFF1D3D8D),
                                 boxShadow: [
                                   BoxShadow(
@@ -1472,9 +1476,9 @@ class _MySettingCollorWidgetState extends State<MySettingCollorWidget> {
                                   currentUserDocument?.statusPremium, 0) ==
                               0)
                             Align(
-                              alignment: const AlignmentDirectional(1.0, -1.0),
+                              alignment: AlignmentDirectional(1.0, -1.0),
                               child: Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 7.0, 15.0, 0.0),
                                 child: AuthUserStreamWidget(
                                   builder: (context) => Container(
@@ -1488,7 +1492,7 @@ class _MySettingCollorWidgetState extends State<MySettingCollorWidget> {
                                           blurRadius: 2.0,
                                           color: FlutterFlowTheme.of(context)
                                               .secondaryText,
-                                          offset: const Offset(
+                                          offset: Offset(
                                             2.0,
                                             4.0,
                                           ),
@@ -1500,9 +1504,9 @@ class _MySettingCollorWidgetState extends State<MySettingCollorWidget> {
                                             .primary,
                                       ),
                                     ),
-                                    alignment: const AlignmentDirectional(1.0, -1.0),
+                                    alignment: AlignmentDirectional(1.0, -1.0),
                                     child: Align(
-                                      alignment: const AlignmentDirectional(0.0, 0.0),
+                                      alignment: AlignmentDirectional(0.0, 0.0),
                                       child: Icon(
                                         Icons.lock,
                                         color: FlutterFlowTheme.of(context)
@@ -1514,13 +1518,13 @@ class _MySettingCollorWidgetState extends State<MySettingCollorWidget> {
                                 ),
                               ),
                             ),
-                          if (FFAppState().colorThemes == const Color(0xFF1D3D8D))
+                          if (FFAppState().colorThemes == Color(0xFF1D3D8D))
                             Align(
-                              alignment: const AlignmentDirectional(0.0, 1.0),
+                              alignment: AlignmentDirectional(0.0, 1.0),
                               child: Container(
                                 width: 50.0,
                                 height: 3.0,
-                                decoration: const BoxDecoration(
+                                decoration: BoxDecoration(
                                   color: Color(0xFF1D3D8D),
                                 ),
                               ),
@@ -1528,11 +1532,11 @@ class _MySettingCollorWidgetState extends State<MySettingCollorWidget> {
                         ],
                       ),
                     ),
-                    SizedBox(
+                    Container(
                       width: 40.0,
                       height: 40.0,
                       child: Stack(
-                        alignment: const AlignmentDirectional(0.0, 0.0),
+                        alignment: AlignmentDirectional(0.0, 0.0),
                         children: [
                           InkWell(
                             splashColor: Colors.transparent,
@@ -1543,7 +1547,7 @@ class _MySettingCollorWidgetState extends State<MySettingCollorWidget> {
                               if (valueOrDefault(
                                       currentUserDocument?.statusPremium, 0) ==
                                   1) {
-                                FFAppState().colorThemes = const Color(0xFFA4BDFF);
+                                FFAppState().colorThemes = Color(0xFFA4BDFF);
                                 FFAppState().update(() {});
 
                                 await currentUserReference!
@@ -1560,7 +1564,7 @@ class _MySettingCollorWidgetState extends State<MySettingCollorWidget> {
                                             .primaryText,
                                       ),
                                     ),
-                                    duration: const Duration(milliseconds: 4000),
+                                    duration: Duration(milliseconds: 4000),
                                     backgroundColor:
                                         FlutterFlowTheme.of(context).secondary,
                                   ),
@@ -1570,7 +1574,7 @@ class _MySettingCollorWidgetState extends State<MySettingCollorWidget> {
                             child: Container(
                               width: 62.0,
                               height: 62.0,
-                              decoration: const BoxDecoration(
+                              decoration: BoxDecoration(
                                 color: Color(0xFFA4BDFF),
                                 boxShadow: [
                                   BoxShadow(
@@ -1590,9 +1594,9 @@ class _MySettingCollorWidgetState extends State<MySettingCollorWidget> {
                                   currentUserDocument?.statusPremium, 0) ==
                               0)
                             Align(
-                              alignment: const AlignmentDirectional(1.0, -1.0),
+                              alignment: AlignmentDirectional(1.0, -1.0),
                               child: Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 7.0, 15.0, 0.0),
                                 child: AuthUserStreamWidget(
                                   builder: (context) => Container(
@@ -1606,7 +1610,7 @@ class _MySettingCollorWidgetState extends State<MySettingCollorWidget> {
                                           blurRadius: 2.0,
                                           color: FlutterFlowTheme.of(context)
                                               .secondaryText,
-                                          offset: const Offset(
+                                          offset: Offset(
                                             2.0,
                                             4.0,
                                           ),
@@ -1618,9 +1622,9 @@ class _MySettingCollorWidgetState extends State<MySettingCollorWidget> {
                                             .primary,
                                       ),
                                     ),
-                                    alignment: const AlignmentDirectional(1.0, -1.0),
+                                    alignment: AlignmentDirectional(1.0, -1.0),
                                     child: Align(
-                                      alignment: const AlignmentDirectional(0.0, 0.0),
+                                      alignment: AlignmentDirectional(0.0, 0.0),
                                       child: Icon(
                                         Icons.lock,
                                         color: FlutterFlowTheme.of(context)
@@ -1632,13 +1636,13 @@ class _MySettingCollorWidgetState extends State<MySettingCollorWidget> {
                                 ),
                               ),
                             ),
-                          if (FFAppState().colorThemes == const Color(0xFF001AFF))
+                          if (FFAppState().colorThemes == Color(0xFF001AFF))
                             Align(
-                              alignment: const AlignmentDirectional(0.0, 1.0),
+                              alignment: AlignmentDirectional(0.0, 1.0),
                               child: Container(
                                 width: 50.0,
                                 height: 3.0,
-                                decoration: const BoxDecoration(
+                                decoration: BoxDecoration(
                                   color: Color(0xFFA4BDFF),
                                 ),
                               ),
@@ -1646,11 +1650,11 @@ class _MySettingCollorWidgetState extends State<MySettingCollorWidget> {
                         ],
                       ),
                     ),
-                    SizedBox(
+                    Container(
                       width: 40.0,
                       height: 40.0,
                       child: Stack(
-                        alignment: const AlignmentDirectional(0.0, 0.0),
+                        alignment: AlignmentDirectional(0.0, 0.0),
                         children: [
                           InkWell(
                             splashColor: Colors.transparent,
@@ -1661,7 +1665,7 @@ class _MySettingCollorWidgetState extends State<MySettingCollorWidget> {
                               if (valueOrDefault(
                                       currentUserDocument?.statusPremium, 0) ==
                                   1) {
-                                FFAppState().colorThemes = const Color(0xFF2C7A93);
+                                FFAppState().colorThemes = Color(0xFF2C7A93);
                                 FFAppState().update(() {});
 
                                 await currentUserReference!
@@ -1678,7 +1682,7 @@ class _MySettingCollorWidgetState extends State<MySettingCollorWidget> {
                                             .primaryText,
                                       ),
                                     ),
-                                    duration: const Duration(milliseconds: 4000),
+                                    duration: Duration(milliseconds: 4000),
                                     backgroundColor:
                                         FlutterFlowTheme.of(context).secondary,
                                   ),
@@ -1688,7 +1692,7 @@ class _MySettingCollorWidgetState extends State<MySettingCollorWidget> {
                             child: Container(
                               width: 62.0,
                               height: 62.0,
-                              decoration: const BoxDecoration(
+                              decoration: BoxDecoration(
                                 color: Color(0xFF2C7A93),
                                 boxShadow: [
                                   BoxShadow(
@@ -1708,9 +1712,9 @@ class _MySettingCollorWidgetState extends State<MySettingCollorWidget> {
                                   currentUserDocument?.statusPremium, 0) ==
                               0)
                             Align(
-                              alignment: const AlignmentDirectional(1.0, -1.0),
+                              alignment: AlignmentDirectional(1.0, -1.0),
                               child: Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 7.0, 15.0, 0.0),
                                 child: AuthUserStreamWidget(
                                   builder: (context) => Container(
@@ -1724,7 +1728,7 @@ class _MySettingCollorWidgetState extends State<MySettingCollorWidget> {
                                           blurRadius: 2.0,
                                           color: FlutterFlowTheme.of(context)
                                               .secondaryText,
-                                          offset: const Offset(
+                                          offset: Offset(
                                             2.0,
                                             4.0,
                                           ),
@@ -1736,9 +1740,9 @@ class _MySettingCollorWidgetState extends State<MySettingCollorWidget> {
                                             .primary,
                                       ),
                                     ),
-                                    alignment: const AlignmentDirectional(1.0, -1.0),
+                                    alignment: AlignmentDirectional(1.0, -1.0),
                                     child: Align(
-                                      alignment: const AlignmentDirectional(0.0, 0.0),
+                                      alignment: AlignmentDirectional(0.0, 0.0),
                                       child: Icon(
                                         Icons.lock,
                                         color: FlutterFlowTheme.of(context)
@@ -1750,13 +1754,13 @@ class _MySettingCollorWidgetState extends State<MySettingCollorWidget> {
                                 ),
                               ),
                             ),
-                          if (FFAppState().colorThemes == const Color(0xFF2C7A93))
+                          if (FFAppState().colorThemes == Color(0xFF2C7A93))
                             Align(
-                              alignment: const AlignmentDirectional(0.0, 1.0),
+                              alignment: AlignmentDirectional(0.0, 1.0),
                               child: Container(
                                 width: 50.0,
                                 height: 3.0,
-                                decoration: const BoxDecoration(
+                                decoration: BoxDecoration(
                                   color: Color(0xFF2C7A93),
                                 ),
                               ),
@@ -1764,11 +1768,11 @@ class _MySettingCollorWidgetState extends State<MySettingCollorWidget> {
                         ],
                       ),
                     ),
-                    SizedBox(
+                    Container(
                       width: 40.0,
                       height: 40.0,
                       child: Stack(
-                        alignment: const AlignmentDirectional(0.0, 0.0),
+                        alignment: AlignmentDirectional(0.0, 0.0),
                         children: [
                           InkWell(
                             splashColor: Colors.transparent,
@@ -1779,7 +1783,7 @@ class _MySettingCollorWidgetState extends State<MySettingCollorWidget> {
                               if (valueOrDefault(
                                       currentUserDocument?.statusPremium, 0) ==
                                   1) {
-                                FFAppState().colorThemes = const Color(0xFF00B2FF);
+                                FFAppState().colorThemes = Color(0xFF00B2FF);
                                 FFAppState().update(() {});
 
                                 await currentUserReference!
@@ -1796,7 +1800,7 @@ class _MySettingCollorWidgetState extends State<MySettingCollorWidget> {
                                             .primaryText,
                                       ),
                                     ),
-                                    duration: const Duration(milliseconds: 4000),
+                                    duration: Duration(milliseconds: 4000),
                                     backgroundColor:
                                         FlutterFlowTheme.of(context).secondary,
                                   ),
@@ -1806,7 +1810,7 @@ class _MySettingCollorWidgetState extends State<MySettingCollorWidget> {
                             child: Container(
                               width: 62.0,
                               height: 62.0,
-                              decoration: const BoxDecoration(
+                              decoration: BoxDecoration(
                                 color: Color(0xFF00B2FF),
                                 boxShadow: [
                                   BoxShadow(
@@ -1826,9 +1830,9 @@ class _MySettingCollorWidgetState extends State<MySettingCollorWidget> {
                                   currentUserDocument?.statusPremium, 0) ==
                               0)
                             Align(
-                              alignment: const AlignmentDirectional(1.0, -1.0),
+                              alignment: AlignmentDirectional(1.0, -1.0),
                               child: Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 7.0, 15.0, 0.0),
                                 child: AuthUserStreamWidget(
                                   builder: (context) => Container(
@@ -1842,7 +1846,7 @@ class _MySettingCollorWidgetState extends State<MySettingCollorWidget> {
                                           blurRadius: 2.0,
                                           color: FlutterFlowTheme.of(context)
                                               .secondaryText,
-                                          offset: const Offset(
+                                          offset: Offset(
                                             2.0,
                                             4.0,
                                           ),
@@ -1854,9 +1858,9 @@ class _MySettingCollorWidgetState extends State<MySettingCollorWidget> {
                                             .primary,
                                       ),
                                     ),
-                                    alignment: const AlignmentDirectional(1.0, -1.0),
+                                    alignment: AlignmentDirectional(1.0, -1.0),
                                     child: Align(
-                                      alignment: const AlignmentDirectional(0.0, 0.0),
+                                      alignment: AlignmentDirectional(0.0, 0.0),
                                       child: Icon(
                                         Icons.lock,
                                         color: FlutterFlowTheme.of(context)
@@ -1868,13 +1872,13 @@ class _MySettingCollorWidgetState extends State<MySettingCollorWidget> {
                                 ),
                               ),
                             ),
-                          if (FFAppState().colorThemes == const Color(0xFF001AFF))
+                          if (FFAppState().colorThemes == Color(0xFF001AFF))
                             Align(
-                              alignment: const AlignmentDirectional(0.0, 1.0),
+                              alignment: AlignmentDirectional(0.0, 1.0),
                               child: Container(
                                 width: 50.0,
                                 height: 3.0,
-                                decoration: const BoxDecoration(
+                                decoration: BoxDecoration(
                                   color: Color(0xFF00B2FF),
                                 ),
                               ),
@@ -1882,11 +1886,11 @@ class _MySettingCollorWidgetState extends State<MySettingCollorWidget> {
                         ],
                       ),
                     ),
-                    SizedBox(
+                    Container(
                       width: 40.0,
                       height: 40.0,
                       child: Stack(
-                        alignment: const AlignmentDirectional(0.0, 0.0),
+                        alignment: AlignmentDirectional(0.0, 0.0),
                         children: [
                           InkWell(
                             splashColor: Colors.transparent,
@@ -1897,7 +1901,7 @@ class _MySettingCollorWidgetState extends State<MySettingCollorWidget> {
                               if (valueOrDefault(
                                       currentUserDocument?.statusPremium, 0) ==
                                   1) {
-                                FFAppState().colorThemes = const Color(0xFF135F3A);
+                                FFAppState().colorThemes = Color(0xFF135F3A);
                                 FFAppState().update(() {});
 
                                 await currentUserReference!
@@ -1914,7 +1918,7 @@ class _MySettingCollorWidgetState extends State<MySettingCollorWidget> {
                                             .primaryText,
                                       ),
                                     ),
-                                    duration: const Duration(milliseconds: 4000),
+                                    duration: Duration(milliseconds: 4000),
                                     backgroundColor:
                                         FlutterFlowTheme.of(context).secondary,
                                   ),
@@ -1924,7 +1928,7 @@ class _MySettingCollorWidgetState extends State<MySettingCollorWidget> {
                             child: Container(
                               width: 62.0,
                               height: 62.0,
-                              decoration: const BoxDecoration(
+                              decoration: BoxDecoration(
                                 color: Color(0xFF135F3A),
                                 boxShadow: [
                                   BoxShadow(
@@ -1944,9 +1948,9 @@ class _MySettingCollorWidgetState extends State<MySettingCollorWidget> {
                                   currentUserDocument?.statusPremium, 0) ==
                               0)
                             Align(
-                              alignment: const AlignmentDirectional(1.0, -1.0),
+                              alignment: AlignmentDirectional(1.0, -1.0),
                               child: Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 7.0, 15.0, 0.0),
                                 child: AuthUserStreamWidget(
                                   builder: (context) => Container(
@@ -1960,7 +1964,7 @@ class _MySettingCollorWidgetState extends State<MySettingCollorWidget> {
                                           blurRadius: 2.0,
                                           color: FlutterFlowTheme.of(context)
                                               .secondaryText,
-                                          offset: const Offset(
+                                          offset: Offset(
                                             2.0,
                                             4.0,
                                           ),
@@ -1972,9 +1976,9 @@ class _MySettingCollorWidgetState extends State<MySettingCollorWidget> {
                                             .primary,
                                       ),
                                     ),
-                                    alignment: const AlignmentDirectional(1.0, -1.0),
+                                    alignment: AlignmentDirectional(1.0, -1.0),
                                     child: Align(
-                                      alignment: const AlignmentDirectional(0.0, 0.0),
+                                      alignment: AlignmentDirectional(0.0, 0.0),
                                       child: Icon(
                                         Icons.lock,
                                         color: FlutterFlowTheme.of(context)
@@ -1986,13 +1990,13 @@ class _MySettingCollorWidgetState extends State<MySettingCollorWidget> {
                                 ),
                               ),
                             ),
-                          if (FFAppState().colorThemes == const Color(0xFF135F3A))
+                          if (FFAppState().colorThemes == Color(0xFF135F3A))
                             Align(
-                              alignment: const AlignmentDirectional(0.0, 1.0),
+                              alignment: AlignmentDirectional(0.0, 1.0),
                               child: Container(
                                 width: 50.0,
                                 height: 3.0,
-                                decoration: const BoxDecoration(
+                                decoration: BoxDecoration(
                                   color: Color(0xFF135F3A),
                                 ),
                               ),
@@ -2000,11 +2004,11 @@ class _MySettingCollorWidgetState extends State<MySettingCollorWidget> {
                         ],
                       ),
                     ),
-                    SizedBox(
+                    Container(
                       width: 40.0,
                       height: 40.0,
                       child: Stack(
-                        alignment: const AlignmentDirectional(0.0, 0.0),
+                        alignment: AlignmentDirectional(0.0, 0.0),
                         children: [
                           InkWell(
                             splashColor: Colors.transparent,
@@ -2015,7 +2019,7 @@ class _MySettingCollorWidgetState extends State<MySettingCollorWidget> {
                               if (valueOrDefault(
                                       currentUserDocument?.statusPremium, 0) ==
                                   1) {
-                                FFAppState().colorThemes = const Color(0xFF18BF29);
+                                FFAppState().colorThemes = Color(0xFF18BF29);
                                 FFAppState().update(() {});
 
                                 await currentUserReference!
@@ -2032,7 +2036,7 @@ class _MySettingCollorWidgetState extends State<MySettingCollorWidget> {
                                             .primaryText,
                                       ),
                                     ),
-                                    duration: const Duration(milliseconds: 4000),
+                                    duration: Duration(milliseconds: 4000),
                                     backgroundColor:
                                         FlutterFlowTheme.of(context).secondary,
                                   ),
@@ -2042,7 +2046,7 @@ class _MySettingCollorWidgetState extends State<MySettingCollorWidget> {
                             child: Container(
                               width: 62.0,
                               height: 62.0,
-                              decoration: const BoxDecoration(
+                              decoration: BoxDecoration(
                                 color: Color(0xFF18BF29),
                                 boxShadow: [
                                   BoxShadow(
@@ -2062,9 +2066,9 @@ class _MySettingCollorWidgetState extends State<MySettingCollorWidget> {
                                   currentUserDocument?.statusPremium, 0) ==
                               0)
                             Align(
-                              alignment: const AlignmentDirectional(1.0, -1.0),
+                              alignment: AlignmentDirectional(1.0, -1.0),
                               child: Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 7.0, 15.0, 0.0),
                                 child: AuthUserStreamWidget(
                                   builder: (context) => Container(
@@ -2078,7 +2082,7 @@ class _MySettingCollorWidgetState extends State<MySettingCollorWidget> {
                                           blurRadius: 2.0,
                                           color: FlutterFlowTheme.of(context)
                                               .secondaryText,
-                                          offset: const Offset(
+                                          offset: Offset(
                                             2.0,
                                             4.0,
                                           ),
@@ -2090,9 +2094,9 @@ class _MySettingCollorWidgetState extends State<MySettingCollorWidget> {
                                             .primary,
                                       ),
                                     ),
-                                    alignment: const AlignmentDirectional(1.0, -1.0),
+                                    alignment: AlignmentDirectional(1.0, -1.0),
                                     child: Align(
-                                      alignment: const AlignmentDirectional(0.0, 0.0),
+                                      alignment: AlignmentDirectional(0.0, 0.0),
                                       child: Icon(
                                         Icons.lock,
                                         color: FlutterFlowTheme.of(context)
@@ -2104,13 +2108,13 @@ class _MySettingCollorWidgetState extends State<MySettingCollorWidget> {
                                 ),
                               ),
                             ),
-                          if (FFAppState().colorThemes == const Color(0xFF18BF29))
+                          if (FFAppState().colorThemes == Color(0xFF18BF29))
                             Align(
-                              alignment: const AlignmentDirectional(0.0, 1.0),
+                              alignment: AlignmentDirectional(0.0, 1.0),
                               child: Container(
                                 width: 50.0,
                                 height: 3.0,
-                                decoration: const BoxDecoration(
+                                decoration: BoxDecoration(
                                   color: Color(0xFF18BF29),
                                 ),
                               ),
@@ -2118,11 +2122,11 @@ class _MySettingCollorWidgetState extends State<MySettingCollorWidget> {
                         ],
                       ),
                     ),
-                    SizedBox(
+                    Container(
                       width: 40.0,
                       height: 40.0,
                       child: Stack(
-                        alignment: const AlignmentDirectional(0.0, 0.0),
+                        alignment: AlignmentDirectional(0.0, 0.0),
                         children: [
                           InkWell(
                             splashColor: Colors.transparent,
@@ -2133,7 +2137,7 @@ class _MySettingCollorWidgetState extends State<MySettingCollorWidget> {
                               if (valueOrDefault(
                                       currentUserDocument?.statusPremium, 0) ==
                                   1) {
-                                FFAppState().colorThemes = const Color(0xFF67FF76);
+                                FFAppState().colorThemes = Color(0xFF67FF76);
                                 FFAppState().update(() {});
 
                                 await currentUserReference!
@@ -2150,7 +2154,7 @@ class _MySettingCollorWidgetState extends State<MySettingCollorWidget> {
                                             .primaryText,
                                       ),
                                     ),
-                                    duration: const Duration(milliseconds: 4000),
+                                    duration: Duration(milliseconds: 4000),
                                     backgroundColor:
                                         FlutterFlowTheme.of(context).secondary,
                                   ),
@@ -2160,7 +2164,7 @@ class _MySettingCollorWidgetState extends State<MySettingCollorWidget> {
                             child: Container(
                               width: 62.0,
                               height: 62.0,
-                              decoration: const BoxDecoration(
+                              decoration: BoxDecoration(
                                 color: Color(0xFF67FF76),
                                 boxShadow: [
                                   BoxShadow(
@@ -2180,9 +2184,9 @@ class _MySettingCollorWidgetState extends State<MySettingCollorWidget> {
                                   currentUserDocument?.statusPremium, 0) ==
                               0)
                             Align(
-                              alignment: const AlignmentDirectional(1.0, -1.0),
+                              alignment: AlignmentDirectional(1.0, -1.0),
                               child: Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 7.0, 15.0, 0.0),
                                 child: AuthUserStreamWidget(
                                   builder: (context) => Container(
@@ -2196,7 +2200,7 @@ class _MySettingCollorWidgetState extends State<MySettingCollorWidget> {
                                           blurRadius: 2.0,
                                           color: FlutterFlowTheme.of(context)
                                               .secondaryText,
-                                          offset: const Offset(
+                                          offset: Offset(
                                             2.0,
                                             4.0,
                                           ),
@@ -2208,9 +2212,9 @@ class _MySettingCollorWidgetState extends State<MySettingCollorWidget> {
                                             .primary,
                                       ),
                                     ),
-                                    alignment: const AlignmentDirectional(1.0, -1.0),
+                                    alignment: AlignmentDirectional(1.0, -1.0),
                                     child: Align(
-                                      alignment: const AlignmentDirectional(0.0, 0.0),
+                                      alignment: AlignmentDirectional(0.0, 0.0),
                                       child: Icon(
                                         Icons.lock,
                                         color: FlutterFlowTheme.of(context)
@@ -2222,13 +2226,13 @@ class _MySettingCollorWidgetState extends State<MySettingCollorWidget> {
                                 ),
                               ),
                             ),
-                          if (FFAppState().colorThemes == const Color(0xFF67FF76))
+                          if (FFAppState().colorThemes == Color(0xFF67FF76))
                             Align(
-                              alignment: const AlignmentDirectional(0.0, 1.0),
+                              alignment: AlignmentDirectional(0.0, 1.0),
                               child: Container(
                                 width: 50.0,
                                 height: 3.0,
-                                decoration: const BoxDecoration(
+                                decoration: BoxDecoration(
                                   color: Color(0xFF67FF76),
                                 ),
                               ),
@@ -2236,11 +2240,11 @@ class _MySettingCollorWidgetState extends State<MySettingCollorWidget> {
                         ],
                       ),
                     ),
-                    SizedBox(
+                    Container(
                       width: 40.0,
                       height: 40.0,
                       child: Stack(
-                        alignment: const AlignmentDirectional(0.0, 0.0),
+                        alignment: AlignmentDirectional(0.0, 0.0),
                         children: [
                           InkWell(
                             splashColor: Colors.transparent,
@@ -2251,7 +2255,7 @@ class _MySettingCollorWidgetState extends State<MySettingCollorWidget> {
                               if (valueOrDefault(
                                       currentUserDocument?.statusPremium, 0) ==
                                   1) {
-                                FFAppState().colorThemes = const Color(0xFFB2F8BE);
+                                FFAppState().colorThemes = Color(0xFFB2F8BE);
                                 FFAppState().update(() {});
 
                                 await currentUserReference!
@@ -2268,7 +2272,7 @@ class _MySettingCollorWidgetState extends State<MySettingCollorWidget> {
                                             .primaryText,
                                       ),
                                     ),
-                                    duration: const Duration(milliseconds: 4000),
+                                    duration: Duration(milliseconds: 4000),
                                     backgroundColor:
                                         FlutterFlowTheme.of(context).secondary,
                                   ),
@@ -2278,7 +2282,7 @@ class _MySettingCollorWidgetState extends State<MySettingCollorWidget> {
                             child: Container(
                               width: 62.0,
                               height: 62.0,
-                              decoration: const BoxDecoration(
+                              decoration: BoxDecoration(
                                 color: Color(0xFFB2F8BE),
                                 boxShadow: [
                                   BoxShadow(
@@ -2298,9 +2302,9 @@ class _MySettingCollorWidgetState extends State<MySettingCollorWidget> {
                                   currentUserDocument?.statusPremium, 0) ==
                               0)
                             Align(
-                              alignment: const AlignmentDirectional(1.0, -1.0),
+                              alignment: AlignmentDirectional(1.0, -1.0),
                               child: Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 7.0, 15.0, 0.0),
                                 child: AuthUserStreamWidget(
                                   builder: (context) => Container(
@@ -2314,7 +2318,7 @@ class _MySettingCollorWidgetState extends State<MySettingCollorWidget> {
                                           blurRadius: 2.0,
                                           color: FlutterFlowTheme.of(context)
                                               .secondaryText,
-                                          offset: const Offset(
+                                          offset: Offset(
                                             2.0,
                                             4.0,
                                           ),
@@ -2326,9 +2330,9 @@ class _MySettingCollorWidgetState extends State<MySettingCollorWidget> {
                                             .primary,
                                       ),
                                     ),
-                                    alignment: const AlignmentDirectional(1.0, -1.0),
+                                    alignment: AlignmentDirectional(1.0, -1.0),
                                     child: Align(
-                                      alignment: const AlignmentDirectional(0.0, 0.0),
+                                      alignment: AlignmentDirectional(0.0, 0.0),
                                       child: Icon(
                                         Icons.lock,
                                         color: FlutterFlowTheme.of(context)
@@ -2340,13 +2344,13 @@ class _MySettingCollorWidgetState extends State<MySettingCollorWidget> {
                                 ),
                               ),
                             ),
-                          if (FFAppState().colorThemes == const Color(0xFFB2F8BE))
+                          if (FFAppState().colorThemes == Color(0xFFB2F8BE))
                             Align(
-                              alignment: const AlignmentDirectional(0.0, 1.0),
+                              alignment: AlignmentDirectional(0.0, 1.0),
                               child: Container(
                                 width: 50.0,
                                 height: 3.0,
-                                decoration: const BoxDecoration(
+                                decoration: BoxDecoration(
                                   color: Color(0xFFB2F8BE),
                                 ),
                               ),
@@ -2358,13 +2362,13 @@ class _MySettingCollorWidgetState extends State<MySettingCollorWidget> {
                 ),
               ),
               Align(
-                alignment: const AlignmentDirectional(0.0, 1.0),
+                alignment: AlignmentDirectional(0.0, 1.0),
                 child: Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 20.0),
+                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 20.0),
                   child: wrapWithModel(
                     model: _model.footerLogoModel,
                     updateCallback: () => safeSetState(() {}),
-                    child: const FooterLogoWidget(),
+                    child: FooterLogoWidget(),
                   ),
                 ),
               ),

@@ -1,6 +1,7 @@
 import '/auth/firebase_auth/auth_util.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'language_model.dart';
@@ -8,6 +9,9 @@ export 'language_model.dart';
 
 class LanguageWidget extends StatefulWidget {
   const LanguageWidget({super.key});
+
+  static String routeName = 'Language';
+  static String routePath = '/language';
 
   @override
   State<LanguageWidget> createState() => _LanguageWidgetState();
@@ -46,21 +50,21 @@ class _LanguageWidgetState extends State<LanguageWidget> {
         key: scaffoldKey,
         backgroundColor: Colors.white,
         appBar: PreferredSize(
-          preferredSize: const Size.fromHeight(80.0),
+          preferredSize: Size.fromHeight(80.0),
           child: AppBar(
             backgroundColor: Colors.white,
             automaticallyImplyLeading: false,
             title: Stack(
-              alignment: const AlignmentDirectional(0.0, 0.0),
+              alignment: AlignmentDirectional(0.0, 0.0),
               children: [
                 Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 10.0),
+                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 10.0),
                   child: Row(
                     mainAxisSize: MainAxisSize.max,
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
                       Align(
-                        alignment: const AlignmentDirectional(-1.0, 0.0),
+                        alignment: AlignmentDirectional(-1.0, 0.0),
                         child: InkWell(
                           splashColor: Colors.transparent,
                           focusColor: Colors.transparent,
@@ -80,10 +84,10 @@ class _LanguageWidgetState extends State<LanguageWidget> {
                   ),
                 ),
                 Align(
-                  alignment: const AlignmentDirectional(0.0, 0.0),
+                  alignment: AlignmentDirectional(0.0, 0.0),
                   child: Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 10.0),
+                        EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 10.0),
                     child: Text(
                       'Language',
                       style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -97,7 +101,7 @@ class _LanguageWidgetState extends State<LanguageWidget> {
                 ),
               ],
             ),
-            actions: const [],
+            actions: [],
             centerTitle: false,
             elevation: 2.0,
           ),
@@ -105,7 +109,7 @@ class _LanguageWidgetState extends State<LanguageWidget> {
         body: SafeArea(
           top: true,
           child: Padding(
-            padding: const EdgeInsetsDirectional.fromSTEB(20.0, 20.0, 20.0, 0.0),
+            padding: EdgeInsetsDirectional.fromSTEB(20.0, 20.0, 20.0, 0.0),
             child: Column(
               mainAxisSize: MainAxisSize.max,
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -113,7 +117,7 @@ class _LanguageWidgetState extends State<LanguageWidget> {
                 Flexible(
                   child: Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
+                        EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
                     child: AuthUserStreamWidget(
                       builder: (context) => InkWell(
                         splashColor: Colors.transparent,
@@ -121,13 +125,13 @@ class _LanguageWidgetState extends State<LanguageWidget> {
                         hoverColor: Colors.transparent,
                         highlightColor: Colors.transparent,
                         onTap: () async {
-                          context.pushNamed('LanguageApp');
+                          context.pushNamed(LanguageAppWidget.routeName);
                         },
                         child: Container(
                           width: double.infinity,
                           decoration: BoxDecoration(
                             color: currentUserDocument?.colorThemes,
-                            borderRadius: const BorderRadius.only(
+                            borderRadius: BorderRadius.only(
                               bottomLeft: Radius.circular(20.0),
                               bottomRight: Radius.circular(20.0),
                               topLeft: Radius.circular(20.0),
@@ -135,7 +139,7 @@ class _LanguageWidgetState extends State<LanguageWidget> {
                             ),
                           ),
                           child: Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 20.0, 5.0, 20.0, 5.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.min,
@@ -172,7 +176,7 @@ class _LanguageWidgetState extends State<LanguageWidget> {
                                     ],
                                   ),
                                 ),
-                                const Icon(
+                                Icon(
                                   Icons.arrow_forward_ios,
                                   color: Color(0xFFA4A4A4),
                                   size: 24.0,
@@ -188,13 +192,13 @@ class _LanguageWidgetState extends State<LanguageWidget> {
                 Flexible(
                   child: Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
+                        EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
                     child: AuthUserStreamWidget(
                       builder: (context) => Container(
                         width: double.infinity,
                         decoration: BoxDecoration(
                           color: currentUserDocument?.colorThemes,
-                          borderRadius: const BorderRadius.only(
+                          borderRadius: BorderRadius.only(
                             bottomLeft: Radius.circular(20.0),
                             bottomRight: Radius.circular(20.0),
                             topLeft: Radius.circular(20.0),
@@ -202,7 +206,7 @@ class _LanguageWidgetState extends State<LanguageWidget> {
                           ),
                         ),
                         child: Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               20.0, 5.0, 20.0, 5.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.min,
@@ -236,7 +240,7 @@ class _LanguageWidgetState extends State<LanguageWidget> {
                                   ],
                                 ),
                               ),
-                              const Icon(
+                              Icon(
                                 Icons.arrow_forward_ios,
                                 color: Color(0xFFA4A4A4),
                                 size: 24.0,
@@ -251,13 +255,13 @@ class _LanguageWidgetState extends State<LanguageWidget> {
                 Flexible(
                   child: Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
+                        EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
                     child: AuthUserStreamWidget(
                       builder: (context) => Container(
                         width: double.infinity,
                         decoration: BoxDecoration(
                           color: currentUserDocument?.colorThemes,
-                          borderRadius: const BorderRadius.only(
+                          borderRadius: BorderRadius.only(
                             bottomLeft: Radius.circular(20.0),
                             bottomRight: Radius.circular(20.0),
                             topLeft: Radius.circular(20.0),
@@ -265,7 +269,7 @@ class _LanguageWidgetState extends State<LanguageWidget> {
                           ),
                         ),
                         child: Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               20.0, 5.0, 20.0, 5.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.min,
@@ -299,7 +303,7 @@ class _LanguageWidgetState extends State<LanguageWidget> {
                                   ],
                                 ),
                               ),
-                              const Icon(
+                              Icon(
                                 Icons.arrow_forward_ios,
                                 color: Color(0xFFA4A4A4),
                                 size: 24.0,

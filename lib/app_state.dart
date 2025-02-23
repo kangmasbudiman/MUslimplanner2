@@ -290,14 +290,14 @@ class FFAppState extends ChangeNotifier {
     _tanggalnya = value;
   }
 
-  Color _colorThemes = const Color(0xff000000);
+  Color _colorThemes = Color(4278190080);
   Color get colorThemes => _colorThemes;
   set colorThemes(Color value) {
     _colorThemes = value;
     prefs.setInt('ff_colorThemes', value.value);
   }
 
-  Color _colorFontThemes = const Color(0xffffffff);
+  Color _colorFontThemes = Color(4294967295);
   Color get colorFontThemes => _colorFontThemes;
   set colorFontThemes(Color value) {
     _colorFontThemes = value;

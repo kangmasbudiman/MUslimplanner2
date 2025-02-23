@@ -3,6 +3,7 @@ import '/backend/api_requests/api_calls.dart';
 import '/cruddoa/edit_doa/edit_doa_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:webviewx_plus/webviewx_plus.dart';
@@ -16,6 +17,9 @@ class DoadoaByKategoriWidget extends StatefulWidget {
   });
 
   final int? idkategori;
+
+  static String routeName = 'DoadoaByKategori';
+  static String routePath = '/doadoaByKategori';
 
   @override
   State<DoadoaByKategoriWidget> createState() => _DoadoaByKategoriWidgetState();
@@ -57,18 +61,18 @@ class _DoadoaByKategoriWidgetState extends State<DoadoaByKategoriWidget> {
         key: scaffoldKey,
         backgroundColor: Colors.white,
         appBar: PreferredSize(
-          preferredSize: const Size.fromHeight(70.0),
+          preferredSize: Size.fromHeight(70.0),
           child: AppBar(
             backgroundColor: Colors.white,
             automaticallyImplyLeading: false,
             title: Padding(
-              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 20.0),
+              padding: EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 20.0),
               child: Row(
                 mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
                   Align(
-                    alignment: const AlignmentDirectional(-1.0, 0.0),
+                    alignment: AlignmentDirectional(-1.0, 0.0),
                     child: InkWell(
                       splashColor: Colors.transparent,
                       focusColor: Colors.transparent,
@@ -86,7 +90,7 @@ class _DoadoaByKategoriWidgetState extends State<DoadoaByKategoriWidget> {
                   ),
                   Flexible(
                     child: Align(
-                      alignment: const AlignmentDirectional(0.0, 0.0),
+                      alignment: AlignmentDirectional(0.0, 0.0),
                       child: Text(
                         'Doa - Doa',
                         style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -101,7 +105,7 @@ class _DoadoaByKategoriWidgetState extends State<DoadoaByKategoriWidget> {
                 ],
               ),
             ),
-            actions: const [],
+            actions: [],
             centerTitle: false,
             elevation: 2.0,
           ),
@@ -111,22 +115,22 @@ class _DoadoaByKategoriWidgetState extends State<DoadoaByKategoriWidget> {
           child: Container(
             width: double.infinity,
             height: double.infinity,
-            decoration: const BoxDecoration(),
+            decoration: BoxDecoration(),
             child: Padding(
-              padding: const EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 0.0),
+              padding: EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 0.0),
               child: Column(
                 mainAxisSize: MainAxisSize.max,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
+                        EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
                     child: AuthUserStreamWidget(
                       builder: (context) => Container(
                         width: double.infinity,
                         decoration: BoxDecoration(
                           color: currentUserDocument?.colorThemes,
-                          boxShadow: const [
+                          boxShadow: [
                             BoxShadow(
                               blurRadius: 2.0,
                               color: Color(0x33000000),
@@ -136,7 +140,7 @@ class _DoadoaByKategoriWidgetState extends State<DoadoaByKategoriWidget> {
                               ),
                             )
                           ],
-                          borderRadius: const BorderRadius.only(
+                          borderRadius: BorderRadius.only(
                             bottomLeft: Radius.circular(20.0),
                             bottomRight: Radius.circular(20.0),
                             topLeft: Radius.circular(20.0),
@@ -144,14 +148,14 @@ class _DoadoaByKategoriWidgetState extends State<DoadoaByKategoriWidget> {
                           ),
                         ),
                         child: Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               10.0, 0.0, 10.0, 0.0),
                           child: TextFormField(
                             controller: _model.textController,
                             focusNode: _model.textFieldFocusNode,
                             autofocus: false,
                             obscureText: false,
-                            decoration: const InputDecoration(
+                            decoration: InputDecoration(
                               labelText: 'Cari Doa....',
                               enabledBorder: InputBorder.none,
                               focusedBorder: InputBorder.none,
@@ -180,7 +184,7 @@ class _DoadoaByKategoriWidgetState extends State<DoadoaByKategoriWidget> {
                   ),
                   Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 20.0),
+                        EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 20.0),
                     child: Text(
                       'Semua ',
                       style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -197,7 +201,7 @@ class _DoadoaByKategoriWidgetState extends State<DoadoaByKategoriWidget> {
                       height: MediaQuery.sizeOf(context).height * 0.7,
                       decoration: BoxDecoration(
                         color: currentUserDocument?.colorThemes,
-                        borderRadius: const BorderRadius.only(
+                        borderRadius: BorderRadius.only(
                           bottomLeft: Radius.circular(20.0),
                           bottomRight: Radius.circular(20.0),
                           topLeft: Radius.circular(20.0),
@@ -206,7 +210,7 @@ class _DoadoaByKategoriWidgetState extends State<DoadoaByKategoriWidget> {
                       ),
                       child: Padding(
                         padding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
+                            EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
                         child: FutureBuilder<ApiCallResponse>(
                           future: FFAppState().doabykatagory(
                             requestFn: () =>
@@ -253,7 +257,7 @@ class _DoadoaByKategoriWidgetState extends State<DoadoaByKategoriWidget> {
                                       highlightColor: Colors.transparent,
                                       onTap: () async {
                                         context.pushNamed(
-                                          'DetailDoa',
+                                          DetailDoaWidget.routeName,
                                           queryParameters: {
                                             'judul': serializeParam(
                                               valueOrDefault<String>(
@@ -333,7 +337,7 @@ class _DoadoaByKategoriWidgetState extends State<DoadoaByKategoriWidget> {
                                           mainAxisSize: MainAxisSize.max,
                                           children: [
                                             Padding(
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       20.0, 0.0, 20.0, 10.0),
                                               child: Row(
@@ -341,7 +345,7 @@ class _DoadoaByKategoriWidgetState extends State<DoadoaByKategoriWidget> {
                                                 children: [
                                                   Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 10.0, 0.0),
                                                     child: Text(
@@ -400,7 +404,7 @@ class _DoadoaByKategoriWidgetState extends State<DoadoaByKategoriWidget> {
                                                             1)
                                                           Padding(
                                                             padding:
-                                                                const EdgeInsetsDirectional
+                                                                EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         0.0,
                                                                         10.0,
@@ -508,7 +512,7 @@ class _DoadoaByKategoriWidgetState extends State<DoadoaByKategoriWidget> {
                                                 ],
                                               ),
                                             ),
-                                            const Divider(
+                                            Divider(
                                               thickness: 1.0,
                                               color: Colors.white,
                                             ),

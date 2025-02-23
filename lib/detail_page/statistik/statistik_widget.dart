@@ -3,6 +3,7 @@ import '/backend/api_requests/api_calls.dart';
 import '/componen/date_componen/date_componen_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/index.dart';
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -12,6 +13,9 @@ export 'statistik_model.dart';
 
 class StatistikWidget extends StatefulWidget {
   const StatistikWidget({super.key});
+
+  static String routeName = 'statistik';
+  static String routePath = '/statistik';
 
   @override
   State<StatistikWidget> createState() => _StatistikWidgetState();
@@ -50,22 +54,22 @@ class _StatistikWidgetState extends State<StatistikWidget> {
         key: scaffoldKey,
         backgroundColor: Colors.white,
         appBar: PreferredSize(
-          preferredSize: const Size.fromHeight(80.0),
+          preferredSize: Size.fromHeight(80.0),
           child: AppBar(
             backgroundColor: Colors.white,
             automaticallyImplyLeading: false,
             title: Stack(
-              alignment: const AlignmentDirectional(0.0, 0.0),
+              alignment: AlignmentDirectional(0.0, 0.0),
               children: [
                 Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 20.0),
+                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 20.0),
                   child: Row(
                     mainAxisSize: MainAxisSize.max,
                     children: [
                       Align(
-                        alignment: const AlignmentDirectional(-1.0, 0.0),
+                        alignment: AlignmentDirectional(-1.0, 0.0),
                         child: Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 10.0, 40.0, 0.0),
                           child: InkWell(
                             splashColor: Colors.transparent,
@@ -73,7 +77,7 @@ class _StatistikWidgetState extends State<StatistikWidget> {
                             hoverColor: Colors.transparent,
                             highlightColor: Colors.transparent,
                             onTap: () async {
-                              context.pushNamed('HomeScreen');
+                              context.pushNamed(HomeScreenWidget.routeName);
                             },
                             child: Icon(
                               Icons.arrow_back_ios_new,
@@ -90,7 +94,7 @@ class _StatistikWidgetState extends State<StatistikWidget> {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 10.0),
+                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 10.0),
                   child: Text(
                     'Statistik',
                     style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -103,7 +107,7 @@ class _StatistikWidgetState extends State<StatistikWidget> {
                 ),
               ],
             ),
-            actions: const [],
+            actions: [],
             centerTitle: false,
             elevation: 2.0,
           ),
@@ -111,7 +115,7 @@ class _StatistikWidgetState extends State<StatistikWidget> {
         body: SafeArea(
           top: true,
           child: Padding(
-            padding: const EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 0.0),
+            padding: EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 0.0),
             child: SingleChildScrollView(
               child: Column(
                 mainAxisSize: MainAxisSize.max,
@@ -119,7 +123,7 @@ class _StatistikWidgetState extends State<StatistikWidget> {
                 children: [
                   Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 20.0, 20.0),
+                        EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 20.0, 20.0),
                     child: SingleChildScrollView(
                       scrollDirection: Axis.horizontal,
                       child: Row(
@@ -130,7 +134,7 @@ class _StatistikWidgetState extends State<StatistikWidget> {
                           wrapWithModel(
                             model: _model.dateComponenModel,
                             updateCallback: () => safeSetState(() {}),
-                            child: const DateComponenWidget(),
+                            child: DateComponenWidget(),
                           ),
                         ],
                       ),
@@ -210,7 +214,7 @@ class _StatistikWidgetState extends State<StatistikWidget> {
                                             final resSummaryItem =
                                                 resSummary[resSummaryIndex];
                                             return Padding(
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       0.0, 10.0, 0.0, 0.0),
                                               child: AuthUserStreamWidget(
@@ -218,7 +222,7 @@ class _StatistikWidgetState extends State<StatistikWidget> {
                                                   decoration: BoxDecoration(
                                                     color: currentUserDocument
                                                         ?.colorThemes,
-                                                    boxShadow: const [
+                                                    boxShadow: [
                                                       BoxShadow(
                                                         blurRadius: 2.0,
                                                         color:
@@ -230,7 +234,7 @@ class _StatistikWidgetState extends State<StatistikWidget> {
                                                       )
                                                     ],
                                                     borderRadius:
-                                                        const BorderRadius.only(
+                                                        BorderRadius.only(
                                                       bottomLeft:
                                                           Radius.circular(20.0),
                                                       bottomRight:
@@ -243,7 +247,7 @@ class _StatistikWidgetState extends State<StatistikWidget> {
                                                   ),
                                                   child: Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(
                                                                 10.0,
                                                                 10.0,
@@ -322,7 +326,7 @@ class _StatistikWidgetState extends State<StatistikWidget> {
                                                                         0.0,
                                                                   ),
                                                             ),
-                                                            const Icon(
+                                                            Icon(
                                                               Icons
                                                                   .arrow_forward_ios,
                                                               color:
@@ -337,7 +341,7 @@ class _StatistikWidgetState extends State<StatistikWidget> {
                                                           children: [
                                                             Padding(
                                                               padding:
-                                                                  const EdgeInsetsDirectional
+                                                                  EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           15.0,
@@ -383,7 +387,7 @@ class _StatistikWidgetState extends State<StatistikWidget> {
                                                           highlightColor: Colors
                                                               .transparent,
                                                           onTap: () async {
-                                                            var shouldSetState =
+                                                            var _shouldSetState =
                                                                 false;
                                                             var confirmDialogResponse =
                                                                 await showDialog<
@@ -406,15 +410,15 @@ class _StatistikWidgetState extends State<StatistikWidget> {
                                                                               '-',
                                                                             )),
                                                                             content:
-                                                                                const Text('Are You Sure delete this sunnah'),
+                                                                                Text('Are You Sure delete this sunnah'),
                                                                             actions: [
                                                                               TextButton(
                                                                                 onPressed: () => Navigator.pop(alertDialogContext, false),
-                                                                                child: const Text('Cancel'),
+                                                                                child: Text('Cancel'),
                                                                               ),
                                                                               TextButton(
                                                                                 onPressed: () => Navigator.pop(alertDialogContext, true),
-                                                                                child: const Text('Confirm'),
+                                                                                child: Text('Confirm'),
                                                                               ),
                                                                             ],
                                                                           ),
@@ -441,7 +445,7 @@ class _StatistikWidgetState extends State<StatistikWidget> {
                                                                 ),
                                                               );
 
-                                                              shouldSetState =
+                                                              _shouldSetState =
                                                                   true;
                                                               if ((_model
                                                                       .apiResultbq1
@@ -455,16 +459,16 @@ class _StatistikWidgetState extends State<StatistikWidget> {
                                                                     return WebViewAware(
                                                                       child:
                                                                           AlertDialog(
-                                                                        title: const Text(
+                                                                        title: Text(
                                                                             'Information'),
                                                                         content:
-                                                                            const Text('Delete Sunnah Success'),
+                                                                            Text('Delete Sunnah Success'),
                                                                         actions: [
                                                                           TextButton(
                                                                             onPressed: () =>
                                                                                 Navigator.pop(alertDialogContext),
                                                                             child:
-                                                                                const Text('Ok'),
+                                                                                Text('Ok'),
                                                                           ),
                                                                         ],
                                                                       ),
@@ -485,16 +489,16 @@ class _StatistikWidgetState extends State<StatistikWidget> {
                                                                     return WebViewAware(
                                                                       child:
                                                                           AlertDialog(
-                                                                        title: const Text(
+                                                                        title: Text(
                                                                             'Information'),
                                                                         content:
-                                                                            const Text('Deleted Faild'),
+                                                                            Text('Deleted Faild'),
                                                                         actions: [
                                                                           TextButton(
                                                                             onPressed: () =>
                                                                                 Navigator.pop(alertDialogContext),
                                                                             child:
-                                                                                const Text('Ok'),
+                                                                                Text('Ok'),
                                                                           ),
                                                                         ],
                                                                       ),
@@ -503,10 +507,9 @@ class _StatistikWidgetState extends State<StatistikWidget> {
                                                                 );
                                                               }
 
-                                                              if (shouldSetState) {
+                                                              if (_shouldSetState)
                                                                 safeSetState(
                                                                     () {});
-                                                              }
                                                               return;
                                                             } else {
                                                               ScaffoldMessenger
@@ -522,7 +525,7 @@ class _StatistikWidgetState extends State<StatistikWidget> {
                                                                           .primaryText,
                                                                     ),
                                                                   ),
-                                                                  duration: const Duration(
+                                                                  duration: Duration(
                                                                       milliseconds:
                                                                           4000),
                                                                   backgroundColor:
@@ -531,17 +534,15 @@ class _StatistikWidgetState extends State<StatistikWidget> {
                                                                           .secondary,
                                                                 ),
                                                               );
-                                                              if (shouldSetState) {
+                                                              if (_shouldSetState)
                                                                 safeSetState(
                                                                     () {});
-                                                              }
                                                               return;
                                                             }
 
-                                                            if (shouldSetState) {
+                                                            if (_shouldSetState)
                                                               safeSetState(
                                                                   () {});
-                                                            }
                                                           },
                                                           child: Icon(
                                                             Icons

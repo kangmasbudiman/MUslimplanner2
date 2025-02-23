@@ -52,7 +52,7 @@ class _DateComponenWidgetState extends State<DateComponenWidget> {
             children: List.generate(daftarPekan.length, (daftarPekanIndex) {
               final daftarPekanItem = daftarPekan[daftarPekanIndex];
               return Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 10.0),
+                padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 10.0),
                 child: Container(
                   width: 40.0,
                   height: 75.0,
@@ -65,7 +65,7 @@ class _DateComponenWidgetState extends State<DateComponenWidget> {
                           getCurrentTimestamp),
                       FlutterFlowTheme.of(context).secondaryBackground,
                     ),
-                    boxShadow: const [
+                    boxShadow: [
                       BoxShadow(
                         blurRadius: 4.0,
                         color: Color(0x33000000),
@@ -75,7 +75,7 @@ class _DateComponenWidgetState extends State<DateComponenWidget> {
                         ),
                       )
                     ],
-                    borderRadius: const BorderRadius.only(
+                    borderRadius: BorderRadius.only(
                       bottomLeft: Radius.circular(20.0),
                       bottomRight: Radius.circular(20.0),
                       topLeft: Radius.circular(20.0),
@@ -119,9 +119,9 @@ class _DateComponenWidgetState extends State<DateComponenWidget> {
                             ),
                       ),
                       Align(
-                        alignment: const AlignmentDirectional(0.0, 0.0),
+                        alignment: AlignmentDirectional(0.0, 0.0),
                         child: Stack(
-                          alignment: const AlignmentDirectional(0.0, 0.0),
+                          alignment: AlignmentDirectional(0.0, 0.0),
                           children: [
                             Container(
                               width: 25.0,
@@ -153,7 +153,7 @@ class _DateComponenWidgetState extends State<DateComponenWidget> {
                   ),
                 ),
               );
-            }).divide(const SizedBox(width: 8.0)),
+            }).divide(SizedBox(width: 8.0)),
           ),
         );
       },

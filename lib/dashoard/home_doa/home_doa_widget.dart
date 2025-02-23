@@ -5,6 +5,7 @@ import '/cruddoa/tambah_do/tambah_do_widget.dart';
 import '/flutter_flow/flutter_flow_autocomplete_options_list.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:webviewx_plus/webviewx_plus.dart';
 import 'home_doa_model.dart';
@@ -12,6 +13,9 @@ export 'home_doa_model.dart';
 
 class HomeDoaWidget extends StatefulWidget {
   const HomeDoaWidget({super.key});
+
+  static String routeName = 'HomeDoa';
+  static String routePath = '/homeDoa';
 
   @override
   State<HomeDoaWidget> createState() => _HomeDoaWidgetState();
@@ -53,7 +57,7 @@ class _HomeDoaWidgetState extends State<HomeDoaWidget> {
         floatingActionButton: Visibility(
           visible: valueOrDefault(currentUserDocument?.rules, 0) == 1,
           child: Padding(
-            padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 100.0),
+            padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 100.0),
             child: AuthUserStreamWidget(
               builder: (context) => FloatingActionButton(
                 onPressed: () async {
@@ -71,7 +75,7 @@ class _HomeDoaWidgetState extends State<HomeDoaWidget> {
                           },
                           child: Padding(
                             padding: MediaQuery.viewInsetsOf(context),
-                            child: const TambahDoWidget(),
+                            child: TambahDoWidget(),
                           ),
                         ),
                       );
@@ -93,7 +97,7 @@ class _HomeDoaWidgetState extends State<HomeDoaWidget> {
           backgroundColor: Colors.white,
           automaticallyImplyLeading: false,
           title: Padding(
-            padding: const EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 20.0),
+            padding: EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 20.0),
             child: Row(
               mainAxisSize: MainAxisSize.max,
               mainAxisAlignment: MainAxisAlignment.center,
@@ -111,36 +115,36 @@ class _HomeDoaWidgetState extends State<HomeDoaWidget> {
               ],
             ),
           ),
-          actions: const [],
+          actions: [],
           centerTitle: false,
           elevation: 2.0,
         ),
         body: SafeArea(
           top: true,
           child: Align(
-            alignment: const AlignmentDirectional(0.0, 1.0),
+            alignment: AlignmentDirectional(0.0, 1.0),
             child: Stack(
               children: [
                 Container(
                   width: double.infinity,
                   height: double.infinity,
-                  decoration: const BoxDecoration(),
+                  decoration: BoxDecoration(),
                   child: Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 0.0),
+                        EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 0.0),
                     child: Column(
                       mainAxisSize: MainAxisSize.max,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 20.0, 0.0, 0.0),
                           child: AuthUserStreamWidget(
                             builder: (context) => Container(
                               width: double.infinity,
                               decoration: BoxDecoration(
                                 color: currentUserDocument?.colorThemes,
-                                boxShadow: const [
+                                boxShadow: [
                                   BoxShadow(
                                     blurRadius: 2.0,
                                     color: Color(0x33000000),
@@ -150,7 +154,7 @@ class _HomeDoaWidgetState extends State<HomeDoaWidget> {
                                     ),
                                   )
                                 ],
-                                borderRadius: const BorderRadius.only(
+                                borderRadius: BorderRadius.only(
                                   bottomLeft: Radius.circular(20.0),
                                   bottomRight: Radius.circular(20.0),
                                   topLeft: Radius.circular(20.0),
@@ -162,10 +166,10 @@ class _HomeDoaWidgetState extends State<HomeDoaWidget> {
                                 children: [
                                   Expanded(
                                     child: Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           10.0, 0.0, 10.0, 0.0),
                                       child: Autocomplete<String>(
-                                        initialValue: const TextEditingValue(),
+                                        initialValue: TextEditingValue(),
                                         optionsBuilder: (textEditingValue) {
                                           if (textEditingValue.text == '') {
                                             return const Iterable<
@@ -235,10 +239,10 @@ class _HomeDoaWidgetState extends State<HomeDoaWidget> {
                                                 .addListener(
                                               () async {
                                                 context.pushNamed(
-                                                  'Doadoa',
+                                                  DoadoaWidget.routeName,
                                                   extra: <String, dynamic>{
                                                     kTransitionInfoKey:
-                                                        const TransitionInfo(
+                                                        TransitionInfo(
                                                       hasTransition: true,
                                                       transitionType:
                                                           PageTransitionType
@@ -281,7 +285,7 @@ class _HomeDoaWidgetState extends State<HomeDoaWidget> {
                                               errorBorder: InputBorder.none,
                                               focusedErrorBorder:
                                                   InputBorder.none,
-                                              prefixIcon: const Icon(
+                                              prefixIcon: Icon(
                                                 Icons.search_sharp,
                                                 color: Colors.white,
                                                 size: 17.0,
@@ -304,7 +308,7 @@ class _HomeDoaWidgetState extends State<HomeDoaWidget> {
                                     ),
                                   ),
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 10.0, 0.0),
                                     child: Icon(
                                       Icons.close_sharp,
@@ -319,12 +323,12 @@ class _HomeDoaWidgetState extends State<HomeDoaWidget> {
                         ),
                         Expanded(
                           child: Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 10.0, 0.0, 0.0),
                             child: GridView(
                               padding: EdgeInsets.zero,
                               gridDelegate:
-                                  const SliverGridDelegateWithFixedCrossAxisCount(
+                                  SliverGridDelegateWithFixedCrossAxisCount(
                                 crossAxisCount: 3,
                                 crossAxisSpacing: 10.0,
                                 mainAxisSpacing: 10.0,
@@ -363,7 +367,8 @@ class _HomeDoaWidgetState extends State<HomeDoaWidget> {
                                       hoverColor: Colors.transparent,
                                       highlightColor: Colors.transparent,
                                       onTap: () async {
-                                        context.pushNamed('Doadoa');
+                                        context
+                                            .pushNamed(DoadoaWidget.routeName);
                                       },
                                       child: Container(
                                         width: 125.0,
@@ -377,7 +382,7 @@ class _HomeDoaWidgetState extends State<HomeDoaWidget> {
                                               'assets/images/Rectangle_37.png',
                                             ).image,
                                           ),
-                                          borderRadius: const BorderRadius.only(
+                                          borderRadius: BorderRadius.only(
                                             bottomLeft: Radius.circular(10.0),
                                             bottomRight: Radius.circular(10.0),
                                             topLeft: Radius.circular(10.0),
@@ -385,7 +390,7 @@ class _HomeDoaWidgetState extends State<HomeDoaWidget> {
                                           ),
                                         ),
                                         child: Padding(
-                                          padding: const EdgeInsets.all(6.0),
+                                          padding: EdgeInsets.all(6.0),
                                           child: Column(
                                             mainAxisSize: MainAxisSize.max,
                                             mainAxisAlignment:
@@ -440,7 +445,7 @@ class _HomeDoaWidgetState extends State<HomeDoaWidget> {
                                                             letterSpacing: 0.0,
                                                           ),
                                                     ),
-                                                    const TextSpan(
+                                                    TextSpan(
                                                       text: ' Doa',
                                                       style: TextStyle(),
                                                     )
@@ -494,7 +499,7 @@ class _HomeDoaWidgetState extends State<HomeDoaWidget> {
                                       highlightColor: Colors.transparent,
                                       onTap: () async {
                                         context.pushNamed(
-                                          'DoadoaByKategorinew',
+                                          DoadoaByKategorinewWidget.routeName,
                                           queryParameters: {
                                             'idkategori': serializeParam(
                                               1,
@@ -515,7 +520,7 @@ class _HomeDoaWidgetState extends State<HomeDoaWidget> {
                                               'assets/images/Rectangle_37.png',
                                             ).image,
                                           ),
-                                          borderRadius: const BorderRadius.only(
+                                          borderRadius: BorderRadius.only(
                                             bottomLeft: Radius.circular(10.0),
                                             bottomRight: Radius.circular(10.0),
                                             topLeft: Radius.circular(10.0),
@@ -523,7 +528,7 @@ class _HomeDoaWidgetState extends State<HomeDoaWidget> {
                                           ),
                                         ),
                                         child: Padding(
-                                          padding: const EdgeInsets.all(6.0),
+                                          padding: EdgeInsets.all(6.0),
                                           child: Column(
                                             mainAxisSize: MainAxisSize.max,
                                             mainAxisAlignment:
@@ -585,7 +590,7 @@ class _HomeDoaWidgetState extends State<HomeDoaWidget> {
                                                             letterSpacing: 0.0,
                                                           ),
                                                     ),
-                                                    const TextSpan(
+                                                    TextSpan(
                                                       text: ' Doa',
                                                       style: TextStyle(),
                                                     )
@@ -639,7 +644,7 @@ class _HomeDoaWidgetState extends State<HomeDoaWidget> {
                                       highlightColor: Colors.transparent,
                                       onTap: () async {
                                         context.pushNamed(
-                                          'DoadoaByKategorinew',
+                                          DoadoaByKategorinewWidget.routeName,
                                           queryParameters: {
                                             'idkategori': serializeParam(
                                               2,
@@ -660,7 +665,7 @@ class _HomeDoaWidgetState extends State<HomeDoaWidget> {
                                               'assets/images/Rectangle_37.png',
                                             ).image,
                                           ),
-                                          borderRadius: const BorderRadius.only(
+                                          borderRadius: BorderRadius.only(
                                             bottomLeft: Radius.circular(10.0),
                                             bottomRight: Radius.circular(10.0),
                                             topLeft: Radius.circular(10.0),
@@ -668,7 +673,7 @@ class _HomeDoaWidgetState extends State<HomeDoaWidget> {
                                           ),
                                         ),
                                         child: Padding(
-                                          padding: const EdgeInsets.all(6.0),
+                                          padding: EdgeInsets.all(6.0),
                                           child: Column(
                                             mainAxisSize: MainAxisSize.max,
                                             mainAxisAlignment:
@@ -731,7 +736,7 @@ class _HomeDoaWidgetState extends State<HomeDoaWidget> {
                                                             letterSpacing: 0.0,
                                                           ),
                                                     ),
-                                                    const TextSpan(
+                                                    TextSpan(
                                                       text: ' Doa',
                                                       style: TextStyle(),
                                                     )
@@ -785,7 +790,7 @@ class _HomeDoaWidgetState extends State<HomeDoaWidget> {
                                       highlightColor: Colors.transparent,
                                       onTap: () async {
                                         context.pushNamed(
-                                          'DoadoaByKategorinew',
+                                          DoadoaByKategorinewWidget.routeName,
                                           queryParameters: {
                                             'idkategori': serializeParam(
                                               3,
@@ -806,7 +811,7 @@ class _HomeDoaWidgetState extends State<HomeDoaWidget> {
                                               'assets/images/Rectangle_37.png',
                                             ).image,
                                           ),
-                                          borderRadius: const BorderRadius.only(
+                                          borderRadius: BorderRadius.only(
                                             bottomLeft: Radius.circular(10.0),
                                             bottomRight: Radius.circular(10.0),
                                             topLeft: Radius.circular(10.0),
@@ -814,7 +819,7 @@ class _HomeDoaWidgetState extends State<HomeDoaWidget> {
                                           ),
                                         ),
                                         child: Padding(
-                                          padding: const EdgeInsets.all(6.0),
+                                          padding: EdgeInsets.all(6.0),
                                           child: Column(
                                             mainAxisSize: MainAxisSize.max,
                                             mainAxisAlignment:
@@ -877,7 +882,7 @@ class _HomeDoaWidgetState extends State<HomeDoaWidget> {
                                                             letterSpacing: 0.0,
                                                           ),
                                                     ),
-                                                    const TextSpan(
+                                                    TextSpan(
                                                       text: ' Doa',
                                                       style: TextStyle(),
                                                     )
@@ -931,7 +936,7 @@ class _HomeDoaWidgetState extends State<HomeDoaWidget> {
                                       highlightColor: Colors.transparent,
                                       onTap: () async {
                                         context.pushNamed(
-                                          'DoadoaByKategorinew',
+                                          DoadoaByKategorinewWidget.routeName,
                                           queryParameters: {
                                             'idkategori': serializeParam(
                                               4,
@@ -952,7 +957,7 @@ class _HomeDoaWidgetState extends State<HomeDoaWidget> {
                                               'assets/images/Rectangle_37.png',
                                             ).image,
                                           ),
-                                          borderRadius: const BorderRadius.only(
+                                          borderRadius: BorderRadius.only(
                                             bottomLeft: Radius.circular(10.0),
                                             bottomRight: Radius.circular(10.0),
                                             topLeft: Radius.circular(10.0),
@@ -960,7 +965,7 @@ class _HomeDoaWidgetState extends State<HomeDoaWidget> {
                                           ),
                                         ),
                                         child: Padding(
-                                          padding: const EdgeInsets.all(6.0),
+                                          padding: EdgeInsets.all(6.0),
                                           child: Column(
                                             mainAxisSize: MainAxisSize.max,
                                             mainAxisAlignment:
@@ -1023,7 +1028,7 @@ class _HomeDoaWidgetState extends State<HomeDoaWidget> {
                                                             letterSpacing: 0.0,
                                                           ),
                                                     ),
-                                                    const TextSpan(
+                                                    TextSpan(
                                                       text: ' Doa',
                                                       style: TextStyle(),
                                                     )
@@ -1077,7 +1082,7 @@ class _HomeDoaWidgetState extends State<HomeDoaWidget> {
                                       highlightColor: Colors.transparent,
                                       onTap: () async {
                                         context.pushNamed(
-                                          'DoadoaByKategorinew',
+                                          DoadoaByKategorinewWidget.routeName,
                                           queryParameters: {
                                             'idkategori': serializeParam(
                                               5,
@@ -1098,7 +1103,7 @@ class _HomeDoaWidgetState extends State<HomeDoaWidget> {
                                               'assets/images/Rectangle_37.png',
                                             ).image,
                                           ),
-                                          borderRadius: const BorderRadius.only(
+                                          borderRadius: BorderRadius.only(
                                             bottomLeft: Radius.circular(10.0),
                                             bottomRight: Radius.circular(10.0),
                                             topLeft: Radius.circular(10.0),
@@ -1106,7 +1111,7 @@ class _HomeDoaWidgetState extends State<HomeDoaWidget> {
                                           ),
                                         ),
                                         child: Padding(
-                                          padding: const EdgeInsets.all(6.0),
+                                          padding: EdgeInsets.all(6.0),
                                           child: Column(
                                             mainAxisSize: MainAxisSize.max,
                                             mainAxisAlignment:
@@ -1169,7 +1174,7 @@ class _HomeDoaWidgetState extends State<HomeDoaWidget> {
                                                             letterSpacing: 0.0,
                                                           ),
                                                     ),
-                                                    const TextSpan(
+                                                    TextSpan(
                                                       text: ' Doa',
                                                       style: TextStyle(),
                                                     )
@@ -1223,7 +1228,7 @@ class _HomeDoaWidgetState extends State<HomeDoaWidget> {
                                       highlightColor: Colors.transparent,
                                       onTap: () async {
                                         context.pushNamed(
-                                          'DoadoaByKategorinew',
+                                          DoadoaByKategorinewWidget.routeName,
                                           queryParameters: {
                                             'idkategori': serializeParam(
                                               6,
@@ -1244,7 +1249,7 @@ class _HomeDoaWidgetState extends State<HomeDoaWidget> {
                                               'assets/images/Rectangle_37.png',
                                             ).image,
                                           ),
-                                          borderRadius: const BorderRadius.only(
+                                          borderRadius: BorderRadius.only(
                                             bottomLeft: Radius.circular(10.0),
                                             bottomRight: Radius.circular(10.0),
                                             topLeft: Radius.circular(10.0),
@@ -1252,7 +1257,7 @@ class _HomeDoaWidgetState extends State<HomeDoaWidget> {
                                           ),
                                         ),
                                         child: Padding(
-                                          padding: const EdgeInsets.all(6.0),
+                                          padding: EdgeInsets.all(6.0),
                                           child: Column(
                                             mainAxisSize: MainAxisSize.max,
                                             mainAxisAlignment:
@@ -1315,7 +1320,7 @@ class _HomeDoaWidgetState extends State<HomeDoaWidget> {
                                                             letterSpacing: 0.0,
                                                           ),
                                                     ),
-                                                    const TextSpan(
+                                                    TextSpan(
                                                       text: '  Doa',
                                                       style: TextStyle(),
                                                     )
@@ -1369,7 +1374,7 @@ class _HomeDoaWidgetState extends State<HomeDoaWidget> {
                                       highlightColor: Colors.transparent,
                                       onTap: () async {
                                         context.pushNamed(
-                                          'DoadoaByKategorinew',
+                                          DoadoaByKategorinewWidget.routeName,
                                           queryParameters: {
                                             'idkategori': serializeParam(
                                               7,
@@ -1390,7 +1395,7 @@ class _HomeDoaWidgetState extends State<HomeDoaWidget> {
                                               'assets/images/Rectangle_37.png',
                                             ).image,
                                           ),
-                                          borderRadius: const BorderRadius.only(
+                                          borderRadius: BorderRadius.only(
                                             bottomLeft: Radius.circular(10.0),
                                             bottomRight: Radius.circular(10.0),
                                             topLeft: Radius.circular(10.0),
@@ -1398,7 +1403,7 @@ class _HomeDoaWidgetState extends State<HomeDoaWidget> {
                                           ),
                                         ),
                                         child: Padding(
-                                          padding: const EdgeInsets.all(6.0),
+                                          padding: EdgeInsets.all(6.0),
                                           child: Column(
                                             mainAxisSize: MainAxisSize.max,
                                             mainAxisAlignment:
@@ -1461,7 +1466,7 @@ class _HomeDoaWidgetState extends State<HomeDoaWidget> {
                                                             letterSpacing: 0.0,
                                                           ),
                                                     ),
-                                                    const TextSpan(
+                                                    TextSpan(
                                                       text: ' Doa',
                                                       style: TextStyle(),
                                                     )
@@ -1515,7 +1520,7 @@ class _HomeDoaWidgetState extends State<HomeDoaWidget> {
                                       highlightColor: Colors.transparent,
                                       onTap: () async {
                                         context.pushNamed(
-                                          'DoadoaByKategorinew',
+                                          DoadoaByKategorinewWidget.routeName,
                                           queryParameters: {
                                             'idkategori': serializeParam(
                                               8,
@@ -1536,7 +1541,7 @@ class _HomeDoaWidgetState extends State<HomeDoaWidget> {
                                               'assets/images/Rectangle_37.png',
                                             ).image,
                                           ),
-                                          borderRadius: const BorderRadius.only(
+                                          borderRadius: BorderRadius.only(
                                             bottomLeft: Radius.circular(10.0),
                                             bottomRight: Radius.circular(10.0),
                                             topLeft: Radius.circular(10.0),
@@ -1544,7 +1549,7 @@ class _HomeDoaWidgetState extends State<HomeDoaWidget> {
                                           ),
                                         ),
                                         child: Padding(
-                                          padding: const EdgeInsets.all(6.0),
+                                          padding: EdgeInsets.all(6.0),
                                           child: Column(
                                             mainAxisSize: MainAxisSize.max,
                                             mainAxisAlignment:
@@ -1607,7 +1612,7 @@ class _HomeDoaWidgetState extends State<HomeDoaWidget> {
                                                             letterSpacing: 0.0,
                                                           ),
                                                     ),
-                                                    const TextSpan(
+                                                    TextSpan(
                                                       text: ' Doa',
                                                       style: TextStyle(),
                                                     )
@@ -1661,7 +1666,7 @@ class _HomeDoaWidgetState extends State<HomeDoaWidget> {
                                       highlightColor: Colors.transparent,
                                       onTap: () async {
                                         context.pushNamed(
-                                          'DoadoaByKategorinew',
+                                          DoadoaByKategorinewWidget.routeName,
                                           queryParameters: {
                                             'idkategori': serializeParam(
                                               9,
@@ -1682,7 +1687,7 @@ class _HomeDoaWidgetState extends State<HomeDoaWidget> {
                                               'assets/images/Rectangle_37.png',
                                             ).image,
                                           ),
-                                          borderRadius: const BorderRadius.only(
+                                          borderRadius: BorderRadius.only(
                                             bottomLeft: Radius.circular(10.0),
                                             bottomRight: Radius.circular(10.0),
                                             topLeft: Radius.circular(10.0),
@@ -1690,7 +1695,7 @@ class _HomeDoaWidgetState extends State<HomeDoaWidget> {
                                           ),
                                         ),
                                         child: Padding(
-                                          padding: const EdgeInsets.all(6.0),
+                                          padding: EdgeInsets.all(6.0),
                                           child: Column(
                                             mainAxisSize: MainAxisSize.max,
                                             mainAxisAlignment:
@@ -1753,7 +1758,7 @@ class _HomeDoaWidgetState extends State<HomeDoaWidget> {
                                                             letterSpacing: 0.0,
                                                           ),
                                                     ),
-                                                    const TextSpan(
+                                                    TextSpan(
                                                       text: '  Doa',
                                                       style: TextStyle(),
                                                     )
@@ -1807,7 +1812,7 @@ class _HomeDoaWidgetState extends State<HomeDoaWidget> {
                                       highlightColor: Colors.transparent,
                                       onTap: () async {
                                         context.pushNamed(
-                                          'DoadoaByKategorinew',
+                                          DoadoaByKategorinewWidget.routeName,
                                           queryParameters: {
                                             'idkategori': serializeParam(
                                               10,
@@ -1828,7 +1833,7 @@ class _HomeDoaWidgetState extends State<HomeDoaWidget> {
                                               'assets/images/Rectangle_37.png',
                                             ).image,
                                           ),
-                                          borderRadius: const BorderRadius.only(
+                                          borderRadius: BorderRadius.only(
                                             bottomLeft: Radius.circular(10.0),
                                             bottomRight: Radius.circular(10.0),
                                             topLeft: Radius.circular(10.0),
@@ -1836,7 +1841,7 @@ class _HomeDoaWidgetState extends State<HomeDoaWidget> {
                                           ),
                                         ),
                                         child: Padding(
-                                          padding: const EdgeInsets.all(6.0),
+                                          padding: EdgeInsets.all(6.0),
                                           child: Column(
                                             mainAxisSize: MainAxisSize.max,
                                             mainAxisAlignment:
@@ -1899,7 +1904,7 @@ class _HomeDoaWidgetState extends State<HomeDoaWidget> {
                                                             letterSpacing: 0.0,
                                                           ),
                                                     ),
-                                                    const TextSpan(
+                                                    TextSpan(
                                                       text: '  Doa',
                                                       style: TextStyle(),
                                                     )
@@ -1953,7 +1958,7 @@ class _HomeDoaWidgetState extends State<HomeDoaWidget> {
                                       highlightColor: Colors.transparent,
                                       onTap: () async {
                                         context.pushNamed(
-                                          'DoadoaByKategorinew',
+                                          DoadoaByKategorinewWidget.routeName,
                                           queryParameters: {
                                             'idkategori': serializeParam(
                                               11,
@@ -1974,7 +1979,7 @@ class _HomeDoaWidgetState extends State<HomeDoaWidget> {
                                               'assets/images/Rectangle_37.png',
                                             ).image,
                                           ),
-                                          borderRadius: const BorderRadius.only(
+                                          borderRadius: BorderRadius.only(
                                             bottomLeft: Radius.circular(10.0),
                                             bottomRight: Radius.circular(10.0),
                                             topLeft: Radius.circular(10.0),
@@ -1982,7 +1987,7 @@ class _HomeDoaWidgetState extends State<HomeDoaWidget> {
                                           ),
                                         ),
                                         child: Padding(
-                                          padding: const EdgeInsets.all(6.0),
+                                          padding: EdgeInsets.all(6.0),
                                           child: Column(
                                             mainAxisSize: MainAxisSize.max,
                                             mainAxisAlignment:
@@ -2045,7 +2050,7 @@ class _HomeDoaWidgetState extends State<HomeDoaWidget> {
                                                             letterSpacing: 0.0,
                                                           ),
                                                     ),
-                                                    const TextSpan(
+                                                    TextSpan(
                                                       text: '  Doa',
                                                       style: TextStyle(),
                                                     )
@@ -2076,11 +2081,11 @@ class _HomeDoaWidgetState extends State<HomeDoaWidget> {
                   ),
                 ),
                 Align(
-                  alignment: const AlignmentDirectional(0.0, 1.0),
+                  alignment: AlignmentDirectional(0.0, 1.0),
                   child: wrapWithModel(
                     model: _model.navbarModel,
                     updateCallback: () => safeSetState(() {}),
-                    child: const NavbarWidget(),
+                    child: NavbarWidget(),
                   ),
                 ),
               ],

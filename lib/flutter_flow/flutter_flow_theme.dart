@@ -140,25 +140,25 @@ class LightModeTheme extends FlutterFlowTheme {
   late Color error = const Color(0xFFFF5963);
   late Color info = const Color(0xFFFFFFFF);
 
-  late Color blackText = const Color(0xFF000000);
-  late Color colorPremium3 = const Color(0xFF790C38);
-  late Color colorPremium2 = const Color(0xFF39BD16);
-  late Color colorPremium1 = const Color(0xFFC1BAA3);
-  late Color colorpremium4 = const Color(0xFF02BF9C);
-  late Color colorPremium5 = const Color(0xFFED1512);
-  late Color colorpremium6 = const Color(0xFFFFF69F);
-  late Color colorPremium7 = const Color(0xFFC7A21C);
-  late Color colorPremium8 = const Color(0xFF454BEA);
-  late Color colorpremium9 = const Color(0xFFCB6C24);
-  late Color colorPremium10 = const Color(0xFF160614);
-  late Color colorPremium11 = const Color(0xFFCBE782);
-  late Color colorPremium12 = const Color(0xFF68B9D2);
-  late Color colorPremium13 = const Color(0xFF427F13);
-  late Color colorPremium14 = const Color(0xFF114F76);
-  late Color colorPremium15 = const Color(0xFFF4D22B);
-  late Color colorPremium16 = const Color(0xFF8CEE96);
-  late Color colorPremium17 = const Color(0xFF5F037A);
-  late Color colorPremium18 = const Color(0xFF74825E);
+  late Color blackText = Color(0xFF000000);
+  late Color colorPremium3 = Color(0xFF790C38);
+  late Color colorPremium2 = Color(0xFF39BD16);
+  late Color colorPremium1 = Color(0xFFC1BAA3);
+  late Color colorpremium4 = Color(0xFF02BF9C);
+  late Color colorPremium5 = Color(0xFFED1512);
+  late Color colorpremium6 = Color(0xFFFFF69F);
+  late Color colorPremium7 = Color(0xFFC7A21C);
+  late Color colorPremium8 = Color(0xFF454BEA);
+  late Color colorpremium9 = Color(0xFFCB6C24);
+  late Color colorPremium10 = Color(0xFF160614);
+  late Color colorPremium11 = Color(0xFFCBE782);
+  late Color colorPremium12 = Color(0xFF68B9D2);
+  late Color colorPremium13 = Color(0xFF427F13);
+  late Color colorPremium14 = Color(0xFF114F76);
+  late Color colorPremium15 = Color(0xFFF4D22B);
+  late Color colorPremium16 = Color(0xFF8CEE96);
+  late Color colorPremium17 = Color(0xFF5F037A);
+  late Color colorPremium18 = Color(0xFF74825E);
 }
 
 abstract class Typography {

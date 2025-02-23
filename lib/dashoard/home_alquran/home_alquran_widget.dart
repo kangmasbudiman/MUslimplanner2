@@ -6,6 +6,7 @@ import '/components/play_widget.dart';
 import '/flutter_flow/flutter_flow_autocomplete_options_list.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/index.dart';
 import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -15,6 +16,9 @@ export 'home_alquran_model.dart';
 
 class HomeAlquranWidget extends StatefulWidget {
   const HomeAlquranWidget({super.key});
+
+  static String routeName = 'HomeAlquran';
+  static String routePath = '/homeAlquran';
 
   @override
   State<HomeAlquranWidget> createState() => _HomeAlquranWidgetState();
@@ -55,12 +59,12 @@ class _HomeAlquranWidgetState extends State<HomeAlquranWidget> {
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
         appBar: PreferredSize(
-          preferredSize: const Size.fromHeight(80.0),
+          preferredSize: Size.fromHeight(80.0),
           child: AppBar(
             backgroundColor: Colors.white,
             automaticallyImplyLeading: false,
             title: Padding(
-              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
+              padding: EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
               child: Row(
                 mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -77,7 +81,7 @@ class _HomeAlquranWidgetState extends State<HomeAlquranWidget> {
                 ],
               ),
             ),
-            actions: const [],
+            actions: [],
             centerTitle: false,
             elevation: 2.0,
           ),
@@ -85,16 +89,16 @@ class _HomeAlquranWidgetState extends State<HomeAlquranWidget> {
         body: SafeArea(
           top: true,
           child: Align(
-            alignment: const AlignmentDirectional(0.0, 1.0),
+            alignment: AlignmentDirectional(0.0, 1.0),
             child: Stack(
               children: [
                 Container(
                   width: double.infinity,
                   height: double.infinity,
-                  decoration: const BoxDecoration(),
+                  decoration: BoxDecoration(),
                   child: Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 0.0),
+                        EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 0.0),
                     child: SingleChildScrollView(
                       primary: false,
                       child: Column(
@@ -102,14 +106,14 @@ class _HomeAlquranWidgetState extends State<HomeAlquranWidget> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 20.0, 0.0, 0.0),
                             child: AuthUserStreamWidget(
                               builder: (context) => Container(
                                 width: double.infinity,
                                 decoration: BoxDecoration(
                                   color: currentUserDocument?.colorThemes,
-                                  boxShadow: const [
+                                  boxShadow: [
                                     BoxShadow(
                                       blurRadius: 2.0,
                                       color: Color(0x33000000),
@@ -119,7 +123,7 @@ class _HomeAlquranWidgetState extends State<HomeAlquranWidget> {
                                       ),
                                     )
                                   ],
-                                  borderRadius: const BorderRadius.only(
+                                  borderRadius: BorderRadius.only(
                                     bottomLeft: Radius.circular(20.0),
                                     bottomRight: Radius.circular(20.0),
                                     topLeft: Radius.circular(20.0),
@@ -130,7 +134,7 @@ class _HomeAlquranWidgetState extends State<HomeAlquranWidget> {
                                   mainAxisSize: MainAxisSize.max,
                                   children: [
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           10.0, 0.0, 0.0, 0.0),
                                       child: InkWell(
                                         splashColor: Colors.transparent,
@@ -191,7 +195,7 @@ class _HomeAlquranWidgetState extends State<HomeAlquranWidget> {
                                               snapshot.data!;
 
                                           return Autocomplete<String>(
-                                            initialValue: const TextEditingValue(),
+                                            initialValue: TextEditingValue(),
                                             optionsBuilder: (textEditingValue) {
                                               if (textEditingValue.text == '') {
                                                 return const Iterable<
@@ -225,7 +229,7 @@ class _HomeAlquranWidgetState extends State<HomeAlquranWidget> {
                                                           fontFamily: 'Inter',
                                                           letterSpacing: 0.0,
                                                         ),
-                                                textHighlightStyle: const TextStyle(),
+                                                textHighlightStyle: TextStyle(),
                                                 elevation: 4.0,
                                                 optionBackgroundColor:
                                                     FlutterFlowTheme.of(context)
@@ -263,7 +267,7 @@ class _HomeAlquranWidgetState extends State<HomeAlquranWidget> {
                                                 onChanged: (_) =>
                                                     EasyDebounce.debounce(
                                                   '_model.textFieldSearchTextController',
-                                                  const Duration(milliseconds: 300),
+                                                  Duration(milliseconds: 300),
                                                   () async {
                                                     FFAppState().keyword = _model
                                                         .textFieldSearchTextController
@@ -314,7 +318,7 @@ class _HomeAlquranWidgetState extends State<HomeAlquranWidget> {
                                       ),
                                     ),
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 0.0, 10.0, 0.0),
                                       child: InkWell(
                                         splashColor: Colors.transparent,
@@ -350,7 +354,7 @@ class _HomeAlquranWidgetState extends State<HomeAlquranWidget> {
                             ),
                           ),
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 20.0, 0.0, 10.0),
                             child: Text(
                               'Continue Reading',
@@ -369,7 +373,7 @@ class _HomeAlquranWidgetState extends State<HomeAlquranWidget> {
                               width: double.infinity,
                               decoration: BoxDecoration(
                                 color: currentUserDocument?.colorThemes,
-                                borderRadius: const BorderRadius.only(
+                                borderRadius: BorderRadius.only(
                                   bottomLeft: Radius.circular(0.0),
                                   bottomRight: Radius.circular(0.0),
                                   topLeft: Radius.circular(20.0),
@@ -419,7 +423,7 @@ class _HomeAlquranWidgetState extends State<HomeAlquranWidget> {
                                               responlist[responlistIndex];
                                           return Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     20.0, 12.0, 20.0, 0.0),
                                             child: InkWell(
                                               splashColor: Colors.transparent,
@@ -429,7 +433,7 @@ class _HomeAlquranWidgetState extends State<HomeAlquranWidget> {
                                                   Colors.transparent,
                                               onTap: () async {
                                                 context.pushNamed(
-                                                  'LanjutAlquran',
+                                                  LanjutAlquranWidget.routeName,
                                                   queryParameters: {
                                                     'nomorSurat':
                                                         serializeParam(
@@ -628,7 +632,7 @@ class _HomeAlquranWidgetState extends State<HomeAlquranWidget> {
                                                                         .primaryText,
                                                                   ),
                                                                 ),
-                                                                duration: const Duration(
+                                                                duration: Duration(
                                                                     milliseconds:
                                                                         4000),
                                                                 backgroundColor:
@@ -667,7 +671,7 @@ class _HomeAlquranWidgetState extends State<HomeAlquranWidget> {
                                                                           .primaryText,
                                                                     ),
                                                                   ),
-                                                                  duration: const Duration(
+                                                                  duration: Duration(
                                                                       milliseconds:
                                                                           4000),
                                                                   backgroundColor:
@@ -733,13 +737,14 @@ class _HomeAlquranWidgetState extends State<HomeAlquranWidget> {
                               hoverColor: Colors.transparent,
                               highlightColor: Colors.transparent,
                               onTap: () async {
-                                context.pushNamed('Listmybookmark');
+                                context
+                                    .pushNamed(ListmybookmarkWidget.routeName);
                               },
                               child: Container(
                                 width: double.infinity,
                                 decoration: BoxDecoration(
                                   color: currentUserDocument?.colorThemes,
-                                  borderRadius: const BorderRadius.only(
+                                  borderRadius: BorderRadius.only(
                                     bottomLeft: Radius.circular(20.0),
                                     bottomRight: Radius.circular(20.0),
                                     topLeft: Radius.circular(0.0),
@@ -755,7 +760,7 @@ class _HomeAlquranWidgetState extends State<HomeAlquranWidget> {
                                           FlutterFlowTheme.of(context).accent4,
                                     ),
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           20.0, 0.0, 20.0, 10.0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
@@ -774,7 +779,7 @@ class _HomeAlquranWidgetState extends State<HomeAlquranWidget> {
                                                   fontWeight: FontWeight.w600,
                                                 ),
                                           ),
-                                          const Icon(
+                                          Icon(
                                             Icons.arrow_forward_ios,
                                             color: Colors.white,
                                             size: 15.0,
@@ -788,7 +793,7 @@ class _HomeAlquranWidgetState extends State<HomeAlquranWidget> {
                             ),
                           ),
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 20.0, 0.0, 10.0),
                             child: InkWell(
                               splashColor: Colors.transparent,
@@ -812,7 +817,7 @@ class _HomeAlquranWidgetState extends State<HomeAlquranWidget> {
                                         child: Padding(
                                           padding:
                                               MediaQuery.viewInsetsOf(context),
-                                          child: const PlayWidget(),
+                                          child: PlayWidget(),
                                         ),
                                       ),
                                     );
@@ -838,7 +843,7 @@ class _HomeAlquranWidgetState extends State<HomeAlquranWidget> {
                               height: MediaQuery.sizeOf(context).height * 0.7,
                               decoration: BoxDecoration(
                                 color: currentUserDocument?.colorThemes,
-                                borderRadius: const BorderRadius.only(
+                                borderRadius: BorderRadius.only(
                                   bottomLeft: Radius.circular(20.0),
                                   bottomRight: Radius.circular(20.0),
                                   topLeft: Radius.circular(20.0),
@@ -846,7 +851,7 @@ class _HomeAlquranWidgetState extends State<HomeAlquranWidget> {
                                 ),
                               ),
                               child: Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 20.0, 0.0, 0.0),
                                 child: FutureBuilder<ApiCallResponse>(
                                   future: FFAppState().listSurat(
@@ -893,10 +898,10 @@ class _HomeAlquranWidgetState extends State<HomeAlquranWidget> {
                                           itemBuilder: (context, listIndex) {
                                             final listItem = list[listIndex];
                                             return Align(
-                                              alignment: const AlignmentDirectional(
+                                              alignment: AlignmentDirectional(
                                                   1.0, 1.0),
                                               child: Stack(
-                                                alignment: const AlignmentDirectional(
+                                                alignment: AlignmentDirectional(
                                                     1.0, 1.0),
                                                 children: [
                                                   InkWell(
@@ -910,7 +915,8 @@ class _HomeAlquranWidgetState extends State<HomeAlquranWidget> {
                                                         Colors.transparent,
                                                     onTap: () async {
                                                       context.pushNamed(
-                                                        'detailAlquran',
+                                                        DetailAlquranWidget
+                                                            .routeName,
                                                         queryParameters: {
                                                           'nomorSurat':
                                                               serializeParam(
@@ -952,7 +958,7 @@ class _HomeAlquranWidgetState extends State<HomeAlquranWidget> {
                                                         children: [
                                                           Padding(
                                                             padding:
-                                                                const EdgeInsetsDirectional
+                                                                EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         20.0,
                                                                         0.0,
@@ -1005,7 +1011,7 @@ class _HomeAlquranWidgetState extends State<HomeAlquranWidget> {
                                                                             ),
                                                                       ),
                                                                       Padding(
-                                                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                        padding: EdgeInsetsDirectional.fromSTEB(
                                                                             0.0,
                                                                             20.0,
                                                                             0.0,
@@ -1133,7 +1139,7 @@ class _HomeAlquranWidgetState extends State<HomeAlquranWidget> {
                                                               ],
                                                             ),
                                                           ),
-                                                          const Divider(
+                                                          Divider(
                                                             thickness: 1.0,
                                                             color: Colors.white,
                                                           ),
@@ -1143,7 +1149,7 @@ class _HomeAlquranWidgetState extends State<HomeAlquranWidget> {
                                                   ),
                                                   Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 20.0, 20.0),
                                                     child: Row(
@@ -1205,11 +1211,11 @@ class _HomeAlquranWidgetState extends State<HomeAlquranWidget> {
                   ),
                 ),
                 Align(
-                  alignment: const AlignmentDirectional(0.0, 1.0),
+                  alignment: AlignmentDirectional(0.0, 1.0),
                   child: wrapWithModel(
                     model: _model.navbarModel,
                     updateCallback: () => safeSetState(() {}),
-                    child: const NavbarWidget(),
+                    child: NavbarWidget(),
                   ),
                 ),
               ],

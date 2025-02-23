@@ -39,7 +39,7 @@ class _LoadingWidgetState extends State<LoadingWidget> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(4.0),
+      padding: EdgeInsets.all(4.0),
       child: Container(
         width: double.infinity,
         decoration: BoxDecoration(

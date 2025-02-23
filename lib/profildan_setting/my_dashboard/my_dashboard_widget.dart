@@ -12,6 +12,9 @@ export 'my_dashboard_model.dart';
 class MyDashboardWidget extends StatefulWidget {
   const MyDashboardWidget({super.key});
 
+  static String routeName = 'MyDashboard';
+  static String routePath = '/myDashboard';
+
   @override
   State<MyDashboardWidget> createState() => _MyDashboardWidgetState();
 }
@@ -49,26 +52,26 @@ class _MyDashboardWidgetState extends State<MyDashboardWidget> {
         key: scaffoldKey,
         backgroundColor: Colors.white,
         appBar: PreferredSize(
-          preferredSize: const Size.fromHeight(80.0),
+          preferredSize: Size.fromHeight(80.0),
           child: AppBar(
             backgroundColor: Colors.white,
             automaticallyImplyLeading: false,
             title: Align(
-              alignment: const AlignmentDirectional(0.0, 0.0),
+              alignment: AlignmentDirectional(0.0, 0.0),
               child: Stack(
-                alignment: const AlignmentDirectional(0.0, 0.0),
+                alignment: AlignmentDirectional(0.0, 0.0),
                 children: [
                   Align(
-                    alignment: const AlignmentDirectional(0.0, 0.0),
+                    alignment: AlignmentDirectional(0.0, 0.0),
                     child: Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 10.0),
+                          EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 10.0),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: [
                           Align(
-                            alignment: const AlignmentDirectional(-1.0, 0.0),
+                            alignment: AlignmentDirectional(-1.0, 0.0),
                             child: InkWell(
                               splashColor: Colors.transparent,
                               focusColor: Colors.transparent,
@@ -89,10 +92,10 @@ class _MyDashboardWidgetState extends State<MyDashboardWidget> {
                     ),
                   ),
                   Align(
-                    alignment: const AlignmentDirectional(0.0, 0.0),
+                    alignment: AlignmentDirectional(0.0, 0.0),
                     child: Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 10.0),
+                          EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 10.0),
                       child: Text(
                         'Dashboard',
                         textAlign: TextAlign.start,
@@ -108,7 +111,7 @@ class _MyDashboardWidgetState extends State<MyDashboardWidget> {
                 ],
               ),
             ),
-            actions: const [],
+            actions: [],
             centerTitle: false,
             elevation: 2.0,
           ),
@@ -118,7 +121,7 @@ class _MyDashboardWidgetState extends State<MyDashboardWidget> {
           child: Stack(
             children: [
               Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 0.0),
+                padding: EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 0.0),
                 child: SingleChildScrollView(
                   child: Column(
                     mainAxisSize: MainAxisSize.max,
@@ -126,7 +129,7 @@ class _MyDashboardWidgetState extends State<MyDashboardWidget> {
                       Stack(
                         children: [
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 20.0, 0.0, 0.0),
                             child: Container(
                               width: valueOrDefault<double>(
@@ -160,14 +163,14 @@ class _MyDashboardWidgetState extends State<MyDashboardWidget> {
                             ),
                           ),
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 10.0, 20.0, 10.0, 0.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       20.0, 30.0, 0.0, 0.0),
                                   child: Column(
                                     mainAxisSize: MainAxisSize.max,
@@ -234,7 +237,7 @@ class _MyDashboardWidgetState extends State<MyDashboardWidget> {
                                   ),
                                 ),
                                 Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 20.0, 0.0),
                                   child: Text(
                                     'Dayly',
@@ -253,7 +256,7 @@ class _MyDashboardWidgetState extends State<MyDashboardWidget> {
                                   currentUserDocument?.statusPremium, 0) ==
                               0)
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 20.0, 0.0, 0.0),
                               child: AuthUserStreamWidget(
                                 builder: (context) => Container(
@@ -299,7 +302,7 @@ class _MyDashboardWidgetState extends State<MyDashboardWidget> {
                         ],
                       ),
                       Padding(
-                        padding: const EdgeInsetsDirectional.fromSTEB(
+                        padding: EdgeInsetsDirectional.fromSTEB(
                             0.0, 10.0, 0.0, 100.0),
                         child: Wrap(
                           spacing: 5.0,
@@ -319,7 +322,7 @@ class _MyDashboardWidgetState extends State<MyDashboardWidget> {
                                 borderRadius: BorderRadius.circular(20.0),
                               ),
                               child: Stack(
-                                alignment: const AlignmentDirectional(0.0, -1.0),
+                                alignment: AlignmentDirectional(0.0, -1.0),
                                 children: [
                                   AuthUserStreamWidget(
                                     builder: (context) => Container(
@@ -327,7 +330,7 @@ class _MyDashboardWidgetState extends State<MyDashboardWidget> {
                                       height: 147.0,
                                       decoration: BoxDecoration(
                                         color: currentUserDocument?.colorThemes,
-                                        boxShadow: const [
+                                        boxShadow: [
                                           BoxShadow(
                                             blurRadius: 2.0,
                                             color: Color(0x33000000),
@@ -337,7 +340,7 @@ class _MyDashboardWidgetState extends State<MyDashboardWidget> {
                                             ),
                                           )
                                         ],
-                                        borderRadius: const BorderRadius.only(
+                                        borderRadius: BorderRadius.only(
                                           bottomLeft: Radius.circular(20.0),
                                           bottomRight: Radius.circular(20.0),
                                           topLeft: Radius.circular(20.0),
@@ -348,7 +351,7 @@ class _MyDashboardWidgetState extends State<MyDashboardWidget> {
                                         children: [
                                           Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     10.0, 20.0, 10.0, 0.0),
                                             child: Row(
                                               mainAxisSize: MainAxisSize.max,
@@ -382,7 +385,7 @@ class _MyDashboardWidgetState extends State<MyDashboardWidget> {
                                           ),
                                           Align(
                                             alignment:
-                                                const AlignmentDirectional(0.0, 0.0),
+                                                AlignmentDirectional(0.0, 0.0),
                                             child: FutureBuilder<int>(
                                               future: queryUsersRecordCount(
                                                 queryBuilder: (usersRecord) =>
@@ -443,14 +446,14 @@ class _MyDashboardWidgetState extends State<MyDashboardWidget> {
                                           0) ==
                                       0)
                                     Align(
-                                      alignment: const AlignmentDirectional(0.0, 1.0),
+                                      alignment: AlignmentDirectional(0.0, 1.0),
                                       child: AuthUserStreamWidget(
                                         builder: (context) => Container(
                                           width: 182.0,
                                           height: 107.0,
                                           decoration: BoxDecoration(
                                             color: FFAppState().colorThemes,
-                                            borderRadius: const BorderRadius.only(
+                                            borderRadius: BorderRadius.only(
                                               bottomLeft: Radius.circular(20.0),
                                               bottomRight:
                                                   Radius.circular(20.0),
@@ -484,7 +487,7 @@ class _MyDashboardWidgetState extends State<MyDashboardWidget> {
                                       height: 147.0,
                                       decoration: BoxDecoration(
                                         color: currentUserDocument?.colorThemes,
-                                        boxShadow: const [
+                                        boxShadow: [
                                           BoxShadow(
                                             blurRadius: 2.0,
                                             color: Color(0x33000000),
@@ -494,7 +497,7 @@ class _MyDashboardWidgetState extends State<MyDashboardWidget> {
                                             ),
                                           )
                                         ],
-                                        borderRadius: const BorderRadius.only(
+                                        borderRadius: BorderRadius.only(
                                           bottomLeft: Radius.circular(20.0),
                                           bottomRight: Radius.circular(20.0),
                                           topLeft: Radius.circular(20.0),
@@ -505,7 +508,7 @@ class _MyDashboardWidgetState extends State<MyDashboardWidget> {
                                         children: [
                                           Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     10.0, 20.0, 10.0, 0.0),
                                             child: Row(
                                               mainAxisSize: MainAxisSize.max,
@@ -539,7 +542,7 @@ class _MyDashboardWidgetState extends State<MyDashboardWidget> {
                                           ),
                                           Align(
                                             alignment:
-                                                const AlignmentDirectional(0.0, 0.0),
+                                                AlignmentDirectional(0.0, 0.0),
                                             child: FutureBuilder<int>(
                                               future: queryUsersRecordCount(
                                                 queryBuilder: (usersRecord) =>
@@ -600,14 +603,14 @@ class _MyDashboardWidgetState extends State<MyDashboardWidget> {
                                           0) ==
                                       0)
                                     Align(
-                                      alignment: const AlignmentDirectional(0.0, 1.0),
+                                      alignment: AlignmentDirectional(0.0, 1.0),
                                       child: AuthUserStreamWidget(
                                         builder: (context) => Container(
                                           width: 182.0,
                                           height: 107.0,
                                           decoration: BoxDecoration(
                                             color: FFAppState().colorThemes,
-                                            borderRadius: const BorderRadius.only(
+                                            borderRadius: BorderRadius.only(
                                               bottomLeft: Radius.circular(20.0),
                                               bottomRight:
                                                   Radius.circular(20.0),
@@ -641,7 +644,7 @@ class _MyDashboardWidgetState extends State<MyDashboardWidget> {
                                       height: 147.0,
                                       decoration: BoxDecoration(
                                         color: currentUserDocument?.colorThemes,
-                                        boxShadow: const [
+                                        boxShadow: [
                                           BoxShadow(
                                             blurRadius: 2.0,
                                             color: Color(0x33000000),
@@ -651,7 +654,7 @@ class _MyDashboardWidgetState extends State<MyDashboardWidget> {
                                             ),
                                           )
                                         ],
-                                        borderRadius: const BorderRadius.only(
+                                        borderRadius: BorderRadius.only(
                                           bottomLeft: Radius.circular(20.0),
                                           bottomRight: Radius.circular(20.0),
                                           topLeft: Radius.circular(20.0),
@@ -662,7 +665,7 @@ class _MyDashboardWidgetState extends State<MyDashboardWidget> {
                                         children: [
                                           Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     10.0, 20.0, 10.0, 0.0),
                                             child: Row(
                                               mainAxisSize: MainAxisSize.max,
@@ -727,7 +730,7 @@ class _MyDashboardWidgetState extends State<MyDashboardWidget> {
                                                 children: [
                                                   Align(
                                                     alignment:
-                                                        const AlignmentDirectional(
+                                                        AlignmentDirectional(
                                                             0.0, 0.0),
                                                     child: Text(
                                                       valueOrDefault<String>(
@@ -767,14 +770,14 @@ class _MyDashboardWidgetState extends State<MyDashboardWidget> {
                                           0) ==
                                       0)
                                     Align(
-                                      alignment: const AlignmentDirectional(0.0, 1.0),
+                                      alignment: AlignmentDirectional(0.0, 1.0),
                                       child: AuthUserStreamWidget(
                                         builder: (context) => Container(
                                           width: 182.0,
                                           height: 107.0,
                                           decoration: BoxDecoration(
                                             color: FFAppState().colorThemes,
-                                            borderRadius: const BorderRadius.only(
+                                            borderRadius: BorderRadius.only(
                                               bottomLeft: Radius.circular(20.0),
                                               bottomRight:
                                                   Radius.circular(20.0),
@@ -808,7 +811,7 @@ class _MyDashboardWidgetState extends State<MyDashboardWidget> {
                                       height: 147.0,
                                       decoration: BoxDecoration(
                                         color: currentUserDocument?.colorThemes,
-                                        boxShadow: const [
+                                        boxShadow: [
                                           BoxShadow(
                                             blurRadius: 2.0,
                                             color: Color(0x33000000),
@@ -818,7 +821,7 @@ class _MyDashboardWidgetState extends State<MyDashboardWidget> {
                                             ),
                                           )
                                         ],
-                                        borderRadius: const BorderRadius.only(
+                                        borderRadius: BorderRadius.only(
                                           bottomLeft: Radius.circular(20.0),
                                           bottomRight: Radius.circular(20.0),
                                           topLeft: Radius.circular(20.0),
@@ -829,7 +832,7 @@ class _MyDashboardWidgetState extends State<MyDashboardWidget> {
                                         children: [
                                           Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     10.0, 20.0, 10.0, 0.0),
                                             child: Row(
                                               mainAxisSize: MainAxisSize.max,
@@ -895,7 +898,7 @@ class _MyDashboardWidgetState extends State<MyDashboardWidget> {
                                                 children: [
                                                   Align(
                                                     alignment:
-                                                        const AlignmentDirectional(
+                                                        AlignmentDirectional(
                                                             0.0, 0.0),
                                                     child: Text(
                                                       valueOrDefault<String>(
@@ -932,14 +935,14 @@ class _MyDashboardWidgetState extends State<MyDashboardWidget> {
                                           0) ==
                                       0)
                                     Align(
-                                      alignment: const AlignmentDirectional(0.0, 1.0),
+                                      alignment: AlignmentDirectional(0.0, 1.0),
                                       child: AuthUserStreamWidget(
                                         builder: (context) => Container(
                                           width: 182.0,
                                           height: 107.0,
                                           decoration: BoxDecoration(
                                             color: FFAppState().colorThemes,
-                                            borderRadius: const BorderRadius.only(
+                                            borderRadius: BorderRadius.only(
                                               bottomLeft: Radius.circular(20.0),
                                               bottomRight:
                                                   Radius.circular(20.0),
@@ -973,7 +976,7 @@ class _MyDashboardWidgetState extends State<MyDashboardWidget> {
                                       height: 147.0,
                                       decoration: BoxDecoration(
                                         color: currentUserDocument?.colorThemes,
-                                        boxShadow: const [
+                                        boxShadow: [
                                           BoxShadow(
                                             blurRadius: 2.0,
                                             color: Color(0x33000000),
@@ -983,7 +986,7 @@ class _MyDashboardWidgetState extends State<MyDashboardWidget> {
                                             ),
                                           )
                                         ],
-                                        borderRadius: const BorderRadius.only(
+                                        borderRadius: BorderRadius.only(
                                           bottomLeft: Radius.circular(20.0),
                                           bottomRight: Radius.circular(20.0),
                                           topLeft: Radius.circular(20.0),
@@ -994,7 +997,7 @@ class _MyDashboardWidgetState extends State<MyDashboardWidget> {
                                         children: [
                                           Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     10.0, 20.0, 10.0, 0.0),
                                             child: Row(
                                               mainAxisSize: MainAxisSize.max,
@@ -1028,7 +1031,7 @@ class _MyDashboardWidgetState extends State<MyDashboardWidget> {
                                           ),
                                           Align(
                                             alignment:
-                                                const AlignmentDirectional(0.0, 0.0),
+                                                AlignmentDirectional(0.0, 0.0),
                                             child: Text(
                                               '-',
                                               style:
@@ -1054,14 +1057,14 @@ class _MyDashboardWidgetState extends State<MyDashboardWidget> {
                                           0) ==
                                       0)
                                     Align(
-                                      alignment: const AlignmentDirectional(0.0, 1.0),
+                                      alignment: AlignmentDirectional(0.0, 1.0),
                                       child: AuthUserStreamWidget(
                                         builder: (context) => Container(
                                           width: 182.0,
                                           height: 107.0,
                                           decoration: BoxDecoration(
                                             color: FFAppState().colorThemes,
-                                            borderRadius: const BorderRadius.only(
+                                            borderRadius: BorderRadius.only(
                                               bottomLeft: Radius.circular(20.0),
                                               bottomRight:
                                                   Radius.circular(20.0),
@@ -1095,7 +1098,7 @@ class _MyDashboardWidgetState extends State<MyDashboardWidget> {
                                       height: 174.0,
                                       decoration: BoxDecoration(
                                         color: currentUserDocument?.colorThemes,
-                                        boxShadow: const [
+                                        boxShadow: [
                                           BoxShadow(
                                             blurRadius: 2.0,
                                             color: Color(0x33000000),
@@ -1105,7 +1108,7 @@ class _MyDashboardWidgetState extends State<MyDashboardWidget> {
                                             ),
                                           )
                                         ],
-                                        borderRadius: const BorderRadius.only(
+                                        borderRadius: BorderRadius.only(
                                           bottomLeft: Radius.circular(20.0),
                                           bottomRight: Radius.circular(20.0),
                                           topLeft: Radius.circular(20.0),
@@ -1116,7 +1119,7 @@ class _MyDashboardWidgetState extends State<MyDashboardWidget> {
                                         children: [
                                           Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     10.0, 20.0, 10.0, 0.0),
                                             child: Row(
                                               mainAxisSize: MainAxisSize.max,
@@ -1181,7 +1184,7 @@ class _MyDashboardWidgetState extends State<MyDashboardWidget> {
                                                 children: [
                                                   Align(
                                                     alignment:
-                                                        const AlignmentDirectional(
+                                                        AlignmentDirectional(
                                                             0.0, 0.0),
                                                     child: Text(
                                                       valueOrDefault<String>(
@@ -1221,14 +1224,14 @@ class _MyDashboardWidgetState extends State<MyDashboardWidget> {
                                           0) ==
                                       0)
                                     Align(
-                                      alignment: const AlignmentDirectional(0.0, 1.0),
+                                      alignment: AlignmentDirectional(0.0, 1.0),
                                       child: AuthUserStreamWidget(
                                         builder: (context) => Container(
                                           width: 182.0,
                                           height: 107.0,
                                           decoration: BoxDecoration(
                                             color: FFAppState().colorThemes,
-                                            borderRadius: const BorderRadius.only(
+                                            borderRadius: BorderRadius.only(
                                               bottomLeft: Radius.circular(20.0),
                                               bottomRight:
                                                   Radius.circular(20.0),
@@ -1255,11 +1258,11 @@ class _MyDashboardWidgetState extends State<MyDashboardWidget> {
                 ),
               ),
               Align(
-                alignment: const AlignmentDirectional(0.0, 1.0),
+                alignment: AlignmentDirectional(0.0, 1.0),
                 child: wrapWithModel(
                   model: _model.navbarModel,
                   updateCallback: () => safeSetState(() {}),
-                  child: const NavbarWidget(),
+                  child: NavbarWidget(),
                 ),
               ),
             ],

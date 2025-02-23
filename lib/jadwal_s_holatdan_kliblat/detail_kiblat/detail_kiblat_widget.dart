@@ -4,6 +4,7 @@ import '/componen/footer_logo/footer_logo_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/custom_code/widgets/index.dart' as custom_widgets;
+import '/index.dart';
 import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -12,6 +13,9 @@ export 'detail_kiblat_model.dart';
 
 class DetailKiblatWidget extends StatefulWidget {
   const DetailKiblatWidget({super.key});
+
+  static String routeName = 'detailKiblat';
+  static String routePath = '/detailKiblat';
 
   @override
   State<DetailKiblatWidget> createState() => _DetailKiblatWidgetState();
@@ -50,17 +54,17 @@ class _DetailKiblatWidgetState extends State<DetailKiblatWidget> {
         key: scaffoldKey,
         backgroundColor: Colors.white,
         appBar: PreferredSize(
-          preferredSize: const Size.fromHeight(80.0),
+          preferredSize: Size.fromHeight(80.0),
           child: AppBar(
             backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
             automaticallyImplyLeading: false,
             title: Padding(
-              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 10.0),
+              padding: EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 10.0),
               child: Row(
                 mainAxisSize: MainAxisSize.max,
                 children: [
                   Align(
-                    alignment: const AlignmentDirectional(-1.0, 0.0),
+                    alignment: AlignmentDirectional(-1.0, 0.0),
                     child: AuthUserStreamWidget(
                       builder: (context) => InkWell(
                         splashColor: Colors.transparent,
@@ -68,7 +72,7 @@ class _DetailKiblatWidgetState extends State<DetailKiblatWidget> {
                         hoverColor: Colors.transparent,
                         highlightColor: Colors.transparent,
                         onTap: () async {
-                          context.pushNamed('HomeSholat');
+                          context.pushNamed(HomeSholatWidget.routeName);
                         },
                         child: Icon(
                           Icons.arrow_back_ios_new,
@@ -84,7 +88,7 @@ class _DetailKiblatWidgetState extends State<DetailKiblatWidget> {
                         width: double.infinity,
                         decoration: BoxDecoration(
                           color: currentUserDocument?.colorThemes,
-                          borderRadius: const BorderRadius.only(
+                          borderRadius: BorderRadius.only(
                             bottomLeft: Radius.circular(20.0),
                             bottomRight: Radius.circular(20.0),
                             topLeft: Radius.circular(20.0),
@@ -92,7 +96,7 @@ class _DetailKiblatWidgetState extends State<DetailKiblatWidget> {
                           ),
                         ),
                         child: Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               4.0, 4.0, 4.0, 4.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
@@ -119,7 +123,7 @@ class _DetailKiblatWidgetState extends State<DetailKiblatWidget> {
                                             fontWeight: FontWeight.bold,
                                           ),
                                     ),
-                                    const TextSpan(
+                                    TextSpan(
                                       text: ' ',
                                       style: TextStyle(),
                                     ),
@@ -129,7 +133,7 @@ class _DetailKiblatWidgetState extends State<DetailKiblatWidget> {
                                             currentUserDocument?.country, ''),
                                         'Indonesia',
                                       ),
-                                      style: const TextStyle(),
+                                      style: TextStyle(),
                                     )
                                   ],
                                   style: FlutterFlowTheme.of(context)
@@ -152,7 +156,7 @@ class _DetailKiblatWidgetState extends State<DetailKiblatWidget> {
                 ],
               ),
             ),
-            actions: const [],
+            actions: [],
             centerTitle: false,
             elevation: 2.0,
           ),
@@ -162,7 +166,7 @@ class _DetailKiblatWidgetState extends State<DetailKiblatWidget> {
           child: Stack(
             children: [
               Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 0.0),
+                padding: EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 0.0),
                 child: SingleChildScrollView(
                   child: Column(
                     mainAxisSize: MainAxisSize.max,
@@ -170,28 +174,28 @@ class _DetailKiblatWidgetState extends State<DetailKiblatWidget> {
                     children: [
                       Padding(
                         padding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
+                            EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
                         child: wrapWithModel(
                           model: _model.dateComponenModel,
                           updateCallback: () => safeSetState(() {}),
-                          child: const DateComponenWidget(),
+                          child: DateComponenWidget(),
                         ),
                       ),
-                      const Divider(
+                      Divider(
                         thickness: 1.0,
                         color: Color(0xFFE5E5E5),
                       ),
                       Transform.rotate(
                         angle: 0.0 * (math.pi / 180),
-                        origin: const Offset(0.0, 0),
+                        origin: Offset(0.0, 0),
                         child: Container(
                           width: 263.0,
                           height: 260.0,
-                          decoration: const BoxDecoration(),
-                          child: const Padding(
+                          decoration: BoxDecoration(),
+                          child: Padding(
                             padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 4.0, 0.0, 0.0),
-                            child: SizedBox(
+                            child: Container(
                               width: 263.0,
                               height: 260.0,
                               child: custom_widgets.Kompas(
@@ -202,7 +206,7 @@ class _DetailKiblatWidgetState extends State<DetailKiblatWidget> {
                           ),
                         ),
                       ),
-                      const Divider(
+                      Divider(
                         thickness: 1.0,
                         color: Color(0xFFE5E5E5),
                       ),
@@ -211,13 +215,13 @@ class _DetailKiblatWidgetState extends State<DetailKiblatWidget> {
                 ),
               ),
               Align(
-                alignment: const AlignmentDirectional(0.0, 1.0),
+                alignment: AlignmentDirectional(0.0, 1.0),
                 child: Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 10.0),
+                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 10.0),
                   child: wrapWithModel(
                     model: _model.footerLogoModel,
                     updateCallback: () => safeSetState(() {}),
-                    child: const FooterLogoWidget(),
+                    child: FooterLogoWidget(),
                   ),
                 ),
               ),

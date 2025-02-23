@@ -10,6 +10,9 @@ export 'alqurancoba_model.dart';
 class AlqurancobaWidget extends StatefulWidget {
   const AlqurancobaWidget({super.key});
 
+  static String routeName = 'alqurancoba';
+  static String routePath = '/alqurancoba';
+
   @override
   State<AlqurancobaWidget> createState() => _AlqurancobaWidgetState();
 }
@@ -58,7 +61,7 @@ class _AlqurancobaWidgetState extends State<AlqurancobaWidget> {
                   letterSpacing: 0.0,
                 ),
           ),
-          actions: const [],
+          actions: [],
           centerTitle: false,
           elevation: 2.0,
         ),
@@ -68,7 +71,7 @@ class _AlqurancobaWidgetState extends State<AlqurancobaWidget> {
             mainAxisSize: MainAxisSize.max,
             children: [
               Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
+                padding: EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
                 child: FutureBuilder<ApiCallResponse>(
                   future: TestingcariJsonCall.call(),
                   builder: (context, snapshot) {
@@ -89,7 +92,7 @@ class _AlqurancobaWidgetState extends State<AlqurancobaWidget> {
                     final textFieldTestingcariJsonResponse = snapshot.data!;
 
                     return Autocomplete<String>(
-                      initialValue: const TextEditingValue(),
+                      initialValue: TextEditingValue(),
                       optionsBuilder: (textEditingValue) {
                         if (textEditingValue.text == '') {
                           return const Iterable<String>.empty();
@@ -118,7 +121,7 @@ class _AlqurancobaWidgetState extends State<AlqurancobaWidget> {
                                     fontFamily: 'Inter',
                                     letterSpacing: 0.0,
                                   ),
-                          textHighlightStyle: const TextStyle(),
+                          textHighlightStyle: TextStyle(),
                           elevation: 4.0,
                           optionBackgroundColor:
                               FlutterFlowTheme.of(context).primaryBackground,
@@ -148,7 +151,7 @@ class _AlqurancobaWidgetState extends State<AlqurancobaWidget> {
                           onEditingComplete: onEditingComplete,
                           onChanged: (_) => EasyDebounce.debounce(
                             '_model.textController',
-                            const Duration(milliseconds: 300),
+                            Duration(milliseconds: 300),
                             () => safeSetState(() {}),
                           ),
                           autofocus: true,
@@ -245,7 +248,7 @@ class _AlqurancobaWidgetState extends State<AlqurancobaWidget> {
                         itemBuilder: (context, productItemIndex) {
                           final productItemItem = productItem[productItemIndex];
                           return Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 10.0, 0.0, 0.0),
                             child: Material(
                               color: Colors.transparent,

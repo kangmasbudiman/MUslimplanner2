@@ -1,11 +1,15 @@
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'verivicatiion_failed_model.dart';
 export 'verivicatiion_failed_model.dart';
 
 class VerivicatiionFailedWidget extends StatefulWidget {
   const VerivicatiionFailedWidget({super.key});
+
+  static String routeName = 'verivicatiionFailed';
+  static String routePath = '/verivicatiionFailed';
 
   @override
   State<VerivicatiionFailedWidget> createState() =>
@@ -45,7 +49,7 @@ class _VerivicatiionFailedWidgetState extends State<VerivicatiionFailedWidget> {
         body: SafeArea(
           top: true,
           child: Padding(
-            padding: const EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 20.0),
+            padding: EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 20.0),
             child: SingleChildScrollView(
               child: Column(
                 mainAxisSize: MainAxisSize.max,
@@ -56,7 +60,7 @@ class _VerivicatiionFailedWidgetState extends State<VerivicatiionFailedWidget> {
                     height: 170.0,
                     decoration: BoxDecoration(
                       color: FlutterFlowTheme.of(context).primary,
-                      boxShadow: const [
+                      boxShadow: [
                         BoxShadow(
                           blurRadius: 2.0,
                           color: Color(0x33000000),
@@ -72,7 +76,7 @@ class _VerivicatiionFailedWidgetState extends State<VerivicatiionFailedWidget> {
                       width: 120.0,
                       height: 120.0,
                       clipBehavior: Clip.antiAlias,
-                      decoration: const BoxDecoration(
+                      decoration: BoxDecoration(
                         shape: BoxShape.circle,
                       ),
                       child: Image.asset(
@@ -88,7 +92,7 @@ class _VerivicatiionFailedWidgetState extends State<VerivicatiionFailedWidget> {
                     children: [
                       Padding(
                         padding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 60.0, 0.0, 0.0),
+                            EdgeInsetsDirectional.fromSTEB(0.0, 60.0, 0.0, 0.0),
                         child: Text(
                           'Oooops!',
                           style:
@@ -102,7 +106,7 @@ class _VerivicatiionFailedWidgetState extends State<VerivicatiionFailedWidget> {
                       ),
                       Padding(
                         padding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 0.0),
+                            EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 0.0),
                         child: Text(
                           'Something went wrong. Please try again!',
                           textAlign: TextAlign.center,
@@ -119,7 +123,7 @@ class _VerivicatiionFailedWidgetState extends State<VerivicatiionFailedWidget> {
                   ),
                   Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 60.0, 0.0, 0.0),
+                        EdgeInsetsDirectional.fromSTEB(0.0, 60.0, 0.0, 0.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -130,14 +134,14 @@ class _VerivicatiionFailedWidgetState extends State<VerivicatiionFailedWidget> {
                           hoverColor: Colors.transparent,
                           highlightColor: Colors.transparent,
                           onTap: () async {
-                            context.pushNamed('register');
+                            context.pushNamed(RegisterWidget.routeName);
                           },
                           child: Container(
                             width: 319.0,
                             height: 48.0,
                             decoration: BoxDecoration(
                               color: FlutterFlowTheme.of(context).primary,
-                              boxShadow: const [
+                              boxShadow: [
                                 BoxShadow(
                                   blurRadius: 2.0,
                                   color: Color(0x33000000),
@@ -147,7 +151,7 @@ class _VerivicatiionFailedWidgetState extends State<VerivicatiionFailedWidget> {
                                   ),
                                 )
                               ],
-                              borderRadius: const BorderRadius.only(
+                              borderRadius: BorderRadius.only(
                                 bottomLeft: Radius.circular(20.0),
                                 bottomRight: Radius.circular(20.0),
                                 topLeft: Radius.circular(20.0),
@@ -155,7 +159,7 @@ class _VerivicatiionFailedWidgetState extends State<VerivicatiionFailedWidget> {
                               ),
                             ),
                             child: Align(
-                              alignment: const AlignmentDirectional(0.0, 0.0),
+                              alignment: AlignmentDirectional(0.0, 0.0),
                               child: Text(
                                 'Register',
                                 style: FlutterFlowTheme.of(context)
@@ -177,7 +181,7 @@ class _VerivicatiionFailedWidgetState extends State<VerivicatiionFailedWidget> {
                   ),
                   Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 50.0, 0.0, 0.0),
+                        EdgeInsetsDirectional.fromSTEB(0.0, 50.0, 0.0, 0.0),
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(8.0),
                       child: Image.asset(
@@ -188,7 +192,7 @@ class _VerivicatiionFailedWidgetState extends State<VerivicatiionFailedWidget> {
                       ),
                     ),
                   ),
-                ].divide(const SizedBox(height: 40.0)),
+                ].divide(SizedBox(height: 40.0)),
               ),
             ),
           ),

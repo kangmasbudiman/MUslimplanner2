@@ -13,6 +13,9 @@ export 'kalender_hijriah_model.dart';
 class KalenderHijriahWidget extends StatefulWidget {
   const KalenderHijriahWidget({super.key});
 
+  static String routeName = 'kalenderHijriah';
+  static String routePath = '/kalenderHijriah';
+
   @override
   State<KalenderHijriahWidget> createState() => _KalenderHijriahWidgetState();
 }
@@ -50,17 +53,17 @@ class _KalenderHijriahWidgetState extends State<KalenderHijriahWidget> {
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
         appBar: PreferredSize(
-          preferredSize: const Size.fromHeight(80.0),
+          preferredSize: Size.fromHeight(80.0),
           child: AppBar(
             backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
             automaticallyImplyLeading: false,
             title: Padding(
-              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 10.0),
+              padding: EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 10.0),
               child: Row(
                 mainAxisSize: MainAxisSize.max,
                 children: [
                   Align(
-                    alignment: const AlignmentDirectional(-1.0, 0.0),
+                    alignment: AlignmentDirectional(-1.0, 0.0),
                     child: InkWell(
                       splashColor: Colors.transparent,
                       focusColor: Colors.transparent,
@@ -106,7 +109,7 @@ class _KalenderHijriahWidgetState extends State<KalenderHijriahWidget> {
                             width: double.infinity,
                             decoration: BoxDecoration(
                               color: currentUserDocument?.colorThemes,
-                              borderRadius: const BorderRadius.only(
+                              borderRadius: BorderRadius.only(
                                 bottomLeft: Radius.circular(20.0),
                                 bottomRight: Radius.circular(20.0),
                                 topLeft: Radius.circular(20.0),
@@ -114,7 +117,7 @@ class _KalenderHijriahWidgetState extends State<KalenderHijriahWidget> {
                               ),
                             ),
                             child: Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   4.0, 4.0, 4.0, 4.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -166,7 +169,7 @@ class _KalenderHijriahWidgetState extends State<KalenderHijriahWidget> {
                                                               FontWeight.bold,
                                                         ),
                                               ),
-                                              const TextSpan(
+                                              TextSpan(
                                                 text: ', ',
                                                 style: TextStyle(),
                                               ),
@@ -179,9 +182,9 @@ class _KalenderHijriahWidgetState extends State<KalenderHijriahWidget> {
                                                   ),
                                                   '--',
                                                 ),
-                                                style: const TextStyle(),
+                                                style: TextStyle(),
                                               ),
-                                              const TextSpan(
+                                              TextSpan(
                                                 text: ' ',
                                                 style: TextStyle(),
                                               ),
@@ -194,7 +197,7 @@ class _KalenderHijriahWidgetState extends State<KalenderHijriahWidget> {
                                                   ),
                                                   '--',
                                                 ),
-                                                style: const TextStyle(),
+                                                style: TextStyle(),
                                               )
                                             ],
                                             style: FlutterFlowTheme.of(context)
@@ -222,7 +225,7 @@ class _KalenderHijriahWidgetState extends State<KalenderHijriahWidget> {
                   ),
                   Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 10.0, 0.0),
+                        EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 10.0, 0.0),
                     child: InkWell(
                       splashColor: Colors.transparent,
                       focusColor: Colors.transparent,
@@ -241,8 +244,8 @@ class _KalenderHijriahWidgetState extends State<KalenderHijriahWidget> {
                             decoration: BoxDecoration(
                               color: _model.showMasehi == false
                                   ? FlutterFlowTheme.of(context).blackText
-                                  : const Color(0xFF949494),
-                              boxShadow: const [
+                                  : Color(0xFF949494),
+                              boxShadow: [
                                 BoxShadow(
                                   blurRadius: 4.0,
                                   color: Color(0x33000000),
@@ -274,7 +277,7 @@ class _KalenderHijriahWidgetState extends State<KalenderHijriahWidget> {
                                   letterSpacing: 0.0,
                                 ),
                           ),
-                        ].divide(const SizedBox(height: 4.0)),
+                        ].divide(SizedBox(height: 4.0)),
                       ),
                     ),
                   ),
@@ -296,8 +299,8 @@ class _KalenderHijriahWidgetState extends State<KalenderHijriahWidget> {
                           decoration: BoxDecoration(
                             color: _model.showMasehi == true
                                 ? FlutterFlowTheme.of(context).primaryText
-                                : const Color(0xFF949494),
-                            boxShadow: const [
+                                : Color(0xFF949494),
+                            boxShadow: [
                               BoxShadow(
                                 blurRadius: 4.0,
                                 color: Color(0x33000000),
@@ -316,7 +319,7 @@ class _KalenderHijriahWidgetState extends State<KalenderHijriahWidget> {
                             width: 14.0,
                             height: 14.0,
                             clipBehavior: Clip.antiAlias,
-                            decoration: const BoxDecoration(
+                            decoration: BoxDecoration(
                               shape: BoxShape.circle,
                             ),
                             child: Image.asset(
@@ -334,13 +337,13 @@ class _KalenderHijriahWidgetState extends State<KalenderHijriahWidget> {
                                     letterSpacing: 0.0,
                                   ),
                         ),
-                      ].divide(const SizedBox(height: 4.0)),
+                      ].divide(SizedBox(height: 4.0)),
                     ),
                   ),
                 ],
               ),
             ),
-            actions: const [],
+            actions: [],
             centerTitle: false,
             elevation: 2.0,
           ),
@@ -351,7 +354,7 @@ class _KalenderHijriahWidgetState extends State<KalenderHijriahWidget> {
             builder: (context) {
               if (_model.showMasehi == false) {
                 return Padding(
-                  padding: const EdgeInsets.all(20.0),
+                  padding: EdgeInsets.all(20.0),
                   child: Column(
                     mainAxisSize: MainAxisSize.max,
                     children: [
@@ -366,7 +369,7 @@ class _KalenderHijriahWidgetState extends State<KalenderHijriahWidget> {
                               width: 2.0,
                             ),
                           ),
-                          child: const SizedBox(
+                          child: Container(
                             width: double.infinity,
                             height: 400.0,
                             child: custom_widgets.CalendarHIjri(
@@ -378,11 +381,11 @@ class _KalenderHijriahWidgetState extends State<KalenderHijriahWidget> {
                       ),
                       Expanded(
                         child: Align(
-                          alignment: const AlignmentDirectional(0.0, 1.0),
+                          alignment: AlignmentDirectional(0.0, 1.0),
                           child: wrapWithModel(
                             model: _model.footerLogoModel1,
                             updateCallback: () => safeSetState(() {}),
-                            child: const FooterLogoWidget(),
+                            child: FooterLogoWidget(),
                           ),
                         ),
                       ),
@@ -391,7 +394,7 @@ class _KalenderHijriahWidgetState extends State<KalenderHijriahWidget> {
                 );
               } else {
                 return Padding(
-                  padding: const EdgeInsets.all(20.0),
+                  padding: EdgeInsets.all(20.0),
                   child: Column(
                     mainAxisSize: MainAxisSize.max,
                     children: [
@@ -406,7 +409,7 @@ class _KalenderHijriahWidgetState extends State<KalenderHijriahWidget> {
                               width: 2.0,
                             ),
                           ),
-                          child: const SizedBox(
+                          child: Container(
                             width: double.infinity,
                             height: 400.0,
                             child: custom_widgets.CalenderMasehi(
@@ -418,11 +421,11 @@ class _KalenderHijriahWidgetState extends State<KalenderHijriahWidget> {
                       ),
                       Expanded(
                         child: Align(
-                          alignment: const AlignmentDirectional(0.0, 1.0),
+                          alignment: AlignmentDirectional(0.0, 1.0),
                           child: wrapWithModel(
                             model: _model.footerLogoModel2,
                             updateCallback: () => safeSetState(() {}),
-                            child: const FooterLogoWidget(),
+                            child: FooterLogoWidget(),
                           ),
                         ),
                       ),

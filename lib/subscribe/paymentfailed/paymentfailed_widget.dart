@@ -1,11 +1,15 @@
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'paymentfailed_model.dart';
 export 'paymentfailed_model.dart';
 
 class PaymentfailedWidget extends StatefulWidget {
   const PaymentfailedWidget({super.key});
+
+  static String routeName = 'paymentfailed';
+  static String routePath = '/paymentfailed';
 
   @override
   State<PaymentfailedWidget> createState() => _PaymentfailedWidgetState();
@@ -44,7 +48,7 @@ class _PaymentfailedWidgetState extends State<PaymentfailedWidget> {
         body: SafeArea(
           top: true,
           child: Padding(
-            padding: const EdgeInsetsDirectional.fromSTEB(20.0, 40.0, 20.0, 20.0),
+            padding: EdgeInsetsDirectional.fromSTEB(20.0, 40.0, 20.0, 20.0),
             child: Column(
               mainAxisSize: MainAxisSize.max,
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -54,7 +58,7 @@ class _PaymentfailedWidgetState extends State<PaymentfailedWidget> {
                   height: 170.0,
                   decoration: BoxDecoration(
                     color: FlutterFlowTheme.of(context).primary,
-                    boxShadow: const [
+                    boxShadow: [
                       BoxShadow(
                         blurRadius: 2.0,
                         color: Color(0x33000000),
@@ -70,7 +74,7 @@ class _PaymentfailedWidgetState extends State<PaymentfailedWidget> {
                     width: 120.0,
                     height: 120.0,
                     clipBehavior: Clip.antiAlias,
-                    decoration: const BoxDecoration(
+                    decoration: BoxDecoration(
                       shape: BoxShape.circle,
                     ),
                     child: Image.asset(
@@ -86,7 +90,7 @@ class _PaymentfailedWidgetState extends State<PaymentfailedWidget> {
                   children: [
                     Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 60.0, 0.0, 0.0),
+                          EdgeInsetsDirectional.fromSTEB(0.0, 60.0, 0.0, 0.0),
                       child: Text(
                         'Payment Failed!',
                         style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -99,7 +103,7 @@ class _PaymentfailedWidgetState extends State<PaymentfailedWidget> {
                     ),
                     Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
+                          EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
                       child: Text(
                         'Transaction Uncompleted',
                         textAlign: TextAlign.center,
@@ -114,14 +118,14 @@ class _PaymentfailedWidgetState extends State<PaymentfailedWidget> {
                   ],
                 ),
                 Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 60.0, 0.0, 0.0),
+                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 60.0, 0.0, 0.0),
                   child: Row(
                     mainAxisSize: MainAxisSize.max,
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
                       Padding(
                         padding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 0.0),
+                            EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 0.0),
                         child: InkWell(
                           splashColor: Colors.transparent,
                           focusColor: Colors.transparent,
@@ -129,9 +133,9 @@ class _PaymentfailedWidgetState extends State<PaymentfailedWidget> {
                           highlightColor: Colors.transparent,
                           onTap: () async {
                             context.goNamed(
-                              'subscribe',
+                              SubscribeWidget.routeName,
                               extra: <String, dynamic>{
-                                kTransitionInfoKey: const TransitionInfo(
+                                kTransitionInfoKey: TransitionInfo(
                                   hasTransition: true,
                                   transitionType:
                                       PageTransitionType.bottomToTop,
@@ -143,7 +147,7 @@ class _PaymentfailedWidgetState extends State<PaymentfailedWidget> {
                             width: 319.0,
                             decoration: BoxDecoration(
                               color: FlutterFlowTheme.of(context).primary,
-                              boxShadow: const [
+                              boxShadow: [
                                 BoxShadow(
                                   blurRadius: 2.0,
                                   color: Color(0x33000000),
@@ -153,7 +157,7 @@ class _PaymentfailedWidgetState extends State<PaymentfailedWidget> {
                                   ),
                                 )
                               ],
-                              borderRadius: const BorderRadius.only(
+                              borderRadius: BorderRadius.only(
                                 bottomLeft: Radius.circular(20.0),
                                 bottomRight: Radius.circular(20.0),
                                 topLeft: Radius.circular(20.0),
@@ -161,9 +165,9 @@ class _PaymentfailedWidgetState extends State<PaymentfailedWidget> {
                               ),
                             ),
                             child: Align(
-                              alignment: const AlignmentDirectional(0.0, 0.0),
+                              alignment: AlignmentDirectional(0.0, 0.0),
                               child: Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 5.0, 0.0, 5.0),
                                 child: Text(
                                   'Retry',
@@ -192,7 +196,7 @@ class _PaymentfailedWidgetState extends State<PaymentfailedWidget> {
                   hoverColor: Colors.transparent,
                   highlightColor: Colors.transparent,
                   onTap: () async {
-                    context.goNamed('HomePage');
+                    context.goNamed(HomePageWidget.routeName);
                   },
                   child: Text(
                     'Go to home',
@@ -204,7 +208,7 @@ class _PaymentfailedWidgetState extends State<PaymentfailedWidget> {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 50.0, 0.0, 0.0),
+                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 50.0, 0.0, 0.0),
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(8.0),
                     child: Image.asset(

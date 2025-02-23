@@ -8,6 +8,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/custom_functions.dart' as functions;
 import '/flutter_flow/revenue_cat_util.dart' as revenue_cat;
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:provider/provider.dart';
@@ -17,6 +18,9 @@ export 'home_screen_model.dart';
 
 class HomeScreenWidget extends StatefulWidget {
   const HomeScreenWidget({super.key});
+
+  static String routeName = 'HomeScreen';
+  static String routePath = '/homeScreen';
 
   @override
   State<HomeScreenWidget> createState() => _HomeScreenWidgetState();
@@ -100,7 +104,7 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
             floatingActionButton: Visibility(
               visible: valueOrDefault(currentUserDocument?.rules, 0) == 1,
               child: Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 80.0),
+                padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 80.0),
                 child: AuthUserStreamWidget(
                   builder: (context) => FloatingActionButton(
                     onPressed: () async {
@@ -118,7 +122,7 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                               },
                               child: Padding(
                                 padding: MediaQuery.viewInsetsOf(context),
-                                child: const TambahSunahWidget(),
+                                child: TambahSunahWidget(),
                               ),
                             ),
                           );
@@ -137,7 +141,7 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
               ),
             ),
             body: Stack(
-              alignment: const AlignmentDirectional(0.0, 1.0),
+              alignment: AlignmentDirectional(0.0, 1.0),
               children: [
                 StreamBuilder<List<UsersRecord>>(
                   stream: queryUsersRecord(
@@ -180,7 +184,7 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                               width: double.infinity,
                               decoration: BoxDecoration(
                                 color: currentUserDocument?.colorThemes,
-                                boxShadow: const [
+                                boxShadow: [
                                   BoxShadow(
                                     blurRadius: 2.0,
                                     color: Color(0x33000000),
@@ -190,7 +194,7 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                                     ),
                                   )
                                 ],
-                                borderRadius: const BorderRadius.only(
+                                borderRadius: BorderRadius.only(
                                   bottomLeft: Radius.circular(20.0),
                                   bottomRight: Radius.circular(20.0),
                                   topLeft: Radius.circular(0.0),
@@ -201,7 +205,7 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         20.0, 40.0, 20.0, 0.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
@@ -209,7 +213,7 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                                         Expanded(
                                           child: Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     5.0, 0.0, 0.0, 0.0),
                                             child: Column(
                                               mainAxisSize: MainAxisSize.max,
@@ -244,7 +248,7 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                                                       TextSpan(
                                                         text:
                                                             currentUserDisplayName,
-                                                        style: const TextStyle(
+                                                        style: TextStyle(
                                                           color: Colors.white,
                                                           fontWeight:
                                                               FontWeight.bold,
@@ -277,7 +281,7 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                                                             FontWeight.w300,
                                                       ),
                                                 ),
-                                              ].divide(const SizedBox(height: 6.0)),
+                                              ].divide(SizedBox(height: 6.0)),
                                             ),
                                           ),
                                         ),
@@ -311,7 +315,7 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                                                                 .primaryText,
                                                       ),
                                                     ),
-                                                    duration: const Duration(
+                                                    duration: Duration(
                                                         milliseconds: 4000),
                                                     backgroundColor:
                                                         FlutterFlowTheme.of(
@@ -320,7 +324,8 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                                                   ),
                                                 );
                                               } else {
-                                                context.pushNamed('subscribe');
+                                                context.pushNamed(
+                                                    SubscribeWidget.routeName);
                                               }
                                             },
                                             child: Container(
@@ -328,7 +333,7 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .secondaryBackground,
-                                                borderRadius: const BorderRadius.only(
+                                                borderRadius: BorderRadius.only(
                                                   bottomLeft:
                                                       Radius.circular(10.0),
                                                   bottomRight:
@@ -339,10 +344,10 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                                                       Radius.circular(10.0),
                                                 ),
                                               ),
-                                              alignment: const AlignmentDirectional(
+                                              alignment: AlignmentDirectional(
                                                   0.0, 0.0),
                                               child: Padding(
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         5.0, 3.0, 5.0, 3.0),
                                                 child: Text(
@@ -367,26 +372,27 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                                           hoverColor: Colors.transparent,
                                           highlightColor: Colors.transparent,
                                           onTap: () async {
-                                            context.pushNamed('MyProfile');
+                                            context.pushNamed(
+                                                MyProfileWidget.routeName);
                                           },
-                                          child: const Icon(
+                                          child: Icon(
                                             Icons.person,
                                             color: Colors.white,
                                             size: 20.0,
                                           ),
                                         ),
-                                      ].divide(const SizedBox(width: 10.0)),
+                                      ].divide(SizedBox(width: 10.0)),
                                     ),
                                   ),
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 25.0, 0.0, 0.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
                                       children: [
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   20.0, 0.0, 0.0, 0.0),
                                           child: Text(
                                             valueOrDefault<String>(
@@ -411,9 +417,9 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                                     ),
                                   ),
                                   Align(
-                                    alignment: const AlignmentDirectional(-1.0, 0.0),
+                                    alignment: AlignmentDirectional(-1.0, 0.0),
                                     child: Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           20.0, 0.0, 0.0, 20.0),
                                       child: FutureBuilder<ApiCallResponse>(
                                         future: _model.newT(
@@ -487,9 +493,9 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                                                     ),
                                                     '0',
                                                   ),
-                                                  style: const TextStyle(),
+                                                  style: TextStyle(),
                                                 ),
-                                                const TextSpan(
+                                                TextSpan(
                                                   text: ', ',
                                                   style: TextStyle(),
                                                 ),
@@ -502,9 +508,9 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                                                     ),
                                                     '0',
                                                   ),
-                                                  style: const TextStyle(),
+                                                  style: TextStyle(),
                                                 ),
-                                                const TextSpan(
+                                                TextSpan(
                                                   text: ' H',
                                                   style: TextStyle(),
                                                 )
@@ -530,14 +536,14 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                                   wrapWithModel(
                                     model: _model.dateComponenModel,
                                     updateCallback: () => safeSetState(() {}),
-                                    child: const DateComponenWidget(),
+                                    child: DateComponenWidget(),
                                   ),
                                 ],
                               ),
                             ),
                           ),
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 20.0, 50.0, 20.0, 0.0),
                             child: Column(
                               mainAxisSize: MainAxisSize.max,
@@ -549,7 +555,7 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                                   hoverColor: Colors.transparent,
                                   highlightColor: Colors.transparent,
                                   onTap: () async {
-                                    context.pushNamed('kiblat');
+                                    context.pushNamed(KiblatWidget.routeName);
                                   },
                                   child: Text(
                                     'Qiyamul Lail',
@@ -564,14 +570,14 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                                   ),
                                 ),
                                 Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 10.0, 0.0, 0.0),
                                   child: AuthUserStreamWidget(
                                     builder: (context) => Container(
                                       width: double.infinity,
                                       decoration: BoxDecoration(
                                         color: currentUserDocument?.colorThemes,
-                                        boxShadow: const [
+                                        boxShadow: [
                                           BoxShadow(
                                             blurRadius: 2.0,
                                             color: Color(0x33000000),
@@ -581,7 +587,7 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                                             ),
                                           )
                                         ],
-                                        borderRadius: const BorderRadius.only(
+                                        borderRadius: BorderRadius.only(
                                           bottomLeft: Radius.circular(20.0),
                                           bottomRight: Radius.circular(20.0),
                                           topLeft: Radius.circular(20.0),
@@ -589,7 +595,7 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                                         ),
                                       ),
                                       child: Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             10.0, 10.0, 10.0, 10.0),
                                         child: FutureBuilder<ApiCallResponse>(
                                           future: FFAppState()
@@ -647,7 +653,7 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                                                         res1[res1Index];
                                                     return Padding(
                                                       padding:
-                                                          const EdgeInsetsDirectional
+                                                          EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   0.0,
                                                                   0.0,
@@ -664,7 +670,8 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                                                             Colors.transparent,
                                                         onTap: () async {
                                                           context.pushNamed(
-                                                            'subDetailTaskSunah',
+                                                            SubDetailTaskSunahWidget
+                                                                .routeName,
                                                             queryParameters: {
                                                               'idsunah':
                                                                   serializeParam(
@@ -719,7 +726,7 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                                                                       .primaryText,
                                                                 ),
                                                               ),
-                                                              duration: const Duration(
+                                                              duration: Duration(
                                                                   milliseconds:
                                                                       4000),
                                                               backgroundColor:
@@ -762,7 +769,7 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                                                                           ),
                                                                         ),
                                                                         duration:
-                                                                            const Duration(milliseconds: 4900),
+                                                                            Duration(milliseconds: 4900),
                                                                         backgroundColor:
                                                                             FlutterFlowTheme.of(context).secondary,
                                                                       ),
@@ -799,7 +806,7 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                                                                             ),
                                                                           ),
                                                                           duration:
-                                                                              const Duration(milliseconds: 4000),
+                                                                              Duration(milliseconds: 4000),
                                                                           backgroundColor:
                                                                               FlutterFlowTheme.of(context).secondary,
                                                                         ),
@@ -870,7 +877,7 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                                                                             ),
                                                                           ),
                                                                           duration:
-                                                                              const Duration(milliseconds: 4900),
+                                                                              Duration(milliseconds: 4900),
                                                                           backgroundColor:
                                                                               FlutterFlowTheme.of(context).secondary,
                                                                         ),
@@ -908,7 +915,7 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                                                                               ),
                                                                             ),
                                                                             duration:
-                                                                                const Duration(milliseconds: 4000),
+                                                                                Duration(milliseconds: 4000),
                                                                             backgroundColor:
                                                                                 FlutterFlowTheme.of(context).secondary,
                                                                           ),
@@ -936,7 +943,7 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                                                                               ),
                                                                             ),
                                                                             duration:
-                                                                                const Duration(milliseconds: 4000),
+                                                                                Duration(milliseconds: 4000),
                                                                             backgroundColor:
                                                                                 FlutterFlowTheme.of(context).secondary,
                                                                           ),
@@ -1010,7 +1017,7 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                                   ),
                                 ),
                                 Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 20.0, 0.0, 0.0),
                                   child: Text(
                                     'Fajr',
@@ -1025,14 +1032,14 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                                   ),
                                 ),
                                 Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 10.0, 0.0, 0.0),
                                   child: AuthUserStreamWidget(
                                     builder: (context) => Container(
                                       width: double.infinity,
                                       decoration: BoxDecoration(
                                         color: currentUserDocument?.colorThemes,
-                                        boxShadow: const [
+                                        boxShadow: [
                                           BoxShadow(
                                             blurRadius: 2.0,
                                             color: Color(0x33000000),
@@ -1042,7 +1049,7 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                                             ),
                                           )
                                         ],
-                                        borderRadius: const BorderRadius.only(
+                                        borderRadius: BorderRadius.only(
                                           bottomLeft: Radius.circular(20.0),
                                           bottomRight: Radius.circular(20.0),
                                           topLeft: Radius.circular(20.0),
@@ -1050,7 +1057,7 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                                         ),
                                       ),
                                       child: Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             10.0, 10.0, 10.0, 10.0),
                                         child: FutureBuilder<ApiCallResponse>(
                                           future: FFAppState()
@@ -1108,7 +1115,7 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                                                         res4[res4Index];
                                                     return Padding(
                                                       padding:
-                                                          const EdgeInsetsDirectional
+                                                          EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   0.0,
                                                                   0.0,
@@ -1125,7 +1132,8 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                                                             Colors.transparent,
                                                         onTap: () async {
                                                           context.pushNamed(
-                                                            'subDetailTaskSunah',
+                                                            SubDetailTaskSunahWidget
+                                                                .routeName,
                                                             queryParameters: {
                                                               'idsunah':
                                                                   serializeParam(
@@ -1206,7 +1214,7 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                                                                             ),
                                                                           ),
                                                                           duration:
-                                                                              const Duration(milliseconds: 4000),
+                                                                              Duration(milliseconds: 4000),
                                                                           backgroundColor:
                                                                               FlutterFlowTheme.of(context).secondary,
                                                                         ),
@@ -1277,7 +1285,7 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                                                                             ),
                                                                           ),
                                                                           duration:
-                                                                              const Duration(milliseconds: 4900),
+                                                                              Duration(milliseconds: 4900),
                                                                           backgroundColor:
                                                                               FlutterFlowTheme.of(context).secondary,
                                                                         ),
@@ -1313,7 +1321,7 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                                                                               ),
                                                                             ),
                                                                             duration:
-                                                                                const Duration(milliseconds: 4000),
+                                                                                Duration(milliseconds: 4000),
                                                                             backgroundColor:
                                                                                 FlutterFlowTheme.of(context).secondary,
                                                                           ),
@@ -1341,7 +1349,7 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                                                                               ),
                                                                             ),
                                                                             duration:
-                                                                                const Duration(milliseconds: 4000),
+                                                                                Duration(milliseconds: 4000),
                                                                             backgroundColor:
                                                                                 FlutterFlowTheme.of(context).secondary,
                                                                           ),
@@ -1415,7 +1423,7 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                                   ),
                                 ),
                                 Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 20.0, 0.0, 0.0),
                                   child: Text(
                                     'Dhuhr',
@@ -1430,14 +1438,14 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                                   ),
                                 ),
                                 Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 10.0, 0.0, 0.0),
                                   child: AuthUserStreamWidget(
                                     builder: (context) => Container(
                                       width: double.infinity,
                                       decoration: BoxDecoration(
                                         color: currentUserDocument?.colorThemes,
-                                        boxShadow: const [
+                                        boxShadow: [
                                           BoxShadow(
                                             blurRadius: 2.0,
                                             color: Color(0x33000000),
@@ -1447,7 +1455,7 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                                             ),
                                           )
                                         ],
-                                        borderRadius: const BorderRadius.only(
+                                        borderRadius: BorderRadius.only(
                                           bottomLeft: Radius.circular(20.0),
                                           bottomRight: Radius.circular(20.0),
                                           topLeft: Radius.circular(20.0),
@@ -1455,7 +1463,7 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                                         ),
                                       ),
                                       child: Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             10.0, 10.0, 10.0, 10.0),
                                         child: FutureBuilder<ApiCallResponse>(
                                           future: FFAppState()
@@ -1513,7 +1521,7 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                                                         res5[res5Index];
                                                     return Padding(
                                                       padding:
-                                                          const EdgeInsetsDirectional
+                                                          EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   0.0,
                                                                   0.0,
@@ -1530,7 +1538,8 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                                                             Colors.transparent,
                                                         onTap: () async {
                                                           context.pushNamed(
-                                                            'subDetailTaskSunah',
+                                                            SubDetailTaskSunahWidget
+                                                                .routeName,
                                                             queryParameters: {
                                                               'idsunah':
                                                                   serializeParam(
@@ -1611,7 +1620,7 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                                                                             ),
                                                                           ),
                                                                           duration:
-                                                                              const Duration(milliseconds: 4000),
+                                                                              Duration(milliseconds: 4000),
                                                                           backgroundColor:
                                                                               FlutterFlowTheme.of(context).secondary,
                                                                         ),
@@ -1641,12 +1650,18 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                                                                     size: 24.0,
                                                                   ),
                                                                 ),
-                                                                if (functions.intToString(SunahGroup
-                                                                        .getsunahlimaCall
-                                                                        .isComplate(
-                                                                      columnDhurGetsunahlimaResponse
-                                                                          .jsonBody,
-                                                                    )!) ==
+                                                                if (functions.intToString(
+                                                                        valueOrDefault<
+                                                                            int>(
+                                                                      SunahGroup
+                                                                          .getsunahlimaCall
+                                                                          .isComplate(
+                                                                            columnDhurGetsunahlimaResponse.jsonBody,
+                                                                          )
+                                                                          ?.elementAtOrNull(
+                                                                              res5Index),
+                                                                      0,
+                                                                    )) ==
                                                                     '1')
                                                                   InkWell(
                                                                     splashColor:
@@ -1676,7 +1691,7 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                                                                             ),
                                                                           ),
                                                                           duration:
-                                                                              const Duration(milliseconds: 4900),
+                                                                              Duration(milliseconds: 4900),
                                                                           backgroundColor:
                                                                               FlutterFlowTheme.of(context).secondary,
                                                                         ),
@@ -1712,7 +1727,7 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                                                                               ),
                                                                             ),
                                                                             duration:
-                                                                                const Duration(milliseconds: 4000),
+                                                                                Duration(milliseconds: 4000),
                                                                             backgroundColor:
                                                                                 FlutterFlowTheme.of(context).secondary,
                                                                           ),
@@ -1740,7 +1755,7 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                                                                               ),
                                                                             ),
                                                                             duration:
-                                                                                const Duration(milliseconds: 4000),
+                                                                                Duration(milliseconds: 4000),
                                                                             backgroundColor:
                                                                                 FlutterFlowTheme.of(context).secondary,
                                                                           ),
@@ -1824,7 +1839,7 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                                         children: [
                                           Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 20.0, 0.0, 0.0),
                                             child: Text(
                                               'Ashr',
@@ -1842,14 +1857,14 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                                           ),
                                           Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 10.0, 0.0, 0.0),
                                             child: AuthUserStreamWidget(
                                               builder: (context) => Container(
                                                 decoration: BoxDecoration(
                                                   color: currentUserDocument
                                                       ?.colorThemes,
-                                                  boxShadow: const [
+                                                  boxShadow: [
                                                     BoxShadow(
                                                       blurRadius: 2.0,
                                                       color: Color(0x33000000),
@@ -1860,7 +1875,7 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                                                     )
                                                   ],
                                                   borderRadius:
-                                                      const BorderRadius.only(
+                                                      BorderRadius.only(
                                                     bottomLeft:
                                                         Radius.circular(20.0),
                                                     bottomRight:
@@ -1872,7 +1887,7 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                                                   ),
                                                 ),
                                                 child: Padding(
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(10.0, 10.0,
                                                           10.0, 10.0),
                                                   child: FutureBuilder<
@@ -1940,7 +1955,7 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                                                                       res6Index];
                                                               return Padding(
                                                                 padding:
-                                                                    const EdgeInsetsDirectional
+                                                                    EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             0.0,
                                                                             0.0,
@@ -1961,7 +1976,8 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                                                                       () async {
                                                                     context
                                                                         .pushNamed(
-                                                                      'subDetailTaskSunah',
+                                                                      SubDetailTaskSunahWidget
+                                                                          .routeName,
                                                                       queryParameters:
                                                                           {
                                                                         'idsunah':
@@ -2026,7 +2042,7 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                                                                                         color: FlutterFlowTheme.of(context).primaryText,
                                                                                       ),
                                                                                     ),
-                                                                                    duration: const Duration(milliseconds: 4000),
+                                                                                    duration: Duration(milliseconds: 4000),
                                                                                     backgroundColor: FlutterFlowTheme.of(context).secondary,
                                                                                   ),
                                                                                 );
@@ -2047,9 +2063,14 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                                                                               size: 24.0,
                                                                             ),
                                                                           ),
-                                                                          if (functions.intToString(SunahGroup.getsunahenamCall.isComplate(
-                                                                                columnasarGetsunahenamResponse.jsonBody,
-                                                                              )!) ==
+                                                                          if (functions.intToString(valueOrDefault<int>(
+                                                                                SunahGroup.getsunahenamCall
+                                                                                    .isComplate(
+                                                                                      columnasarGetsunahenamResponse.jsonBody,
+                                                                                    )
+                                                                                    ?.elementAtOrNull(res6Index),
+                                                                                0,
+                                                                              )) ==
                                                                               '1')
                                                                             InkWell(
                                                                               splashColor: Colors.transparent,
@@ -2065,7 +2086,7 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                                                                                         color: FlutterFlowTheme.of(context).primaryText,
                                                                                       ),
                                                                                     ),
-                                                                                    duration: const Duration(milliseconds: 4900),
+                                                                                    duration: Duration(milliseconds: 4900),
                                                                                     backgroundColor: FlutterFlowTheme.of(context).secondary,
                                                                                   ),
                                                                                 );
@@ -2090,7 +2111,7 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                                                                                           color: FlutterFlowTheme.of(context).primaryText,
                                                                                         ),
                                                                                       ),
-                                                                                      duration: const Duration(milliseconds: 4000),
+                                                                                      duration: Duration(milliseconds: 4000),
                                                                                       backgroundColor: FlutterFlowTheme.of(context).secondary,
                                                                                     ),
                                                                                   );
@@ -2109,7 +2130,7 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                                                                                           color: FlutterFlowTheme.of(context).primaryText,
                                                                                         ),
                                                                                       ),
-                                                                                      duration: const Duration(milliseconds: 4000),
+                                                                                      duration: Duration(milliseconds: 4000),
                                                                                       backgroundColor: FlutterFlowTheme.of(context).secondary,
                                                                                     ),
                                                                                   );
@@ -2185,7 +2206,7 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                                         children: [
                                           Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 20.0, 0.0, 0.0),
                                             child: Text(
                                               'Magrib',
@@ -2203,14 +2224,14 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                                           ),
                                           Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 10.0, 0.0, 0.0),
                                             child: AuthUserStreamWidget(
                                               builder: (context) => Container(
                                                 decoration: BoxDecoration(
                                                   color: currentUserDocument
                                                       ?.colorThemes,
-                                                  boxShadow: const [
+                                                  boxShadow: [
                                                     BoxShadow(
                                                       blurRadius: 2.0,
                                                       color: Color(0x33000000),
@@ -2221,7 +2242,7 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                                                     )
                                                   ],
                                                   borderRadius:
-                                                      const BorderRadius.only(
+                                                      BorderRadius.only(
                                                     bottomLeft:
                                                         Radius.circular(20.0),
                                                     bottomRight:
@@ -2233,7 +2254,7 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                                                   ),
                                                 ),
                                                 child: Padding(
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(10.0, 10.0,
                                                           10.0, 10.0),
                                                   child: FutureBuilder<
@@ -2296,7 +2317,7 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                                                                       res7Index];
                                                               return Padding(
                                                                 padding:
-                                                                    const EdgeInsetsDirectional
+                                                                    EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             0.0,
                                                                             0.0,
@@ -2317,7 +2338,8 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                                                                       () async {
                                                                     context
                                                                         .pushNamed(
-                                                                      'subDetailTaskSunah',
+                                                                      SubDetailTaskSunahWidget
+                                                                          .routeName,
                                                                       queryParameters:
                                                                           {
                                                                         'idsunah':
@@ -2382,7 +2404,7 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                                                                                         color: FlutterFlowTheme.of(context).primaryText,
                                                                                       ),
                                                                                     ),
-                                                                                    duration: const Duration(milliseconds: 4000),
+                                                                                    duration: Duration(milliseconds: 4000),
                                                                                     backgroundColor: FlutterFlowTheme.of(context).secondary,
                                                                                   ),
                                                                                 );
@@ -2403,9 +2425,14 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                                                                               size: 24.0,
                                                                             ),
                                                                           ),
-                                                                          if (functions.intToString(SunahGroup.getsunahtujuhCall.isComplate(
-                                                                                columnMagribGetsunahtujuhResponse.jsonBody,
-                                                                              )!) ==
+                                                                          if (functions.intToString(valueOrDefault<int>(
+                                                                                SunahGroup.getsunahtujuhCall
+                                                                                    .isComplate(
+                                                                                      columnMagribGetsunahtujuhResponse.jsonBody,
+                                                                                    )
+                                                                                    ?.elementAtOrNull(res7Index),
+                                                                                0,
+                                                                              )) ==
                                                                               '1')
                                                                             InkWell(
                                                                               splashColor: Colors.transparent,
@@ -2421,7 +2448,7 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                                                                                         color: FlutterFlowTheme.of(context).primaryText,
                                                                                       ),
                                                                                     ),
-                                                                                    duration: const Duration(milliseconds: 4900),
+                                                                                    duration: Duration(milliseconds: 4900),
                                                                                     backgroundColor: FlutterFlowTheme.of(context).secondary,
                                                                                   ),
                                                                                 );
@@ -2446,7 +2473,7 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                                                                                           color: FlutterFlowTheme.of(context).primaryText,
                                                                                         ),
                                                                                       ),
-                                                                                      duration: const Duration(milliseconds: 4000),
+                                                                                      duration: Duration(milliseconds: 4000),
                                                                                       backgroundColor: FlutterFlowTheme.of(context).secondary,
                                                                                     ),
                                                                                   );
@@ -2465,7 +2492,7 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                                                                                           color: FlutterFlowTheme.of(context).primaryText,
                                                                                         ),
                                                                                       ),
-                                                                                      duration: const Duration(milliseconds: 4000),
+                                                                                      duration: Duration(milliseconds: 4000),
                                                                                       backgroundColor: FlutterFlowTheme.of(context).secondary,
                                                                                     ),
                                                                                   );
@@ -2541,7 +2568,7 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                                         children: [
                                           Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 20.0, 0.0, 0.0),
                                             child: Text(
                                               'Isya',
@@ -2559,14 +2586,14 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                                           ),
                                           Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 10.0, 0.0, 0.0),
                                             child: AuthUserStreamWidget(
                                               builder: (context) => Container(
                                                 decoration: BoxDecoration(
                                                   color: currentUserDocument
                                                       ?.colorThemes,
-                                                  boxShadow: const [
+                                                  boxShadow: [
                                                     BoxShadow(
                                                       blurRadius: 2.0,
                                                       color: Color(0x33000000),
@@ -2577,7 +2604,7 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                                                     )
                                                   ],
                                                   borderRadius:
-                                                      const BorderRadius.only(
+                                                      BorderRadius.only(
                                                     bottomLeft:
                                                         Radius.circular(20.0),
                                                     bottomRight:
@@ -2589,7 +2616,7 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                                                   ),
                                                 ),
                                                 child: Padding(
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(10.0, 10.0,
                                                           10.0, 10.0),
                                                   child: FutureBuilder<
@@ -2656,7 +2683,7 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                                                                       res8Index];
                                                               return Padding(
                                                                 padding:
-                                                                    const EdgeInsetsDirectional
+                                                                    EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             0.0,
                                                                             0.0,
@@ -2677,7 +2704,8 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                                                                       () async {
                                                                     context
                                                                         .pushNamed(
-                                                                      'subDetailTaskSunah',
+                                                                      SubDetailTaskSunahWidget
+                                                                          .routeName,
                                                                       queryParameters:
                                                                           {
                                                                         'idsunah':
@@ -2742,7 +2770,7 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                                                                                         color: FlutterFlowTheme.of(context).primaryText,
                                                                                       ),
                                                                                     ),
-                                                                                    duration: const Duration(milliseconds: 4000),
+                                                                                    duration: Duration(milliseconds: 4000),
                                                                                     backgroundColor: FlutterFlowTheme.of(context).secondary,
                                                                                   ),
                                                                                 );
@@ -2786,7 +2814,7 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                                                                                         color: FlutterFlowTheme.of(context).primaryText,
                                                                                       ),
                                                                                     ),
-                                                                                    duration: const Duration(milliseconds: 4900),
+                                                                                    duration: Duration(milliseconds: 4900),
                                                                                     backgroundColor: FlutterFlowTheme.of(context).secondary,
                                                                                   ),
                                                                                 );
@@ -2816,7 +2844,7 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                                                                                           color: FlutterFlowTheme.of(context).primaryText,
                                                                                         ),
                                                                                       ),
-                                                                                      duration: const Duration(milliseconds: 4000),
+                                                                                      duration: Duration(milliseconds: 4000),
                                                                                       backgroundColor: FlutterFlowTheme.of(context).secondary,
                                                                                     ),
                                                                                   );
@@ -2835,7 +2863,7 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                                                                                           color: FlutterFlowTheme.of(context).primaryText,
                                                                                         ),
                                                                                       ),
-                                                                                      duration: const Duration(milliseconds: 4000),
+                                                                                      duration: Duration(milliseconds: 4000),
                                                                                       backgroundColor: FlutterFlowTheme.of(context).secondary,
                                                                                     ),
                                                                                   );
@@ -2911,7 +2939,7 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                                         children: [
                                           Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 20.0, 0.0, 0.0),
                                             child: Text(
                                               'Tidur',
@@ -2929,14 +2957,14 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                                           ),
                                           Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 10.0, 0.0, 0.0),
                                             child: AuthUserStreamWidget(
                                               builder: (context) => Container(
                                                 decoration: BoxDecoration(
                                                   color: currentUserDocument
                                                       ?.colorThemes,
-                                                  boxShadow: const [
+                                                  boxShadow: [
                                                     BoxShadow(
                                                       blurRadius: 2.0,
                                                       color: Color(0x33000000),
@@ -2947,7 +2975,7 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                                                     )
                                                   ],
                                                   borderRadius:
-                                                      const BorderRadius.only(
+                                                      BorderRadius.only(
                                                     bottomLeft:
                                                         Radius.circular(20.0),
                                                     bottomRight:
@@ -2959,7 +2987,7 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                                                   ),
                                                 ),
                                                 child: Padding(
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(10.0, 10.0,
                                                           10.0, 10.0),
                                                   child: FutureBuilder<
@@ -3026,7 +3054,7 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                                                                       res9Index];
                                                               return Padding(
                                                                 padding:
-                                                                    const EdgeInsetsDirectional
+                                                                    EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             0.0,
                                                                             0.0,
@@ -3047,7 +3075,8 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                                                                       () async {
                                                                     context
                                                                         .pushNamed(
-                                                                      'subDetailTaskSunah',
+                                                                      SubDetailTaskSunahWidget
+                                                                          .routeName,
                                                                       queryParameters:
                                                                           {
                                                                         'idsunah':
@@ -3112,7 +3141,7 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                                                                                         color: FlutterFlowTheme.of(context).primaryText,
                                                                                       ),
                                                                                     ),
-                                                                                    duration: const Duration(milliseconds: 4000),
+                                                                                    duration: Duration(milliseconds: 4000),
                                                                                     backgroundColor: FlutterFlowTheme.of(context).secondary,
                                                                                   ),
                                                                                 );
@@ -3133,9 +3162,14 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                                                                               size: 24.0,
                                                                             ),
                                                                           ),
-                                                                          if (functions.intToString(SunahGroup.getsunahsembilanCall.isComplate(
-                                                                                columntidurGetsunahsembilanResponse.jsonBody,
-                                                                              )!) ==
+                                                                          if (functions.intToString(valueOrDefault<int>(
+                                                                                SunahGroup.getsunahsembilanCall
+                                                                                    .isComplate(
+                                                                                      columntidurGetsunahsembilanResponse.jsonBody,
+                                                                                    )
+                                                                                    ?.elementAtOrNull(res9Index),
+                                                                                0,
+                                                                              )) ==
                                                                               '1')
                                                                             InkWell(
                                                                               splashColor: Colors.transparent,
@@ -3151,7 +3185,7 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                                                                                         color: FlutterFlowTheme.of(context).primaryText,
                                                                                       ),
                                                                                     ),
-                                                                                    duration: const Duration(milliseconds: 4900),
+                                                                                    duration: Duration(milliseconds: 4900),
                                                                                     backgroundColor: FlutterFlowTheme.of(context).secondary,
                                                                                   ),
                                                                                 );
@@ -3176,7 +3210,7 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                                                                                           color: FlutterFlowTheme.of(context).primaryText,
                                                                                         ),
                                                                                       ),
-                                                                                      duration: const Duration(milliseconds: 4000),
+                                                                                      duration: Duration(milliseconds: 4000),
                                                                                       backgroundColor: FlutterFlowTheme.of(context).secondary,
                                                                                     ),
                                                                                   );
@@ -3195,7 +3229,7 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                                                                                           color: FlutterFlowTheme.of(context).primaryText,
                                                                                         ),
                                                                                       ),
-                                                                                      duration: const Duration(milliseconds: 4000),
+                                                                                      duration: Duration(milliseconds: 4000),
                                                                                       backgroundColor: FlutterFlowTheme.of(context).secondary,
                                                                                     ),
                                                                                   );
@@ -3271,7 +3305,7 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                                         children: [
                                           Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 20.0, 0.0, 0.0),
                                             child: Text(
                                               'Lain Lain',
@@ -3289,14 +3323,14 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                                           ),
                                           Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 10.0, 0.0, 0.0),
                                             child: AuthUserStreamWidget(
                                               builder: (context) => Container(
                                                 decoration: BoxDecoration(
                                                   color: currentUserDocument
                                                       ?.colorThemes,
-                                                  boxShadow: const [
+                                                  boxShadow: [
                                                     BoxShadow(
                                                       blurRadius: 2.0,
                                                       color: Color(0x33000000),
@@ -3307,7 +3341,7 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                                                     )
                                                   ],
                                                   borderRadius:
-                                                      const BorderRadius.only(
+                                                      BorderRadius.only(
                                                     bottomLeft:
                                                         Radius.circular(20.0),
                                                     bottomRight:
@@ -3319,7 +3353,7 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                                                   ),
                                                 ),
                                                 child: Padding(
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(10.0, 10.0,
                                                           10.0, 10.0),
                                                   child: FutureBuilder<
@@ -3387,7 +3421,7 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                                                                       res10Index];
                                                               return Padding(
                                                                 padding:
-                                                                    const EdgeInsetsDirectional
+                                                                    EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             0.0,
                                                                             0.0,
@@ -3408,7 +3442,8 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                                                                       () async {
                                                                     context
                                                                         .pushNamed(
-                                                                      'subDetailTaskSunah',
+                                                                      SubDetailTaskSunahWidget
+                                                                          .routeName,
                                                                       queryParameters:
                                                                           {
                                                                         'idsunah':
@@ -3473,7 +3508,7 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                                                                                         color: FlutterFlowTheme.of(context).primaryText,
                                                                                       ),
                                                                                     ),
-                                                                                    duration: const Duration(milliseconds: 4000),
+                                                                                    duration: Duration(milliseconds: 4000),
                                                                                     backgroundColor: FlutterFlowTheme.of(context).secondary,
                                                                                   ),
                                                                                 );
@@ -3494,9 +3529,11 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                                                                               size: 24.0,
                                                                             ),
                                                                           ),
-                                                                          if (functions.intToString(SunahGroup.getsunahsepuluhCall.isComplate(
-                                                                                columnlainGetsunahsepuluhResponse.jsonBody,
-                                                                              )!) ==
+                                                                          if (functions.intToString((SunahGroup.getsunahsepuluhCall
+                                                                                  .isComplate(
+                                                                                    columnlainGetsunahsepuluhResponse.jsonBody,
+                                                                                  )!
+                                                                                  .elementAtOrNull(res10Index))!) ==
                                                                               '1')
                                                                             InkWell(
                                                                               splashColor: Colors.transparent,
@@ -3512,7 +3549,7 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                                                                                         color: FlutterFlowTheme.of(context).primaryText,
                                                                                       ),
                                                                                     ),
-                                                                                    duration: const Duration(milliseconds: 4900),
+                                                                                    duration: Duration(milliseconds: 4900),
                                                                                     backgroundColor: FlutterFlowTheme.of(context).secondary,
                                                                                   ),
                                                                                 );
@@ -3537,7 +3574,7 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                                                                                           color: FlutterFlowTheme.of(context).primaryText,
                                                                                         ),
                                                                                       ),
-                                                                                      duration: const Duration(milliseconds: 4000),
+                                                                                      duration: Duration(milliseconds: 4000),
                                                                                       backgroundColor: FlutterFlowTheme.of(context).secondary,
                                                                                     ),
                                                                                   );
@@ -3556,7 +3593,7 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                                                                                           color: FlutterFlowTheme.of(context).primaryText,
                                                                                         ),
                                                                                       ),
-                                                                                      duration: const Duration(milliseconds: 4000),
+                                                                                      duration: Duration(milliseconds: 4000),
                                                                                       backgroundColor: FlutterFlowTheme.of(context).secondary,
                                                                                     ),
                                                                                   );
@@ -3622,7 +3659,7 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                                   ],
                                 ),
                                 Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 90.0),
                                   child: Container(
                                     width: double.infinity,
@@ -3643,7 +3680,7 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                 wrapWithModel(
                   model: _model.navbarModel,
                   updateCallback: () => safeSetState(() {}),
-                  child: const NavbarWidget(),
+                  child: NavbarWidget(),
                 ),
               ],
             ),

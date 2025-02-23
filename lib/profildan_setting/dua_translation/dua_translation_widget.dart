@@ -1,12 +1,16 @@
 import '/auth/firebase_auth/auth_util.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'dua_translation_model.dart';
 export 'dua_translation_model.dart';
 
 class DuaTranslationWidget extends StatefulWidget {
   const DuaTranslationWidget({super.key});
+
+  static String routeName = 'DuaTranslation';
+  static String routePath = '/duaTranslation';
 
   @override
   State<DuaTranslationWidget> createState() => _DuaTranslationWidgetState();
@@ -43,21 +47,21 @@ class _DuaTranslationWidgetState extends State<DuaTranslationWidget> {
         key: scaffoldKey,
         backgroundColor: Colors.white,
         appBar: PreferredSize(
-          preferredSize: const Size.fromHeight(80.0),
+          preferredSize: Size.fromHeight(80.0),
           child: AppBar(
             backgroundColor: Colors.white,
             automaticallyImplyLeading: false,
             title: Stack(
-              alignment: const AlignmentDirectional(0.0, 0.0),
+              alignment: AlignmentDirectional(0.0, 0.0),
               children: [
                 Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 10.0),
+                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 10.0),
                   child: Row(
                     mainAxisSize: MainAxisSize.max,
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
                       Align(
-                        alignment: const AlignmentDirectional(-1.0, 0.0),
+                        alignment: AlignmentDirectional(-1.0, 0.0),
                         child: AuthUserStreamWidget(
                           builder: (context) => InkWell(
                             splashColor: Colors.transparent,
@@ -65,7 +69,7 @@ class _DuaTranslationWidgetState extends State<DuaTranslationWidget> {
                             hoverColor: Colors.transparent,
                             highlightColor: Colors.transparent,
                             onTap: () async {
-                              context.pushNamed('MySetting');
+                              context.pushNamed(MySettingWidget.routeName);
                             },
                             child: Icon(
                               Icons.arrow_back_ios_new,
@@ -79,10 +83,10 @@ class _DuaTranslationWidgetState extends State<DuaTranslationWidget> {
                   ),
                 ),
                 Align(
-                  alignment: const AlignmentDirectional(0.0, 0.0),
+                  alignment: AlignmentDirectional(0.0, 0.0),
                   child: Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 10.0),
+                        EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 10.0),
                     child: AuthUserStreamWidget(
                       builder: (context) => Text(
                         'Duas Translation',
@@ -99,7 +103,7 @@ class _DuaTranslationWidgetState extends State<DuaTranslationWidget> {
                 ),
               ],
             ),
-            actions: const [],
+            actions: [],
             centerTitle: false,
             elevation: 2.0,
           ),
@@ -110,7 +114,7 @@ class _DuaTranslationWidgetState extends State<DuaTranslationWidget> {
             mainAxisSize: MainAxisSize.max,
             children: [
               Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(20.0, 30.0, 20.0, 0.0),
+                padding: EdgeInsetsDirectional.fromSTEB(20.0, 30.0, 20.0, 0.0),
                 child: Container(
                   width: double.infinity,
                   decoration: BoxDecoration(
@@ -124,16 +128,16 @@ class _DuaTranslationWidgetState extends State<DuaTranslationWidget> {
                   ),
                   child: Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 20.0),
+                        EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 20.0),
                     child: Column(
                       mainAxisSize: MainAxisSize.max,
                       children: [
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               5.0, 0.0, 5.0, 0.0),
                           child: Container(
                             width: double.infinity,
-                            decoration: const BoxDecoration(
+                            decoration: BoxDecoration(
                               color: Colors.white,
                               borderRadius: BorderRadius.only(
                                 bottomLeft: Radius.circular(0.0),
@@ -143,14 +147,14 @@ class _DuaTranslationWidgetState extends State<DuaTranslationWidget> {
                               ),
                             ),
                             child: Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   10.0, 0.0, 10.0, 0.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
                                   Expanded(
                                     child: Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           35.0, 0.0, 0.0, 0.0),
                                       child: Column(
                                         mainAxisSize: MainAxisSize.max,
@@ -185,16 +189,16 @@ class _DuaTranslationWidgetState extends State<DuaTranslationWidget> {
                             ),
                           ),
                         ),
-                        const Divider(
+                        Divider(
                           thickness: 1.0,
                           color: Color(0xFFE5E5E5),
                         ),
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               5.0, 0.0, 5.0, 0.0),
                           child: Container(
                             width: double.infinity,
-                            decoration: const BoxDecoration(
+                            decoration: BoxDecoration(
                               color: Colors.white,
                               borderRadius: BorderRadius.only(
                                 bottomLeft: Radius.circular(0.0),
@@ -204,7 +208,7 @@ class _DuaTranslationWidgetState extends State<DuaTranslationWidget> {
                               ),
                             ),
                             child: Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   10.0, 0.0, 10.0, 0.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -219,7 +223,7 @@ class _DuaTranslationWidgetState extends State<DuaTranslationWidget> {
                                           mainAxisSize: MainAxisSize.max,
                                           children: [
                                             Padding(
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       35.0, 0.0, 0.0, 0.0),
                                               child: Text(
@@ -239,7 +243,7 @@ class _DuaTranslationWidgetState extends State<DuaTranslationWidget> {
                                         ),
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   35.0, 0.0, 0.0, 0.0),
                                           child: Text(
                                             'Bahasa Malaysia',
@@ -259,16 +263,16 @@ class _DuaTranslationWidgetState extends State<DuaTranslationWidget> {
                             ),
                           ),
                         ),
-                        const Divider(
+                        Divider(
                           thickness: 1.0,
                           color: Color(0xFFE5E5E5),
                         ),
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               5.0, 0.0, 5.0, 0.0),
                           child: Container(
                             width: double.infinity,
-                            decoration: const BoxDecoration(
+                            decoration: BoxDecoration(
                               color: Colors.white,
                               borderRadius: BorderRadius.only(
                                 bottomLeft: Radius.circular(0.0),
@@ -278,7 +282,7 @@ class _DuaTranslationWidgetState extends State<DuaTranslationWidget> {
                               ),
                             ),
                             child: Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   10.0, 0.0, 10.0, 0.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -293,7 +297,7 @@ class _DuaTranslationWidgetState extends State<DuaTranslationWidget> {
                                           mainAxisSize: MainAxisSize.max,
                                           children: [
                                             Padding(
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       35.0, 0.0, 0.0, 0.0),
                                               child: Text(
@@ -313,7 +317,7 @@ class _DuaTranslationWidgetState extends State<DuaTranslationWidget> {
                                         ),
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   35.0, 0.0, 0.0, 0.0),
                                           child: Text(
                                             'French',
@@ -333,16 +337,16 @@ class _DuaTranslationWidgetState extends State<DuaTranslationWidget> {
                             ),
                           ),
                         ),
-                        const Divider(
+                        Divider(
                           thickness: 1.0,
                           color: Color(0xFFE5E5E5),
                         ),
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               5.0, 0.0, 5.0, 0.0),
                           child: Container(
                             width: double.infinity,
-                            decoration: const BoxDecoration(
+                            decoration: BoxDecoration(
                               color: Colors.white,
                               borderRadius: BorderRadius.only(
                                 bottomLeft: Radius.circular(0.0),
@@ -352,7 +356,7 @@ class _DuaTranslationWidgetState extends State<DuaTranslationWidget> {
                               ),
                             ),
                             child: Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   10.0, 0.0, 10.0, 0.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -367,7 +371,7 @@ class _DuaTranslationWidgetState extends State<DuaTranslationWidget> {
                                           mainAxisSize: MainAxisSize.max,
                                           children: [
                                             Padding(
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       35.0, 0.0, 0.0, 0.0),
                                               child: Text(
@@ -387,7 +391,7 @@ class _DuaTranslationWidgetState extends State<DuaTranslationWidget> {
                                         ),
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   35.0, 0.0, 0.0, 0.0),
                                           child: Text(
                                             'Rusia',
@@ -407,18 +411,18 @@ class _DuaTranslationWidgetState extends State<DuaTranslationWidget> {
                             ),
                           ),
                         ),
-                        const Divider(
+                        Divider(
                           thickness: 1.0,
                           color: Color(0xFFE5E5E5),
                         ),
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               5.0, 0.0, 5.0, 0.0),
                           child: Container(
                             width: double.infinity,
                             decoration: BoxDecoration(
                               color: FlutterFlowTheme.of(context).primary,
-                              borderRadius: const BorderRadius.only(
+                              borderRadius: BorderRadius.only(
                                 bottomLeft: Radius.circular(0.0),
                                 bottomRight: Radius.circular(0.0),
                                 topLeft: Radius.circular(0.0),
@@ -426,7 +430,7 @@ class _DuaTranslationWidgetState extends State<DuaTranslationWidget> {
                               ),
                             ),
                             child: Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   10.0, 0.0, 10.0, 0.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -441,7 +445,7 @@ class _DuaTranslationWidgetState extends State<DuaTranslationWidget> {
                                           mainAxisSize: MainAxisSize.max,
                                           children: [
                                             Padding(
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       35.0, 0.0, 0.0, 0.0),
                                               child: Text(
@@ -462,7 +466,7 @@ class _DuaTranslationWidgetState extends State<DuaTranslationWidget> {
                                         ),
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   35.0, 0.0, 0.0, 0.0),
                                           child: Text(
                                             'English',
@@ -478,7 +482,7 @@ class _DuaTranslationWidgetState extends State<DuaTranslationWidget> {
                                       ],
                                     ),
                                   ),
-                                  const Icon(
+                                  Icon(
                                     Icons.check_circle,
                                     color: Colors.white,
                                     size: 24.0,
@@ -488,7 +492,7 @@ class _DuaTranslationWidgetState extends State<DuaTranslationWidget> {
                             ),
                           ),
                         ),
-                        const Divider(
+                        Divider(
                           thickness: 1.0,
                           color: Color(0xFFE5E5E5),
                         ),

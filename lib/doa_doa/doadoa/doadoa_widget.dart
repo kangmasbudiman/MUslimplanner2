@@ -4,6 +4,7 @@ import '/cruddoa/edit_doa/edit_doa_widget.dart';
 import '/flutter_flow/flutter_flow_autocomplete_options_list.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/index.dart';
 import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -13,6 +14,9 @@ export 'doadoa_model.dart';
 
 class DoadoaWidget extends StatefulWidget {
   const DoadoaWidget({super.key});
+
+  static String routeName = 'Doadoa';
+  static String routePath = '/doadoa';
 
   @override
   State<DoadoaWidget> createState() => _DoadoaWidgetState();
@@ -54,25 +58,25 @@ class _DoadoaWidgetState extends State<DoadoaWidget> {
         key: scaffoldKey,
         backgroundColor: Colors.white,
         appBar: PreferredSize(
-          preferredSize: const Size.fromHeight(70.0),
+          preferredSize: Size.fromHeight(70.0),
           child: AppBar(
             backgroundColor: Colors.white,
             automaticallyImplyLeading: false,
             title: Padding(
-              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 20.0),
+              padding: EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 20.0),
               child: Row(
                 mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
                   Align(
-                    alignment: const AlignmentDirectional(-1.0, 0.0),
+                    alignment: AlignmentDirectional(-1.0, 0.0),
                     child: InkWell(
                       splashColor: Colors.transparent,
                       focusColor: Colors.transparent,
                       hoverColor: Colors.transparent,
                       highlightColor: Colors.transparent,
                       onTap: () async {
-                        context.pushNamed('HomeDoa');
+                        context.pushNamed(HomeDoaWidget.routeName);
                       },
                       child: Icon(
                         Icons.arrow_back_ios_new,
@@ -83,7 +87,7 @@ class _DoadoaWidgetState extends State<DoadoaWidget> {
                   ),
                   Flexible(
                     child: Align(
-                      alignment: const AlignmentDirectional(0.0, 0.0),
+                      alignment: AlignmentDirectional(0.0, 0.0),
                       child: Text(
                         'Doa - Doa',
                         style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -98,7 +102,7 @@ class _DoadoaWidgetState extends State<DoadoaWidget> {
                 ],
               ),
             ),
-            actions: const [],
+            actions: [],
             centerTitle: false,
             elevation: 2.0,
           ),
@@ -108,22 +112,22 @@ class _DoadoaWidgetState extends State<DoadoaWidget> {
           child: Container(
             width: double.infinity,
             height: double.infinity,
-            decoration: const BoxDecoration(),
+            decoration: BoxDecoration(),
             child: Padding(
-              padding: const EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 0.0),
+              padding: EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 0.0),
               child: Column(
                 mainAxisSize: MainAxisSize.max,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
+                        EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
                     child: AuthUserStreamWidget(
                       builder: (context) => Container(
                         width: double.infinity,
                         decoration: BoxDecoration(
                           color: currentUserDocument?.colorThemes,
-                          boxShadow: const [
+                          boxShadow: [
                             BoxShadow(
                               blurRadius: 2.0,
                               color: Color(0x33000000),
@@ -133,7 +137,7 @@ class _DoadoaWidgetState extends State<DoadoaWidget> {
                               ),
                             )
                           ],
-                          borderRadius: const BorderRadius.only(
+                          borderRadius: BorderRadius.only(
                             bottomLeft: Radius.circular(20.0),
                             bottomRight: Radius.circular(20.0),
                             topLeft: Radius.circular(20.0),
@@ -145,7 +149,7 @@ class _DoadoaWidgetState extends State<DoadoaWidget> {
                           children: [
                             Expanded(
                               child: Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     10.0, 0.0, 10.0, 0.0),
                                 child: FutureBuilder<ApiCallResponse>(
                                   future: FFAppState().carialldoa(
@@ -173,7 +177,7 @@ class _DoadoaWidgetState extends State<DoadoaWidget> {
                                         snapshot.data!;
 
                                     return Autocomplete<String>(
-                                      initialValue: const TextEditingValue(),
+                                      initialValue: TextEditingValue(),
                                       optionsBuilder: (textEditingValue) {
                                         if (textEditingValue.text == '') {
                                           return const Iterable<String>.empty();
@@ -207,7 +211,7 @@ class _DoadoaWidgetState extends State<DoadoaWidget> {
                                                     fontFamily: 'Inter',
                                                     letterSpacing: 0.0,
                                                   ),
-                                          textHighlightStyle: const TextStyle(),
+                                          textHighlightStyle: TextStyle(),
                                           elevation: 4.0,
                                           optionBackgroundColor:
                                               FlutterFlowTheme.of(context)
@@ -249,7 +253,7 @@ class _DoadoaWidgetState extends State<DoadoaWidget> {
                                           onChanged: (_) =>
                                               EasyDebounce.debounce(
                                             '_model.textFieldSearch1TextController',
-                                            const Duration(milliseconds: 300),
+                                            Duration(milliseconds: 300),
                                             () async {
                                               FFAppState()
                                                   .clearListAlldoaCache();
@@ -280,7 +284,7 @@ class _DoadoaWidgetState extends State<DoadoaWidget> {
                                             errorBorder: InputBorder.none,
                                             focusedErrorBorder:
                                                 InputBorder.none,
-                                            prefixIcon: const Icon(
+                                            prefixIcon: Icon(
                                               Icons.search_sharp,
                                               color: Colors.white,
                                               size: 17.0,
@@ -305,7 +309,7 @@ class _DoadoaWidgetState extends State<DoadoaWidget> {
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 10.0, 0.0),
                               child: InkWell(
                                 splashColor: Colors.transparent,
@@ -336,7 +340,7 @@ class _DoadoaWidgetState extends State<DoadoaWidget> {
                   ),
                   Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 20.0),
+                        EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 20.0),
                     child: Text(
                       'Semua ',
                       style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -353,7 +357,7 @@ class _DoadoaWidgetState extends State<DoadoaWidget> {
                       height: MediaQuery.sizeOf(context).height * 0.7,
                       decoration: BoxDecoration(
                         color: currentUserDocument?.colorThemes,
-                        borderRadius: const BorderRadius.only(
+                        borderRadius: BorderRadius.only(
                           bottomLeft: Radius.circular(20.0),
                           bottomRight: Radius.circular(20.0),
                           topLeft: Radius.circular(20.0),
@@ -362,7 +366,7 @@ class _DoadoaWidgetState extends State<DoadoaWidget> {
                       ),
                       child: Padding(
                         padding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
+                            EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
                         child: FutureBuilder<ApiCallResponse>(
                           future: FFAppState().listAlldoa(
                             requestFn: () => DoadoaGroup.getdoasearchCall.call(
@@ -411,7 +415,7 @@ class _DoadoaWidgetState extends State<DoadoaWidget> {
                                       highlightColor: Colors.transparent,
                                       onTap: () async {
                                         context.pushNamed(
-                                          'DetailDoa',
+                                          DetailDoaWidget.routeName,
                                           queryParameters: {
                                             'judul': serializeParam(
                                               getJsonField(
@@ -461,7 +465,7 @@ class _DoadoaWidgetState extends State<DoadoaWidget> {
                                           mainAxisSize: MainAxisSize.max,
                                           children: [
                                             Padding(
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       20.0, 0.0, 20.0, 10.0),
                                               child: Row(
@@ -469,7 +473,7 @@ class _DoadoaWidgetState extends State<DoadoaWidget> {
                                                 children: [
                                                   Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 10.0, 0.0),
                                                     child: Text(
@@ -524,7 +528,7 @@ class _DoadoaWidgetState extends State<DoadoaWidget> {
                                                             1)
                                                           Padding(
                                                             padding:
-                                                                const EdgeInsetsDirectional
+                                                                EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         0.0,
                                                                         20.0,
@@ -629,7 +633,7 @@ class _DoadoaWidgetState extends State<DoadoaWidget> {
                                                 ],
                                               ),
                                             ),
-                                            const Divider(
+                                            Divider(
                                               thickness: 1.0,
                                               color: Colors.white,
                                             ),

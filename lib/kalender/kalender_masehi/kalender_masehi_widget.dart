@@ -3,6 +3,7 @@ import '/componen/footer_logo/footer_logo_widget.dart';
 import '/flutter_flow/flutter_flow_calendar.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'kalender_masehi_model.dart';
@@ -10,6 +11,9 @@ export 'kalender_masehi_model.dart';
 
 class KalenderMasehiWidget extends StatefulWidget {
   const KalenderMasehiWidget({super.key});
+
+  static String routeName = 'kalenderMasehi';
+  static String routePath = '/kalenderMasehi';
 
   @override
   State<KalenderMasehiWidget> createState() => _KalenderMasehiWidgetState();
@@ -48,17 +52,17 @@ class _KalenderMasehiWidgetState extends State<KalenderMasehiWidget> {
         key: scaffoldKey,
         backgroundColor: Colors.white,
         appBar: PreferredSize(
-          preferredSize: const Size.fromHeight(80.0),
+          preferredSize: Size.fromHeight(80.0),
           child: AppBar(
             backgroundColor: Colors.white,
             automaticallyImplyLeading: false,
             title: Padding(
-              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 10.0),
+              padding: EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 10.0),
               child: Row(
                 mainAxisSize: MainAxisSize.max,
                 children: [
                   Align(
-                    alignment: const AlignmentDirectional(-1.0, 0.0),
+                    alignment: AlignmentDirectional(-1.0, 0.0),
                     child: InkWell(
                       splashColor: Colors.transparent,
                       focusColor: Colors.transparent,
@@ -80,7 +84,7 @@ class _KalenderMasehiWidgetState extends State<KalenderMasehiWidget> {
                         width: double.infinity,
                         decoration: BoxDecoration(
                           color: currentUserDocument?.colorThemes,
-                          borderRadius: const BorderRadius.only(
+                          borderRadius: BorderRadius.only(
                             bottomLeft: Radius.circular(20.0),
                             bottomRight: Radius.circular(20.0),
                             topLeft: Radius.circular(20.0),
@@ -88,7 +92,7 @@ class _KalenderMasehiWidgetState extends State<KalenderMasehiWidget> {
                           ),
                         ),
                         child: Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               4.0, 4.0, 4.0, 4.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
@@ -114,7 +118,7 @@ class _KalenderMasehiWidgetState extends State<KalenderMasehiWidget> {
                   ),
                   Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 10.0, 0.0),
+                        EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 10.0, 0.0),
                     child: Column(
                       mainAxisSize: MainAxisSize.max,
                       children: [
@@ -123,7 +127,7 @@ class _KalenderMasehiWidgetState extends State<KalenderMasehiWidget> {
                           height: 25.0,
                           decoration: BoxDecoration(
                             color: FlutterFlowTheme.of(context).primary,
-                            boxShadow: const [
+                            boxShadow: [
                               BoxShadow(
                                 blurRadius: 4.0,
                                 color: Color(0x33000000),
@@ -135,7 +139,7 @@ class _KalenderMasehiWidgetState extends State<KalenderMasehiWidget> {
                             ],
                             shape: BoxShape.circle,
                           ),
-                          child: const Icon(
+                          child: Icon(
                             Icons.date_range_outlined,
                             color: Colors.white,
                             size: 19.0,
@@ -159,7 +163,7 @@ class _KalenderMasehiWidgetState extends State<KalenderMasehiWidget> {
                     hoverColor: Colors.transparent,
                     highlightColor: Colors.transparent,
                     onTap: () async {
-                      context.pushNamed('kalenderHijriah');
+                      context.pushNamed(KalenderHijriahWidget.routeName);
                     },
                     child: Column(
                       mainAxisSize: MainAxisSize.max,
@@ -167,7 +171,7 @@ class _KalenderMasehiWidgetState extends State<KalenderMasehiWidget> {
                         Container(
                           width: 25.0,
                           height: 25.0,
-                          decoration: const BoxDecoration(
+                          decoration: BoxDecoration(
                             color: Color(0x0FFFFFFF),
                             boxShadow: [
                               BoxShadow(
@@ -185,7 +189,7 @@ class _KalenderMasehiWidgetState extends State<KalenderMasehiWidget> {
                             width: 14.0,
                             height: 14.0,
                             clipBehavior: Clip.antiAlias,
-                            decoration: const BoxDecoration(
+                            decoration: BoxDecoration(
                               shape: BoxShape.circle,
                             ),
                             child: Image.asset(
@@ -209,7 +213,7 @@ class _KalenderMasehiWidgetState extends State<KalenderMasehiWidget> {
                 ],
               ),
             ),
-            actions: const [],
+            actions: [],
             centerTitle: false,
             elevation: 2.0,
           ),
@@ -217,7 +221,7 @@ class _KalenderMasehiWidgetState extends State<KalenderMasehiWidget> {
         body: SafeArea(
           top: true,
           child: Padding(
-            padding: const EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 0.0),
+            padding: EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 0.0),
             child: SingleChildScrollView(
               child: Column(
                 mainAxisSize: MainAxisSize.max,
@@ -225,13 +229,13 @@ class _KalenderMasehiWidgetState extends State<KalenderMasehiWidget> {
                 children: [
                   Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
+                        EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
                     child: AuthUserStreamWidget(
                       builder: (context) => Container(
                         width: double.infinity,
                         decoration: BoxDecoration(
                           color: currentUserDocument?.colorThemes,
-                          borderRadius: const BorderRadius.only(
+                          borderRadius: BorderRadius.only(
                             bottomLeft: Radius.circular(20.0),
                             bottomRight: Radius.circular(20.0),
                             topLeft: Radius.circular(20.0),
@@ -239,7 +243,7 @@ class _KalenderMasehiWidgetState extends State<KalenderMasehiWidget> {
                           ),
                         ),
                         child: Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               5.0, 5.0, 5.0, 5.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
@@ -275,7 +279,7 @@ class _KalenderMasehiWidgetState extends State<KalenderMasehiWidget> {
                   ),
                   Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
+                        EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -285,7 +289,7 @@ class _KalenderMasehiWidgetState extends State<KalenderMasehiWidget> {
                           height: 31.0,
                           decoration: BoxDecoration(
                             color: FFAppState().colorThemes,
-                            boxShadow: const [
+                            boxShadow: [
                               BoxShadow(
                                 blurRadius: 2.0,
                                 color: Color(0x33000000),
@@ -298,7 +302,7 @@ class _KalenderMasehiWidgetState extends State<KalenderMasehiWidget> {
                             shape: BoxShape.circle,
                           ),
                           child: Align(
-                            alignment: const AlignmentDirectional(0.0, 0.0),
+                            alignment: AlignmentDirectional(0.0, 0.0),
                             child: Text(
                               'M',
                               style: FlutterFlowTheme.of(context)
@@ -321,7 +325,7 @@ class _KalenderMasehiWidgetState extends State<KalenderMasehiWidget> {
                           height: 31.0,
                           decoration: BoxDecoration(
                             color: FFAppState().colorThemes,
-                            boxShadow: const [
+                            boxShadow: [
                               BoxShadow(
                                 blurRadius: 2.0,
                                 color: Color(0x33000000),
@@ -334,7 +338,7 @@ class _KalenderMasehiWidgetState extends State<KalenderMasehiWidget> {
                             shape: BoxShape.circle,
                           ),
                           child: Align(
-                            alignment: const AlignmentDirectional(0.0, 0.0),
+                            alignment: AlignmentDirectional(0.0, 0.0),
                             child: Text(
                               'T',
                               style: FlutterFlowTheme.of(context)
@@ -354,7 +358,7 @@ class _KalenderMasehiWidgetState extends State<KalenderMasehiWidget> {
                           height: 31.0,
                           decoration: BoxDecoration(
                             color: FFAppState().colorThemes,
-                            boxShadow: const [
+                            boxShadow: [
                               BoxShadow(
                                 blurRadius: 2.0,
                                 color: Color(0x33000000),
@@ -367,7 +371,7 @@ class _KalenderMasehiWidgetState extends State<KalenderMasehiWidget> {
                             shape: BoxShape.circle,
                           ),
                           child: Align(
-                            alignment: const AlignmentDirectional(0.0, 0.0),
+                            alignment: AlignmentDirectional(0.0, 0.0),
                             child: Text(
                               'W',
                               style: FlutterFlowTheme.of(context)
@@ -387,7 +391,7 @@ class _KalenderMasehiWidgetState extends State<KalenderMasehiWidget> {
                           height: 31.0,
                           decoration: BoxDecoration(
                             color: FFAppState().colorThemes,
-                            boxShadow: const [
+                            boxShadow: [
                               BoxShadow(
                                 blurRadius: 2.0,
                                 color: Color(0x33000000),
@@ -400,7 +404,7 @@ class _KalenderMasehiWidgetState extends State<KalenderMasehiWidget> {
                             shape: BoxShape.circle,
                           ),
                           child: Align(
-                            alignment: const AlignmentDirectional(0.0, 0.0),
+                            alignment: AlignmentDirectional(0.0, 0.0),
                             child: Text(
                               'T',
                               style: FlutterFlowTheme.of(context)
@@ -420,7 +424,7 @@ class _KalenderMasehiWidgetState extends State<KalenderMasehiWidget> {
                           height: 31.0,
                           decoration: BoxDecoration(
                             color: FFAppState().colorThemes,
-                            boxShadow: const [
+                            boxShadow: [
                               BoxShadow(
                                 blurRadius: 2.0,
                                 color: Color(0x33000000),
@@ -433,7 +437,7 @@ class _KalenderMasehiWidgetState extends State<KalenderMasehiWidget> {
                             shape: BoxShape.circle,
                           ),
                           child: Align(
-                            alignment: const AlignmentDirectional(0.0, 0.0),
+                            alignment: AlignmentDirectional(0.0, 0.0),
                             child: Text(
                               'F',
                               style: FlutterFlowTheme.of(context)
@@ -453,7 +457,7 @@ class _KalenderMasehiWidgetState extends State<KalenderMasehiWidget> {
                           height: 31.0,
                           decoration: BoxDecoration(
                             color: FFAppState().colorThemes,
-                            boxShadow: const [
+                            boxShadow: [
                               BoxShadow(
                                 blurRadius: 2.0,
                                 color: Color(0x33000000),
@@ -466,7 +470,7 @@ class _KalenderMasehiWidgetState extends State<KalenderMasehiWidget> {
                             shape: BoxShape.circle,
                           ),
                           child: Align(
-                            alignment: const AlignmentDirectional(0.0, 0.0),
+                            alignment: AlignmentDirectional(0.0, 0.0),
                             child: Text(
                               'S',
                               style: FlutterFlowTheme.of(context)
@@ -486,7 +490,7 @@ class _KalenderMasehiWidgetState extends State<KalenderMasehiWidget> {
                           height: 31.0,
                           decoration: BoxDecoration(
                             color: FFAppState().colorThemes,
-                            boxShadow: const [
+                            boxShadow: [
                               BoxShadow(
                                 blurRadius: 2.0,
                                 color: Color(0x33000000),
@@ -499,7 +503,7 @@ class _KalenderMasehiWidgetState extends State<KalenderMasehiWidget> {
                             shape: BoxShape.circle,
                           ),
                           child: Align(
-                            alignment: const AlignmentDirectional(0.0, 0.0),
+                            alignment: AlignmentDirectional(0.0, 0.0),
                             child: Text(
                               'S',
                               style: FlutterFlowTheme.of(context)
@@ -519,7 +523,7 @@ class _KalenderMasehiWidgetState extends State<KalenderMasehiWidget> {
                   ),
                   Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
+                        EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
                     child: Container(
                       width: double.infinity,
                       decoration: BoxDecoration(
@@ -532,7 +536,7 @@ class _KalenderMasehiWidgetState extends State<KalenderMasehiWidget> {
                         ),
                       ),
                       child: Padding(
-                        padding: const EdgeInsetsDirectional.fromSTEB(
+                        padding: EdgeInsetsDirectional.fromSTEB(
                             10.0, 10.0, 10.0, 10.0),
                         child: FlutterFlowCalendar(
                           color: FlutterFlowTheme.of(context).primary,
@@ -576,14 +580,14 @@ class _KalenderMasehiWidgetState extends State<KalenderMasehiWidget> {
                   ),
                   Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
+                        EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       crossAxisAlignment: CrossAxisAlignment.end,
                       children: [
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 20.0, 0.0),
                           child: Column(
                             mainAxisSize: MainAxisSize.max,
@@ -622,7 +626,7 @@ class _KalenderMasehiWidgetState extends State<KalenderMasehiWidget> {
                               Container(
                                 decoration: BoxDecoration(
                                   color: FlutterFlowTheme.of(context).primary,
-                                  boxShadow: const [
+                                  boxShadow: [
                                     BoxShadow(
                                       blurRadius: 2.0,
                                       color: Color(0x33000000),
@@ -632,7 +636,7 @@ class _KalenderMasehiWidgetState extends State<KalenderMasehiWidget> {
                                       ),
                                     )
                                   ],
-                                  borderRadius: const BorderRadius.only(
+                                  borderRadius: BorderRadius.only(
                                     bottomLeft: Radius.circular(20.0),
                                     bottomRight: Radius.circular(20.0),
                                     topLeft: Radius.circular(20.0),
@@ -640,7 +644,7 @@ class _KalenderMasehiWidgetState extends State<KalenderMasehiWidget> {
                                   ),
                                 ),
                                 child: Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       10.0, 10.0, 10.0, 10.0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
@@ -671,14 +675,14 @@ class _KalenderMasehiWidgetState extends State<KalenderMasehiWidget> {
                   ),
                   Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
+                        EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       crossAxisAlignment: CrossAxisAlignment.end,
                       children: [
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 20.0, 0.0),
                           child: Column(
                             mainAxisSize: MainAxisSize.max,
@@ -717,7 +721,7 @@ class _KalenderMasehiWidgetState extends State<KalenderMasehiWidget> {
                               Container(
                                 decoration: BoxDecoration(
                                   color: FlutterFlowTheme.of(context).primary,
-                                  boxShadow: const [
+                                  boxShadow: [
                                     BoxShadow(
                                       blurRadius: 2.0,
                                       color: Color(0x33000000),
@@ -727,7 +731,7 @@ class _KalenderMasehiWidgetState extends State<KalenderMasehiWidget> {
                                       ),
                                     )
                                   ],
-                                  borderRadius: const BorderRadius.only(
+                                  borderRadius: BorderRadius.only(
                                     bottomLeft: Radius.circular(20.0),
                                     bottomRight: Radius.circular(20.0),
                                     topLeft: Radius.circular(20.0),
@@ -735,7 +739,7 @@ class _KalenderMasehiWidgetState extends State<KalenderMasehiWidget> {
                                   ),
                                 ),
                                 child: Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       10.0, 10.0, 10.0, 10.0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
@@ -766,14 +770,14 @@ class _KalenderMasehiWidgetState extends State<KalenderMasehiWidget> {
                   ),
                   Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
+                        EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       crossAxisAlignment: CrossAxisAlignment.end,
                       children: [
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 20.0, 0.0),
                           child: Column(
                             mainAxisSize: MainAxisSize.max,
@@ -812,7 +816,7 @@ class _KalenderMasehiWidgetState extends State<KalenderMasehiWidget> {
                               Container(
                                 decoration: BoxDecoration(
                                   color: FlutterFlowTheme.of(context).primary,
-                                  boxShadow: const [
+                                  boxShadow: [
                                     BoxShadow(
                                       blurRadius: 2.0,
                                       color: Color(0x33000000),
@@ -822,7 +826,7 @@ class _KalenderMasehiWidgetState extends State<KalenderMasehiWidget> {
                                       ),
                                     )
                                   ],
-                                  borderRadius: const BorderRadius.only(
+                                  borderRadius: BorderRadius.only(
                                     bottomLeft: Radius.circular(20.0),
                                     bottomRight: Radius.circular(20.0),
                                     topLeft: Radius.circular(20.0),
@@ -830,7 +834,7 @@ class _KalenderMasehiWidgetState extends State<KalenderMasehiWidget> {
                                   ),
                                 ),
                                 child: Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       10.0, 10.0, 10.0, 10.0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
@@ -862,7 +866,7 @@ class _KalenderMasehiWidgetState extends State<KalenderMasehiWidget> {
                   wrapWithModel(
                     model: _model.footerLogoModel,
                     updateCallback: () => safeSetState(() {}),
-                    child: const FooterLogoWidget(),
+                    child: FooterLogoWidget(),
                   ),
                 ],
               ),

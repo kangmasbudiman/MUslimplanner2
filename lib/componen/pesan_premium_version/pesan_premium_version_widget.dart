@@ -45,7 +45,7 @@ class _PesanPremiumVersionWidgetState extends State<PesanPremiumVersionWidget> {
       width: double.infinity,
       decoration: BoxDecoration(
         color: FFAppState().colorThemes,
-        borderRadius: const BorderRadius.only(
+        borderRadius: BorderRadius.only(
           bottomLeft: Radius.circular(20.0),
           bottomRight: Radius.circular(20.0),
           topLeft: Radius.circular(20.0),
@@ -53,7 +53,7 @@ class _PesanPremiumVersionWidgetState extends State<PesanPremiumVersionWidget> {
         ),
       ),
       child: Padding(
-        padding: const EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 20.0),
+        padding: EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 20.0),
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
@@ -68,7 +68,7 @@ class _PesanPremiumVersionWidgetState extends State<PesanPremiumVersionWidget> {
                   ),
             ),
             Padding(
-              padding: const EdgeInsetsDirectional.fromSTEB(20.0, 10.0, 20.0, 10.0),
+              padding: EdgeInsetsDirectional.fromSTEB(20.0, 10.0, 20.0, 10.0),
               child: Text(
                 'Upgrade to the premium version to save your color settings.',
                 textAlign: TextAlign.center,
@@ -79,12 +79,12 @@ class _PesanPremiumVersionWidgetState extends State<PesanPremiumVersionWidget> {
                     ),
               ),
             ),
-            const Divider(
+            Divider(
               thickness: 1.0,
               color: Colors.white,
             ),
             Padding(
-              padding: const EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 0.0),
+              padding: EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 0.0),
               child: Row(
                 mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,

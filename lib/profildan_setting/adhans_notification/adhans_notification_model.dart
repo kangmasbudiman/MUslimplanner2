@@ -1,5 +1,6 @@
 import '/componen/footer_logo/footer_logo_widget.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/index.dart';
 import 'adhans_notification_widget.dart' show AdhansNotificationWidget;
 import 'package:flutter/material.dart';
 

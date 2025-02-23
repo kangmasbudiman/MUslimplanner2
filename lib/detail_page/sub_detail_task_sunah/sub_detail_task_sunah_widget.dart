@@ -4,6 +4,7 @@ import '/c_r_u_d_fadilah/edit_doa_copy/edit_doa_copy_widget.dart';
 import '/c_r_u_d_fadilah/tambah_fadilah/tambah_fadilah_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:webviewx_plus/webviewx_plus.dart';
@@ -15,11 +16,14 @@ class SubDetailTaskSunahWidget extends StatefulWidget {
     super.key,
     int? idsunah,
     String? namasunah,
-  })  : idsunah = idsunah ?? 0,
-        namasunah = namasunah ?? '0';
+  })  : this.idsunah = idsunah ?? 0,
+        this.namasunah = namasunah ?? '0';
 
   final int idsunah;
   final String namasunah;
+
+  static String routeName = 'subDetailTaskSunah';
+  static String routePath = '/subDetailTaskSunah';
 
   @override
   State<SubDetailTaskSunahWidget> createState() =>
@@ -61,7 +65,7 @@ class _SubDetailTaskSunahWidgetState extends State<SubDetailTaskSunahWidget> {
         floatingActionButton: Visibility(
           visible: valueOrDefault(currentUserDocument?.rules, 0) == 1,
           child: Padding(
-            padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 20.0),
+            padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 20.0),
             child: AuthUserStreamWidget(
               builder: (context) => FloatingActionButton(
                 onPressed: () async {
@@ -103,22 +107,22 @@ class _SubDetailTaskSunahWidgetState extends State<SubDetailTaskSunahWidget> {
           ),
         ),
         appBar: PreferredSize(
-          preferredSize: const Size.fromHeight(80.0),
+          preferredSize: Size.fromHeight(80.0),
           child: AppBar(
             backgroundColor: Colors.white,
             automaticallyImplyLeading: false,
             title: Stack(
-              alignment: const AlignmentDirectional(0.0, 0.0),
+              alignment: AlignmentDirectional(0.0, 0.0),
               children: [
                 Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 0.0),
+                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 0.0),
                   child: Row(
                     mainAxisSize: MainAxisSize.max,
                     children: [
                       Align(
-                        alignment: const AlignmentDirectional(-1.0, 0.0),
+                        alignment: AlignmentDirectional(-1.0, 0.0),
                         child: Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 40.0, 10.0),
                           child: InkWell(
                             splashColor: Colors.transparent,
@@ -126,7 +130,7 @@ class _SubDetailTaskSunahWidgetState extends State<SubDetailTaskSunahWidget> {
                             hoverColor: Colors.transparent,
                             highlightColor: Colors.transparent,
                             onTap: () async {
-                              context.pushNamed('HomeScreen');
+                              context.pushNamed(HomeScreenWidget.routeName);
                             },
                             child: Icon(
                               Icons.arrow_back_ios_new,
@@ -140,7 +144,7 @@ class _SubDetailTaskSunahWidgetState extends State<SubDetailTaskSunahWidget> {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 10.0),
+                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 10.0),
                   child: Text(
                     widget.namasunah,
                     style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -153,7 +157,7 @@ class _SubDetailTaskSunahWidgetState extends State<SubDetailTaskSunahWidget> {
                 ),
               ],
             ),
-            actions: const [],
+            actions: [],
             centerTitle: false,
             elevation: 2.0,
           ),
@@ -161,7 +165,7 @@ class _SubDetailTaskSunahWidgetState extends State<SubDetailTaskSunahWidget> {
         body: SafeArea(
           top: true,
           child: Padding(
-            padding: const EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 0.0),
+            padding: EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 0.0),
             child: SingleChildScrollView(
               child: Column(
                 mainAxisSize: MainAxisSize.max,
@@ -171,7 +175,7 @@ class _SubDetailTaskSunahWidgetState extends State<SubDetailTaskSunahWidget> {
                     children: [
                       Expanded(
                         child: Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 20.0, 0.0, 0.0),
                           child: SingleChildScrollView(
                             child: Column(
@@ -231,7 +235,7 @@ class _SubDetailTaskSunahWidgetState extends State<SubDetailTaskSunahWidget> {
                                             final resfadilahItem =
                                                 resfadilah[resfadilahIndex];
                                             return Padding(
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       0.0, 0.0, 0.0, 10.0),
                                               child: AuthUserStreamWidget(
@@ -239,7 +243,7 @@ class _SubDetailTaskSunahWidgetState extends State<SubDetailTaskSunahWidget> {
                                                   decoration: BoxDecoration(
                                                     color: currentUserDocument
                                                         ?.colorThemes,
-                                                    boxShadow: const [
+                                                    boxShadow: [
                                                       BoxShadow(
                                                         blurRadius: 2.0,
                                                         color:
@@ -251,7 +255,7 @@ class _SubDetailTaskSunahWidgetState extends State<SubDetailTaskSunahWidget> {
                                                       )
                                                     ],
                                                     borderRadius:
-                                                        const BorderRadius.only(
+                                                        BorderRadius.only(
                                                       bottomLeft:
                                                           Radius.circular(20.0),
                                                       bottomRight:
@@ -264,7 +268,7 @@ class _SubDetailTaskSunahWidgetState extends State<SubDetailTaskSunahWidget> {
                                                   ),
                                                   child: Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(
                                                                 16.0,
                                                                 12.0,
@@ -325,7 +329,8 @@ class _SubDetailTaskSunahWidgetState extends State<SubDetailTaskSunahWidget> {
                                                                       .transparent,
                                                               onTap: () async {
                                                                 context.pushNamed(
-                                                                    'DetailTaskSunah');
+                                                                    DetailTaskSunahWidget
+                                                                        .routeName);
                                                               },
                                                               child: Icon(
                                                                 Icons
@@ -442,7 +447,7 @@ class _SubDetailTaskSunahWidgetState extends State<SubDetailTaskSunahWidget> {
                                                               size: 24.0,
                                                             ),
                                                           ),
-                                                      ].divide(const SizedBox(
+                                                      ].divide(SizedBox(
                                                           height: 6.0)),
                                                     ),
                                                   ),
@@ -455,7 +460,7 @@ class _SubDetailTaskSunahWidgetState extends State<SubDetailTaskSunahWidget> {
                                     );
                                   },
                                 ),
-                              ].divide(const SizedBox(height: 12.0)),
+                              ].divide(SizedBox(height: 12.0)),
                             ),
                           ),
                         ),

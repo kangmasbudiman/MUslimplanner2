@@ -13,6 +13,9 @@ export 'daftaradminsunnah_model.dart';
 class DaftaradminsunnahWidget extends StatefulWidget {
   const DaftaradminsunnahWidget({super.key});
 
+  static String routeName = 'daftaradminsunnah';
+  static String routePath = '/daftaradminsunnah';
+
   @override
   State<DaftaradminsunnahWidget> createState() =>
       _DaftaradminsunnahWidgetState();
@@ -64,7 +67,7 @@ class _DaftaradminsunnahWidgetState extends State<DaftaradminsunnahWidget> {
                     },
                     child: Padding(
                       padding: MediaQuery.viewInsetsOf(context),
-                      child: const TambahSunahWidget(),
+                      child: TambahSunahWidget(),
                     ),
                   ),
                 );
@@ -87,7 +90,7 @@ class _DaftaradminsunnahWidgetState extends State<DaftaradminsunnahWidget> {
             borderRadius: 30.0,
             borderWidth: 1.0,
             buttonSize: 60.0,
-            icon: const Icon(
+            icon: Icon(
               Icons.arrow_back_rounded,
               color: Colors.white,
               size: 30.0,
@@ -105,7 +108,7 @@ class _DaftaradminsunnahWidgetState extends State<DaftaradminsunnahWidget> {
                   letterSpacing: 0.0,
                 ),
           ),
-          actions: const [],
+          actions: [],
           centerTitle: true,
           elevation: 2.0,
         ),
@@ -162,14 +165,14 @@ class _DaftaradminsunnahWidgetState extends State<DaftaradminsunnahWidget> {
                                   borderRadius: BorderRadius.circular(8.0),
                                 ),
                                 child: Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 20.0, 0.0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
                                     children: [
                                       Expanded(
                                         child: Padding(
-                                          padding: const EdgeInsets.all(20.0),
+                                          padding: EdgeInsets.all(20.0),
                                           child: Column(
                                             mainAxisSize: MainAxisSize.max,
                                             crossAxisAlignment:
@@ -236,9 +239,9 @@ class _DaftaradminsunnahWidgetState extends State<DaftaradminsunnahWidget> {
                                                         (alertDialogContext) {
                                                       return WebViewAware(
                                                         child: AlertDialog(
-                                                          title: const Text(
+                                                          title: Text(
                                                               'Confirmation'),
-                                                          content: const Text(
+                                                          content: Text(
                                                               'Are You Sure To Delete This Data??'),
                                                           actions: [
                                                             TextButton(
@@ -246,7 +249,7 @@ class _DaftaradminsunnahWidgetState extends State<DaftaradminsunnahWidget> {
                                                                   Navigator.pop(
                                                                       alertDialogContext,
                                                                       false),
-                                                              child: const Text(
+                                                              child: Text(
                                                                   'Cancel'),
                                                             ),
                                                             TextButton(
@@ -254,7 +257,7 @@ class _DaftaradminsunnahWidgetState extends State<DaftaradminsunnahWidget> {
                                                                   Navigator.pop(
                                                                       alertDialogContext,
                                                                       true),
-                                                              child: const Text(
+                                                              child: Text(
                                                                   'Confirm'),
                                                             ),
                                                           ],
@@ -283,15 +286,15 @@ class _DaftaradminsunnahWidgetState extends State<DaftaradminsunnahWidget> {
                                                   return WebViewAware(
                                                     child: AlertDialog(
                                                       title:
-                                                          const Text('Information'),
-                                                      content: const Text(
+                                                          Text('Information'),
+                                                      content: Text(
                                                           'Delete Succeses'),
                                                       actions: [
                                                         TextButton(
                                                           onPressed: () =>
                                                               Navigator.pop(
                                                                   alertDialogContext),
-                                                          child: const Text('Ok'),
+                                                          child: Text('Ok'),
                                                         ),
                                                       ],
                                                     ),
@@ -305,15 +308,15 @@ class _DaftaradminsunnahWidgetState extends State<DaftaradminsunnahWidget> {
                                                   return WebViewAware(
                                                     child: AlertDialog(
                                                       title:
-                                                          const Text('Information'),
+                                                          Text('Information'),
                                                       content:
-                                                          const Text('Delete Fail'),
+                                                          Text('Delete Fail'),
                                                       actions: [
                                                         TextButton(
                                                           onPressed: () =>
                                                               Navigator.pop(
                                                                   alertDialogContext),
-                                                          child: const Text('Ok'),
+                                                          child: Text('Ok'),
                                                         ),
                                                       ],
                                                     ),

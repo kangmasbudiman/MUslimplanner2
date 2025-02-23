@@ -1,12 +1,16 @@
 import '/componen/footer_logo/footer_logo_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'verivication_success_model.dart';
 export 'verivication_success_model.dart';
 
 class VerivicationSuccessWidget extends StatefulWidget {
   const VerivicationSuccessWidget({super.key});
+
+  static String routeName = 'verivicationSuccess';
+  static String routePath = '/verivicationSuccess';
 
   @override
   State<VerivicationSuccessWidget> createState() =>
@@ -44,7 +48,7 @@ class _VerivicationSuccessWidgetState extends State<VerivicationSuccessWidget> {
         key: scaffoldKey,
         backgroundColor: Colors.white,
         body: Padding(
-          padding: const EdgeInsetsDirectional.fromSTEB(20.0, 40.0, 20.0, 20.0),
+          padding: EdgeInsetsDirectional.fromSTEB(20.0, 40.0, 20.0, 20.0),
           child: Column(
             mainAxisSize: MainAxisSize.max,
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -54,7 +58,7 @@ class _VerivicationSuccessWidgetState extends State<VerivicationSuccessWidget> {
                 height: 170.0,
                 decoration: BoxDecoration(
                   color: FlutterFlowTheme.of(context).primary,
-                  boxShadow: const [
+                  boxShadow: [
                     BoxShadow(
                       blurRadius: 2.0,
                       color: Color(0x33000000),
@@ -70,7 +74,7 @@ class _VerivicationSuccessWidgetState extends State<VerivicationSuccessWidget> {
                   width: 90.0,
                   height: 90.0,
                   clipBehavior: Clip.antiAlias,
-                  decoration: const BoxDecoration(
+                  decoration: BoxDecoration(
                     shape: BoxShape.circle,
                   ),
                   child: Image.asset(
@@ -86,7 +90,7 @@ class _VerivicationSuccessWidgetState extends State<VerivicationSuccessWidget> {
                 children: [
                   Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 60.0, 0.0, 0.0),
+                        EdgeInsetsDirectional.fromSTEB(0.0, 60.0, 0.0, 0.0),
                     child: Text(
                       'Success!',
                       style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -99,7 +103,7 @@ class _VerivicationSuccessWidgetState extends State<VerivicationSuccessWidget> {
                   ),
                   Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 0.0),
+                        EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 0.0),
                     child: Text(
                       'Congratulation, your account has been creates',
                       textAlign: TextAlign.center,
@@ -114,7 +118,7 @@ class _VerivicationSuccessWidgetState extends State<VerivicationSuccessWidget> {
                 ],
               ),
               Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 60.0, 0.0, 0.0),
+                padding: EdgeInsetsDirectional.fromSTEB(0.0, 60.0, 0.0, 0.0),
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -125,14 +129,14 @@ class _VerivicationSuccessWidgetState extends State<VerivicationSuccessWidget> {
                       hoverColor: Colors.transparent,
                       highlightColor: Colors.transparent,
                       onTap: () async {
-                        context.pushNamed('login');
+                        context.pushNamed(LoginWidget.routeName);
                       },
                       child: Container(
                         width: 319.0,
                         height: 48.0,
                         decoration: BoxDecoration(
                           color: FlutterFlowTheme.of(context).primary,
-                          boxShadow: const [
+                          boxShadow: [
                             BoxShadow(
                               blurRadius: 2.0,
                               color: Color(0x33000000),
@@ -142,7 +146,7 @@ class _VerivicationSuccessWidgetState extends State<VerivicationSuccessWidget> {
                               ),
                             )
                           ],
-                          borderRadius: const BorderRadius.only(
+                          borderRadius: BorderRadius.only(
                             bottomLeft: Radius.circular(20.0),
                             bottomRight: Radius.circular(20.0),
                             topLeft: Radius.circular(20.0),
@@ -150,7 +154,7 @@ class _VerivicationSuccessWidgetState extends State<VerivicationSuccessWidget> {
                           ),
                         ),
                         child: Align(
-                          alignment: const AlignmentDirectional(0.0, 0.0),
+                          alignment: AlignmentDirectional(0.0, 0.0),
                           child: Text(
                             'Back',
                             style: FlutterFlowTheme.of(context)
@@ -173,7 +177,7 @@ class _VerivicationSuccessWidgetState extends State<VerivicationSuccessWidget> {
               wrapWithModel(
                 model: _model.footerLogoModel,
                 updateCallback: () => safeSetState(() {}),
-                child: const FooterLogoWidget(),
+                child: FooterLogoWidget(),
               ),
             ],
           ),

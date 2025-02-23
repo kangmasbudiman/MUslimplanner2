@@ -1,6 +1,7 @@
 import '/componen/footer_logo/footer_logo_widget.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/form_field_controller.dart';
+import '/index.dart';
 import 'myedit_profil_widget.dart' show MyeditProfilWidget;
 import 'package:flutter/material.dart';
 

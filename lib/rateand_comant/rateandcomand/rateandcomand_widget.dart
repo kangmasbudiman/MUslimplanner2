@@ -15,6 +15,9 @@ class RateandcomandWidget extends StatefulWidget {
 
   final String? rateName;
 
+  static String routeName = 'Rateandcomand';
+  static String routePath = '/rateandcomand';
+
   @override
   State<RateandcomandWidget> createState() => _RateandcomandWidgetState();
 }
@@ -52,24 +55,24 @@ class _RateandcomandWidgetState extends State<RateandcomandWidget> {
         key: scaffoldKey,
         backgroundColor: Colors.white,
         appBar: PreferredSize(
-          preferredSize: const Size.fromHeight(80.0),
+          preferredSize: Size.fromHeight(80.0),
           child: AppBar(
             backgroundColor: Colors.white,
             automaticallyImplyLeading: false,
             title: Align(
-              alignment: const AlignmentDirectional(0.0, 0.0),
+              alignment: AlignmentDirectional(0.0, 0.0),
               child: Stack(
-                alignment: const AlignmentDirectional(0.0, 0.0),
+                alignment: AlignmentDirectional(0.0, 0.0),
                 children: [
                   Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 10.0),
+                        EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 10.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
                         Align(
-                          alignment: const AlignmentDirectional(-1.0, 0.0),
+                          alignment: AlignmentDirectional(-1.0, 0.0),
                           child: InkWell(
                             splashColor: Colors.transparent,
                             focusColor: Colors.transparent,
@@ -89,10 +92,10 @@ class _RateandcomandWidgetState extends State<RateandcomandWidget> {
                     ),
                   ),
                   Align(
-                    alignment: const AlignmentDirectional(0.0, 0.0),
+                    alignment: AlignmentDirectional(0.0, 0.0),
                     child: Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 10.0),
+                          EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 10.0),
                       child: Text(
                         FFAppState().yangDirate,
                         style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -107,7 +110,7 @@ class _RateandcomandWidgetState extends State<RateandcomandWidget> {
                 ],
               ),
             ),
-            actions: const [],
+            actions: [],
             centerTitle: false,
             elevation: 2.0,
           ),
@@ -115,13 +118,13 @@ class _RateandcomandWidgetState extends State<RateandcomandWidget> {
         body: SafeArea(
           top: true,
           child: Padding(
-            padding: const EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 0.0),
+            padding: EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 0.0),
             child: Column(
               mainAxisSize: MainAxisSize.max,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(20.0, 30.0, 0.0, 0.0),
+                  padding: EdgeInsetsDirectional.fromSTEB(20.0, 30.0, 0.0, 0.0),
                   child: Text(
                     'Rate Your Experience',
                     style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -135,13 +138,13 @@ class _RateandcomandWidgetState extends State<RateandcomandWidget> {
                 Flexible(
                   child: Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
+                        EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
                     child: AuthUserStreamWidget(
                       builder: (context) => Container(
                         width: double.infinity,
                         decoration: BoxDecoration(
                           color: currentUserDocument?.colorThemes,
-                          borderRadius: const BorderRadius.only(
+                          borderRadius: BorderRadius.only(
                             bottomLeft: Radius.circular(20.0),
                             bottomRight: Radius.circular(20.0),
                             topLeft: Radius.circular(20.0),
@@ -149,7 +152,7 @@ class _RateandcomandWidgetState extends State<RateandcomandWidget> {
                           ),
                         ),
                         child: Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               20.0, 5.0, 20.0, 5.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.min,
@@ -171,7 +174,7 @@ class _RateandcomandWidgetState extends State<RateandcomandWidget> {
                                     );
                                     safeSetState(() {});
                                   },
-                                  itemBuilder: (context, index) => const Icon(
+                                  itemBuilder: (context, index) => Icon(
                                     Icons.star_rounded,
                                     color: Color(0xFF78EE60),
                                   ),
@@ -181,7 +184,7 @@ class _RateandcomandWidgetState extends State<RateandcomandWidget> {
                                       .primaryBackground,
                                   itemCount: 5,
                                   itemSize: 40.0,
-                                  glowColor: const Color(0xFF78EE60),
+                                  glowColor: Color(0xFF78EE60),
                                 ),
                               ),
                             ],

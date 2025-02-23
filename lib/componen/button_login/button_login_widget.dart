@@ -44,7 +44,7 @@ class _ButtonLoginWidgetState extends State<ButtonLoginWidget> {
       width: 250.0,
       decoration: BoxDecoration(
         color: FFAppState().colorThemes,
-        boxShadow: const [
+        boxShadow: [
           BoxShadow(
             blurRadius: 2.0,
             color: Color(0x33000000),
@@ -54,7 +54,7 @@ class _ButtonLoginWidgetState extends State<ButtonLoginWidget> {
             ),
           )
         ],
-        borderRadius: const BorderRadius.only(
+        borderRadius: BorderRadius.only(
           bottomLeft: Radius.circular(20.0),
           bottomRight: Radius.circular(20.0),
           topLeft: Radius.circular(20.0),
@@ -62,9 +62,9 @@ class _ButtonLoginWidgetState extends State<ButtonLoginWidget> {
         ),
       ),
       child: Align(
-        alignment: const AlignmentDirectional(0.0, 0.0),
+        alignment: AlignmentDirectional(0.0, 0.0),
         child: Padding(
-          padding: const EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 5.0),
+          padding: EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 5.0),
           child: Text(
             'Login',
             style: FlutterFlowTheme.of(context).bodyMedium.override(

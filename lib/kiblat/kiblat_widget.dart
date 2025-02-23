@@ -8,6 +8,9 @@ export 'kiblat_model.dart';
 class KiblatWidget extends StatefulWidget {
   const KiblatWidget({super.key});
 
+  static String routeName = 'kiblat';
+  static String routePath = '/kiblat';
+
   @override
   State<KiblatWidget> createState() => _KiblatWidgetState();
 }
@@ -54,11 +57,11 @@ class _KiblatWidgetState extends State<KiblatWidget> {
                   letterSpacing: 0.0,
                 ),
           ),
-          actions: const [],
+          actions: [],
           centerTitle: false,
           elevation: 2.0,
         ),
-        body: const SafeArea(
+        body: SafeArea(
           top: true,
           child: Column(
             mainAxisSize: MainAxisSize.max,
@@ -66,7 +69,7 @@ class _KiblatWidgetState extends State<KiblatWidget> {
             children: [
               Align(
                 alignment: AlignmentDirectional(0.0, 0.0),
-                child: SizedBox(
+                child: Container(
                   width: double.infinity,
                   height: 400.0,
                   child: custom_widgets.Kompas(

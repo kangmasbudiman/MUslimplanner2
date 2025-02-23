@@ -4,6 +4,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/revenue_cat_util.dart' as revenue_cat;
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'subscribe_model.dart';
@@ -11,6 +12,9 @@ export 'subscribe_model.dart';
 
 class SubscribeWidget extends StatefulWidget {
   const SubscribeWidget({super.key});
+
+  static String routeName = 'subscribe';
+  static String routePath = '/subscribe';
 
   @override
   State<SubscribeWidget> createState() => _SubscribeWidgetState();
@@ -76,9 +80,9 @@ class _SubscribeWidgetState extends State<SubscribeWidget> {
               child: Container(
                 width: double.infinity,
                 height: double.infinity,
-                decoration: const BoxDecoration(),
+                decoration: BoxDecoration(),
                 child: Align(
-                  alignment: const AlignmentDirectional(0.0, 1.0),
+                  alignment: AlignmentDirectional(0.0, 1.0),
                   child: Stack(
                     children: [
                       Column(
@@ -88,7 +92,7 @@ class _SubscribeWidgetState extends State<SubscribeWidget> {
                             width: double.infinity,
                             decoration: BoxDecoration(
                               color: FlutterFlowTheme.of(context).primary,
-                              boxShadow: const [
+                              boxShadow: [
                                 BoxShadow(
                                   blurRadius: 2.0,
                                   color: Color(0x33000000),
@@ -98,7 +102,7 @@ class _SubscribeWidgetState extends State<SubscribeWidget> {
                                   ),
                                 )
                               ],
-                              borderRadius: const BorderRadius.only(
+                              borderRadius: BorderRadius.only(
                                 bottomLeft: Radius.circular(20.0),
                                 bottomRight: Radius.circular(20.0),
                                 topLeft: Radius.circular(0.0),
@@ -106,15 +110,15 @@ class _SubscribeWidgetState extends State<SubscribeWidget> {
                               ),
                             ),
                             child: Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   20.0, 0.0, 20.0, 0.0),
                               child: Column(
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
                                   Align(
-                                    alignment: const AlignmentDirectional(-1.0, 0.0),
+                                    alignment: AlignmentDirectional(-1.0, 0.0),
                                     child: Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 40.0, 0.0, 0.0),
                                       child: InkWell(
                                         splashColor: Colors.transparent,
@@ -122,9 +126,10 @@ class _SubscribeWidgetState extends State<SubscribeWidget> {
                                         hoverColor: Colors.transparent,
                                         highlightColor: Colors.transparent,
                                         onTap: () async {
-                                          context.pushNamed('HomeScreen');
+                                          context.pushNamed(
+                                              HomeScreenWidget.routeName);
                                         },
-                                        child: const Icon(
+                                        child: Icon(
                                           Icons.arrow_back_ios_sharp,
                                           color: Colors.white,
                                           size: 24.0,
@@ -133,7 +138,7 @@ class _SubscribeWidgetState extends State<SubscribeWidget> {
                                     ),
                                   ),
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 40.0, 0.0, 30.0),
                                     child: Text(
                                       'Unlock Dashboard',
@@ -154,12 +159,12 @@ class _SubscribeWidgetState extends State<SubscribeWidget> {
                           ),
                           Expanded(
                             child: Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   20.0, 30.0, 20.0, 0.0),
                               child: Container(
                                 width: double.infinity,
                                 height: double.infinity,
-                                decoration: const BoxDecoration(),
+                                decoration: BoxDecoration(),
                                 child: SingleChildScrollView(
                                   child: Column(
                                     mainAxisSize: MainAxisSize.max,
@@ -167,7 +172,7 @@ class _SubscribeWidgetState extends State<SubscribeWidget> {
                                         CrossAxisAlignment.start,
                                     children: [
                                       Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             0.0, 10.0, 0.0, 0.0),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
@@ -180,7 +185,7 @@ class _SubscribeWidgetState extends State<SubscribeWidget> {
                                               size: 24.0,
                                             ),
                                             Padding(
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       10.0, 0.0, 0.0, 0.0),
                                               child: Text(
@@ -200,7 +205,7 @@ class _SubscribeWidgetState extends State<SubscribeWidget> {
                                         ),
                                       ),
                                       Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             0.0, 10.0, 0.0, 0.0),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
@@ -213,7 +218,7 @@ class _SubscribeWidgetState extends State<SubscribeWidget> {
                                               size: 24.0,
                                             ),
                                             Padding(
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       10.0, 0.0, 0.0, 0.0),
                                               child: Text(
@@ -233,7 +238,7 @@ class _SubscribeWidgetState extends State<SubscribeWidget> {
                                         ),
                                       ),
                                       Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             0.0, 10.0, 0.0, 0.0),
                                         child: Text(
                                           'Access dashboard so you can help us improve the app and see people that you are help',
@@ -246,7 +251,7 @@ class _SubscribeWidgetState extends State<SubscribeWidget> {
                                         ),
                                       ),
                                       Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             0.0, 20.0, 0.0, 0.0),
                                         child: Text(
                                           'Most Popular',
@@ -261,7 +266,7 @@ class _SubscribeWidgetState extends State<SubscribeWidget> {
                                         ),
                                       ),
                                       Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             5.0, 20.0, 5.0, 0.0),
                                         child: ListView(
                                           padding: EdgeInsets.zero,
@@ -275,7 +280,7 @@ class _SubscribeWidgetState extends State<SubscribeWidget> {
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .secondaryBackground,
-                                                boxShadow: const [
+                                                boxShadow: [
                                                   BoxShadow(
                                                     blurRadius: 4.0,
                                                     color: Color(0x33000000),
@@ -285,7 +290,7 @@ class _SubscribeWidgetState extends State<SubscribeWidget> {
                                                     ),
                                                   )
                                                 ],
-                                                borderRadius: const BorderRadius.only(
+                                                borderRadius: BorderRadius.only(
                                                   bottomLeft:
                                                       Radius.circular(20.0),
                                                   bottomRight:
@@ -297,7 +302,7 @@ class _SubscribeWidgetState extends State<SubscribeWidget> {
                                                 ),
                                               ),
                                               child: Padding(
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         20.0, 0.0, 20.0, 0.0),
                                                 child: InkWell(
@@ -345,7 +350,7 @@ class _SubscribeWidgetState extends State<SubscribeWidget> {
                                                       Expanded(
                                                         child: Padding(
                                                           padding:
-                                                              const EdgeInsetsDirectional
+                                                              EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       10.0,
                                                                       0.0,
@@ -395,9 +400,9 @@ class _SubscribeWidgetState extends State<SubscribeWidget> {
                                                                         '0',
                                                                       ),
                                                                       style:
-                                                                          const TextStyle(),
+                                                                          TextStyle(),
                                                                     ),
-                                                                    const TextSpan(
+                                                                    TextSpan(
                                                                       text:
                                                                           '  /Month',
                                                                       style:
@@ -424,7 +429,7 @@ class _SubscribeWidgetState extends State<SubscribeWidget> {
                                                       Flexible(
                                                         child: Align(
                                                           alignment:
-                                                              const AlignmentDirectional(
+                                                              AlignmentDirectional(
                                                                   1.0, 0.0),
                                                           child: FFButtonWidget(
                                                             onPressed:
@@ -458,7 +463,7 @@ class _SubscribeWidgetState extends State<SubscribeWidget> {
                                                                             .primaryText,
                                                                       ),
                                                                     ),
-                                                                    duration: const Duration(
+                                                                    duration: Duration(
                                                                         milliseconds:
                                                                             4000),
                                                                     backgroundColor:
@@ -468,11 +473,12 @@ class _SubscribeWidgetState extends State<SubscribeWidget> {
                                                                 );
 
                                                                 context.goNamed(
-                                                                  'HomeScreen',
+                                                                  HomeScreenWidget
+                                                                      .routeName,
                                                                   extra: <String,
                                                                       dynamic>{
                                                                     kTransitionInfoKey:
-                                                                        const TransitionInfo(
+                                                                        TransitionInfo(
                                                                       hasTransition:
                                                                           true,
                                                                       transitionType:
@@ -495,7 +501,7 @@ class _SubscribeWidgetState extends State<SubscribeWidget> {
                                                                             .primaryText,
                                                                       ),
                                                                     ),
-                                                                    duration: const Duration(
+                                                                    duration: Duration(
                                                                         milliseconds:
                                                                             4000),
                                                                     backgroundColor:
@@ -513,14 +519,14 @@ class _SubscribeWidgetState extends State<SubscribeWidget> {
                                                                 FFButtonOptions(
                                                               height: 40.0,
                                                               padding:
-                                                                  const EdgeInsetsDirectional
+                                                                  EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           16.0,
                                                                           0.0,
                                                                           16.0,
                                                                           0.0),
                                                               iconPadding:
-                                                                  const EdgeInsetsDirectional
+                                                                  EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           0.0,
@@ -562,7 +568,7 @@ class _SubscribeWidgetState extends State<SubscribeWidget> {
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .secondaryBackground,
-                                                boxShadow: const [
+                                                boxShadow: [
                                                   BoxShadow(
                                                     blurRadius: 4.0,
                                                     color: Color(0x33000000),
@@ -572,7 +578,7 @@ class _SubscribeWidgetState extends State<SubscribeWidget> {
                                                     ),
                                                   )
                                                 ],
-                                                borderRadius: const BorderRadius.only(
+                                                borderRadius: BorderRadius.only(
                                                   bottomLeft:
                                                       Radius.circular(20.0),
                                                   bottomRight:
@@ -584,7 +590,7 @@ class _SubscribeWidgetState extends State<SubscribeWidget> {
                                                 ),
                                               ),
                                               child: Padding(
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         20.0, 0.0, 20.0, 0.0),
                                                 child: InkWell(
@@ -635,7 +641,7 @@ class _SubscribeWidgetState extends State<SubscribeWidget> {
                                                       Flexible(
                                                         child: Padding(
                                                           padding:
-                                                              const EdgeInsetsDirectional
+                                                              EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       10.0,
                                                                       0.0,
@@ -654,7 +660,7 @@ class _SubscribeWidgetState extends State<SubscribeWidget> {
                                                             children: [
                                                               Align(
                                                                 alignment:
-                                                                    const AlignmentDirectional(
+                                                                    AlignmentDirectional(
                                                                         -1.0,
                                                                         0.0),
                                                                 child: RichText(
@@ -687,9 +693,9 @@ class _SubscribeWidgetState extends State<SubscribeWidget> {
                                                                           '0',
                                                                         ),
                                                                         style:
-                                                                            const TextStyle(),
+                                                                            TextStyle(),
                                                                       ),
-                                                                      const TextSpan(
+                                                                      TextSpan(
                                                                         text:
                                                                             ' / Year',
                                                                         style:
@@ -717,11 +723,11 @@ class _SubscribeWidgetState extends State<SubscribeWidget> {
                                                       Flexible(
                                                         child: Align(
                                                           alignment:
-                                                              const AlignmentDirectional(
+                                                              AlignmentDirectional(
                                                                   1.0, 0.0),
                                                           child: Padding(
                                                             padding:
-                                                                const EdgeInsetsDirectional
+                                                                EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         2.0,
                                                                         0.0,
@@ -753,7 +759,7 @@ class _SubscribeWidgetState extends State<SubscribeWidget> {
                                                                               FlutterFlowTheme.of(context).primaryText,
                                                                         ),
                                                                       ),
-                                                                      duration: const Duration(
+                                                                      duration: Duration(
                                                                           milliseconds:
                                                                               4000),
                                                                       backgroundColor:
@@ -772,11 +778,12 @@ class _SubscribeWidgetState extends State<SubscribeWidget> {
 
                                                                   context
                                                                       .goNamed(
-                                                                    'HomeScreen',
+                                                                    HomeScreenWidget
+                                                                        .routeName,
                                                                     extra: <String,
                                                                         dynamic>{
                                                                       kTransitionInfoKey:
-                                                                          const TransitionInfo(
+                                                                          TransitionInfo(
                                                                         hasTransition:
                                                                             true,
                                                                         transitionType:
@@ -798,7 +805,7 @@ class _SubscribeWidgetState extends State<SubscribeWidget> {
                                                                               FlutterFlowTheme.of(context).primaryText,
                                                                         ),
                                                                       ),
-                                                                      duration: const Duration(
+                                                                      duration: Duration(
                                                                           milliseconds:
                                                                               4000),
                                                                       backgroundColor:
@@ -815,14 +822,14 @@ class _SubscribeWidgetState extends State<SubscribeWidget> {
                                                               options:
                                                                   FFButtonOptions(
                                                                 height: 40.0,
-                                                                padding: const EdgeInsetsDirectional
+                                                                padding: EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         16.0,
                                                                         0.0,
                                                                         16.0,
                                                                         0.0),
                                                                 iconPadding:
-                                                                    const EdgeInsetsDirectional
+                                                                    EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             0.0,
                                                                             0.0,
@@ -858,7 +865,7 @@ class _SubscribeWidgetState extends State<SubscribeWidget> {
                                               ),
                                             ),
                                             Align(
-                                              alignment: const AlignmentDirectional(
+                                              alignment: AlignmentDirectional(
                                                   0.0, 0.0),
                                               child: InkWell(
                                                 splashColor: Colors.transparent,
@@ -883,7 +890,7 @@ class _SubscribeWidgetState extends State<SubscribeWidget> {
                                               ),
                                             ),
                                             Align(
-                                              alignment: const AlignmentDirectional(
+                                              alignment: AlignmentDirectional(
                                                   0.0, 0.0),
                                               child: InkWell(
                                                 splashColor: Colors.transparent,
@@ -893,10 +900,11 @@ class _SubscribeWidgetState extends State<SubscribeWidget> {
                                                     Colors.transparent,
                                                 onTap: () async {
                                                   context.pushNamed(
-                                                    'TermCOndition',
+                                                    TermCOnditionWidget
+                                                        .routeName,
                                                     extra: <String, dynamic>{
                                                       kTransitionInfoKey:
-                                                          const TransitionInfo(
+                                                          TransitionInfo(
                                                         hasTransition: true,
                                                         transitionType:
                                                             PageTransitionType
@@ -918,7 +926,7 @@ class _SubscribeWidgetState extends State<SubscribeWidget> {
                                               ),
                                             ),
                                             Align(
-                                              alignment: const AlignmentDirectional(
+                                              alignment: AlignmentDirectional(
                                                   0.0, 0.0),
                                               child: InkWell(
                                                 splashColor: Colors.transparent,
@@ -940,7 +948,7 @@ class _SubscribeWidgetState extends State<SubscribeWidget> {
                                                               .primaryText,
                                                         ),
                                                       ),
-                                                      duration: const Duration(
+                                                      duration: Duration(
                                                           milliseconds: 4000),
                                                       backgroundColor:
                                                           FlutterFlowTheme.of(
@@ -961,7 +969,7 @@ class _SubscribeWidgetState extends State<SubscribeWidget> {
                                                 ),
                                               ),
                                             ),
-                                          ].divide(const SizedBox(height: 12.0)),
+                                          ].divide(SizedBox(height: 12.0)),
                                         ),
                                       ),
                                     ],

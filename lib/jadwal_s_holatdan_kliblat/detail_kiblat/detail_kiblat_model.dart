@@ -1,6 +1,7 @@
 import '/componen/date_componen/date_componen_widget.dart';
 import '/componen/footer_logo/footer_logo_widget.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/index.dart';
 import 'detail_kiblat_widget.dart' show DetailKiblatWidget;
 import 'package:flutter/material.dart';
 

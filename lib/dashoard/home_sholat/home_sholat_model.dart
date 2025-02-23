@@ -4,6 +4,7 @@ import '/componen/navbar/navbar_widget.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/request_manager.dart';
 
+import '/index.dart';
 import 'dart:async';
 import 'home_sholat_widget.dart' show HomeSholatWidget;
 import 'package:flutter/material.dart';
@@ -75,7 +76,7 @@ class HomeSholatModel extends FlutterFlowModel<HomeSholatWidget> {
   }) async {
     final stopwatch = Stopwatch()..start();
     while (true) {
-      await Future.delayed(const Duration(milliseconds: 50));
+      await Future.delayed(Duration(milliseconds: 50));
       final timeElapsed = stopwatch.elapsedMilliseconds;
       final requestComplete = apiRequestCompleted;
       if (timeElapsed > maxWait || (requestComplete && timeElapsed > minWait)) {
