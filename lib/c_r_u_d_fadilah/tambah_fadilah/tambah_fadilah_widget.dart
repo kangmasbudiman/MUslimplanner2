@@ -207,7 +207,7 @@ class _TambahFadilahWidgetState extends State<TambahFadilahWidget> {
                     ScaffoldMessenger.of(context).showSnackBar(
                       SnackBar(
                         content: Text(
-                          'Sunah  Berhasil Ditambah',
+                          'Fadillah Sunah  Berhasil Ditambah',
                           style: TextStyle(
                             color: FlutterFlowTheme.of(context).primaryText,
                           ),
@@ -216,6 +216,8 @@ class _TambahFadilahWidgetState extends State<TambahFadilahWidget> {
                         backgroundColor: FlutterFlowTheme.of(context).secondary,
                       ),
                     );
+
+                    FFAppState().update(() {});
                   }
 
                   safeSetState(() {});

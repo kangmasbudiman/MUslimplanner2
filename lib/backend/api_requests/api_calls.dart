@@ -1965,6 +1965,7 @@ class SunahGroup {
   static GetsunahdelapanCall getsunahdelapanCall = GetsunahdelapanCall();
   static GetsunahsembilanCall getsunahsembilanCall = GetsunahsembilanCall();
   static GetsunahsepuluhCall getsunahsepuluhCall = GetsunahsepuluhCall();
+  static GetsunahsebelasCall getsunahsebelasCall = GetsunahsebelasCall();
   static FadilahbysunahCall fadilahbysunahCall = FadilahbysunahCall();
   static TambahSummaryCall tambahSummaryCall = TambahSummaryCall();
   static GetmysummaryCall getmysummaryCall = GetmysummaryCall();
@@ -2718,6 +2719,79 @@ class GetsunahsepuluhCall {
     return ApiManager.instance.makeApiCall(
       callName: 'getsunahsepuluh',
       apiUrl: '${baseUrl}getsunah10',
+      callType: ApiCallType.POST,
+      headers: {},
+      params: {
+        'iduser': iduser,
+        'tanggal': tanggal,
+      },
+      bodyType: BodyType.X_WWW_FORM_URL_ENCODED,
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      isStreamingApi: false,
+      alwaysAllowBody: false,
+    );
+  }
+
+  List? data(dynamic response) => getJsonField(
+        response,
+        r'''$.data''',
+        true,
+      ) as List?;
+  List<int>? id(dynamic response) => (getJsonField(
+        response,
+        r'''$.data[:].id''',
+        true,
+      ) as List?)
+          ?.withoutNulls
+          .map((x) => castToType<int>(x))
+          .withoutNulls
+          .toList();
+  List<int>? idkategorisunah(dynamic response) => (getJsonField(
+        response,
+        r'''$.data[:].idkategorisunah''',
+        true,
+      ) as List?)
+          ?.withoutNulls
+          .map((x) => castToType<int>(x))
+          .withoutNulls
+          .toList();
+  List<String>? namasunah(dynamic response) => (getJsonField(
+        response,
+        r'''$.data[:].namaSunah''',
+        true,
+      ) as List?)
+          ?.withoutNulls
+          .map((x) => castToType<String>(x))
+          .withoutNulls
+          .toList();
+  List<int>? isComplate(dynamic response) => (getJsonField(
+        response,
+        r'''$.data[:].isCompleted''',
+        true,
+      ) as List?)
+          ?.withoutNulls
+          .map((x) => castToType<int>(x))
+          .withoutNulls
+          .toList();
+  int? summaryId(dynamic response) => castToType<int>(getJsonField(
+        response,
+        r'''$.data[:].summaryId''',
+      ));
+}
+
+class GetsunahsebelasCall {
+  Future<ApiCallResponse> call({
+    String? iduser = '',
+    String? tanggal = '',
+  }) async {
+    final baseUrl = SunahGroup.getBaseUrl();
+
+    return ApiManager.instance.makeApiCall(
+      callName: 'getsunahsebelas',
+      apiUrl: '${baseUrl}getsunah11',
       callType: ApiCallType.POST,
       headers: {},
       params: {

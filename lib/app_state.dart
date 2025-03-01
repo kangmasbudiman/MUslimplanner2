@@ -657,6 +657,21 @@ class FFAppState extends ChangeNotifier {
   void clearListAlldoakategoriCache() => _listAlldoakategoriManager.clear();
   void clearListAlldoakategoriCacheKey(String? uniqueKey) =>
       _listAlldoakategoriManager.clearRequest(uniqueKey);
+
+  final _dhuhaManager = FutureRequestManager<ApiCallResponse>();
+  Future<ApiCallResponse> dhuha({
+    String? uniqueQueryKey,
+    bool? overrideCache,
+    required Future<ApiCallResponse> Function() requestFn,
+  }) =>
+      _dhuhaManager.performRequest(
+        uniqueQueryKey: uniqueQueryKey,
+        overrideCache: overrideCache,
+        requestFn: requestFn,
+      );
+  void clearDhuhaCache() => _dhuhaManager.clear();
+  void clearDhuhaCacheKey(String? uniqueKey) =>
+      _dhuhaManager.clearRequest(uniqueKey);
 }
 
 void _safeInit(Function() initializeField) {

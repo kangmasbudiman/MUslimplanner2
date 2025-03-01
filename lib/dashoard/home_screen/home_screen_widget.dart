@@ -1002,7 +1002,472 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                                                                   .alternate,
                                                               size: 20.0,
                                                             ),
-                                                          ],
+                                                          ].divide(SizedBox(
+                                                              width: 10.0)),
+                                                        ),
+                                                      ),
+                                                    );
+                                                  }),
+                                                );
+                                              },
+                                            );
+                                          },
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                Padding(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      0.0, 20.0, 0.0, 0.0),
+                                  child: Text(
+                                    'Dhuha',
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .override(
+                                          fontFamily: 'Inter',
+                                          fontSize: 20.0,
+                                          letterSpacing: 0.0,
+                                          fontWeight: FontWeight.bold,
+                                        ),
+                                  ),
+                                ),
+                                Padding(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      0.0, 10.0, 0.0, 0.0),
+                                  child: AuthUserStreamWidget(
+                                    builder: (context) => Container(
+                                      width: double.infinity,
+                                      decoration: BoxDecoration(
+                                        color: currentUserDocument?.colorThemes,
+                                        boxShadow: [
+                                          BoxShadow(
+                                            blurRadius: 2.0,
+                                            color: Color(0x33000000),
+                                            offset: Offset(
+                                              1.0,
+                                              5.0,
+                                            ),
+                                          )
+                                        ],
+                                        borderRadius: BorderRadius.only(
+                                          bottomLeft: Radius.circular(20.0),
+                                          bottomRight: Radius.circular(20.0),
+                                          topLeft: Radius.circular(20.0),
+                                          topRight: Radius.circular(20.0),
+                                        ),
+                                      ),
+                                      child: Padding(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                            10.0, 10.0, 10.0, 10.0),
+                                        child: FutureBuilder<ApiCallResponse>(
+                                          future: FFAppState()
+                                              .dhuha(
+                                            requestFn: () => SunahGroup
+                                                .getsunahsebelasCall
+                                                .call(
+                                              iduser: currentUserUid,
+                                              tanggal: dateTimeFormat(
+                                                  "yyyy-MM-dd",
+                                                  getCurrentTimestamp),
+                                            ),
+                                          )
+                                              .then((result) {
+                                            _model.apiRequestCompleted8 = true;
+                                            return result;
+                                          }),
+                                          builder: (context, snapshot) {
+                                            // Customize what your widget looks like when it's loading.
+                                            if (!snapshot.hasData) {
+                                              return Center(
+                                                child: SizedBox(
+                                                  width: 40.0,
+                                                  height: 40.0,
+                                                  child:
+                                                      CircularProgressIndicator(
+                                                    valueColor:
+                                                        AlwaysStoppedAnimation<
+                                                            Color>(
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .info,
+                                                    ),
+                                                  ),
+                                                ),
+                                              );
+                                            }
+                                            final columnDhuhaGetsunahsebelasResponse =
+                                                snapshot.data!;
+
+                                            return Builder(
+                                              builder: (context) {
+                                                final res11 = getJsonField(
+                                                  columnDhuhaGetsunahsebelasResponse
+                                                      .jsonBody,
+                                                  r'''$.data''',
+                                                ).toList();
+
+                                                return Column(
+                                                  mainAxisSize:
+                                                      MainAxisSize.max,
+                                                  children: List.generate(
+                                                      res11.length,
+                                                      (res11Index) {
+                                                    final res11Item =
+                                                        res11[res11Index];
+                                                    return Padding(
+                                                      padding:
+                                                          EdgeInsetsDirectional
+                                                              .fromSTEB(
+                                                                  0.0,
+                                                                  0.0,
+                                                                  0.0,
+                                                                  10.0),
+                                                      child: InkWell(
+                                                        splashColor:
+                                                            Colors.transparent,
+                                                        focusColor:
+                                                            Colors.transparent,
+                                                        hoverColor:
+                                                            Colors.transparent,
+                                                        highlightColor:
+                                                            Colors.transparent,
+                                                        onTap: () async {
+                                                          context.pushNamed(
+                                                            SubDetailTaskSunahWidget
+                                                                .routeName,
+                                                            queryParameters: {
+                                                              'idsunah':
+                                                                  serializeParam(
+                                                                SunahGroup
+                                                                    .getsunahsebelasCall
+                                                                    .id(
+                                                                      columnDhuhaGetsunahsebelasResponse
+                                                                          .jsonBody,
+                                                                    )
+                                                                    ?.elementAtOrNull(
+                                                                        res11Index),
+                                                                ParamType.int,
+                                                              ),
+                                                              'namasunah':
+                                                                  serializeParam(
+                                                                SunahGroup
+                                                                    .getsunahsebelasCall
+                                                                    .namasunah(
+                                                                      columnDhuhaGetsunahsebelasResponse
+                                                                          .jsonBody,
+                                                                    )
+                                                                    ?.elementAtOrNull(
+                                                                        res11Index),
+                                                                ParamType
+                                                                    .String,
+                                                              ),
+                                                            }.withoutNulls,
+                                                          );
+                                                        },
+                                                        onLongPress: () async {
+                                                          ScaffoldMessenger.of(
+                                                                  context)
+                                                              .showSnackBar(
+                                                            SnackBar(
+                                                              content: Text(
+                                                                valueOrDefault<
+                                                                    String>(
+                                                                  (SunahGroup
+                                                                          .getsunahsebelasCall
+                                                                          .id(
+                                                                            columnDhuhaGetsunahsebelasResponse.jsonBody,
+                                                                          )
+                                                                          ?.elementAtOrNull(
+                                                                              res11Index))
+                                                                      ?.toString(),
+                                                                  '-',
+                                                                ),
+                                                                style:
+                                                                    TextStyle(
+                                                                  color: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .primaryText,
+                                                                ),
+                                                              ),
+                                                              duration: Duration(
+                                                                  milliseconds:
+                                                                      4000),
+                                                              backgroundColor:
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .secondary,
+                                                            ),
+                                                          );
+                                                        },
+                                                        child: Row(
+                                                          mainAxisSize:
+                                                              MainAxisSize.max,
+                                                          children: [
+                                                            Stack(
+                                                              children: [
+                                                                InkWell(
+                                                                  splashColor:
+                                                                      Colors
+                                                                          .transparent,
+                                                                  focusColor: Colors
+                                                                      .transparent,
+                                                                  hoverColor: Colors
+                                                                      .transparent,
+                                                                  highlightColor:
+                                                                      Colors
+                                                                          .transparent,
+                                                                  onTap:
+                                                                      () async {
+                                                                    ScaffoldMessenger.of(
+                                                                            context)
+                                                                        .showSnackBar(
+                                                                      SnackBar(
+                                                                        content:
+                                                                            Text(
+                                                                          'Loading ...',
+                                                                          style:
+                                                                              TextStyle(
+                                                                            color:
+                                                                                FlutterFlowTheme.of(context).primaryText,
+                                                                          ),
+                                                                        ),
+                                                                        duration:
+                                                                            Duration(milliseconds: 4900),
+                                                                        backgroundColor:
+                                                                            FlutterFlowTheme.of(context).secondary,
+                                                                      ),
+                                                                    );
+                                                                    _model.apiResultkdjj =
+                                                                        await SunahGroup
+                                                                            .tambahSummaryCall
+                                                                            .call(
+                                                                      iduser:
+                                                                          currentUserUid,
+                                                                      idsunah: (SunahGroup
+                                                                              .getsunahsebelasCall
+                                                                              .id(
+                                                                                columnDhuhaGetsunahsebelasResponse.jsonBody,
+                                                                              )
+                                                                              ?.elementAtOrNull(res11Index))
+                                                                          ?.toString(),
+                                                                    );
+
+                                                                    if ((_model
+                                                                            .apiResultkdjj
+                                                                            ?.succeeded ??
+                                                                        true)) {
+                                                                      ScaffoldMessenger.of(
+                                                                              context)
+                                                                          .showSnackBar(
+                                                                        SnackBar(
+                                                                          content:
+                                                                              Text(
+                                                                            'Sunah Berhasil ditambah ',
+                                                                            style:
+                                                                                TextStyle(
+                                                                              color: FlutterFlowTheme.of(context).primaryText,
+                                                                            ),
+                                                                          ),
+                                                                          duration:
+                                                                              Duration(milliseconds: 4000),
+                                                                          backgroundColor:
+                                                                              FlutterFlowTheme.of(context).secondary,
+                                                                        ),
+                                                                      );
+                                                                      FFAppState()
+                                                                          .clearDhuhaCache();
+                                                                      safeSetState(
+                                                                          () {
+                                                                        FFAppState()
+                                                                            .clearDhuhaCache();
+                                                                        _model.apiRequestCompleted8 =
+                                                                            false;
+                                                                      });
+                                                                      await _model
+                                                                          .waitForApiRequestCompleted8();
+                                                                    }
+
+                                                                    safeSetState(
+                                                                        () {});
+                                                                  },
+                                                                  child: Icon(
+                                                                    Icons
+                                                                        .circle_outlined,
+                                                                    color: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .secondaryText,
+                                                                    size: 24.0,
+                                                                  ),
+                                                                ),
+                                                                if (functions.intToString(
+                                                                        valueOrDefault<
+                                                                            int>(
+                                                                      SunahGroup
+                                                                          .getsunahsebelasCall
+                                                                          .isComplate(
+                                                                            columnDhuhaGetsunahsebelasResponse.jsonBody,
+                                                                          )
+                                                                          ?.elementAtOrNull(
+                                                                              res11Index),
+                                                                      0,
+                                                                    )) ==
+                                                                    '1')
+                                                                  InkWell(
+                                                                    splashColor:
+                                                                        Colors
+                                                                            .transparent,
+                                                                    focusColor:
+                                                                        Colors
+                                                                            .transparent,
+                                                                    hoverColor:
+                                                                        Colors
+                                                                            .transparent,
+                                                                    highlightColor:
+                                                                        Colors
+                                                                            .transparent,
+                                                                    onTap:
+                                                                        () async {
+                                                                      ScaffoldMessenger.of(
+                                                                              context)
+                                                                          .showSnackBar(
+                                                                        SnackBar(
+                                                                          content:
+                                                                              Text(
+                                                                            'Loading....',
+                                                                            style:
+                                                                                TextStyle(
+                                                                              color: FlutterFlowTheme.of(context).primaryText,
+                                                                            ),
+                                                                          ),
+                                                                          duration:
+                                                                              Duration(milliseconds: 4900),
+                                                                          backgroundColor:
+                                                                              FlutterFlowTheme.of(context).secondary,
+                                                                        ),
+                                                                      );
+                                                                      _model.apiResultkdDeleteSunnahh = await SunahGroup
+                                                                          .deleteMysunnahCall
+                                                                          .call(
+                                                                        id: valueOrDefault<
+                                                                            String>(
+                                                                          functions
+                                                                              .intToString(valueOrDefault<int>(
+                                                                            SunahGroup.getsunahsebelasCall
+                                                                                .id(
+                                                                                  columnDhuhaGetsunahsebelasResponse.jsonBody,
+                                                                                )
+                                                                                ?.elementAtOrNull(res11Index),
+                                                                            0,
+                                                                          )),
+                                                                          '0',
+                                                                        ),
+                                                                      );
+
+                                                                      if ((_model
+                                                                              .apiResultkdDeleteSunnahh
+                                                                              ?.succeeded ??
+                                                                          true)) {
+                                                                        ScaffoldMessenger.of(context)
+                                                                            .showSnackBar(
+                                                                          SnackBar(
+                                                                            content:
+                                                                                Text(
+                                                                              'Sunnah Deleted',
+                                                                              style: TextStyle(
+                                                                                color: FlutterFlowTheme.of(context).primaryText,
+                                                                              ),
+                                                                            ),
+                                                                            duration:
+                                                                                Duration(milliseconds: 4000),
+                                                                            backgroundColor:
+                                                                                FlutterFlowTheme.of(context).secondary,
+                                                                          ),
+                                                                        );
+                                                                        FFAppState()
+                                                                            .clearDhuhaCache();
+                                                                        safeSetState(
+                                                                            () {
+                                                                          FFAppState()
+                                                                              .clearDhuhaCache();
+                                                                          _model.apiRequestCompleted8 =
+                                                                              false;
+                                                                        });
+                                                                        await _model
+                                                                            .waitForApiRequestCompleted8();
+                                                                      } else {
+                                                                        ScaffoldMessenger.of(context)
+                                                                            .showSnackBar(
+                                                                          SnackBar(
+                                                                            content:
+                                                                                Text(
+                                                                              'Delete Failed',
+                                                                              style: TextStyle(
+                                                                                color: FlutterFlowTheme.of(context).primaryText,
+                                                                              ),
+                                                                            ),
+                                                                            duration:
+                                                                                Duration(milliseconds: 4000),
+                                                                            backgroundColor:
+                                                                                FlutterFlowTheme.of(context).secondary,
+                                                                          ),
+                                                                        );
+                                                                      }
+
+                                                                      safeSetState(
+                                                                          () {});
+                                                                    },
+                                                                    child: Icon(
+                                                                      Icons
+                                                                          .check_circle_rounded,
+                                                                      color: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .alternate,
+                                                                      size:
+                                                                          24.0,
+                                                                    ),
+                                                                  ),
+                                                              ],
+                                                            ),
+                                                            Expanded(
+                                                              child: Text(
+                                                                valueOrDefault<
+                                                                    String>(
+                                                                  SunahGroup
+                                                                      .getsunahsebelasCall
+                                                                      .namasunah(
+                                                                        columnDhuhaGetsunahsebelasResponse
+                                                                            .jsonBody,
+                                                                      )
+                                                                      ?.elementAtOrNull(
+                                                                          res11Index),
+                                                                  '-',
+                                                                ),
+                                                                style: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .override(
+                                                                      fontFamily:
+                                                                          'Inter',
+                                                                      color: Colors
+                                                                          .white,
+                                                                      fontSize:
+                                                                          16.0,
+                                                                      letterSpacing:
+                                                                          0.0,
+                                                                    ),
+                                                              ),
+                                                            ),
+                                                            Icon(
+                                                              Icons
+                                                                  .arrow_forward_ios,
+                                                              color: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .alternate,
+                                                              size: 20.0,
+                                                            ),
+                                                          ].divide(SizedBox(
+                                                              width: 10.0)),
                                                         ),
                                                       ),
                                                     );
@@ -1408,7 +1873,8 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                                                                   .alternate,
                                                               size: 20.0,
                                                             ),
-                                                          ],
+                                                          ].divide(SizedBox(
+                                                              width: 10.0)),
                                                         ),
                                                       ),
                                                     );
@@ -1814,7 +2280,8 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                                                                   .alternate,
                                                               size: 20.0,
                                                             ),
-                                                          ],
+                                                          ].divide(SizedBox(
+                                                              width: 10.0)),
                                                         ),
                                                       ),
                                                     );
@@ -2176,7 +2643,9 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                                                                         size:
                                                                             20.0,
                                                                       ),
-                                                                    ],
+                                                                    ].divide(SizedBox(
+                                                                        width:
+                                                                            10.0)),
                                                                   ),
                                                                 ),
                                                               );
@@ -2538,7 +3007,9 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                                                                         size:
                                                                             20.0,
                                                                       ),
-                                                                    ],
+                                                                    ].divide(SizedBox(
+                                                                        width:
+                                                                            10.0)),
                                                                   ),
                                                                 ),
                                                               );
@@ -2909,7 +3380,9 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                                                                         size:
                                                                             20.0,
                                                                       ),
-                                                                    ],
+                                                                    ].divide(SizedBox(
+                                                                        width:
+                                                                            10.0)),
                                                                   ),
                                                                 ),
                                                               );
@@ -3275,7 +3748,9 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                                                                         size:
                                                                             20.0,
                                                                       ),
-                                                                    ],
+                                                                    ].divide(SizedBox(
+                                                                        width:
+                                                                            10.0)),
                                                                   ),
                                                                 ),
                                                               );
@@ -3639,7 +4114,9 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                                                                         size:
                                                                             20.0,
                                                                       ),
-                                                                    ],
+                                                                    ].divide(SizedBox(
+                                                                        width:
+                                                                            10.0)),
                                                                   ),
                                                                 ),
                                                               );

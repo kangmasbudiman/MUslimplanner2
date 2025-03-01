@@ -159,7 +159,10 @@ class _DaftaradminsunnahWidgetState extends State<DaftaradminsunnahWidget> {
                             child: AuthUserStreamWidget(
                               builder: (context) => Card(
                                 clipBehavior: Clip.antiAliasWithSaveLayer,
-                                color: currentUserDocument?.colorThemes,
+                                color: valueOrDefault<Color>(
+                                  currentUserDocument?.colorThemes,
+                                  FlutterFlowTheme.of(context).primaryText,
+                                ),
                                 elevation: 0.0,
                                 shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(8.0),
@@ -195,6 +198,9 @@ class _DaftaradminsunnahWidgetState extends State<DaftaradminsunnahWidget> {
                                                         .bodyMedium
                                                         .override(
                                                           fontFamily: 'Inter',
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .secondaryBackground,
                                                           fontSize: 20.0,
                                                           letterSpacing: 0.0,
                                                           fontWeight:
@@ -213,6 +219,9 @@ class _DaftaradminsunnahWidgetState extends State<DaftaradminsunnahWidget> {
                                                         .bodyMedium
                                                         .override(
                                                           fontFamily: 'Inter',
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .secondaryBackground,
                                                           letterSpacing: 0.0,
                                                         ),
                                               ),
