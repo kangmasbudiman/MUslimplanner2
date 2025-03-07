@@ -228,6 +228,7 @@ class _EditDoaCopyWidgetState extends State<EditDoaCopyWidget> {
                           fontFamily: 'Inter',
                           letterSpacing: 0.0,
                         ),
+                    maxLines: 14,
                     validator: _model.textFieldpenjelasanTextControllerValidator
                         .asValidator(context),
                   ),
