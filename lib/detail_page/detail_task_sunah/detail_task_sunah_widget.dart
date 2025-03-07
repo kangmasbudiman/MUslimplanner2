@@ -7,7 +7,14 @@ import 'detail_task_sunah_model.dart';
 export 'detail_task_sunah_model.dart';
 
 class DetailTaskSunahWidget extends StatefulWidget {
-  const DetailTaskSunahWidget({super.key});
+  const DetailTaskSunahWidget({
+    super.key,
+    required this.judul,
+    required this.isi,
+  });
+
+  final String? judul;
+  final String? isi;
 
   static String routeName = 'DetailTaskSunah';
   static String routePath = '/detailTaskSunah';
@@ -161,7 +168,10 @@ class _DetailTaskSunahWidgetState extends State<DetailTaskSunahWidget> {
                                         children: [
                                           Expanded(
                                             child: Text(
-                                              'Didoakan Malaikat',
+                                              valueOrDefault<String>(
+                                                widget.judul,
+                                                'judul',
+                                              ),
                                               style: FlutterFlowTheme.of(
                                                       context)
                                                   .bodyMedium
@@ -187,7 +197,10 @@ class _DetailTaskSunahWidgetState extends State<DetailTaskSunahWidget> {
                                         padding: EdgeInsetsDirectional.fromSTEB(
                                             0.0, 10.0, 0.0, 0.0),
                                         child: Text(
-                                          'Tidaklah seorang muslim yang menjenguk saudaranya muslim di pagi hari melainkan dirinya akan didoa’kan oleh 70.000 malaikat hingga petang. Dan jika dirinya menjenguk di sore hari maka dirinya akan didoa’kan oleh 70.000 malaikat hingga pagi. Dan baginya kebun di tengah surga. ',
+                                          valueOrDefault<String>(
+                                            widget.isi,
+                                            'isi',
+                                          ),
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(
@@ -205,7 +218,7 @@ class _DetailTaskSunahWidgetState extends State<DetailTaskSunahWidget> {
                                         padding: EdgeInsetsDirectional.fromSTEB(
                                             0.0, 15.0, 0.0, 0.0),
                                         child: Text(
-                                          'HR. at-Tirmidzi no: 969, Hadits hasan gharib, dinyatakan shahih oleh Ibnu Hiban dan al-Albani dalam shahih sunan at-Tirmidzi 1/286 no: 775',
+                                          '',
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(

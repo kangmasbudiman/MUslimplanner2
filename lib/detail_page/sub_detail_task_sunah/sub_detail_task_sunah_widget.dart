@@ -146,7 +146,10 @@ class _SubDetailTaskSunahWidgetState extends State<SubDetailTaskSunahWidget> {
                 Padding(
                   padding: EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 10.0),
                   child: Text(
-                    widget.namasunah,
+                    widget.namasunah.maybeHandleOverflow(
+                      maxChars: 20,
+                      replacement: '…',
+                    ),
                     style: FlutterFlowTheme.of(context).bodyMedium.override(
                           fontFamily: 'Inter',
                           fontSize: 20.0,
@@ -328,9 +331,44 @@ class _SubDetailTaskSunahWidgetState extends State<SubDetailTaskSunahWidget> {
                                                                   Colors
                                                                       .transparent,
                                                               onTap: () async {
-                                                                context.pushNamed(
-                                                                    DetailTaskSunahWidget
-                                                                        .routeName);
+                                                                context
+                                                                    .pushNamed(
+                                                                  DetailTaskSunahWidget
+                                                                      .routeName,
+                                                                  queryParameters:
+                                                                      {
+                                                                    'judul':
+                                                                        serializeParam(
+                                                                      valueOrDefault<
+                                                                          String>(
+                                                                        SunahGroup
+                                                                            .fadilahbysunahCall
+                                                                            .fadilah(
+                                                                              listViewFadilahbysunahResponse.jsonBody,
+                                                                            )
+                                                                            ?.elementAtOrNull(resfadilahIndex),
+                                                                        '0',
+                                                                      ),
+                                                                      ParamType
+                                                                          .String,
+                                                                    ),
+                                                                    'isi':
+                                                                        serializeParam(
+                                                                      valueOrDefault<
+                                                                          String>(
+                                                                        SunahGroup
+                                                                            .fadilahbysunahCall
+                                                                            .penjelasan(
+                                                                              listViewFadilahbysunahResponse.jsonBody,
+                                                                            )
+                                                                            ?.elementAtOrNull(resfadilahIndex),
+                                                                        '0',
+                                                                      ),
+                                                                      ParamType
+                                                                          .String,
+                                                                    ),
+                                                                  }.withoutNulls,
+                                                                );
                                                               },
                                                               child: Icon(
                                                                 Icons

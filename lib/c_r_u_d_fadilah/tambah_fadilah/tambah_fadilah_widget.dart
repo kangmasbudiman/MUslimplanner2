@@ -186,6 +186,8 @@ class _TambahFadilahWidgetState extends State<TambahFadilahWidget> {
                           fontFamily: 'Inter',
                           letterSpacing: 0.0,
                         ),
+                    maxLines: null,
+                    minLines: 10,
                     validator: _model.textFielPenjelasanTextControllerValidator
                         .asValidator(context),
                   ),

@@ -144,7 +144,16 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         FFRoute(
           name: DetailTaskSunahWidget.routeName,
           path: DetailTaskSunahWidget.routePath,
-          builder: (context, params) => DetailTaskSunahWidget(),
+          builder: (context, params) => DetailTaskSunahWidget(
+            judul: params.getParam(
+              'judul',
+              ParamType.String,
+            ),
+            isi: params.getParam(
+              'isi',
+              ParamType.String,
+            ),
+          ),
         ),
         FFRoute(
           name: StatistikWidget.routeName,
