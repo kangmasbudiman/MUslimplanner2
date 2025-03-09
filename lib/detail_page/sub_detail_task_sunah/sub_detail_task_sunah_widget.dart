@@ -192,7 +192,7 @@ class _SubDetailTaskSunahWidgetState extends State<SubDetailTaskSunahWidget> {
                   ),
                   Container(
                     width: double.infinity,
-                    height: MediaQuery.sizeOf(context).height * 0.749,
+                    height: MediaQuery.sizeOf(context).height * 0.693,
                     decoration: BoxDecoration(),
                     child: FutureBuilder<ApiCallResponse>(
                       future: SunahGroup.fadilahbysunahCall.call(
