@@ -173,25 +173,28 @@ class _SubDetailTaskSunahWidgetState extends State<SubDetailTaskSunahWidget> {
             decoration: BoxDecoration(),
             child: Padding(
               padding: EdgeInsetsDirectional.fromSTEB(20.0, 20.0, 20.0, 0.0),
-              child: SingleChildScrollView(
-                child: Column(
-                  mainAxisSize: MainAxisSize.max,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Padding(
-                      padding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 20.0),
-                      child: Text(
-                        'Fadilah',
-                        style: FlutterFlowTheme.of(context).bodyMedium.override(
-                              fontFamily: 'Inter',
-                              fontSize: 20.0,
-                              letterSpacing: 0.0,
-                              fontWeight: FontWeight.bold,
-                            ),
-                      ),
+              child: Column(
+                mainAxisSize: MainAxisSize.max,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Padding(
+                    padding:
+                        EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 20.0),
+                    child: Text(
+                      'Fadilah',
+                      style: FlutterFlowTheme.of(context).bodyMedium.override(
+                            fontFamily: 'Inter',
+                            fontSize: 20.0,
+                            letterSpacing: 0.0,
+                            fontWeight: FontWeight.bold,
+                          ),
                     ),
-                    FutureBuilder<ApiCallResponse>(
+                  ),
+                  Container(
+                    width: double.infinity,
+                    height: MediaQuery.sizeOf(context).height * 0.749,
+                    decoration: BoxDecoration(),
+                    child: FutureBuilder<ApiCallResponse>(
                       future: SunahGroup.fadilahbysunahCall.call(
                         idsunah: widget.idsunah,
                       ),
@@ -221,6 +224,7 @@ class _SubDetailTaskSunahWidgetState extends State<SubDetailTaskSunahWidget> {
 
                             return ListView.builder(
                               padding: EdgeInsets.zero,
+                              primary: false,
                               shrinkWrap: true,
                               scrollDirection: Axis.vertical,
                               itemCount: resfadilah.length,
@@ -456,8 +460,8 @@ class _SubDetailTaskSunahWidgetState extends State<SubDetailTaskSunahWidget> {
                         );
                       },
                     ),
-                  ],
-                ),
+                  ),
+                ],
               ),
             ),
           ),
