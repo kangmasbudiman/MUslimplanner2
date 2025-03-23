@@ -44,9 +44,6 @@ class _TambahDetaildoaWidgetState extends State<TambahDetaildoaWidget> {
     _model.txtterjemahanTextController ??= TextEditingController();
     _model.txtterjemahanFocusNode ??= FocusNode();
 
-    _model.txtpenjelasanTextController ??= TextEditingController();
-    _model.txtpenjelasanFocusNode ??= FocusNode();
-
     _model.txthadisTextController ??= TextEditingController();
     _model.txthadisFocusNode ??= FocusNode();
 
@@ -273,53 +270,6 @@ class _TambahDetaildoaWidgetState extends State<TambahDetaildoaWidget> {
                   child: Padding(
                     padding: EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
                     child: TextFormField(
-                      controller: _model.txtpenjelasanTextController,
-                      focusNode: _model.txtpenjelasanFocusNode,
-                      autofocus: true,
-                      obscureText: false,
-                      decoration: InputDecoration(
-                        labelText: 'Penjelasan',
-                        labelStyle:
-                            FlutterFlowTheme.of(context).labelMedium.override(
-                                  fontFamily: 'Inter',
-                                  letterSpacing: 0.0,
-                                ),
-                        hintStyle:
-                            FlutterFlowTheme.of(context).labelMedium.override(
-                                  fontFamily: 'Inter',
-                                  letterSpacing: 0.0,
-                                ),
-                        enabledBorder: InputBorder.none,
-                        focusedBorder: InputBorder.none,
-                        errorBorder: InputBorder.none,
-                        focusedErrorBorder: InputBorder.none,
-                      ),
-                      style: FlutterFlowTheme.of(context).bodyMedium.override(
-                            fontFamily: 'Inter',
-                            letterSpacing: 0.0,
-                          ),
-                      maxLines: 4,
-                      validator: _model.txtpenjelasanTextControllerValidator
-                          .asValidator(context),
-                    ),
-                  ),
-                ),
-              ),
-              Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
-                child: Container(
-                  width: double.infinity,
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(8.0),
-                    border: Border.all(
-                      color: Color(0xFFE0E3E7),
-                      width: 2.0,
-                    ),
-                  ),
-                  child: Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
-                    child: TextFormField(
                       controller: _model.txthadisTextController,
                       focusNode: _model.txthadisFocusNode,
                       autofocus: true,
@@ -358,7 +308,6 @@ class _TambahDetaildoaWidgetState extends State<TambahDetaildoaWidget> {
                     _model.apiResultrbj =
                         await DoadoaGroup.tambahdetaidoaCall.call(
                       hadis: _model.txthadisTextController.text,
-                      penjelasan: _model.txtpenjelasanTextController.text,
                       terjemahan: _model.txtterjemahanTextController.text,
                       iddoa: valueOrDefault<String>(
                         widget.iddoa?.toString(),

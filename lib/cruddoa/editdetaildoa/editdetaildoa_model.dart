@@ -27,10 +27,6 @@ class EditdetaildoaModel extends FlutterFlowModel<EditdetaildoaWidget> {
   TextEditingController? textFieldHadisTextController;
   String? Function(BuildContext, String?)?
       textFieldHadisTextControllerValidator;
-  // State field(s) for txtpenjelasan widget.
-  FocusNode? txtpenjelasanFocusNode;
-  TextEditingController? txtpenjelasanTextController;
-  String? Function(BuildContext, String?)? txtpenjelasanTextControllerValidator;
   // Stores action output result for [Backend Call - API (Editdetaildoa)] action in Button widget.
   ApiCallResponse? apiResultnvo;
 
@@ -50,8 +46,5 @@ class EditdetaildoaModel extends FlutterFlowModel<EditdetaildoaWidget> {
 
     textFieldHadisFocusNode?.dispose();
     textFieldHadisTextController?.dispose();
-
-    txtpenjelasanFocusNode?.dispose();
-    txtpenjelasanTextController?.dispose();
   }
 }

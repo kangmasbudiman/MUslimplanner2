@@ -58,10 +58,6 @@ class _EditdetaildoaWidgetState extends State<EditdetaildoaWidget> {
         TextEditingController(text: widget.hadis);
     _model.textFieldHadisFocusNode ??= FocusNode();
 
-    _model.txtpenjelasanTextController ??=
-        TextEditingController(text: widget.penjelasan);
-    _model.txtpenjelasanFocusNode ??= FocusNode();
-
     WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
@@ -111,10 +107,7 @@ class _EditdetaildoaWidgetState extends State<EditdetaildoaWidget> {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Text(
-                      valueOrDefault<String>(
-                        widget.id?.toString(),
-                        'id',
-                      ),
+                      'Edit Doa ',
                       style:
                           FlutterFlowTheme.of(context).headlineSmall.override(
                                 fontFamily: 'Outfit',
@@ -356,53 +349,6 @@ class _EditdetaildoaWidgetState extends State<EditdetaildoaWidget> {
                 ),
               ),
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
-                child: Container(
-                  width: double.infinity,
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(8.0),
-                    border: Border.all(
-                      color: Color(0xFFE0E3E7),
-                      width: 2.0,
-                    ),
-                  ),
-                  child: Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
-                    child: TextFormField(
-                      controller: _model.txtpenjelasanTextController,
-                      focusNode: _model.txtpenjelasanFocusNode,
-                      autofocus: true,
-                      obscureText: false,
-                      decoration: InputDecoration(
-                        labelText: 'Penjelasan',
-                        labelStyle:
-                            FlutterFlowTheme.of(context).labelMedium.override(
-                                  fontFamily: 'Inter',
-                                  letterSpacing: 0.0,
-                                ),
-                        hintStyle:
-                            FlutterFlowTheme.of(context).labelMedium.override(
-                                  fontFamily: 'Inter',
-                                  letterSpacing: 0.0,
-                                ),
-                        enabledBorder: InputBorder.none,
-                        focusedBorder: InputBorder.none,
-                        errorBorder: InputBorder.none,
-                        focusedErrorBorder: InputBorder.none,
-                      ),
-                      style: FlutterFlowTheme.of(context).bodyMedium.override(
-                            fontFamily: 'Inter',
-                            letterSpacing: 0.0,
-                          ),
-                      maxLines: 5,
-                      validator: _model.txtpenjelasanTextControllerValidator
-                          .asValidator(context),
-                    ),
-                  ),
-                ),
-              ),
-              Padding(
                 padding: EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
                 child: FFButtonWidget(
                   onPressed: () async {
@@ -412,7 +358,6 @@ class _EditdetaildoaWidgetState extends State<EditdetaildoaWidget> {
                       arab: _model.textFielArabTextController.text,
                       latin: _model.textFieldLatinTextController.text,
                       terjemahan: _model.textFieldTerjemahanTextController.text,
-                      penjelasan: _model.txtpenjelasanTextController.text,
                       hadis: _model.textFieldHadisTextController.text,
                     );
 

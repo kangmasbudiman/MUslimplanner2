@@ -643,21 +643,6 @@ class FFAppState extends ChangeNotifier {
   void clearCarialldoaCacheKey(String? uniqueKey) =>
       _carialldoaManager.clearRequest(uniqueKey);
 
-  final _listAlldoakategoriManager = FutureRequestManager<ApiCallResponse>();
-  Future<ApiCallResponse> listAlldoakategori({
-    String? uniqueQueryKey,
-    bool? overrideCache,
-    required Future<ApiCallResponse> Function() requestFn,
-  }) =>
-      _listAlldoakategoriManager.performRequest(
-        uniqueQueryKey: uniqueQueryKey,
-        overrideCache: overrideCache,
-        requestFn: requestFn,
-      );
-  void clearListAlldoakategoriCache() => _listAlldoakategoriManager.clear();
-  void clearListAlldoakategoriCacheKey(String? uniqueKey) =>
-      _listAlldoakategoriManager.clearRequest(uniqueKey);
-
   final _dhuhaManager = FutureRequestManager<ApiCallResponse>();
   Future<ApiCallResponse> dhuha({
     String? uniqueQueryKey,
@@ -852,6 +837,21 @@ class FFAppState extends ChangeNotifier {
   void clearSakitCache() => _sakitManager.clear();
   void clearSakitCacheKey(String? uniqueKey) =>
       _sakitManager.clearRequest(uniqueKey);
+
+  final _listManager = FutureRequestManager<ApiCallResponse>();
+  Future<ApiCallResponse> list({
+    String? uniqueQueryKey,
+    bool? overrideCache,
+    required Future<ApiCallResponse> Function() requestFn,
+  }) =>
+      _listManager.performRequest(
+        uniqueQueryKey: uniqueQueryKey,
+        overrideCache: overrideCache,
+        requestFn: requestFn,
+      );
+  void clearListCache() => _listManager.clear();
+  void clearListCacheKey(String? uniqueKey) =>
+      _listManager.clearRequest(uniqueKey);
 }
 
 void _safeInit(Function() initializeField) {

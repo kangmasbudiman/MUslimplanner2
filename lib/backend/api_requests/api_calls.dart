@@ -1917,7 +1917,6 @@ class TambahdetaidoaCall {
     String? latin = '',
     String? iddoa = '',
     String? terjemahan = '',
-    String? penjelasan = '',
     String? hadis = '',
   }) async {
     final baseUrl = DoadoaGroup.getBaseUrl();
@@ -1932,7 +1931,6 @@ class TambahdetaidoaCall {
         'arab': arab,
         'latin': latin,
         'terjemahan': terjemahan,
-        'penjelasan': penjelasan,
         'hadis': hadis,
       },
       bodyType: BodyType.X_WWW_FORM_URL_ENCODED,
@@ -1981,7 +1979,6 @@ class EditdetaildoaCall {
     String? arab = '',
     String? latin = '',
     String? terjemahan = '',
-    String? penjelasan = '',
     String? hadis = '',
   }) async {
     final baseUrl = DoadoaGroup.getBaseUrl();
@@ -1996,7 +1993,6 @@ class EditdetaildoaCall {
         'arab': arab,
         'latin': latin,
         'terjemahan': terjemahan,
-        'penjelasan': penjelasan,
         'hadis': hadis,
       },
       bodyType: BodyType.X_WWW_FORM_URL_ENCODED,
@@ -2115,6 +2111,15 @@ class GetdoasearchCall {
         r'''$.data''',
         true,
       ) as List?;
+  List<int>? iddoa(dynamic response) => (getJsonField(
+        response,
+        r'''$.data[:].id''',
+        true,
+      ) as List?)
+          ?.withoutNulls
+          .map((x) => castToType<int>(x))
+          .withoutNulls
+          .toList();
 }
 
 /// End Doadoa Group Code

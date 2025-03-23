@@ -141,8 +141,8 @@ class _DetailDoanewWidgetState extends State<DetailDoanewWidget> {
                       alignment: AlignmentDirectional(0.0, 0.0),
                       child: Text(
                         valueOrDefault<String>(
-                          widget.judul,
-                          'judul',
+                          widget.iddoa?.toString(),
+                          '0',
                         ),
                         style: FlutterFlowTheme.of(context).bodyMedium.override(
                               fontFamily: 'Inter',
@@ -172,7 +172,7 @@ class _DetailDoanewWidgetState extends State<DetailDoanewWidget> {
               children: [
                 Container(
                   width: double.infinity,
-                  height: MediaQuery.sizeOf(context).height * 0.7,
+                  height: MediaQuery.sizeOf(context).height * 0.85,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(0.0),
                   ),
