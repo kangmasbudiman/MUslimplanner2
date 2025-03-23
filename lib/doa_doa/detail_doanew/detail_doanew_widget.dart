@@ -141,8 +141,8 @@ class _DetailDoanewWidgetState extends State<DetailDoanewWidget> {
                       alignment: AlignmentDirectional(0.0, 0.0),
                       child: Text(
                         valueOrDefault<String>(
-                          widget.iddoa?.toString(),
-                          '0',
+                          widget.judul,
+                          'judul',
                         ),
                         style: FlutterFlowTheme.of(context).bodyMedium.override(
                               fontFamily: 'Inter',
