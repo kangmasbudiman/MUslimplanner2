@@ -15,25 +15,6 @@ class TambahDoModel extends FlutterFlowModel<TambahDoWidget> {
   TextEditingController? textFieldJudulDOaTextController;
   String? Function(BuildContext, String?)?
       textFieldJudulDOaTextControllerValidator;
-  // State field(s) for TextFielArab widget.
-  FocusNode? textFielArabFocusNode;
-  TextEditingController? textFielArabTextController;
-  String? Function(BuildContext, String?)? textFielArabTextControllerValidator;
-  // State field(s) for TextFieldLatin widget.
-  FocusNode? textFieldLatinFocusNode;
-  TextEditingController? textFieldLatinTextController;
-  String? Function(BuildContext, String?)?
-      textFieldLatinTextControllerValidator;
-  // State field(s) for TextFieldTerjemahan widget.
-  FocusNode? textFieldTerjemahanFocusNode;
-  TextEditingController? textFieldTerjemahanTextController;
-  String? Function(BuildContext, String?)?
-      textFieldTerjemahanTextControllerValidator;
-  // State field(s) for TextFieldHadis widget.
-  FocusNode? textFieldHadisFocusNode;
-  TextEditingController? textFieldHadisTextController;
-  String? Function(BuildContext, String?)?
-      textFieldHadisTextControllerValidator;
   // Stores action output result for [Backend Call - API (Tambahdoa)] action in Button widget.
   ApiCallResponse? apiResultnvo;
 
@@ -44,17 +25,5 @@ class TambahDoModel extends FlutterFlowModel<TambahDoWidget> {
   void dispose() {
     textFieldJudulDOaFocusNode?.dispose();
     textFieldJudulDOaTextController?.dispose();
-
-    textFielArabFocusNode?.dispose();
-    textFielArabTextController?.dispose();
-
-    textFieldLatinFocusNode?.dispose();
-    textFieldLatinTextController?.dispose();
-
-    textFieldTerjemahanFocusNode?.dispose();
-    textFieldTerjemahanTextController?.dispose();
-
-    textFieldHadisFocusNode?.dispose();
-    textFieldHadisTextController?.dispose();
   }
 }

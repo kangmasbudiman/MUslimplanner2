@@ -489,11 +489,7 @@ class _EditSunahWidgetState extends State<EditSunahWidget> {
                             _model.dropDownValue == ''
                         ? widget.idkategori
                         : _model.dropDownValue,
-                    hadis: _model.textFieldHadisTextController.text,
                     namaDoa: _model.textFieldJudulDOaTextController.text,
-                    arab: _model.textFielArabTextController.text,
-                    latin: _model.textFieldLatinTextController.text,
-                    terjemahan: _model.textFieldTerjemahanTextController.text,
                     id: widget.id,
                   );
 

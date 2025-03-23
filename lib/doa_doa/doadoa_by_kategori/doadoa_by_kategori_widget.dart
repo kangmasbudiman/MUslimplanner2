@@ -116,97 +116,72 @@ class _DoadoaByKategoriWidgetState extends State<DoadoaByKategoriWidget> {
             width: double.infinity,
             height: double.infinity,
             decoration: BoxDecoration(),
-            child: Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 0.0),
-              child: Column(
-                mainAxisSize: MainAxisSize.max,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Padding(
-                    padding:
-                        EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
-                    child: AuthUserStreamWidget(
-                      builder: (context) => Container(
-                        width: double.infinity,
-                        decoration: BoxDecoration(
-                          color: currentUserDocument?.colorThemes,
-                          boxShadow: [
-                            BoxShadow(
-                              blurRadius: 2.0,
-                              color: Color(0x33000000),
-                              offset: Offset(
-                                2.0,
-                                4.0,
-                              ),
-                            )
-                          ],
-                          borderRadius: BorderRadius.only(
-                            bottomLeft: Radius.circular(20.0),
-                            bottomRight: Radius.circular(20.0),
-                            topLeft: Radius.circular(20.0),
-                            topRight: Radius.circular(20.0),
-                          ),
-                        ),
-                        child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
-                              10.0, 0.0, 10.0, 0.0),
-                          child: TextFormField(
-                            controller: _model.textController,
-                            focusNode: _model.textFieldFocusNode,
-                            autofocus: false,
-                            obscureText: false,
-                            decoration: InputDecoration(
-                              labelText: 'Cari Doa....',
-                              enabledBorder: InputBorder.none,
-                              focusedBorder: InputBorder.none,
-                              errorBorder: InputBorder.none,
-                              focusedErrorBorder: InputBorder.none,
-                              prefixIcon: Icon(
-                                Icons.search_sharp,
-                                color: Colors.white,
-                                size: 13.0,
-                              ),
+            child: Column(
+              mainAxisSize: MainAxisSize.max,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Padding(
+                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
+                  child: AuthUserStreamWidget(
+                    builder: (context) => Container(
+                      width: double.infinity,
+                      decoration: BoxDecoration(
+                        color: currentUserDocument?.colorThemes,
+                        boxShadow: [
+                          BoxShadow(
+                            blurRadius: 2.0,
+                            color: Color(0x33000000),
+                            offset: Offset(
+                              2.0,
+                              4.0,
                             ),
-                            style: FlutterFlowTheme.of(context)
-                                .bodyMedium
-                                .override(
-                                  fontFamily: 'Inter',
-                                  color: Colors.white,
-                                  fontSize: 12.0,
-                                  letterSpacing: 0.0,
-                                ),
-                            validator: _model.textControllerValidator
-                                .asValidator(context),
+                          )
+                        ],
+                        borderRadius: BorderRadius.circular(0.0),
+                      ),
+                      child: Padding(
+                        padding: EdgeInsetsDirectional.fromSTEB(
+                            10.0, 0.0, 10.0, 0.0),
+                        child: TextFormField(
+                          controller: _model.textController,
+                          focusNode: _model.textFieldFocusNode,
+                          autofocus: false,
+                          obscureText: false,
+                          decoration: InputDecoration(
+                            labelText: 'Cari Doa....',
+                            enabledBorder: InputBorder.none,
+                            focusedBorder: InputBorder.none,
+                            errorBorder: InputBorder.none,
+                            focusedErrorBorder: InputBorder.none,
+                            prefixIcon: Icon(
+                              Icons.search_sharp,
+                              color: Colors.white,
+                              size: 13.0,
+                            ),
                           ),
+                          style:
+                              FlutterFlowTheme.of(context).bodyMedium.override(
+                                    fontFamily: 'Inter',
+                                    color: Colors.white,
+                                    fontSize: 12.0,
+                                    letterSpacing: 0.0,
+                                  ),
+                          validator: _model.textControllerValidator
+                              .asValidator(context),
                         ),
                       ),
                     ),
                   ),
-                  Padding(
-                    padding:
-                        EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 20.0),
-                    child: Text(
-                      'Semua ',
-                      style: FlutterFlowTheme.of(context).bodyMedium.override(
-                            fontFamily: 'Inter',
-                            fontSize: 20.0,
-                            letterSpacing: 0.0,
-                            fontWeight: FontWeight.bold,
-                          ),
-                    ),
-                  ),
-                  AuthUserStreamWidget(
+                ),
+                Padding(
+                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
+                  child: AuthUserStreamWidget(
                     builder: (context) => Container(
                       width: double.infinity,
                       height: MediaQuery.sizeOf(context).height * 0.7,
                       decoration: BoxDecoration(
                         color: currentUserDocument?.colorThemes,
-                        borderRadius: BorderRadius.only(
-                          bottomLeft: Radius.circular(20.0),
-                          bottomRight: Radius.circular(20.0),
-                          topLeft: Radius.circular(20.0),
-                          topRight: Radius.circular(20.0),
-                        ),
+                        borderRadius: BorderRadius.circular(0.0),
                       ),
                       child: Padding(
                         padding:
@@ -343,23 +318,6 @@ class _DoadoaByKategoriWidgetState extends State<DoadoaByKategoriWidget> {
                                               child: Row(
                                                 mainAxisSize: MainAxisSize.max,
                                                 children: [
-                                                  Padding(
-                                                    padding:
-                                                        EdgeInsetsDirectional
-                                                            .fromSTEB(0.0, 0.0,
-                                                                10.0, 0.0),
-                                                    child: Text(
-                                                      '- ',
-                                                      style: FlutterFlowTheme
-                                                              .of(context)
-                                                          .bodyMedium
-                                                          .override(
-                                                            fontFamily: 'Inter',
-                                                            color: Colors.white,
-                                                            letterSpacing: 0.0,
-                                                          ),
-                                                    ),
-                                                  ),
                                                   Expanded(
                                                     child: Column(
                                                       mainAxisSize:
@@ -397,116 +355,226 @@ class _DoadoaByKategoriWidgetState extends State<DoadoaByKategoriWidget> {
                                                                         .w600,
                                                               ),
                                                         ),
-                                                        if (valueOrDefault(
-                                                                currentUserDocument
-                                                                    ?.rules,
-                                                                0) ==
-                                                            1)
-                                                          Padding(
-                                                            padding:
-                                                                EdgeInsetsDirectional
-                                                                    .fromSTEB(
-                                                                        0.0,
-                                                                        10.0,
-                                                                        0.0,
-                                                                        0.0),
-                                                            child: InkWell(
-                                                              splashColor: Colors
-                                                                  .transparent,
-                                                              focusColor: Colors
-                                                                  .transparent,
-                                                              hoverColor: Colors
-                                                                  .transparent,
-                                                              highlightColor:
-                                                                  Colors
-                                                                      .transparent,
-                                                              onTap: () async {
-                                                                await showModalBottomSheet(
-                                                                  isScrollControlled:
-                                                                      true,
-                                                                  backgroundColor:
-                                                                      Colors
-                                                                          .transparent,
-                                                                  enableDrag:
-                                                                      false,
-                                                                  context:
-                                                                      context,
-                                                                  builder:
-                                                                      (context) {
-                                                                    return WebViewAware(
-                                                                      child:
-                                                                          GestureDetector(
-                                                                        onTap:
-                                                                            () {
-                                                                          FocusScope.of(context)
-                                                                              .unfocus();
-                                                                          FocusManager
-                                                                              .instance
-                                                                              .primaryFocus
-                                                                              ?.unfocus();
-                                                                        },
-                                                                        child:
-                                                                            Padding(
-                                                                          padding:
-                                                                              MediaQuery.viewInsetsOf(context),
-                                                                          child:
-                                                                              EditDoaWidget(
-                                                                            id: (DoadoaGroup.getDoaByKategoriCall
-                                                                                    .idDoa(
-                                                                                      listViewGetDoaByKategoriResponse.jsonBody,
-                                                                                    )
-                                                                                    ?.elementAtOrNull(responDoaIndex))
-                                                                                ?.toString(),
-                                                                            idkategori: (DoadoaGroup.getDoaByKategoriCall
-                                                                                    .idkategori(
-                                                                                      listViewGetDoaByKategoriResponse.jsonBody,
-                                                                                    )
-                                                                                    ?.elementAtOrNull(responDoaIndex))
-                                                                                ?.toString(),
-                                                                            judulDoa: DoadoaGroup.getDoaByKategoriCall
-                                                                                .judulDoa(
-                                                                                  listViewGetDoaByKategoriResponse.jsonBody,
-                                                                                )
-                                                                                ?.elementAtOrNull(responDoaIndex),
-                                                                            doabahasaarab: DoadoaGroup.getDoaByKategoriCall
-                                                                                .arab(
-                                                                                  listViewGetDoaByKategoriResponse.jsonBody,
-                                                                                )
-                                                                                ?.elementAtOrNull(responDoaIndex),
-                                                                            doabahasaindonesia: DoadoaGroup.getDoaByKategoriCall
-                                                                                .latin(
-                                                                                  listViewGetDoaByKategoriResponse.jsonBody,
-                                                                                )
-                                                                                ?.elementAtOrNull(responDoaIndex),
-                                                                            terjemahan: DoadoaGroup.getDoaByKategoriCall
-                                                                                .terjemahan(
-                                                                                  listViewGetDoaByKategoriResponse.jsonBody,
-                                                                                )
-                                                                                ?.elementAtOrNull(responDoaIndex),
-                                                                            hadis: DoadoaGroup.getDoaByKategoriCall
-                                                                                .hadis(
-                                                                                  listViewGetDoaByKategoriResponse.jsonBody,
-                                                                                )
-                                                                                ?.elementAtOrNull(responDoaIndex),
-                                                                          ),
-                                                                        ),
-                                                                      ),
-                                                                    );
-                                                                  },
-                                                                ).then((value) =>
-                                                                    safeSetState(
-                                                                        () {}));
-                                                              },
-                                                              child: Icon(
-                                                                Icons
-                                                                    .edit_outlined,
-                                                                color: FFAppState()
-                                                                    .colorFontThemes,
-                                                                size: 24.0,
-                                                              ),
-                                                            ),
-                                                          ),
                                                       ],
+                                                    ),
+                                                  ),
+                                                  if (valueOrDefault(
+                                                          currentUserDocument
+                                                              ?.rules,
+                                                          0) ==
+                                                      1)
+                                                    InkWell(
+                                                      splashColor:
+                                                          Colors.transparent,
+                                                      focusColor:
+                                                          Colors.transparent,
+                                                      hoverColor:
+                                                          Colors.transparent,
+                                                      highlightColor:
+                                                          Colors.transparent,
+                                                      onTap: () async {
+                                                        await showModalBottomSheet(
+                                                          isScrollControlled:
+                                                              true,
+                                                          backgroundColor:
+                                                              Colors
+                                                                  .transparent,
+                                                          enableDrag: false,
+                                                          context: context,
+                                                          builder: (context) {
+                                                            return WebViewAware(
+                                                              child:
+                                                                  GestureDetector(
+                                                                onTap: () {
+                                                                  FocusScope.of(
+                                                                          context)
+                                                                      .unfocus();
+                                                                  FocusManager
+                                                                      .instance
+                                                                      .primaryFocus
+                                                                      ?.unfocus();
+                                                                },
+                                                                child: Padding(
+                                                                  padding: MediaQuery
+                                                                      .viewInsetsOf(
+                                                                          context),
+                                                                  child:
+                                                                      EditDoaWidget(
+                                                                    id: (DoadoaGroup
+                                                                            .getDoaByKategoriCall
+                                                                            .idDoa(
+                                                                              listViewGetDoaByKategoriResponse.jsonBody,
+                                                                            )
+                                                                            ?.elementAtOrNull(responDoaIndex))
+                                                                        ?.toString(),
+                                                                    idkategori: (DoadoaGroup
+                                                                            .getDoaByKategoriCall
+                                                                            .idkategori(
+                                                                              listViewGetDoaByKategoriResponse.jsonBody,
+                                                                            )
+                                                                            ?.elementAtOrNull(responDoaIndex))
+                                                                        ?.toString(),
+                                                                    judulDoa: DoadoaGroup
+                                                                        .getDoaByKategoriCall
+                                                                        .judulDoa(
+                                                                          listViewGetDoaByKategoriResponse
+                                                                              .jsonBody,
+                                                                        )
+                                                                        ?.elementAtOrNull(
+                                                                            responDoaIndex),
+                                                                    doabahasaarab: DoadoaGroup
+                                                                        .getDoaByKategoriCall
+                                                                        .arab(
+                                                                          listViewGetDoaByKategoriResponse
+                                                                              .jsonBody,
+                                                                        )
+                                                                        ?.elementAtOrNull(
+                                                                            responDoaIndex),
+                                                                    doabahasaindonesia: DoadoaGroup
+                                                                        .getDoaByKategoriCall
+                                                                        .latin(
+                                                                          listViewGetDoaByKategoriResponse
+                                                                              .jsonBody,
+                                                                        )
+                                                                        ?.elementAtOrNull(
+                                                                            responDoaIndex),
+                                                                    terjemahan: DoadoaGroup
+                                                                        .getDoaByKategoriCall
+                                                                        .terjemahan(
+                                                                          listViewGetDoaByKategoriResponse
+                                                                              .jsonBody,
+                                                                        )
+                                                                        ?.elementAtOrNull(
+                                                                            responDoaIndex),
+                                                                    hadis: DoadoaGroup
+                                                                        .getDoaByKategoriCall
+                                                                        .hadis(
+                                                                          listViewGetDoaByKategoriResponse
+                                                                              .jsonBody,
+                                                                        )
+                                                                        ?.elementAtOrNull(
+                                                                            responDoaIndex),
+                                                                    penjelasan:
+                                                                        '',
+                                                                  ),
+                                                                ),
+                                                              ),
+                                                            );
+                                                          },
+                                                        ).then((value) =>
+                                                            safeSetState(
+                                                                () {}));
+                                                      },
+                                                      child: Icon(
+                                                        Icons.edit_outlined,
+                                                        color: FFAppState()
+                                                            .colorFontThemes,
+                                                        size: 24.0,
+                                                      ),
+                                                    ),
+                                                  InkWell(
+                                                    splashColor:
+                                                        Colors.transparent,
+                                                    focusColor:
+                                                        Colors.transparent,
+                                                    hoverColor:
+                                                        Colors.transparent,
+                                                    highlightColor:
+                                                        Colors.transparent,
+                                                    onTap: () async {
+                                                      context.pushNamed(
+                                                        DetailDoaWidget
+                                                            .routeName,
+                                                        queryParameters: {
+                                                          'judul':
+                                                              serializeParam(
+                                                            valueOrDefault<
+                                                                String>(
+                                                              DoadoaGroup
+                                                                  .getDoaByKategoriCall
+                                                                  .judulDoa(
+                                                                    listViewGetDoaByKategoriResponse
+                                                                        .jsonBody,
+                                                                  )
+                                                                  ?.elementAtOrNull(
+                                                                      responDoaIndex),
+                                                              '-',
+                                                            ),
+                                                            ParamType.String,
+                                                          ),
+                                                          'arab':
+                                                              serializeParam(
+                                                            valueOrDefault<
+                                                                String>(
+                                                              DoadoaGroup
+                                                                  .getDoaByKategoriCall
+                                                                  .arab(
+                                                                    listViewGetDoaByKategoriResponse
+                                                                        .jsonBody,
+                                                                  )
+                                                                  ?.elementAtOrNull(
+                                                                      responDoaIndex),
+                                                              '-',
+                                                            ),
+                                                            ParamType.String,
+                                                          ),
+                                                          'latin':
+                                                              serializeParam(
+                                                            valueOrDefault<
+                                                                String>(
+                                                              DoadoaGroup
+                                                                  .getDoaByKategoriCall
+                                                                  .latin(
+                                                                    listViewGetDoaByKategoriResponse
+                                                                        .jsonBody,
+                                                                  )
+                                                                  ?.elementAtOrNull(
+                                                                      responDoaIndex),
+                                                              '-',
+                                                            ),
+                                                            ParamType.String,
+                                                          ),
+                                                          'terjemahan':
+                                                              serializeParam(
+                                                            valueOrDefault<
+                                                                String>(
+                                                              DoadoaGroup
+                                                                  .getDoaByKategoriCall
+                                                                  .terjemahan(
+                                                                    listViewGetDoaByKategoriResponse
+                                                                        .jsonBody,
+                                                                  )
+                                                                  ?.elementAtOrNull(
+                                                                      responDoaIndex),
+                                                              '-',
+                                                            ),
+                                                            ParamType.String,
+                                                          ),
+                                                          'hadis':
+                                                              serializeParam(
+                                                            valueOrDefault<
+                                                                String>(
+                                                              DoadoaGroup
+                                                                  .getDoaByKategoriCall
+                                                                  .hadis(
+                                                                    listViewGetDoaByKategoriResponse
+                                                                        .jsonBody,
+                                                                  )
+                                                                  ?.elementAtOrNull(
+                                                                      responDoaIndex),
+                                                              '-',
+                                                            ),
+                                                            ParamType.String,
+                                                          ),
+                                                        }.withoutNulls,
+                                                      );
+                                                    },
+                                                    child: Icon(
+                                                      Icons.navigate_next,
+                                                      color: FlutterFlowTheme
+                                                              .of(context)
+                                                          .secondaryBackground,
+                                                      size: 30.0,
                                                     ),
                                                   ),
                                                 ],
@@ -529,8 +597,8 @@ class _DoadoaByKategoriWidgetState extends State<DoadoaByKategoriWidget> {
                       ),
                     ),
                   ),
-                ],
-              ),
+                ),
+              ],
             ),
           ),
         ),

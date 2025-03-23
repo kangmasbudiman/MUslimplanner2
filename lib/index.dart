@@ -110,3 +110,7 @@ export '/newkiblat/newkiblat_widget.dart' show NewkiblatWidget;
 export '/listsunnah/listsunnah_widget.dart' show ListsunnahWidget;
 export '/daftaradminsunnah/daftaradminsunnah_widget.dart'
     show DaftaradminsunnahWidget;
+export '/dashoard/home_doa_copy/home_doa_copy_widget.dart'
+    show HomeDoaCopyWidget;
+export '/doa_doa/detail_doanew/detail_doanew_widget.dart'
+    show DetailDoanewWidget;

@@ -187,7 +187,7 @@ class _NavbarWidgetState extends State<NavbarWidget> {
             hoverColor: Colors.transparent,
             highlightColor: Colors.transparent,
             onTap: () async {
-              context.pushNamed(HomeDoaWidget.routeName);
+              context.pushNamed(HomeDoaCopyWidget.routeName);
             },
             child: Container(
               decoration: BoxDecoration(

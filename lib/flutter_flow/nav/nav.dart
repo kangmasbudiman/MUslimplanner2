@@ -256,6 +256,10 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               'hadis',
               ParamType.String,
             ),
+            penjelasan: params.getParam(
+              'penjelasan',
+              ParamType.String,
+            ),
           ),
         ),
         FFRoute(
@@ -583,6 +587,45 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: DaftaradminsunnahWidget.routeName,
           path: DaftaradminsunnahWidget.routePath,
           builder: (context, params) => DaftaradminsunnahWidget(),
+        ),
+        FFRoute(
+          name: HomeDoaCopyWidget.routeName,
+          path: HomeDoaCopyWidget.routePath,
+          builder: (context, params) => HomeDoaCopyWidget(),
+        ),
+        FFRoute(
+          name: DetailDoanewWidget.routeName,
+          path: DetailDoanewWidget.routePath,
+          builder: (context, params) => DetailDoanewWidget(
+            judul: params.getParam(
+              'judul',
+              ParamType.String,
+            ),
+            arab: params.getParam(
+              'arab',
+              ParamType.String,
+            ),
+            latin: params.getParam(
+              'latin',
+              ParamType.String,
+            ),
+            terjemahan: params.getParam(
+              'terjemahan',
+              ParamType.String,
+            ),
+            hadis: params.getParam(
+              'hadis',
+              ParamType.String,
+            ),
+            penjelasan: params.getParam(
+              'penjelasan',
+              ParamType.String,
+            ),
+            iddoa: params.getParam(
+              'iddoa',
+              ParamType.int,
+            ),
+          ),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
       observers: [routeObserver],

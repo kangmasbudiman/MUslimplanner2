@@ -8,21 +8,21 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:webviewx_plus/webviewx_plus.dart';
-import 'home_doa_model.dart';
-export 'home_doa_model.dart';
+import 'home_doa_copy_model.dart';
+export 'home_doa_copy_model.dart';
 
-class HomeDoaWidget extends StatefulWidget {
-  const HomeDoaWidget({super.key});
+class HomeDoaCopyWidget extends StatefulWidget {
+  const HomeDoaCopyWidget({super.key});
 
-  static String routeName = 'HomeDoa';
-  static String routePath = '/homeDoa';
+  static String routeName = 'HomeDoaCopy';
+  static String routePath = '/homeDoaCopy';
 
   @override
-  State<HomeDoaWidget> createState() => _HomeDoaWidgetState();
+  State<HomeDoaCopyWidget> createState() => _HomeDoaCopyWidgetState();
 }
 
-class _HomeDoaWidgetState extends State<HomeDoaWidget> {
-  late HomeDoaModel _model;
+class _HomeDoaCopyWidgetState extends State<HomeDoaCopyWidget> {
+  late HomeDoaCopyModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
   bool textFieldSearch1FocusListenerRegistered = false;
@@ -30,7 +30,7 @@ class _HomeDoaWidgetState extends State<HomeDoaWidget> {
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => HomeDoaModel());
+    _model = createModel(context, () => HomeDoaCopyModel());
 
     _model.textFieldSearch1TextController ??= TextEditingController();
 
@@ -319,12 +319,12 @@ class _HomeDoaWidgetState extends State<HomeDoaWidget> {
                         Expanded(
                           child: Padding(
                             padding: EdgeInsetsDirectional.fromSTEB(
-                                0.0, 10.0, 0.0, 0.0),
+                                0.0, 10.0, 0.0, 80.0),
                             child: GridView(
                               padding: EdgeInsets.zero,
                               gridDelegate:
                                   SliverGridDelegateWithFixedCrossAxisCount(
-                                crossAxisCount: 3,
+                                crossAxisCount: 2,
                                 crossAxisSpacing: 10.0,
                                 mainAxisSpacing: 10.0,
                                 childAspectRatio: 1.0,
@@ -332,7 +332,7 @@ class _HomeDoaWidgetState extends State<HomeDoaWidget> {
                               scrollDirection: Axis.vertical,
                               children: [
                                 FutureBuilder<ApiCallResponse>(
-                                  future: _model.semuadoa(
+                                  future: FFAppState().chacheAlldoa(
                                     requestFn: () =>
                                         DoadoaGroup.getDoaCall.call(),
                                   ),
@@ -366,7 +366,9 @@ class _HomeDoaWidgetState extends State<HomeDoaWidget> {
                                             .pushNamed(DoadoaWidget.routeName);
                                       },
                                       child: Container(
-                                        width: 125.0,
+                                        width:
+                                            MediaQuery.sizeOf(context).width *
+                                                0.45,
                                         height: 125.0,
                                         decoration: BoxDecoration(
                                           color: FlutterFlowTheme.of(context)
@@ -384,86 +386,109 @@ class _HomeDoaWidgetState extends State<HomeDoaWidget> {
                                             topRight: Radius.circular(10.0),
                                           ),
                                         ),
-                                        child: Padding(
-                                          padding: EdgeInsets.all(6.0),
-                                          child: Column(
-                                            mainAxisSize: MainAxisSize.max,
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.spaceEvenly,
-                                            children: [
-                                              ClipRRect(
-                                                borderRadius:
-                                                    BorderRadius.circular(8.0),
-                                                child: Image.asset(
-                                                  'assets/images/open-hands-icon-13_1.png',
-                                                  width: 77.0,
-                                                  height: 44.0,
-                                                  fit: BoxFit.fill,
-                                                ),
-                                              ),
-                                              Text(
-                                                'Semua',
-                                                style:
-                                                    FlutterFlowTheme.of(context)
+                                        child: Stack(
+                                          children: [
+                                            Padding(
+                                              padding: EdgeInsetsDirectional
+                                                  .fromSTEB(
+                                                      10.0, 0.0, 0.0, 0.0),
+                                              child: Column(
+                                                mainAxisSize: MainAxisSize.max,
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment
+                                                        .spaceEvenly,
+                                                crossAxisAlignment:
+                                                    CrossAxisAlignment.start,
+                                                children: [
+                                                  Text(
+                                                    'Semua',
+                                                    style: FlutterFlowTheme.of(
+                                                            context)
                                                         .bodyMedium
                                                         .override(
                                                           fontFamily: 'Inter',
+                                                          fontSize: 16.0,
                                                           letterSpacing: 0.0,
                                                           fontWeight:
                                                               FontWeight.bold,
                                                         ),
-                                              ),
-                                              RichText(
-                                                textScaler:
-                                                    MediaQuery.of(context)
-                                                        .textScaler,
-                                                text: TextSpan(
-                                                  children: [
-                                                    TextSpan(
-                                                      text: valueOrDefault<
-                                                          String>(
-                                                        DoadoaGroup.getDoaCall
-                                                            .data(
-                                                              containerSemuaDoaGetDoaResponse
-                                                                  .jsonBody,
-                                                            )
-                                                            ?.length
-                                                            .toString(),
-                                                        '0',
-                                                      ),
+                                                  ),
+                                                  RichText(
+                                                    textScaler:
+                                                        MediaQuery.of(context)
+                                                            .textScaler,
+                                                    text: TextSpan(
+                                                      children: [
+                                                        TextSpan(
+                                                          text: valueOrDefault<
+                                                              String>(
+                                                            DoadoaGroup
+                                                                .getDoaCall
+                                                                .data(
+                                                                  containerSemuaDoaGetDoaResponse
+                                                                      .jsonBody,
+                                                                )
+                                                                ?.length
+                                                                .toString(),
+                                                            '0',
+                                                          ),
+                                                          style: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .bodyMedium
+                                                              .override(
+                                                                fontFamily:
+                                                                    'Inter',
+                                                                fontSize: 14.0,
+                                                                letterSpacing:
+                                                                    0.0,
+                                                              ),
+                                                        ),
+                                                        TextSpan(
+                                                          text: ' Doa',
+                                                          style: TextStyle(),
+                                                        )
+                                                      ],
                                                       style: FlutterFlowTheme
                                                               .of(context)
                                                           .bodyMedium
                                                           .override(
                                                             fontFamily: 'Inter',
-                                                            fontSize: 12.0,
+                                                            fontSize: 14.0,
                                                             letterSpacing: 0.0,
                                                           ),
                                                     ),
-                                                    TextSpan(
-                                                      text: ' Doa',
-                                                      style: TextStyle(),
-                                                    )
-                                                  ],
-                                                  style: FlutterFlowTheme.of(
-                                                          context)
-                                                      .bodyMedium
-                                                      .override(
-                                                        fontFamily: 'Inter',
-                                                        fontSize: 12.0,
-                                                        letterSpacing: 0.0,
-                                                      ),
+                                                  ),
+                                                ],
+                                              ),
+                                            ),
+                                            Align(
+                                              alignment: AlignmentDirectional(
+                                                  1.0, 1.0),
+                                              child: Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        0.0, 0.0, 5.0, 10.0),
+                                                child: ClipRRect(
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          8.0),
+                                                  child: Image.asset(
+                                                    'assets/images/open-hands-icon-13_1.png',
+                                                    width: 77.0,
+                                                    height: 44.0,
+                                                    fit: BoxFit.fill,
+                                                  ),
                                                 ),
                                               ),
-                                            ],
-                                          ),
+                                            ),
+                                          ],
                                         ),
                                       ),
                                     );
                                   },
                                 ),
                                 FutureBuilder<ApiCallResponse>(
-                                  future: _model.pagipetang(
+                                  future: FFAppState().pagipetang(
                                     requestFn: () =>
                                         DoadoaGroup.getDoasatuCall.call(),
                                   ),
@@ -504,7 +529,9 @@ class _HomeDoaWidgetState extends State<HomeDoaWidget> {
                                         );
                                       },
                                       child: Container(
-                                        width: 125.0,
+                                        width:
+                                            MediaQuery.sizeOf(context).width *
+                                                0.45,
                                         height: 125.0,
                                         decoration: BoxDecoration(
                                           color: FlutterFlowTheme.of(context)
@@ -522,27 +549,24 @@ class _HomeDoaWidgetState extends State<HomeDoaWidget> {
                                             topRight: Radius.circular(10.0),
                                           ),
                                         ),
-                                        child: Padding(
-                                          padding: EdgeInsets.all(6.0),
-                                          child: Column(
-                                            mainAxisSize: MainAxisSize.max,
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.spaceEvenly,
-                                            children: [
-                                              ClipRRect(
-                                                borderRadius:
-                                                    BorderRadius.circular(8.0),
-                                                child: Image.asset(
-                                                  'assets/images/sun-and-moon-with-stars-glyph-icon-vector-28495491_1.png',
-                                                  width: 77.0,
-                                                  height: 44.0,
-                                                  fit: BoxFit.contain,
-                                                ),
-                                              ),
-                                              Text(
-                                                'Pagi  & Petang',
-                                                style:
-                                                    FlutterFlowTheme.of(context)
+                                        child: Stack(
+                                          children: [
+                                            Padding(
+                                              padding: EdgeInsetsDirectional
+                                                  .fromSTEB(
+                                                      10.0, 0.0, 0.0, 0.0),
+                                              child: Column(
+                                                mainAxisSize: MainAxisSize.max,
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment
+                                                        .spaceEvenly,
+                                                crossAxisAlignment:
+                                                    CrossAxisAlignment.start,
+                                                children: [
+                                                  Text(
+                                                    'Pagi  & Petang',
+                                                    style: FlutterFlowTheme.of(
+                                                            context)
                                                         .bodyMedium
                                                         .override(
                                                           fontFamily: 'Inter',
@@ -550,65 +574,91 @@ class _HomeDoaWidgetState extends State<HomeDoaWidget> {
                                                                           context)
                                                                       .width <
                                                                   390.0
-                                                              ? 10.0
-                                                              : 14.0,
+                                                              ? 14.0
+                                                              : 16.0,
                                                           letterSpacing: 0.0,
                                                           fontWeight:
                                                               FontWeight.bold,
                                                         ),
-                                              ),
-                                              RichText(
-                                                textScaler:
-                                                    MediaQuery.of(context)
-                                                        .textScaler,
-                                                text: TextSpan(
-                                                  children: [
-                                                    TextSpan(
-                                                      text: valueOrDefault<
-                                                          String>(
-                                                        DoadoaGroup
-                                                            .getDoasatuCall
-                                                            .data(
-                                                              containerPagipetangGetDoasatuResponse
-                                                                  .jsonBody,
-                                                            )
-                                                            ?.length
-                                                            .toString(),
-                                                        '0',
-                                                      ),
+                                                  ),
+                                                  RichText(
+                                                    textScaler:
+                                                        MediaQuery.of(context)
+                                                            .textScaler,
+                                                    text: TextSpan(
+                                                      children: [
+                                                        TextSpan(
+                                                          text: valueOrDefault<
+                                                              String>(
+                                                            DoadoaGroup
+                                                                .getDoasatuCall
+                                                                .data(
+                                                                  containerPagipetangGetDoasatuResponse
+                                                                      .jsonBody,
+                                                                )
+                                                                ?.length
+                                                                .toString(),
+                                                            '0',
+                                                          ),
+                                                          style: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .bodyMedium
+                                                              .override(
+                                                                fontFamily:
+                                                                    'Inter',
+                                                                fontSize: 14.0,
+                                                                letterSpacing:
+                                                                    0.0,
+                                                              ),
+                                                        ),
+                                                        TextSpan(
+                                                          text: ' Doa',
+                                                          style: TextStyle(
+                                                            fontSize: 14.0,
+                                                          ),
+                                                        )
+                                                      ],
                                                       style: FlutterFlowTheme
                                                               .of(context)
                                                           .bodyMedium
                                                           .override(
                                                             fontFamily: 'Inter',
-                                                            fontSize: 12.0,
+                                                            fontSize: 14.0,
                                                             letterSpacing: 0.0,
                                                           ),
                                                     ),
-                                                    TextSpan(
-                                                      text: ' Doa',
-                                                      style: TextStyle(),
-                                                    )
-                                                  ],
-                                                  style: FlutterFlowTheme.of(
-                                                          context)
-                                                      .bodyMedium
-                                                      .override(
-                                                        fontFamily: 'Inter',
-                                                        fontSize: 12.0,
-                                                        letterSpacing: 0.0,
-                                                      ),
+                                                  ),
+                                                ],
+                                              ),
+                                            ),
+                                            Align(
+                                              alignment: AlignmentDirectional(
+                                                  1.0, 1.0),
+                                              child: Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        0.0, 0.0, 0.0, 10.0),
+                                                child: ClipRRect(
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          8.0),
+                                                  child: Image.asset(
+                                                    'assets/images/sun-and-moon-with-stars-glyph-icon-vector-28495491_1.png',
+                                                    width: 77.0,
+                                                    height: 44.0,
+                                                    fit: BoxFit.contain,
+                                                  ),
                                                 ),
                                               ),
-                                            ],
-                                          ),
+                                            ),
+                                          ],
                                         ),
                                       ),
                                     );
                                   },
                                 ),
                                 FutureBuilder<ApiCallResponse>(
-                                  future: _model.rumah(
+                                  future: FFAppState().rumah(
                                     requestFn: () =>
                                         DoadoaGroup.getDoaduaCall.call(),
                                   ),
@@ -649,7 +699,9 @@ class _HomeDoaWidgetState extends State<HomeDoaWidget> {
                                         );
                                       },
                                       child: Container(
-                                        width: 125.0,
+                                        width:
+                                            MediaQuery.sizeOf(context).width *
+                                                0.45,
                                         height: 125.0,
                                         decoration: BoxDecoration(
                                           color: FlutterFlowTheme.of(context)
@@ -667,61 +719,81 @@ class _HomeDoaWidgetState extends State<HomeDoaWidget> {
                                             topRight: Radius.circular(10.0),
                                           ),
                                         ),
-                                        child: Padding(
-                                          padding: EdgeInsets.all(6.0),
-                                          child: Column(
-                                            mainAxisSize: MainAxisSize.max,
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.spaceEvenly,
-                                            children: [
-                                              ClipRRect(
-                                                borderRadius:
-                                                    BorderRadius.circular(8.0),
-                                                child: Image.asset(
-                                                  'assets/images/678811_home_512x512_1.png',
-                                                  width: 77.0,
-                                                  height: 44.0,
-                                                  fit: BoxFit.contain,
-                                                ),
-                                              ),
-                                              Text(
-                                                'Rumah  & Keluarga',
-                                                textAlign: TextAlign.center,
-                                                style:
-                                                    FlutterFlowTheme.of(context)
+                                        child: Stack(
+                                          children: [
+                                            Padding(
+                                              padding: EdgeInsetsDirectional
+                                                  .fromSTEB(
+                                                      10.0, 0.0, 0.0, 0.0),
+                                              child: Column(
+                                                mainAxisSize: MainAxisSize.max,
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment
+                                                        .spaceEvenly,
+                                                crossAxisAlignment:
+                                                    CrossAxisAlignment.start,
+                                                children: [
+                                                  Text(
+                                                    'Rumah  & Keluarga',
+                                                    textAlign: TextAlign.center,
+                                                    style: FlutterFlowTheme.of(
+                                                            context)
                                                         .bodyMedium
                                                         .override(
                                                           fontFamily: 'Inter',
-                                                          fontSize: MediaQuery.sizeOf(
-                                                                          context)
-                                                                      .width <
-                                                                  390.0
-                                                              ? 10.0
-                                                              : 14.0,
+                                                          fontSize:
+                                                              valueOrDefault<
+                                                                  double>(
+                                                            MediaQuery.sizeOf(
+                                                                            context)
+                                                                        .width <
+                                                                    390.0
+                                                                ? 14.0
+                                                                : 16.0,
+                                                            16.0,
+                                                          ),
                                                           letterSpacing: 0.0,
                                                           fontWeight:
                                                               FontWeight.bold,
                                                         ),
-                                              ),
-                                              RichText(
-                                                textScaler:
-                                                    MediaQuery.of(context)
-                                                        .textScaler,
-                                                text: TextSpan(
-                                                  children: [
-                                                    TextSpan(
-                                                      text: valueOrDefault<
-                                                          String>(
-                                                        DoadoaGroup
-                                                            .getDoaduaCall
-                                                            .data(
-                                                              containerRumahKeluargaGetDoaduaResponse
-                                                                  .jsonBody,
-                                                            )
-                                                            ?.length
-                                                            .toString(),
-                                                        '0',
-                                                      ),
+                                                  ),
+                                                  RichText(
+                                                    textScaler:
+                                                        MediaQuery.of(context)
+                                                            .textScaler,
+                                                    text: TextSpan(
+                                                      children: [
+                                                        TextSpan(
+                                                          text: valueOrDefault<
+                                                              String>(
+                                                            DoadoaGroup
+                                                                .getDoaduaCall
+                                                                .data(
+                                                                  containerRumahKeluargaGetDoaduaResponse
+                                                                      .jsonBody,
+                                                                )
+                                                                ?.length
+                                                                .toString(),
+                                                            '0',
+                                                          ),
+                                                          style: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .bodyMedium
+                                                              .override(
+                                                                fontFamily:
+                                                                    'Inter',
+                                                                fontSize: 14.0,
+                                                                letterSpacing:
+                                                                    0.0,
+                                                              ),
+                                                        ),
+                                                        TextSpan(
+                                                          text: ' Doa',
+                                                          style: TextStyle(
+                                                            fontSize: 14.0,
+                                                          ),
+                                                        )
+                                                      ],
                                                       style: FlutterFlowTheme
                                                               .of(context)
                                                           .bodyMedium
@@ -731,30 +803,38 @@ class _HomeDoaWidgetState extends State<HomeDoaWidget> {
                                                             letterSpacing: 0.0,
                                                           ),
                                                     ),
-                                                    TextSpan(
-                                                      text: ' Doa',
-                                                      style: TextStyle(),
-                                                    )
-                                                  ],
-                                                  style: FlutterFlowTheme.of(
-                                                          context)
-                                                      .bodyMedium
-                                                      .override(
-                                                        fontFamily: 'Inter',
-                                                        fontSize: 14.0,
-                                                        letterSpacing: 0.0,
-                                                      ),
+                                                  ),
+                                                ],
+                                              ),
+                                            ),
+                                            Align(
+                                              alignment: AlignmentDirectional(
+                                                  1.0, 1.0),
+                                              child: Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        0.0, 0.0, 0.0, 10.0),
+                                                child: ClipRRect(
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          8.0),
+                                                  child: Image.asset(
+                                                    'assets/images/678811_home_512x512_1.png',
+                                                    width: 77.0,
+                                                    height: 44.0,
+                                                    fit: BoxFit.contain,
+                                                  ),
                                                 ),
                                               ),
-                                            ],
-                                          ),
+                                            ),
+                                          ],
                                         ),
                                       ),
                                     );
                                   },
                                 ),
                                 FutureBuilder<ApiCallResponse>(
-                                  future: _model.makandanMinum(
+                                  future: FFAppState().makandanMinum(
                                     requestFn: () =>
                                         DoadoaGroup.getDoatigaCall.call(),
                                   ),
@@ -795,7 +875,9 @@ class _HomeDoaWidgetState extends State<HomeDoaWidget> {
                                         );
                                       },
                                       child: Container(
-                                        width: 125.0,
+                                        width:
+                                            MediaQuery.sizeOf(context).width *
+                                                0.45,
                                         height: 125.0,
                                         decoration: BoxDecoration(
                                           color: FlutterFlowTheme.of(context)
@@ -813,61 +895,79 @@ class _HomeDoaWidgetState extends State<HomeDoaWidget> {
                                             topRight: Radius.circular(10.0),
                                           ),
                                         ),
-                                        child: Padding(
-                                          padding: EdgeInsets.all(6.0),
-                                          child: Column(
-                                            mainAxisSize: MainAxisSize.max,
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.spaceEvenly,
-                                            children: [
-                                              ClipRRect(
-                                                borderRadius:
-                                                    BorderRadius.circular(8.0),
-                                                child: Image.asset(
-                                                  'assets/images/clean-cup-plate-solid-icon-washed-mug-dish-vector-illustration-isolated-white-dishware-glyph-style-design-clean-cup-127287146_1.png',
-                                                  width: 77.0,
-                                                  height: 44.0,
-                                                  fit: BoxFit.contain,
-                                                ),
-                                              ),
-                                              Text(
-                                                'Kegiatan Sehari-hari',
-                                                textAlign: TextAlign.center,
-                                                style:
-                                                    FlutterFlowTheme.of(context)
+                                        child: Stack(
+                                          children: [
+                                            Padding(
+                                              padding: EdgeInsetsDirectional
+                                                  .fromSTEB(
+                                                      10.0, 0.0, 0.0, 0.0),
+                                              child: Column(
+                                                mainAxisSize: MainAxisSize.max,
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment
+                                                        .spaceEvenly,
+                                                crossAxisAlignment:
+                                                    CrossAxisAlignment.start,
+                                                children: [
+                                                  Text(
+                                                    'Kegiatan Sehari-hari',
+                                                    textAlign: TextAlign.center,
+                                                    style: FlutterFlowTheme.of(
+                                                            context)
                                                         .bodyMedium
                                                         .override(
                                                           fontFamily: 'Inter',
-                                                          fontSize: MediaQuery.sizeOf(
-                                                                          context)
-                                                                      .width <
-                                                                  390.0
-                                                              ? 10.0
-                                                              : 14.0,
+                                                          fontSize:
+                                                              valueOrDefault<
+                                                                  double>(
+                                                            MediaQuery.sizeOf(
+                                                                            context)
+                                                                        .width <
+                                                                    390.0
+                                                                ? 14.0
+                                                                : 18.0,
+                                                            18.0,
+                                                          ),
                                                           letterSpacing: 0.0,
                                                           fontWeight:
                                                               FontWeight.bold,
                                                         ),
-                                              ),
-                                              RichText(
-                                                textScaler:
-                                                    MediaQuery.of(context)
-                                                        .textScaler,
-                                                text: TextSpan(
-                                                  children: [
-                                                    TextSpan(
-                                                      text: valueOrDefault<
-                                                          String>(
-                                                        DoadoaGroup
-                                                            .getDoatigaCall
-                                                            .data(
-                                                              containerMakanminumGetDoatigaResponse
-                                                                  .jsonBody,
-                                                            )
-                                                            ?.length
-                                                            .toString(),
-                                                        '0',
-                                                      ),
+                                                  ),
+                                                  RichText(
+                                                    textScaler:
+                                                        MediaQuery.of(context)
+                                                            .textScaler,
+                                                    text: TextSpan(
+                                                      children: [
+                                                        TextSpan(
+                                                          text: valueOrDefault<
+                                                              String>(
+                                                            DoadoaGroup
+                                                                .getDoatigaCall
+                                                                .data(
+                                                                  containerMakanminumGetDoatigaResponse
+                                                                      .jsonBody,
+                                                                )
+                                                                ?.length
+                                                                .toString(),
+                                                            '0',
+                                                          ),
+                                                          style: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .bodyMedium
+                                                              .override(
+                                                                fontFamily:
+                                                                    'Inter',
+                                                                fontSize: 14.0,
+                                                                letterSpacing:
+                                                                    0.0,
+                                                              ),
+                                                        ),
+                                                        TextSpan(
+                                                          text: ' Doa',
+                                                          style: TextStyle(),
+                                                        )
+                                                      ],
                                                       style: FlutterFlowTheme
                                                               .of(context)
                                                           .bodyMedium
@@ -877,30 +977,38 @@ class _HomeDoaWidgetState extends State<HomeDoaWidget> {
                                                             letterSpacing: 0.0,
                                                           ),
                                                     ),
-                                                    TextSpan(
-                                                      text: ' Doa',
-                                                      style: TextStyle(),
-                                                    )
-                                                  ],
-                                                  style: FlutterFlowTheme.of(
-                                                          context)
-                                                      .bodyMedium
-                                                      .override(
-                                                        fontFamily: 'Inter',
-                                                        fontSize: 14.0,
-                                                        letterSpacing: 0.0,
-                                                      ),
+                                                  ),
+                                                ],
+                                              ),
+                                            ),
+                                            Align(
+                                              alignment: AlignmentDirectional(
+                                                  1.0, 1.0),
+                                              child: Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        0.0, 0.0, 0.0, 10.0),
+                                                child: ClipRRect(
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          8.0),
+                                                  child: Image.asset(
+                                                    'assets/images/clean-cup-plate-solid-icon-washed-mug-dish-vector-illustration-isolated-white-dishware-glyph-style-design-clean-cup-127287146_1.png',
+                                                    width: 77.0,
+                                                    height: 44.0,
+                                                    fit: BoxFit.contain,
+                                                  ),
                                                 ),
                                               ),
-                                            ],
-                                          ),
+                                            ),
+                                          ],
                                         ),
                                       ),
                                     );
                                   },
                                 ),
                                 FutureBuilder<ApiCallResponse>(
-                                  future: _model.bahagiadanSedih(
+                                  future: FFAppState().bahagiadanSedih(
                                     requestFn: () =>
                                         DoadoaGroup.getDoaempatCall.call(),
                                   ),
@@ -941,7 +1049,9 @@ class _HomeDoaWidgetState extends State<HomeDoaWidget> {
                                         );
                                       },
                                       child: Container(
-                                        width: 125.0,
+                                        width:
+                                            MediaQuery.sizeOf(context).width *
+                                                0.45,
                                         height: 125.0,
                                         decoration: BoxDecoration(
                                           color: FlutterFlowTheme.of(context)
@@ -959,61 +1069,79 @@ class _HomeDoaWidgetState extends State<HomeDoaWidget> {
                                             topRight: Radius.circular(10.0),
                                           ),
                                         ),
-                                        child: Padding(
-                                          padding: EdgeInsets.all(6.0),
-                                          child: Column(
-                                            mainAxisSize: MainAxisSize.max,
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.spaceEvenly,
-                                            children: [
-                                              ClipRRect(
-                                                borderRadius:
-                                                    BorderRadius.circular(8.0),
-                                                child: Image.asset(
-                                                  'assets/images/27-512_1.png',
-                                                  width: 77.0,
-                                                  height: 44.0,
-                                                  fit: BoxFit.contain,
-                                                ),
-                                              ),
-                                              Text(
-                                                'Situasional',
-                                                textAlign: TextAlign.center,
-                                                style:
-                                                    FlutterFlowTheme.of(context)
+                                        child: Stack(
+                                          children: [
+                                            Padding(
+                                              padding: EdgeInsets.all(6.0),
+                                              child: Column(
+                                                mainAxisSize: MainAxisSize.max,
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment
+                                                        .spaceEvenly,
+                                                crossAxisAlignment:
+                                                    CrossAxisAlignment.start,
+                                                children: [
+                                                  Text(
+                                                    'Situasional',
+                                                    textAlign: TextAlign.center,
+                                                    style: FlutterFlowTheme.of(
+                                                            context)
                                                         .bodyMedium
                                                         .override(
                                                           fontFamily: 'Inter',
-                                                          fontSize: MediaQuery.sizeOf(
-                                                                          context)
-                                                                      .width <
-                                                                  390.0
-                                                              ? 10.0
-                                                              : 14.0,
+                                                          fontSize:
+                                                              valueOrDefault<
+                                                                  double>(
+                                                            MediaQuery.sizeOf(
+                                                                            context)
+                                                                        .width <
+                                                                    390.0
+                                                                ? 16.0
+                                                                : 18.0,
+                                                            18.0,
+                                                          ),
                                                           letterSpacing: 0.0,
                                                           fontWeight:
                                                               FontWeight.bold,
                                                         ),
-                                              ),
-                                              RichText(
-                                                textScaler:
-                                                    MediaQuery.of(context)
-                                                        .textScaler,
-                                                text: TextSpan(
-                                                  children: [
-                                                    TextSpan(
-                                                      text: valueOrDefault<
-                                                          String>(
-                                                        DoadoaGroup
-                                                            .getDoaempatCall
-                                                            .data(
-                                                              containerBahgiaGetDoaempatResponse
-                                                                  .jsonBody,
-                                                            )
-                                                            ?.length
-                                                            .toString(),
-                                                        '0',
-                                                      ),
+                                                  ),
+                                                  RichText(
+                                                    textScaler:
+                                                        MediaQuery.of(context)
+                                                            .textScaler,
+                                                    text: TextSpan(
+                                                      children: [
+                                                        TextSpan(
+                                                          text: valueOrDefault<
+                                                              String>(
+                                                            DoadoaGroup
+                                                                .getDoaempatCall
+                                                                .data(
+                                                                  containerBahgiaGetDoaempatResponse
+                                                                      .jsonBody,
+                                                                )
+                                                                ?.length
+                                                                .toString(),
+                                                            '0',
+                                                          ),
+                                                          style: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .bodyMedium
+                                                              .override(
+                                                                fontFamily:
+                                                                    'Inter',
+                                                                fontSize: 14.0,
+                                                                letterSpacing:
+                                                                    0.0,
+                                                              ),
+                                                        ),
+                                                        TextSpan(
+                                                          text: ' Doa',
+                                                          style: TextStyle(
+                                                            fontSize: 14.0,
+                                                          ),
+                                                        )
+                                                      ],
                                                       style: FlutterFlowTheme
                                                               .of(context)
                                                           .bodyMedium
@@ -1023,30 +1151,38 @@ class _HomeDoaWidgetState extends State<HomeDoaWidget> {
                                                             letterSpacing: 0.0,
                                                           ),
                                                     ),
-                                                    TextSpan(
-                                                      text: ' Doa',
-                                                      style: TextStyle(),
-                                                    )
-                                                  ],
-                                                  style: FlutterFlowTheme.of(
-                                                          context)
-                                                      .bodyMedium
-                                                      .override(
-                                                        fontFamily: 'Inter',
-                                                        fontSize: 14.0,
-                                                        letterSpacing: 0.0,
-                                                      ),
+                                                  ),
+                                                ],
+                                              ),
+                                            ),
+                                            Align(
+                                              alignment: AlignmentDirectional(
+                                                  1.0, 1.0),
+                                              child: Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        0.0, 0.0, 0.0, 10.0),
+                                                child: ClipRRect(
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          8.0),
+                                                  child: Image.asset(
+                                                    'assets/images/27-512_1.png',
+                                                    width: 77.0,
+                                                    height: 44.0,
+                                                    fit: BoxFit.contain,
+                                                  ),
                                                 ),
                                               ),
-                                            ],
-                                          ),
+                                            ),
+                                          ],
                                         ),
                                       ),
                                     );
                                   },
                                 ),
                                 FutureBuilder<ApiCallResponse>(
-                                  future: _model.perjalanan(
+                                  future: FFAppState().perjalanan(
                                     requestFn: () =>
                                         DoadoaGroup.getDoalimaCall.call(),
                                   ),
@@ -1087,7 +1223,9 @@ class _HomeDoaWidgetState extends State<HomeDoaWidget> {
                                         );
                                       },
                                       child: Container(
-                                        width: 125.0,
+                                        width:
+                                            MediaQuery.sizeOf(context).width *
+                                                0.45,
                                         height: 125.0,
                                         decoration: BoxDecoration(
                                           color: FlutterFlowTheme.of(context)
@@ -1105,28 +1243,25 @@ class _HomeDoaWidgetState extends State<HomeDoaWidget> {
                                             topRight: Radius.circular(10.0),
                                           ),
                                         ),
-                                        child: Padding(
-                                          padding: EdgeInsets.all(6.0),
-                                          child: Column(
-                                            mainAxisSize: MainAxisSize.max,
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.spaceEvenly,
-                                            children: [
-                                              ClipRRect(
-                                                borderRadius:
-                                                    BorderRadius.circular(8.0),
-                                                child: Image.asset(
-                                                  'assets/images/n7EsabW_1.png',
-                                                  width: 77.0,
-                                                  height: 44.0,
-                                                  fit: BoxFit.contain,
-                                                ),
-                                              ),
-                                              Text(
-                                                'Perjalanan',
-                                                textAlign: TextAlign.center,
-                                                style:
-                                                    FlutterFlowTheme.of(context)
+                                        child: Stack(
+                                          children: [
+                                            Padding(
+                                              padding: EdgeInsetsDirectional
+                                                  .fromSTEB(
+                                                      10.0, 0.0, 0.0, 0.0),
+                                              child: Column(
+                                                mainAxisSize: MainAxisSize.max,
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment
+                                                        .spaceEvenly,
+                                                crossAxisAlignment:
+                                                    CrossAxisAlignment.start,
+                                                children: [
+                                                  Text(
+                                                    'Perjalanan',
+                                                    textAlign: TextAlign.center,
+                                                    style: FlutterFlowTheme.of(
+                                                            context)
                                                         .bodyMedium
                                                         .override(
                                                           fontFamily: 'Inter',
@@ -1134,32 +1269,48 @@ class _HomeDoaWidgetState extends State<HomeDoaWidget> {
                                                                           context)
                                                                       .width <
                                                                   390.0
-                                                              ? 10.0
-                                                              : 14.0,
+                                                              ? 14.0
+                                                              : 16.0,
                                                           letterSpacing: 0.0,
                                                           fontWeight:
                                                               FontWeight.bold,
                                                         ),
-                                              ),
-                                              RichText(
-                                                textScaler:
-                                                    MediaQuery.of(context)
-                                                        .textScaler,
-                                                text: TextSpan(
-                                                  children: [
-                                                    TextSpan(
-                                                      text: valueOrDefault<
-                                                          String>(
-                                                        DoadoaGroup
-                                                            .getDoalimaCall
-                                                            .data(
-                                                              containerPerjalananGetDoalimaResponse
-                                                                  .jsonBody,
-                                                            )
-                                                            ?.length
-                                                            .toString(),
-                                                        '0',
-                                                      ),
+                                                  ),
+                                                  RichText(
+                                                    textScaler:
+                                                        MediaQuery.of(context)
+                                                            .textScaler,
+                                                    text: TextSpan(
+                                                      children: [
+                                                        TextSpan(
+                                                          text: valueOrDefault<
+                                                              String>(
+                                                            DoadoaGroup
+                                                                .getDoalimaCall
+                                                                .data(
+                                                                  containerPerjalananGetDoalimaResponse
+                                                                      .jsonBody,
+                                                                )
+                                                                ?.length
+                                                                .toString(),
+                                                            '0',
+                                                          ),
+                                                          style: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .bodyMedium
+                                                              .override(
+                                                                fontFamily:
+                                                                    'Inter',
+                                                                fontSize: 14.0,
+                                                                letterSpacing:
+                                                                    0.0,
+                                                              ),
+                                                        ),
+                                                        TextSpan(
+                                                          text: ' Doa',
+                                                          style: TextStyle(),
+                                                        )
+                                                      ],
                                                       style: FlutterFlowTheme
                                                               .of(context)
                                                           .bodyMedium
@@ -1169,30 +1320,38 @@ class _HomeDoaWidgetState extends State<HomeDoaWidget> {
                                                             letterSpacing: 0.0,
                                                           ),
                                                     ),
-                                                    TextSpan(
-                                                      text: ' Doa',
-                                                      style: TextStyle(),
-                                                    )
-                                                  ],
-                                                  style: FlutterFlowTheme.of(
-                                                          context)
-                                                      .bodyMedium
-                                                      .override(
-                                                        fontFamily: 'Inter',
-                                                        fontSize: 14.0,
-                                                        letterSpacing: 0.0,
-                                                      ),
+                                                  ),
+                                                ],
+                                              ),
+                                            ),
+                                            Align(
+                                              alignment: AlignmentDirectional(
+                                                  1.0, 1.0),
+                                              child: Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        0.0, 0.0, 5.0, 10.0),
+                                                child: ClipRRect(
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          8.0),
+                                                  child: Image.asset(
+                                                    'assets/images/n7EsabW_1.png',
+                                                    width: 67.7,
+                                                    height: 44.0,
+                                                    fit: BoxFit.contain,
+                                                  ),
                                                 ),
                                               ),
-                                            ],
-                                          ),
+                                            ),
+                                          ],
                                         ),
                                       ),
                                     );
                                   },
                                 ),
                                 FutureBuilder<ApiCallResponse>(
-                                  future: _model.sholat(
+                                  future: FFAppState().sholat(
                                     requestFn: () =>
                                         DoadoaGroup.getDoaenamCall.call(),
                                   ),
@@ -1233,7 +1392,9 @@ class _HomeDoaWidgetState extends State<HomeDoaWidget> {
                                         );
                                       },
                                       child: Container(
-                                        width: 125.0,
+                                        width:
+                                            MediaQuery.sizeOf(context).width *
+                                                0.45,
                                         height: 125.0,
                                         decoration: BoxDecoration(
                                           color: FlutterFlowTheme.of(context)
@@ -1251,28 +1412,25 @@ class _HomeDoaWidgetState extends State<HomeDoaWidget> {
                                             topRight: Radius.circular(10.0),
                                           ),
                                         ),
-                                        child: Padding(
-                                          padding: EdgeInsets.all(6.0),
-                                          child: Column(
-                                            mainAxisSize: MainAxisSize.max,
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.spaceEvenly,
-                                            children: [
-                                              ClipRRect(
-                                                borderRadius:
-                                                    BorderRadius.circular(8.0),
-                                                child: Image.asset(
-                                                  'assets/images/sujud-152079_1.png',
-                                                  width: 77.0,
-                                                  height: 44.0,
-                                                  fit: BoxFit.contain,
-                                                ),
-                                              ),
-                                              Text(
-                                                'Shalat',
-                                                textAlign: TextAlign.center,
-                                                style:
-                                                    FlutterFlowTheme.of(context)
+                                        child: Stack(
+                                          children: [
+                                            Padding(
+                                              padding: EdgeInsetsDirectional
+                                                  .fromSTEB(
+                                                      10.0, 0.0, 0.0, 0.0),
+                                              child: Column(
+                                                mainAxisSize: MainAxisSize.max,
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment
+                                                        .spaceEvenly,
+                                                crossAxisAlignment:
+                                                    CrossAxisAlignment.start,
+                                                children: [
+                                                  Text(
+                                                    'Shalat',
+                                                    textAlign: TextAlign.center,
+                                                    style: FlutterFlowTheme.of(
+                                                            context)
                                                         .bodyMedium
                                                         .override(
                                                           fontFamily: 'Inter',
@@ -1280,32 +1438,50 @@ class _HomeDoaWidgetState extends State<HomeDoaWidget> {
                                                                           context)
                                                                       .width <
                                                                   390.0
-                                                              ? 10.0
-                                                              : 14.0,
+                                                              ? 14.0
+                                                              : 16.0,
                                                           letterSpacing: 0.0,
                                                           fontWeight:
                                                               FontWeight.bold,
                                                         ),
-                                              ),
-                                              RichText(
-                                                textScaler:
-                                                    MediaQuery.of(context)
-                                                        .textScaler,
-                                                text: TextSpan(
-                                                  children: [
-                                                    TextSpan(
-                                                      text: valueOrDefault<
-                                                          String>(
-                                                        DoadoaGroup
-                                                            .getDoaenamCall
-                                                            .data(
-                                                              containerShalatGetDoaenamResponse
-                                                                  .jsonBody,
-                                                            )
-                                                            ?.length
-                                                            .toString(),
-                                                        '0',
-                                                      ),
+                                                  ),
+                                                  RichText(
+                                                    textScaler:
+                                                        MediaQuery.of(context)
+                                                            .textScaler,
+                                                    text: TextSpan(
+                                                      children: [
+                                                        TextSpan(
+                                                          text: valueOrDefault<
+                                                              String>(
+                                                            DoadoaGroup
+                                                                .getDoaenamCall
+                                                                .data(
+                                                                  containerShalatGetDoaenamResponse
+                                                                      .jsonBody,
+                                                                )
+                                                                ?.length
+                                                                .toString(),
+                                                            '0',
+                                                          ),
+                                                          style: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .bodyMedium
+                                                              .override(
+                                                                fontFamily:
+                                                                    'Inter',
+                                                                fontSize: 14.0,
+                                                                letterSpacing:
+                                                                    0.0,
+                                                              ),
+                                                        ),
+                                                        TextSpan(
+                                                          text: '  Doa',
+                                                          style: TextStyle(
+                                                            fontSize: 14.0,
+                                                          ),
+                                                        )
+                                                      ],
                                                       style: FlutterFlowTheme
                                                               .of(context)
                                                           .bodyMedium
@@ -1315,30 +1491,38 @@ class _HomeDoaWidgetState extends State<HomeDoaWidget> {
                                                             letterSpacing: 0.0,
                                                           ),
                                                     ),
-                                                    TextSpan(
-                                                      text: '  Doa',
-                                                      style: TextStyle(),
-                                                    )
-                                                  ],
-                                                  style: FlutterFlowTheme.of(
-                                                          context)
-                                                      .bodyMedium
-                                                      .override(
-                                                        fontFamily: 'Inter',
-                                                        fontSize: 14.0,
-                                                        letterSpacing: 0.0,
-                                                      ),
+                                                  ),
+                                                ],
+                                              ),
+                                            ),
+                                            Align(
+                                              alignment: AlignmentDirectional(
+                                                  1.0, 1.0),
+                                              child: Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        0.0, 0.0, 0.0, 10.0),
+                                                child: ClipRRect(
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          8.0),
+                                                  child: Image.asset(
+                                                    'assets/images/sujud-152079_1.png',
+                                                    width: 77.0,
+                                                    height: 44.0,
+                                                    fit: BoxFit.contain,
+                                                  ),
                                                 ),
                                               ),
-                                            ],
-                                          ),
+                                            ),
+                                          ],
                                         ),
                                       ),
                                     );
                                   },
                                 ),
                                 FutureBuilder<ApiCallResponse>(
-                                  future: _model.memujiAlllah(
+                                  future: FFAppState().memujiAlllah(
                                     requestFn: () =>
                                         DoadoaGroup.getDoatujuCall.call(),
                                   ),
@@ -1379,7 +1563,9 @@ class _HomeDoaWidgetState extends State<HomeDoaWidget> {
                                         );
                                       },
                                       child: Container(
-                                        width: 125.0,
+                                        width:
+                                            MediaQuery.sizeOf(context).width *
+                                                0.45,
                                         height: 125.0,
                                         decoration: BoxDecoration(
                                           color: FlutterFlowTheme.of(context)
@@ -1397,28 +1583,25 @@ class _HomeDoaWidgetState extends State<HomeDoaWidget> {
                                             topRight: Radius.circular(10.0),
                                           ),
                                         ),
-                                        child: Padding(
-                                          padding: EdgeInsets.all(6.0),
-                                          child: Column(
-                                            mainAxisSize: MainAxisSize.max,
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.spaceEvenly,
-                                            children: [
-                                              ClipRRect(
-                                                borderRadius:
-                                                    BorderRadius.circular(8.0),
-                                                child: Image.asset(
-                                                  'assets/images/84664_1.png',
-                                                  width: 77.0,
-                                                  height: 44.0,
-                                                  fit: BoxFit.contain,
-                                                ),
-                                              ),
-                                              Text(
-                                                ' Dzikir Setiap Saat',
-                                                textAlign: TextAlign.center,
-                                                style:
-                                                    FlutterFlowTheme.of(context)
+                                        child: Stack(
+                                          children: [
+                                            Padding(
+                                              padding: EdgeInsetsDirectional
+                                                  .fromSTEB(
+                                                      10.0, 0.0, 0.0, 0.0),
+                                              child: Column(
+                                                mainAxisSize: MainAxisSize.max,
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment
+                                                        .spaceEvenly,
+                                                crossAxisAlignment:
+                                                    CrossAxisAlignment.start,
+                                                children: [
+                                                  Text(
+                                                    ' Dzikir Setiap Saat',
+                                                    textAlign: TextAlign.center,
+                                                    style: FlutterFlowTheme.of(
+                                                            context)
                                                         .bodyMedium
                                                         .override(
                                                           fontFamily: 'Inter',
@@ -1426,32 +1609,50 @@ class _HomeDoaWidgetState extends State<HomeDoaWidget> {
                                                                           context)
                                                                       .width <
                                                                   390.0
-                                                              ? 10.0
-                                                              : 14.0,
+                                                              ? 14.0
+                                                              : 16.0,
                                                           letterSpacing: 0.0,
                                                           fontWeight:
                                                               FontWeight.bold,
                                                         ),
-                                              ),
-                                              RichText(
-                                                textScaler:
-                                                    MediaQuery.of(context)
-                                                        .textScaler,
-                                                text: TextSpan(
-                                                  children: [
-                                                    TextSpan(
-                                                      text: valueOrDefault<
-                                                          String>(
-                                                        DoadoaGroup
-                                                            .getDoatujuCall
-                                                            .data(
-                                                              containerMemujiAllahGetDoatujuResponse
-                                                                  .jsonBody,
-                                                            )
-                                                            ?.length
-                                                            .toString(),
-                                                        '0',
-                                                      ),
+                                                  ),
+                                                  RichText(
+                                                    textScaler:
+                                                        MediaQuery.of(context)
+                                                            .textScaler,
+                                                    text: TextSpan(
+                                                      children: [
+                                                        TextSpan(
+                                                          text: valueOrDefault<
+                                                              String>(
+                                                            DoadoaGroup
+                                                                .getDoatujuCall
+                                                                .data(
+                                                                  containerMemujiAllahGetDoatujuResponse
+                                                                      .jsonBody,
+                                                                )
+                                                                ?.length
+                                                                .toString(),
+                                                            '0',
+                                                          ),
+                                                          style: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .bodyMedium
+                                                              .override(
+                                                                fontFamily:
+                                                                    'Inter',
+                                                                fontSize: 14.0,
+                                                                letterSpacing:
+                                                                    0.0,
+                                                              ),
+                                                        ),
+                                                        TextSpan(
+                                                          text: ' Doa',
+                                                          style: TextStyle(
+                                                            fontSize: 14.0,
+                                                          ),
+                                                        )
+                                                      ],
                                                       style: FlutterFlowTheme
                                                               .of(context)
                                                           .bodyMedium
@@ -1461,30 +1662,38 @@ class _HomeDoaWidgetState extends State<HomeDoaWidget> {
                                                             letterSpacing: 0.0,
                                                           ),
                                                     ),
-                                                    TextSpan(
-                                                      text: ' Doa',
-                                                      style: TextStyle(),
-                                                    )
-                                                  ],
-                                                  style: FlutterFlowTheme.of(
-                                                          context)
-                                                      .bodyMedium
-                                                      .override(
-                                                        fontFamily: 'Inter',
-                                                        fontSize: 14.0,
-                                                        letterSpacing: 0.0,
-                                                      ),
+                                                  ),
+                                                ],
+                                              ),
+                                            ),
+                                            Align(
+                                              alignment: AlignmentDirectional(
+                                                  1.0, 1.0),
+                                              child: Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        0.0, 0.0, 0.0, 10.0),
+                                                child: ClipRRect(
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          8.0),
+                                                  child: Image.asset(
+                                                    'assets/images/84664_1.png',
+                                                    width: 77.0,
+                                                    height: 44.0,
+                                                    fit: BoxFit.contain,
+                                                  ),
                                                 ),
                                               ),
-                                            ],
-                                          ),
+                                            ),
+                                          ],
                                         ),
                                       ),
                                     );
                                   },
                                 ),
                                 FutureBuilder<ApiCallResponse>(
-                                  future: _model.hajiUmroh(
+                                  future: FFAppState().hajiUmroh(
                                     requestFn: () =>
                                         DoadoaGroup.getDoadelapanCall.call(),
                                   ),
@@ -1525,7 +1734,9 @@ class _HomeDoaWidgetState extends State<HomeDoaWidget> {
                                         );
                                       },
                                       child: Container(
-                                        width: 125.0,
+                                        width:
+                                            MediaQuery.sizeOf(context).width *
+                                                0.45,
                                         height: 125.0,
                                         decoration: BoxDecoration(
                                           color: FlutterFlowTheme.of(context)
@@ -1543,28 +1754,25 @@ class _HomeDoaWidgetState extends State<HomeDoaWidget> {
                                             topRight: Radius.circular(10.0),
                                           ),
                                         ),
-                                        child: Padding(
-                                          padding: EdgeInsets.all(6.0),
-                                          child: Column(
-                                            mainAxisSize: MainAxisSize.max,
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.spaceEvenly,
-                                            children: [
-                                              ClipRRect(
-                                                borderRadius:
-                                                    BorderRadius.circular(8.0),
-                                                child: Image.asset(
-                                                  'assets/images/1710080-200_1.png',
-                                                  width: 77.0,
-                                                  height: 44.0,
-                                                  fit: BoxFit.contain,
-                                                ),
-                                              ),
-                                              Text(
-                                                'Haji & Umrah',
-                                                textAlign: TextAlign.center,
-                                                style:
-                                                    FlutterFlowTheme.of(context)
+                                        child: Stack(
+                                          children: [
+                                            Padding(
+                                              padding: EdgeInsetsDirectional
+                                                  .fromSTEB(
+                                                      10.0, 0.0, 0.0, 0.0),
+                                              child: Column(
+                                                mainAxisSize: MainAxisSize.max,
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment
+                                                        .spaceEvenly,
+                                                crossAxisAlignment:
+                                                    CrossAxisAlignment.start,
+                                                children: [
+                                                  Text(
+                                                    'Haji & Umrah',
+                                                    textAlign: TextAlign.center,
+                                                    style: FlutterFlowTheme.of(
+                                                            context)
                                                         .bodyMedium
                                                         .override(
                                                           fontFamily: 'Inter',
@@ -1572,32 +1780,50 @@ class _HomeDoaWidgetState extends State<HomeDoaWidget> {
                                                                           context)
                                                                       .width <
                                                                   390.0
-                                                              ? 10.0
-                                                              : 14.0,
+                                                              ? 14.0
+                                                              : 16.0,
                                                           letterSpacing: 0.0,
                                                           fontWeight:
                                                               FontWeight.bold,
                                                         ),
-                                              ),
-                                              RichText(
-                                                textScaler:
-                                                    MediaQuery.of(context)
-                                                        .textScaler,
-                                                text: TextSpan(
-                                                  children: [
-                                                    TextSpan(
-                                                      text: valueOrDefault<
-                                                          String>(
-                                                        DoadoaGroup
-                                                            .getDoadelapanCall
-                                                            .data(
-                                                              containerHajiGetDoadelapanResponse
-                                                                  .jsonBody,
-                                                            )
-                                                            ?.length
-                                                            .toString(),
-                                                        '0',
-                                                      ),
+                                                  ),
+                                                  RichText(
+                                                    textScaler:
+                                                        MediaQuery.of(context)
+                                                            .textScaler,
+                                                    text: TextSpan(
+                                                      children: [
+                                                        TextSpan(
+                                                          text: valueOrDefault<
+                                                              String>(
+                                                            DoadoaGroup
+                                                                .getDoadelapanCall
+                                                                .data(
+                                                                  containerHajiGetDoadelapanResponse
+                                                                      .jsonBody,
+                                                                )
+                                                                ?.length
+                                                                .toString(),
+                                                            '0',
+                                                          ),
+                                                          style: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .bodyMedium
+                                                              .override(
+                                                                fontFamily:
+                                                                    'Inter',
+                                                                fontSize: 14.0,
+                                                                letterSpacing:
+                                                                    0.0,
+                                                              ),
+                                                        ),
+                                                        TextSpan(
+                                                          text: ' Doa',
+                                                          style: TextStyle(
+                                                            fontSize: 14.0,
+                                                          ),
+                                                        )
+                                                      ],
                                                       style: FlutterFlowTheme
                                                               .of(context)
                                                           .bodyMedium
@@ -1607,30 +1833,38 @@ class _HomeDoaWidgetState extends State<HomeDoaWidget> {
                                                             letterSpacing: 0.0,
                                                           ),
                                                     ),
-                                                    TextSpan(
-                                                      text: ' Doa',
-                                                      style: TextStyle(),
-                                                    )
-                                                  ],
-                                                  style: FlutterFlowTheme.of(
-                                                          context)
-                                                      .bodyMedium
-                                                      .override(
-                                                        fontFamily: 'Inter',
-                                                        fontSize: 14.0,
-                                                        letterSpacing: 0.0,
-                                                      ),
+                                                  ),
+                                                ],
+                                              ),
+                                            ),
+                                            Align(
+                                              alignment: AlignmentDirectional(
+                                                  1.0, 1.0),
+                                              child: Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        0.0, 0.0, 0.0, 10.0),
+                                                child: ClipRRect(
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          8.0),
+                                                  child: Image.asset(
+                                                    'assets/images/1710080-200_1.png',
+                                                    width: 77.0,
+                                                    height: 44.0,
+                                                    fit: BoxFit.contain,
+                                                  ),
                                                 ),
                                               ),
-                                            ],
-                                          ),
+                                            ),
+                                          ],
                                         ),
                                       ),
                                     );
                                   },
                                 ),
                                 FutureBuilder<ApiCallResponse>(
-                                  future: _model.etikaBaik(
+                                  future: FFAppState().etikaBaik(
                                     requestFn: () =>
                                         DoadoaGroup.getDoasembilanCall.call(),
                                   ),
@@ -1671,7 +1905,9 @@ class _HomeDoaWidgetState extends State<HomeDoaWidget> {
                                         );
                                       },
                                       child: Container(
-                                        width: 125.0,
+                                        width:
+                                            MediaQuery.sizeOf(context).width *
+                                                0.45,
                                         height: 125.0,
                                         decoration: BoxDecoration(
                                           color: FlutterFlowTheme.of(context)
@@ -1689,28 +1925,25 @@ class _HomeDoaWidgetState extends State<HomeDoaWidget> {
                                             topRight: Radius.circular(10.0),
                                           ),
                                         ),
-                                        child: Padding(
-                                          padding: EdgeInsets.all(6.0),
-                                          child: Column(
-                                            mainAxisSize: MainAxisSize.max,
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.spaceEvenly,
-                                            children: [
-                                              ClipRRect(
-                                                borderRadius:
-                                                    BorderRadius.circular(8.0),
-                                                child: Image.asset(
-                                                  'assets/images/131-1316574_thumbs-up-black-icon_1.png',
-                                                  width: 77.0,
-                                                  height: 44.0,
-                                                  fit: BoxFit.contain,
-                                                ),
-                                              ),
-                                              Text(
-                                                'Etika Baik',
-                                                textAlign: TextAlign.center,
-                                                style:
-                                                    FlutterFlowTheme.of(context)
+                                        child: Stack(
+                                          children: [
+                                            Padding(
+                                              padding: EdgeInsetsDirectional
+                                                  .fromSTEB(
+                                                      10.0, 0.0, 0.0, 0.0),
+                                              child: Column(
+                                                mainAxisSize: MainAxisSize.max,
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment
+                                                        .spaceEvenly,
+                                                crossAxisAlignment:
+                                                    CrossAxisAlignment.start,
+                                                children: [
+                                                  Text(
+                                                    'Etika Baik',
+                                                    textAlign: TextAlign.center,
+                                                    style: FlutterFlowTheme.of(
+                                                            context)
                                                         .bodyMedium
                                                         .override(
                                                           fontFamily: 'Inter',
@@ -1718,32 +1951,50 @@ class _HomeDoaWidgetState extends State<HomeDoaWidget> {
                                                                           context)
                                                                       .width <
                                                                   390.0
-                                                              ? 10.0
-                                                              : 14.0,
+                                                              ? 14.0
+                                                              : 16.0,
                                                           letterSpacing: 0.0,
                                                           fontWeight:
                                                               FontWeight.bold,
                                                         ),
-                                              ),
-                                              RichText(
-                                                textScaler:
-                                                    MediaQuery.of(context)
-                                                        .textScaler,
-                                                text: TextSpan(
-                                                  children: [
-                                                    TextSpan(
-                                                      text: valueOrDefault<
-                                                          String>(
-                                                        DoadoaGroup
-                                                            .getDoasembilanCall
-                                                            .data(
-                                                              containerEtikabaikGetDoasembilanResponse
-                                                                  .jsonBody,
-                                                            )
-                                                            ?.length
-                                                            .toString(),
-                                                        '0',
-                                                      ),
+                                                  ),
+                                                  RichText(
+                                                    textScaler:
+                                                        MediaQuery.of(context)
+                                                            .textScaler,
+                                                    text: TextSpan(
+                                                      children: [
+                                                        TextSpan(
+                                                          text: valueOrDefault<
+                                                              String>(
+                                                            DoadoaGroup
+                                                                .getDoasembilanCall
+                                                                .data(
+                                                                  containerEtikabaikGetDoasembilanResponse
+                                                                      .jsonBody,
+                                                                )
+                                                                ?.length
+                                                                .toString(),
+                                                            '0',
+                                                          ),
+                                                          style: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .bodyMedium
+                                                              .override(
+                                                                fontFamily:
+                                                                    'Inter',
+                                                                fontSize: 14.0,
+                                                                letterSpacing:
+                                                                    0.0,
+                                                              ),
+                                                        ),
+                                                        TextSpan(
+                                                          text: '  Doa',
+                                                          style: TextStyle(
+                                                            fontSize: 14.0,
+                                                          ),
+                                                        )
+                                                      ],
                                                       style: FlutterFlowTheme
                                                               .of(context)
                                                           .bodyMedium
@@ -1753,30 +2004,38 @@ class _HomeDoaWidgetState extends State<HomeDoaWidget> {
                                                             letterSpacing: 0.0,
                                                           ),
                                                     ),
-                                                    TextSpan(
-                                                      text: '  Doa',
-                                                      style: TextStyle(),
-                                                    )
-                                                  ],
-                                                  style: FlutterFlowTheme.of(
-                                                          context)
-                                                      .bodyMedium
-                                                      .override(
-                                                        fontFamily: 'Inter',
-                                                        fontSize: 14.0,
-                                                        letterSpacing: 0.0,
-                                                      ),
+                                                  ),
+                                                ],
+                                              ),
+                                            ),
+                                            Align(
+                                              alignment: AlignmentDirectional(
+                                                  1.0, 1.0),
+                                              child: Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        0.0, 0.0, 0.0, 10.0),
+                                                child: ClipRRect(
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          8.0),
+                                                  child: Image.asset(
+                                                    'assets/images/131-1316574_thumbs-up-black-icon_1.png',
+                                                    width: 77.0,
+                                                    height: 44.0,
+                                                    fit: BoxFit.contain,
+                                                  ),
                                                 ),
                                               ),
-                                            ],
-                                          ),
+                                            ),
+                                          ],
                                         ),
                                       ),
                                     );
                                   },
                                 ),
                                 FutureBuilder<ApiCallResponse>(
-                                  future: _model.alam(
+                                  future: FFAppState().alam(
                                     requestFn: () =>
                                         DoadoaGroup.getDoasepuluhCall.call(),
                                   ),
@@ -1817,7 +2076,9 @@ class _HomeDoaWidgetState extends State<HomeDoaWidget> {
                                         );
                                       },
                                       child: Container(
-                                        width: 125.0,
+                                        width:
+                                            MediaQuery.sizeOf(context).width *
+                                                0.45,
                                         height: 125.0,
                                         decoration: BoxDecoration(
                                           color: FlutterFlowTheme.of(context)
@@ -1835,28 +2096,25 @@ class _HomeDoaWidgetState extends State<HomeDoaWidget> {
                                             topRight: Radius.circular(10.0),
                                           ),
                                         ),
-                                        child: Padding(
-                                          padding: EdgeInsets.all(6.0),
-                                          child: Column(
-                                            mainAxisSize: MainAxisSize.max,
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.spaceEvenly,
-                                            children: [
-                                              ClipRRect(
-                                                borderRadius:
-                                                    BorderRadius.circular(8.0),
-                                                child: Image.asset(
-                                                  'assets/images/678811_home_512x512_1.png',
-                                                  width: 77.0,
-                                                  height: 44.0,
-                                                  fit: BoxFit.contain,
-                                                ),
-                                              ),
-                                              Text(
-                                                'Alam',
-                                                textAlign: TextAlign.center,
-                                                style:
-                                                    FlutterFlowTheme.of(context)
+                                        child: Stack(
+                                          children: [
+                                            Padding(
+                                              padding: EdgeInsetsDirectional
+                                                  .fromSTEB(
+                                                      10.0, 0.0, 0.0, 0.0),
+                                              child: Column(
+                                                mainAxisSize: MainAxisSize.max,
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment
+                                                        .spaceEvenly,
+                                                crossAxisAlignment:
+                                                    CrossAxisAlignment.start,
+                                                children: [
+                                                  Text(
+                                                    'Alam',
+                                                    textAlign: TextAlign.center,
+                                                    style: FlutterFlowTheme.of(
+                                                            context)
                                                         .bodyMedium
                                                         .override(
                                                           fontFamily: 'Inter',
@@ -1864,32 +2122,48 @@ class _HomeDoaWidgetState extends State<HomeDoaWidget> {
                                                                           context)
                                                                       .width <
                                                                   390.0
-                                                              ? 10.0
-                                                              : 14.0,
+                                                              ? 14.0
+                                                              : 16.0,
                                                           letterSpacing: 0.0,
                                                           fontWeight:
                                                               FontWeight.bold,
                                                         ),
-                                              ),
-                                              RichText(
-                                                textScaler:
-                                                    MediaQuery.of(context)
-                                                        .textScaler,
-                                                text: TextSpan(
-                                                  children: [
-                                                    TextSpan(
-                                                      text: valueOrDefault<
-                                                          String>(
-                                                        DoadoaGroup
-                                                            .getDoasepuluhCall
-                                                            .data(
-                                                              containerAlamaGetDoasepuluhResponse
-                                                                  .jsonBody,
-                                                            )
-                                                            ?.length
-                                                            .toString(),
-                                                        '0',
-                                                      ),
+                                                  ),
+                                                  RichText(
+                                                    textScaler:
+                                                        MediaQuery.of(context)
+                                                            .textScaler,
+                                                    text: TextSpan(
+                                                      children: [
+                                                        TextSpan(
+                                                          text: valueOrDefault<
+                                                              String>(
+                                                            DoadoaGroup
+                                                                .getDoasepuluhCall
+                                                                .data(
+                                                                  containerAlamaGetDoasepuluhResponse
+                                                                      .jsonBody,
+                                                                )
+                                                                ?.length
+                                                                .toString(),
+                                                            '0',
+                                                          ),
+                                                          style: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .bodyMedium
+                                                              .override(
+                                                                fontFamily:
+                                                                    'Inter',
+                                                                fontSize: 14.0,
+                                                                letterSpacing:
+                                                                    0.0,
+                                                              ),
+                                                        ),
+                                                        TextSpan(
+                                                          text: '  Doa',
+                                                          style: TextStyle(),
+                                                        )
+                                                      ],
                                                       style: FlutterFlowTheme
                                                               .of(context)
                                                           .bodyMedium
@@ -1899,30 +2173,38 @@ class _HomeDoaWidgetState extends State<HomeDoaWidget> {
                                                             letterSpacing: 0.0,
                                                           ),
                                                     ),
-                                                    TextSpan(
-                                                      text: '  Doa',
-                                                      style: TextStyle(),
-                                                    )
-                                                  ],
-                                                  style: FlutterFlowTheme.of(
-                                                          context)
-                                                      .bodyMedium
-                                                      .override(
-                                                        fontFamily: 'Inter',
-                                                        fontSize: 14.0,
-                                                        letterSpacing: 0.0,
-                                                      ),
+                                                  ),
+                                                ],
+                                              ),
+                                            ),
+                                            Align(
+                                              alignment: AlignmentDirectional(
+                                                  1.0, 1.0),
+                                              child: Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        0.0, 0.0, 0.0, 10.0),
+                                                child: ClipRRect(
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          8.0),
+                                                  child: Image.asset(
+                                                    'assets/images/678811_home_512x512_1.png',
+                                                    width: 77.0,
+                                                    height: 44.0,
+                                                    fit: BoxFit.contain,
+                                                  ),
                                                 ),
                                               ),
-                                            ],
-                                          ),
+                                            ),
+                                          ],
                                         ),
                                       ),
                                     );
                                   },
                                 ),
                                 FutureBuilder<ApiCallResponse>(
-                                  future: _model.sakit(
+                                  future: FFAppState().sakit(
                                     requestFn: () =>
                                         DoadoaGroup.getDoasebelasCall.call(),
                                   ),
@@ -1963,7 +2245,9 @@ class _HomeDoaWidgetState extends State<HomeDoaWidget> {
                                         );
                                       },
                                       child: Container(
-                                        width: 125.0,
+                                        width:
+                                            MediaQuery.sizeOf(context).width *
+                                                0.45,
                                         height: 125.0,
                                         decoration: BoxDecoration(
                                           color: FlutterFlowTheme.of(context)
@@ -1981,28 +2265,25 @@ class _HomeDoaWidgetState extends State<HomeDoaWidget> {
                                             topRight: Radius.circular(10.0),
                                           ),
                                         ),
-                                        child: Padding(
-                                          padding: EdgeInsets.all(6.0),
-                                          child: Column(
-                                            mainAxisSize: MainAxisSize.max,
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.spaceEvenly,
-                                            children: [
-                                              ClipRRect(
-                                                borderRadius:
-                                                    BorderRadius.circular(8.0),
-                                                child: Image.asset(
-                                                  'assets/images/istockphoto-1286619906-1024x1024_1.png',
-                                                  width: 77.0,
-                                                  height: 44.0,
-                                                  fit: BoxFit.contain,
-                                                ),
-                                              ),
-                                              Text(
-                                                'Sakit',
-                                                textAlign: TextAlign.center,
-                                                style:
-                                                    FlutterFlowTheme.of(context)
+                                        child: Stack(
+                                          children: [
+                                            Padding(
+                                              padding: EdgeInsetsDirectional
+                                                  .fromSTEB(
+                                                      10.0, 0.0, 0.0, 0.0),
+                                              child: Column(
+                                                mainAxisSize: MainAxisSize.max,
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment
+                                                        .spaceEvenly,
+                                                crossAxisAlignment:
+                                                    CrossAxisAlignment.start,
+                                                children: [
+                                                  Text(
+                                                    'Sakit',
+                                                    textAlign: TextAlign.center,
+                                                    style: FlutterFlowTheme.of(
+                                                            context)
                                                         .bodyMedium
                                                         .override(
                                                           fontFamily: 'Inter',
@@ -2010,32 +2291,50 @@ class _HomeDoaWidgetState extends State<HomeDoaWidget> {
                                                                           context)
                                                                       .width <
                                                                   390.0
-                                                              ? 10.0
-                                                              : 14.0,
+                                                              ? 14.0
+                                                              : 16.0,
                                                           letterSpacing: 0.0,
                                                           fontWeight:
                                                               FontWeight.bold,
                                                         ),
-                                              ),
-                                              RichText(
-                                                textScaler:
-                                                    MediaQuery.of(context)
-                                                        .textScaler,
-                                                text: TextSpan(
-                                                  children: [
-                                                    TextSpan(
-                                                      text: valueOrDefault<
-                                                          String>(
-                                                        DoadoaGroup
-                                                            .getDoasebelasCall
-                                                            .data(
-                                                              containerASakitGetDoasebelasResponse
-                                                                  .jsonBody,
-                                                            )
-                                                            ?.length
-                                                            .toString(),
-                                                        '0',
-                                                      ),
+                                                  ),
+                                                  RichText(
+                                                    textScaler:
+                                                        MediaQuery.of(context)
+                                                            .textScaler,
+                                                    text: TextSpan(
+                                                      children: [
+                                                        TextSpan(
+                                                          text: valueOrDefault<
+                                                              String>(
+                                                            DoadoaGroup
+                                                                .getDoasebelasCall
+                                                                .data(
+                                                                  containerASakitGetDoasebelasResponse
+                                                                      .jsonBody,
+                                                                )
+                                                                ?.length
+                                                                .toString(),
+                                                            '0',
+                                                          ),
+                                                          style: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .bodyMedium
+                                                              .override(
+                                                                fontFamily:
+                                                                    'Inter',
+                                                                fontSize: 14.0,
+                                                                letterSpacing:
+                                                                    0.0,
+                                                              ),
+                                                        ),
+                                                        TextSpan(
+                                                          text: '  Doa',
+                                                          style: TextStyle(
+                                                            fontSize: 14.0,
+                                                          ),
+                                                        )
+                                                      ],
                                                       style: FlutterFlowTheme
                                                               .of(context)
                                                           .bodyMedium
@@ -2045,23 +2344,31 @@ class _HomeDoaWidgetState extends State<HomeDoaWidget> {
                                                             letterSpacing: 0.0,
                                                           ),
                                                     ),
-                                                    TextSpan(
-                                                      text: '  Doa',
-                                                      style: TextStyle(),
-                                                    )
-                                                  ],
-                                                  style: FlutterFlowTheme.of(
-                                                          context)
-                                                      .bodyMedium
-                                                      .override(
-                                                        fontFamily: 'Inter',
-                                                        fontSize: 14.0,
-                                                        letterSpacing: 0.0,
-                                                      ),
+                                                  ),
+                                                ],
+                                              ),
+                                            ),
+                                            Align(
+                                              alignment: AlignmentDirectional(
+                                                  1.0, 1.0),
+                                              child: Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        0.0, 0.0, 0.0, 10.0),
+                                                child: ClipRRect(
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          8.0),
+                                                  child: Image.asset(
+                                                    'assets/images/istockphoto-1286619906-1024x1024_1.png',
+                                                    width: 77.0,
+                                                    height: 44.0,
+                                                    fit: BoxFit.contain,
+                                                  ),
                                                 ),
                                               ),
-                                            ],
-                                          ),
+                                            ),
+                                          ],
                                         ),
                                       ),
                                     );
@@ -2070,26 +2377,6 @@ class _HomeDoaWidgetState extends State<HomeDoaWidget> {
                               ],
                             ),
                           ),
-                        ),
-                        Wrap(
-                          spacing: 0.0,
-                          runSpacing: 0.0,
-                          alignment: WrapAlignment.start,
-                          crossAxisAlignment: WrapCrossAlignment.start,
-                          direction: Axis.horizontal,
-                          runAlignment: WrapAlignment.start,
-                          verticalDirection: VerticalDirection.down,
-                          clipBehavior: Clip.none,
-                          children: [
-                            Container(
-                              width: 100.0,
-                              height: 100.0,
-                              decoration: BoxDecoration(
-                                color: FlutterFlowTheme.of(context)
-                                    .secondaryBackground,
-                              ),
-                            ),
-                          ],
                         ),
                       ],
                     ),

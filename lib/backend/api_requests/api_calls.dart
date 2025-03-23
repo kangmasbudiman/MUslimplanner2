@@ -335,6 +335,7 @@ class DoadoaGroup {
   static GetDoasatuCall getDoasatuCall = GetDoasatuCall();
   static GetDoaduaCall getDoaduaCall = GetDoaduaCall();
   static GetDoatigaCall getDoatigaCall = GetDoatigaCall();
+  static GetDetaildoaCall getDetaildoaCall = GetDetaildoaCall();
   static GetDoaempatCall getDoaempatCall = GetDoaempatCall();
   static GetDoalimaCall getDoalimaCall = GetDoalimaCall();
   static GetDoaenamCall getDoaenamCall = GetDoaenamCall();
@@ -345,8 +346,11 @@ class DoadoaGroup {
   static GetDoasebelasCall getDoasebelasCall = GetDoasebelasCall();
   static KategoriDoaCall kategoriDoaCall = KategoriDoaCall();
   static TambahdoaCall tambahdoaCall = TambahdoaCall();
+  static TambahdetaidoaCall tambahdetaidoaCall = TambahdetaidoaCall();
   static EditDoaCall editDoaCall = EditDoaCall();
+  static EditdetaildoaCall editdetaildoaCall = EditdetaildoaCall();
   static DeleteDoaCall deleteDoaCall = DeleteDoaCall();
+  static DeleteDetaildoaCall deleteDetaildoaCall = DeleteDetaildoaCall();
   static GetdoasearchbykategoriCall getdoasearchbykategoriCall =
       GetdoasearchbykategoriCall();
   static GetdoasearchCall getdoasearchCall = GetdoasearchCall();
@@ -564,6 +568,15 @@ class GetDoaByKategoriCall {
       ) as List?)
           ?.withoutNulls
           .map((x) => castToType<int>(x))
+          .withoutNulls
+          .toList();
+  List<String>? penjelasan(dynamic response) => (getJsonField(
+        response,
+        r'''$.data[:].penjelasan''',
+        true,
+      ) as List?)
+          ?.withoutNulls
+          .map((x) => castToType<String>(x))
           .withoutNulls
           .toList();
 }
@@ -885,6 +898,88 @@ class GetDoatigaCall {
       ) as List?)
           ?.withoutNulls
           .map((x) => castToType<int>(x))
+          .withoutNulls
+          .toList();
+}
+
+class GetDetaildoaCall {
+  Future<ApiCallResponse> call({
+    int? iddoa,
+  }) async {
+    final baseUrl = DoadoaGroup.getBaseUrl();
+
+    return ApiManager.instance.makeApiCall(
+      callName: 'getDetaildoa',
+      apiUrl: '${baseUrl}getdetaildoa/${iddoa}',
+      callType: ApiCallType.GET,
+      headers: {},
+      params: {},
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      isStreamingApi: false,
+      alwaysAllowBody: false,
+    );
+  }
+
+  List? data(dynamic response) => getJsonField(
+        response,
+        r'''$.data''',
+        true,
+      ) as List?;
+  List<int>? id(dynamic response) => (getJsonField(
+        response,
+        r'''$.data[:].id''',
+        true,
+      ) as List?)
+          ?.withoutNulls
+          .map((x) => castToType<int>(x))
+          .withoutNulls
+          .toList();
+  List<String>? arab(dynamic response) => (getJsonField(
+        response,
+        r'''$.data[:].arab''',
+        true,
+      ) as List?)
+          ?.withoutNulls
+          .map((x) => castToType<String>(x))
+          .withoutNulls
+          .toList();
+  List<String>? latin(dynamic response) => (getJsonField(
+        response,
+        r'''$.data[:].latin''',
+        true,
+      ) as List?)
+          ?.withoutNulls
+          .map((x) => castToType<String>(x))
+          .withoutNulls
+          .toList();
+  List<String>? terjemahan(dynamic response) => (getJsonField(
+        response,
+        r'''$.data[:].terjemahan''',
+        true,
+      ) as List?)
+          ?.withoutNulls
+          .map((x) => castToType<String>(x))
+          .withoutNulls
+          .toList();
+  List<String>? hadis(dynamic response) => (getJsonField(
+        response,
+        r'''$.data[:].hadis''',
+        true,
+      ) as List?)
+          ?.withoutNulls
+          .map((x) => castToType<String>(x))
+          .withoutNulls
+          .toList();
+  List<String>? penjelasan(dynamic response) => (getJsonField(
+        response,
+        r'''$.data[:].penjelasan''',
+        true,
+      ) as List?)
+          ?.withoutNulls
+          .map((x) => castToType<String>(x))
           .withoutNulls
           .toList();
 }
@@ -1791,12 +1886,8 @@ class KategoriDoaCall {
 
 class TambahdoaCall {
   Future<ApiCallResponse> call({
-    String? hadis = '',
     String? idkategori = '',
     String? namaDoa = '',
-    String? arab = '',
-    String? latin = '',
-    String? terjemahan = '',
   }) async {
     final baseUrl = DoadoaGroup.getBaseUrl();
 
@@ -1808,9 +1899,40 @@ class TambahdoaCall {
       params: {
         'idkategori': idkategori,
         'namaDoa': namaDoa,
+      },
+      bodyType: BodyType.X_WWW_FORM_URL_ENCODED,
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      isStreamingApi: false,
+      alwaysAllowBody: false,
+    );
+  }
+}
+
+class TambahdetaidoaCall {
+  Future<ApiCallResponse> call({
+    String? arab = '',
+    String? latin = '',
+    String? iddoa = '',
+    String? terjemahan = '',
+    String? penjelasan = '',
+    String? hadis = '',
+  }) async {
+    final baseUrl = DoadoaGroup.getBaseUrl();
+
+    return ApiManager.instance.makeApiCall(
+      callName: 'Tambahdetaidoa',
+      apiUrl: '${baseUrl}tambahdetaildoa',
+      callType: ApiCallType.POST,
+      headers: {},
+      params: {
+        'iddoa': iddoa,
         'arab': arab,
         'latin': latin,
         'terjemahan': terjemahan,
+        'penjelasan': penjelasan,
         'hadis': hadis,
       },
       bodyType: BodyType.X_WWW_FORM_URL_ENCODED,
@@ -1826,12 +1948,8 @@ class TambahdoaCall {
 
 class EditDoaCall {
   Future<ApiCallResponse> call({
-    String? hadis = '',
     String? idkategori = '',
     String? namaDoa = '',
-    String? arab = '',
-    String? latin = '',
-    String? terjemahan = '',
     String? id = '',
   }) async {
     final baseUrl = DoadoaGroup.getBaseUrl();
@@ -1844,11 +1962,42 @@ class EditDoaCall {
       params: {
         'idkategori': idkategori,
         'namaDoa': namaDoa,
+        'id': id,
+      },
+      bodyType: BodyType.X_WWW_FORM_URL_ENCODED,
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      isStreamingApi: false,
+      alwaysAllowBody: false,
+    );
+  }
+}
+
+class EditdetaildoaCall {
+  Future<ApiCallResponse> call({
+    int? id,
+    String? arab = '',
+    String? latin = '',
+    String? terjemahan = '',
+    String? penjelasan = '',
+    String? hadis = '',
+  }) async {
+    final baseUrl = DoadoaGroup.getBaseUrl();
+
+    return ApiManager.instance.makeApiCall(
+      callName: 'Editdetaildoa',
+      apiUrl: '${baseUrl}editdetaildoa',
+      callType: ApiCallType.POST,
+      headers: {},
+      params: {
+        'id': id,
         'arab': arab,
         'latin': latin,
         'terjemahan': terjemahan,
+        'penjelasan': penjelasan,
         'hadis': hadis,
-        'id': id,
       },
       bodyType: BodyType.X_WWW_FORM_URL_ENCODED,
       returnBody: true,
@@ -1870,6 +2019,31 @@ class DeleteDoaCall {
     return ApiManager.instance.makeApiCall(
       callName: 'DeleteDoa',
       apiUrl: '${baseUrl}deletedoa',
+      callType: ApiCallType.POST,
+      headers: {},
+      params: {
+        'id': id,
+      },
+      bodyType: BodyType.X_WWW_FORM_URL_ENCODED,
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      isStreamingApi: false,
+      alwaysAllowBody: false,
+    );
+  }
+}
+
+class DeleteDetaildoaCall {
+  Future<ApiCallResponse> call({
+    String? id = '',
+  }) async {
+    final baseUrl = DoadoaGroup.getBaseUrl();
+
+    return ApiManager.instance.makeApiCall(
+      callName: 'DeleteDetaildoa',
+      apiUrl: '${baseUrl}deletedetaildoa',
       callType: ApiCallType.POST,
       headers: {},
       params: {
