@@ -562,7 +562,8 @@ class _DoadoaByKategorinewWidgetState extends State<DoadoaByKategorinewWidget> {
                                                       Colors.transparent,
                                                   onTap: () async {
                                                     context.pushNamed(
-                                                      DetailDoaWidget.routeName,
+                                                      DetailDoanewWidget
+                                                          .routeName,
                                                       queryParameters: {
                                                         'judul': serializeParam(
                                                           getJsonField(
@@ -571,34 +572,12 @@ class _DoadoaByKategorinewWidgetState extends State<DoadoaByKategorinewWidget> {
                                                           ).toString(),
                                                           ParamType.String,
                                                         ),
-                                                        'arab': serializeParam(
+                                                        'iddoa': serializeParam(
                                                           getJsonField(
                                                             doaListItem,
-                                                            r'''$.arab''',
-                                                          ).toString(),
-                                                          ParamType.String,
-                                                        ),
-                                                        'latin': serializeParam(
-                                                          getJsonField(
-                                                            doaListItem,
-                                                            r'''$.latin''',
-                                                          ).toString(),
-                                                          ParamType.String,
-                                                        ),
-                                                        'terjemahan':
-                                                            serializeParam(
-                                                          getJsonField(
-                                                            doaListItem,
-                                                            r'''$.terjemahan''',
-                                                          ).toString(),
-                                                          ParamType.String,
-                                                        ),
-                                                        'hadis': serializeParam(
-                                                          getJsonField(
-                                                            doaListItem,
-                                                            r'''$.hadis''',
-                                                          ).toString(),
-                                                          ParamType.String,
+                                                            r'''$.id''',
+                                                          ),
+                                                          ParamType.int,
                                                         ),
                                                       }.withoutNulls,
                                                     );
