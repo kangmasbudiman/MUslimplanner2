@@ -41,6 +41,9 @@ class _TambahDetaildoaWidgetState extends State<TambahDetaildoaWidget> {
     _model.txtbahasalatinTextController ??= TextEditingController();
     _model.txtbahasalatinFocusNode ??= FocusNode();
 
+    _model.txtpengulangandoaTextController ??= TextEditingController();
+    _model.txtpengulangandoaFocusNode ??= FocusNode();
+
     _model.txtterjemahanTextController ??= TextEditingController();
     _model.txtterjemahanFocusNode ??= FocusNode();
 
@@ -223,6 +226,54 @@ class _TambahDetaildoaWidgetState extends State<TambahDetaildoaWidget> {
                   child: Padding(
                     padding: EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
                     child: TextFormField(
+                      controller: _model.txtpengulangandoaTextController,
+                      focusNode: _model.txtpengulangandoaFocusNode,
+                      autofocus: true,
+                      obscureText: false,
+                      decoration: InputDecoration(
+                        labelText:
+                            'Jumlah pengulangan doa contoh (Al- Ikhlas 3x)',
+                        labelStyle:
+                            FlutterFlowTheme.of(context).labelMedium.override(
+                                  fontFamily: 'Inter',
+                                  letterSpacing: 0.0,
+                                ),
+                        hintStyle:
+                            FlutterFlowTheme.of(context).labelMedium.override(
+                                  fontFamily: 'Inter',
+                                  letterSpacing: 0.0,
+                                ),
+                        enabledBorder: InputBorder.none,
+                        focusedBorder: InputBorder.none,
+                        errorBorder: InputBorder.none,
+                        focusedErrorBorder: InputBorder.none,
+                      ),
+                      style: FlutterFlowTheme.of(context).bodyMedium.override(
+                            fontFamily: 'Inter',
+                            letterSpacing: 0.0,
+                          ),
+                      maxLines: 4,
+                      validator: _model.txtpengulangandoaTextControllerValidator
+                          .asValidator(context),
+                    ),
+                  ),
+                ),
+              ),
+              Padding(
+                padding: EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
+                child: Container(
+                  width: double.infinity,
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(8.0),
+                    border: Border.all(
+                      color: Color(0xFFE0E3E7),
+                      width: 2.0,
+                    ),
+                  ),
+                  child: Padding(
+                    padding: EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
+                    child: TextFormField(
                       controller: _model.txtterjemahanTextController,
                       focusNode: _model.txtterjemahanFocusNode,
                       autofocus: true,
@@ -315,6 +366,8 @@ class _TambahDetaildoaWidgetState extends State<TambahDetaildoaWidget> {
                       ),
                       latin: _model.txtbahasalatinTextController.text,
                       arab: _model.txtbahasaarabTextController.text,
+                      pengulanganDoa:
+                          _model.txtpengulangandoaTextController.text,
                     );
 
                     if ((_model.apiResultrbj?.succeeded ?? true)) {

@@ -17,6 +17,11 @@ class EditdetaildoaModel extends FlutterFlowModel<EditdetaildoaWidget> {
   TextEditingController? textFieldLatinTextController;
   String? Function(BuildContext, String?)?
       textFieldLatinTextControllerValidator;
+  // State field(s) for txtpengulangandoa widget.
+  FocusNode? txtpengulangandoaFocusNode;
+  TextEditingController? txtpengulangandoaTextController;
+  String? Function(BuildContext, String?)?
+      txtpengulangandoaTextControllerValidator;
   // State field(s) for TextFieldTerjemahan widget.
   FocusNode? textFieldTerjemahanFocusNode;
   TextEditingController? textFieldTerjemahanTextController;
@@ -40,6 +45,9 @@ class EditdetaildoaModel extends FlutterFlowModel<EditdetaildoaWidget> {
 
     textFieldLatinFocusNode?.dispose();
     textFieldLatinTextController?.dispose();
+
+    txtpengulangandoaFocusNode?.dispose();
+    txtpengulangandoaTextController?.dispose();
 
     textFieldTerjemahanFocusNode?.dispose();
     textFieldTerjemahanTextController?.dispose();

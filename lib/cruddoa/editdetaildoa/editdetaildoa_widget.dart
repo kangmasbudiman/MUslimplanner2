@@ -15,6 +15,7 @@ class EditdetaildoaWidget extends StatefulWidget {
     this.terjemahan,
     this.hadis,
     required this.penjelasan,
+    this.pengulangandoa,
   });
 
   final int? id;
@@ -23,6 +24,7 @@ class EditdetaildoaWidget extends StatefulWidget {
   final String? terjemahan;
   final String? hadis;
   final String? penjelasan;
+  final String? pengulangandoa;
 
   @override
   State<EditdetaildoaWidget> createState() => _EditdetaildoaWidgetState();
@@ -49,6 +51,13 @@ class _EditdetaildoaWidgetState extends State<EditdetaildoaWidget> {
     _model.textFieldLatinTextController ??=
         TextEditingController(text: widget.doabahasaindonesia);
     _model.textFieldLatinFocusNode ??= FocusNode();
+
+    _model.txtpengulangandoaTextController ??= TextEditingController(
+        text: valueOrDefault<String>(
+      widget.pengulangandoa,
+      'pengualangandoa',
+    ));
+    _model.txtpengulangandoaFocusNode ??= FocusNode();
 
     _model.textFieldTerjemahanTextController ??=
         TextEditingController(text: widget.terjemahan);
@@ -268,6 +277,53 @@ class _EditdetaildoaWidgetState extends State<EditdetaildoaWidget> {
                   child: Padding(
                     padding: EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
                     child: TextFormField(
+                      controller: _model.txtpengulangandoaTextController,
+                      focusNode: _model.txtpengulangandoaFocusNode,
+                      autofocus: true,
+                      obscureText: false,
+                      decoration: InputDecoration(
+                        labelText: 'Jumlah Pengulangan Pembacaan Doa',
+                        labelStyle:
+                            FlutterFlowTheme.of(context).labelMedium.override(
+                                  fontFamily: 'Inter',
+                                  letterSpacing: 0.0,
+                                ),
+                        hintStyle:
+                            FlutterFlowTheme.of(context).labelMedium.override(
+                                  fontFamily: 'Inter',
+                                  letterSpacing: 0.0,
+                                ),
+                        enabledBorder: InputBorder.none,
+                        focusedBorder: InputBorder.none,
+                        errorBorder: InputBorder.none,
+                        focusedErrorBorder: InputBorder.none,
+                      ),
+                      style: FlutterFlowTheme.of(context).bodyMedium.override(
+                            fontFamily: 'Inter',
+                            letterSpacing: 0.0,
+                          ),
+                      maxLines: 3,
+                      validator: _model.txtpengulangandoaTextControllerValidator
+                          .asValidator(context),
+                    ),
+                  ),
+                ),
+              ),
+              Padding(
+                padding: EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
+                child: Container(
+                  width: double.infinity,
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(8.0),
+                    border: Border.all(
+                      color: Color(0xFFE0E3E7),
+                      width: 2.0,
+                    ),
+                  ),
+                  child: Padding(
+                    padding: EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
+                    child: TextFormField(
                       controller: _model.textFieldTerjemahanTextController,
                       focusNode: _model.textFieldTerjemahanFocusNode,
                       autofocus: true,
@@ -359,6 +415,8 @@ class _EditdetaildoaWidgetState extends State<EditdetaildoaWidget> {
                       latin: _model.textFieldLatinTextController.text,
                       terjemahan: _model.textFieldTerjemahanTextController.text,
                       hadis: _model.textFieldHadisTextController.text,
+                      pengulanganDoa:
+                          _model.txtpengulangandoaTextController.text,
                     );
 
                     if ((_model.apiResultnvo?.succeeded ?? true)) {

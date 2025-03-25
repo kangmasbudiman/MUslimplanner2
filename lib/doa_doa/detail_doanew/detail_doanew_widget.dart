@@ -172,7 +172,7 @@ class _DetailDoanewWidgetState extends State<DetailDoanewWidget> {
               children: [
                 Container(
                   width: double.infinity,
-                  height: MediaQuery.sizeOf(context).height * 0.85,
+                  height: MediaQuery.sizeOf(context).height * 0.8,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(0.0),
                   ),
@@ -232,16 +232,46 @@ class _DetailDoanewWidgetState extends State<DetailDoanewWidget> {
                                           )
                                         ],
                                         borderRadius:
-                                            BorderRadius.circular(0.0),
+                                            BorderRadius.circular(10.0),
                                       ),
                                       child: Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                            10.0, 10.0, 10.0, 10.0),
+                                            10.0, 10.0, 10.0, 15.0),
                                         child: Column(
                                           mainAxisSize: MainAxisSize.max,
                                           crossAxisAlignment:
                                               CrossAxisAlignment.start,
                                           children: [
+                                            Align(
+                                              alignment: AlignmentDirectional(
+                                                  -1.0, 0.0),
+                                              child: Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        0.0, 10.0, 0.0, 15.0),
+                                                child: Text(
+                                                  valueOrDefault<String>(
+                                                    getJsonField(
+                                                      responItem,
+                                                      r'''$.pengulanganDoa''',
+                                                    )?.toString(),
+                                                    'Penjelasan',
+                                                  ),
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily: 'Inter',
+                                                        color: FFAppState()
+                                                            .colorFontThemes,
+                                                        fontSize: 18.0,
+                                                        letterSpacing: 0.0,
+                                                        fontWeight:
+                                                            FontWeight.w600,
+                                                      ),
+                                                ),
+                                              ),
+                                            ),
                                             Align(
                                               alignment: AlignmentDirectional(
                                                   1.0, 0.0),
@@ -500,6 +530,11 @@ class _DetailDoanewWidgetState extends State<DetailDoanewWidget> {
                                                                   )?.toString(),
                                                                   'hadis',
                                                                 ),
+                                                                pengulangandoa:
+                                                                    getJsonField(
+                                                                  responItem,
+                                                                  r'''$.pengulanganDoa''',
+                                                                ).toString(),
                                                               ),
                                                             ),
                                                           ),

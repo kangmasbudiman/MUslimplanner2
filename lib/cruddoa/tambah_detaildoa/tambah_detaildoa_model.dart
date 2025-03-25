@@ -15,6 +15,11 @@ class TambahDetaildoaModel extends FlutterFlowModel<TambahDetaildoaWidget> {
   TextEditingController? txtbahasalatinTextController;
   String? Function(BuildContext, String?)?
       txtbahasalatinTextControllerValidator;
+  // State field(s) for txtpengulangandoa widget.
+  FocusNode? txtpengulangandoaFocusNode;
+  TextEditingController? txtpengulangandoaTextController;
+  String? Function(BuildContext, String?)?
+      txtpengulangandoaTextControllerValidator;
   // State field(s) for txtterjemahan widget.
   FocusNode? txtterjemahanFocusNode;
   TextEditingController? txtterjemahanTextController;
@@ -36,6 +41,9 @@ class TambahDetaildoaModel extends FlutterFlowModel<TambahDetaildoaWidget> {
 
     txtbahasalatinFocusNode?.dispose();
     txtbahasalatinTextController?.dispose();
+
+    txtpengulangandoaFocusNode?.dispose();
+    txtpengulangandoaTextController?.dispose();
 
     txtterjemahanFocusNode?.dispose();
     txtterjemahanTextController?.dispose();

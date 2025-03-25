@@ -982,6 +982,11 @@ class GetDetaildoaCall {
           .map((x) => castToType<String>(x))
           .withoutNulls
           .toList();
+  List? pengulangandoa(dynamic response) => getJsonField(
+        response,
+        r'''$.data[:].pengulanganDoa''',
+        true,
+      ) as List?;
 }
 
 class GetDoaempatCall {
@@ -1918,6 +1923,7 @@ class TambahdetaidoaCall {
     String? iddoa = '',
     String? terjemahan = '',
     String? hadis = '',
+    String? pengulanganDoa = '',
   }) async {
     final baseUrl = DoadoaGroup.getBaseUrl();
 
@@ -1932,6 +1938,7 @@ class TambahdetaidoaCall {
         'latin': latin,
         'terjemahan': terjemahan,
         'hadis': hadis,
+        'pengulanganDoa': pengulanganDoa,
       },
       bodyType: BodyType.X_WWW_FORM_URL_ENCODED,
       returnBody: true,
@@ -1980,6 +1987,7 @@ class EditdetaildoaCall {
     String? latin = '',
     String? terjemahan = '',
     String? hadis = '',
+    String? pengulanganDoa = '',
   }) async {
     final baseUrl = DoadoaGroup.getBaseUrl();
 
@@ -1994,6 +2002,7 @@ class EditdetaildoaCall {
         'latin': latin,
         'terjemahan': terjemahan,
         'hadis': hadis,
+        'pengulanganDoa': pengulanganDoa,
       },
       bodyType: BodyType.X_WWW_FORM_URL_ENCODED,
       returnBody: true,
