@@ -911,7 +911,7 @@ class _HomeDoaCopyWidgetState extends State<HomeDoaCopyWidget> {
                                                 children: [
                                                   Text(
                                                     'Kegiatan Sehari-hari',
-                                                    textAlign: TextAlign.center,
+                                                    textAlign: TextAlign.start,
                                                     style: FlutterFlowTheme.of(
                                                             context)
                                                         .bodyMedium
