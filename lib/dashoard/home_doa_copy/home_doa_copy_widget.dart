@@ -2280,7 +2280,7 @@ class _HomeDoaCopyWidgetState extends State<HomeDoaCopyWidget> {
                                                     CrossAxisAlignment.start,
                                                 children: [
                                                   Text(
-                                                    'Sakit',
+                                                    'Sakit & Kematian',
                                                     textAlign: TextAlign.center,
                                                     style: FlutterFlowTheme.of(
                                                             context)
