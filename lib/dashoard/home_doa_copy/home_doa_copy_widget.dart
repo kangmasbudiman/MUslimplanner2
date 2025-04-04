@@ -1598,8 +1598,8 @@ class _HomeDoaCopyWidgetState extends State<HomeDoaCopyWidget> {
                                                     CrossAxisAlignment.start,
                                                 children: [
                                                   Text(
-                                                    ' Dzikir Setiap Saat',
-                                                    textAlign: TextAlign.center,
+                                                    'Dzikir Yang  Dianjurkan',
+                                                    textAlign: TextAlign.start,
                                                     style: FlutterFlowTheme.of(
                                                             context)
                                                         .bodyMedium
@@ -1940,7 +1940,7 @@ class _HomeDoaCopyWidgetState extends State<HomeDoaCopyWidget> {
                                                     CrossAxisAlignment.start,
                                                 children: [
                                                   Text(
-                                                    'Etika Baik',
+                                                    'Akhlak Baik',
                                                     textAlign: TextAlign.center,
                                                     style: FlutterFlowTheme.of(
                                                             context)
