@@ -329,14 +329,14 @@ class _DoadoaByKategorinewWidgetState extends State<DoadoaByKategorinewWidget> {
                 AuthUserStreamWidget(
                   builder: (context) => Container(
                     width: double.infinity,
-                    height: MediaQuery.sizeOf(context).height * 0.75,
+                    height: MediaQuery.sizeOf(context).height * 0.73,
                     decoration: BoxDecoration(
                       color: currentUserDocument?.colorThemes,
                       borderRadius: BorderRadius.circular(0.0),
                     ),
                     child: Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
+                          EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 20.0),
                       child: FutureBuilder<ApiCallResponse>(
                         future: DoadoaGroup.getdoasearchbykategoriCall.call(
                           keyword: 'noSearch',
