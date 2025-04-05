@@ -178,7 +178,7 @@ class _DetailDoanewWidgetState extends State<DetailDoanewWidget> {
                   ),
                   child: Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(10.0, 20.0, 10.0, 0.0),
+                        EdgeInsetsDirectional.fromSTEB(10.0, 20.0, 10.0, 30.0),
                     child: FutureBuilder<ApiCallResponse>(
                       future: DoadoaGroup.getDetaildoaCall.call(
                         iddoa: widget.iddoa,
