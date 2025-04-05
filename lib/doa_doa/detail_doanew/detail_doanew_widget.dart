@@ -71,39 +71,42 @@ class _DetailDoanewWidgetState extends State<DetailDoanewWidget> {
         backgroundColor: Colors.white,
         floatingActionButton: Visibility(
           visible: valueOrDefault(currentUserDocument?.rules, 0) == 1,
-          child: AuthUserStreamWidget(
-            builder: (context) => FloatingActionButton(
-              onPressed: () async {
-                await showModalBottomSheet(
-                  isScrollControlled: true,
-                  backgroundColor: Colors.transparent,
-                  enableDrag: false,
-                  context: context,
-                  builder: (context) {
-                    return WebViewAware(
-                      child: GestureDetector(
-                        onTap: () {
-                          FocusScope.of(context).unfocus();
-                          FocusManager.instance.primaryFocus?.unfocus();
-                        },
-                        child: Padding(
-                          padding: MediaQuery.viewInsetsOf(context),
-                          child: TambahDetaildoaWidget(
-                            iddoa: widget.iddoa,
-                            namadoa: widget.judul,
+          child: Padding(
+            padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 30.0),
+            child: AuthUserStreamWidget(
+              builder: (context) => FloatingActionButton(
+                onPressed: () async {
+                  await showModalBottomSheet(
+                    isScrollControlled: true,
+                    backgroundColor: Colors.transparent,
+                    enableDrag: false,
+                    context: context,
+                    builder: (context) {
+                      return WebViewAware(
+                        child: GestureDetector(
+                          onTap: () {
+                            FocusScope.of(context).unfocus();
+                            FocusManager.instance.primaryFocus?.unfocus();
+                          },
+                          child: Padding(
+                            padding: MediaQuery.viewInsetsOf(context),
+                            child: TambahDetaildoaWidget(
+                              iddoa: widget.iddoa,
+                              namadoa: widget.judul,
+                            ),
                           ),
                         ),
-                      ),
-                    );
-                  },
-                ).then((value) => safeSetState(() {}));
-              },
-              backgroundColor: FlutterFlowTheme.of(context).primary,
-              elevation: 8.0,
-              child: Icon(
-                Icons.add_rounded,
-                color: FlutterFlowTheme.of(context).info,
-                size: 24.0,
+                      );
+                    },
+                  ).then((value) => safeSetState(() {}));
+                },
+                backgroundColor: FlutterFlowTheme.of(context).primary,
+                elevation: 8.0,
+                child: Icon(
+                  Icons.add_rounded,
+                  color: FlutterFlowTheme.of(context).info,
+                  size: 24.0,
+                ),
               ),
             ),
           ),
@@ -172,7 +175,7 @@ class _DetailDoanewWidgetState extends State<DetailDoanewWidget> {
               children: [
                 Container(
                   width: double.infinity,
-                  height: MediaQuery.sizeOf(context).height * 0.8,
+                  height: MediaQuery.sizeOf(context).height * 0.755,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(0.0),
                   ),
