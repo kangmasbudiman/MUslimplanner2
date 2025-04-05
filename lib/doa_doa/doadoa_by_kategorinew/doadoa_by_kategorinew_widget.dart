@@ -453,30 +453,6 @@ class _DoadoaByKategorinewWidgetState extends State<DoadoaByKategorinewWidget> {
                                                                       .w600,
                                                             ),
                                                       ),
-                                                      Text(
-                                                        valueOrDefault<String>(
-                                                          getJsonField(
-                                                            doaListItem,
-                                                            r'''$.id''',
-                                                          )?.toString(),
-                                                          '0',
-                                                        ),
-                                                        style: FlutterFlowTheme
-                                                                .of(context)
-                                                            .bodyMedium
-                                                            .override(
-                                                              fontFamily:
-                                                                  'Inter',
-                                                              color: FFAppState()
-                                                                  .colorFontThemes,
-                                                              fontSize: 15.0,
-                                                              letterSpacing:
-                                                                  0.0,
-                                                              fontWeight:
-                                                                  FontWeight
-                                                                      .w600,
-                                                            ),
-                                                      ),
                                                     ],
                                                   ),
                                                 ),
