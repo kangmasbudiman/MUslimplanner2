@@ -338,9 +338,12 @@ class _DoadoaByKategorinewWidgetState extends State<DoadoaByKategorinewWidget> {
                       padding:
                           EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 20.0),
                       child: FutureBuilder<ApiCallResponse>(
-                        future: DoadoaGroup.getdoasearchbykategoriCall.call(
-                          keyword: 'noSearch',
-                          idkategori: widget.idkategori?.toString(),
+                        future: _model.kategorilist(
+                          requestFn: () =>
+                              DoadoaGroup.getdoasearchbykategoriCall.call(
+                            keyword: 'noSearch',
+                            idkategori: widget.idkategori?.toString(),
+                          ),
                         ),
                         builder: (context, snapshot) {
                           // Customize what your widget looks like when it's loading.
