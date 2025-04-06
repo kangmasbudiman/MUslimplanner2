@@ -982,11 +982,15 @@ class GetDetaildoaCall {
           .map((x) => castToType<String>(x))
           .withoutNulls
           .toList();
-  List? pengulangandoa(dynamic response) => getJsonField(
+  List<String>? pengulangandoa(dynamic response) => (getJsonField(
         response,
         r'''$.data[:].pengulanganDoa''',
         true,
-      ) as List?;
+      ) as List?)
+          ?.withoutNulls
+          .map((x) => castToType<String>(x))
+          .withoutNulls
+          .toList();
 }
 
 class GetDoaempatCall {

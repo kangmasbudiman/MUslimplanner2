@@ -357,7 +357,7 @@ class _DoadoaByKategorinewWidgetState extends State<DoadoaByKategorinewWidget> {
                               ),
                             );
                           }
-                          final listViewGetdoasearchbykategoriResponse =
+                          final columnGetdoasearchbykategoriResponse =
                               snapshot.data!;
 
                           return Builder(
@@ -365,102 +365,196 @@ class _DoadoaByKategorinewWidgetState extends State<DoadoaByKategorinewWidget> {
                               final doaList =
                                   DoadoaGroup.getdoasearchbykategoriCall
                                           .doaItem(
-                                            listViewGetdoasearchbykategoriResponse
+                                            columnGetdoasearchbykategoriResponse
                                                 .jsonBody,
                                           )
                                           ?.toList() ??
                                       [];
 
-                              return ListView.builder(
-                                padding: EdgeInsets.zero,
-                                scrollDirection: Axis.vertical,
-                                itemCount: doaList.length,
-                                itemBuilder: (context, doaListIndex) {
-                                  final doaListItem = doaList[doaListIndex];
-                                  return InkWell(
-                                    splashColor: Colors.transparent,
-                                    focusColor: Colors.transparent,
-                                    hoverColor: Colors.transparent,
-                                    highlightColor: Colors.transparent,
-                                    onTap: () async {
-                                      context.pushNamed(
-                                        DetailDoanewWidget.routeName,
-                                        queryParameters: {
-                                          'judul': serializeParam(
-                                            valueOrDefault<String>(
+                              return SingleChildScrollView(
+                                child: Column(
+                                  mainAxisSize: MainAxisSize.max,
+                                  children: List.generate(doaList.length,
+                                      (doaListIndex) {
+                                    final doaListItem = doaList[doaListIndex];
+                                    return InkWell(
+                                      splashColor: Colors.transparent,
+                                      focusColor: Colors.transparent,
+                                      hoverColor: Colors.transparent,
+                                      highlightColor: Colors.transparent,
+                                      onTap: () async {
+                                        context.pushNamed(
+                                          DetailDoanewWidget.routeName,
+                                          queryParameters: {
+                                            'judul': serializeParam(
+                                              valueOrDefault<String>(
+                                                getJsonField(
+                                                  doaListItem,
+                                                  r'''$.namaDoa''',
+                                                )?.toString(),
+                                                '-',
+                                              ),
+                                              ParamType.String,
+                                            ),
+                                            'iddoa': serializeParam(
                                               getJsonField(
                                                 doaListItem,
-                                                r'''$.namaDoa''',
-                                              )?.toString(),
-                                              '-',
+                                                r'''$.id''',
+                                              ),
+                                              ParamType.int,
                                             ),
-                                            ParamType.String,
-                                          ),
-                                          'iddoa': serializeParam(
-                                            getJsonField(
-                                              doaListItem,
-                                              r'''$.id''',
-                                            ),
-                                            ParamType.int,
-                                          ),
-                                        }.withoutNulls,
-                                      );
-                                    },
-                                    child: Container(
-                                      width: double.infinity,
-                                      decoration: BoxDecoration(
-                                        color: currentUserDocument?.colorThemes,
-                                      ),
-                                      child: Column(
-                                        mainAxisSize: MainAxisSize.max,
-                                        children: [
-                                          Padding(
-                                            padding:
-                                                EdgeInsetsDirectional.fromSTEB(
-                                                    20.0, 0.0, 20.0, 10.0),
-                                            child: Row(
-                                              mainAxisSize: MainAxisSize.max,
-                                              children: [
-                                                Expanded(
-                                                  child: Column(
-                                                    mainAxisSize:
-                                                        MainAxisSize.max,
-                                                    crossAxisAlignment:
-                                                        CrossAxisAlignment
-                                                            .start,
-                                                    children: [
-                                                      Text(
-                                                        valueOrDefault<String>(
-                                                          getJsonField(
-                                                            doaListItem,
-                                                            r'''$.namaDoa''',
-                                                          )?.toString(),
-                                                          '-',
+                                          }.withoutNulls,
+                                        );
+                                      },
+                                      child: Container(
+                                        width: double.infinity,
+                                        decoration: BoxDecoration(
+                                          color:
+                                              currentUserDocument?.colorThemes,
+                                        ),
+                                        child: Column(
+                                          mainAxisSize: MainAxisSize.max,
+                                          children: [
+                                            Padding(
+                                              padding: EdgeInsetsDirectional
+                                                  .fromSTEB(
+                                                      20.0, 0.0, 20.0, 10.0),
+                                              child: Row(
+                                                mainAxisSize: MainAxisSize.max,
+                                                children: [
+                                                  Expanded(
+                                                    child: Column(
+                                                      mainAxisSize:
+                                                          MainAxisSize.max,
+                                                      crossAxisAlignment:
+                                                          CrossAxisAlignment
+                                                              .start,
+                                                      children: [
+                                                        Text(
+                                                          valueOrDefault<
+                                                              String>(
+                                                            getJsonField(
+                                                              doaListItem,
+                                                              r'''$.namaDoa''',
+                                                            )?.toString(),
+                                                            '-',
+                                                          ),
+                                                          style: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .bodyMedium
+                                                              .override(
+                                                                fontFamily:
+                                                                    'Inter',
+                                                                color: FFAppState()
+                                                                    .colorFontThemes,
+                                                                fontSize: 15.0,
+                                                                letterSpacing:
+                                                                    0.0,
+                                                                fontWeight:
+                                                                    FontWeight
+                                                                        .w600,
+                                                              ),
                                                         ),
-                                                        style: FlutterFlowTheme
-                                                                .of(context)
-                                                            .bodyMedium
-                                                            .override(
-                                                              fontFamily:
-                                                                  'Inter',
-                                                              color: FFAppState()
-                                                                  .colorFontThemes,
-                                                              fontSize: 15.0,
-                                                              letterSpacing:
-                                                                  0.0,
-                                                              fontWeight:
-                                                                  FontWeight
-                                                                      .w600,
-                                                            ),
-                                                      ),
-                                                    ],
+                                                      ],
+                                                    ),
                                                   ),
-                                                ),
-                                                if (valueOrDefault(
-                                                        currentUserDocument
-                                                            ?.rules,
-                                                        0) ==
-                                                    1)
+                                                  if (valueOrDefault(
+                                                          currentUserDocument
+                                                              ?.rules,
+                                                          0) ==
+                                                      1)
+                                                    InkWell(
+                                                      splashColor:
+                                                          Colors.transparent,
+                                                      focusColor:
+                                                          Colors.transparent,
+                                                      hoverColor:
+                                                          Colors.transparent,
+                                                      highlightColor:
+                                                          Colors.transparent,
+                                                      onTap: () async {
+                                                        await showModalBottomSheet(
+                                                          isScrollControlled:
+                                                              true,
+                                                          backgroundColor:
+                                                              Colors
+                                                                  .transparent,
+                                                          enableDrag: false,
+                                                          context: context,
+                                                          builder: (context) {
+                                                            return WebViewAware(
+                                                              child:
+                                                                  GestureDetector(
+                                                                onTap: () {
+                                                                  FocusScope.of(
+                                                                          context)
+                                                                      .unfocus();
+                                                                  FocusManager
+                                                                      .instance
+                                                                      .primaryFocus
+                                                                      ?.unfocus();
+                                                                },
+                                                                child: Padding(
+                                                                  padding: MediaQuery
+                                                                      .viewInsetsOf(
+                                                                          context),
+                                                                  child:
+                                                                      EditDoaWidget(
+                                                                    id: getJsonField(
+                                                                      doaListItem,
+                                                                      r'''$.id''',
+                                                                    ).toString(),
+                                                                    idkategori:
+                                                                        getJsonField(
+                                                                      doaListItem,
+                                                                      r'''$.idkategori''',
+                                                                    ).toString(),
+                                                                    judulDoa:
+                                                                        getJsonField(
+                                                                      doaListItem,
+                                                                      r'''$.namaDoa''',
+                                                                    ).toString(),
+                                                                    doabahasaarab:
+                                                                        getJsonField(
+                                                                      doaListItem,
+                                                                      r'''$.arab''',
+                                                                    ).toString(),
+                                                                    doabahasaindonesia:
+                                                                        getJsonField(
+                                                                      doaListItem,
+                                                                      r'''$.latin''',
+                                                                    ).toString(),
+                                                                    terjemahan:
+                                                                        getJsonField(
+                                                                      doaListItem,
+                                                                      r'''$.terjemahan''',
+                                                                    ).toString(),
+                                                                    hadis:
+                                                                        getJsonField(
+                                                                      doaListItem,
+                                                                      r'''$.hadis''',
+                                                                    ).toString(),
+                                                                    penjelasan:
+                                                                        getJsonField(
+                                                                      doaListItem,
+                                                                      r'''$.penjelasan''',
+                                                                    ).toString(),
+                                                                  ),
+                                                                ),
+                                                              ),
+                                                            );
+                                                          },
+                                                        ).then((value) =>
+                                                            safeSetState(
+                                                                () {}));
+                                                      },
+                                                      child: Icon(
+                                                        Icons.edit_outlined,
+                                                        color: FFAppState()
+                                                            .colorFontThemes,
+                                                        size: 24.0,
+                                                      ),
+                                                    ),
                                                   InkWell(
                                                     splashColor:
                                                         Colors.transparent,
@@ -471,137 +565,50 @@ class _DoadoaByKategorinewWidgetState extends State<DoadoaByKategorinewWidget> {
                                                     highlightColor:
                                                         Colors.transparent,
                                                     onTap: () async {
-                                                      await showModalBottomSheet(
-                                                        isScrollControlled:
-                                                            true,
-                                                        backgroundColor:
-                                                            Colors.transparent,
-                                                        enableDrag: false,
-                                                        context: context,
-                                                        builder: (context) {
-                                                          return WebViewAware(
-                                                            child:
-                                                                GestureDetector(
-                                                              onTap: () {
-                                                                FocusScope.of(
-                                                                        context)
-                                                                    .unfocus();
-                                                                FocusManager
-                                                                    .instance
-                                                                    .primaryFocus
-                                                                    ?.unfocus();
-                                                              },
-                                                              child: Padding(
-                                                                padding: MediaQuery
-                                                                    .viewInsetsOf(
-                                                                        context),
-                                                                child:
-                                                                    EditDoaWidget(
-                                                                  id: getJsonField(
-                                                                    doaListItem,
-                                                                    r'''$.id''',
-                                                                  ).toString(),
-                                                                  idkategori:
-                                                                      getJsonField(
-                                                                    doaListItem,
-                                                                    r'''$.idkategori''',
-                                                                  ).toString(),
-                                                                  judulDoa:
-                                                                      getJsonField(
-                                                                    doaListItem,
-                                                                    r'''$.namaDoa''',
-                                                                  ).toString(),
-                                                                  doabahasaarab:
-                                                                      getJsonField(
-                                                                    doaListItem,
-                                                                    r'''$.arab''',
-                                                                  ).toString(),
-                                                                  doabahasaindonesia:
-                                                                      getJsonField(
-                                                                    doaListItem,
-                                                                    r'''$.latin''',
-                                                                  ).toString(),
-                                                                  terjemahan:
-                                                                      getJsonField(
-                                                                    doaListItem,
-                                                                    r'''$.terjemahan''',
-                                                                  ).toString(),
-                                                                  hadis:
-                                                                      getJsonField(
-                                                                    doaListItem,
-                                                                    r'''$.hadis''',
-                                                                  ).toString(),
-                                                                  penjelasan:
-                                                                      getJsonField(
-                                                                    doaListItem,
-                                                                    r'''$.penjelasan''',
-                                                                  ).toString(),
-                                                                ),
-                                                              ),
+                                                      context.pushNamed(
+                                                        DetailDoanewWidget
+                                                            .routeName,
+                                                        queryParameters: {
+                                                          'judul':
+                                                              serializeParam(
+                                                            getJsonField(
+                                                              doaListItem,
+                                                              r'''$.namaDoa''',
+                                                            ).toString(),
+                                                            ParamType.String,
+                                                          ),
+                                                          'iddoa':
+                                                              serializeParam(
+                                                            getJsonField(
+                                                              doaListItem,
+                                                              r'''$.id''',
                                                             ),
-                                                          );
-                                                        },
-                                                      ).then((value) =>
-                                                          safeSetState(() {}));
+                                                            ParamType.int,
+                                                          ),
+                                                        }.withoutNulls,
+                                                      );
                                                     },
                                                     child: Icon(
-                                                      Icons.edit_outlined,
-                                                      color: FFAppState()
-                                                          .colorFontThemes,
-                                                      size: 24.0,
+                                                      Icons.navigate_next,
+                                                      color: FlutterFlowTheme
+                                                              .of(context)
+                                                          .secondaryBackground,
+                                                      size: 30.0,
                                                     ),
                                                   ),
-                                                InkWell(
-                                                  splashColor:
-                                                      Colors.transparent,
-                                                  focusColor:
-                                                      Colors.transparent,
-                                                  hoverColor:
-                                                      Colors.transparent,
-                                                  highlightColor:
-                                                      Colors.transparent,
-                                                  onTap: () async {
-                                                    context.pushNamed(
-                                                      DetailDoanewWidget
-                                                          .routeName,
-                                                      queryParameters: {
-                                                        'judul': serializeParam(
-                                                          getJsonField(
-                                                            doaListItem,
-                                                            r'''$.namaDoa''',
-                                                          ).toString(),
-                                                          ParamType.String,
-                                                        ),
-                                                        'iddoa': serializeParam(
-                                                          getJsonField(
-                                                            doaListItem,
-                                                            r'''$.id''',
-                                                          ),
-                                                          ParamType.int,
-                                                        ),
-                                                      }.withoutNulls,
-                                                    );
-                                                  },
-                                                  child: Icon(
-                                                    Icons.navigate_next,
-                                                    color: FlutterFlowTheme.of(
-                                                            context)
-                                                        .secondaryBackground,
-                                                    size: 30.0,
-                                                  ),
-                                                ),
-                                              ],
+                                                ],
+                                              ),
                                             ),
-                                          ),
-                                          Divider(
-                                            thickness: 1.0,
-                                            color: Colors.white,
-                                          ),
-                                        ],
+                                            Divider(
+                                              thickness: 1.0,
+                                              color: Colors.white,
+                                            ),
+                                          ],
+                                        ),
                                       ),
-                                    ),
-                                  );
-                                },
+                                    );
+                                  }),
+                                ),
                               );
                             },
                           );
