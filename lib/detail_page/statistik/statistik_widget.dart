@@ -1,5 +1,6 @@
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/api_requests/api_calls.dart';
+import '/backend/schema/structs/index.dart';
 import '/componen/date_componen/date_componen_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -151,11 +152,41 @@ class _StatistikWidgetState extends State<StatistikWidget> {
                   ),
                   Row(
                     mainAxisSize: MainAxisSize.max,
-                    children: [
-                      Expanded(
-                        child: FutureBuilder<ApiCallResponse>(
-                          future: (_model.apiRequestCompleter ??=
-                                  Completer<ApiCallResponse>()
+                    children: [],
+                  ),
+                  FutureBuilder<ApiCallResponse>(
+                    future: SunahGroup.getmysummaryCall.call(
+                      iduser: currentUserUid,
+                      tanggal: valueOrDefault<String>(
+                        dateTimeFormat("yyyy-MM-dd ", getCurrentTimestamp),
+                        '0',
+                      ),
+                    ),
+                    builder: (context, snapshot) {
+                      // Customize what your widget looks like when it's loading.
+                      if (!snapshot.hasData) {
+                        return Center(
+                          child: SizedBox(
+                            width: 20.0,
+                            height: 20.0,
+                            child: CircularProgressIndicator(
+                              valueColor: AlwaysStoppedAnimation<Color>(
+                                FlutterFlowTheme.of(context).secondary,
+                              ),
+                            ),
+                          ),
+                        );
+                      }
+                      final conditionalBuilderGetmysummaryResponse =
+                          snapshot.data!;
+
+                      return Builder(
+                        builder: (context) {
+                          if (conditionalBuilderGetmysummaryResponse.jsonBody !=
+                              null) {
+                            return FutureBuilder<ApiCallResponse>(
+                              future: (_model.apiRequestCompleter ??= Completer<
+                                      ApiCallResponse>()
                                     ..complete(SunahGroup.getmysummaryCall.call(
                                       iduser: currentUserUid,
                                       tanggal: valueOrDefault<String>(
@@ -164,423 +195,387 @@ class _StatistikWidgetState extends State<StatistikWidget> {
                                         '0',
                                       ),
                                     )))
-                              .future,
-                          builder: (context, snapshot) {
-                            // Customize what your widget looks like when it's loading.
-                            if (!snapshot.hasData) {
-                              return Center(
-                                child: SizedBox(
-                                  width: 20.0,
-                                  height: 20.0,
-                                  child: CircularProgressIndicator(
-                                    valueColor: AlwaysStoppedAnimation<Color>(
-                                      FlutterFlowTheme.of(context).secondary,
+                                  .future,
+                              builder: (context, snapshot) {
+                                // Customize what your widget looks like when it's loading.
+                                if (!snapshot.hasData) {
+                                  return Center(
+                                    child: SizedBox(
+                                      width: 20.0,
+                                      height: 20.0,
+                                      child: CircularProgressIndicator(
+                                        valueColor:
+                                            AlwaysStoppedAnimation<Color>(
+                                          FlutterFlowTheme.of(context)
+                                              .secondary,
+                                        ),
+                                      ),
                                     ),
-                                  ),
-                                ),
-                              );
-                            }
-                            final conditionalBuilderGetmysummaryResponse =
-                                snapshot.data!;
+                                  );
+                                }
+                                final columnGetmysummaryResponse =
+                                    snapshot.data!;
 
-                            return Builder(
-                              builder: (context) {
-                                if (SunahGroup.getmysummaryCall.data(
-                                      conditionalBuilderGetmysummaryResponse
-                                          .jsonBody,
-                                    ) !=
-                                    null) {
-                                  return Visibility(
-                                    visible: SunahGroup.getmysummaryCall.data(
-                                          conditionalBuilderGetmysummaryResponse
-                                              .jsonBody,
-                                        ) !=
-                                        null,
-                                    child: Builder(
-                                      builder: (context) {
-                                        final resSummary = getJsonField(
-                                          conditionalBuilderGetmysummaryResponse
-                                              .jsonBody,
-                                          r'''$.data[:]''',
-                                        ).toList();
+                                return Builder(
+                                  builder: (context) {
+                                    final respon = (columnGetmysummaryResponse
+                                                    .jsonBody
+                                                    .toList()
+                                                    .map<MysummurysunahStruct?>(
+                                                        MysummurysunahStruct
+                                                            .maybeFromMap)
+                                                    .toList()
+                                                as Iterable<
+                                                    MysummurysunahStruct?>)
+                                            .withoutNulls
+                                            .toList() ??
+                                        [];
 
-                                        return Column(
-                                          mainAxisSize: MainAxisSize.min,
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.start,
-                                          children:
-                                              List.generate(resSummary.length,
-                                                  (resSummaryIndex) {
-                                            final resSummaryItem =
-                                                resSummary[resSummaryIndex];
-                                            return Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(
-                                                      0.0, 10.0, 0.0, 0.0),
-                                              child: AuthUserStreamWidget(
-                                                builder: (context) => Container(
-                                                  decoration: BoxDecoration(
-                                                    color: currentUserDocument
-                                                        ?.colorThemes,
-                                                    boxShadow: [
-                                                      BoxShadow(
-                                                        blurRadius: 2.0,
-                                                        color:
-                                                            Color(0x33000000),
-                                                        offset: Offset(
-                                                          1.0,
-                                                          5.0,
-                                                        ),
-                                                      )
-                                                    ],
-                                                    borderRadius:
-                                                        BorderRadius.only(
-                                                      bottomLeft:
-                                                          Radius.circular(20.0),
-                                                      bottomRight:
-                                                          Radius.circular(20.0),
-                                                      topLeft:
-                                                          Radius.circular(20.0),
-                                                      topRight:
-                                                          Radius.circular(20.0),
+                                    return Column(
+                                      mainAxisSize: MainAxisSize.min,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: List.generate(respon.length,
+                                          (responIndex) {
+                                        final responItem = respon[responIndex];
+                                        return Padding(
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  0.0, 10.0, 0.0, 0.0),
+                                          child: AuthUserStreamWidget(
+                                            builder: (context) => Container(
+                                              decoration: BoxDecoration(
+                                                color: currentUserDocument
+                                                    ?.colorThemes,
+                                                boxShadow: [
+                                                  BoxShadow(
+                                                    blurRadius: 2.0,
+                                                    color: Color(0x33000000),
+                                                    offset: Offset(
+                                                      1.0,
+                                                      5.0,
                                                     ),
-                                                  ),
-                                                  child: Padding(
-                                                    padding:
-                                                        EdgeInsetsDirectional
-                                                            .fromSTEB(
-                                                                10.0,
-                                                                10.0,
-                                                                10.0,
-                                                                10.0),
-                                                    child: Column(
+                                                  )
+                                                ],
+                                                borderRadius: BorderRadius.only(
+                                                  bottomLeft:
+                                                      Radius.circular(20.0),
+                                                  bottomRight:
+                                                      Radius.circular(20.0),
+                                                  topLeft:
+                                                      Radius.circular(20.0),
+                                                  topRight:
+                                                      Radius.circular(20.0),
+                                                ),
+                                              ),
+                                              child: Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        10.0, 10.0, 10.0, 10.0),
+                                                child: Column(
+                                                  mainAxisSize:
+                                                      MainAxisSize.max,
+                                                  crossAxisAlignment:
+                                                      CrossAxisAlignment.start,
+                                                  children: [
+                                                    Row(
                                                       mainAxisSize:
                                                           MainAxisSize.max,
-                                                      crossAxisAlignment:
-                                                          CrossAxisAlignment
-                                                              .start,
                                                       children: [
-                                                        Row(
-                                                          mainAxisSize:
-                                                              MainAxisSize.max,
-                                                          children: [
-                                                            Expanded(
-                                                              child: Text(
-                                                                valueOrDefault<
-                                                                    String>(
-                                                                  SunahGroup
-                                                                      .getmysummaryCall
-                                                                      .namaSunah(
-                                                                        conditionalBuilderGetmysummaryResponse
-                                                                            .jsonBody,
-                                                                      )
-                                                                      ?.elementAtOrNull(
-                                                                          resSummaryIndex),
-                                                                  '-',
-                                                                ),
-                                                                style: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyMedium
-                                                                    .override(
-                                                                      fontFamily:
-                                                                          'Inter',
-                                                                      color: valueOrDefault<
+                                                        Expanded(
+                                                          child: Text(
+                                                            valueOrDefault<
+                                                                String>(
+                                                              responItem
+                                                                  .namaSunah,
+                                                              'nama sunah',
+                                                            ),
+                                                            style: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .bodyMedium
+                                                                .override(
+                                                                  fontFamily:
+                                                                      'Inter',
+                                                                  color:
+                                                                      valueOrDefault<
                                                                           Color>(
-                                                                        FFAppState()
-                                                                            .colorFontThemes,
-                                                                        FlutterFlowTheme.of(context)
-                                                                            .info,
-                                                                      ),
-                                                                      fontSize:
-                                                                          20.0,
-                                                                      letterSpacing:
-                                                                          0.0,
-                                                                      fontWeight:
-                                                                          FontWeight
-                                                                              .bold,
-                                                                    ),
-                                                              ),
-                                                            ),
-                                                            Text(
-                                                              valueOrDefault<
-                                                                  String>(
-                                                                SunahGroup
-                                                                    .getmysummaryCall
-                                                                    .tanggal(
-                                                                      conditionalBuilderGetmysummaryResponse
-                                                                          .jsonBody,
-                                                                    )
-                                                                    ?.elementAtOrNull(
-                                                                        resSummaryIndex),
-                                                                '-',
-                                                              ),
-                                                              style: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .bodyMedium
-                                                                  .override(
-                                                                    fontFamily:
-                                                                        'Inter',
-                                                                    color: FFAppState()
+                                                                    FFAppState()
                                                                         .colorFontThemes,
-                                                                    letterSpacing:
-                                                                        0.0,
+                                                                    FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .info,
                                                                   ),
-                                                            ),
-                                                            Icon(
-                                                              Icons
-                                                                  .arrow_forward_ios,
-                                                              color:
-                                                                  Colors.white,
-                                                              size: 24.0,
-                                                            ),
-                                                          ],
-                                                        ),
-                                                        Row(
-                                                          mainAxisSize:
-                                                              MainAxisSize.max,
-                                                          children: [
-                                                            Padding(
-                                                              padding:
-                                                                  EdgeInsetsDirectional
-                                                                      .fromSTEB(
-                                                                          0.0,
-                                                                          15.0,
-                                                                          0.0,
-                                                                          0.0),
-                                                              child: Text(
-                                                                valueOrDefault<
-                                                                    String>(
-                                                                  SunahGroup
-                                                                      .getmysummaryCall
-                                                                      .namaSunah(
-                                                                        conditionalBuilderGetmysummaryResponse
-                                                                            .jsonBody,
-                                                                      )
-                                                                      ?.elementAtOrNull(
-                                                                          resSummaryIndex),
-                                                                  '-',
+                                                                  fontSize:
+                                                                      20.0,
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .bold,
                                                                 ),
-                                                                style: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyMedium
-                                                                    .override(
-                                                                      fontFamily:
-                                                                          'Inter',
-                                                                      color: FFAppState()
-                                                                          .colorFontThemes,
-                                                                      fontSize:
-                                                                          14.0,
-                                                                      letterSpacing:
-                                                                          0.0,
-                                                                    ),
+                                                          ),
+                                                        ),
+                                                        Text(
+                                                          '',
+                                                          style: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .bodyMedium
+                                                              .override(
+                                                                fontFamily:
+                                                                    'Inter',
+                                                                color: FFAppState()
+                                                                    .colorFontThemes,
+                                                                letterSpacing:
+                                                                    0.0,
                                                               ),
-                                                            ),
-                                                          ],
                                                         ),
-                                                        InkWell(
-                                                          splashColor: Colors
-                                                              .transparent,
-                                                          focusColor: Colors
-                                                              .transparent,
-                                                          hoverColor: Colors
-                                                              .transparent,
-                                                          highlightColor: Colors
-                                                              .transparent,
-                                                          onTap: () async {
-                                                            var _shouldSetState =
-                                                                false;
-                                                            var confirmDialogResponse =
-                                                                await showDialog<
-                                                                        bool>(
-                                                                      context:
-                                                                          context,
-                                                                      builder:
-                                                                          (alertDialogContext) {
-                                                                        return WebViewAware(
+                                                        Icon(
+                                                          Icons
+                                                              .arrow_forward_ios,
+                                                          color: Colors.white,
+                                                          size: 24.0,
+                                                        ),
+                                                      ],
+                                                    ),
+                                                    Row(
+                                                      mainAxisSize:
+                                                          MainAxisSize.max,
+                                                      children: [
+                                                        Padding(
+                                                          padding:
+                                                              EdgeInsetsDirectional
+                                                                  .fromSTEB(
+                                                                      0.0,
+                                                                      5.0,
+                                                                      0.0,
+                                                                      0.0),
+                                                          child: Text(
+                                                            valueOrDefault<
+                                                                String>(
+                                                              responItem
+                                                                  .kategorisunah,
+                                                              'kategorisunah',
+                                                            ),
+                                                            style: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .bodyMedium
+                                                                .override(
+                                                                  fontFamily:
+                                                                      'Inter',
+                                                                  color: FFAppState()
+                                                                      .colorFontThemes,
+                                                                  fontSize:
+                                                                      14.0,
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                ),
+                                                          ),
+                                                        ),
+                                                      ],
+                                                    ),
+                                                    Padding(
+                                                      padding:
+                                                          EdgeInsetsDirectional
+                                                              .fromSTEB(
+                                                                  0.0,
+                                                                  10.0,
+                                                                  0.0,
+                                                                  0.0),
+                                                      child: InkWell(
+                                                        splashColor:
+                                                            Colors.transparent,
+                                                        focusColor:
+                                                            Colors.transparent,
+                                                        hoverColor:
+                                                            Colors.transparent,
+                                                        highlightColor:
+                                                            Colors.transparent,
+                                                        onTap: () async {
+                                                          var _shouldSetState =
+                                                              false;
+                                                          var confirmDialogResponse =
+                                                              await showDialog<
+                                                                      bool>(
+                                                                    context:
+                                                                        context,
+                                                                    builder:
+                                                                        (alertDialogContext) {
+                                                                      return WebViewAware(
+                                                                        child:
+                                                                            AlertDialog(
+                                                                          title: Text(responItem
+                                                                              .id
+                                                                              .toString()),
+                                                                          content:
+                                                                              Text('Are You Sure delete this sunnah'),
+                                                                          actions: [
+                                                                            TextButton(
+                                                                              onPressed: () => Navigator.pop(alertDialogContext, false),
+                                                                              child: Text('Cancel'),
+                                                                            ),
+                                                                            TextButton(
+                                                                              onPressed: () => Navigator.pop(alertDialogContext, true),
+                                                                              child: Text('Confirm'),
+                                                                            ),
+                                                                          ],
+                                                                        ),
+                                                                      );
+                                                                    },
+                                                                  ) ??
+                                                                  false;
+                                                          if (confirmDialogResponse) {
+                                                            _model.apiResultbq1 =
+                                                                await SunahGroup
+                                                                    .deleteMysunnahCall
+                                                                    .call(
+                                                              id: responItem.id
+                                                                  .toString(),
+                                                            );
+
+                                                            _shouldSetState =
+                                                                true;
+                                                            if ((_model
+                                                                    .apiResultbq1
+                                                                    ?.succeeded ??
+                                                                true)) {
+                                                              await showDialog(
+                                                                context:
+                                                                    context,
+                                                                builder:
+                                                                    (alertDialogContext) {
+                                                                  return WebViewAware(
+                                                                    child:
+                                                                        AlertDialog(
+                                                                      title: Text(
+                                                                          'Information'),
+                                                                      content: Text(
+                                                                          'Delete Sunnah Success'),
+                                                                      actions: [
+                                                                        TextButton(
+                                                                          onPressed: () =>
+                                                                              Navigator.pop(alertDialogContext),
                                                                           child:
-                                                                              AlertDialog(
-                                                                            title:
-                                                                                Text(valueOrDefault<String>(
-                                                                              (SunahGroup.getmysummaryCall
-                                                                                      .id(
-                                                                                        conditionalBuilderGetmysummaryResponse.jsonBody,
-                                                                                      )
-                                                                                      ?.elementAtOrNull(resSummaryIndex))
-                                                                                  ?.toString(),
-                                                                              '-',
-                                                                            )),
-                                                                            content:
-                                                                                Text('Are You Sure delete this sunnah'),
-                                                                            actions: [
-                                                                              TextButton(
-                                                                                onPressed: () => Navigator.pop(alertDialogContext, false),
-                                                                                child: Text('Cancel'),
-                                                                              ),
-                                                                              TextButton(
-                                                                                onPressed: () => Navigator.pop(alertDialogContext, true),
-                                                                                child: Text('Confirm'),
-                                                                              ),
-                                                                            ],
-                                                                          ),
-                                                                        );
-                                                                      },
-                                                                    ) ??
-                                                                    false;
-                                                            if (confirmDialogResponse) {
-                                                              _model.apiResultbq1 =
-                                                                  await SunahGroup
-                                                                      .deleteMysunnahCall
-                                                                      .call(
-                                                                id: valueOrDefault<
-                                                                    String>(
-                                                                  (SunahGroup
-                                                                          .getmysummaryCall
-                                                                          .id(
-                                                                            conditionalBuilderGetmysummaryResponse.jsonBody,
-                                                                          )
-                                                                          ?.elementAtOrNull(
-                                                                              resSummaryIndex))
-                                                                      ?.toString(),
-                                                                  '-',
-                                                                ),
-                                                              );
-
-                                                              _shouldSetState =
-                                                                  true;
-                                                              if ((_model
-                                                                      .apiResultbq1
-                                                                      ?.succeeded ??
-                                                                  true)) {
-                                                                await showDialog(
-                                                                  context:
-                                                                      context,
-                                                                  builder:
-                                                                      (alertDialogContext) {
-                                                                    return WebViewAware(
-                                                                      child:
-                                                                          AlertDialog(
-                                                                        title: Text(
-                                                                            'Information'),
-                                                                        content:
-                                                                            Text('Delete Sunnah Success'),
-                                                                        actions: [
-                                                                          TextButton(
-                                                                            onPressed: () =>
-                                                                                Navigator.pop(alertDialogContext),
-                                                                            child:
-                                                                                Text('Ok'),
-                                                                          ),
-                                                                        ],
-                                                                      ),
-                                                                    );
-                                                                  },
-                                                                );
-                                                                safeSetState(() =>
-                                                                    _model.apiRequestCompleter =
-                                                                        null);
-                                                                await _model
-                                                                    .waitForApiRequestCompleted();
-                                                              } else {
-                                                                await showDialog(
-                                                                  context:
-                                                                      context,
-                                                                  builder:
-                                                                      (alertDialogContext) {
-                                                                    return WebViewAware(
-                                                                      child:
-                                                                          AlertDialog(
-                                                                        title: Text(
-                                                                            'Information'),
-                                                                        content:
-                                                                            Text('Deleted Faild'),
-                                                                        actions: [
-                                                                          TextButton(
-                                                                            onPressed: () =>
-                                                                                Navigator.pop(alertDialogContext),
-                                                                            child:
-                                                                                Text('Ok'),
-                                                                          ),
-                                                                        ],
-                                                                      ),
-                                                                    );
-                                                                  },
-                                                                );
-                                                              }
-
-                                                              if (_shouldSetState)
-                                                                safeSetState(
-                                                                    () {});
-                                                              return;
-                                                            } else {
-                                                              ScaffoldMessenger
-                                                                      .of(context)
-                                                                  .showSnackBar(
-                                                                SnackBar(
-                                                                  content: Text(
-                                                                    'Delete Failed',
-                                                                    style:
-                                                                        TextStyle(
-                                                                      color: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .primaryText,
+                                                                              Text('Ok'),
+                                                                        ),
+                                                                      ],
                                                                     ),
-                                                                  ),
-                                                                  duration: Duration(
-                                                                      milliseconds:
-                                                                          4000),
-                                                                  backgroundColor:
-                                                                      FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .secondary,
-                                                                ),
+                                                                  );
+                                                                },
                                                               );
-                                                              if (_shouldSetState)
-                                                                safeSetState(
-                                                                    () {});
-                                                              return;
+                                                              safeSetState(() =>
+                                                                  _model.apiRequestCompleter =
+                                                                      null);
+                                                              await _model
+                                                                  .waitForApiRequestCompleted();
+                                                            } else {
+                                                              await showDialog(
+                                                                context:
+                                                                    context,
+                                                                builder:
+                                                                    (alertDialogContext) {
+                                                                  return WebViewAware(
+                                                                    child:
+                                                                        AlertDialog(
+                                                                      title: Text(
+                                                                          'Information'),
+                                                                      content: Text(
+                                                                          'Deleted Faild'),
+                                                                      actions: [
+                                                                        TextButton(
+                                                                          onPressed: () =>
+                                                                              Navigator.pop(alertDialogContext),
+                                                                          child:
+                                                                              Text('Ok'),
+                                                                        ),
+                                                                      ],
+                                                                    ),
+                                                                  );
+                                                                },
+                                                              );
                                                             }
 
                                                             if (_shouldSetState)
                                                               safeSetState(
                                                                   () {});
-                                                          },
-                                                          child: Icon(
-                                                            Icons
-                                                                .delete_forever,
-                                                            color: FlutterFlowTheme
+                                                            return;
+                                                          } else {
+                                                            ScaffoldMessenger
                                                                     .of(context)
-                                                                .primaryBackground,
-                                                            size: 24.0,
-                                                          ),
+                                                                .showSnackBar(
+                                                              SnackBar(
+                                                                content: Text(
+                                                                  'Delete Failed',
+                                                                  style:
+                                                                      TextStyle(
+                                                                    color: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .primaryText,
+                                                                  ),
+                                                                ),
+                                                                duration: Duration(
+                                                                    milliseconds:
+                                                                        4000),
+                                                                backgroundColor:
+                                                                    FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .secondary,
+                                                              ),
+                                                            );
+                                                            if (_shouldSetState)
+                                                              safeSetState(
+                                                                  () {});
+                                                            return;
+                                                          }
+
+                                                          if (_shouldSetState)
+                                                            safeSetState(() {});
+                                                        },
+                                                        child: Icon(
+                                                          Icons.delete_forever,
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .primaryBackground,
+                                                          size: 24.0,
                                                         ),
-                                                      ],
+                                                      ),
                                                     ),
-                                                  ),
+                                                  ],
                                                 ),
                                               ),
-                                            );
-                                          }),
+                                            ),
+                                          ),
                                         );
-                                      },
-                                    ),
-                                  );
-                                } else {
-                                  return Text(
-                                    'No Summary',
+                                      }),
+                                    );
+                                  },
+                                );
+                              },
+                            );
+                          } else {
+                            return Container(
+                              width: double.infinity,
+                              height: MediaQuery.sizeOf(context).height * 0.6,
+                              decoration: BoxDecoration(),
+                              child: Column(
+                                mainAxisSize: MainAxisSize.max,
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Text(
+                                    'No Data Found',
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
                                           fontFamily: 'Inter',
                                           letterSpacing: 0.0,
                                         ),
-                                  );
-                                }
-                              },
+                                  ),
+                                ],
+                              ),
                             );
-                          },
-                        ),
-                      ),
-                    ],
+                          }
+                        },
+                      );
+                    },
                   ),
                 ],
               ),

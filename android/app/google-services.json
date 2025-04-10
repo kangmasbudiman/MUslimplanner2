@@ -7,6 +7,53 @@
   "client": [
     {
       "client_info": {
+        "mobilesdk_app_id": "1:784530293437:android:9160d7b3234ce7c121add4",
+        "android_client_info": {
+          "package_name": "com.muslimplanner.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "784530293437-5435cik0egubvinmhnr9uae74b3gilgg.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.muslimplanner.app",
+            "certificate_hash": "9bbb3186b2189ef16d8f272bdab59362c395cbb4"
+          }
+        },
+        {
+          "client_id": "784530293437-i0ni8pon126v7et37l6p0ddvigif5403.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBpE2NNzP3x5TiIJRSoJiurhaWhUNLhjfY"
+        },
+        {
+          "current_key": "AIzaSyCf-jUyZwa0a_-Ewe-Hb_yJ1guttwb87cM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "784530293437-i0ni8pon126v7et37l6p0ddvigif5403.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "784530293437-fddpji8ru4em69kqvko41cpgpfe982b5.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.muslimplanner.id"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
         "mobilesdk_app_id": "1:784530293437:android:844a13279f97e6e121add4",
         "android_client_info": {
           "package_name": "com.muslimplanner.id"
@@ -27,6 +74,9 @@
         }
       ],
       "api_key": [
+        {
+          "current_key": "AIzaSyBpE2NNzP3x5TiIJRSoJiurhaWhUNLhjfY"
+        },
         {
           "current_key": "AIzaSyCf-jUyZwa0a_-Ewe-Hb_yJ1guttwb87cM"
         }
