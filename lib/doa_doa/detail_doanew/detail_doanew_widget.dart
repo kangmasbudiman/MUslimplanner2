@@ -317,28 +317,6 @@ class _DetailDoanewWidgetState extends State<DetailDoanewWidget> {
                                     ),
                                     Padding(
                                       padding: EdgeInsetsDirectional.fromSTEB(
-                                          0.0, 20.0, 0.0, 0.0),
-                                      child: Text(
-                                        valueOrDefault<String>(
-                                          responItem.penjelasan,
-                                          'penjelasan',
-                                        ),
-                                        style: FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .override(
-                                              fontFamily: 'Inter',
-                                              color: valueOrDefault<Color>(
-                                                FFAppState().colorFontThemes,
-                                                FlutterFlowTheme.of(context)
-                                                    .secondaryText,
-                                              ),
-                                              fontSize: 14.0,
-                                              letterSpacing: 0.0,
-                                            ),
-                                      ),
-                                    ),
-                                    Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 15.0, 0.0, 0.0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,

@@ -1,4 +1,4 @@
-package com.muslimplanner.id
+package com.muslimplanner.app
 
 import io.flutter.embedding.android.FlutterActivity
 

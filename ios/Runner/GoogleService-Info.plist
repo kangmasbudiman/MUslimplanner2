@@ -3,19 +3,19 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>784530293437-fddpji8ru4em69kqvko41cpgpfe982b5.apps.googleusercontent.com</string>
+	<string>784530293437-i37tv08bqviru0b9bsfqg1l6fq9m80ri.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.784530293437-fddpji8ru4em69kqvko41cpgpfe982b5</string>
+	<string>com.googleusercontent.apps.784530293437-i37tv08bqviru0b9bsfqg1l6fq9m80ri</string>
 	<key>ANDROID_CLIENT_ID</key>
 	<string>784530293437-5435cik0egubvinmhnr9uae74b3gilgg.apps.googleusercontent.com</string>
 	<key>API_KEY</key>
-	<string>AIzaSyBBo0iKueeuu6bM6W40K1Mc1oQ27FYxCRU</string>
+	<string>AIzaSyBRP_Tsz5qZf_WlzbryElWv0F1TvB6zK3g</string>
 	<key>GCM_SENDER_ID</key>
 	<string>784530293437</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.muslimplanner.id</string>
+	<string>com.muslimplanner.app</string>
 	<key>PROJECT_ID</key>
 	<string>muslimplanner-52853</string>
 	<key>STORAGE_BUCKET</key>
@@ -31,6 +31,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:784530293437:ios:4bc8572a3b6450c521add4</string>
+	<string>1:784530293437:ios:3dd8c9969f7def4921add4</string>
 </dict>
 </plist>
