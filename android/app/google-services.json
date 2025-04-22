@@ -45,7 +45,7 @@
               "client_id": "784530293437-fddpji8ru4em69kqvko41cpgpfe982b5.apps.googleusercontent.com",
               "client_type": 2,
               "ios_info": {
-                "bundle_id": "com.muslimplanner.id"
+                "bundle_id": "com.muslimplanner.app"
               }
             }
           ]
@@ -56,7 +56,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:784530293437:android:844a13279f97e6e121add4",
         "android_client_info": {
-          "package_name": "com.muslimplanner.id"
+          "package_name": "com.muslimplanner.app"
         }
       },
       "oauth_client": [
@@ -64,7 +64,7 @@
           "client_id": "784530293437-siec5488av3fefonchjto683cb5qjlgd.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.muslimplanner.id",
+            "package_name": "com.muslimplanner.app",
             "certificate_hash": "9bbb3186b2189ef16d8f272bdab59362c395cbb4"
           }
         },
@@ -92,7 +92,7 @@
               "client_id": "784530293437-fddpji8ru4em69kqvko41cpgpfe982b5.apps.googleusercontent.com",
               "client_type": 2,
               "ios_info": {
-                "bundle_id": "com.muslimplanner.id"
+                "bundle_id": "com.muslimplanner.app"
               }
             }
           ]
