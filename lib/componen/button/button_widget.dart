@@ -1,6 +1,7 @@
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'button_model.dart';
 export 'button_model.dart';
 
@@ -65,11 +66,16 @@ class _ButtonWidgetState extends State<ButtonWidget> {
           child: Text(
             'Register',
             style: FlutterFlowTheme.of(context).bodyMedium.override(
-                  fontFamily: 'Nunito',
+                  font: GoogleFonts.nunito(
+                    fontWeight: FontWeight.bold,
+                    fontStyle:
+                        FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                  ),
                   color: FlutterFlowTheme.of(context).primaryBackground,
                   fontSize: 20.0,
                   letterSpacing: 0.0,
                   fontWeight: FontWeight.bold,
+                  fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
                 ),
           ),
         ),

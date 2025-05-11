@@ -11,6 +11,7 @@ import '/flutter_flow/revenue_cat_util.dart' as revenue_cat;
 import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:webviewx_plus/webviewx_plus.dart';
 import 'home_screen_model.dart';
@@ -234,8 +235,17 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                                                                   .of(context)
                                                               .bodyMedium
                                                               .override(
-                                                                fontFamily:
-                                                                    'Inter',
+                                                                font:
+                                                                    GoogleFonts
+                                                                        .inter(
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .bold,
+                                                                  fontStyle: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .fontStyle,
+                                                                ),
                                                                 color: Colors
                                                                     .white,
                                                                 fontSize: 14.0,
@@ -244,6 +254,10 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                                                                 fontWeight:
                                                                     FontWeight
                                                                         .bold,
+                                                                fontStyle: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .fontStyle,
                                                               ),
                                                         ),
                                                         TextSpan(
@@ -257,15 +271,36 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                                                           ),
                                                         )
                                                       ],
-                                                      style: FlutterFlowTheme
-                                                              .of(context)
-                                                          .bodyMedium
-                                                          .override(
-                                                            fontFamily: 'Inter',
-                                                            color: FFAppState()
-                                                                .colorFontThemes,
-                                                            letterSpacing: 0.0,
-                                                          ),
+                                                      style:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodyMedium
+                                                              .override(
+                                                                font:
+                                                                    GoogleFonts
+                                                                        .inter(
+                                                                  fontWeight: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .fontWeight,
+                                                                  fontStyle: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .fontStyle,
+                                                                ),
+                                                                color: FFAppState()
+                                                                    .colorFontThemes,
+                                                                letterSpacing:
+                                                                    0.0,
+                                                                fontWeight: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .fontWeight,
+                                                                fontStyle: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .fontStyle,
+                                                              ),
                                                     ),
                                                   ),
                                                   Text(
@@ -274,12 +309,26 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                                                             context)
                                                         .bodyMedium
                                                         .override(
-                                                          fontFamily: 'Inter',
+                                                          font:
+                                                              GoogleFonts.inter(
+                                                            fontWeight:
+                                                                FontWeight.w300,
+                                                            fontStyle:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .fontStyle,
+                                                          ),
                                                           color: Colors.white,
                                                           fontSize: 13.0,
                                                           letterSpacing: 0.0,
                                                           fontWeight:
                                                               FontWeight.w300,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMedium
+                                                                  .fontStyle,
                                                         ),
                                                   ),
                                                 ].divide(SizedBox(height: 6.0)),
@@ -361,11 +410,25 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                                                             context)
                                                         .bodyMedium
                                                         .override(
-                                                          fontFamily: 'Inter',
+                                                          font:
+                                                              GoogleFonts.inter(
+                                                            fontWeight:
+                                                                FontWeight.w600,
+                                                            fontStyle:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .fontStyle,
+                                                          ),
                                                           fontSize: 10.0,
                                                           letterSpacing: 0.0,
                                                           fontWeight:
                                                               FontWeight.w600,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMedium
+                                                                  .fontStyle,
                                                         ),
                                                   ),
                                                 ),
@@ -409,13 +472,26 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                                                       context)
                                                   .headlineSmall
                                                   .override(
-                                                    fontFamily: 'Nunito',
+                                                    font: GoogleFonts.nunito(
+                                                      fontWeight:
+                                                          FontWeight.w800,
+                                                      fontStyle:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .headlineSmall
+                                                              .fontStyle,
+                                                    ),
                                                     color: FlutterFlowTheme.of(
                                                             context)
                                                         .info,
                                                     fontSize: 50.0,
                                                     letterSpacing: 0.0,
                                                     fontWeight: FontWeight.w800,
+                                                    fontStyle:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .headlineSmall
+                                                            .fontStyle,
                                                   ),
                                             ),
                                           ),
@@ -475,7 +551,16 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                                                             context)
                                                         .bodyMedium
                                                         .override(
-                                                          fontFamily: 'Inter',
+                                                          font:
+                                                              GoogleFonts.inter(
+                                                            fontWeight:
+                                                                FontWeight.w600,
+                                                            fontStyle:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .fontStyle,
+                                                          ),
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .info,
@@ -483,6 +568,11 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                                                           letterSpacing: 0.0,
                                                           fontWeight:
                                                               FontWeight.w600,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMedium
+                                                                  .fontStyle,
                                                         ),
                                                   ),
                                                   TextSpan(
@@ -525,19 +615,33 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                                                     style: TextStyle(),
                                                   )
                                                 ],
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily: 'Inter',
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
+                                                style: FlutterFlowTheme.of(
+                                                        context)
+                                                    .bodyMedium
+                                                    .override(
+                                                      font: GoogleFonts.inter(
+                                                        fontWeight:
+                                                            FontWeight.w600,
+                                                        fontStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .fontStyle,
+                                                      ),
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
                                                               .info,
-                                                          fontSize: 15.0,
-                                                          letterSpacing: 0.0,
-                                                          fontWeight:
-                                                              FontWeight.w600,
-                                                        ),
+                                                      fontSize: 15.0,
+                                                      letterSpacing: 0.0,
+                                                      fontWeight:
+                                                          FontWeight.w600,
+                                                      fontStyle:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodyMedium
+                                                              .fontStyle,
+                                                    ),
                                               ),
                                             );
                                           },
@@ -573,10 +677,20 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            fontFamily: 'Inter',
+                                            font: GoogleFonts.inter(
+                                              fontWeight: FontWeight.bold,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontStyle,
+                                            ),
                                             fontSize: 20.0,
                                             letterSpacing: 0.0,
                                             fontWeight: FontWeight.bold,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMedium
+                                                    .fontStyle,
                                           ),
                                     ),
                                   ),
@@ -715,6 +829,18 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                                                                 ),
                                                               }.withoutNulls,
                                                             );
+
+                                                            _model.apiResult80o =
+                                                                await HelpandSupportGroup
+                                                                    .userActivityLogCall
+                                                                    .call(
+                                                              iduser:
+                                                                  currentUserUid,
+                                                              fitureName:
+                                                                  'Sunah',
+                                                            );
+
+                                                            safeSetState(() {});
                                                           },
                                                           onLongPress:
                                                               () async {
@@ -984,14 +1110,27 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                                                                           context)
                                                                       .bodyMedium
                                                                       .override(
-                                                                        fontFamily:
-                                                                            'Inter',
+                                                                        font: GoogleFonts
+                                                                            .inter(
+                                                                          fontWeight: FlutterFlowTheme.of(context)
+                                                                              .bodyMedium
+                                                                              .fontWeight,
+                                                                          fontStyle: FlutterFlowTheme.of(context)
+                                                                              .bodyMedium
+                                                                              .fontStyle,
+                                                                        ),
                                                                         color: Colors
                                                                             .white,
                                                                         fontSize:
                                                                             16.0,
                                                                         letterSpacing:
                                                                             0.0,
+                                                                        fontWeight: FlutterFlowTheme.of(context)
+                                                                            .bodyMedium
+                                                                            .fontWeight,
+                                                                        fontStyle: FlutterFlowTheme.of(context)
+                                                                            .bodyMedium
+                                                                            .fontStyle,
                                                                       ),
                                                                 ),
                                                               ),
@@ -1026,10 +1165,20 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            fontFamily: 'Inter',
+                                            font: GoogleFonts.inter(
+                                              fontWeight: FontWeight.bold,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontStyle,
+                                            ),
                                             fontSize: 20.0,
                                             letterSpacing: 0.0,
                                             fontWeight: FontWeight.bold,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMedium
+                                                    .fontStyle,
                                           ),
                                     ),
                                   ),
@@ -1168,6 +1317,18 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                                                                 ),
                                                               }.withoutNulls,
                                                             );
+
+                                                            _model.apiResult800 =
+                                                                await HelpandSupportGroup
+                                                                    .userActivityLogCall
+                                                                    .call(
+                                                              iduser:
+                                                                  currentUserUid,
+                                                              fitureName:
+                                                                  'Sunah',
+                                                            );
+
+                                                            safeSetState(() {});
                                                           },
                                                           onLongPress:
                                                               () async {
@@ -1437,14 +1598,27 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                                                                           context)
                                                                       .bodyMedium
                                                                       .override(
-                                                                        fontFamily:
-                                                                            'Inter',
+                                                                        font: GoogleFonts
+                                                                            .inter(
+                                                                          fontWeight: FlutterFlowTheme.of(context)
+                                                                              .bodyMedium
+                                                                              .fontWeight,
+                                                                          fontStyle: FlutterFlowTheme.of(context)
+                                                                              .bodyMedium
+                                                                              .fontStyle,
+                                                                        ),
                                                                         color: Colors
                                                                             .white,
                                                                         fontSize:
                                                                             16.0,
                                                                         letterSpacing:
                                                                             0.0,
+                                                                        fontWeight: FlutterFlowTheme.of(context)
+                                                                            .bodyMedium
+                                                                            .fontWeight,
+                                                                        fontStyle: FlutterFlowTheme.of(context)
+                                                                            .bodyMedium
+                                                                            .fontStyle,
                                                                       ),
                                                                 ),
                                                               ),
@@ -1479,10 +1653,20 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            fontFamily: 'Inter',
+                                            font: GoogleFonts.inter(
+                                              fontWeight: FontWeight.bold,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontStyle,
+                                            ),
                                             fontSize: 20.0,
                                             letterSpacing: 0.0,
                                             fontWeight: FontWeight.bold,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMedium
+                                                    .fontStyle,
                                           ),
                                     ),
                                   ),
@@ -1621,6 +1805,18 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                                                                 ),
                                                               }.withoutNulls,
                                                             );
+
+                                                            _model.apiResult8000 =
+                                                                await HelpandSupportGroup
+                                                                    .userActivityLogCall
+                                                                    .call(
+                                                              iduser:
+                                                                  currentUserUid,
+                                                              fitureName:
+                                                                  'Sunah',
+                                                            );
+
+                                                            safeSetState(() {});
                                                           },
                                                           child: Row(
                                                             mainAxisSize:
@@ -1835,14 +2031,27 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                                                                           context)
                                                                       .bodyMedium
                                                                       .override(
-                                                                        fontFamily:
-                                                                            'Inter',
+                                                                        font: GoogleFonts
+                                                                            .inter(
+                                                                          fontWeight: FlutterFlowTheme.of(context)
+                                                                              .bodyMedium
+                                                                              .fontWeight,
+                                                                          fontStyle: FlutterFlowTheme.of(context)
+                                                                              .bodyMedium
+                                                                              .fontStyle,
+                                                                        ),
                                                                         color: Colors
                                                                             .white,
                                                                         fontSize:
                                                                             16.0,
                                                                         letterSpacing:
                                                                             0.0,
+                                                                        fontWeight: FlutterFlowTheme.of(context)
+                                                                            .bodyMedium
+                                                                            .fontWeight,
+                                                                        fontStyle: FlutterFlowTheme.of(context)
+                                                                            .bodyMedium
+                                                                            .fontStyle,
                                                                       ),
                                                                 ),
                                                               ),
@@ -1877,10 +2086,20 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            fontFamily: 'Inter',
+                                            font: GoogleFonts.inter(
+                                              fontWeight: FontWeight.bold,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontStyle,
+                                            ),
                                             fontSize: 20.0,
                                             letterSpacing: 0.0,
                                             fontWeight: FontWeight.bold,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMedium
+                                                    .fontStyle,
                                           ),
                                     ),
                                   ),
@@ -2019,6 +2238,18 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                                                                 ),
                                                               }.withoutNulls,
                                                             );
+
+                                                            _model.apiResult802 =
+                                                                await HelpandSupportGroup
+                                                                    .userActivityLogCall
+                                                                    .call(
+                                                              iduser:
+                                                                  currentUserUid,
+                                                              fitureName:
+                                                                  'Sunah',
+                                                            );
+
+                                                            safeSetState(() {});
                                                           },
                                                           child: Row(
                                                             mainAxisSize:
@@ -2233,14 +2464,27 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                                                                           context)
                                                                       .bodyMedium
                                                                       .override(
-                                                                        fontFamily:
-                                                                            'Inter',
+                                                                        font: GoogleFonts
+                                                                            .inter(
+                                                                          fontWeight: FlutterFlowTheme.of(context)
+                                                                              .bodyMedium
+                                                                              .fontWeight,
+                                                                          fontStyle: FlutterFlowTheme.of(context)
+                                                                              .bodyMedium
+                                                                              .fontStyle,
+                                                                        ),
                                                                         color: Colors
                                                                             .white,
                                                                         fontSize:
                                                                             16.0,
                                                                         letterSpacing:
                                                                             0.0,
+                                                                        fontWeight: FlutterFlowTheme.of(context)
+                                                                            .bodyMedium
+                                                                            .fontWeight,
+                                                                        fontStyle: FlutterFlowTheme.of(context)
+                                                                            .bodyMedium
+                                                                            .fontStyle,
                                                                       ),
                                                                 ),
                                                               ),
@@ -2286,11 +2530,25 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                                                     FlutterFlowTheme.of(context)
                                                         .bodyMedium
                                                         .override(
-                                                          fontFamily: 'Inter',
+                                                          font:
+                                                              GoogleFonts.inter(
+                                                            fontWeight:
+                                                                FontWeight.bold,
+                                                            fontStyle:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .fontStyle,
+                                                          ),
                                                           fontSize: 20.0,
                                                           letterSpacing: 0.0,
                                                           fontWeight:
                                                               FontWeight.bold,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMedium
+                                                                  .fontStyle,
                                                         ),
                                               ),
                                             ),
@@ -2447,6 +2705,18 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                                                                           ),
                                                                         }.withoutNulls,
                                                                       );
+
+                                                                      _model.apiResult803 = await HelpandSupportGroup
+                                                                          .userActivityLogCall
+                                                                          .call(
+                                                                        iduser:
+                                                                            currentUserUid,
+                                                                        fitureName:
+                                                                            'Sunah',
+                                                                      );
+
+                                                                      safeSetState(
+                                                                          () {});
                                                                     },
                                                                     child: Row(
                                                                       mainAxisSize:
@@ -2596,10 +2866,15 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                                                                               '-',
                                                                             ),
                                                                             style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                  fontFamily: 'Inter',
+                                                                                  font: GoogleFonts.inter(
+                                                                                    fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                    fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                  ),
                                                                                   color: Colors.white,
                                                                                   fontSize: 16.0,
                                                                                   letterSpacing: 0.0,
+                                                                                  fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                  fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
                                                                                 ),
                                                                           ),
                                                                         ),
@@ -2650,11 +2925,25 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                                                     FlutterFlowTheme.of(context)
                                                         .bodyMedium
                                                         .override(
-                                                          fontFamily: 'Inter',
+                                                          font:
+                                                              GoogleFonts.inter(
+                                                            fontWeight:
+                                                                FontWeight.bold,
+                                                            fontStyle:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .fontStyle,
+                                                          ),
                                                           fontSize: 20.0,
                                                           letterSpacing: 0.0,
                                                           fontWeight:
                                                               FontWeight.bold,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMedium
+                                                                  .fontStyle,
                                                         ),
                                               ),
                                             ),
@@ -2806,6 +3095,18 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                                                                           ),
                                                                         }.withoutNulls,
                                                                       );
+
+                                                                      _model.apiResult804 = await HelpandSupportGroup
+                                                                          .userActivityLogCall
+                                                                          .call(
+                                                                        iduser:
+                                                                            currentUserUid,
+                                                                        fitureName:
+                                                                            'Sunah',
+                                                                      );
+
+                                                                      safeSetState(
+                                                                          () {});
                                                                     },
                                                                     child: Row(
                                                                       mainAxisSize:
@@ -2955,10 +3256,15 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                                                                               '-',
                                                                             ),
                                                                             style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                  fontFamily: 'Inter',
+                                                                                  font: GoogleFonts.inter(
+                                                                                    fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                    fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                  ),
                                                                                   color: Colors.white,
                                                                                   fontSize: 16.0,
                                                                                   letterSpacing: 0.0,
+                                                                                  fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                  fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
                                                                                 ),
                                                                           ),
                                                                         ),
@@ -3009,11 +3315,25 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                                                     FlutterFlowTheme.of(context)
                                                         .bodyMedium
                                                         .override(
-                                                          fontFamily: 'Inter',
+                                                          font:
+                                                              GoogleFonts.inter(
+                                                            fontWeight:
+                                                                FontWeight.bold,
+                                                            fontStyle:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .fontStyle,
+                                                          ),
                                                           fontSize: 20.0,
                                                           letterSpacing: 0.0,
                                                           fontWeight:
                                                               FontWeight.bold,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMedium
+                                                                  .fontStyle,
                                                         ),
                                               ),
                                             ),
@@ -3169,6 +3489,18 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                                                                           ),
                                                                         }.withoutNulls,
                                                                       );
+
+                                                                      _model.apiResult805 = await HelpandSupportGroup
+                                                                          .userActivityLogCall
+                                                                          .call(
+                                                                        iduser:
+                                                                            currentUserUid,
+                                                                        fitureName:
+                                                                            'Sunah',
+                                                                      );
+
+                                                                      safeSetState(
+                                                                          () {});
                                                                     },
                                                                     child: Row(
                                                                       mainAxisSize:
@@ -3323,10 +3655,15 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                                                                               '-',
                                                                             ),
                                                                             style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                  fontFamily: 'Inter',
+                                                                                  font: GoogleFonts.inter(
+                                                                                    fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                    fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                  ),
                                                                                   color: Colors.white,
                                                                                   fontSize: 16.0,
                                                                                   letterSpacing: 0.0,
+                                                                                  fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                  fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
                                                                                 ),
                                                                           ),
                                                                         ),
@@ -3377,11 +3714,25 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                                                     FlutterFlowTheme.of(context)
                                                         .bodyMedium
                                                         .override(
-                                                          fontFamily: 'Inter',
+                                                          font:
+                                                              GoogleFonts.inter(
+                                                            fontWeight:
+                                                                FontWeight.bold,
+                                                            fontStyle:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .fontStyle,
+                                                          ),
                                                           fontSize: 20.0,
                                                           letterSpacing: 0.0,
                                                           fontWeight:
                                                               FontWeight.bold,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMedium
+                                                                  .fontStyle,
                                                         ),
                                               ),
                                             ),
@@ -3537,6 +3888,18 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                                                                           ),
                                                                         }.withoutNulls,
                                                                       );
+
+                                                                      _model.apiResult806 = await HelpandSupportGroup
+                                                                          .userActivityLogCall
+                                                                          .call(
+                                                                        iduser:
+                                                                            currentUserUid,
+                                                                        fitureName:
+                                                                            'Sunah',
+                                                                      );
+
+                                                                      safeSetState(
+                                                                          () {});
                                                                     },
                                                                     child: Row(
                                                                       mainAxisSize:
@@ -3686,10 +4049,15 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                                                                               '-',
                                                                             ),
                                                                             style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                  fontFamily: 'Inter',
+                                                                                  font: GoogleFonts.inter(
+                                                                                    fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                    fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                  ),
                                                                                   color: Colors.white,
                                                                                   fontSize: 16.0,
                                                                                   letterSpacing: 0.0,
+                                                                                  fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                  fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
                                                                                 ),
                                                                           ),
                                                                         ),
@@ -3740,11 +4108,25 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                                                     FlutterFlowTheme.of(context)
                                                         .bodyMedium
                                                         .override(
-                                                          fontFamily: 'Inter',
+                                                          font:
+                                                              GoogleFonts.inter(
+                                                            fontWeight:
+                                                                FontWeight.bold,
+                                                            fontStyle:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .fontStyle,
+                                                          ),
                                                           fontSize: 20.0,
                                                           letterSpacing: 0.0,
                                                           fontWeight:
                                                               FontWeight.bold,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMedium
+                                                                  .fontStyle,
                                                         ),
                                               ),
                                             ),
@@ -3899,6 +4281,18 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                                                                           ),
                                                                         }.withoutNulls,
                                                                       );
+
+                                                                      _model.apiResult807 = await HelpandSupportGroup
+                                                                          .userActivityLogCall
+                                                                          .call(
+                                                                        iduser:
+                                                                            currentUserUid,
+                                                                        fitureName:
+                                                                            'Sunah',
+                                                                      );
+
+                                                                      safeSetState(
+                                                                          () {});
                                                                     },
                                                                     child: Row(
                                                                       mainAxisSize:
@@ -4045,10 +4439,15 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                                                                               '-',
                                                                             ),
                                                                             style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                  fontFamily: 'Inter',
+                                                                                  font: GoogleFonts.inter(
+                                                                                    fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                    fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                  ),
                                                                                   color: Colors.white,
                                                                                   fontSize: 16.0,
                                                                                   letterSpacing: 0.0,
+                                                                                  fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                  fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
                                                                                 ),
                                                                           ),
                                                                         ),

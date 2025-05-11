@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'flutter_flow/request_manager.dart';
+import '/backend/backend.dart';
+import '/backend/schema/structs/index.dart';
 import '/backend/api_requests/api_manager.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -386,6 +388,16 @@ class FFAppState extends ChangeNotifier {
   bool get statusSearch => _statusSearch;
   set statusSearch(bool value) {
     _statusSearch = value;
+  }
+
+  CountLogStruct _countlogstate = CountLogStruct();
+  CountLogStruct get countlogstate => _countlogstate;
+  set countlogstate(CountLogStruct value) {
+    _countlogstate = value;
+  }
+
+  void updateCountlogstateStruct(Function(CountLogStruct) updateFn) {
+    updateFn(_countlogstate);
   }
 
   final _kategoriManager = FutureRequestManager<ApiCallResponse>();

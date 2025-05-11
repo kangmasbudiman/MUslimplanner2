@@ -17,6 +17,8 @@ class DoadoaByKategorinewModel
   String? textFieldSearch1SelectedOption;
   String? Function(BuildContext, String?)?
       textFieldSearch1TextControllerValidator;
+  // Stores action output result for [Backend Call - API (userActivityLog)] action in Containerayat1 widget.
+  ApiCallResponse? apiResult8093;
 
   /// Query cache managers for this widget.
 

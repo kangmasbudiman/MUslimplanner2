@@ -1,6 +1,7 @@
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'listsunnah_model.dart';
 export 'listsunnah_model.dart';
 
@@ -50,11 +51,17 @@ class _ListsunnahWidgetState extends State<ListsunnahWidget> {
           title: Text(
             'My Users',
             style: FlutterFlowTheme.of(context).headlineLarge.override(
-                  fontFamily: 'Outfit',
+                  font: GoogleFonts.outfit(
+                    fontWeight: FontWeight.normal,
+                    fontStyle:
+                        FlutterFlowTheme.of(context).headlineLarge.fontStyle,
+                  ),
                   color: Color(0xFF15161E),
                   fontSize: 32.0,
                   letterSpacing: 0.0,
                   fontWeight: FontWeight.normal,
+                  fontStyle:
+                      FlutterFlowTheme.of(context).headlineLarge.fontStyle,
                 ),
           ),
           actions: [],
@@ -75,8 +82,20 @@ class _ListsunnahWidgetState extends State<ListsunnahWidget> {
                   child: Text(
                     'Hello World',
                     style: FlutterFlowTheme.of(context).bodyMedium.override(
-                          fontFamily: 'Inter',
+                          font: GoogleFonts.inter(
+                            fontWeight: FlutterFlowTheme.of(context)
+                                .bodyMedium
+                                .fontWeight,
+                            fontStyle: FlutterFlowTheme.of(context)
+                                .bodyMedium
+                                .fontStyle,
+                          ),
                           letterSpacing: 0.0,
+                          fontWeight: FlutterFlowTheme.of(context)
+                              .bodyMedium
+                              .fontWeight,
+                          fontStyle:
+                              FlutterFlowTheme.of(context).bodyMedium.fontStyle,
                         ),
                   ),
                 ),

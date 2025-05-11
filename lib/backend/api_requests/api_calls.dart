@@ -3400,6 +3400,9 @@ class HelpandSupportGroup {
   static TambahhelpsuportCall tambahhelpsuportCall = TambahhelpsuportCall();
   static DeletehelpsuportCall deletehelpsuportCall = DeletehelpsuportCall();
   static GethelpCall gethelpCall = GethelpCall();
+  static UserActivityLogCall userActivityLogCall = UserActivityLogCall();
+  static UserActivityLogCountCall userActivityLogCountCall =
+      UserActivityLogCountCall();
 }
 
 class TambahhelpsuportCall {
@@ -3512,6 +3515,58 @@ class GethelpCall {
           .map((x) => castToType<String>(x))
           .withoutNulls
           .toList();
+}
+
+class UserActivityLogCall {
+  Future<ApiCallResponse> call({
+    String? iduser = '',
+    String? fitureName = '',
+  }) async {
+    final baseUrl = HelpandSupportGroup.getBaseUrl();
+
+    return ApiManager.instance.makeApiCall(
+      callName: 'userActivityLog',
+      apiUrl: '${baseUrl}/userlog',
+      callType: ApiCallType.POST,
+      headers: {},
+      params: {
+        'iduser': iduser,
+        'fiture_name': fitureName,
+      },
+      bodyType: BodyType.X_WWW_FORM_URL_ENCODED,
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      isStreamingApi: false,
+      alwaysAllowBody: false,
+    );
+  }
+}
+
+class UserActivityLogCountCall {
+  Future<ApiCallResponse> call({
+    String? iduser = '',
+  }) async {
+    final baseUrl = HelpandSupportGroup.getBaseUrl();
+
+    return ApiManager.instance.makeApiCall(
+      callName: 'userActivityLog Count',
+      apiUrl: '${baseUrl}/userlogcount',
+      callType: ApiCallType.POST,
+      headers: {},
+      params: {
+        'iduser': iduser,
+      },
+      bodyType: BodyType.X_WWW_FORM_URL_ENCODED,
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      isStreamingApi: false,
+      alwaysAllowBody: false,
+    );
+  }
 }
 
 /// End HelpandSupport Group Code

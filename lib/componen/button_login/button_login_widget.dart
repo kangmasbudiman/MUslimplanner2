@@ -1,6 +1,7 @@
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'button_login_model.dart';
 export 'button_login_model.dart';
@@ -68,11 +69,16 @@ class _ButtonLoginWidgetState extends State<ButtonLoginWidget> {
           child: Text(
             'Login',
             style: FlutterFlowTheme.of(context).bodyMedium.override(
-                  fontFamily: 'Nunito',
+                  font: GoogleFonts.nunito(
+                    fontWeight: FontWeight.bold,
+                    fontStyle:
+                        FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                  ),
                   color: FlutterFlowTheme.of(context).primaryBackground,
                   fontSize: 20.0,
                   letterSpacing: 0.0,
                   fontWeight: FontWeight.bold,
+                  fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
                 ),
           ),
         ),

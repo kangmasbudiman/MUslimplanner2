@@ -1,3 +1,4 @@
+import '/backend/api_requests/api_calls.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/index.dart';
 import 'doadoa_widget.dart' show DoadoaWidget;
@@ -13,6 +14,8 @@ class DoadoaModel extends FlutterFlowModel<DoadoaWidget> {
   String? textFieldSearch1SelectedOption;
   String? Function(BuildContext, String?)?
       textFieldSearch1TextControllerValidator;
+  // Stores action output result for [Backend Call - API (userActivityLog)] action in Containerayat1 widget.
+  ApiCallResponse? apiResult8092;
 
   @override
   void initState(BuildContext context) {}

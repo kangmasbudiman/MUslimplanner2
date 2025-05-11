@@ -16,52 +16,70 @@ class HomeScreenModel extends FlutterFlowModel<HomeScreenWidget> {
   ApiCallResponse? apiResultf33;
   // Model for dateComponen component.
   late DateComponenModel dateComponenModel;
+  // Stores action output result for [Backend Call - API (userActivityLog)] action in Row widget.
+  ApiCallResponse? apiResult80o;
   // Stores action output result for [Backend Call - API (tambahSummary)] action in Icon widget.
   ApiCallResponse? apiResultkdj;
   bool apiRequestCompleted6 = false;
   String? apiRequestLastUniqueKey6;
   // Stores action output result for [Backend Call - API (deleteMysunnah)] action in Icon widget.
   ApiCallResponse? apiResultkdDeleteSunnah;
+  // Stores action output result for [Backend Call - API (userActivityLog)] action in Row widget.
+  ApiCallResponse? apiResult800;
   // Stores action output result for [Backend Call - API (tambahSummary)] action in Icon widget.
   ApiCallResponse? apiResultkdjj;
   bool apiRequestCompleted8 = false;
   String? apiRequestLastUniqueKey8;
   // Stores action output result for [Backend Call - API (deleteMysunnah)] action in Icon widget.
   ApiCallResponse? apiResultkdDeleteSunnahh;
+  // Stores action output result for [Backend Call - API (userActivityLog)] action in Row widget.
+  ApiCallResponse? apiResult8000;
   // Stores action output result for [Backend Call - API (tambahSummary)] action in Icon widget.
   ApiCallResponse? apiResultk4;
   bool apiRequestCompleted7 = false;
   String? apiRequestLastUniqueKey7;
   // Stores action output result for [Backend Call - API (deleteMysunnah)] action in Icon widget.
   ApiCallResponse? apiResultkdDeleteSunna4;
+  // Stores action output result for [Backend Call - API (userActivityLog)] action in Row widget.
+  ApiCallResponse? apiResult802;
   // Stores action output result for [Backend Call - API (tambahSummary)] action in Icon widget.
   ApiCallResponse? apiResultfni;
   bool apiRequestCompleted4 = false;
   String? apiRequestLastUniqueKey4;
   // Stores action output result for [Backend Call - API (deleteMysunnah)] action in Icon widget.
   ApiCallResponse? apiResultkdDeleteSunnah5;
+  // Stores action output result for [Backend Call - API (userActivityLog)] action in Row widget.
+  ApiCallResponse? apiResult803;
   // Stores action output result for [Backend Call - API (tambahSummary)] action in Icon widget.
   ApiCallResponse? apiResultxrp;
   bool apiRequestCompleted3 = false;
   String? apiRequestLastUniqueKey3;
   // Stores action output result for [Backend Call - API (deleteMysunnah)] action in Icon widget.
   ApiCallResponse? apiResultkdDeleteSunnah6;
+  // Stores action output result for [Backend Call - API (userActivityLog)] action in Row widget.
+  ApiCallResponse? apiResult804;
   // Stores action output result for [Backend Call - API (tambahSummary)] action in Icon widget.
   ApiCallResponse? apiResult25b;
   // Stores action output result for [Backend Call - API (deleteMysunnah)] action in Icon widget.
   ApiCallResponse? apiResultkdDeleteSunna7;
+  // Stores action output result for [Backend Call - API (userActivityLog)] action in Row widget.
+  ApiCallResponse? apiResult805;
   // Stores action output result for [Backend Call - API (tambahSummary)] action in Icon widget.
   ApiCallResponse? apiResult000;
   bool apiRequestCompleted5 = false;
   String? apiRequestLastUniqueKey5;
   // Stores action output result for [Backend Call - API (deleteMysunnah)] action in Icon widget.
   ApiCallResponse? apiResultkdDeleteSunnah8;
+  // Stores action output result for [Backend Call - API (userActivityLog)] action in Row widget.
+  ApiCallResponse? apiResult806;
   // Stores action output result for [Backend Call - API (tambahSummary)] action in Icon widget.
   ApiCallResponse? result9;
   bool apiRequestCompleted2 = false;
   String? apiRequestLastUniqueKey2;
   // Stores action output result for [Backend Call - API (deleteMysunnah)] action in Icon widget.
   ApiCallResponse? apiResultkdDeleteSunnah9;
+  // Stores action output result for [Backend Call - API (userActivityLog)] action in Row widget.
+  ApiCallResponse? apiResult807;
   // Stores action output result for [Backend Call - API (tambahSummary)] action in Icon widget.
   ApiCallResponse? result10;
   bool apiRequestCompleted1 = false;
