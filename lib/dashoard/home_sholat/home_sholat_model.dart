@@ -12,6 +12,8 @@ import 'package:flutter/material.dart';
 class HomeSholatModel extends FlutterFlowModel<HomeSholatWidget> {
   ///  State fields for stateful widgets in this page.
 
+  // Stores action output result for [Backend Call - API (userActivityLog)] action in HomeSholat widget.
+  ApiCallResponse? apiResult808;
   bool apiRequestCompleted = false;
   String? apiRequestLastUniqueKey;
   // Model for dateComponen component.

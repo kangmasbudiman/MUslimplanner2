@@ -11,6 +11,7 @@ import '/flutter_flow/revenue_cat_util.dart' as revenue_cat;
 import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:webviewx_plus/webviewx_plus.dart';
 import 'home_screen_model.dart';
@@ -234,8 +235,17 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                                                                   .of(context)
                                                               .bodyMedium
                                                               .override(
-                                                                fontFamily:
-                                                                    'Inter',
+                                                                font:
+                                                                    GoogleFonts
+                                                                        .inter(
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .bold,
+                                                                  fontStyle: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .fontStyle,
+                                                                ),
                                                                 color: Colors
                                                                     .white,
                                                                 fontSize: 14.0,
@@ -244,6 +254,10 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                                                                 fontWeight:
                                                                     FontWeight
                                                                         .bold,
+                                                                fontStyle: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .fontStyle,
                                                               ),
                                                         ),
                                                         TextSpan(
@@ -257,15 +271,36 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                                                           ),
                                                         )
                                                       ],
-                                                      style: FlutterFlowTheme
-                                                              .of(context)
-                                                          .bodyMedium
-                                                          .override(
-                                                            fontFamily: 'Inter',
-                                                            color: FFAppState()
-                                                                .colorFontThemes,
-                                                            letterSpacing: 0.0,
-                                                          ),
+                                                      style:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodyMedium
+                                                              .override(
+                                                                font:
+                                                                    GoogleFonts
+                                                                        .inter(
+                                                                  fontWeight: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .fontWeight,
+                                                                  fontStyle: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .fontStyle,
+                                                                ),
+                                                                color: FFAppState()
+                                                                    .colorFontThemes,
+                                                                letterSpacing:
+                                                                    0.0,
+                                                                fontWeight: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .fontWeight,
+                                                                fontStyle: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .fontStyle,
+                                                              ),
                                                     ),
                                                   ),
                                                   Text(
@@ -274,12 +309,26 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                                                             context)
                                                         .bodyMedium
                                                         .override(
-                                                          fontFamily: 'Inter',
+                                                          font:
+                                                              GoogleFonts.inter(
+                                                            fontWeight:
+                                                                FontWeight.w300,
+                                                            fontStyle:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .fontStyle,
+                                                          ),
                                                           color: Colors.white,
                                                           fontSize: 13.0,
                                                           letterSpacing: 0.0,
                                                           fontWeight:
                                                               FontWeight.w300,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMedium
+                                                                  .fontStyle,
                                                         ),
                                                   ),
                                                 ].divide(SizedBox(height: 6.0)),
@@ -361,11 +410,25 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                                                             context)
                                                         .bodyMedium
                                                         .override(
-                                                          fontFamily: 'Inter',
+                                                          font:
+                                                              GoogleFonts.inter(
+                                                            fontWeight:
+                                                                FontWeight.w600,
+                                                            fontStyle:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .fontStyle,
+                                                          ),
                                                           fontSize: 10.0,
                                                           letterSpacing: 0.0,
                                                           fontWeight:
                                                               FontWeight.w600,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMedium
+                                                                  .fontStyle,
                                                         ),
                                                   ),
                                                 ),
@@ -409,13 +472,26 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                                                       context)
                                                   .headlineSmall
                                                   .override(
-                                                    fontFamily: 'Nunito',
+                                                    font: GoogleFonts.nunito(
+                                                      fontWeight:
+                                                          FontWeight.w800,
+                                                      fontStyle:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .headlineSmall
+                                                              .fontStyle,
+                                                    ),
                                                     color: FlutterFlowTheme.of(
                                                             context)
                                                         .info,
                                                     fontSize: 50.0,
                                                     letterSpacing: 0.0,
                                                     fontWeight: FontWeight.w800,
+                                                    fontStyle:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .headlineSmall
+                                                            .fontStyle,
                                                   ),
                                             ),
                                           ),
@@ -475,7 +551,16 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                                                             context)
                                                         .bodyMedium
                                                         .override(
-                                                          fontFamily: 'Inter',
+                                                          font:
+                                                              GoogleFonts.inter(
+                                                            fontWeight:
+                                                                FontWeight.w600,
+                                                            fontStyle:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .fontStyle,
+                                                          ),
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .info,
@@ -483,6 +568,11 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                                                           letterSpacing: 0.0,
                                                           fontWeight:
                                                               FontWeight.w600,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMedium
+                                                                  .fontStyle,
                                                         ),
                                                   ),
                                                   TextSpan(
@@ -525,19 +615,33 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                                                     style: TextStyle(),
                                                   )
                                                 ],
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily: 'Inter',
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
+                                                style: FlutterFlowTheme.of(
+                                                        context)
+                                                    .bodyMedium
+                                                    .override(
+                                                      font: GoogleFonts.inter(
+                                                        fontWeight:
+                                                            FontWeight.w600,
+                                                        fontStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .fontStyle,
+                                                      ),
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
                                                               .info,
-                                                          fontSize: 15.0,
-                                                          letterSpacing: 0.0,
-                                                          fontWeight:
-                                                              FontWeight.w600,
-                                                        ),
+                                                      fontSize: 15.0,
+                                                      letterSpacing: 0.0,
+                                                      fontWeight:
+                                                          FontWeight.w600,
+                                                      fontStyle:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodyMedium
+                                                              .fontStyle,
+                                                    ),
                                               ),
                                             );
                                           },
@@ -573,10 +677,20 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            fontFamily: 'Inter',
+                                            font: GoogleFonts.inter(
+                                              fontWeight: FontWeight.bold,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontStyle,
+                                            ),
                                             fontSize: 20.0,
                                             letterSpacing: 0.0,
                                             fontWeight: FontWeight.bold,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMedium
+                                                    .fontStyle,
                                           ),
                                     ),
                                   ),
@@ -715,6 +829,18 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                                                                 ),
                                                               }.withoutNulls,
                                                             );
+
+                                                            _model.apiResult80o =
+                                                                await HelpandSupportGroup
+                                                                    .userActivityLogCall
+                                                                    .call(
+                                                              iduser:
+                                                                  currentUserUid,
+                                                              fitureName:
+                                                                  'Sunah',
+                                                            );
+
+                                                            safeSetState(() {});
                                                           },
                                                           onLongPress:
                                                               () async {
@@ -984,14 +1110,27 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                                                                           context)
                                                                       .bodyMedium
                                                                       .override(
-                                                                        fontFamily:
-                                                                            'Inter',
+                                                                        font: GoogleFonts
+                                                                            .inter(
+                                                                          fontWeight: FlutterFlowTheme.of(context)
+                                                                              .bodyMedium
+                                                                              .fontWeight,
+                                                                          fontStyle: FlutterFlowTheme.of(context)
+                                                                              .bodyMedium
+                                                                              .fontStyle,
+                                                                        ),
                                                                         color: Colors
                                                                             .white,
                                                                         fontSize:
                                                                             16.0,
                                                                         letterSpacing:
                                                                             0.0,
+                                                                        fontWeight: FlutterFlowTheme.of(context)
+                                                                            .bodyMedium
+                                                                            .fontWeight,
+                                                                        fontStyle: FlutterFlowTheme.of(context)
+                                                                            .bodyMedium
+                                                                            .fontStyle,
                                                                       ),
                                                                 ),
                                                               ),
@@ -1018,6 +1157,441 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                                       ),
                                     ),
                                   ),
+                               
+                                 Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 20.0, 0.0, 0.0),
+                                    child: Text(
+                                      'Fajr',
+                                      style: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .override(
+                                            font: GoogleFonts.inter(
+                                              fontWeight: FontWeight.bold,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontStyle,
+                                            ),
+                                            fontSize: 20.0,
+                                            letterSpacing: 0.0,
+                                            fontWeight: FontWeight.bold,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMedium
+                                                    .fontStyle,
+                                          ),
+                                    ),
+                                  ),
+                                  Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 10.0, 0.0, 0.0),
+                                    child: AuthUserStreamWidget(
+                                      builder: (context) => Container(
+                                        width: double.infinity,
+                                        decoration: BoxDecoration(
+                                          color:
+                                              currentUserDocument?.colorThemes,
+                                          boxShadow: [
+                                            BoxShadow(
+                                              blurRadius: 2.0,
+                                              color: Color(0x33000000),
+                                              offset: Offset(
+                                                1.0,
+                                                5.0,
+                                              ),
+                                            )
+                                          ],
+                                          borderRadius: BorderRadius.only(
+                                            bottomLeft: Radius.circular(20.0),
+                                            bottomRight: Radius.circular(20.0),
+                                            topLeft: Radius.circular(20.0),
+                                            topRight: Radius.circular(20.0),
+                                          ),
+                                        ),
+                                        child: Padding(
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  10.0, 10.0, 10.0, 10.0),
+                                          child: FutureBuilder<ApiCallResponse>(
+                                            future: FFAppState()
+                                                .fajrChace(
+                                              requestFn: () => SunahGroup
+                                                  .getsunahempatCall
+                                                  .call(
+                                                iduser: currentUserUid,
+                                                tanggal: dateTimeFormat(
+                                                    "yyyy-MM-dd",
+                                                    getCurrentTimestamp),
+                                              ),
+                                            )
+                                                .then((result) {
+                                              _model.apiRequestCompleted7 =
+                                                  true;
+                                              return result;
+                                            }),
+                                            builder: (context, snapshot) {
+                                              // Customize what your widget looks like when it's loading.
+                                              if (!snapshot.hasData) {
+                                                return Center(
+                                                  child: SizedBox(
+                                                    width: 40.0,
+                                                    height: 40.0,
+                                                    child:
+                                                        CircularProgressIndicator(
+                                                      valueColor:
+                                                          AlwaysStoppedAnimation<
+                                                              Color>(
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .info,
+                                                      ),
+                                                    ),
+                                                  ),
+                                                );
+                                              }
+                                              final columnFajarGetsunahempatResponse =
+                                                  snapshot.data!;
+
+                                              return Builder(
+                                                builder: (context) {
+                                                  final res4 = getJsonField(
+                                                    columnFajarGetsunahempatResponse
+                                                        .jsonBody,
+                                                    r'''$.data''',
+                                                  ).toList();
+
+                                                  return Column(
+                                                    mainAxisSize:
+                                                        MainAxisSize.max,
+                                                    children: List.generate(
+                                                        res4.length,
+                                                        (res4Index) {
+                                                      final res4Item =
+                                                          res4[res4Index];
+                                                      return Padding(
+                                                        padding:
+                                                            EdgeInsetsDirectional
+                                                                .fromSTEB(
+                                                                    0.0,
+                                                                    0.0,
+                                                                    0.0,
+                                                                    10.0),
+                                                        child: InkWell(
+                                                          splashColor: Colors
+                                                              .transparent,
+                                                          focusColor: Colors
+                                                              .transparent,
+                                                          hoverColor: Colors
+                                                              .transparent,
+                                                          highlightColor: Colors
+                                                              .transparent,
+                                                          onTap: () async {
+                                                            context.pushNamed(
+                                                              SubDetailTaskSunahWidget
+                                                                  .routeName,
+                                                              queryParameters: {
+                                                                'idsunah':
+                                                                    serializeParam(
+                                                                  SunahGroup
+                                                                      .getsunahempatCall
+                                                                      .id(
+                                                                        columnFajarGetsunahempatResponse
+                                                                            .jsonBody,
+                                                                      )
+                                                                      ?.elementAtOrNull(
+                                                                          res4Index),
+                                                                  ParamType.int,
+                                                                ),
+                                                                'namasunah':
+                                                                    serializeParam(
+                                                                  SunahGroup
+                                                                      .getsunahempatCall
+                                                                      .namasunah(
+                                                                        columnFajarGetsunahempatResponse
+                                                                            .jsonBody,
+                                                                      )
+                                                                      ?.elementAtOrNull(
+                                                                          res4Index),
+                                                                  ParamType
+                                                                      .String,
+                                                                ),
+                                                              }.withoutNulls,
+                                                            );
+
+                                                            _model.apiResult8000 =
+                                                                await HelpandSupportGroup
+                                                                    .userActivityLogCall
+                                                                    .call(
+                                                              iduser:
+                                                                  currentUserUid,
+                                                              fitureName:
+                                                                  'Sunah',
+                                                            );
+
+                                                            safeSetState(() {});
+                                                          },
+                                                          child: Row(
+                                                            mainAxisSize:
+                                                                MainAxisSize
+                                                                    .max,
+                                                            children: [
+                                                              Stack(
+                                                                children: [
+                                                                  InkWell(
+                                                                    splashColor:
+                                                                        Colors
+                                                                            .transparent,
+                                                                    focusColor:
+                                                                        Colors
+                                                                            .transparent,
+                                                                    hoverColor:
+                                                                        Colors
+                                                                            .transparent,
+                                                                    highlightColor:
+                                                                        Colors
+                                                                            .transparent,
+                                                                    onTap:
+                                                                        () async {
+                                                                      _model.apiResultk4 = await SunahGroup
+                                                                          .tambahSummaryCall
+                                                                          .call(
+                                                                        iduser:
+                                                                            currentUserUid,
+                                                                        idsunah: (SunahGroup.getsunahempatCall
+                                                                                .id(
+                                                                                  columnFajarGetsunahempatResponse.jsonBody,
+                                                                                )
+                                                                                ?.elementAtOrNull(res4Index))
+                                                                            ?.toString(),
+                                                                      );
+
+                                                                      if ((_model
+                                                                              .apiResultk4
+                                                                              ?.succeeded ??
+                                                                          true)) {
+                                                                        ScaffoldMessenger.of(context)
+                                                                            .showSnackBar(
+                                                                          SnackBar(
+                                                                            content:
+                                                                                Text(
+                                                                              'Sunah Berhasil ditambah ',
+                                                                              style: TextStyle(
+                                                                                color: FlutterFlowTheme.of(context).primaryText,
+                                                                              ),
+                                                                            ),
+                                                                            duration:
+                                                                                Duration(milliseconds: 4000),
+                                                                            backgroundColor:
+                                                                                FlutterFlowTheme.of(context).secondary,
+                                                                          ),
+                                                                        );
+                                                                        FFAppState()
+                                                                            .clearFajrChaceCache();
+                                                                        safeSetState(
+                                                                            () {
+                                                                          FFAppState()
+                                                                              .clearFajrChaceCache();
+                                                                          _model.apiRequestCompleted7 =
+                                                                              false;
+                                                                        });
+                                                                        await _model
+                                                                            .waitForApiRequestCompleted7();
+                                                                      }
+
+                                                                      safeSetState(
+                                                                          () {});
+                                                                    },
+                                                                    child: Icon(
+                                                                      Icons
+                                                                          .circle_outlined,
+                                                                      color: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .secondaryText,
+                                                                      size:
+                                                                          24.0,
+                                                                    ),
+                                                                  ),
+                                                                  if (functions.intToString(
+                                                                          valueOrDefault<
+                                                                              int>(
+                                                                        SunahGroup
+                                                                            .getsunahempatCall
+                                                                            .isComplate(
+                                                                              columnFajarGetsunahempatResponse.jsonBody,
+                                                                            )
+                                                                            ?.elementAtOrNull(res4Index),
+                                                                        0,
+                                                                      )) ==
+                                                                      '1')
+                                                                    InkWell(
+                                                                      splashColor:
+                                                                          Colors
+                                                                              .transparent,
+                                                                      focusColor:
+                                                                          Colors
+                                                                              .transparent,
+                                                                      hoverColor:
+                                                                          Colors
+                                                                              .transparent,
+                                                                      highlightColor:
+                                                                          Colors
+                                                                              .transparent,
+                                                                      onTap:
+                                                                          () async {
+                                                                        ScaffoldMessenger.of(context)
+                                                                            .showSnackBar(
+                                                                          SnackBar(
+                                                                            content:
+                                                                                Text(
+                                                                              'Loading....',
+                                                                              style: TextStyle(
+                                                                                color: FlutterFlowTheme.of(context).primaryText,
+                                                                              ),
+                                                                            ),
+                                                                            duration:
+                                                                                Duration(milliseconds: 4900),
+                                                                            backgroundColor:
+                                                                                FlutterFlowTheme.of(context).secondary,
+                                                                          ),
+                                                                        );
+                                                                        _model.apiResultkdDeleteSunna4 = await SunahGroup
+                                                                            .deleteMysunnahCall
+                                                                            .call(
+                                                                          id: valueOrDefault<
+                                                                              String>(
+                                                                            functions.intToString(valueOrDefault<int>(
+                                                                              SunahGroup.getsunahempatCall.summaryId(
+                                                                                columnFajarGetsunahempatResponse.jsonBody,
+                                                                              ),
+                                                                              0,
+                                                                            )),
+                                                                            '0',
+                                                                          ),
+                                                                        );
+
+                                                                        if ((_model.apiResultkdDeleteSunna4?.succeeded ??
+                                                                            true)) {
+                                                                          ScaffoldMessenger.of(context)
+                                                                              .showSnackBar(
+                                                                            SnackBar(
+                                                                              content: Text(
+                                                                                'Sunnah Deleted',
+                                                                                style: TextStyle(
+                                                                                  color: FlutterFlowTheme.of(context).primaryText,
+                                                                                ),
+                                                                              ),
+                                                                              duration: Duration(milliseconds: 4000),
+                                                                              backgroundColor: FlutterFlowTheme.of(context).secondary,
+                                                                            ),
+                                                                          );
+                                                                          FFAppState()
+                                                                              .clearFajrChaceCache();
+                                                                          safeSetState(
+                                                                              () {
+                                                                            FFAppState().clearQiyamulLailChaceCache();
+                                                                            _model.apiRequestCompleted6 =
+                                                                                false;
+                                                                          });
+                                                                          await _model
+                                                                              .waitForApiRequestCompleted6();
+                                                                        } else {
+                                                                          ScaffoldMessenger.of(context)
+                                                                              .showSnackBar(
+                                                                            SnackBar(
+                                                                              content: Text(
+                                                                                'Delete Failed',
+                                                                                style: TextStyle(
+                                                                                  color: FlutterFlowTheme.of(context).primaryText,
+                                                                                ),
+                                                                              ),
+                                                                              duration: Duration(milliseconds: 4000),
+                                                                              backgroundColor: FlutterFlowTheme.of(context).secondary,
+                                                                            ),
+                                                                          );
+                                                                        }
+
+                                                                        safeSetState(
+                                                                            () {});
+                                                                      },
+                                                                      child:
+                                                                          Icon(
+                                                                        Icons
+                                                                            .check_circle_rounded,
+                                                                        color: FlutterFlowTheme.of(context)
+                                                                            .alternate,
+                                                                        size:
+                                                                            24.0,
+                                                                      ),
+                                                                    ),
+                                                                ],
+                                                              ),
+                                                              Expanded(
+                                                                child: Text(
+                                                                  valueOrDefault<
+                                                                      String>(
+                                                                    SunahGroup
+                                                                        .getsunahempatCall
+                                                                        .namasunah(
+                                                                          columnFajarGetsunahempatResponse
+                                                                              .jsonBody,
+                                                                        )
+                                                                        ?.elementAtOrNull(
+                                                                            res4Index),
+                                                                    '-',
+                                                                  ),
+                                                                  style: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .override(
+                                                                        font: GoogleFonts
+                                                                            .inter(
+                                                                          fontWeight: FlutterFlowTheme.of(context)
+                                                                              .bodyMedium
+                                                                              .fontWeight,
+                                                                          fontStyle: FlutterFlowTheme.of(context)
+                                                                              .bodyMedium
+                                                                              .fontStyle,
+                                                                        ),
+                                                                        color: Colors
+                                                                            .white,
+                                                                        fontSize:
+                                                                            16.0,
+                                                                        letterSpacing:
+                                                                            0.0,
+                                                                        fontWeight: FlutterFlowTheme.of(context)
+                                                                            .bodyMedium
+                                                                            .fontWeight,
+                                                                        fontStyle: FlutterFlowTheme.of(context)
+                                                                            .bodyMedium
+                                                                            .fontStyle,
+                                                                      ),
+                                                                ),
+                                                              ),
+                                                              Icon(
+                                                                Icons
+                                                                    .arrow_forward_ios,
+                                                                color: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .alternate,
+                                                                size: 20.0,
+                                                              ),
+                                                            ].divide(SizedBox(
+                                                                width: 10.0)),
+                                                          ),
+                                                        ),
+                                                      );
+                                                    }),
+                                                  );
+                                                },
+                                              );
+                                            },
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                
                                   Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 20.0, 0.0, 0.0),
@@ -1026,10 +1600,20 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            fontFamily: 'Inter',
+                                            font: GoogleFonts.inter(
+                                              fontWeight: FontWeight.bold,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontStyle,
+                                            ),
                                             fontSize: 20.0,
                                             letterSpacing: 0.0,
                                             fontWeight: FontWeight.bold,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMedium
+                                                    .fontStyle,
                                           ),
                                     ),
                                   ),
@@ -1168,6 +1752,18 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                                                                 ),
                                                               }.withoutNulls,
                                                             );
+
+                                                            _model.apiResult800 =
+                                                                await HelpandSupportGroup
+                                                                    .userActivityLogCall
+                                                                    .call(
+                                                              iduser:
+                                                                  currentUserUid,
+                                                              fitureName:
+                                                                  'Sunah',
+                                                            );
+
+                                                            safeSetState(() {});
                                                           },
                                                           onLongPress:
                                                               () async {
@@ -1437,14 +2033,27 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                                                                           context)
                                                                       .bodyMedium
                                                                       .override(
-                                                                        fontFamily:
-                                                                            'Inter',
+                                                                        font: GoogleFonts
+                                                                            .inter(
+                                                                          fontWeight: FlutterFlowTheme.of(context)
+                                                                              .bodyMedium
+                                                                              .fontWeight,
+                                                                          fontStyle: FlutterFlowTheme.of(context)
+                                                                              .bodyMedium
+                                                                              .fontStyle,
+                                                                        ),
                                                                         color: Colors
                                                                             .white,
                                                                         fontSize:
                                                                             16.0,
                                                                         letterSpacing:
                                                                             0.0,
+                                                                        fontWeight: FlutterFlowTheme.of(context)
+                                                                            .bodyMedium
+                                                                            .fontWeight,
+                                                                        fontStyle: FlutterFlowTheme.of(context)
+                                                                            .bodyMedium
+                                                                            .fontStyle,
                                                                       ),
                                                                 ),
                                                               ),
@@ -1471,404 +2080,8 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                                       ),
                                     ),
                                   ),
-                                  Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 20.0, 0.0, 0.0),
-                                    child: Text(
-                                      'Fajr',
-                                      style: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .override(
-                                            fontFamily: 'Inter',
-                                            fontSize: 20.0,
-                                            letterSpacing: 0.0,
-                                            fontWeight: FontWeight.bold,
-                                          ),
-                                    ),
-                                  ),
-                                  Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 10.0, 0.0, 0.0),
-                                    child: AuthUserStreamWidget(
-                                      builder: (context) => Container(
-                                        width: double.infinity,
-                                        decoration: BoxDecoration(
-                                          color:
-                                              currentUserDocument?.colorThemes,
-                                          boxShadow: [
-                                            BoxShadow(
-                                              blurRadius: 2.0,
-                                              color: Color(0x33000000),
-                                              offset: Offset(
-                                                1.0,
-                                                5.0,
-                                              ),
-                                            )
-                                          ],
-                                          borderRadius: BorderRadius.only(
-                                            bottomLeft: Radius.circular(20.0),
-                                            bottomRight: Radius.circular(20.0),
-                                            topLeft: Radius.circular(20.0),
-                                            topRight: Radius.circular(20.0),
-                                          ),
-                                        ),
-                                        child: Padding(
-                                          padding:
-                                              EdgeInsetsDirectional.fromSTEB(
-                                                  10.0, 10.0, 10.0, 10.0),
-                                          child: FutureBuilder<ApiCallResponse>(
-                                            future: FFAppState()
-                                                .fajrChace(
-                                              requestFn: () => SunahGroup
-                                                  .getsunahempatCall
-                                                  .call(
-                                                iduser: currentUserUid,
-                                                tanggal: dateTimeFormat(
-                                                    "yyyy-MM-dd",
-                                                    getCurrentTimestamp),
-                                              ),
-                                            )
-                                                .then((result) {
-                                              _model.apiRequestCompleted7 =
-                                                  true;
-                                              return result;
-                                            }),
-                                            builder: (context, snapshot) {
-                                              // Customize what your widget looks like when it's loading.
-                                              if (!snapshot.hasData) {
-                                                return Center(
-                                                  child: SizedBox(
-                                                    width: 40.0,
-                                                    height: 40.0,
-                                                    child:
-                                                        CircularProgressIndicator(
-                                                      valueColor:
-                                                          AlwaysStoppedAnimation<
-                                                              Color>(
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .info,
-                                                      ),
-                                                    ),
-                                                  ),
-                                                );
-                                              }
-                                              final columnFajarGetsunahempatResponse =
-                                                  snapshot.data!;
-
-                                              return Builder(
-                                                builder: (context) {
-                                                  final res4 = getJsonField(
-                                                    columnFajarGetsunahempatResponse
-                                                        .jsonBody,
-                                                    r'''$.data''',
-                                                  ).toList();
-
-                                                  return Column(
-                                                    mainAxisSize:
-                                                        MainAxisSize.max,
-                                                    children: List.generate(
-                                                        res4.length,
-                                                        (res4Index) {
-                                                      final res4Item =
-                                                          res4[res4Index];
-                                                      return Padding(
-                                                        padding:
-                                                            EdgeInsetsDirectional
-                                                                .fromSTEB(
-                                                                    0.0,
-                                                                    0.0,
-                                                                    0.0,
-                                                                    10.0),
-                                                        child: InkWell(
-                                                          splashColor: Colors
-                                                              .transparent,
-                                                          focusColor: Colors
-                                                              .transparent,
-                                                          hoverColor: Colors
-                                                              .transparent,
-                                                          highlightColor: Colors
-                                                              .transparent,
-                                                          onTap: () async {
-                                                            context.pushNamed(
-                                                              SubDetailTaskSunahWidget
-                                                                  .routeName,
-                                                              queryParameters: {
-                                                                'idsunah':
-                                                                    serializeParam(
-                                                                  SunahGroup
-                                                                      .getsunahempatCall
-                                                                      .id(
-                                                                        columnFajarGetsunahempatResponse
-                                                                            .jsonBody,
-                                                                      )
-                                                                      ?.elementAtOrNull(
-                                                                          res4Index),
-                                                                  ParamType.int,
-                                                                ),
-                                                                'namasunah':
-                                                                    serializeParam(
-                                                                  SunahGroup
-                                                                      .getsunahempatCall
-                                                                      .namasunah(
-                                                                        columnFajarGetsunahempatResponse
-                                                                            .jsonBody,
-                                                                      )
-                                                                      ?.elementAtOrNull(
-                                                                          res4Index),
-                                                                  ParamType
-                                                                      .String,
-                                                                ),
-                                                              }.withoutNulls,
-                                                            );
-                                                          },
-                                                          child: Row(
-                                                            mainAxisSize:
-                                                                MainAxisSize
-                                                                    .max,
-                                                            children: [
-                                                              Stack(
-                                                                children: [
-                                                                  InkWell(
-                                                                    splashColor:
-                                                                        Colors
-                                                                            .transparent,
-                                                                    focusColor:
-                                                                        Colors
-                                                                            .transparent,
-                                                                    hoverColor:
-                                                                        Colors
-                                                                            .transparent,
-                                                                    highlightColor:
-                                                                        Colors
-                                                                            .transparent,
-                                                                    onTap:
-                                                                        () async {
-                                                                      _model.apiResultk4 = await SunahGroup
-                                                                          .tambahSummaryCall
-                                                                          .call(
-                                                                        iduser:
-                                                                            currentUserUid,
-                                                                        idsunah: (SunahGroup.getsunahempatCall
-                                                                                .id(
-                                                                                  columnFajarGetsunahempatResponse.jsonBody,
-                                                                                )
-                                                                                ?.elementAtOrNull(res4Index))
-                                                                            ?.toString(),
-                                                                      );
-
-                                                                      if ((_model
-                                                                              .apiResultk4
-                                                                              ?.succeeded ??
-                                                                          true)) {
-                                                                        ScaffoldMessenger.of(context)
-                                                                            .showSnackBar(
-                                                                          SnackBar(
-                                                                            content:
-                                                                                Text(
-                                                                              'Sunah Berhasil ditambah ',
-                                                                              style: TextStyle(
-                                                                                color: FlutterFlowTheme.of(context).primaryText,
-                                                                              ),
-                                                                            ),
-                                                                            duration:
-                                                                                Duration(milliseconds: 4000),
-                                                                            backgroundColor:
-                                                                                FlutterFlowTheme.of(context).secondary,
-                                                                          ),
-                                                                        );
-                                                                        FFAppState()
-                                                                            .clearFajrChaceCache();
-                                                                        safeSetState(
-                                                                            () {
-                                                                          FFAppState()
-                                                                              .clearFajrChaceCache();
-                                                                          _model.apiRequestCompleted7 =
-                                                                              false;
-                                                                        });
-                                                                        await _model
-                                                                            .waitForApiRequestCompleted7();
-                                                                      }
-
-                                                                      safeSetState(
-                                                                          () {});
-                                                                    },
-                                                                    child: Icon(
-                                                                      Icons
-                                                                          .circle_outlined,
-                                                                      color: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .secondaryText,
-                                                                      size:
-                                                                          24.0,
-                                                                    ),
-                                                                  ),
-                                                                  if (functions.intToString(
-                                                                          valueOrDefault<
-                                                                              int>(
-                                                                        SunahGroup
-                                                                            .getsunahempatCall
-                                                                            .isComplate(
-                                                                              columnFajarGetsunahempatResponse.jsonBody,
-                                                                            )
-                                                                            ?.elementAtOrNull(res4Index),
-                                                                        0,
-                                                                      )) ==
-                                                                      '1')
-                                                                    InkWell(
-                                                                      splashColor:
-                                                                          Colors
-                                                                              .transparent,
-                                                                      focusColor:
-                                                                          Colors
-                                                                              .transparent,
-                                                                      hoverColor:
-                                                                          Colors
-                                                                              .transparent,
-                                                                      highlightColor:
-                                                                          Colors
-                                                                              .transparent,
-                                                                      onTap:
-                                                                          () async {
-                                                                        ScaffoldMessenger.of(context)
-                                                                            .showSnackBar(
-                                                                          SnackBar(
-                                                                            content:
-                                                                                Text(
-                                                                              'Loading....',
-                                                                              style: TextStyle(
-                                                                                color: FlutterFlowTheme.of(context).primaryText,
-                                                                              ),
-                                                                            ),
-                                                                            duration:
-                                                                                Duration(milliseconds: 4900),
-                                                                            backgroundColor:
-                                                                                FlutterFlowTheme.of(context).secondary,
-                                                                          ),
-                                                                        );
-                                                                        _model.apiResultkdDeleteSunna4 = await SunahGroup
-                                                                            .deleteMysunnahCall
-                                                                            .call(
-                                                                          id: valueOrDefault<
-                                                                              String>(
-                                                                            functions.intToString(valueOrDefault<int>(
-                                                                              SunahGroup.getsunahempatCall.summaryId(
-                                                                                columnFajarGetsunahempatResponse.jsonBody,
-                                                                              ),
-                                                                              0,
-                                                                            )),
-                                                                            '0',
-                                                                          ),
-                                                                        );
-
-                                                                        if ((_model.apiResultkdDeleteSunna4?.succeeded ??
-                                                                            true)) {
-                                                                          ScaffoldMessenger.of(context)
-                                                                              .showSnackBar(
-                                                                            SnackBar(
-                                                                              content: Text(
-                                                                                'Sunnah Deleted',
-                                                                                style: TextStyle(
-                                                                                  color: FlutterFlowTheme.of(context).primaryText,
-                                                                                ),
-                                                                              ),
-                                                                              duration: Duration(milliseconds: 4000),
-                                                                              backgroundColor: FlutterFlowTheme.of(context).secondary,
-                                                                            ),
-                                                                          );
-                                                                          FFAppState()
-                                                                              .clearFajrChaceCache();
-                                                                          safeSetState(
-                                                                              () {
-                                                                            FFAppState().clearQiyamulLailChaceCache();
-                                                                            _model.apiRequestCompleted6 =
-                                                                                false;
-                                                                          });
-                                                                          await _model
-                                                                              .waitForApiRequestCompleted6();
-                                                                        } else {
-                                                                          ScaffoldMessenger.of(context)
-                                                                              .showSnackBar(
-                                                                            SnackBar(
-                                                                              content: Text(
-                                                                                'Delete Failed',
-                                                                                style: TextStyle(
-                                                                                  color: FlutterFlowTheme.of(context).primaryText,
-                                                                                ),
-                                                                              ),
-                                                                              duration: Duration(milliseconds: 4000),
-                                                                              backgroundColor: FlutterFlowTheme.of(context).secondary,
-                                                                            ),
-                                                                          );
-                                                                        }
-
-                                                                        safeSetState(
-                                                                            () {});
-                                                                      },
-                                                                      child:
-                                                                          Icon(
-                                                                        Icons
-                                                                            .check_circle_rounded,
-                                                                        color: FlutterFlowTheme.of(context)
-                                                                            .alternate,
-                                                                        size:
-                                                                            24.0,
-                                                                      ),
-                                                                    ),
-                                                                ],
-                                                              ),
-                                                              Expanded(
-                                                                child: Text(
-                                                                  valueOrDefault<
-                                                                      String>(
-                                                                    SunahGroup
-                                                                        .getsunahempatCall
-                                                                        .namasunah(
-                                                                          columnFajarGetsunahempatResponse
-                                                                              .jsonBody,
-                                                                        )
-                                                                        ?.elementAtOrNull(
-                                                                            res4Index),
-                                                                    '-',
-                                                                  ),
-                                                                  style: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyMedium
-                                                                      .override(
-                                                                        fontFamily:
-                                                                            'Inter',
-                                                                        color: Colors
-                                                                            .white,
-                                                                        fontSize:
-                                                                            16.0,
-                                                                        letterSpacing:
-                                                                            0.0,
-                                                                      ),
-                                                                ),
-                                                              ),
-                                                              Icon(
-                                                                Icons
-                                                                    .arrow_forward_ios,
-                                                                color: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .alternate,
-                                                                size: 20.0,
-                                                              ),
-                                                            ].divide(SizedBox(
-                                                                width: 10.0)),
-                                                          ),
-                                                        ),
-                                                      );
-                                                    }),
-                                                  );
-                                                },
-                                              );
-                                            },
-                                          ),
-                                        ),
-                                      ),
-                                    ),
-                                  ),
+                                
+                                 
                                   Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 20.0, 0.0, 0.0),
@@ -1877,10 +2090,20 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            fontFamily: 'Inter',
+                                            font: GoogleFonts.inter(
+                                              fontWeight: FontWeight.bold,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontStyle,
+                                            ),
                                             fontSize: 20.0,
                                             letterSpacing: 0.0,
                                             fontWeight: FontWeight.bold,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMedium
+                                                    .fontStyle,
                                           ),
                                     ),
                                   ),
@@ -2019,6 +2242,18 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                                                                 ),
                                                               }.withoutNulls,
                                                             );
+
+                                                            _model.apiResult802 =
+                                                                await HelpandSupportGroup
+                                                                    .userActivityLogCall
+                                                                    .call(
+                                                              iduser:
+                                                                  currentUserUid,
+                                                              fitureName:
+                                                                  'Sunah',
+                                                            );
+
+                                                            safeSetState(() {});
                                                           },
                                                           child: Row(
                                                             mainAxisSize:
@@ -2233,14 +2468,27 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                                                                           context)
                                                                       .bodyMedium
                                                                       .override(
-                                                                        fontFamily:
-                                                                            'Inter',
+                                                                        font: GoogleFonts
+                                                                            .inter(
+                                                                          fontWeight: FlutterFlowTheme.of(context)
+                                                                              .bodyMedium
+                                                                              .fontWeight,
+                                                                          fontStyle: FlutterFlowTheme.of(context)
+                                                                              .bodyMedium
+                                                                              .fontStyle,
+                                                                        ),
                                                                         color: Colors
                                                                             .white,
                                                                         fontSize:
                                                                             16.0,
                                                                         letterSpacing:
                                                                             0.0,
+                                                                        fontWeight: FlutterFlowTheme.of(context)
+                                                                            .bodyMedium
+                                                                            .fontWeight,
+                                                                        fontStyle: FlutterFlowTheme.of(context)
+                                                                            .bodyMedium
+                                                                            .fontStyle,
                                                                       ),
                                                                 ),
                                                               ),
@@ -2267,6 +2515,9 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                                       ),
                                     ),
                                   ),
+                                 
+                                 
+                                 
                                   Row(
                                     mainAxisSize: MainAxisSize.max,
                                     children: [
@@ -2286,11 +2537,25 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                                                     FlutterFlowTheme.of(context)
                                                         .bodyMedium
                                                         .override(
-                                                          fontFamily: 'Inter',
+                                                          font:
+                                                              GoogleFonts.inter(
+                                                            fontWeight:
+                                                                FontWeight.bold,
+                                                            fontStyle:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .fontStyle,
+                                                          ),
                                                           fontSize: 20.0,
                                                           letterSpacing: 0.0,
                                                           fontWeight:
                                                               FontWeight.bold,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMedium
+                                                                  .fontStyle,
                                                         ),
                                               ),
                                             ),
@@ -2447,6 +2712,18 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                                                                           ),
                                                                         }.withoutNulls,
                                                                       );
+
+                                                                      _model.apiResult803 = await HelpandSupportGroup
+                                                                          .userActivityLogCall
+                                                                          .call(
+                                                                        iduser:
+                                                                            currentUserUid,
+                                                                        fitureName:
+                                                                            'Sunah',
+                                                                      );
+
+                                                                      safeSetState(
+                                                                          () {});
                                                                     },
                                                                     child: Row(
                                                                       mainAxisSize:
@@ -2596,10 +2873,15 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                                                                               '-',
                                                                             ),
                                                                             style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                  fontFamily: 'Inter',
+                                                                                  font: GoogleFonts.inter(
+                                                                                    fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                    fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                  ),
                                                                                   color: Colors.white,
                                                                                   fontSize: 16.0,
                                                                                   letterSpacing: 0.0,
+                                                                                  fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                  fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
                                                                                 ),
                                                                           ),
                                                                         ),
@@ -2650,11 +2932,25 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                                                     FlutterFlowTheme.of(context)
                                                         .bodyMedium
                                                         .override(
-                                                          fontFamily: 'Inter',
+                                                          font:
+                                                              GoogleFonts.inter(
+                                                            fontWeight:
+                                                                FontWeight.bold,
+                                                            fontStyle:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .fontStyle,
+                                                          ),
                                                           fontSize: 20.0,
                                                           letterSpacing: 0.0,
                                                           fontWeight:
                                                               FontWeight.bold,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMedium
+                                                                  .fontStyle,
                                                         ),
                                               ),
                                             ),
@@ -2806,6 +3102,18 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                                                                           ),
                                                                         }.withoutNulls,
                                                                       );
+
+                                                                      _model.apiResult804 = await HelpandSupportGroup
+                                                                          .userActivityLogCall
+                                                                          .call(
+                                                                        iduser:
+                                                                            currentUserUid,
+                                                                        fitureName:
+                                                                            'Sunah',
+                                                                      );
+
+                                                                      safeSetState(
+                                                                          () {});
                                                                     },
                                                                     child: Row(
                                                                       mainAxisSize:
@@ -2955,10 +3263,15 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                                                                               '-',
                                                                             ),
                                                                             style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                  fontFamily: 'Inter',
+                                                                                  font: GoogleFonts.inter(
+                                                                                    fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                    fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                  ),
                                                                                   color: Colors.white,
                                                                                   fontSize: 16.0,
                                                                                   letterSpacing: 0.0,
+                                                                                  fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                  fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
                                                                                 ),
                                                                           ),
                                                                         ),
@@ -3009,11 +3322,25 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                                                     FlutterFlowTheme.of(context)
                                                         .bodyMedium
                                                         .override(
-                                                          fontFamily: 'Inter',
+                                                          font:
+                                                              GoogleFonts.inter(
+                                                            fontWeight:
+                                                                FontWeight.bold,
+                                                            fontStyle:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .fontStyle,
+                                                          ),
                                                           fontSize: 20.0,
                                                           letterSpacing: 0.0,
                                                           fontWeight:
                                                               FontWeight.bold,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMedium
+                                                                  .fontStyle,
                                                         ),
                                               ),
                                             ),
@@ -3169,6 +3496,18 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                                                                           ),
                                                                         }.withoutNulls,
                                                                       );
+
+                                                                      _model.apiResult805 = await HelpandSupportGroup
+                                                                          .userActivityLogCall
+                                                                          .call(
+                                                                        iduser:
+                                                                            currentUserUid,
+                                                                        fitureName:
+                                                                            'Sunah',
+                                                                      );
+
+                                                                      safeSetState(
+                                                                          () {});
                                                                     },
                                                                     child: Row(
                                                                       mainAxisSize:
@@ -3323,10 +3662,15 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                                                                               '-',
                                                                             ),
                                                                             style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                  fontFamily: 'Inter',
+                                                                                  font: GoogleFonts.inter(
+                                                                                    fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                    fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                  ),
                                                                                   color: Colors.white,
                                                                                   fontSize: 16.0,
                                                                                   letterSpacing: 0.0,
+                                                                                  fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                  fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
                                                                                 ),
                                                                           ),
                                                                         ),
@@ -3377,11 +3721,25 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                                                     FlutterFlowTheme.of(context)
                                                         .bodyMedium
                                                         .override(
-                                                          fontFamily: 'Inter',
+                                                          font:
+                                                              GoogleFonts.inter(
+                                                            fontWeight:
+                                                                FontWeight.bold,
+                                                            fontStyle:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .fontStyle,
+                                                          ),
                                                           fontSize: 20.0,
                                                           letterSpacing: 0.0,
                                                           fontWeight:
                                                               FontWeight.bold,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMedium
+                                                                  .fontStyle,
                                                         ),
                                               ),
                                             ),
@@ -3537,6 +3895,18 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                                                                           ),
                                                                         }.withoutNulls,
                                                                       );
+
+                                                                      _model.apiResult806 = await HelpandSupportGroup
+                                                                          .userActivityLogCall
+                                                                          .call(
+                                                                        iduser:
+                                                                            currentUserUid,
+                                                                        fitureName:
+                                                                            'Sunah',
+                                                                      );
+
+                                                                      safeSetState(
+                                                                          () {});
                                                                     },
                                                                     child: Row(
                                                                       mainAxisSize:
@@ -3686,10 +4056,15 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                                                                               '-',
                                                                             ),
                                                                             style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                  fontFamily: 'Inter',
+                                                                                  font: GoogleFonts.inter(
+                                                                                    fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                    fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                  ),
                                                                                   color: Colors.white,
                                                                                   fontSize: 16.0,
                                                                                   letterSpacing: 0.0,
+                                                                                  fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                  fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
                                                                                 ),
                                                                           ),
                                                                         ),
@@ -3740,11 +4115,25 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                                                     FlutterFlowTheme.of(context)
                                                         .bodyMedium
                                                         .override(
-                                                          fontFamily: 'Inter',
+                                                          font:
+                                                              GoogleFonts.inter(
+                                                            fontWeight:
+                                                                FontWeight.bold,
+                                                            fontStyle:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .fontStyle,
+                                                          ),
                                                           fontSize: 20.0,
                                                           letterSpacing: 0.0,
                                                           fontWeight:
                                                               FontWeight.bold,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMedium
+                                                                  .fontStyle,
                                                         ),
                                               ),
                                             ),
@@ -3899,6 +4288,18 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                                                                           ),
                                                                         }.withoutNulls,
                                                                       );
+
+                                                                      _model.apiResult807 = await HelpandSupportGroup
+                                                                          .userActivityLogCall
+                                                                          .call(
+                                                                        iduser:
+                                                                            currentUserUid,
+                                                                        fitureName:
+                                                                            'Sunah',
+                                                                      );
+
+                                                                      safeSetState(
+                                                                          () {});
                                                                     },
                                                                     child: Row(
                                                                       mainAxisSize:
@@ -4045,10 +4446,15 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                                                                               '-',
                                                                             ),
                                                                             style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                  fontFamily: 'Inter',
+                                                                                  font: GoogleFonts.inter(
+                                                                                    fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                    fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                  ),
                                                                                   color: Colors.white,
                                                                                   fontSize: 16.0,
                                                                                   letterSpacing: 0.0,
+                                                                                  fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                  fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
                                                                                 ),
                                                                           ),
                                                                         ),

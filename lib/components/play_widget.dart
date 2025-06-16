@@ -2,6 +2,7 @@ import '/flutter_flow/flutter_flow_audio_player.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'play_model.dart';
 export 'play_model.dart';
 
@@ -74,16 +75,39 @@ class _PlayWidgetState extends State<PlayWidget> {
                       ),
                     ),
                   ),
-                  titleTextStyle:
-                      FlutterFlowTheme.of(context).titleLarge.override(
-                            fontFamily: 'Nunito',
-                            letterSpacing: 0.0,
-                          ),
-                  playbackDurationTextStyle:
-                      FlutterFlowTheme.of(context).labelMedium.override(
-                            fontFamily: 'Inter',
-                            letterSpacing: 0.0,
-                          ),
+                  titleTextStyle: FlutterFlowTheme.of(context)
+                      .titleLarge
+                      .override(
+                        font: GoogleFonts.nunito(
+                          fontWeight: FlutterFlowTheme.of(context)
+                              .titleLarge
+                              .fontWeight,
+                          fontStyle:
+                              FlutterFlowTheme.of(context).titleLarge.fontStyle,
+                        ),
+                        letterSpacing: 0.0,
+                        fontWeight:
+                            FlutterFlowTheme.of(context).titleLarge.fontWeight,
+                        fontStyle:
+                            FlutterFlowTheme.of(context).titleLarge.fontStyle,
+                      ),
+                  playbackDurationTextStyle: FlutterFlowTheme.of(context)
+                      .labelMedium
+                      .override(
+                        font: GoogleFonts.inter(
+                          fontWeight: FlutterFlowTheme.of(context)
+                              .labelMedium
+                              .fontWeight,
+                          fontStyle: FlutterFlowTheme.of(context)
+                              .labelMedium
+                              .fontStyle,
+                        ),
+                        letterSpacing: 0.0,
+                        fontWeight:
+                            FlutterFlowTheme.of(context).labelMedium.fontWeight,
+                        fontStyle:
+                            FlutterFlowTheme.of(context).labelMedium.fontStyle,
+                      ),
                   fillColor: FlutterFlowTheme.of(context).alternate,
                   playbackButtonColor: FlutterFlowTheme.of(context).primary,
                   activeTrackColor: FlutterFlowTheme.of(context).tertiary,

@@ -5,6 +5,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/index.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:webviewx_plus/webviewx_plus.dart';
 import 'doadoa_by_kategori_model.dart';
@@ -94,10 +95,18 @@ class _DoadoaByKategoriWidgetState extends State<DoadoaByKategoriWidget> {
                       child: Text(
                         'Doa - Doa',
                         style: FlutterFlowTheme.of(context).bodyMedium.override(
-                              fontFamily: 'Inter',
+                              font: GoogleFonts.inter(
+                                fontWeight: FontWeight.bold,
+                                fontStyle: FlutterFlowTheme.of(context)
+                                    .bodyMedium
+                                    .fontStyle,
+                              ),
                               fontSize: 20.0,
                               letterSpacing: 0.0,
                               fontWeight: FontWeight.bold,
+                              fontStyle: FlutterFlowTheme.of(context)
+                                  .bodyMedium
+                                  .fontStyle,
                             ),
                       ),
                     ),
@@ -161,10 +170,23 @@ class _DoadoaByKategoriWidgetState extends State<DoadoaByKategoriWidget> {
                           ),
                           style:
                               FlutterFlowTheme.of(context).bodyMedium.override(
-                                    fontFamily: 'Inter',
+                                    font: GoogleFonts.inter(
+                                      fontWeight: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .fontWeight,
+                                      fontStyle: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .fontStyle,
+                                    ),
                                     color: Colors.white,
                                     fontSize: 12.0,
                                     letterSpacing: 0.0,
+                                    fontWeight: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .fontWeight,
+                                    fontStyle: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .fontStyle,
                                   ),
                           validator: _model.textControllerValidator
                               .asValidator(context),
@@ -301,6 +323,16 @@ class _DoadoaByKategoriWidgetState extends State<DoadoaByKategoriWidget> {
                                             ),
                                           }.withoutNulls,
                                         );
+
+                                        _model.apiResult8094 =
+                                            await HelpandSupportGroup
+                                                .userActivityLogCall
+                                                .call(
+                                          iduser: currentUserUid,
+                                          fitureName: 'Doa Doa',
+                                        );
+
+                                        safeSetState(() {});
                                       },
                                       child: Container(
                                         width: double.infinity,
@@ -343,8 +375,17 @@ class _DoadoaByKategoriWidgetState extends State<DoadoaByKategoriWidget> {
                                                                   .of(context)
                                                               .bodyMedium
                                                               .override(
-                                                                fontFamily:
-                                                                    'Inter',
+                                                                font:
+                                                                    GoogleFonts
+                                                                        .inter(
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .w600,
+                                                                  fontStyle: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .fontStyle,
+                                                                ),
                                                                 color: FFAppState()
                                                                     .colorFontThemes,
                                                                 fontSize: 15.0,
@@ -353,6 +394,10 @@ class _DoadoaByKategoriWidgetState extends State<DoadoaByKategoriWidget> {
                                                                 fontWeight:
                                                                     FontWeight
                                                                         .w600,
+                                                                fontStyle: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .fontStyle,
                                                               ),
                                                         ),
                                                       ],

@@ -15,8 +15,12 @@ class HomeAlquranModel extends FlutterFlowModel<HomeAlquranWidget> {
   String? textFieldSearchSelectedOption;
   String? Function(BuildContext, String?)?
       textFieldSearchTextControllerValidator;
+  // Stores action output result for [Backend Call - API (userActivityLog)] action in Row widget.
+  ApiCallResponse? apiResult8091;
   // Stores action output result for [Backend Call - API (deletemybookmark)] action in Icon widget.
   ApiCallResponse? apiResultmh0;
+  // Stores action output result for [Backend Call - API (userActivityLog)] action in Containerayat1 widget.
+  ApiCallResponse? apiResult8090;
   // Model for Navbar component.
   late NavbarModel navbarModel;
 

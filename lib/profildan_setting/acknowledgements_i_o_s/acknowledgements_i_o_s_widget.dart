@@ -3,6 +3,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/index.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'acknowledgements_i_o_s_model.dart';
 export 'acknowledgements_i_o_s_model.dart';
 
@@ -91,11 +92,19 @@ class _AcknowledgementsIOSWidgetState extends State<AcknowledgementsIOSWidget> {
                     child: Text(
                       'Acknowledgements (IOS)',
                       style: FlutterFlowTheme.of(context).bodyMedium.override(
-                            fontFamily: 'Inter',
+                            font: GoogleFonts.inter(
+                              fontWeight: FontWeight.bold,
+                              fontStyle: FlutterFlowTheme.of(context)
+                                  .bodyMedium
+                                  .fontStyle,
+                            ),
                             color: FlutterFlowTheme.of(context).primary,
                             fontSize: 20.0,
                             letterSpacing: 0.0,
                             fontWeight: FontWeight.bold,
+                            fontStyle: FlutterFlowTheme.of(context)
+                                .bodyMedium
+                                .fontStyle,
                           ),
                     ),
                   ),
@@ -122,8 +131,21 @@ class _AcknowledgementsIOSWidgetState extends State<AcknowledgementsIOSWidget> {
                       'Kami mengucapkan terima kasih kepada semua pihak yang telah mendukung pengembangan aplikasi ini. Berikut adalah penghargaan kami kepada mereka yang telah membantu secara langsung maupun tidak langsung:\n\nTim Pengembang dan Kontributor\nTerima kasih kepada tim pengembang, desainer, dan semua pihak yang telah berkontribusi dalam membangun aplikasi ini dengan penuh dedikasi.\n\nSumber Referensi dan Data\nKami mengucapkan terima kasih atas ketersediaan data dan referensi yang mendukung konten aplikasi ini:\n\nQuran.com sebagai sumber data Al-Quran digital.\nHadis dan literatur Islam terpercaya yang menjadi rujukan dalam fitur sunnah dan doa-doa harian.\nKomunitas Pengembang\nTerima kasih kepada komunitas pengembang open-source yang menyediakan alat dan pustaka yang digunakan dalam aplikasi ini, termasuk tetapi tidak terbatas pada:\n\n\nTerima kasih kepada semua pengguna yang telah memberikan masukan dan saran untuk menjadikan aplikasi ini lebih baik dan bermanfaat.\n\nInspirasi dari Tradisi Islam\nKami mengapresiasi tradisi dan nilai-nilai Islam yang menjadi inspirasi utama dalam pembuatan aplikasi ini, dengan harapan dapat membantu umat Muslim dalam menjalani kehidupan sehari-hari sesuai tuntunan agama.\n\nSemoga aplikasi ini memberikan manfaat yang luas dan menjadi sarana untuk mendekatkan diri kepada Allah SWT.',
                       textAlign: TextAlign.justify,
                       style: FlutterFlowTheme.of(context).bodyMedium.override(
-                            fontFamily: 'Inter',
+                            font: GoogleFonts.inter(
+                              fontWeight: FlutterFlowTheme.of(context)
+                                  .bodyMedium
+                                  .fontWeight,
+                              fontStyle: FlutterFlowTheme.of(context)
+                                  .bodyMedium
+                                  .fontStyle,
+                            ),
                             letterSpacing: 0.0,
+                            fontWeight: FlutterFlowTheme.of(context)
+                                .bodyMedium
+                                .fontWeight,
+                            fontStyle: FlutterFlowTheme.of(context)
+                                .bodyMedium
+                                .fontStyle,
                           ),
                     ),
                   ),
