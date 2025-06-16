@@ -1,0 +1,9 @@
+# Ignore build files
+build/
+.dart_tool/
+
+# Others
+.flutter-plugins
+.flutter-plugins-dependencies
+.packages
+pubspec.lock
