@@ -128,7 +128,7 @@ class _UploadImageWidgetState extends State<UploadImageWidget> {
                           padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 8.0, 0.0, 0.0),
                           child: Text(
-                            _model.uploadedFileUrl,
+                            _model.uploadedFileUrl_uploadDataLc4,
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
                                 .override(
@@ -171,7 +171,7 @@ class _UploadImageWidgetState extends State<UploadImageWidget> {
                             image: DecorationImage(
                               fit: BoxFit.cover,
                               image: Image.network(
-                                _model.uploadedFileUrl,
+                                _model.uploadedFileUrl_uploadDataLc4,
                               ).image,
                             ),
                             shape: BoxShape.circle,
@@ -181,7 +181,8 @@ class _UploadImageWidgetState extends State<UploadImageWidget> {
                             ),
                           ),
                           child: Visibility(
-                            visible: _model.uploadedFileUrl == '',
+                            visible:
+                                _model.uploadedFileUrl_uploadDataLc4 == '',
                             child: Icon(
                               Icons.person_add_alt_1_rounded,
                               color: FlutterFlowTheme.of(context).secondaryText,
@@ -213,8 +214,8 @@ class _UploadImageWidgetState extends State<UploadImageWidget> {
                                     selectedMedia.every((m) =>
                                         validateFileFormat(
                                             m.storagePath, context))) {
-                                  safeSetState(
-                                      () => _model.isDataUploading = true);
+                                  safeSetState(() => _model
+                                      .isDataUploading_uploadDataLc4 = true);
                                   var selectedUploadedFiles =
                                       <FFUploadedFile>[];
 
@@ -241,16 +242,17 @@ class _UploadImageWidgetState extends State<UploadImageWidget> {
                                         .map((u) => u!)
                                         .toList();
                                   } finally {
-                                    _model.isDataUploading = false;
+                                    _model.isDataUploading_uploadDataLc4 =
+                                        false;
                                   }
                                   if (selectedUploadedFiles.length ==
                                           selectedMedia.length &&
                                       downloadUrls.length ==
                                           selectedMedia.length) {
                                     safeSetState(() {
-                                      _model.uploadedLocalFile =
+                                      _model.uploadedLocalFile_uploadDataLc4 =
                                           selectedUploadedFiles.first;
-                                      _model.uploadedFileUrl =
+                                      _model.uploadedFileUrl_uploadDataLc4 =
                                           downloadUrls.first;
                                     });
                                   } else {
@@ -297,7 +299,8 @@ class _UploadImageWidgetState extends State<UploadImageWidget> {
                               onPressed: () async {
                                 await currentUserReference!
                                     .update(createUsersRecordData(
-                                  photoUrl: _model.uploadedFileUrl,
+                                  photoUrl:
+                                      _model.uploadedFileUrl_uploadDataLc4,
                                 ));
                                 Navigator.pop(context);
                                 ScaffoldMessenger.of(context).showSnackBar(

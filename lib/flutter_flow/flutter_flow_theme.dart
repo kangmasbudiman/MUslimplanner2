@@ -82,34 +82,49 @@ abstract class FlutterFlowTheme {
   TextStyle get bodyText2 => typography.bodySmall;
 
   String get displayLargeFamily => typography.displayLargeFamily;
+  bool get displayLargeIsCustom => typography.displayLargeIsCustom;
   TextStyle get displayLarge => typography.displayLarge;
   String get displayMediumFamily => typography.displayMediumFamily;
+  bool get displayMediumIsCustom => typography.displayMediumIsCustom;
   TextStyle get displayMedium => typography.displayMedium;
   String get displaySmallFamily => typography.displaySmallFamily;
+  bool get displaySmallIsCustom => typography.displaySmallIsCustom;
   TextStyle get displaySmall => typography.displaySmall;
   String get headlineLargeFamily => typography.headlineLargeFamily;
+  bool get headlineLargeIsCustom => typography.headlineLargeIsCustom;
   TextStyle get headlineLarge => typography.headlineLarge;
   String get headlineMediumFamily => typography.headlineMediumFamily;
+  bool get headlineMediumIsCustom => typography.headlineMediumIsCustom;
   TextStyle get headlineMedium => typography.headlineMedium;
   String get headlineSmallFamily => typography.headlineSmallFamily;
+  bool get headlineSmallIsCustom => typography.headlineSmallIsCustom;
   TextStyle get headlineSmall => typography.headlineSmall;
   String get titleLargeFamily => typography.titleLargeFamily;
+  bool get titleLargeIsCustom => typography.titleLargeIsCustom;
   TextStyle get titleLarge => typography.titleLarge;
   String get titleMediumFamily => typography.titleMediumFamily;
+  bool get titleMediumIsCustom => typography.titleMediumIsCustom;
   TextStyle get titleMedium => typography.titleMedium;
   String get titleSmallFamily => typography.titleSmallFamily;
+  bool get titleSmallIsCustom => typography.titleSmallIsCustom;
   TextStyle get titleSmall => typography.titleSmall;
   String get labelLargeFamily => typography.labelLargeFamily;
+  bool get labelLargeIsCustom => typography.labelLargeIsCustom;
   TextStyle get labelLarge => typography.labelLarge;
   String get labelMediumFamily => typography.labelMediumFamily;
+  bool get labelMediumIsCustom => typography.labelMediumIsCustom;
   TextStyle get labelMedium => typography.labelMedium;
   String get labelSmallFamily => typography.labelSmallFamily;
+  bool get labelSmallIsCustom => typography.labelSmallIsCustom;
   TextStyle get labelSmall => typography.labelSmall;
   String get bodyLargeFamily => typography.bodyLargeFamily;
+  bool get bodyLargeIsCustom => typography.bodyLargeIsCustom;
   TextStyle get bodyLarge => typography.bodyLarge;
   String get bodyMediumFamily => typography.bodyMediumFamily;
+  bool get bodyMediumIsCustom => typography.bodyMediumIsCustom;
   TextStyle get bodyMedium => typography.bodyMedium;
   String get bodySmallFamily => typography.bodySmallFamily;
+  bool get bodySmallIsCustom => typography.bodySmallIsCustom;
   TextStyle get bodySmall => typography.bodySmall;
 
   Typography get typography => ThemeTypography(this);
@@ -140,57 +155,72 @@ class LightModeTheme extends FlutterFlowTheme {
   late Color error = const Color(0xFFFF5963);
   late Color info = const Color(0xFFFFFFFF);
 
-  late Color blackText = Color(0xFF000000);
-  late Color colorPremium3 = Color(0xFF790C38);
-  late Color colorPremium2 = Color(0xFF39BD16);
-  late Color colorPremium1 = Color(0xFFC1BAA3);
-  late Color colorpremium4 = Color(0xFF02BF9C);
-  late Color colorPremium5 = Color(0xFFED1512);
-  late Color colorpremium6 = Color(0xFFFFF69F);
-  late Color colorPremium7 = Color(0xFFC7A21C);
-  late Color colorPremium8 = Color(0xFF454BEA);
-  late Color colorpremium9 = Color(0xFFCB6C24);
-  late Color colorPremium10 = Color(0xFF160614);
-  late Color colorPremium11 = Color(0xFFCBE782);
-  late Color colorPremium12 = Color(0xFF68B9D2);
-  late Color colorPremium13 = Color(0xFF427F13);
-  late Color colorPremium14 = Color(0xFF114F76);
-  late Color colorPremium15 = Color(0xFFF4D22B);
-  late Color colorPremium16 = Color(0xFF8CEE96);
-  late Color colorPremium17 = Color(0xFF5F037A);
-  late Color colorPremium18 = Color(0xFF74825E);
+  late Color blackText = const Color(0xFF000000);
+  late Color colorPremium3 = const Color(0xFF790C38);
+  late Color colorPremium2 = const Color(0xFF39BD16);
+  late Color colorPremium1 = const Color(0xFFC1BAA3);
+  late Color colorpremium4 = const Color(0xFF02BF9C);
+  late Color colorPremium5 = const Color(0xFFED1512);
+  late Color colorpremium6 = const Color(0xFFFFF69F);
+  late Color colorPremium7 = const Color(0xFFC7A21C);
+  late Color colorPremium8 = const Color(0xFF454BEA);
+  late Color colorpremium9 = const Color(0xFFCB6C24);
+  late Color colorPremium10 = const Color(0xFF160614);
+  late Color colorPremium11 = const Color(0xFFCBE782);
+  late Color colorPremium12 = const Color(0xFF68B9D2);
+  late Color colorPremium13 = const Color(0xFF427F13);
+  late Color colorPremium14 = const Color(0xFF114F76);
+  late Color colorPremium15 = const Color(0xFFF4D22B);
+  late Color colorPremium16 = const Color(0xFF8CEE96);
+  late Color colorPremium17 = const Color(0xFF5F037A);
+  late Color colorPremium18 = const Color(0xFF74825E);
 }
 
 abstract class Typography {
   String get displayLargeFamily;
+  bool get displayLargeIsCustom;
   TextStyle get displayLarge;
   String get displayMediumFamily;
+  bool get displayMediumIsCustom;
   TextStyle get displayMedium;
   String get displaySmallFamily;
+  bool get displaySmallIsCustom;
   TextStyle get displaySmall;
   String get headlineLargeFamily;
+  bool get headlineLargeIsCustom;
   TextStyle get headlineLarge;
   String get headlineMediumFamily;
+  bool get headlineMediumIsCustom;
   TextStyle get headlineMedium;
   String get headlineSmallFamily;
+  bool get headlineSmallIsCustom;
   TextStyle get headlineSmall;
   String get titleLargeFamily;
+  bool get titleLargeIsCustom;
   TextStyle get titleLarge;
   String get titleMediumFamily;
+  bool get titleMediumIsCustom;
   TextStyle get titleMedium;
   String get titleSmallFamily;
+  bool get titleSmallIsCustom;
   TextStyle get titleSmall;
   String get labelLargeFamily;
+  bool get labelLargeIsCustom;
   TextStyle get labelLarge;
   String get labelMediumFamily;
+  bool get labelMediumIsCustom;
   TextStyle get labelMedium;
   String get labelSmallFamily;
+  bool get labelSmallIsCustom;
   TextStyle get labelSmall;
   String get bodyLargeFamily;
+  bool get bodyLargeIsCustom;
   TextStyle get bodyLarge;
   String get bodyMediumFamily;
+  bool get bodyMediumIsCustom;
   TextStyle get bodyMedium;
   String get bodySmallFamily;
+  bool get bodySmallIsCustom;
   TextStyle get bodySmall;
 }
 
@@ -200,90 +230,105 @@ class ThemeTypography extends Typography {
   final FlutterFlowTheme theme;
 
   String get displayLargeFamily => 'Nunito';
+  bool get displayLargeIsCustom => false;
   TextStyle get displayLarge => GoogleFonts.nunito(
         color: theme.primaryText,
         fontWeight: FontWeight.normal,
         fontSize: 64.0,
       );
   String get displayMediumFamily => 'Nunito';
+  bool get displayMediumIsCustom => false;
   TextStyle get displayMedium => GoogleFonts.nunito(
         color: theme.primaryText,
         fontWeight: FontWeight.normal,
         fontSize: 44.0,
       );
   String get displaySmallFamily => 'Nunito';
+  bool get displaySmallIsCustom => false;
   TextStyle get displaySmall => GoogleFonts.nunito(
         color: theme.primaryText,
         fontWeight: FontWeight.w600,
         fontSize: 36.0,
       );
   String get headlineLargeFamily => 'Nunito';
+  bool get headlineLargeIsCustom => false;
   TextStyle get headlineLarge => GoogleFonts.nunito(
         color: theme.primaryText,
         fontWeight: FontWeight.w600,
         fontSize: 32.0,
       );
   String get headlineMediumFamily => 'Nunito';
+  bool get headlineMediumIsCustom => false;
   TextStyle get headlineMedium => GoogleFonts.nunito(
         color: theme.primaryText,
         fontWeight: FontWeight.normal,
         fontSize: 24.0,
       );
   String get headlineSmallFamily => 'Nunito';
+  bool get headlineSmallIsCustom => false;
   TextStyle get headlineSmall => GoogleFonts.nunito(
         color: theme.primaryText,
         fontWeight: FontWeight.w500,
         fontSize: 24.0,
       );
   String get titleLargeFamily => 'Nunito';
+  bool get titleLargeIsCustom => false;
   TextStyle get titleLarge => GoogleFonts.nunito(
         color: theme.primaryText,
         fontWeight: FontWeight.w500,
         fontSize: 22.0,
       );
   String get titleMediumFamily => 'Inter';
+  bool get titleMediumIsCustom => false;
   TextStyle get titleMedium => GoogleFonts.inter(
         color: theme.info,
         fontWeight: FontWeight.normal,
         fontSize: 18.0,
       );
   String get titleSmallFamily => 'Inter';
+  bool get titleSmallIsCustom => false;
   TextStyle get titleSmall => GoogleFonts.inter(
         color: theme.info,
         fontWeight: FontWeight.w500,
         fontSize: 16.0,
       );
   String get labelLargeFamily => 'Inter';
+  bool get labelLargeIsCustom => false;
   TextStyle get labelLarge => GoogleFonts.inter(
         color: theme.secondaryText,
         fontWeight: FontWeight.normal,
         fontSize: 16.0,
       );
   String get labelMediumFamily => 'Inter';
+  bool get labelMediumIsCustom => false;
   TextStyle get labelMedium => GoogleFonts.inter(
         color: theme.secondaryText,
         fontWeight: FontWeight.normal,
         fontSize: 14.0,
       );
   String get labelSmallFamily => 'Inter';
+  bool get labelSmallIsCustom => false;
   TextStyle get labelSmall => GoogleFonts.inter(
         color: theme.secondaryText,
         fontWeight: FontWeight.normal,
         fontSize: 12.0,
       );
   String get bodyLargeFamily => 'Inter';
+  bool get bodyLargeIsCustom => false;
   TextStyle get bodyLarge => GoogleFonts.inter(
         color: theme.primaryText,
         fontWeight: FontWeight.normal,
         fontSize: 16.0,
       );
   String get bodyMediumFamily => 'Inter';
+  bool get bodyMediumIsCustom => false;
   TextStyle get bodyMedium => GoogleFonts.inter(
         color: theme.primaryText,
         fontWeight: FontWeight.normal,
         fontSize: 14.0,
       );
   String get bodySmallFamily => 'Inter';
+  bool get bodySmallIsCustom => false;
   TextStyle get bodySmall => GoogleFonts.inter(
         color: theme.primaryText,
         fontWeight: FontWeight.normal,

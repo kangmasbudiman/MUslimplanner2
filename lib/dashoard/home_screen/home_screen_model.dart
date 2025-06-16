@@ -25,14 +25,6 @@ class HomeScreenModel extends FlutterFlowModel<HomeScreenWidget> {
   // Stores action output result for [Backend Call - API (deleteMysunnah)] action in Icon widget.
   ApiCallResponse? apiResultkdDeleteSunnah;
   // Stores action output result for [Backend Call - API (userActivityLog)] action in Row widget.
-  ApiCallResponse? apiResult800;
-  // Stores action output result for [Backend Call - API (tambahSummary)] action in Icon widget.
-  ApiCallResponse? apiResultkdjj;
-  bool apiRequestCompleted8 = false;
-  String? apiRequestLastUniqueKey8;
-  // Stores action output result for [Backend Call - API (deleteMysunnah)] action in Icon widget.
-  ApiCallResponse? apiResultkdDeleteSunnahh;
-  // Stores action output result for [Backend Call - API (userActivityLog)] action in Row widget.
   ApiCallResponse? apiResult8000;
   // Stores action output result for [Backend Call - API (tambahSummary)] action in Icon widget.
   ApiCallResponse? apiResultk4;
@@ -40,6 +32,14 @@ class HomeScreenModel extends FlutterFlowModel<HomeScreenWidget> {
   String? apiRequestLastUniqueKey7;
   // Stores action output result for [Backend Call - API (deleteMysunnah)] action in Icon widget.
   ApiCallResponse? apiResultkdDeleteSunna4;
+  // Stores action output result for [Backend Call - API (userActivityLog)] action in Row widget.
+  ApiCallResponse? apiResult800;
+  // Stores action output result for [Backend Call - API (tambahSummary)] action in Icon widget.
+  ApiCallResponse? apiResultkdjj;
+  bool apiRequestCompleted8 = false;
+  String? apiRequestLastUniqueKey8;
+  // Stores action output result for [Backend Call - API (deleteMysunnah)] action in Icon widget.
+  ApiCallResponse? apiResultkdDeleteSunnahh;
   // Stores action output result for [Backend Call - API (userActivityLog)] action in Row widget.
   ApiCallResponse? apiResult802;
   // Stores action output result for [Backend Call - API (tambahSummary)] action in Icon widget.
@@ -138,21 +138,6 @@ class HomeScreenModel extends FlutterFlowModel<HomeScreenWidget> {
     }
   }
 
-  Future waitForApiRequestCompleted8({
-    double minWait = 0,
-    double maxWait = double.infinity,
-  }) async {
-    final stopwatch = Stopwatch()..start();
-    while (true) {
-      await Future.delayed(Duration(milliseconds: 50));
-      final timeElapsed = stopwatch.elapsedMilliseconds;
-      final requestComplete = apiRequestCompleted8;
-      if (timeElapsed > maxWait || (requestComplete && timeElapsed > minWait)) {
-        break;
-      }
-    }
-  }
-
   Future waitForApiRequestCompleted7({
     double minWait = 0,
     double maxWait = double.infinity,
@@ -162,6 +147,21 @@ class HomeScreenModel extends FlutterFlowModel<HomeScreenWidget> {
       await Future.delayed(Duration(milliseconds: 50));
       final timeElapsed = stopwatch.elapsedMilliseconds;
       final requestComplete = apiRequestCompleted7;
+      if (timeElapsed > maxWait || (requestComplete && timeElapsed > minWait)) {
+        break;
+      }
+    }
+  }
+
+  Future waitForApiRequestCompleted8({
+    double minWait = 0,
+    double maxWait = double.infinity,
+  }) async {
+    final stopwatch = Stopwatch()..start();
+    while (true) {
+      await Future.delayed(Duration(milliseconds: 50));
+      final timeElapsed = stopwatch.elapsedMilliseconds;
+      final requestComplete = apiRequestCompleted8;
       if (timeElapsed > maxWait || (requestComplete && timeElapsed > minWait)) {
         break;
       }
