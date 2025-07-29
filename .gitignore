@@ -8,9 +8,9 @@ build/
 .pub/
 
 # Android
-android/.gradle/
-android/captures/
-android/app/*.keystore
+#android/.gradle/
+#android/captures/
+#android/app/*.keystore
 
 # iOS
 ios/Pods/
