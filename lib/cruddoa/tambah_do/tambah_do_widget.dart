@@ -145,13 +145,11 @@ class _TambahDoWidgetState extends State<TambahDoWidget> {
                             FormFieldController<String>(
                           _model.dropDownValue ??= '',
                         ),
-                        options: List<String>.from((getJsonField(
+                        options: List<String>.from(getJsonField(
                           dropDownKategoriDoaResponse.jsonBody,
                           r'''$.data[:].id''',
                           true,
-                        ) as List)
-                            .map<String>((s) => s.toString())
-                            .toList()),
+                        )!),
                         optionLabels: DoadoaGroup.kategoriDoaCall.namaKategori(
                           dropDownKategoriDoaResponse.jsonBody,
                         )!,

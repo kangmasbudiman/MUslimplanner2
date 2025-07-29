@@ -107,13 +107,11 @@ class _AlqurancobaWidgetState extends State<AlqurancobaWidget> {
                         if (textEditingValue.text == '') {
                           return const Iterable<String>.empty();
                         }
-                        return (getJsonField(
+                        return getJsonField(
                           textFieldTestingcariJsonResponse.jsonBody,
                           r'''$.title''',
                           true,
-                        ) as List)
-                            .map<String>((s) => s.toString())
-                            .toList()
+                        )!
                             .where((option) {
                           final lowercaseOption = option.toLowerCase();
                           return lowercaseOption

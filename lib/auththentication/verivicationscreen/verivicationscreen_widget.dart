@@ -34,7 +34,11 @@ class _VerivicationscreenWidgetState extends State<VerivicationscreenWidget> {
     // On page load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
       await authManager.refreshUser();
-      await Future.delayed(const Duration(milliseconds: 200));
+      await Future.delayed(
+        Duration(
+          milliseconds: 200,
+        ),
+      );
 
       safeSetState(() {});
 
@@ -267,7 +271,11 @@ class _VerivicationscreenWidgetState extends State<VerivicationscreenWidget> {
                 FFButtonWidget(
                   onPressed: () async {
                     await authManager.refreshUser();
-                    await Future.delayed(const Duration(milliseconds: 500));
+                    await Future.delayed(
+                      Duration(
+                        milliseconds: 500,
+                      ),
+                    );
 
                     safeSetState(() {});
                     if (currentUserEmailVerified) {

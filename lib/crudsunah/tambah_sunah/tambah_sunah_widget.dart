@@ -141,13 +141,11 @@ class _TambahSunahWidgetState extends State<TambahSunahWidget> {
                           FormFieldController<String>(
                         _model.dropDownValue ??= '',
                       ),
-                      options: List<String>.from((getJsonField(
+                      options: List<String>.from(getJsonField(
                         dropDownKategorisunahResponse.jsonBody,
                         r'''$.data[:].id''',
                         true,
-                      ) as List)
-                          .map<String>((s) => s.toString())
-                          .toList()),
+                      )!),
                       optionLabels: SunahGroup.kategorisunahCall.namaKategori(
                         dropDownKategorisunahResponse.jsonBody,
                       )!,
