@@ -5,3 +5,6 @@ build/
 .packages
 .idea/
 ios/Pods/
+build/
+ios/Pods/
+.dart_tool/
