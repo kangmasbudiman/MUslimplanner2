@@ -1,10 +1,55 @@
-build/
+# Flutter/Dart
 .dart_tool/
 .flutter-plugins
 .flutter-plugins-dependencies
 .packages
-.idea/
-ios/Pods/
+.pub-cache/
 build/
+.pub/
+
+# Android
+android/.gradle/
+android/captures/
+android/app/*.keystore
+
+# iOS
 ios/Pods/
-.dart_tool/
+ios/Runner.xcworkspace/
+ios/.symlinks/
+ios/Flutter/Flutter.framework
+ios/Flutter/Flutter.podspec
+ios/ServiceDefinitions.json
+ios/Runner/GeneratedPluginRegistrant.*
+
+# Xcode
+*.xcworkspace
+*.xcuserstate
+*.xcuserdata/
+*.DS_Store
+
+# macOS
+macos/Flutter/GeneratedPluginRegistrant.swift
+macos/Pods/
+macos/Runner.xcworkspace/
+
+# Web
+web/.dart_tool/
+
+# Linux
+linux/flutter/
+
+# Windows
+windows/flutter/
+
+# IDEs
+.idea/
+.vscode/
+*.iml
+
+# Others
+*.log
+*.lock
+*.tmp
+*.temp
+*.orig
+*.swp
